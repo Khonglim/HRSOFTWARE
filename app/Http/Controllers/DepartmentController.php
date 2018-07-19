@@ -74,7 +74,12 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $department =  Department::find($id);
+        $department->department_name = $request->department_name;
+        $department->department_head_id = $request->company_id;
+        $department->Remark = $request->Remark;
+        $department->save();
+        return redirect('home'); 
     }
 
     /**
@@ -85,6 +90,9 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $department = Department::find($id);
+        $department->enable =0;
+        $dpartment->save();
+        return redirect('home'); 
     }
 }

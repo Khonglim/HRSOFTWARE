@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\Position;
+use App\Department;
+use App\Employee;
 class HomeController extends Controller
 {
     /**
@@ -23,10 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $company = Company::all();
-        $data = array('company' => $company  );
-        
-        return view('home',$data);
+        $department= Department::all();
+        $position = Position::all();
+        $employee = Employee::all();
+        $data1 = array('company' => $company,'department' => $department,'position' => $position,'employee' => $employee);
+        return view('home',$data1);
     }
 }

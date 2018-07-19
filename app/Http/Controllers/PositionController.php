@@ -73,7 +73,12 @@ class PositionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $position =  Position::find($id);
+        $position->position_name = $request->position_name;
+        $position->Department_ID = $request->Department_ID;
+        $position->Remark = $request->Remark;
+        $position->save();
+        return redirect('home'); 
     }
 
     /**
@@ -84,6 +89,9 @@ class PositionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $position = Position::find($id);
+        $position->enable =0;
+        $position->save();
+        return redirect('home'); 
     }
 }

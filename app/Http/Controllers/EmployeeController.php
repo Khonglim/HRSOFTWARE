@@ -76,7 +76,15 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employee =  Employee::find($id);
+        $employee->name = $request->name;
+        $employee->lastname = $request->lastname;
+        $employee->nikname = $request->nikname;
+        $employee->birthday = $request->birthday;
+        $employee->sex = $request->sex;
+        $employee->email = $request->email;
+        $employee->save();
+        return redirect('home'); 
     }
 
     /**
@@ -87,6 +95,10 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $employee = Employee::find($id);
+        $employee->enable =0;
+        $employee->save();
+        return redirect('home'); 
     }
 }

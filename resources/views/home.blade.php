@@ -287,12 +287,10 @@ desired effect
     </section>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <section class="content container-fluid">
-
-        <div class="col-md-6">
+      <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">
          บริษัท
@@ -302,12 +300,10 @@ desired effect
               <table class="table table-striped b-t b-light">
                   <thead>
                     <tr>
-       
                        <th>ID</th>
                        <th>ชื่อบริษัท</th>
                        <th>หมายเหตุ</th>
                        <th>เพิ่มเติ่ม</th>
-                
                     </tr>
                   </thead>
                   <tbody>
@@ -320,11 +316,11 @@ desired effect
                           <td>  
                               {{ Form::open(['route' => ['company.destroy',$l['id'], 'method' => "DELETE"] ]) }}
                               <input type="hidden" name="_method" value="delete" />
-                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">แก้ไข</button>
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}">แก้ไข</button>
                               {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
                               {{ Form::close() }}   
                       
-      <div id="myModal" class="modal fade" role="dialog">
+                          <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
          <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
@@ -364,34 +360,29 @@ desired effect
             {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
             </div>
             {{ Form::close() }}  
-        </div>
-      </div>
-    </div>
-  </div>
-  
- </td>
-
-</tr>
-                        @endif
-                          @empty
-                            <tr>
-                                <td colspan="6" > No data !!</td>
-                            </tr>
-                            
-                          @endforelse
-                        </tbody>
-                </table>
-           
+                </div>
+            </div>
+          </div>
+          </div>
+          </td>
+          </tr>
+          @endif
+           @empty
+           <tr>
+            <td colspan="6" > No data !!</td>
+        </tr>
+               @endforelse
+            </tbody>
+            </table>
           </div>
         </div>
         <footer class="panel-footer">
           <div class="row">
             <div class="col-sm-5">
-             
             </div>
             <div class="col-sm-7 text-right text-center-xs">
               <ul class="pagination pagination-sm m-t-none m-b-none">
-              
+                
               </ul>
             </div>
           </div>
@@ -403,11 +394,109 @@ desired effect
           <div class="panel-heading">
            แผนก
            </div>
-       
           <div class="table-responsive">
             <div class="container">
-    
-             
+              <table class="table table-striped b-t b-light">
+                <thead>
+                  <tr>
+                     <th>ID</th>
+                     <th>ชื่อแผนก</th>
+                     <th>ID เริ่มต้นแผนก</th>
+                     <th>ID บริษัท</th>
+                     <th>หมายเหตุ</th>
+                     <th>เพิ่มเติ่ม</th>
+                  </tr>
+                </thead>
+                <tbody>
+                        @forelse($department as $l)
+                           @if($l['enable']==1)
+                          <tr>
+                        <td> {{$l['id']}} </td>
+                        <td> {{$l['department_name']}} </td>
+                        <td> {{$l['department_head_id']}} </td>
+                        <td> {{$l['company_id']}} </td>
+                        <td> {{$l['remark']}} </td>
+                        <td>  
+                            {{ Form::open(['route' => ['department.destroy',$l['id'], 'method' => "DELETE"] ]) }}
+                            <input type="hidden" name="_method" value="delete" />
+                            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}">แก้ไข</button>
+                            {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
+                            {{ Form::close() }}   
+                    
+    <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
+       <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">แก้ไข</h4>
+              </div>
+              <div class="modal-body">
+          {{Form::open(['route'=>['department.update',$l['id']],'method'=>'PUT','files' => true])}}
+          <div class="row">
+              <div class="col-md-2">
+                {{Form::label('department_name','ชื่อแผนก')}}
+              </div>
+                <div class="col-md-5">
+                  <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                      {{Form::text('company_Name',$l['department_name'],['class'=>'form-control'])}}
+                    <span class="text-danger">{{ $errors->first('company') }}</span>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('department_head_id','ID เริ่มต้นแผนก')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                        {{Form::text('department_head_id',$l['department_head_id'],['class'=>'form-control'])}}
+                      <span class="text-danger">{{ $errors->first('company') }}</span>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('company_id','ID บริษัท')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                          {{Form::text('company_id',$l['company_id'],['class'=>'form-control'])}}
+                        <span class="text-danger">{{ $errors->first('company') }}</span>
+                        </div>
+                    </div>
+                  </div>
+              <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('remark','หมายเหตุ')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                        {{Form::text('remark',$l['remark'],['class'=>'form-control'])}}
+                      <span class="text-danger">{{ $errors->first('remark') }}</span>
+                      </div>
+                  </div>
+                </div>  
+              </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+          </div>
+          {{ Form::close() }}  
+              </div>
+          </div>
+              </div>
+           </div>
+          </td>
+        </tr>
+            @endif
+         @empty
+         <tr>
+          <td colspan="6" > No data !!</td>
+      </tr>
+    @endforelse
+      </tbody>
+          </table>
             </div>
           </div>
           <footer class="panel-footer">
@@ -428,14 +517,96 @@ desired effect
 
       <div class="col-md-6">
           <div class="panel panel-default">
-            <div class="panel-heading">
-             ตำแหน่ง
-             </div>
-         
-            <div class="table-responsive">
+            <div class="panel-heading"> ตำแหน่ง</div>
+          <div class="table-responsive">
               <div class="container">
-      
-               
+                <table class="table table-striped b-t b-light">
+                  <thead>
+                    <tr>
+                       <th>ID</th>
+                       <th>ชื่อตำแหน่ง</th>
+                       <th>ID เริ่มต้นแผนก</th>
+                       <th>หมายเหตุ</th>
+                       <th>เพิ่มเติ่ม</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                          @forelse($position as $l)
+                             @if($l['enable']==1)
+                            <tr>
+                          <td> {{$l['id']}} </td>
+                          <td> {{$l['position_name']}} </td>
+                          <td> {{$l['Department_ID']}} </td>
+                          <td> {{$l['remark']}} </td>
+                          <td>  
+                              {{ Form::open(['route' => ['position.destroy',$l['id'], 'method' => "DELETE"] ]) }}
+                              <input type="hidden" name="_method" value="delete" />
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}">แก้ไข</button>
+                              {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
+                              {{ Form::close() }}                      
+      <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">แก้ไข</h4>
+                </div>
+                <div class="modal-body">
+            {{Form::open(['route'=>['position.update',$l['id']],'method'=>'PUT','files' => true])}}
+            <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('position_name','ชื่อตำแหน่ง')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                        {{Form::text('position_name',$l['position_name'],['class'=>'form-control'])}}
+                      <span class="text-danger">{{ $errors->first('company') }}</span>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('Department_ID','ID ตำแหน่ง')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                          {{Form::text('Department_ID',$l['Department_ID'],['class'=>'form-control'])}}
+                        <span class="text-danger">{{ $errors->first('company') }}</span>
+                        </div>
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('remark','หมายเหตุ')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                          {{Form::text('remark',$l['remark'],['class'=>'form-control'])}}
+                        <span class="text-danger">{{ $errors->first('remark') }}</span>
+                        </div>
+                    </div>
+                  </div>  
+                </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+            </div>
+            {{ Form::close() }}  
+                </div>
+            </div>
+                </div>
+             </div>
+            </td>
+          </tr>
+              @endif
+           @empty
+           <tr>
+            <td colspan="6" > No data !!</td>
+        </tr>
+      @endforelse
+        </tbody>
+            </table>  
               </div>
             </div>
             <footer class="panel-footer">
@@ -458,13 +629,136 @@ desired effect
 
         <div class="col-md-6">
             <div class="panel panel-default">
-              <div class="panel-heading">
-               พนักงาน
-               </div>
-           
-              <div class="table-responsive">
+              <div class="panel-heading">พนักงาน</div>
+               <div class="table-responsive">
                 <div class="container">
-        
+                  <table class="table table-striped b-t b-light">
+                    <thead>
+                      <tr>
+                         <th>ชื่อ</th>
+                         <th>นามสกุล</th>
+                         <th>ชื่อเล่น</th>
+                         <th>วันเกิด</th>
+                         <th>เพศ</th>
+                         <th>อีเมล</th>
+                         <th>เพิ่มเติ่ม</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                            @forelse($employee as $l)
+                               @if($l['enable']==1)
+                              <tr>
+                            <td> {{$l['name']}} </td>
+                            <td> {{$l['lastname']}} </td>
+                            <td> {{$l['nikname']}} </td>
+                            <td> {{$l['birthday']}} </td>
+                            <td> {{$l['sex']}} </td>
+                            <td> {{$l['email']}} </td>
+                            <td>  
+                                {{ Form::open(['route' => ['employee.destroy',$l['id'], 'method' => "DELETE"] ]) }}
+                                <input type="hidden" name="_method" value="delete" />
+                                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}">แก้ไข</button>
+                                {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
+                                {{ Form::close() }}                      
+        <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">แก้ไข</h4>
+                  </div>
+                  <div class="modal-body">
+              {{Form::open(['route'=>['employee.update',$l['id']],'method'=>'PUT','files' => true])}}
+              <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('name','ชื่อ')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                          {{Form::text('name',$l['name'],['class'=>'form-control'])}}
+                        <span class="text-danger">{{ $errors->first('company') }}</span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                      {{Form::label('lastname','นามสกุล')}}
+                    </div>
+                      <div class="col-md-5">
+                        <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                            {{Form::text('lastname',$l['lastname'],['class'=>'form-control'])}}
+                          <span class="text-danger">{{ $errors->first('company') }}</span>
+                          </div>
+                      </div>
+                    </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                      {{Form::label('nikname','ชื่อเล่น')}}
+                    </div>
+                      <div class="col-md-5">
+                        <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                            {{Form::text('nikname',$l['nikname'],['class'=>'form-control'])}}
+                          <span class="text-danger">{{ $errors->first('remark') }}</span>
+                          </div>
+                      </div>
+                    </div>  
+                    <div class="row">
+                      <div class="col-md-2">
+                        {{Form::label('birthday','วันเกิด')}}
+                      </div>
+                        <div class="col-md-5">
+                          <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                              {{Form::date('birthday',$l['birthday'],['class'=>'form-control'])}}
+                            <span class="text-danger">{{ $errors->first('remark') }}</span>
+                            </div>
+                        </div>
+                      </div>   
+
+                      <div class="row">
+                        <div class="col-md-2">
+                          {{Form::label('sex','Sex')}}
+                        </div>
+                          <div class="col-md-5">
+                            <div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
+                              {{ Form::radio('sex', 'Male') }}Male
+                              {{ Form::radio('sex', 'Female') }}Female
+                     
+                                <span class="text-danger">{{ $errors->first('sex') }}</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-2">
+                          {{Form::label('email','อีเมล')}}
+                        </div>
+                          <div class="col-md-5">
+                            <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                                {{Form::email('email',$l['email'],['class'=>'form-control'])}}
+                              <span class="text-danger">{{ $errors->first('remark') }}</span>
+                              </div>
+                          </div>
+                        </div> 
+                  </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+              </div>
+              {{ Form::close() }}  
+                  </div>
+              </div>
+                  </div>
+               </div>
+              </td>
+            </tr>
+                @endif
+             @empty
+             <tr>
+              <td colspan="6" > No data !!</td>
+          </tr>
+        @endforelse
+          </tbody>
+              </table> 
                  
                 </div>
               </div>
@@ -482,12 +776,6 @@ desired effect
               </footer>
             </div>
           </div>
-
-
-
-
-
-
       <div class="container">
         <!-- Modal -->
         <div class="modal" tabindex="-1" role="dialog" id="myModal1">
