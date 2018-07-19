@@ -34,6 +34,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {   
+    
         $employee = new Employee;
         $employee->name = $request->name;
         $employee->lastname = $request->lastname;
@@ -76,6 +77,9 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
+        
         $employee =  Employee::find($id);
         $employee->name = $request->name;
         $employee->lastname = $request->lastname;

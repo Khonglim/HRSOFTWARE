@@ -268,25 +268,8 @@ desired effect
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active" data-toggle="modal" data-target="#myModal1" id="open1"  ><a href="#"><i class="glyphicon glyphicon-lock"></i> <span>เพิ่มบริษัท</span></a></li>
-
-
-
-
-
         <li class="active" data-toggle="modal" data-target="#myModal2" id="open2"><a href="#"><i class="glyphicon glyphicon-equalizer"></i> <span>เพิ่มแผนก</span></a></li>
-
-
-
-
-        
-
         <li class="active" data-toggle="modal" data-target="#myModal3" id="open3"><a href="#"><i class="glyphicon glyphicon-blackboard"></i> <span>เพิ่มตำแหน่ง</span></a></li>
-
-
-
-
-
-
         <li class="active" data-toggle="modal" data-target="#myModal4" id="open4" ><a href="#"><i class="glyphicon glyphicon-user"></i> <span>เพิ่มข้อมูลพนักงาน</span></a></li>
         <li class="treeview">
           <a href="#"><i class="glyphicon glyphicon-eye-open"></i> <span>ดูแผนผัง HR บริษัท</span>
@@ -353,7 +336,7 @@ desired effect
                 </div>
                   <div class="col-md-5">
                     <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                        {{Form::text('company_Name',$l['company_Name'],['class'=>'form-control'])}}
+                        {{Form::text('company_Name',$l['company_Name'],['class'=>'form-control','required'])}}
                       <span class="text-danger">{{ $errors->first('company') }}</span>
                       </div>
                   </div>
@@ -456,7 +439,7 @@ desired effect
               </div>
                 <div class="col-md-5">
                   <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                      {{Form::text('company_Name',$l['department_name'],['class'=>'form-control'])}}
+                      {{Form::text('company_Name',$l['department_name'],['class'=>'form-control','required'])}}
                     <span class="text-danger">{{ $errors->first('company') }}</span>
                     </div>
                 </div>
@@ -467,7 +450,7 @@ desired effect
                 </div>
                   <div class="col-md-5">
                     <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                        {{Form::text('department_head_id',$l['department_head_id'],['class'=>'form-control'])}}
+                        {{Form::text('department_head_id',$l['department_head_id'],['class'=>'form-control','required'])}}
                       <span class="text-danger">{{ $errors->first('company') }}</span>
                       </div>
                   </div>
@@ -478,7 +461,7 @@ desired effect
                   </div>
                     <div class="col-md-5">
                       <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                          {{Form::text('company_id',$l['company_id'],['class'=>'form-control'])}}
+                          {{Form::text('company_id',$l['company_id'],['class'=>'form-control','required'])}}
                         <span class="text-danger">{{ $errors->first('company') }}</span>
                         </div>
                     </div>
@@ -523,15 +506,12 @@ desired effect
               </div>
               <div class="col-sm-7 text-right text-center-xs">
                 <ul class="pagination pagination-sm m-t-none m-b-none">
-                
                 </ul>
               </div>
             </div>
           </footer>
         </div>
       </div>
-
-
       <div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading"> ตำแหน่ง</div>
@@ -577,7 +557,7 @@ desired effect
                 </div>
                   <div class="col-md-5">
                     <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                        {{Form::text('position_name',$l['position_name'],['class'=>'form-control'])}}
+                        {{Form::text('position_name',$l['position_name'],['class'=>'form-control','required'])}}
                       <span class="text-danger">{{ $errors->first('company') }}</span>
                       </div>
                   </div>
@@ -588,7 +568,7 @@ desired effect
                   </div>
                     <div class="col-md-5">
                       <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                          {{Form::text('Department_ID',$l['Department_ID'],['class'=>'form-control'])}}
+                          {{Form::text('Department_ID',$l['Department_ID'],['class'=>'form-control','required'])}}
                         <span class="text-danger">{{ $errors->first('company') }}</span>
                         </div>
                     </div>
@@ -640,10 +620,6 @@ desired effect
             </footer>
           </div>
         </div>
-
-
-
-
         <div class="col-md-6">
             <div class="panel panel-default">
               <div class="panel-heading">พนักงาน</div>
@@ -693,7 +669,7 @@ desired effect
                   </div>
                     <div class="col-md-5">
                       <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                          {{Form::text('name',$l['name'],['class'=>'form-control'])}}
+                          {{Form::text('name',$l['name'],['class'=>'form-control','required'])}}
                         <span class="text-danger">{{ $errors->first('company') }}</span>
                         </div>
                     </div>
@@ -704,7 +680,7 @@ desired effect
                     </div>
                       <div class="col-md-5">
                         <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                            {{Form::text('lastname',$l['lastname'],['class'=>'form-control'])}}
+                            {{Form::text('lastname',$l['lastname'],['class'=>'form-control','required'])}}
                           <span class="text-danger">{{ $errors->first('company') }}</span>
                           </div>
                       </div>
@@ -715,7 +691,7 @@ desired effect
                     </div>
                       <div class="col-md-5">
                         <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                            {{Form::text('nikname',$l['nikname'],['class'=>'form-control'])}}
+                            {{Form::text('nikname',$l['nikname'],['class'=>'form-control','required'])}}
                           <span class="text-danger">{{ $errors->first('remark') }}</span>
                           </div>
                       </div>
@@ -726,7 +702,7 @@ desired effect
                       </div>
                         <div class="col-md-5">
                           <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                              {{Form::date('birthday',$l['birthday'],['class'=>'form-control'])}}
+                              {{Form::date('birthday',$l['birthday'],['class'=>'form-control','required'])}}
                             <span class="text-danger">{{ $errors->first('remark') }}</span>
                             </div>
                         </div>
@@ -751,7 +727,7 @@ desired effect
                         </div>
                           <div class="col-md-5">
                             <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                                {{Form::email('email',$l['email'],['class'=>'form-control'])}}
+                                {{Form::email('email',$l['email'],['class'=>'form-control','required'])}}
                               <span class="text-danger">{{ $errors->first('remark') }}</span>
                               </div>
                           </div>
@@ -793,11 +769,7 @@ desired effect
               </footer>
             </div>
           </div>
-
-
-
       <div class="container">
-        <!-- Modal -->
         <div class="modal" tabindex="-1" role="dialog" id="myModal1">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -817,7 +789,7 @@ desired effect
                 </div>
                   <div class="col-md-5">
                     <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                        {{Form::text('company_Name','',['class'=>'form-control'])}}
+                        {{Form::text('company_Name','',['class'=>'form-control','required'])}}
                       <span class="text-danger">{{ $errors->first('company') }}</span>
                       </div>
                   </div>
@@ -843,9 +815,7 @@ desired effect
         </div>
       </div>
     </div>
-
     <div class="container">
-      <!-- Modal -->
       <div class="modal" tabindex="-1" role="dialog" id="myModal2">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -864,7 +834,7 @@ desired effect
               </div>
                 <div class="col-md-5">
                   <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                      {{Form::text('department_name','',['class'=>'form-control'])}}
+                      {{Form::text('department_name','',['class'=>'form-control','required'])}}
                     <span class="text-danger">{{ $errors->first('company') }}</span>
                     </div>
                 </div>
@@ -885,12 +855,13 @@ desired effect
                     {{Form::label('company_id','ID บริษัท')}}
                   </div>
                     <div class="col-md-5">
-                      <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                          {{Form::text('company_id','',['class'=>'form-control'])}}
-                        <span class="text-danger">{{ $errors->first('remark') }}</span>
+                      <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                          {{Form::text('company_id',$l['company_id'],['class'=>'form-control','required'])}}
+                        <span class="text-danger">{{ $errors->first('company') }}</span>
                         </div>
                     </div>
                   </div>
+
                   <div class="row">
                     <div class="col-md-2">
                       {{Form::label('Remark','หมายเหตุ')}}
@@ -913,7 +884,6 @@ desired effect
     </div>
   </div>
   <div class="container">
-    <!-- Modal -->
     <div class="modal" tabindex="-1" role="dialog" id="myModal3">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -933,7 +903,7 @@ desired effect
             </div>
               <div class="col-md-5">
                 <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                    {{Form::text('position_name','',['class'=>'form-control'])}}
+                    {{Form::text('position_name','',['class'=>'form-control','required'])}}
                   <span class="text-danger">{{ $errors->first('company') }}</span>
                   </div>
               </div>
@@ -944,7 +914,7 @@ desired effect
               </div>
                 <div class="col-md-5">
                   <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                      {{Form::text('Department_ID','',['class'=>'form-control'])}}
+                      {{Form::text('Department_ID','',['class'=>'form-control','required'])}}
                     <span class="text-danger">{{ $errors->first('remark') }}</span>
                     </div>
                 </div>
@@ -961,16 +931,6 @@ desired effect
                     </div>
                 </div>
               </div>
-
-
-
-
-
-
-
-
-
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -1000,35 +960,30 @@ desired effect
           </div>
             <div class="col-md-5">
                 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-              
-                  {{Form::text('name','',['class'=>'form-control'])}}
-             
+                  {{Form::text('name','',['class'=>'form-control','required'])}}
                 <span class="text-danger">{{ $errors->first('name') }}</span>
                 </div>
             </div>
           </div>
-
-
-        <br>
           <div class="row">
             <div class="col-md-2">
               {{Form::label('lastname','Lastname')}}
             </div>
               <div class="col-md-5">
                   <div class="form-group {{ $errors->has('lastname') ? 'has-error' : '' }}">
-                    {{Form::text('lastname','',['class'=>'form-control'])}}
+                    {{Form::text('lastname','',['class'=>'form-control','required'])}}
                   <span class="text-danger">{{ $errors->first('lastname') }}</span>
                   </div>
               </div>
           </div>
-              <br>
+              
           <div class="row">
             <div class="col-md-2">
               {{Form::label('nikname','Nikname')}}
             </div>
               <div class="col-md-5">
                      <div class="form-group {{ $errors->has('nikname') ? 'has-error' : '' }}">
-                    {{Form::text('nikname','',['class'=>'form-control'])}}
+                    {{Form::text('nikname','',['class'=>'form-control','required'])}}
                     <span class="text-danger">{{ $errors->first('nikname') }}</span>
                   </div>
               </div>
@@ -1040,12 +995,12 @@ desired effect
             </div>
               <div class="col-md-5">
                  <div class="form-group {{ $errors->has('birthday') ? 'has-error' : '' }}">
-                  {{Form::date('birthday','',['class'=>'form-control','id' => 'datepicker'])}}
+                  {{Form::date('birthday','',['class'=>'form-control','id' => 'datepicker','required'] )}}
                   <span class="text-danger">{{ $errors->first('birthday') }}</span>
                   </div>
               </div>
           </div>
-            <br>
+           
           <div class="row">
             <div class="col-md-2">
               {{Form::label('sex','Sex')}}
@@ -1054,12 +1009,10 @@ desired effect
                 <div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
                   {{ Form::radio('sex', 'Male') }}Male
                   {{ Form::radio('sex', 'Female') }}Female
-         
                     <span class="text-danger">{{ $errors->first('sex') }}</span>
                   </div>
               </div>
           </div>
-          <br>
           <div class="row">
             <div class="col-md-2">
               {{Form::label('email','Email')}}
@@ -1067,7 +1020,7 @@ desired effect
               <div class="col-md-5">
                   <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                 
-                    {{Form::text('email','',['class'=>'form-control'])}}
+                    {{Form::email('email','',['class'=>'form-control','required'])}}
                   
                     <span class="text-danger">{{ $errors->first('email') }}</span>
                       </div>
@@ -1078,52 +1031,44 @@ desired effect
         {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
         </div>
         {{ Form::close() }}
+
+     
+
+
+
+
+
     </div>
   </div>
 </div>
 </div>
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
   <footer class="main-footer">
-    <!-- To the right -->
     <div class="pull-right hidden-xs">
       Anything you want
     </div>
-    <!-- Default to the left -->
     <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
   </footer>
-
-  <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
       <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
       <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
-    <!-- Tab panes -->
     <div class="tab-content">
-      <!-- Home tab content -->
       <div class="tab-pane active" id="control-sidebar-home-tab">
         <h3 class="control-sidebar-heading">Recent Activity</h3>
         <ul class="control-sidebar-menu">
           <li>
             <a href="javascript:;">
               <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
               <div class="menu-info">
                 <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
                 <p>Will be 23 on April 24th</p>
               </div>
             </a>
           </li>
         </ul>
-        <!-- /.control-sidebar-menu -->
-
         <h3 class="control-sidebar-heading">Tasks Progress</h3>
         <ul class="control-sidebar-menu">
           <li>
@@ -1141,52 +1086,28 @@ desired effect
             </a>
           </li>
         </ul>
-        <!-- /.control-sidebar-menu -->
-
       </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
       <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
       <div class="tab-pane" id="control-sidebar-settings-tab">
         <form method="post">
           <h3 class="control-sidebar-heading">General Settings</h3>
-
           <div class="form-group">
             <label class="control-sidebar-subheading">
               Report panel usage
               <input type="checkbox" class="pull-right" checked>
             </label>
-
             <p>
               Some information about this general settings option
             </p>
           </div>
-          <!-- /.form-group -->
         </form>
       </div>
-      <!-- /.tab-pane -->
     </div>
   </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
-
-<!-- jQuery 3 -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
 </body>
 </html>

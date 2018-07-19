@@ -77,6 +77,7 @@ class DepartmentController extends Controller
         $department =  Department::find($id);
         $department->department_name = $request->department_name;
         $department->department_head_id = $request->company_id;
+        $department->company_id = $request->company_id;
         $department->Remark = $request->Remark;
         $department->save();
         return redirect('home'); 
@@ -92,7 +93,7 @@ class DepartmentController extends Controller
     {
         $department = Department::find($id);
         $department->enable =0;
-        $dpartment->save();
+        $department->save();
         return redirect('home'); 
     }
 }
