@@ -316,11 +316,11 @@ desired effect
                           <td>  
                               {{ Form::open(['route' => ['company.destroy',$l['id'], 'method' => "DELETE"] ]) }}
                               <input type="hidden" name="_method" value="delete" />
-                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}">แก้ไข</button>
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#company{{$l['id']}}">แก้ไข</button>
                               {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
                               {{ Form::close() }}   
                       
-                          <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
+        <div id="company{{$l['id']}}" class="modal fade" role="dialog">
          <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
@@ -389,7 +389,7 @@ desired effect
         </footer>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">
            แผนก
@@ -419,11 +419,11 @@ desired effect
                         <td>  
                             {{ Form::open(['route' => ['department.destroy',$l['id'], 'method' => "DELETE"] ]) }}
                             <input type="hidden" name="_method" value="delete" />
-                            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}">แก้ไข</button>
+                            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#department{{$l['id']}}">แก้ไข</button>
                             {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
                             {{ Form::close() }}   
                     
-    <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
+    <div id="department{{$l['id']}}" class="modal fade" role="dialog">
        <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -541,10 +541,10 @@ desired effect
                           <td>  
                               {{ Form::open(['route' => ['position.destroy',$l['id'], 'method' => "DELETE"] ]) }}
                               <input type="hidden" name="_method" value="delete" />
-                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}">แก้ไข</button>
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#position{{$l['id']}}">แก้ไข</button>
                               {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
                               {{ Form::close() }}                      
-      <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
+      <div id="position{{$l['id']}}" class="modal fade" role="dialog">
          <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
@@ -657,10 +657,10 @@ desired effect
                             <td>  
                                 {{ Form::open(['route' => ['employee.destroy',$l['id'], 'method' => "DELETE"] ]) }}
                                 <input type="hidden" name="_method" value="delete" />
-                                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}">แก้ไข</button>
+                                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#employee{{$l['id']}}">แก้ไข</button>
                                 {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
                                 {{ Form::close() }}                      
-        <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
+        <div id="employee{{$l['id']}}" class="modal fade" role="dialog">
            <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -776,6 +776,9 @@ desired effect
               </footer>
             </div>
           </div>
+
+
+
       <div class="container">
         <!-- Modal -->
         <div class="modal" tabindex="-1" role="dialog" id="myModal1">
@@ -832,7 +835,6 @@ desired effect
           <div class="alert alert-danger" style="display:none"></div>
           <div class="modal-header">
               {{Form::open(['url'=>'department','files' => true,'enctype'=>'multipart/form-data'])}}
-           
             <h5 class="modal-title">เพิ่มแผนก</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>

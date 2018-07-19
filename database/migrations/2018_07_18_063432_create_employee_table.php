@@ -21,7 +21,7 @@ class CreateEmployeeTable extends Migration
             $table->char('birthday',10);
             $table->string('sex');
             $table->string('email')->unique();
-            $table->tinyInteger('enable');
+            $table->tinyInteger('enable')->default('1');;
             $table->timestamps();
         });
     }

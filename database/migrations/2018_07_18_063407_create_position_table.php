@@ -17,8 +17,8 @@ class CreatePositionTable extends Migration
             $table->increments('id');
             $table->char("position_name",100);
             $table->integer("Department_ID");
-            $table->char("Remark");
-            $table->tinyInteger('enable');
+            $table->char("Remark",255)->nullable();;
+            $table->tinyInteger('enable')->default('1');;
             $table->timestamps();
         });
     }

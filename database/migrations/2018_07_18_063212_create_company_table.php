@@ -16,8 +16,8 @@ class CreateCompanyTable extends Migration
         Schema::create('company', function (Blueprint $table) {
             $table->increments('id');
             $table->char('company_Name', 100);
-            $table->char('remark',255);
-            $table->tinyInteger('enable');
+            $table->char('remark',255)->nullable();
+            $table->tinyInteger('enable')->default('1');
             $table->timestamps();
         });
     }
