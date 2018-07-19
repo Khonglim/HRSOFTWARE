@@ -268,8 +268,25 @@ desired effect
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active" data-toggle="modal" data-target="#myModal1" id="open1"  ><a href="#"><i class="glyphicon glyphicon-lock"></i> <span>เพิ่มบริษัท</span></a></li>
+
+
+
+
+
         <li class="active" data-toggle="modal" data-target="#myModal2" id="open2"><a href="#"><i class="glyphicon glyphicon-equalizer"></i> <span>เพิ่มแผนก</span></a></li>
+
+
+
+
+        
+
         <li class="active" data-toggle="modal" data-target="#myModal3" id="open3"><a href="#"><i class="glyphicon glyphicon-blackboard"></i> <span>เพิ่มตำแหน่ง</span></a></li>
+
+
+
+
+
+
         <li class="active" data-toggle="modal" data-target="#myModal4" id="open4" ><a href="#"><i class="glyphicon glyphicon-user"></i> <span>เพิ่มข้อมูลพนักงาน</span></a></li>
         <li class="treeview">
           <a href="#"><i class="glyphicon glyphicon-eye-open"></i> <span>ดูแผนผัง HR บริษัท</span>

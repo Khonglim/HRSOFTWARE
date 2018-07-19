@@ -18,8 +18,8 @@ class CreateDepartmentTable extends Migration
             $table->char('department_name');
             $table->integer('department_head_id');
             $table->integer("company_id");
-            $table->char("Remark");
-            $table->tinyInteger('enable');
+            $table->char("Remark",255)->nullable();;
+            $table->tinyInteger('enable')->default('1');
             $table->timestamps();
         });
     }
