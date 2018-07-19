@@ -11,6 +11,11 @@
 |
 */
 
+Route::resource('company','CompanyController');
+Route::resource('department','DepartmentController');
+Route::resource('employee','EmployeeController');
+Route::resource('position','PositionController');
+
 Route::get('/', function () {
     return view('auth.login');
 });

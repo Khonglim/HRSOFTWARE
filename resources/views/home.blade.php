@@ -267,10 +267,12 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="active" data-toggle="modal" data-target="#myModal1" id="open1"  ><a href="#"><i class="glyphicon glyphicon-lock"></i> <span>เพิ่มบริษัท</span></a></li>
+        <li class="active" data-toggle="modal" data-target="#myModal2" id="open2"><a href="#"><i class="glyphicon glyphicon-equalizer"></i> <span>เพิ่มแผนก</span></a></li>
+        <li class="active" data-toggle="modal" data-target="#myModal3" id="open3"><a href="#"><i class="glyphicon glyphicon-blackboard"></i> <span>เพิ่มตำแหน่ง</span></a></li>
+        <li class="active" data-toggle="modal" data-target="#myModal4" id="open4" ><a href="#"><i class="glyphicon glyphicon-user"></i> <span>เพิ่มข้อมูลพนักงาน</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          <a href="#"><i class="glyphicon glyphicon-eye-open"></i> <span>ดูแผนผัง HR บริษัท</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -288,25 +290,491 @@ desired effect
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
-
-    <!-- Main content -->
     <section class="content container-fluid">
 
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
+        <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+         บริษัท
+         </div>
+     <div class="table-responsive">
+          <div class="container">
+              <table class="table table-striped b-t b-light">
+                  <thead>
+                    <tr>
+       
+                       <th>ID</th>
+                       <th>ชื่อบริษัท</th>
+                       <th>หมายเหตุ</th>
+                       <th>เพิ่มเติ่ม</th>
+                
+                    </tr>
+                  </thead>
+                  <tbody>
+                          @forelse($company as $l)
+                             @if($l['enable']==1)
+                            <tr>
+                          <td> {{$l['id']}} </td>
+                          <td> {{$l['company_Name']}} </td>
+                          <td> {{$l['remark']}} </td>
+                          <td>  
+                              {{ Form::open(['route' => ['company.destroy',$l['id'], 'method' => "DELETE"] ]) }}
+                              <input type="hidden" name="_method" value="delete" />
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">แก้ไข</button>
+                              {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
+                              {{ Form::close() }}   
+                      
+      <div id="myModal" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">แก้ไข</h4>
+                </div>
+                <div class="modal-body">
+            {{Form::open(['route'=>['company.update',$l['id']],'method'=>'PUT','files' => true])}}
+            <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('company','ชื่อบริษัท')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                        {{Form::text('company_Name',$l['company_Name'],['class'=>'form-control'])}}
+                      <span class="text-danger">{{ $errors->first('company') }}</span>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('remark','หมายเหตุ')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                          {{Form::text('remark',$l['remark'],['class'=>'form-control'])}}
+                        <span class="text-danger">{{ $errors->first('remark') }}</span>
+                        </div>
+                    </div>
+                  </div>
+                  
+                </div>
+        
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+            </div>
+            {{ Form::close() }}  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ </td>
 
+</tr>
+                        @endif
+                          @empty
+                            <tr>
+                                <td colspan="6" > No data !!</td>
+                            </tr>
+                            
+                          @endforelse
+                        </tbody>
+                </table>
+           
+          </div>
+        </div>
+        <footer class="panel-footer">
+          <div class="row">
+            <div class="col-sm-5">
+             
+            </div>
+            <div class="col-sm-7 text-right text-center-xs">
+              <ul class="pagination pagination-sm m-t-none m-b-none">
+              
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+           แผนก
+           </div>
+       
+          <div class="table-responsive">
+            <div class="container">
+    
+             
+            </div>
+          </div>
+          <footer class="panel-footer">
+            <div class="row">
+              <div class="col-sm-5">
+               
+              </div>
+              <div class="col-sm-7 text-right text-center-xs">
+                <ul class="pagination pagination-sm m-t-none m-b-none">
+                
+                </ul>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+             ตำแหน่ง
+             </div>
+         
+            <div class="table-responsive">
+              <div class="container">
+      
+               
+              </div>
+            </div>
+            <footer class="panel-footer">
+              <div class="row">
+                <div class="col-sm-5">
+                 
+                </div>
+                <div class="col-sm-7 text-right text-center-xs">
+                  <ul class="pagination pagination-sm m-t-none m-b-none">
+                  
+                  </ul>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+               พนักงาน
+               </div>
+           
+              <div class="table-responsive">
+                <div class="container">
+        
+                 
+                </div>
+              </div>
+              <footer class="panel-footer">
+                <div class="row">
+                  <div class="col-sm-5">
+                   
+                  </div>
+                  <div class="col-sm-7 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                    
+                    </ul>
+                  </div>
+                </div>
+              </footer>
+            </div>
+          </div>
+
+
+
+
+
+
+      <div class="container">
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="myModal1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="alert alert-danger" style="display:none"></div>
+            <div class="modal-header">
+                {{Form::open(['url'=>'company','files' => true,'enctype'=>'multipart/form-data'])}}
+             
+              <h5 class="modal-title">เพิ่มบริษัท</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('company','ชื่อบริษัท')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                        {{Form::text('company_Name','',['class'=>'form-control'])}}
+                      <span class="text-danger">{{ $errors->first('company') }}</span>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('remark','หมายเหตุ')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                          {{Form::text('remark','',['class'=>'form-control'])}}
+                        <span class="text-danger">{{ $errors->first('remark') }}</span>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+              </div>
+              {{ Form::close() }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Modal -->
+      <div class="modal" tabindex="-1" role="dialog" id="myModal2">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="alert alert-danger" style="display:none"></div>
+          <div class="modal-header">
+              {{Form::open(['url'=>'department','files' => true,'enctype'=>'multipart/form-data'])}}
+           
+            <h5 class="modal-title">เพิ่มแผนก</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-2">
+                {{Form::label('department','ชื่อแผนก')}}
+              </div>
+                <div class="col-md-5">
+                  <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                      {{Form::text('department_name','',['class'=>'form-control'])}}
+                    <span class="text-danger">{{ $errors->first('company') }}</span>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('department_head_id','ID แผนก')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                        {{Form::select('department_head_id',['0'=>'แพนก1','1'=>'แพนก2'])}}
+                      <span class="text-danger">{{ $errors->first('remark') }}</span>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('company_id','ID บริษัท')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                          {{Form::text('company_id','',['class'=>'form-control'])}}
+                        <span class="text-danger">{{ $errors->first('remark') }}</span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                      {{Form::label('Remark','หมายเหตุ')}}
+                    </div>
+                      <div class="col-md-5">
+                        <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                            {{Form::text('Remark','',['class'=>'form-control'])}}
+                          <span class="text-danger">{{ $errors->first('remark') }}</span>
+                          </div>
+                      </div>
+                    </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+            </div>
+            {{ Form::close() }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="myModal3">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="alert alert-danger" style="display:none"></div>
+        <div class="modal-header">
+            {{Form::open(['url'=>'position','files' => true,'enctype'=>'multipart/form-data'])}}
+         
+          <h5 class="modal-title">เพิ่มตำแหน่ง</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-2">
+              {{Form::label('position_name','ตำแหน่ง')}}
+            </div>
+              <div class="col-md-5">
+                <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                    {{Form::text('position_name','',['class'=>'form-control'])}}
+                  <span class="text-danger">{{ $errors->first('company') }}</span>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                {{Form::label('Department_ID','ID ตำแหน่ง')}}
+              </div>
+                <div class="col-md-5">
+                  <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                      {{Form::text('Department_ID','',['class'=>'form-control'])}}
+                    <span class="text-danger">{{ $errors->first('remark') }}</span>
+                    </div>
+                </div>
+              </div>
+
+           <div class="row">
+              <div class="col-md-2">
+                {{Form::label('Remark','หมายเหตุ')}}
+              </div>
+                <div class="col-md-5">
+                  <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                      {{Form::text('Remark','',['class'=>'form-control'])}}
+                    <span class="text-danger">{{ $errors->first('remark') }}</span>
+                    </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+          </div>
+          {{ Form::close() }}
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="myModal4">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="alert alert-danger" style="display:none"></div>
+      <div class="modal-header">
+          {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data'])}} 
+        <h5 class="modal-title">เพิ่มข้อมูลพนักงาน</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-2">
+            {{Form::label('name','Name')}}
+          </div>
+            <div class="col-md-5">
+                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+              
+                  {{Form::text('name','',['class'=>'form-control'])}}
+             
+                <span class="text-danger">{{ $errors->first('name') }}</span>
+                </div>
+            </div>
+          </div>
+
+
+        <br>
+          <div class="row">
+            <div class="col-md-2">
+              {{Form::label('lastname','Lastname')}}
+            </div>
+              <div class="col-md-5">
+                  <div class="form-group {{ $errors->has('lastname') ? 'has-error' : '' }}">
+                    {{Form::text('lastname','',['class'=>'form-control'])}}
+                  <span class="text-danger">{{ $errors->first('lastname') }}</span>
+                  </div>
+              </div>
+          </div>
+              <br>
+          <div class="row">
+            <div class="col-md-2">
+              {{Form::label('nikname','Nikname')}}
+            </div>
+              <div class="col-md-5">
+                     <div class="form-group {{ $errors->has('nikname') ? 'has-error' : '' }}">
+                    {{Form::text('nikname','',['class'=>'form-control'])}}
+                    <span class="text-danger">{{ $errors->first('nikname') }}</span>
+                  </div>
+              </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-2">
+              {{Form::label('birthday','Birthday')}}
+            </div>
+              <div class="col-md-5">
+                 <div class="form-group {{ $errors->has('birthday') ? 'has-error' : '' }}">
+                  {{Form::date('birthday','',['class'=>'form-control','id' => 'datepicker'])}}
+                  <span class="text-danger">{{ $errors->first('birthday') }}</span>
+                  </div>
+              </div>
+          </div>
+            <br>
+          <div class="row">
+            <div class="col-md-2">
+              {{Form::label('sex','Sex')}}
+            </div>
+              <div class="col-md-5">
+                <div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
+                  {{ Form::radio('sex', 'Male') }}Male
+                  {{ Form::radio('sex', 'Female') }}Female
+         
+                    <span class="text-danger">{{ $errors->first('sex') }}</span>
+                  </div>
+              </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-2">
+              {{Form::label('email','Email')}}
+            </div>
+              <div class="col-md-5">
+                  <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                
+                    {{Form::text('email','',['class'=>'form-control'])}}
+                  
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                      </div>
+              </div>
+          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+        </div>
+        {{ Form::close() }}
+    </div>
+  </div>
+</div>
+</div>
     </section>
     <!-- /.content -->
   </div>
