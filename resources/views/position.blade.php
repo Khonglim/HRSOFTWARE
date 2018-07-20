@@ -29,7 +29,81 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
+<script>
+    $(function() {
+    $("#newModalForm").validate({
+      rules: {
+        position_name: {
+          required: true,
+            minlength: 8,
+            maxlength: 20
+        },
+        Department_ID:{
+          required: true,
+          number: true
+        }
 
+      }
+      ,
+      messages: {
+        position_name: {
+          required: "กรุณากรอกข้อมูล", 
+          minlength: "ข้อมูลต่ำกว่า 8 อักษร",
+          maxlength: "ข้อมูลเกินกว่า 20 อักษร"
+        },
+        Department_ID: {
+            required: "กรุณากรอกข้อมูล", 
+            number: "ข้อมูลตัวเลขเท่านั้น"
+          },
+
+      },
+      highlight: function(element, errorClass) {
+        $(element).closest(".form-group").addClass("has-error");
+      },
+      unhighlight: function(element, errorClass) {
+        $(element).closest(".form-group").removeClass("has-error");
+      }
+    });
+    });
+      </script>
+    <script>
+       $(function() {
+        
+        $("#addForm").validate({
+          rules: {
+        position_name: {
+          required: true,
+            minlength: 8,
+            maxlength: 20
+        },
+        Department_ID:{
+          required: true,
+          number: true
+        }
+
+      }
+      ,
+      messages: {
+        position_name: {
+          required: "กรุณากรอกข้อมูล", 
+          minlength: "ข้อมูลต่ำกว่า 8 อักษร",
+          maxlength: "ข้อมูลเกินกว่า 20 อักษร"
+        },
+        Department_ID: {
+            required: "กรุณากรอกข้อมูล", 
+            number: "ข้อมูลตัวเลขเท่านั้น"
+          },
+
+      },
+      highlight: function(element, errorClass) {
+        $(element).closest(".form-group").addClass("has-error");
+      },
+      unhighlight: function(element, errorClass) {
+        $(element).closest(".form-group").removeClass("has-error");
+      }
+        });
+        });
+      </script>
 
 
 
@@ -198,15 +272,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                <h4 class="modal-title">แก้ไข</h4>
                 </div>
                 <div class="modal-body">
-            {{Form::open(['route'=>['position.update',$l['id']],'method'=>'PUT','files' => true])}}
+            {{Form::open(['route'=>['position.update',$l['id']],'method'=>'PUT','files' => true,'id'=>'newModalForm'])}}
             <div class="row">
                 <div class="col-md-2">
                   {{Form::label('position_name','ชื่อตำแหน่ง')}}
                 </div>
                   <div class="col-md-5">
-                    <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                        {{Form::text('position_name',$l['position_name'],['class'=>'form-control','required'])}}
-                      <span class="text-danger">{{ $errors->first('company') }}</span>
+                    <div class="form-group ">
+                        {{Form::text('position_name',$l['position_name'],['class'=>'form-control','required','id'=>'position_name'])}}
+                      
                       </div>
                   </div>
                 </div>
@@ -215,9 +289,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     {{Form::label('Department_ID','ID ตำแหน่ง')}}
                   </div>
                     <div class="col-md-5">
-                      <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                          {{Form::text('Department_ID',$l['Department_ID'],['class'=>'form-control','required'])}}
-                        <span class="text-danger">{{ $errors->first('company') }}</span>
+                      <div class="form-group ">
+                          {{Form::text('Department_ID',$l['Department_ID'],['class'=>'form-control','required','id'=>'Department_ID'])}}
+                        <span class="text-danger"></span>
                         </div>
                     </div>
                   </div>
@@ -226,9 +300,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     {{Form::label('remark','หมายเหตุ')}}
                   </div>
                     <div class="col-md-5">
-                      <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                      <div class="form-group ">
                           {{Form::text('remark',$l['remark'],['class'=>'form-control'])}}
-                        <span class="text-danger">{{ $errors->first('remark') }}</span>
+                        <span class="text-danger"></span>
                         </div>
                     </div>
                   </div>  
@@ -269,38 +343,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <h4 class="modal-title">เพิ่มตำแหน่ง</h4>
       </div>
       <div class="modal-body">
-              {{Form::open(['url'=>'position','files' => true,'enctype'=>'multipart/form-data'])}}
+              {{Form::open(['url'=>'position','files' => true,'enctype'=>'multipart/form-data','id'=>'addForm'])}}
             <div class="row">
               <div class="col-md-2">
                 {{Form::label('position_name','ตำแหน่ง')}}
               </div>
                 <div class="col-md-5">
-                  <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                      {{Form::text('position_name','',['class'=>'form-control'])}}
-                    <span class="text-danger">{{ $errors->first('company') }}</span>
+                  <div class="form-group ">
+                      {{Form::text('position_name','',['class'=>'form-control','id'=>'position_name'])}}
                     </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-2">
-                  {{Form::label('Department_ID','ID ตำแหน่ง')}}
+                  {{Form::label('Department_ID','ID แผนกเริ่มต้น')}}
                 </div>
                   <div class="col-md-5">
-                    <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                        {{Form::text('Department_ID','',['class'=>'form-control'])}}
-                      <span class="text-danger">{{ $errors->first('remark') }}</span>
+                    <div class="form-group ">
+                        {{Form::text('Department_ID','',['class'=>'form-control','id'=>'Department_ID'])}}
                       </div>
                   </div>
                 </div>
-  
              <div class="row">
                 <div class="col-md-2">
                   {{Form::label('Remark','หมายเหตุ')}}
                 </div>
                   <div class="col-md-5">
-                    <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                    <div class="form-group ">
                         {{Form::text('Remark','',['class'=>'form-control'])}}
-                      <span class="text-danger">{{ $errors->first('remark') }}</span>
+                      <span class="text-danger"></span>
                       </div>
                   </div>
                

@@ -13,7 +13,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employee = Employee::paginate(5);
+        $employee = Employee::where('enable', '=', 1)->paginate(4);
         $data = array(
             'employee' => $employee
         );
