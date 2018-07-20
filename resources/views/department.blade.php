@@ -284,18 +284,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   {{Form::label('department_head_id','ID เริ่มต้นแผนก')}}
                 </div>
                   <div class="col-md-5">
-                    <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                          <select name="department_head_id" id="department_head_id">
-                      
+                    <div class="form-group ">
 
+                          <select name="department_head_id" id="department_head_id">
                       <option value="0"></option>
                           @forelse($company as $l)
-
-                              <option value={{$l['id']}}>{{$l['company_Name']}}</option>
+                       <option value={{$l['id']}}>{{$l['company_Name']}}</option>
                               @empty
                           @endforelse
                       </select>
-                      <span class="text-danger">{{ $errors->first('company') }}</span>
+
+                   
                       </div>
                   </div>
                 </div>
@@ -345,9 +344,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <footer class="panel-footer">
             <div class="row">
-             
-               
-                    <div class="col-sm-5">
+             <div class="col-sm-5">
                           <!-- Trigger the modal with a button -->
     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">เพิ่ม</button>
     <!-- Modal -->
@@ -377,27 +374,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   {{Form::label('department_head_id','ID แผนก')}}
                 </div>
                   <div class="col-md-5">
-<<<<<<< HEAD
-                    <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-
+                    <div class="form-group ">
                          <select name="department_head_id" id="department_head_id">
-                      
-
                       <option value="0"></option>
                           @forelse($company as $l)
-
-                              <option value={{$l['id']}}>{{$l['company_Name']}}</option>
+                              <option value={{$l['id']}}>  {{$l['company_Name']}}</option>
                               @empty
                           @endforelse
                       </select>
-                        
-                      <span class="text-danger">{{ $errors->first('remark') }}</span>
-=======
-                    <div class="form-group">
-                        {{Form::select('department_head_id',['0'=>'แพนก1','1'=>'แพนก2'])}}
-                      <span class="text-danger"></span>
->>>>>>> 85392da3fcdb24ea8b6d8a83aa060a92cc6e60fa
-                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
