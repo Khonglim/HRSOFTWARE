@@ -285,7 +285,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                   <div class="col-md-5">
                     <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                        {{Form::text('department_head_id',$l['department_head_id'],['class'=>'form-control','required'])}}
+                          <select name="department_head_id" id="department_head_id">
+                      
+
+                      <option value="0"></option>
+                          @forelse($company as $l)
+
+                              <option value={{$l['id']}}>{{$l['company_Name']}}</option>
+                              @empty
+                          @endforelse
+                      </select>
                       <span class="text-danger">{{ $errors->first('company') }}</span>
                       </div>
                   </div>
