@@ -300,7 +300,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                   <div class="col-md-5">
                     <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                        {{Form::select('department_head_id',['0'=>'แพนก1','1'=>'แพนก2'])}}
+
+                         <select name="department_head_id" id="department_head_id">
+                      
+
+                      <option value="0"></option>
+                          @forelse($company as $l)
+
+                              <option value={{$l['id']}}>{{$l['company_Name']}}</option>
+                              @empty
+                          @endforelse
+                      </select>
+                        
                       <span class="text-danger">{{ $errors->first('remark') }}</span>
                       </div>
                   </div>
