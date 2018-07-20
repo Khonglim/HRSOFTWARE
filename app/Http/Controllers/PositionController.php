@@ -13,7 +13,7 @@ class PositionController extends Controller
      */
     public function index()
     {
-        $position = Position::paginate(5);
+        $position = Position::where('enable', '=', 1)->paginate(4);
         $data = array(
             'position' => $position
         );

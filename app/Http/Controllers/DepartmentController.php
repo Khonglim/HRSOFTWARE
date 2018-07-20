@@ -13,7 +13,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $department = Department::paginate(5);
+        $department = Department::where('enable', '=', 1)->paginate(4);
         $data = array(
             'department' => $department
         );

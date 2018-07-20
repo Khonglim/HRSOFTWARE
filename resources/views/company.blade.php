@@ -8,101 +8,82 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 2 | Starter</title>
-  <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
 
 <script>
 $(function() {
-
 $("#newModalForm").validate({
   rules: {
-    pName: {
+    company_Name: {
       required: true,
-      minlength: 8
+        minlength: 8,
+        maxlength: 10
     }
   },
   messages: {
-    pName: {
-      required: "Please enter some data",
-      minlength: "Your data must be at least 8 characters"
+    company_Name: {
+      required: "กรุณากรอกข้อมูล", 
+      minlength: "ข้อมูลต่ำกว่า 8 อักษร",
+      maxlength: "ข้อมูลเกินกว่า 100 อักษร"
     }
-  }
+  },
+	highlight: function(element, errorClass) {
+		$(element).closest(".form-group").addClass("has-error");
+	},
+	unhighlight: function(element, errorClass) {
+		$(element).closest(".form-group").removeClass("has-error");
+	}
 });
 });
-
-
- $(function() {
+  </script>
+<script>
+   $(function() {
     
     $("#addForm").validate({
       rules: {
-        Name: {
-          required: true,
-          minlength: 8
-        }
-      },
-      messages: {
-        Name: {
-          required: "Please enter some data",
-          minlength: "Your data must be at least 8 characters"
-        }
-      },
-      highlight: function(element) {
-            $(element).closest('.form-group').addClass('has-error');
-        },
-        unhighlight: function(element) {
-            $(element).closest('.form-group').removeClass('has-error');
-        }
+        company_Name: {
+        required: true,
+        minlength: 8,
+        maxlength: 10
+      }
+    },
+    messages: {
+      company_Name: {
+        required: "กรุณากรอกข้อมูล", 
+        minlength: "ข้อมูลต่ำกว่า 8 อักษร",
+       maxlength: "ข้อมูลเกินกว่า 100 อักษร"
+      }
+      
+    },
+	highlight: function(element, errorClass) {
+		$(element).closest(".form-group").addClass("has-error");
+	},
+	unhighlight: function(element, errorClass) {
+		$(element).closest(".form-group").removeClass("has-error");
+	}
     });
     });
   </script>
-
-
-
-<script>
-   
-      </script>
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
- 
-  <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
-  <!-- Main Header -->
   <header class="main-header">
-
-    <!-- Logo -->
     <a href="home" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
-        <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Admin</b>LTE</span>
       </a>
-    <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -176,7 +157,6 @@ $("#newModalForm").validate({
       </div>
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
 
     <!-- sidebar: style can be found in sidebar.less -->
@@ -205,7 +185,6 @@ $("#newModalForm").validate({
     </div>
     <!-- /.sidebar -->
   </aside>
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="content container-fluid">
       <div class="col-md-12">
@@ -254,7 +233,7 @@ $("#newModalForm").validate({
                 </div>
                   <div class="col-md-5">
                     <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                        {{Form::text('company_Name',$l['company_Name'],['class'=>'form-control','required','id' => 'pName'])}}
+                        {{Form::text('company_Name',$l['company_Name'],['class'=>'form-control','required','id' => 'company_Name'])}}
                       <span class="text-danger">{{ $errors->first('company') }}</span>
                       </div>
                   </div>
@@ -313,9 +292,12 @@ $("#newModalForm").validate({
             {{Form::label('company','ชื่อบริษัท')}}
           </div>
             <div class="col-md-5">
-              <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
-                  {{Form::text('company_Name','',['class'=>'form-control','required','id'=>'name'])}}
-                <span class="text-danger">{{ $errors->first('company') }}</span>
+              <div class="form-group ">
+
+                  
+                  
+                  {{Form::text('company_Name','',['class'=>'form-control','required','id'=>'company_Name'])}}
+                
                 </div>
             </div>
           </div>
@@ -334,8 +316,9 @@ $("#newModalForm").validate({
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
                 </div>
-                {{ Form::close() }}
+               
           </div>
+          {{ Form::close() }}
               </div>
              </div>
 
