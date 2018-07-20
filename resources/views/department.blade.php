@@ -175,10 +175,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-                                    </form>
+                  </form>
                 </div>
               </li>
             </ul>
@@ -202,9 +201,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
+            <li><a href="/orgchartcompany">แผนผังบริษัท</a></li>
+           <li><a href="/orgchartdepartment">แผนผังแผนก</a></li>
+            <li><a href="/orgchartposition">แผนผังตำแหน่ง</a></li>
+         </ul>
         </li>
       </ul>
     </div>
@@ -284,9 +284,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     {{Form::label('company_id','ID บริษัท')}}
                   </div>
                     <div class="col-md-5">
-                      <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                      <div class="form-group" >
                           {{Form::text('company_id',$l['company_id'],['class'=>'form-control','required','id' => 'company_id'])}}
-                        <span class="text-danger">{{ $errors->first('company') }}</span>
                         </div>
                     </div>
                   </div>
