@@ -13,7 +13,11 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $employee = Employee::paginate(5);
+        $data = array(
+            'employee' => $employee
+        );
+        return view('employee',$data );
     }
 
     /**
@@ -23,7 +27,8 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return redirect('home');
+     
+        return view('formemployee' );
     }
 
     /**
@@ -34,7 +39,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {   
-    
+ 
         $employee = new Employee;
         $employee->name = $request->name;
         $employee->lastname = $request->lastname;
@@ -43,7 +48,9 @@ class EmployeeController extends Controller
         $employee->birthday = $request->birthday;
         $employee->email = $request->email;
         $employee->save();
-        return redirect('home');
+        
+
+        return redirect('employee');
     }
 
     /**
@@ -65,7 +72,13 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        if($id !== '') {
+            $employee = Employee::where('enable', '=', 1)->paginate(4);
+            $data = array(
+                'employee' => $employee
+            );
+            return view('formemployee',$data);
+        }
     }
 
     /**
@@ -77,9 +90,6 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
-        
         $employee =  Employee::find($id);
         $employee->name = $request->name;
         $employee->lastname = $request->lastname;
@@ -88,7 +98,7 @@ class EmployeeController extends Controller
         $employee->sex = $request->sex;
         $employee->email = $request->email;
         $employee->save();
-        return redirect('home'); 
+        return redirect('employee'); 
     }
 
     /**
@@ -103,6 +113,6 @@ class EmployeeController extends Controller
         $employee = Employee::find($id);
         $employee->enable =0;
         $employee->save();
-        return redirect('home'); 
+        return redirect('employee'); 
     }
 }

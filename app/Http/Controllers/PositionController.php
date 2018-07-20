@@ -13,7 +13,11 @@ class PositionController extends Controller
      */
     public function index()
     {
-        //
+        $position = Position::paginate(5);
+        $data = array(
+            'position' => $position
+        );
+        return view('position',$data );
     }
 
     /**
@@ -23,7 +27,7 @@ class PositionController extends Controller
      */
     public function create()
     {
-        return redirect('home');
+        
     }
 
     /**
@@ -39,7 +43,7 @@ class PositionController extends Controller
         $position->Department_ID = $request->Department_ID;
         $position->Remark = $request->Remark;
         $position->save();
-        return redirect('home');
+        return redirect('position');
     }
 
     /**
@@ -50,7 +54,7 @@ class PositionController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('formposition' );
     }
 
     /**
@@ -61,7 +65,13 @@ class PositionController extends Controller
      */
     public function edit($id)
     {
-        //
+        if($id !== '') {
+            $position = Position::where('enable', '=', 1)->paginate(4);
+            $data = array(
+                'position' => $position
+            );
+            return view('formposition',$data);
+        }
     }
 
     /**
@@ -78,7 +88,7 @@ class PositionController extends Controller
         $position->Department_ID = $request->Department_ID;
         $position->Remark = $request->Remark;
         $position->save();
-        return redirect('home'); 
+        return redirect('position'); 
     }
 
     /**
@@ -92,6 +102,6 @@ class PositionController extends Controller
         $position = Position::find($id);
         $position->enable =0;
         $position->save();
-        return redirect('home'); 
+        return redirect('position'); 
     }
 }

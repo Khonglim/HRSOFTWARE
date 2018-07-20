@@ -22,12 +22,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
  
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -39,14 +47,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Header -->
   <header class="main-header">
 
-    <!-- Logo -->
-    <a href="home" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
-    </a>
-
+        <a href="home" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>A</b>LT</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Admin</b>LTE</span>
+              </a>
+          
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
@@ -153,8 +160,167 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="content container-fluid">
-     
+      <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading"> ตำแหน่ง</div>
+          <div class="table-responsive">
+              <div class="container">
+                <table class="table table-striped b-t b-light">
+                  <thead>
+                    <tr>
+                       <th>ID</th>
+                       <th>ชื่อตำแหน่ง</th>
+                       <th>ID เริ่มต้นแผนก</th>
+                       <th>หมายเหตุ</th>
+                       <th>เพิ่มเติ่ม</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                          @forelse($position as $l)
+                             @if($l['enable']==1)
+                            <tr>
+                          <td> {{$l['id']}} </td>
+                          <td> {{$l['position_name']}} </td>
+                          <td> {{$l['Department_ID']}} </td>
+                          <td> {{$l['remark']}} </td>
+                          <td>  
+                              {{ Form::open(['route' => ['position.destroy',$l['id'], 'method' => "DELETE"] ]) }}
+                              <input type="hidden" name="_method" value="delete" />
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#position{{$l['id']}}">แก้ไข</button>
+                              {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
+                              {{ Form::close() }}                      
+      <div id="position{{$l['id']}}" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">แก้ไข</h4>
+                </div>
+                <div class="modal-body">
+            {{Form::open(['route'=>['position.update',$l['id']],'method'=>'PUT','files' => true])}}
+            <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('position_name','ชื่อตำแหน่ง')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                        {{Form::text('position_name',$l['position_name'],['class'=>'form-control','required'])}}
+                      <span class="text-danger">{{ $errors->first('company') }}</span>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('Department_ID','ID ตำแหน่ง')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                          {{Form::text('Department_ID',$l['Department_ID'],['class'=>'form-control','required'])}}
+                        <span class="text-danger">{{ $errors->first('company') }}</span>
+                        </div>
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    {{Form::label('remark','หมายเหตุ')}}
+                  </div>
+                    <div class="col-md-5">
+                      <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                          {{Form::text('remark',$l['remark'],['class'=>'form-control'])}}
+                        <span class="text-danger">{{ $errors->first('remark') }}</span>
+                        </div>
+                    </div>
+                  </div>  
+                </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+            </div>
+            {{ Form::close() }}  
+                </div>
+            </div>
+                </div>
+             </div>
+            </td>
+          </tr>
+              @endif
+           @empty
+           <tr>
+            <td colspan="6" > No data !!</td>
+        </tr>
+      @endforelse
+        </tbody>
+            </table>  
+              </div>
+            </div>
+            <footer class="panel-footer">
+              <div class="row">
+                <div class="col-sm-5">
+                      <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">เพิ่ม</button>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">เพิ่มตำแหน่ง</h4>
+      </div>
+      <div class="modal-body">
+              {{Form::open(['url'=>'position','files' => true,'enctype'=>'multipart/form-data'])}}
+            <div class="row">
+              <div class="col-md-2">
+                {{Form::label('position_name','ตำแหน่ง')}}
+              </div>
+                <div class="col-md-5">
+                  <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                      {{Form::text('position_name','',['class'=>'form-control'])}}
+                    <span class="text-danger">{{ $errors->first('company') }}</span>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('Department_ID','ID ตำแหน่ง')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                        {{Form::text('Department_ID','',['class'=>'form-control'])}}
+                      <span class="text-danger">{{ $errors->first('remark') }}</span>
+                      </div>
+                  </div>
+                </div>
+  
+             <div class="row">
+                <div class="col-md-2">
+                  {{Form::label('Remark','หมายเหตุ')}}
+                </div>
+                  <div class="col-md-5">
+                    <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                        {{Form::text('Remark','',['class'=>'form-control'])}}
+                      <span class="text-danger">{{ $errors->first('remark') }}</span>
+                      </div>
+                  </div>
+               
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+          </div>
+          {{ Form::close() }}
+      </div>
+    </div>
 
+  </div>
+    </div>
+      </div>
+
+            </footer>
+          </div>
+        </div>
 </div>
   </div>
   <footer class="footer">
@@ -219,8 +385,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </aside>
   <div class="control-sidebar-bg"></div>
 </div>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <script src="dist/js/adminlte.min.js"></script>
 </body>
 </html>

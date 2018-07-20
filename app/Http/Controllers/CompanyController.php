@@ -14,7 +14,14 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        
+        $company = Company::where('enable', '=', 1)->paginate(4);
+        $data = array(
+            'company' => $company
+        );
+
+        
+        return view('company',$data );
     }
 
     /**
@@ -24,7 +31,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return redirect('home');
+        return view('formompany' );
     }
 
     /**
@@ -39,7 +46,7 @@ class CompanyController extends Controller
         $company->company_Name = $request->company_Name;
         $company->remark = $request->remark;
         $company->save();
-        return redirect('home');
+        return redirect('company');
 
     }
 
@@ -62,7 +69,13 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        //
+        if($id !== '') {
+            $company = Company::find($id);
+            $data = array(
+                'company' => $company
+            );
+            return view('formemployee',$data);
+        }
     }
 
     /**
@@ -74,13 +87,11 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-                
-
-                 $company =  Company::find($id);
+        $company =  Company::find($id);
         $company->company_Name = $request->company_Name;
         $company->remark = $request->remark;
         $company->save();
-        return redirect('home'); 
+        return redirect('company'); 
     }
 
     /**
@@ -94,6 +105,6 @@ class CompanyController extends Controller
         $company = Company::find($id);
         $company->enable =0;
         $company->save();
-        return redirect('home'); //
+        return redirect('company'); //
     }
 }

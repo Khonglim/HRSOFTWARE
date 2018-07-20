@@ -26,11 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $company = Company::all();
-        $department= Department::all();
-        $position = Position::all();
-        $employee = Employee::all();
-        $data1 = array('company' => $company,'department' => $department,'position' => $position,'employee' => $employee);
-        return view('home',$data1);
+       
+        return view('home');
     }
 }

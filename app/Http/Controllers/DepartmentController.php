@@ -13,7 +13,13 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $department = Department::paginate(5);
+        $data = array(
+            'department' => $department
+        );
+
+        
+        return view('department',$data );
     }
 
     /**
@@ -23,7 +29,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return redirect('home');
+        return view('formdepartment' );
     }
 
     /**
@@ -40,7 +46,7 @@ class DepartmentController extends Controller
         $department->company_id = $request->company_id;
         $department->Remark = $request->Remark;
         $department->save();
-        return redirect('home');
+        return redirect('department');
     }
 
     /**
@@ -62,7 +68,14 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        if($id !== '') {
+            $department = Department::where('enable', '=', 1)->paginate(4);
+            $data = array(
+                'department' => $department
+            );
+            return view('formdepartment',$data);
+        }
     }
 
     /**
@@ -80,7 +93,7 @@ class DepartmentController extends Controller
         $department->company_id = $request->company_id;
         $department->Remark = $request->Remark;
         $department->save();
-        return redirect('home'); 
+        return redirect('department'); 
     }
 
     /**
@@ -94,6 +107,6 @@ class DepartmentController extends Controller
         $department = Department::find($id);
         $department->enable =0;
         $department->save();
-        return redirect('home'); 
+        return redirect('department'); 
     }
 }
