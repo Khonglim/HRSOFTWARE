@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Department;
+use App\Company;
 class DepartmentController extends Controller
 {
     /**
@@ -13,12 +14,10 @@ class DepartmentController extends Controller
      */
     public function index()
     {
+        $company = Company::all();
         $department = Department::where('enable', '=', 1)->paginate(4);
-        $data = array(
-            'department' => $department
-        );
 
-        
+        $data = array('department' => $department , 'company' => $company  );
         return view('department',$data );
     }
 

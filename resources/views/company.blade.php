@@ -273,7 +273,16 @@ $("#newModalForm").validate({
         </div>
         <footer class="panel-footer">
             <div class="row">
+                
+                    
                 <div class="col-sm-5">
+                    <ul class="pagination pagination-sm no-margin pull-right">
+                        <li>
+                            {{ $company->links() }}
+                        </li>
+                       
+                      </ul>
+                   
                       <!-- Trigger the modal with a button -->
 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">เพิ่ม</button>
 <!-- Modal -->
