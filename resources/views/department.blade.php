@@ -270,11 +270,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="col-md-5">
                     <div class="form-group ">
                           <select name="department_head_id" id="department_head_id">
-                      <option value="0"></option>
-                          @forelse($company as $l)
-                       <option value={{$l['id']}}>{{$l['company_Name']}}</option>
-                              @empty
+                       @if($l['department_head_id'] == 0) 
+                             <option value="" selected="true" disabled="true" ></option>
+                          @forelse($department as $l)
+                             <option value={{$l['id']}} >{{$l['department_name']}}</option>
+                          @empty
                           @endforelse
+                       @else
+                             <option value="" selected="true" disabled="true"  >{{$l['department_name']}}</option>
+                          @forelse($department as $l)
+                             <option value={{$l['id']}} >{{$l['department_name']}}</option>
+                          @empty
+                          @endforelse
+                       @endif
                       </select>
                       </div>
                   </div>
@@ -284,8 +292,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     {{Form::label('company_id','ID บริษัท')}}
                   </div>
                     <div class="col-md-5">
+<<<<<<< HEAD
                       <div class="form-group" >
                           {{Form::text('company_id',$l['company_id'],['class'=>'form-control','required','id' => 'company_id'])}}
+=======
+                      <div class="form-group {{ $errors->has('company') ? 'has-error' : '' }}">
+                         <select name="company_id" id="company_id">
+                          
+                              <option value="" selected="true" disabled="true">{{$l['company_id']}}</option>
+                          @forelse($company as $l)
+                              <option value={{$l['id']}}>{{$l['company_Name']}}</option>
+                              @empty
+                          @endforelse
+                      </select>
+                        <span class="text-danger">{{ $errors->first('company') }}</span>
+>>>>>>> b18169932f7e118f993137fde209447f3165de87
                         </div>
                     </div>
                   </div>
@@ -371,7 +392,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                     <div class="col-md-5">
                       <div class="form-group">
-                          {{Form::text('company_id','',['class'=>'form-control','id' => 'company_id'])}}
+                          <select name="company_id" id="company_id">
+                          @forelse($company as $l)
+                              <option value={{$l['id']}}>{{$l['company_Name']}}</option>
+                              @empty
+                          @endforelse
+                      </select>
                         <span class="text-danger"></span>
                         </div>
                     </div>
