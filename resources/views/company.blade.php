@@ -26,7 +26,7 @@ $("#newModalForm").validate({
     company_Name: {
       required: true,
         minlength: 8,
-        maxlength: 10
+        maxlength: 100
     }
   },
   messages: {
@@ -53,7 +53,7 @@ $("#newModalForm").validate({
         company_Name: {
         required: true,
         minlength: 8,
-        maxlength: 10
+        maxlength: 100
       }
     },
     messages: {
@@ -149,10 +149,6 @@ $("#newModalForm").validate({
               </li>
             </ul>
           </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -192,8 +188,7 @@ $("#newModalForm").validate({
         <div class="panel-heading">
          บริษัท
          </div>
-     <div class="table-responsive">
-          <div class="container">
+        <div class="table-responsive">
               <table class="table table-striped b-t b-light">
                   <thead>
                     <tr>
@@ -258,147 +253,74 @@ $("#newModalForm").validate({
                 </div>
             </div>
           </div>
-          </div>
           </td>
           </tr>
           @endif
-           @empty
+              @empty
            <tr>
             <td colspan="6" > No data !!</td>
-        </tr>
+           </tr>
                @endforelse
             </tbody>
             </table>
           </div>
-        </div>
         <footer class="panel-footer">
             <div class="row">
-                
-                    
                 <div class="col-sm-5">
-                    <ul class="pagination pagination-sm no-margin pull-right">
-                        <li>
-                            {{ $company->links() }}
-                        </li>
-                       
-                      </ul>
-                   
-                      <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">เพิ่ม</button>
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">เพิ่มบริษัท</h4>
-      </div>
-      <div class="modal-body">
-          {{Form::open(['url'=>'company','files' => true,'id' => 'addForm'])}}
-        <div class="row">
-          <div class="col-md-2">
-            {{Form::label('company','ชื่อบริษัท')}}
-          </div>
-            <div class="col-md-5">
-              <div class="form-group ">
-
-                  
-                  
-                  {{Form::text('company_Name','',['class'=>'form-control','required','id'=>'company_Name'])}}
-                
-                </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
+                   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">เพิ่ม</button>
+                      <div id="myModal" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                   <h4 class="modal-title">เพิ่มบริษัท</h4>
+                                  </div>
+                     <div class="modal-body">
+                         {{Form::open(['url'=>'company','files' => true,'id' => 'addForm'])}}
+                     <div class="row">
+                           <div class="col-md-2">
+                                 {{Form::label('company','ชื่อบริษัท')}}
+                             </div>
+                         <div class="col-md-5">
+                                <div class="form-group ">
+                                      {{Form::text('company_Name','',['class'=>'form-control','required','id'=>'company_Name'])}}
+                                </div>
+                         </div>
+                       </div>
+                  <div class="row">
+                <div class="col-md-2">
               {{Form::label('remark','หมายเหตุ')}}
-            </div>
-              <div class="col-md-5">
-                <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                 </div>
+                    <div class="col-md-5">
+                        <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
                     {{Form::text('remark','',['class'=>'form-control'])}}
                   <span class="text-danger">{{ $errors->first('remark') }}</span>
                   </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
-                </div>
-               
-          </div>
-          {{ Form::close() }}
-              </div>
-             </div>
+                      </div>
+                        </div>
+                      <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                 {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+                                            </div>
+                                    </div>
+                               {{ Form::close() }}
+                                      </div>
+                                   </div>
 
-        </div>
-          </div>
-             </div>
-                </footer>
+                            </div>
+                        </div> 
+                     </div>      
+             </footer>
+             <ul class="pagination pagination-sm no-margin pull-right">
+              <li>
+                  {{ $company->links() }}
+              </li>
+             
+            </ul>
+            </div>
       </div>
     </div>
   </div>
-  </div>
-  <footer class="footer">
-    <div class="pull-right hidden-xs">
-      Anything you want
-    </div>
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
-  </footer>
-  <aside class="control-sidebar control-sidebar-dark">
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                    <span class="label label-danger pull-right">70%</span>
-                  </span>
-              </h4>
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </aside>
-  <div class="control-sidebar-bg"></div>
 </div>
 <script src="dist/js/adminlte.min.js"></script>
 </body>

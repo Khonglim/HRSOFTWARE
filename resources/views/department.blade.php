@@ -183,23 +183,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
         </ul>
       </div>
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-
-    <!-- sidebar: style can be found in sidebar.less -->
     <div class="sidebar">
-      <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header"><center>เมนู</center></li>
-        <!-- Optionally, you can add icons to the links -->
         <li class="active"  ><a href="company" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
         <li class="active" ><a href="department"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
         <li class="active" ><a href="position"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>
@@ -216,21 +207,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </ul>
         </li>
       </ul>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
   </aside>
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <div class="content container-fluid">
-      
+    <div class="content container-fluid">  
     <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">
            แผนก
            </div>
           <div class="table-responsive">
-            <div class="container">
               <table class="table table-striped b-t b-light">
                 <thead>
                   <tr>
@@ -260,7 +246,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     
     <div id="department{{$l['id']}}" class="modal fade" role="dialog">
        <div class="modal-dialog">
-        <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -275,7 +260,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="col-md-5">
                   <div class="form-group ">
                       {{Form::text('department_name',$l['department_name'],['class'=>'form-control','required','id' => 'department_name'])}}
-        
                     </div>
                 </div>
               </div>
@@ -285,7 +269,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                   <div class="col-md-5">
                     <div class="form-group ">
-
                           <select name="department_head_id" id="department_head_id">
                       <option value="0"></option>
                           @forelse($company as $l)
@@ -293,8 +276,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               @empty
                           @endforelse
                       </select>
-
-                   
                       </div>
                   </div>
                 </div>
@@ -329,7 +310,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
           </div>
               </div>
-           </div>
+         
           </td>
         </tr>
             @endif
@@ -341,11 +322,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </tbody>
           </table>
             </div>
-          </div>
+          
           <footer class="panel-footer">
             <div class="row">
              <div class="col-sm-5">
-                          <!-- Trigger the modal with a button -->
+    <!-- Trigger the modal with a button -->
     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">เพิ่ม</button>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
@@ -407,79 +388,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </div>
                       </div>
                     </div>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
-              </div>
-              {{ Form::close() }}
-          </div>
-        </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+                      </div>
+                      {{ Form::close() }}
+                    </div>
+                     </div>
+                    </div>
+                 </div>
     
-      </div>
-        </div>
-            </div>
+             </div>
+             
+          
+            </div>      
           </footer>
-        </div>
-      </div>
-    </div>
-  </div>
-  <aside class="control-sidebar control-sidebar-dark">
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                    <span class="label label-danger pull-right">70%</span>
-                  </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-        </form>
-      </div>
-  </aside>
-  <div class="control-sidebar-bg"></div>
+          <ul class="pagination pagination-sm no-margin pull-right">
+           <li>
+               {{ $department->links() }}
+           </li>
+          
+         </ul>
+         </div>
+   </div>
+ </div>
 </div>
-
+</div>
 <script src="dist/js/adminlte.min.js"></script>
 </body>
 </html>

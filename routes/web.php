@@ -15,9 +15,7 @@ Route::resource('company','CompanyController');
 Route::resource('department','DepartmentController');
 Route::resource('employee','EmployeeController');
 Route::resource('position','PositionController');
-Route::get('/orgchartcompany','JorgchartController@company');
-Route::get('/orgchartdepartment','JorgchartController@department');
-Route::get('/orgchartposition','JorgchartController@position');
+
 
 
 Route::get('/', function () {

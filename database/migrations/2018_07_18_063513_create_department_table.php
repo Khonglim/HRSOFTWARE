@@ -17,6 +17,7 @@ class CreateDepartmentTable extends Migration
             $table->increments('id');
             $table->char('department_name');
             $table->integer('department_head_id');
+            $table->char('department_head_name');
             $table->integer("company_id");
             $table->char("Remark",255)->nullable();;
             $table->tinyInteger('enable')->default('1');

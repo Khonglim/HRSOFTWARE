@@ -20,7 +20,7 @@ class CreateEmployeeTable extends Migration
             $table->char('nikname',10);
             $table->char('birthday',10);
             $table->string('sex');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->tinyInteger('enable')->default('1');;
             $table->timestamps();
         });
