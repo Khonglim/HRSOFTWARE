@@ -118,11 +118,10 @@
                                               {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
                                               </div>
                                               {{ Form::close() }}  
-                                        </div>
-                                     </div>
-                                  </div>
-               
-                    </td>
+                                      </div>
+                              </div>
+                         </div>
+                      </td>
                    </tr>
                 @endif
              @empty
