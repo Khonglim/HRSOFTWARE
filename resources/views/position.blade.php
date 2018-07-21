@@ -28,11 +28,37 @@
                           <td> {{$l['Department_ID']}} </td>
                           <td> {{$l['remark']}} </td>
                           <td>  
-                              {{ Form::open(['route' => ['position.destroy',$l['id'], 'method' => "DELETE"] ]) }}
-                              <input type="hidden" name="_method" value="delete" />
-                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#position{{$l['id']}}">แก้ไข</button>
-                              {{ Form::submit('ลบ',array('class' => 'btn btn-danger btn-xs')) }}
-                              {{ Form::close() }}                      
+                              
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#position{{$l['id']}}"><i class="fa  fa-pencil"></i></button>
+                              <button type="button" class="btn  btn-danger btn-xs" data-toggle="modal" data-target="#delete{{$l['id']}}"><i class="fa  fa-trash-o"></i></button>
+                              <div id="delete{{$l['id']}}" class="modal fade" role="dialog">
+                                  <div class="modal-dialog">
+                                
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">ลบ</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                          {{ Form::open(['route' => ['company.destroy',$l['id'], 'method' => "DELETE"]]) }}
+                                          <input type="hidden" name="_method" value="delete" />
+
+                                          
+                                          <p>คุณต้องการลบข้อมูลใช่หรือไม่!!</p>
+
+                                        
+                                        
+                                      </div>
+                                      <div class="modal-footer">
+                                          {{ Form::submit('ลบ',array('class' => 'btn btn-danger ')) }}
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+                                      </div>
+                                      {{ Form::close() }}  
+                                    </div>
+                                
+                                  </div>
+                                </div>                    
       <div id="position{{$l['id']}}" class="modal fade" role="dialog">
          <div class="modal-dialog">
           <!-- Modal content-->

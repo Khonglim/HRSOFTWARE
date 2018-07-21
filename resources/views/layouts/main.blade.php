@@ -189,7 +189,7 @@ $("#newModalFormC").validate({
                   },
                   unhighlight: function(element, errorClass) {
                     $(element).closest(".form-group").removeClass("has-error");
-                  }
+                  } 
                 });
                 });
                   </script>
