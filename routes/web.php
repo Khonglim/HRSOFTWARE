@@ -23,15 +23,23 @@ Route::get('department//create', 'PositionControllerr@create');
 Route::resource('employee','EmployeeController');
 Route::get('employee/create', 'EmployeeController@create');
 
+<<<<<<< HEAD
 Route::get('/orgchartcompany','JorgchartController@company');
 
+=======
+Route::resource('user','UsersController');
+Route::get('user/create', 'UsersController@create');
+>>>>>>> 89922c46578163f07628d6d6c078e496e9f59fce
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/home', 'HomeController@index');
+
 
 Route::get('my-theme', function () {
 

@@ -3,6 +3,7 @@
 <head>
  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>AdminLTE 2 | Starter</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
@@ -97,12 +98,13 @@
             </nav>
           </header>
           <aside class="main-sidebar">
-
+          
             <!-- sidebar: style can be found in sidebar.less -->
             <div class="sidebar">
               <!-- Sidebar Menu -->
               <ul class="sidebar-menu" data-widget="tree">
                 <li class="header"><center>เมนู</center></li>
+               
                 <!-- Optionally, you can add icons to the links -->
               <li class="active"  ><a href="{{'/company'}}" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
                 <li class="active" ><a href="{{'/department'}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
@@ -120,6 +122,7 @@
                     <li><a href="/orgchartposition">แผนผังตำแหน่ง</a></li>
                  </ul>
                 </li>
+               
               </ul>
               <!-- /.sidebar-menu -->
             </div>

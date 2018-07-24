@@ -26,7 +26,8 @@ class DepartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        
         $company = Company::where('enable','=', 1)->paginate();
         $data = array('company' => $company  );
         return view('formdepartment',$data );
