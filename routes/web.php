@@ -23,14 +23,18 @@ Route::get('department//create', 'PositionControllerr@create');
 Route::resource('employee','EmployeeController');
 Route::get('employee/create', 'EmployeeController@create');
 
-
+Route::resource('user','UsersController');
+Route::get('user/create', 'UsersController@create');
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/home', 'HomeController@index');
+
 
 Route::get('my-theme', function () {
 
