@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Validation\Rule;
 use App\Employee;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employee = Employee::where('enable', '=', 1)->paginate(4);
-        $data = array(
-            'employee' => $employee
-        );
+        $data = array('employee' => $employee);
         return view('employee',$data );
     }
 
@@ -38,12 +37,19 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {     
 
         $this->validate($request, [
-            'email' => 'required|string|email|max:255|unique:employee'
-        ]);
- 
+              'name' => 'required|alpha',
+              'lastname' => 'required|alpha',
+              'email' => 'required|string|email|max:255|unique:employee',
+              'nikname' => 'required|max:100',
+              'sex' => 'required|filled',
+              'birthday'=>'required|filled',
+  
+          ]);
+  
+    
         $employee = new Employee;
         $employee->name = $request->name;
         $employee->lastname = $request->lastname;
@@ -52,8 +58,6 @@ class EmployeeController extends Controller
         $employee->birthday = $request->birthday;
         $employee->email = $request->email;
         $employee->save();
-        
-
         return redirect('employee');
     }
 
@@ -76,13 +80,15 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
+
         if($id !== '') {
-            $employee = Employee::where('enable', '=', 1)->paginate(4);
+            $employee = Employee::find($id);
             $data = array(
                 'employee' => $employee
             );
             return view('formemployee',$data);
-        }
+        } 
+       
     }
 
     /**
@@ -94,6 +100,17 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+  
+        $this->validate($request, [
+            'name' => 'required|alpha',
+            'lastname' => 'required|alpha',
+            'email' => ['required',Rule::unique('employee')->ignore($id),],
+            'nikname' => 'required|max:100',
+            'sex' => 'required|filled',
+            'birthday'=>'required|filled',
+        ]);
+
         $employee =  Employee::find($id);
         $employee->name = $request->name;
         $employee->lastname = $request->lastname;

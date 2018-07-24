@@ -12,9 +12,16 @@
 */
 
 Route::resource('company','CompanyController');
+Route::get('company/create', 'CompanyController@create');
+
 Route::resource('department','DepartmentController');
-Route::resource('employee','EmployeeController');
+Route::get('department/create', 'DepartmentController@create');
+
 Route::resource('position','PositionController');
+Route::get('department//create', 'PositionControllerr@create');
+
+Route::resource('employee','EmployeeController');
+Route::get('employee/create', 'EmployeeController@create');
 
 
 

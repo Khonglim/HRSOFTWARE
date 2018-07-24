@@ -6,6 +6,9 @@
   <div class="content-wrapper">
     <div class="content container-fluid">
       <div class="col-md-12">
+          <br> 
+          <a href="position/create" class="btn btn-success" ><i class="fa fa-plus"> เพิ่มข้อมูล</i></a>
+          <br>  <br>  
           <div class="panel panel-default">
             <div class="panel-heading"> ตำแหน่ง</div>
           <div class="table-responsive">
@@ -29,88 +32,33 @@
                           <td> {{$l['remark']}} </td>
                           <td>  
                               
-                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#position{{$l['id']}}"><i class="fa  fa-pencil"></i></button>
-                              <button type="button" class="btn  btn-danger btn-xs" data-toggle="modal" data-target="#delete{{$l['id']}}"><i class="fa  fa-trash-o"></i></button>
-                              <div id="delete{{$l['id']}}" class="modal fade" role="dialog">
-                                  <div class="modal-dialog">
-                                
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                      <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">ลบ</h4>
-                                      </div>
-                                      <div class="modal-body">
-                                          {{ Form::open(['route' => ['company.destroy',$l['id'], 'method' => "DELETE"]]) }}
-                                          <input type="hidden" name="_method" value="delete" />
-
-                                          
-                                          <p>คุณต้องการลบข้อมูลใช่หรือไม่!!</p>
-
-                                        
-                                        
-                                      </div>
-                                      <div class="modal-footer">
-                                          {{ Form::submit('ลบ',array('class' => 'btn btn-danger ')) }}
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
-                                      </div>
-                                      {{ Form::close() }}  
-                                    </div>
-                                
-                                  </div>
-                                </div>                    
-      <div id="position{{$l['id']}}" class="modal fade" role="dialog">
-         <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-               <h4 class="modal-title">แก้ไข</h4>
-                </div>
-                <div class="modal-body">
-            {{Form::open(['route'=>['position.update',$l['id']],'method'=>'PUT','files' => true,'id'=>'newModalFormP'])}}
-            <div class="row">
-                <div class="col-md-2">
-                  {{Form::label('position_name','ชื่อตำแหน่ง')}}
-                </div>
-                  <div class="col-md-5">
-                    <div class="form-group ">
-                        {{Form::text('position_name',$l['position_name'],['class'=>'form-control','required','id'=>'position_name'])}}
-                      
-                      </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-2">
-                    {{Form::label('Department_ID','ID ตำแหน่ง')}}
-                  </div>
-                    <div class="col-md-5">
-                      <div class="form-group ">
-                          {{Form::text('Department_ID',$l['Department_ID'],['class'=>'form-control','required','id'=>'Department_ID'])}}
-                        <span class="text-danger"></span>
-                        </div>
-                    </div>
-                  </div>
-                <div class="row">
-                  <div class="col-md-2">
-                    {{Form::label('remark','หมายเหตุ')}}
-                  </div>
-                    <div class="col-md-5">
-                      <div class="form-group ">
-                          {{Form::text('remark',$l['remark'],['class'=>'form-control'])}}
-                        <span class="text-danger"></span>
-                        </div>
-                    </div>
-                  </div>  
-                </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
-            </div>
-            {{ Form::close() }}  
-                </div>
-            </div>
-                </div>
+                              <a href="{{'employee/'.$l['id'].'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
+                              <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}"><i class=" fa fa-trash"></i></button>
+                
+               
+                    <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
+                              <div class="modal-dialog">
+ 
+    
+                                 <div class="modal-content">
+                             <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">ลบข้อมูล</h4>
+       </div>
+       <div class="modal-body">
+           {{ Form::open(['route' => ['company.destroy',$l['id'], 'method' => "DELETE"] ]) }}
+           <input type="hidden" name="_method" value="delete" / >
+            <p>คุณต้องการลบ{{$l['position_name']}}ใช่หรือไม่!!!!</p>  
+       </div>
+       <div class="modal-footer">
+          <button type="summit" class="btn btn-danger">ลบ</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+       </div>
+       {{ Form::close() }}  
+     </div>
+ 
+   </div>
+ </div>
             
             </td>
           </tr>
@@ -125,64 +73,7 @@
               </div>
             
             <footer class="panel-footer">
-              <div class="row">
-                <div class="col-sm-5">
-                      <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">เพิ่ม</button>
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">เพิ่มตำแหน่ง</h4>
-      </div>
-      <div class="modal-body">
-              {{Form::open(['url'=>'position','files' => true,'enctype'=>'multipart/form-data','id'=>'addFormP'])}}
-            <div class="row">
-              <div class="col-md-2">
-                {{Form::label('position_name','ตำแหน่ง')}}
-              </div>
-                <div class="col-md-5">
-                  <div class="form-group ">
-                      {{Form::text('position_name','',['class'=>'form-control','id'=>'position_name'])}}
-                    </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">
-                  {{Form::label('Department_ID','ID แผนกเริ่มต้น')}}
-                </div>
-                  <div class="col-md-5">
-                    <div class="form-group ">
-                        {{Form::text('Department_ID','',['class'=>'form-control','id'=>'Department_ID'])}}
-                      </div>
-                  </div>
-                </div>
-             <div class="row">
-                <div class="col-md-2">
-                  {{Form::label('Remark','หมายเหตุ')}}
-                </div>
-                  <div class="col-md-5">
-                    <div class="form-group ">
-                        {{Form::text('Remark','',['class'=>'form-control'])}}
-                      <span class="text-danger"></span>
-                      </div>
-                  </div>
-               
-          </div>
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
-          </div>
-          {{ Form::close() }}
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>      
+             
         </footer>
               <ul class="pagination pagination-sm no-margin pull-right">
       <li>

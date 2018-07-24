@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Department;
 use App\Company;
@@ -13,8 +12,9 @@ class DepartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    
     {
-        $company = Company::where('enable', '=', 1)->paginate();
+        $company = Company::where('enable','=', 1)->paginate();
         $department = Department::where('enable', '=', 1)->paginate(4);
         $data = array('department' => $department , 'company' => $company  );
         return view('department',$data );
@@ -27,7 +27,9 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return view('formdepartment' );
+        $company = Company::where('enable','=', 1)->paginate();
+        $data = array('company' => $company  );
+        return view('formdepartment',$data );
     }
 
     /**
@@ -38,6 +40,10 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'company_id' => 'required|alpha',
+            'department_name' => 'required|alpha',
+        ]);
         $department = new Department;
         $department->department_name = $request->department_name;
         $department->department_head_id = $request->department_head_id;
@@ -85,6 +91,10 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'company_id' => 'required|alpha',
+            'department_name' => 'required|alpha',
+        ]);
         $department =  Department::find($id);
         $department->department_name = $request->department_name;
         $department->department_head_id = $request->company_id;

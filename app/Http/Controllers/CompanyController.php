@@ -31,7 +31,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('formompany' );
+        return view('formompany');
     }
 
     /**
@@ -42,6 +42,9 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'company_Name' => 'required|alpha',
+        ]);
         $company = new Company;
         $company->company_Name = $request->company_Name;
         $company->remark = $request->remark;
@@ -74,7 +77,7 @@ class CompanyController extends Controller
             $data = array(
                 'company' => $company
             );
-            return view('formemployee',$data);
+            return view('formompany',$data);
         }
     }
 
@@ -87,6 +90,9 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'company_Name' => 'required|alpha',
+        ]);
         $company =  Company::find($id);
         $company->company_Name = $request->company_Name;
         $company->remark = $request->remark;

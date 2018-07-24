@@ -106,9 +106,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         {{ __('Logout') }}
                                     </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-                   </form>
+                                    </form>
                 </div>
               </li>
             </ul>
@@ -141,9 +141,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </span>
           </a>
           <ul class="treeview-menu">
-             <li><a href="/orgchartcompany">แผนผังบริษัท</a></li>
-            <li><a href="/orgchartdepartment">แผนผังแผนก</a></li>
-             <li><a href="/orgchartposition">แผนผังตำแหน่ง</a></li>
+            <li><a href="#">Link in level 2</a></li>
+            <li><a href="#">Link in level 2</a></li>
           </ul>
         </li>
       </ul>

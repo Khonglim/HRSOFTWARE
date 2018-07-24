@@ -27,7 +27,7 @@ class PositionController extends Controller
      */
     public function create()
     {
-        
+        return view('formposition' );
     }
 
     /**
@@ -38,6 +38,10 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'position_name' => 'required|alpha',
+        
+        ]);
         $position = new Position;
         $position->position_name = $request->position_name ;
         $position->Department_ID = $request->Department_ID;
@@ -54,7 +58,7 @@ class PositionController extends Controller
      */
     public function show($id)
     {
-        return view('formposition' );
+       
     }
 
     /**
@@ -83,6 +87,10 @@ class PositionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'position_name' => 'required|alpha',
+        
+        ]);
         $position =  Position::find($id);
         $position->position_name = $request->position_name;
         $position->Department_ID = $request->Department_ID;
