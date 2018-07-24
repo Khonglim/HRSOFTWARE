@@ -23,6 +23,7 @@ Route::get('department//create', 'PositionControllerr@create');
 Route::resource('employee','EmployeeController');
 Route::get('employee/create', 'EmployeeController@create');
 
+Route::get('/orgchartcompany','JorgchartController@company');
 
 
 Route::get('/', function () {
