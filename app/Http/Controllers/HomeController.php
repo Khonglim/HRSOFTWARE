@@ -12,7 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-   
+   public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Show the application dashboard.
      *
@@ -21,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
        
-        $user = User::where('enable', '=', 1)->paginate(15);
+        $user = User::all();
         $data = array(
           'user' => $user
         );
