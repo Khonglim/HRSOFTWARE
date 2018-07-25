@@ -4,12 +4,11 @@
 <html>
     <head>
         <title>Org Chart</title>
+        <link href="{{ asset('css/jquery.orgchart.css') }}" rel="stylesheet">
         
-        <link rel="stylesheet" href="css/jquery.orgchart.css"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="js/jquery.orgchart.js"></script>
-        <script src="js/jquery.orgchart.min.js"></script>
-       
+        <script src="{{ asset('js/jquery.orgchart.js') }}" defer></script>
+        <script src="{{ asset('js/jquery.orgchart.min.js') }}" defer></script>
         <script>
 filterSelection("all")
 function filterSelection(c) {
