@@ -31,8 +31,11 @@ class CompanyController extends Controller
      */
     public function create()
     {
-         
-        return view('fromcreatcompany');
+         $createcheck = 0;
+         $data = array(
+            'createcheck' => $createcheck
+        );
+        return view('formompany',$data);
     }
 
     /**
@@ -74,10 +77,10 @@ class CompanyController extends Controller
     public function edit($id)
     {
         if($id !== '') {
-            
+            $createcheck = 1;
             $company = Company::find($id);
             $data = array(
-                'company' => $company
+                'company' => $company, 'createcheck' => $createcheck
             );
             return view('formompany',$data);
         }
