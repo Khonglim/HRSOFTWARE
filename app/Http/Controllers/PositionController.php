@@ -27,7 +27,7 @@ class PositionController extends Controller
      */
     public function create()
     {
-        return view('formposition' );
+        return view('formcreateposition' );
     }
 
     /**
@@ -70,7 +70,7 @@ class PositionController extends Controller
     public function edit($id)
     {
         if($id !== '') {
-            $position = Position::where('enable', '=', 1)->paginate(4);
+            $position = Position::find($id);
             $data = array(
                 'position' => $position
             );

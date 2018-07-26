@@ -5,14 +5,14 @@
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">
-                      แก้ไขข้อมูล
-                     
+                  <h3 class="box-title"> 
+                       เพิ่มบริษัท
+                      </h3>
                 </div>
                   <div class="box-body">
                      
-                             {{Form::open(['route'=>['company.update',$company->id],'method'=>'PUT','files' => true])}}
-                     
+                                  {{Form::open(['url'=>'company','files' => true,'enctype'=>'multipart/form-data'])}}
+                                      
                       <div class="row">
                           <div class="col-md-2">
                             {{Form::label('company_Name','ชื่อบริษัท')}}
@@ -20,8 +20,8 @@
                             <div class="col-md-5">
                               <div class="form-group {{ $errors->has('company_Name') ? 'has-error' : '' }}">
                                
-                                  {{Form::text('company_Name',$company->company_Name  ,['class'=>'form-control'])}}
-                             
+                                  {{Form::text('company_Name','',['class'=>'form-control'])}}
+                              
                                 <span class="text-danger">{{ $errors->first('company_Name') }}</span>
                                 </div>
                             </div>
@@ -34,8 +34,8 @@
                                 <div class="col-md-5">
                                     <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
                                    
-                                      {{Form::text('remark',$company->remark,['class'=>'form-control'])}}
-                  
+                                      {{Form::text('remark','',['class'=>'form-control'])}}
+                                   
                                     <span class="text-danger">{{ $errors->first('remark') }}</span>
                                     </div>
                                 </div>

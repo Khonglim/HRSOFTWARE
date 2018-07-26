@@ -28,9 +28,14 @@ class DepartmentController extends Controller
     public function create()
     {   
         
-        $company = Company::where('enable','=', 1)->paginate();
-        $data = array('company' => $company  );
-        return view('formdepartment',$data );
+       $titles = Department::where('enable','=', 1)->pluck('department_name','id');
+        $company = Company::where('enable','=', 1)->pluck('company_Name','id');
+       
+        $departments = department::where('enable','=', 1)->paginate();
+      
+        $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
+
+        return view('formcreatedepartment',$data );
     }
 
     /**
@@ -42,7 +47,7 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'company_id' => 'required|alpha',
+            'company_id' => 'required|int',
             'department_name' => 'required|alpha',
         ]);
         $department = new Department;
@@ -75,9 +80,11 @@ class DepartmentController extends Controller
     {
        
         if($id !== '') {
-            $department = Department::where('enable', '=', 1)->paginate(4);
+            $department = Department::find($id);
+            $companys =  Company::where('enable','=', 1)->pluck('company_Name','id');
+            $departments =  department::where('enable','=', 1)->pluck('department_name','id');
             $data = array(
-                'department' => $department
+                'department' => $department,'departments' => $departments,'companys' => $companys 
             );
             return view('formdepartment',$data);
         }
@@ -93,7 +100,7 @@ class DepartmentController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'company_id' => 'required|alpha',
+            'company_id' => 'required|int',
             'department_name' => 'required|alpha',
         ]);
         $department =  Department::find($id);

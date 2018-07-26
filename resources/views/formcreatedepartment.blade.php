@@ -7,22 +7,22 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title"> 
-                      แก้ไขข้อมูล
+                       เพิ่มแผนก
                       </h3>
                 </div>
                   <div class="box-body">
-                      
-                             {{Form::open(['route'=>['department.update', $department->id],'method'=>'PUT','files' => true])}}
-                       
+                     
+                                  {{Form::open(['url'=>'department','files' => true,'enctype'=>'multipart/form-data'])}}
+                                      
                       <div class="row">
                           <div class="col-md-2">
                             {{Form::label(' department_name','ชื่อแผนก')}}
                           </div>
                             <div class="col-md-5">
                               <div class="form-group {{ $errors->has('  department_name') ? 'has-error' : '' }}">
-                                
-                                  {{Form::text('department_name',$department->department_name,['class'=>'form-control'])}}
                                
+                                  {{Form::text('department_name','',['class'=>'form-control'])}}
+                             
                                 <span class="text-danger">{{ $errors->first('company_Name') }}</span>
                                 </div>
                             </div>
@@ -34,7 +34,8 @@
                                   <div class="col-md-5">
                                     <div class="form-group ">
 
-                                  {{Form::select('department_head_id',$departments, null, ['class' => 'form-control'])}}
+                                           
+                                  {{Form::select('department_head_id',$titles, null, ['class' => 'form-control'])}}
                                  
                                       </div>
                                   </div>
@@ -47,10 +48,8 @@
                                       <div class="form-group ">
                                            
                    
-                                         {{Form::select('company_id',$companys, null, ['class' => 'form-control'])}}
+                                         {{Form::select('company_id',$company, null, ['class' => 'form-control'])}}
                                      
-                                     
-                                  
 
                                         </div>
                                     </div>
@@ -61,9 +60,9 @@
                               </div>
                                 <div class="col-md-5">
                                     <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
+                                    
+                                      {{Form::text('remark','',['class'=>'form-control'])}}
                                    
-                                      {{Form::text('remark',$department->remark,['class'=>'form-control'])}}
-                  
                                     <span class="text-danger">{{ $errors->first('remark') }}</span>
                                     </div>
                                 </div>
