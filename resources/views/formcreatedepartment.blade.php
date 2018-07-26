@@ -35,7 +35,7 @@
                                     <div class="form-group ">
 
                                            
-                                  {{Form::select('department_head_id',$titles, null, ['class' => 'form-control'])}}
+                                  {{Form::select('department_head_id',['0'=>'ไม่มีหัวแผนก',$titles], null, ['class' => 'form-control'])}}
                                  
                                       </div>
                                   </div>
