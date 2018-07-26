@@ -1,11 +1,9 @@
 
 <!DOCTYPE HTML>
-
 <html>
     <head>
         <title>Org Chart</title>
         <link href="{{ asset('css/jquery.orgchart.css') }}" rel="stylesheet">
-        
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="{{ asset('js/jquery.orgchart.js') }}" defer></script>
         <script src="{{ asset('js/jquery.orgchart.min.js') }}" defer></script>

@@ -18,8 +18,8 @@
                   <tr>
                      <th>ID</th>
                      <th>ชื่อแผนก</th>
-                     <th>ID เริ่มต้นแผนก</th>
-                     <th>ID บริษัท</th>
+                     <th>ชื่อแผนก</th>
+                     <th>บริษัท</th>
                      <th>หมายเหตุ</th>
                      <th>เพิ่มเติ่ม</th>
                   </tr>
@@ -46,7 +46,7 @@
                         @endforeach
                         <td> {{$l['remark']}} </td>
                         <td>  
-                            <a href="{{'employee/'.$l['id'].'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
+                            <a href="{{'department/'.$l['id'].'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
                             <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}"><i class=" fa fa-trash"></i></button>
               
              

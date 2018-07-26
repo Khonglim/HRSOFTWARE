@@ -43,7 +43,7 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'company_Name' => 'required|alpha',
+            'company_Name' => 'required',
         ]);
         $company = new Company;
         $company->company_Name = $request->company_Name;
@@ -91,7 +91,7 @@ class CompanyController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'company_Name' => 'required|alpha',
+            'company_Name' => 'required',
         ]);
         $company =  Company::find($id);
         $company->company_Name = $request->company_Name;
