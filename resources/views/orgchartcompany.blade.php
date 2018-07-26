@@ -1,11 +1,12 @@
 
 <!DOCTYPE HTML>
-
 <html>
     <head>
         <title>Org Chart</title>
+
         
         <link rel="stylesheet" href="css/jquery.orgchart.css"/>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="js/jquery.orgchart.js"></script>
         <script src="js/jquery.orgchart.min.js"></script>
