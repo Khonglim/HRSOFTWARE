@@ -29,20 +29,7 @@
                         <tr>
                         <td> {{$l['id']}} </td>
                         <td> {{$l['department_name']}} </td>
-                        @forelse($department as $l)
-                        <tr>
-                        <td> {{$l['id']}} </td>
-                        <td> {{$l['department_name']}} </td>
-
-                          @foreach($department as $i)
-                        @if($l['department_head_id']==$i['id'])
-                        <td> {{$i['department_name']}} </td>
-                        @break
-                        @elseif($l['department_head_id']==0)
-                        <td> Head Department </td>
-                        @break
-                        @endif
-                        @endforeach
+                        <td> {{$l['department_head_id']}} </td>
                         @foreach($company as $c)
                         @if($l['company_id']==$c['id'])
                         <td> {{$c['company_Name']}} </td>
