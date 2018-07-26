@@ -6,29 +6,23 @@
               
             <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title"> @if(isset( $department))
+                  <h3 class="box-title"> 
                       แก้ไขข้อมูล
-                       @else
-                       เพิ่มแผนก
-                      @endif</h3>
+                      </h3>
                 </div>
                   <div class="box-body">
-                      @if(isset($department))
+                      
                              {{Form::open(['route'=>['department.update', $department->id],'method'=>'PUT','files' => true])}}
-                       @else
-                                  {{Form::open(['url'=>'department','files' => true,'enctype'=>'multipart/form-data'])}}
-                                       @endif
+                       
                       <div class="row">
                           <div class="col-md-2">
-                            {{Form::label('	department_name','ชื่อบริษัท')}}
+                            {{Form::label(' department_name','ชื่อแผนก')}}
                           </div>
                             <div class="col-md-5">
-                              <div class="form-group {{ $errors->has('	department_name') ? 'has-error' : '' }}">
-                                @if(isset($department->department_name))
+                              <div class="form-group {{ $errors->has('  department_name') ? 'has-error' : '' }}">
+                                
                                   {{Form::text('department_name',$department->department_name,['class'=>'form-control'])}}
-                                @else
-                                  {{Form::text('department_name','',['class'=>'form-control'])}}
-                                @endif
+                               
                                 <span class="text-danger">{{ $errors->first('company_Name') }}</span>
                                 </div>
                             </div>
@@ -40,32 +34,8 @@
                                   <div class="col-md-5">
                                     <div class="form-group ">
 
-                                            @if(isset($department->department_head_id))
-                                            <select name="department_head_id" id="department_head_id">
-                                                    @if( $department->department_head_id == 0) 
-                                                          <option value="" selected="true" disabled="true" ></option>
-                                                       @forelse($department as $l)
-                                                          <option value={{$l['id']}} >{{$l['department_name']}}</option>
-                                                       @empty
-                                                       @endforelse
-                                                    @else
-                                                          <option value="" selected="true" disabled="true"  >{{$department->department_name}}</option>
-                                                       @forelse($department as $l)
-                                                          <option value={{$l['id']}} >{{$l['department_name']}}</option>
-                                                       @empty
-                                                       @endforelse
-                                                    @endif
-                                                   </select>
-                                             @else
-
-                             <select name="department_head_id" id="department_head_id">
-                      <option value="0"></option>
-                          @forelse($company as $l)
-                              <option value={{$l['id']}}>  {{$l['company_Name']}}</option>
-                              @empty
-                          @endforelse
-                      </select>
-                                          @endif
+                                  {{Form::select('department_head_id',$departments, null, ['class' => 'form-control'])}}
+                                 
                                       </div>
                                   </div>
                                 </div>
@@ -75,25 +45,13 @@
                                   </div>
                                     <div class="col-md-5">
                                       <div class="form-group ">
-                                            @if(isset($department->company_id))
-                                         <select name="company_id" id="company_id">
-                                              
-                                              <option value="" selected="true" disabled="true">{{$department->company_id}}</option>
-                                          @forelse($company as $l)
-                                              <option value={{$l['id']}}>{{$l['company_Name']}}</option>
-                                              @empty
-                                          @endforelse
-                                          @else
-                                          <select name="department_head_id" id="department_head_id">
-                                                <option value="0"></option>
-                                                    @forelse($company as $l)
-                                                        <option value={{$l['id']}}> {{$l['company_Name']}}</option>
-                                                        @empty
-                                                    @endforelse
-                                                </select>
-                                          
-                                      </select>
-                                      @endif
+                                           
+                   
+                                         {{Form::select('company_id',$companys, null, ['class' => 'form-control'])}}
+                                     
+                                     
+                                  
+
                                         </div>
                                     </div>
                                   </div>
@@ -103,12 +61,9 @@
                               </div>
                                 <div class="col-md-5">
                                     <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                                    @if(isset($department->remark))
-                                      {{Form::text('remark',$company->remark,['class'=>'form-control'])}}
+                                   
+                                      {{Form::text('remark',$department->remark,['class'=>'form-control'])}}
                   
-                                    @else
-                                      {{Form::text('remark','',['class'=>'form-control'])}}
-                                    @endif
                                     <span class="text-danger">{{ $errors->first('remark') }}</span>
                                     </div>
                                 </div>
@@ -119,8 +74,7 @@
                             {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
                            {{ Html::link('department','Back',array('class ' => 'btn btn-primary')) }}
                           </div>
-                          
-                        </div>
+                       
                         {{Form::close()}}
                   </div>
                 </div>
