@@ -28,7 +28,7 @@
                             <tr>
                           <td> {{$l['id']}} </td>
                           <td> {{$l['company_Name']}} </td>
-                          <td> {{$l['remark']}} </td>
+                          <td> {{$l['Remark']}} </td>
                           <td>  
                                <a href="{{'company/'.$l['id'].'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}"><i class=" fa fa-trash"></i></button>
