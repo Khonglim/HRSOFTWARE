@@ -4,8 +4,9 @@
     <div class="content container-fluid">
       <div class="col-md-12">
           <br> 
-         
+          @if(auth()->user()->isAdmin == 1)
           <a href="company/create" class="btn btn-success" ><i class="fa fa-plus"> เพิ่มข้อมูล</i></a>
+          @endif
           <br>  <br>  
       <div class="panel panel-default">
         <div class="panel-heading">

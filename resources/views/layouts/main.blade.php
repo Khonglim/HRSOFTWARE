@@ -18,6 +18,7 @@
 
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
    
@@ -106,6 +107,7 @@
                 <li class="header"><center>เมนู</center></li>
                
                 <!-- Optionally, you can add icons to the links -->
+                <li class="active"  ><a href="{{'/home'}}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
               <li class="active"  ><a href="{{'/company'}}" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
                 <li class="active" ><a href="{{'/department'}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
                 <li class="active" ><a href="{{'/position'}}"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>

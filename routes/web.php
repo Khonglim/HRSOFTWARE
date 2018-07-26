@@ -29,16 +29,17 @@ Route::get('/orgchartcompany','JorgchartController@company');
 
 Route::resource('user','UsersController');
 Route::get('user/create', 'UsersController@create');
-
+Route::resource('admin','AdminController');
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::resource('home','HomeController');
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
-
-Route::get('/home', 'HomeController@index');
 
 
 Route::get('my-theme', function () {
