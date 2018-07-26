@@ -6,7 +6,6 @@
 
         
         <link rel="stylesheet" href="css/jquery.orgchart.css"/>
-
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="js/jquery.orgchart.js"></script>
         <script src="js/jquery.orgchart.min.js"></script>
@@ -194,15 +193,6 @@ div.orgChart div.node.level3 {
     </head>
 
     <body>
-
-
- 
-
-
-
- 
-                  
-
         <div id="content" style="text-align: center;" >
         
             <h1>Company Organizational chart</h1>
