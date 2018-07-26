@@ -28,13 +28,10 @@ class DepartmentController extends Controller
     public function create()
     {   
         
-       $titles = Department::where('enable','=', 1)->pluck('department_name','id');
-        $company = Company::where('enable','=', 1)->pluck('company_Name','id');
-       
-        $departments = department::where('enable','=', 1)->paginate();
-      
+        $titles = Department::where('enable','=', 1)->pluck('department_name', 'id');
+        $company = Company::where('enable','=', 1)->pluck('company_Name', 'id');
+        $departments = Department::where('enable','=', 1)->paginate();
         $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
-
         return view('formcreatedepartment',$data );
     }
 
