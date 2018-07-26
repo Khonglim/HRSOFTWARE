@@ -47,3 +47,9 @@ Route::get('my-theme', function () {
     return view('welcome2');
 
 });
+
+Route::get('/dynamicdependent','DynamicDependent@index');
+
+Route::get('states/get/{id}', 'DynamicDependent@getStates');
+Route::get('states2/get/{id}', 'DynamicDependent@getStates');
+
