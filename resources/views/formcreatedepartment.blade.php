@@ -1,5 +1,11 @@
 @extends('layouts.main')
 @section('content')
+ <style>
+   #loader{
+   visibility:hidden;
+   }
+   </style>
+
   <div class="content-wrapper">
     <div class="content container-fluid">
         <div class="col-md-6">
@@ -27,33 +33,32 @@
                                 </div>
                             </div>
                           </div>
-                          <div class="row">
+                           <div class="row">
                                 <div class="col-md-2">
                                   {{Form::label('department_head_id','ID เริ่มต้นแผนก')}}
                                 </div>
-                                  <div class="col-md-5">
+                                  
                                     <div class="form-group ">
+                         
+                            {{ csrf_field() }}
+                                <div class="col-md-4">
+                                    <select id="country" name="company_id" class="form-control">
+                                        <option value="">--Select Country--</option>
+                                        @foreach ($company as $id => $company_Name)
+                                        <option value="{{ $id }}"> {{ $company_Name }}</option>   
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select id="state" name="department_head_id" class="form-control">
+                                     <option>--State--</option>
+                                 </select>
+                             </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div>
 
-                                           
-                                  {{Form::select('department_head_id',['0'=>'ไม่มีหัวแผนก',$titles], null, ['class' => 'form-control'])}}
-                                 
-                                      </div>
+
+                                      
                                   </div>
                                 </div>
-                                <div class="row">
-                                  <div class="col-md-2">
-                                    {{Form::label('company_id','ID บริษัท')}}
-                                  </div>
-                                    <div class="col-md-5">
-                                      <div class="form-group ">
-                                           
-                   
-                                         {{Form::select('company_id',$company, null, ['class' => 'form-control'])}}
-                                     
-
-                                        </div>
-                                    </div>
-                                  </div>
                           <div class="row">
                               <div class="col-md-2">
                                 {{Form::label('remark','หมายเหตุ')}}
@@ -82,6 +87,72 @@
        
     </div>
   </div>
+<script >
+    $(document).ready(function() {
 
+    $('select[id="country"]').on('change', function(){
+        var countryId = $(this).val();
+        if(countryId) {
+            $.ajax({
+                url: '/states/get/'+countryId,
+                type:"GET",
+                dataType:"json",
+                beforeSend: function(){
+                    $('#loader').css("visibility", "visible");
+                },
+
+                success:function(data) {
+
+                    $('select[id="state"]').empty();
+
+                    $.each(data, function(key, value){
+
+                        $('select[id="state"]').append('<option value="'+ key +'">' + value + '</option>');
+
+                    });
+                },
+                complete: function(){
+                    $('#loader').css("visibility", "hidden");
+                }
+            });
+        } else {
+            $('select[id="state"]').empty();
+        }
+
+
+    });
+
+    $('select[name="state"]').on('change', function(){
+        var countryId = $(this).val();
+        if(countryId) {
+            $.ajax({
+                url: '/states2/get/'+countryId,
+                type:"GET",
+                dataType:"json",
+                beforeSend: function(){
+                    $('#loader').css("visibility", "visible");
+                },
+
+                success:function(data) {
+
+                    $('select[name="state2"]').empty();
+
+                    $.each(data, function(key, value){
+
+                        $('select[name="state2"]').append('<option value="'+ key +'">' + value + '</option>');
+
+                    });
+                },
+                complete: function(){
+                    $('#loader').css("visibility", "hidden");
+                }
+            });
+        } else {
+            $('select[name="state2"]').empty();
+        }
+
+    });
+
+});</script>
   
   @endsection
