@@ -5,7 +5,7 @@
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title"> @if(isset($company))
+                  <h3 class="box-title"> @if($createcheck==1)
                       แก้ไขข้อมูล
                        @else
                        เพิ่มบริษัท
@@ -23,7 +23,7 @@
                           </div>
                             <div class="col-md-5">
                               <div class="form-group {{ $errors->has('company_Name') ? 'has-error' : '' }}">
-                                @if(isset($company->company_Name))
+                                @if(isset($createcheck==1)
                                   {{Form::text('company_Name',$company->company_Name	,['class'=>'form-control'])}}
                                 @else
                                   {{Form::text('company_Name','',['class'=>'form-control'])}}
@@ -39,7 +39,7 @@
                               </div>
                                 <div class="col-md-5">
                                     <div class="form-group {{ $errors->has('remark') ? 'has-error' : '' }}">
-                                    @if(isset($company->remark))
+                                    @if(isset($createcheck==1)
                                       {{Form::text('remark',$company->remark,['class'=>'form-control'])}}
                   
                                     @else
