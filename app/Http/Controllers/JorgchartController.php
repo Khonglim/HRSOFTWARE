@@ -15,8 +15,8 @@ class JorgchartController extends Controller
     	$company = Company::all();
         $department= Department::all();
         $position = Position::all();
-        $employee = Employee::all();
-        $data1 = array('company' => $company,'department' => $department,'position' => $position,'employee' => $employee);
+       
+        $data1 = array('company' => $company,'department' => $department,'position' => $position);
         return view('/orgchartcompany',$data1);
     }
       public function department()
@@ -32,8 +32,8 @@ class JorgchartController extends Controller
     	$company = Company::all();
         $department= Department::all();
         $position = Position::all();
-        $employee = Employee::all();
-        $data1 = array('company' => $company,'department' => $department,'position' => $position,'employee' => $employee);
+        
+        $data1 = array('company' => $company,'department' => $department,'position' => $position);
         return view('/homeshowcompany',$data1);
     }
 }
