@@ -35,7 +35,7 @@
                           </div>
                            <div class="row">
                                 <div class="col-md-2">
-                                  {{Form::label('department_head_id','ID เริ่มต้นแผนก')}}
+                                  {{Form::label('department_head_id','บริษัท')}}
                                 </div>
                                   
                                     <div class="form-group ">
@@ -43,15 +43,19 @@
                             {{ csrf_field() }}
                                 <div class="col-md-4">
                                     <select id="country" name="company_id" class="form-control">
-                                        <option value="">--Select Country--</option>
+                                        <option value="">--เลือกบริษัท--</option>
                                         @foreach ($company as $id => $company_Name)
                                         <option value="{{ $id }}"> {{ $company_Name }}</option>   
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="col-md-1">
+                                        {{Form::label('department_head_id','แผนก')}}
+                                      </div>
+                                        
                                 <div class="col-md-3">
                                     <select id="state" name="department_head_id" class="form-control">
-                                     <option>--State--</option>
+                                     <option value="0">--แผนก--</option>
                                  </select>
                              </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div>
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\User;
 class HomeController extends Controller
 {
@@ -28,11 +28,10 @@ class HomeController extends Controller
     public function index()
     {
         
-        $user = User::where('enable', '=', 1)->paginate(15);
-
-        $data = array(
-          'user' => $user
-        );
+        $company = DB::table("company")   
+        ->leftJoin('department', 'company.id', '=', 'department.company_id')
+        ->get();
+        $data = array('company' => $company);
         return view('home',$data );
        
     }
