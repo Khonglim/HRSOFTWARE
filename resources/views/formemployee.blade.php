@@ -502,8 +502,8 @@
                                                                               <tr>
                                     
                                                                                     <td>
-                                                                                      ชื่อสถานที่ประกอบการ: 
-                                                                                       
+                                                                                      ประวัติการทำงาน  ชื่อสถานที่ประกอบการ: 
+                                                                
                                                                                     </td>
                                                                                   </tr>
                                                                                   <br>
@@ -515,12 +515,12 @@
                                                             
                                                                                   <tr>
                                                                                       <td>
-                                                                                  1.  <input type="text" name="listE1" id="listE1" style="width:150px"/>
-                                                                                  ลักษณะงานที่รับผิดชอบ: <input type="text" name="listE1" id="listE1" style="width:150px"/>
-                                                                                  โทร: <input type="text" name="p" id="p" style="width:150px"/>
+                                                                                  1.  <input type="text" name="list_of_employed1" id="list_of_employed1" style="width:150px"/>
+                                                                                  ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description1" id="job_description1" style="width:150px"/>
+                                                                                  โทร: <input type="text" name="call1" id="call1" style="width:150px"/>
                                                             
                                                                                       </td>
-                                                                                      
+                                                                                    </tr>
                                                                                 <tr>
                                                                                     <td align="right" valign="middle">&nbsp;</td>
                                                                                     <td colspan="3">&nbsp;</td>
@@ -528,30 +528,32 @@
                                                             
                                                                                   <tr>
                                                                                       <td>
-                                                                                  ระยะเวลางาน:<input type="date" name="date" id="date" style="width:150px"/>
-                                                                                  ถึงวันที่: <input type="date" name="date" id="date" style="width:150px"/>
-                                                                                  ตำแหน่ง: <input type="text" name="p" id="p" style="width:150px"/>
+                                                                                  ระยะเวลางาน:<input type="date" name="start_job_duration1" id="job_duration1" style="width:150px"/>
+                                                                                  ถึงวันที่: <input type="date" name="end_job_duration2" id="job_duration2" style="width:150px"/>
+                                                                                  ตำแหน่ง: <input type="text" name="position1" id="position1" style="width:150px"/>
                                                             
                                                                                       </td>
+                                                                                    </tr>
+
                                                                                       <tr>
                                                                                           <td align="right" valign="middle">&nbsp;  
                                                                                            
                                                                                           </td>
                                                                                           <td colspan="3">&nbsp;</td>
                                                                                         </tr>
-                                                            
+                                                                                        <tr>
                                                                                         <td>
-                                                                                       สาเหตุที่ออก:<input type="text" name="ReasonLeaving" id="ReasonLeaving" style="width:150px"/>
-                                                                                        เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary" id="LastSalary"style="width:150px"/> บาท
+                                                                                         สาเหตุที่ออก:<input type="text" name="ReasonLeaving1" id="ReasonLeaving1" style="width:150px"/>
+                                                                                         เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary1" id="LastSalary1"style="width:150px"/> บาท
                                                                                         </td>
-                                                                                <tr>
-                                                            
-                                                                                    <tr>
-                                                                                        <td align="right" valign="middle">&nbsp;</td>
-                                                                                        <td colspan="3">&nbsp;</td>
-                                                                                        
-                                                                                      </tr>
-                                                                        <tr> <td> ----------------------------------------------------------------------------------------------------------------------------------------------------</td></tr>
+                                                                                    </tr>
+                                                                                         
+                                                                        <tr> 
+                                                                            
+                                                                            <td> 
+                                                                            ----------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                            </td>
+                                                                    </tr>
                                                                            <tr>
                                                                                       <td align="right" valign="middle">&nbsp;</td>
                                                                                             <td colspan="3">&nbsp;</td>
@@ -561,12 +563,12 @@
                                                                                          
                                                                                           <td>
                                                                                              
-                                                                                      2.  <input type="text" name="listE1" id="listE1" style="width:150px"/>
-                                                                                      ลักษณะงานที่รับผิดชอบ: <input type="text" name="listE1" id="listE1" style="width:150px"/>
-                                                                                      โทร: <input type="text" name="p" id="p" style="width:150px"/>
+                                                                                      2.  <input type="text" name="list_of_employed2" id="list_of_employed2" style="width:150px"/>
+                                                                                      ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description2" id="job_description2" style="width:150px"/>
+                                                                                      โทร: <input type="text" name="call2" id="call2" style="width:150px"/>
                                                                 
                                                                                           </td>
-                                                                                          
+                                                                                        </tr>
                                                                                     <tr>
                                                                                         <td align="right" valign="middle">&nbsp;</td>
                                                                                         <td colspan="3">&nbsp;</td>
@@ -574,40 +576,45 @@
                                                                 
                                                                                       <tr>
                                                                                           <td>
-                                                                                      ระยะเวลางาน:<input type="date" name="date" id="date" style="width:150px"/>
-                                                                                      ถึงวันที่: <input type="date" name="date" id="date" style="width:150px"/>
-                                                                                      ตำแหน่ง: <input type="text" name="p" id="p" style="width:150px"/>
+                                                                                      ระยะเวลางาน:<input type="date" name="start_job_duration3" id="job_duration3" style="width:150px"/>
+                                                                                      ถึงวันที่: <input type="date" name="end_job_duration4" id="job_duration4" style="width:150px"/>
+                                                                                      ตำแหน่ง: <input type="text" name="position2" id="position2" style="width:150px"/>
                                                                 
                                                                                           </td>
+                                                                                        </tr>
+    
                                                                                           <tr>
-                                                                                              <td align="right" valign="middle">&nbsp;</td>
+                                                                                              <td align="right" valign="middle">&nbsp;  
+                                                                                               
+                                                                                              </td>
                                                                                               <td colspan="3">&nbsp;</td>
                                                                                             </tr>
-                                                                
+                                                                                            <tr>
                                                                                             <td>
-                                                                                           สาเหตุที่ออก:<input type="text" name="ReasonLeaving" id="ReasonLeaving" style="width:150px"/>
-                                                                                            เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary" id="LastSalary"style="width:150px"/>บาท
+                                                                                             สาเหตุที่ออก:<input type="text" name="ReasonLeaving2" id="ReasonLeaving2" style="width:150px"/>
+                                                                                            เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary3" id="LastSalary3"style="width:150px"/> บาท
                                                                                             </td>
-                                                                                    <tr>
-                                                                                        <tr>
-                                                                                            <td align="right" valign="middle">&nbsp;</td>
-                                                                                            <td colspan="3">&nbsp;</td>
-                                                                                          </tr>
-                                                                                          <tr> <td> ----------------------------------------------------------------------------------------------------------------------------------------------------</td></tr>
+                                                                                        </tr>
+                                                                                             
+                                                                                        
+                                                                                              
+                                                                                        <td> ----------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                            </td>
+                                                                                        </tr>
                                                                                           <tr>
                                                                                                      <td align="right" valign="middle">&nbsp;</td>
                                                                                                            <td colspan="3">&nbsp;</td>
                                                                                    
                                                                                                  </tr>
-                                                                                                     <tr>
+                                                                                           
                                                                                           <tr>
                                                                                               <td>
-                                                                                          3.  <input type="text" name="listE1" id="listE1" style="width:150px"/>
-                                                                                          ลักษณะงานที่รับผิดชอบ: <input type="text" name="listE1" id="listE1" style="width:150px"/>
-                                                                                          โทร: <input type="text" name="p" id="p" style="width:150px"/>
+                                                                                          3.  <input type="text" name="list_of_employed3" id="list_of_employed3" style="width:150px"/>
+                                                                                          ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description3" id="job_description3" style="width:150px"/>
+                                                                                          โทร: <input type="text" name="call3" id="call3" style="width:150px"/>
                                                                     
                                                                                               </td>
-                                                                                              
+                                                                                            </tr>
                                                                                         <tr>
                                                                                             <td align="right" valign="middle">&nbsp;</td>
                                                                                             <td colspan="3">&nbsp;</td>
@@ -615,62 +622,37 @@
                                                                     
                                                                                           <tr>
                                                                                               <td>
-                                                                                          ระยะเวลางาน:<input type="date" name="date" id="date" style="width:150px"/>
-                                                                                          ถึงวันที่: <input type="date" name="date" id="date" style="width:150px"/>
-                                                                                          ตำแหน่ง: <input type="text" name="p" id="p" style="width:150px"/>
+                                                                                          ระยะเวลางาน:<input type="date" name="start_job_duration5" id="job_duration5" style="width:150px"/>
+                                                                                          ถึงวันที่: <input type="date" name="end_job_duration6" id="job_duration6" style="width:150px"/>
+                                                                                          ตำแหน่ง: <input type="text" name="position3" id="position3" style="width:150px"/>
                                                                     
                                                                                               </td>
+                                                                                            </tr>
+        
                                                                                               <tr>
-                                                                                                  <td align="right" valign="middle">&nbsp;</td>
+                                                                                                  <td align="right" valign="middle">&nbsp;  
+                                                                                                   
+                                                                                                  </td>
                                                                                                   <td colspan="3">&nbsp;</td>
                                                                                                 </tr>
-                                                                    
+                                                                                                <tr>
                                                                                                 <td>
-                                                                                               สาเหตุที่ออก:<input type="text" name="ReasonLeaving" id="ReasonLeaving" style="width:150px"/>
-                                                                                                เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary" id="LastSalary"style="width:150px"/>บาท
+                                                                                                 สาเหตุที่ออก:<input type="text" name="ReasonLeaving3" id="ReasonLeaving3" style="width:150px"/>
+                                                                                                เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary3" id="LastSalary3"style="width:150px"/> บาท
                                                                                                 </td>
-                                                                                        <tr>
-                                                                                            <tr>
-                                                                                                <td align="right" valign="middle">&nbsp;</td>
-                                                                                                <td colspan="3">&nbsp;</td>
-                                                                                              </tr>
-                                                                                              <tr> <td> ----------------------------------------------------------------------------------------------------------------------------------------------------</td></tr>
+                                                                                            </tr>
+                                                                                              <tr> 
+                                                                                                  <td> 
+                                                                                                      
+                                ----------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                      
+                                                                                                </td>
+                                                                                            </tr>
                                                                                               <tr>
                                                                                                          <td align="right" valign="middle">&nbsp;</td>
                                                                                                                <td colspan="3">&nbsp;</td>
                                                                                        
                                                                                                      </tr>
-                                                                                                         <tr>
-                                                                                              <tr>
-                                                                                                  <td>
-                                                                                             4.  <input type="text" name="listE1" id="listE1" style="width:150px"/>
-                                                                                              ลักษณะงานที่รับผิดชอบ: <input type="text" name="listE1" id="listE1" style="width:150px"/>
-                                                                                              โทร: <input type="text" name="p" id="p" style="width:150px"/>
-                                                                        
-                                                                                                  </td>
-                                                                                                  
-                                                                                            <tr>
-                                                                                                <td align="right" valign="middle">&nbsp;</td>
-                                                                                                <td colspan="3">&nbsp;</td>
-                                                                                              </tr>
-                                                                        
-                                                                                              <tr>
-                                                                                                  <td>
-                                                                                              ระยะเวลางาน:<input type="date" name="date" id="date" style="width:150px"/>
-                                                                                              ถึงวันที่: <input type="date" name="date" id="date" style="width:150px"/>
-                                                                                              ตำแหน่ง: <input type="text" name="p" id="p" style="width:150px"/>
-                                                                        
-                                                                                                  </td>
-                                                                                                  <tr>
-                                                                                                      <td align="right" valign="middle">&nbsp;</td>
-                                                                                                      <td colspan="3">&nbsp;</td>
-                                                                                                    </tr>
-                                                                        
-                                                                                                    <td>
-                                                                                                   สาเหตุที่ออก:<input type="text" name="ReasonLeaving" id="ReasonLeaving" style="width:150px"/>
-                                                                                                    เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary" id="LastSalary"style="width:150px"/>บาท
-                                                                                                    </td>
-                                                                                            <tr>
                                                                                                     <tr>
                                                                                                             <td align="right" valign="middle">&nbsp;</td>
                                                                                                             <td colspan="3">&nbsp;</td>
@@ -690,22 +672,17 @@
                                                                                                                    ชื่อ:<input type="text" name="namecm" id="namecm" required="required" style="width=100px"/>
                                                                                                                    นามสกุล:<input type="text" name="lastnamecm" id="lastnamecm" required="required" style="width=100px"/>
                                                                                                                    สถานที่ทำงาน:<input type="text" name="firm" id="firm" required="required" style="width=200px"/> 
-                                                                                                                 
-                                                                                                                
                                                                                                                 </td>  
                                                                                                             </tr>
-                                                                                                       
                                                                                                             <tr>
                                                                                                                     <td align="right" valign="middle">&nbsp;</td>
                                                                                                                     <td colspan="3">&nbsp;</td>
                                                                                                                   </tr>
-                                                                                                       
-                                                                                                       
                                                                                                             <tr>
                                                                                                                     <td>  
                                                                                                                        
-                                                                                                                       เบอร์โทรศัพท์:<input  type="text" name="tele" id="tele" required="required" style="width=100px"/>
-                                                                                                                       ตำแหน่ง:<input  type="text" name="position" id="position" required="required" style="width=100px"/>
+                                                                                                                       เบอร์โทรศัพท์:<input  type="text" name="telecm" id="telecm" required="required" style="width=100px"/>
+                                                                                                                       ตำแหน่ง:<input  type="text" name="positioncm" id="positioncm" required="required" style="width=100px"/>
                                                                                                                     </td>  
                                                                                                                 </tr>
                                                                                                            
@@ -722,23 +699,8 @@
                                                                                                                       
                                                                                                                     
                                                                                                                     </tr>
-                                                                                                                    <tr>
-                                                                                                                            <td align="right" valign="middle">&nbsp;</td>
-                                                                                                                            <td colspan="3">&nbsp;</td>
-                                                                                                                    </tr>  
-                                                                                                                    <tr>
-                                                                                                                            <td>
-                                                                                                                                    
-                                                                                                                                            
-                                                                                                                     <input type="checkbox" class="form-check-input" id="computer">คอมพิวเตอร์ ระบุ: <input  type="text" name="แนท" id="com" required="required" style="width=100px"/>
-                                                                                                                     &nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="to">เครื่องโทรสาร
-                                                                                                             &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" class="form-check-input" id="do">เครื่องพิมพ์ดีดไทย<input  type="text" name="dot" id="dot" required="required" style="width=50px"/>คำ/นาที
-                                                                                                                                                   
-                                                                                                                                           
-                                                                                                                                     
-                                                                                                                                   
-                                                                                                                            </td>
-                                                                                                                    </tr>      
+                                                                                                                  
+                                                                                                                       
                                                                                                 
                                                                                                                     <tr>
                                                                                                                             <td align="right" valign="middle">&nbsp;</td>
@@ -751,9 +713,9 @@
                                                                                                                     <tr>
                                                                                                                             <td>
                                                                                             
-                                                                                                                    ระบุ: <input  type="text" name="แนท" id="com" required="required" style="width=100px"/>
-                                                                                                                    &nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="to">เครื่องโทรสาร
-                                                                                                                     <input type="checkbox" class="form-check-input" id="do">เครื่องพิมพ์ดีดไทย<input  type="text" name="dot" id="dot" required="required" style="width=50px"/>คำ/นาที
+                                                                                                                 คอมพิวเตอร์   ระบุ: <input  type="text" name="computer" id="computer" required="required" style="width=100px"/>
+                                                                                                                    &nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="fax" name="fax">เครื่องโทรสาร
+                                                                                                                     <input type="checkbox" class="form-check-input" id="typewriter" name="typewriter">เครื่องพิมพ์ดีดไทย<input  type="text" name="dot" id="dot" required="required" style="width=50px"/>คำ/นาที
                                                                                             
                                                                                                                     </td>
                                                                                                                 </tr>             
@@ -765,8 +727,8 @@
                                                                                                                     <tr>
                                                                                                                             <td>
                                                                                                                                     ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ): &emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                                                                                    <input type="checkbox" class="form-check-input" id="yesS"> ขัดข้อง
-                                                                                                                                    <input type="checkbox" class="form-check-input" id="yesS"> ไม่ขัดข้อง
+                                                                                                                                    <input type="checkbox" class="form-check-input" id="crash1" name="crash1"> ขัดข้อง
+                                                                                                                                    <input type="checkbox" class="form-check-input" id="nocrash1" name="nocrash1"> ไม่ขัดข้อง
                                                                                                                             </td>
                                                                                                                     </tr> 
                                                                                                                     <tr>
@@ -776,8 +738,8 @@
                                                                                                                
                                                                                                                     <tr>
                                                                                                                             <td>
-                                                                                                                                  ชื่อ:  <input type="text" name="compd" id="compa"  style="width:100px"/>
-                                                                                                                                  สถานที่ทำงาน:  <input type="text" name="compd" id="compa"  style="width:100px"/>
+                                                                                                                                  ชื่อ:  <input type="text" name="compd" id="compd"  style="width:100px"/>
+                                                                                                                                  สถานที่ทำงาน:  <input type="text" name="compa" id="compa"  style="width:100px"/>
                                                                                                                             </td>
                                                                                                                     </tr> 
                                                                                                                     <tr>
@@ -787,8 +749,8 @@
                                                                                                                     <tr>
                                                                                                                             <td>
                                                                                                                                 ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
-                                                                                                                                    <input type="checkbox" class="form-check-input" id="pop"> ขัดข้อง
-                                                                                                                                    <input type="checkbox" class="form-check-input" id="pop"> ไม่ขัดข้อง        
+                                                                                                                                <input type="checkbox" class="form-check-input" id="crash2" name="crash2"> ขัดข้อง
+                                                                                                                                <input type="checkbox" class="form-check-input" id="nocrash2" name="nocrash2"> ไม่ขัดข้อง      
                                                                                             
                                                                                                                         </td>
                                                                                                                     </tr>  
@@ -799,8 +761,8 @@
                                                                                                                     <tr>
                                                                                                                         <td>
                                                                                                                              ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                                                                                <input type="checkbox" class="form-check-input" id="pop"> ขัดข้อง
-                                                                                                                                <input type="checkbox" class="form-check-input" id="pop"> ไม่ขัดข้อง        
+                                                                                                                             <input type="checkbox" class="form-check-input" id="crash3" name="crash3"> ขัดข้อง
+                                                                                                                             <input type="checkbox" class="form-check-input" id="nocrash3" name="nocrash13"> ไม่ขัดข้อง       
                                                                                             
                                                                                                                     </td>
                                                                                                                 </tr>
@@ -811,8 +773,8 @@
                                                                                                                 <tr>
                                                                                                                     <td>
                                                                                                                          ท่านสามารถขับรถยนต์ได้หรือไม่&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                                                                            <input type="checkbox" class="form-check-input" id="car"> ได้
-                                                                                                                            <input type="checkbox" class="form-check-input" id="carno"> ไม่ได้      
+                                                                                                                         <input type="checkbox" class="form-check-input" id="yes" name="yes"> ได้
+                                                                                                                         <input type="checkbox" class="form-check-input" id="no" name="no"> ไม่ได้   
                                                                                             
                                                                                                                 </td>
                                                                                                             </tr>
@@ -828,8 +790,8 @@
                                                                                                             <tr>
                                                                                                                 <td>
                                                                                                                     ท่านมีรถยนต์ส่วนตัวหรือไม่&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                                                                        <input type="checkbox" class="form-check-input" id="owncar"> มี
-                                                                                                                        <input type="checkbox" class="form-check-input" id="owncar"> ไม่มี        
+                                                                                                                        <input type="checkbox" class="form-check-input" id="owncar" name="owncar"> มี
+                                                                                                                        <input type="checkbox" class="form-check-input" id="owncarno" name="owncarno"> ไม่มี        
                                                                                             
                                                                                                             </td>
                                                                                                         </tr>
@@ -861,8 +823,8 @@
                                                                                                                 </tr>
                                                                                                                 <tr>
                                                                                                                     <td>
-                                                                                                                           ท่านเป็นเจ้าของรถประเภทใด: <input type="cardec" id="cardec" name="cardec" style="width=150px"/>
-                                                                                                                           ทะเบียน:<input type="License" id="License" name="License" style="width=150px"/>
+                                                                                                                           ท่านเป็นเจ้าของรถประเภทใด: <input type="text" id="cardec" name="cardec" style="width=150px"/>
+                                                                                                                           ทะเบียน:<input type="text" id="license" name="license" style="width=150px"/>
                                                                                                                         </td>
                                                                                                                     </tr> 
                                                                                             
@@ -872,8 +834,8 @@
                                                                                                                         </tr>
                                                                                             
                                                                                                                         <td>
-                                                                                                                                ท่านเคยให้ถูกออกจากงานหรือไม่: &emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="exitwork">เคย
-                                                                                                                                <input type="checkbox" class="form-check-input" id="exitwork">ไม่เคย  เพราะ<input type="ans" id="ans" name="License" style="width=150px"/>
+                                                                                                                                ท่านเคยให้ถูกออกจากงานหรือไม่: &emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="exitwork">เคย เพราะ<input type="ans" id="ans" name="because" style="width=150px"/>
+                                                                                                                                &emsp;&emsp;&emsp; <input type="checkbox" class="form-check-input" id="noexitwork" name="noexitwork">ไม่เคย  
                                                                                             
                                                                                                                              </td>
                                                                                                                          </tr> 
@@ -884,8 +846,8 @@
                                                                                                                         
                                                                                                                         <tr>
                                                                                                                             <td>
-                                                                                                                                ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="ill">เคย
-                                                                                                                                <input type="checkbox" class="form-check-input" id="ill">ไม่เคย
+                                                                                                                                ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="serious_ill">เคย
+                                                                                                                                <input type="checkbox" class="form-check-input" id="no_serious_ill">ไม่เคย
                                                                                                                                 </td>
                                                                                                                             </tr>
                                                                                                                             <tr>
@@ -895,8 +857,8 @@
                                                                                                                                 
                                                                                                                                 <tr>
                                                                                                                                     <td>
-                                                                                                                                        ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="offense">เคย
-                                                                                                                                    <input type="checkbox" class="form-check-input" id="offense">ไม่เคย
+                                                                                                                                        ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="offense" name="offense">เคย
+                                                                                                                                    <input type="checkbox" class="form-check-input" id="offense" name="no_offense">ไม่เคย
                                                                                                                                     </td>
                                                                                                                                 </tr>   
                                                                                                                             <tr>
@@ -906,8 +868,8 @@
                                                                                             
                                                                                         <tr>
                                                                                 <td>
-                                                                                    ขณะนี้คุณตั้งครรภ์หรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="pregnant">ใช่
-                                                                                <input type="checkbox" class="form-check-input" id="pregnant">ไม่ใช่
+                                                                                    ขณะนี้คุณตั้งครรภ์หรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="pregnant" name="pregnant">ใช่
+                                                                                <input type="checkbox" class="form-check-input" id="no_pregnant" name="no_pregnant">ไม่ใช่
                                                                                      </td>
                                                                     </tr>                        
                                                     

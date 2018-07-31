@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Validation\Rule;
-use App\Employee;
+
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -14,9 +14,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employee = Employee::where('enable', '=', 1)->paginate(4);
-        $data = array('employee' => $employee);
-        return view('employee',$data );
+        return view('employee' );
     }
 
     /**
@@ -39,25 +37,24 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {     
 
-        $this->validate($request, [
-              'name' => 'required|alpha',
-              'lastname' => 'required|alpha',
-              'email' => 'required|string|email|max:255|unique:employee',
-              'nikname' => 'required|max:100',
-              'sex' => 'required|filled',
-              'birthday'=>'required|filled',
-  
-          ]);
-  
+        
     
-        $employee = new Employee;
-        $employee->name = $request->name;
-        $employee->lastname = $request->lastname;
-        $employee->nikname = $request->nikname;
-        $employee->sex = $request->sex;
-        $employee->birthday = $request->birthday;
-        $employee->email = $request->email;
-        $employee->save();
+        
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         return redirect('employee');
     }
 
