@@ -14,7 +14,7 @@ class CreatePersonalTable extends Migration
     public function up()
     {
         Schema::create('personal', function (Blueprint $table) {
-            $table->increments('id_personal');
+            $table->increments('id');
             $table->text("prefix1");
             $table->text("name");
             $table->text("lastname");
@@ -67,7 +67,141 @@ class CreatePersonalTable extends Migration
             $table->text("alivem");
 
 
+            $table->text('primary');
+            $table->text('year1');
+            $table->text('year2');
+            $table->text('gpa');
+            $table->text('major');
 
+            $table->text('secondary');
+            $table->text('year3');
+            $table->text('year4');
+            $table->text('gpas');
+            $table->text('majors');
+
+            $table->text('vocation');
+            $table->text('year5');
+            $table->text('year6');
+            $table->text('gpav');
+            $table->text('majorv');
+
+            $table->text('diploma');
+            $table->text('year7');
+            $table->text('year8');
+            $table->text('gpad');
+            $table->text('majord');
+
+            $table->text('bachelor');
+            $table->text('year9');
+            $table->text('year10');
+            $table->text('gpab');
+            $table->text('majorb');
+
+            $table->text('master');
+            $table->text('year11');
+            $table->text('year12');
+            $table->text('gpam');
+            $table->text('majorm');
+
+            $table->text('otherE');
+            $table->text('year13');
+            $table->text('year14');
+            $table->text('gpao');
+            $table->text('majoro');
+
+            $table->text('otherr');
+            $table->text('thais');
+            $table->text('thail');
+            $table->text('thair');
+
+            
+            $table->text('engliss');
+            $table->text('englisl');
+            $table->text('englisr');
+
+
+            $table->text('othes');
+            $table->text('othel');
+            $table->text('other');
+
+
+
+            $table->text('list_of_employed1');
+            $table->text('job_description1');
+            $table->text('call1');
+            $table->text('start_job_duration1');
+            $table->text('end_job_duration2');
+            $table->text('position1');
+            $table->text('reasonLeaving1');
+            $table->text('lastsalary1');
+
+            $table->text('list_of_employed2');
+            $table->text('call2');
+            $table->text('job_description2');
+            $table->text('start_job_duration3');
+            $table->text('end_job_duration4');
+            $table->text('position2');
+            $table->text('reasonLeaving2');
+            $table->text('lastsalary2');
+
+            $table->text('list_of_employed3');
+            $table->text('call3');
+            $table->text('job_description3');
+            $table->text('start_job_duration5');
+            $table->text('end_job_duration6');
+            $table->text('position3');
+            $table->text('reasonLeaving3');
+            $table->text('lastsalary3');
+
+
+            $table->text('namecm');
+            $table->text('lastnamecm');
+            $table->text('firm');
+            $table->text('telecm');
+            $table->text('workk');
+          
+            $table->text('positioncm');
+            $table->text('computer');
+            $table->text('fax');
+            $table->text('typewriter');
+            $table->text('dot');
+
+            $table->text('crash1');
+       
+
+
+            $table->text('compd');
+            $table->text('compa');
+
+            $table->text('crash2');
+         
+
+            $table->text('crash3');
+        
+
+            $table->text('yes');
+          
+
+            $table->text('owncar');
+          
+
+            $table->text('dateworkk');
+            $table->text('cardec');
+            $table->text('license');
+
+            $table->text('exitwork');
+            $table->text('because');
+           
+
+            $table->text('serious_ill');
+    
+
+            $table->text('offense');
+          
+
+            $table->text('pregnant');
+
+            $table->tinyInteger('enable')->default('1');
             $table->timestamps();
         });
     }
