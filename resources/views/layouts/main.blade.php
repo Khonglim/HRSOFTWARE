@@ -120,8 +120,6 @@
                   </a>
                   <ul class="treeview-menu">
                     <li><a href="/orgchartcompany">แผนผังบริษัท</a></li>
-                   <li><a href="/orgchartdepartment">แผนผังแผนก</a></li>
-                    <li><a href="/orgchartposition">แผนผังตำแหน่ง</a></li>
                  </ul>
                 </li>
                
