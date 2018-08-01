@@ -120,7 +120,7 @@
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="/orgchartcompany">แผนผังบริษัท</a></li>
+                    <li><a href="/iframechart">แผนผังบริษัท</a></li>
                  </ul>
                 </li>
                
