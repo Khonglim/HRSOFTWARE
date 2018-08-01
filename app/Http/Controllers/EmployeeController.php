@@ -220,6 +220,40 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
+        
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+
+        if($id !== '') {
+            $employee = Employee::find($id);
+            $data = array(
+                'employee' => $employee
+            );
+            return view('formemployee',$data);
+        } 
+       
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        
+  
+     
         $personal = new Personal;
         $personal->prefix1 = $request->prefix1;
         $personal->name = $request->name;
@@ -390,40 +424,6 @@ class EmployeeController extends Controller
         $persons->because = $request->because;
         $persons->save();
         return redirect('employee');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-
-        if($id !== '') {
-            $employee = Employee::find($id);
-            $data = array(
-                'employee' => $employee
-            );
-            return view('formemployee',$data);
-        } 
-       
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        
-  
-     
-
 
 
 
