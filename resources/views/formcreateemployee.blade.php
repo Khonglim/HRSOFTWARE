@@ -63,7 +63,7 @@
                                                     <tr>
                                                         <td>โทรศัพท์ที่ติดต่อ:<input type="text"name="tel" id="tel" required="required"style="width:100px" />&nbsp;&nbsp;&nbsp;
                                                           ที่บ้าน:<input type="text" name="home" id="home" style="width:100px" />&nbsp;&nbsp;&nbsp;
-                                                          โทรศัพท์มือถือ:<input type="text" name="mobile" id="mobile" required="required"style="width:100px" />&nbsp;&nbsp;&nbsp;
+                                                          โทรศัพท์มือถือ:<input type="text" name="moblie" id="mobile" required="required"style="width:100px" />&nbsp;&nbsp;&nbsp;
 
                                                         </td>
                                                    </tr>

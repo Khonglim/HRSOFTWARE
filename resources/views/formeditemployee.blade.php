@@ -112,7 +112,7 @@
                                                             </tr>
 
                                                             <td>
-                                                              บัตรประจำตัวผู้เสียภาษี:<input type="text" name="texid" id="textid" required="required"style="width:80px" value="{{personal->texid}}"/>
+                                                              บัตรประจำตัวผู้เสียภาษี:<input type="text" name="texid" id="textid" required="required"style="width:80px" value="{{$personal->texid}}"/>
                                                               สถานะความเป็นอยู่:
                                                                 <select style="width:80px"name="living_status"  >
                                                                 <option value="-">:: เลือก ::</option>
@@ -252,7 +252,7 @@
 
                                                                                   <td>
                                                                                    ประถมการศึกษา:
-                                                                                   <input type="text" id="primary" name="primary" required="required" style="width:100px" value="{{$educational->primary}}"/>
+                                                                                   <input type="text" id="primary" name="primary" required="required" style="width:100px" value="{{$personal->primary}}"/>
                                                                                    &emsp;&emsp;&nbsp;&nbsp;&nbsp;
                                                                                    <select name="year1" id="year1" >
 
@@ -278,9 +278,9 @@
 
                                                                                       </select>
                                                                                       &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="gpa" name="gpa" required="required" style="width:50px" value="{{$educational->gpa}}"/>
+                                                                                   <input type="text" id="gpa" name="gpa" required="required" style="width:50px" value="{{$personal->gpa}}"/>
                                                                                    &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="major" name="major" required="required" style="width:150px" value="{{$educational->major}}"/>
+                                                                                   <input type="text" id="major" name="major" required="required" style="width:150px" value="{{$personal->major}}"/>
                                                                                   </td>
                                                                             </tr>
 
@@ -295,7 +295,7 @@
 
                                                                                   <td>
                                                                                  มัธยมศึกษา:
-                                                                                   <input type="text" id="secondary" name="secondary" required="required" style="width:125px" value="{{$educational->secondary}}"/>
+                                                                                   <input type="text" id="secondary" name="secondary" required="required" style="width:125px" value="{{$personal->secondary}}"/>
                                                                                    &emsp;&emsp;&nbsp;&nbsp;&nbsp;
                                                                                    <select name="year3" id="year3" >
 
@@ -321,9 +321,9 @@
 
                                                                                       </select>
                                                                                       &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="gpas" name="gpas" required="required" style="width:50px" value="{{$educational->gpas}}"/>
+                                                                                   <input type="text" id="gpas" name="gpas" required="required" style="width:50px" value="{{$personal->gpas}}"/>
                                                                                    &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="majors" name="majors" required="required" style="width:150px" value="{{$educational->majors}}"/>
+                                                                                   <input type="text" id="majors" name="majors" required="required" style="width:150px" value="{{$personal->majors}}"/>
                                                                                   </td>
                                                                             </tr>
 
@@ -337,7 +337,7 @@
 
                                                                                   <td>
                                                                                 อาชีวะศึกษา:
-                                                                                   <input type="text" id="vocation" name="vocation" required="required" style="width:122px" value="{{$educational->vocation}}"/>
+                                                                                   <input type="text" id="vocation" name="vocation" required="required" style="width:122px" value="{{$personal->vocation}}"/>
                                                                                    &emsp;&emsp;&nbsp;&nbsp;
                                                                                    <select name="year5" id="year5" >
 
@@ -363,9 +363,9 @@
 
                                                                                       </select>
                                                                                       &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="gpav" name="gpav" required="required" style="width:50px" value="{{$educational->gpav}}"/>
+                                                                                   <input type="text" id="gpav" name="gpav" required="required" style="width:50px" value="{{$personal->gpav}}"/>
                                                                                    &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="majorv" name="majorv" required="required" style="width:150px" value="{{$educational->majorv}}"/>
+                                                                                   <input type="text" id="majorv" name="majorv" required="required" style="width:150px" value="{{$personal->majorv}}"/>
                                                                                   </td>
                                                                             </tr>
 
@@ -379,7 +379,7 @@
 
                                                                                   <td>
                                                                                  อนุปริญญา:
-                                                                                   <input type="text" id="diploma" name="diploma" required="required" style="width:129.5px" value="{{$educational->diploma}}"/>
+                                                                                   <input type="text" id="diploma" name="diploma" required="required" style="width:129.5px" value="{{$personal->diploma}}"/>
                                                                                    &emsp;&emsp;&nbsp;&nbsp;
                                                                                    <select name="year7" id="year7" >
 
@@ -405,9 +405,9 @@
 
                                                                                       </select>
                                                                                       &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="gpad" name="gpad" required="required" style="width:50px" value="{{$educational->gpad}}"/>
+                                                                                   <input type="text" id="gpad" name="gpad" required="required" style="width:50px" value="{{$personal->gpad}}"/>
                                                                                    &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="majord" name="majord" required="required" style="width:150px" value="{{$educational->majord}}"/>
+                                                                                   <input type="text" id="majord" name="majord" required="required" style="width:150px" value="{{$personal->majord}}"/>
                                                                                   </td>
                                                                             </tr>
 
@@ -419,7 +419,7 @@
                                                                               <tr>
                                                                                   <td>
                                                                                  ปริญญาตรี:
-                                                                                   <input type="text" id="bachelor" name="bachelor" required="required" style="width:131px" value="{{$educational->bachelor}}"/>
+                                                                                   <input type="text" id="bachelor" name="bachelor" required="required" style="width:131px" value="{{$personal->bachelor}}"/>
                                                                                    &emsp;&emsp;&nbsp;&nbsp;
                                                                                    <select name="year9" id="year9" >
 
@@ -445,9 +445,9 @@
 
                                                                                       </select>
                                                                                       &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="gpab" name="gpab" required="required" style="width:50px" value="{{$educational->gpab}}"/>
+                                                                                   <input type="text" id="gpab" name="gpab" required="required" style="width:50px" value="{{$personal->gpab}}"/>
                                                                                    &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="majorb" name="majorb" required="required" style="width:150px" value="{{$educational->majorb}}"/>
+                                                                                   <input type="text" id="majorb" name="majorb" required="required" style="width:150px" value="{{$personal->majorb}}"/>
                                                                                   </td>
                                                                             </tr>
 
@@ -461,7 +461,7 @@
 
                                                                                   <td>
                                                                                  ปริญญาโท:
-                                                                                   <input type="text" id="master" name="master" required="required" style="width:129px" value="{{$educational->master}}"/>
+                                                                                   <input type="text" id="master" name="master" required="required" style="width:129px" value="{{$personal->master}}"/>
                                                                                    &emsp;&emsp;&nbsp;
                                                                                    <select name="year11" id="year11" >
 
@@ -487,9 +487,9 @@
 
                                                                                       </select>
                                                                                       &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="gpam" name="gpam" required="required" style="width:50px" value="{{$educational->gpam}}"/>
+                                                                                   <input type="text" id="gpam" name="gpam" required="required" style="width:50px" value="{{$personal->gpam}}"/>
                                                                                    &emsp;&emsp;&emsp;
-                                                                                   <input type="text" id="majorm" name="majorm" required="required" style="width:150px" value="{{$educational->majorm}}"/>
+                                                                                   <input type="text" id="majorm" name="majorm" required="required" style="width:150px" value="{{$personal->majorm}}"/>
                                                                                   </td>
                                                                             </tr>
 
@@ -502,7 +502,7 @@
 
                                                                                 <td>
                                                                                     &emsp;&emsp;&nbsp;&nbsp;&nbsp; อื่นๆ:
-                                                                                 <input type="text" id="otherE" name="otherE" required="required" style="width:129px" value="{{$educational->otherE}}"/>
+                                                                                 <input type="text" id="otherE" name="otherE" required="required" style="width:129px" value="{{$personal->otherE}}"/>
                                                                                   &emsp;&emsp;
                                                                                  <select name="year13" id="year13" >
 
@@ -528,9 +528,9 @@
 
                                                                                     </select>
                                                                                     &emsp;&emsp;&emsp;
-                                                                                 <input type="text" id="gpao" name="gpao" required="required" style="width:50px" value="{{$educational->gpao}}"/>
+                                                                                 <input type="text" id="gpao" name="gpao" required="required" style="width:50px" value="{{$personal->gpao}}"/>
                                                                                  &emsp;&emsp;&emsp;
-                                                                                 <input type="text" id="majoro" name="majoro" required="required" style="width:150px" value="{{$educational->majoro}}"/>
+                                                                                 <input type="text" id="majoro" name="majoro" required="required" style="width:150px" value="{{$personal->majoro}}"/>
                                                                                 </td>
                                                                           </tr>
 
@@ -600,7 +600,7 @@
                                                                               <tr>
                                                                                   <td >
                                                                                    อื่นๆ:->
-                                                                                   <input type="text" name="otherr" id="otherr" style="width:100px" name="otherr" value="{{$languages->otherr}}"/>
+                                                                                   <input type="text" name="otherr" id="otherr" style="width:100px" name="otherr" value="{{$personal->otherr}}"/>
                                                                                    การพูด: <select style="width:65px" id="othes" name="othes">
                                                                                       <option value="ดี">ดี</option>
                                                                                       <option  value="พอใช้">พอใช้</option>
@@ -644,9 +644,9 @@
 
                                                                                   <tr>
                                                                                       <td>
-                                                                                  1.  <input type="text" name="list_of_employed1" id="list_of_employed1" style="width:150px"/ value="{{$history->list_of_employed1}}">
-                                                                                  ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description1" id="job_description1" style="width:150px" value="{{$history->job_description1}}"/>
-                                                                                  โทร: <input type="text" name="call1" id="call1" style="width:150px" value="{{$history->call1}}"/>
+                                                                                  1.  <input type="text" name="list_of_employed1" id="list_of_employed1" style="width:150px"/ value="{{$personal->list_of_employed1}}">
+                                                                                  ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description1" id="job_description1" style="width:150px" value="{{$personal->job_description1}}"/>
+                                                                                  โทร: <input type="text" name="call1" id="call1" style="width:150px" value="{{$personal->call1}}"/>
 
                                                                                       </td>
                                                                                     </tr>
@@ -659,7 +659,7 @@
                                                                                       <td>
                                                                                   ระยะเวลางาน:<input type="date" name="start_job_duration1" id="job_duration1" style="width:150px"/>
                                                                                   ถึงวันที่: <input type="date" name="end_job_duration2" id="job_duration2" style="width:150px"/>
-                                                                                  ตำแหน่ง: <input type="text" name="position1" id="position1" style="width:150px" value="{{$history->position1}}"/>
+                                                                                  ตำแหน่ง: <input type="text" name="position1" id="position1" style="width:150px" value="{{$personal->position1}}"/>
 
                                                                                       </td>
                                                                                     </tr>
@@ -672,8 +672,8 @@
                                                                                         </tr>
                                                                                         <tr>
                                                                                         <td>
-                                                                                         สาเหตุที่ออก:<input type="text" name="reasonLeaving1" id="reasonleaving1" style="width:150px" value="{{$history->reasonLeaving1}}"/>
-                                                                                         เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary1" id="lastsalary1"style="width:150px" value="{{$history->lastsalary1}}"/> บาท
+                                                                                         สาเหตุที่ออก:<input type="text" name="reasonLeaving1" id="reasonleaving1" style="width:150px" value="{{$personal->reasonLeaving1}}"/>
+                                                                                         เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary1" id="lastsalary1"style="width:150px" value="{{$personal->lastsalary1}}"/> บาท
                                                                                         </td>
                                                                                     </tr>
 
@@ -692,9 +692,9 @@
 
                                                                                           <td>
 
-                                                                                      2.  <input type="text" name="list_of_employed2" id="list_of_employed2" style="width:150px" value="{{$history->list_of_employed2}}"/>
-                                                                                      ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description2" id="job_description2" style="width:150px" value="{{$history->job_description2}}"/>
-                                                                                      โทร: <input type="text" name="call2" id="call2" style="width:150px" value="{{$history->call2}}"/>
+                                                                                      2.  <input type="text" name="list_of_employed2" id="list_of_employed2" style="width:150px" value="{{$personal->list_of_employed2}}"/>
+                                                                                      ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description2" id="job_description2" style="width:150px" value="{{$personal->job_description2}}"/>
+                                                                                      โทร: <input type="text" name="call2" id="call2" style="width:150px" value="{{$personal->call2}}"/>
 
                                                                                           </td>
                                                                                         </tr>
@@ -707,7 +707,7 @@
                                                                                           <td>
                                                                                       ระยะเวลางาน:<input type="date" name="start_job_duration3" id="job_duration3" style="width:150px"/>
                                                                                       ถึงวันที่: <input type="date" name="end_job_duration4" id="job_duration4" style="width:150px"/>
-                                                                                      ตำแหน่ง: <input type="text" name="position2" id="position2" style="width:150px"/ value="{{$history->position2}}">
+                                                                                      ตำแหน่ง: <input type="text" name="position2" id="position2" style="width:150px"/ value="{{$personal->position2}}">
 
                                                                                           </td>
                                                                                         </tr>
@@ -720,8 +720,8 @@
                                                                                             </tr>
                                                                                             <tr>
                                                                                             <td>
-                                                                                             สาเหตุที่ออก:<input type="text" name="reasonleaving2" id="reasonleaving2" style="width:150px"/ value="{{$history->reasonLeaving2}}">
-                                                                                            เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary2" id="lastsalary2"style="width:150px" value="{{$history->lastsalary2}}"/> บาท
+                                                                                             สาเหตุที่ออก:<input type="text" name="reasonleaving2" id="reasonleaving2" style="width:150px"/ value="{{$personal->reasonLeaving2}}">
+                                                                                            เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary2" id="lastsalary2"style="width:150px" value="{{$personal->lastsalary2}}"/> บาท
                                                                                             </td>
                                                                                         </tr>
 
@@ -738,9 +738,9 @@
 
                                                                                           <tr>
                                                                                               <td>
-                                                                                          3.  <input type="text" name="list_of_employed3" id="list_of_employed3" style="width:150px" value="{{$history->list_of_employed3}}"/>
-                                                                                          ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description3" id="job_description3" style="width:150px" value="{{$history->job_description3}}"/>
-                                                                                          โทร: <input type="text" name="call3" id="call3" style="width:150px" value="{{$history->call3}}"/>
+                                                                                          3.  <input type="text" name="list_of_employed3" id="list_of_employed3" style="width:150px" value="{{$personal->list_of_employed3}}"/>
+                                                                                          ลักษณะงานที่รับผิดชอบ: <input type="text" name="job_description3" id="job_description3" style="width:150px" value="{{$personal->job_description3}}"/>
+                                                                                          โทร: <input type="text" name="call3" id="call3" style="width:150px" value="{{$personal->call3}}"/>
 
                                                                                               </td>
                                                                                             </tr>
@@ -753,7 +753,7 @@
                                                                                               <td>
                                                                                           ระยะเวลางาน:<input type="date" name="start_job_duration5" id="job_duration5" style="width:150px"/>
                                                                                           ถึงวันที่: <input type="date" name="end_job_duration6" id="job_duration6" style="width:150px"/>
-                                                                                          ตำแหน่ง: <input type="text" name="position3" id="position3" style="width:150px" value="{{$history->position3}}"/>
+                                                                                          ตำแหน่ง: <input type="text" name="position3" id="position3" style="width:150px" value="{{$personal->position3}}"/>
 
                                                                                               </td>
                                                                                             </tr>
@@ -766,8 +766,8 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                 <td>
-                                                                                                 สาเหตุที่ออก:<input type="text" name="reasonleaving3" id="reasonleaving3" style="width:150px" value="{{$history->reasonLeaving3}}"/>
-                                                                                                เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary3" id="lastsalary3"style="width:150px" value="{{$history->lastsalary3}}"/> บาท
+                                                                                                 สาเหตุที่ออก:<input type="text" name="reasonleaving3" id="reasonleaving3" style="width:150px" value="{{$personal->reasonLeaving3}}"/>
+                                                                                                เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary3" id="lastsalary3"style="width:150px" value="{{$personal->lastsalary3}}"/> บาท
                                                                                                 </td>
                                                                                             </tr>
                                                                                               <tr>
@@ -798,9 +798,9 @@
                                                                                                           </tr>
                                                                                                           <tr>
                                                                                                                 <td>
-                                                                                                                   ชื่อ:<input type="text" name="namecm" id="namecm" required="required" style="width:100px" value="{{$persons->namecm}}"/>
-                                                                                                                   นามสกุล:<input type="text" name="lastnamecm" id="lastnamecm" required="required" style="width:100px" value="{{$persons->lastnamecm}}"/>
-                                                                                                                   สถานที่ทำงาน:<input type="text" name="firm" id="firm" required="required" style="width:200px" value="{{$persons->firm}}"/>
+                                                                                                                   ชื่อ:<input type="text" name="namecm" id="namecm" required="required" style="width:100px" value="{{$personal->namecm}}"/>
+                                                                                                                   นามสกุล:<input type="text" name="lastnamecm" id="lastnamecm" required="required" style="width:100px" value="{{$personal->lastnamecm}}"/>
+                                                                                                                   สถานที่ทำงาน:<input type="text" name="firm" id="firm" required="required" style="width:200px" value="{{$personal->firm}}"/>
                                                                                                                 </td>
                                                                                                             </tr>
                                                                                                             <tr>
@@ -810,8 +810,8 @@
                                                                                                             <tr>
                                                                                                                     <td>
 
-                                                                                                                       เบอร์โทรศัพท์:<input type="text" name="telecm" id="telecm" required="required" style="width:100px" value="{{$persons->telecm}}"/>
-                                                                                                                       ตำแหน่ง:<input type="text" name="positioncm" id="positioncm" required="required" style="width:100px" value="{{$persons->positioncm}}"/>
+                                                                                                                       เบอร์โทรศัพท์:<input type="text" name="telecm" id="telecm" required="required" style="width:100px" value="{{$personal->telecm}}"/>
+                                                                                                                       ตำแหน่ง:<input type="text" name="positioncm" id="positioncm" required="required" style="width:100px" value="{{$personal->positioncm}}"/>
                                                                                                                     </td>
                                                                                                                 </tr>
 
@@ -842,10 +842,10 @@
                                                                                                                     <tr>
                                                                                                                             <td>
 
-                                                                                                                 คอมพิวเตอร์   ระบุ: <input  type="text" name="computer" id="computer" required="required" style="width:100px" value="{{$persons->computer}}"/>
+                                                                                                                 คอมพิวเตอร์   ระบุ: <input  type="text" name="computer" id="computer" required="required" style="width:100px" value="{{$personal->computer}}"/>
                                                                                                                     &nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="fax" name="fax">เครื่องโทรสาร
                                                                                                                      <input type="checkbox" class="form-check-input" id="typewriter" name="typewriter">เครื่องพิมพ์ดีดไทย
-                                                                                                                     <input type="text" name="dot" id="dot" required="required" style="width:30px" value="{{$persons->dot}}"/>คำ/นาที
+                                                                                                                     <input type="text" name="dot" id="dot" required="required" style="width:30px" value="{{$personal->dot}}"/>คำ/นาที
 
                                                                                                                     </td>
                                                                                                                 </tr>
@@ -868,8 +868,8 @@
 
                                                                                                                     <tr>
                                                                                                                             <td>
-                                                                                                                                  ชื่อ:  <input type="text" name="compd" id="compd"  style="width:100px" value="{{$persons->compd}}"/>
-                                                                                                                                  สถานที่ทำงาน:  <input type="text" name="compa" id="compa"  style="width:100px" value="{{$persons->compa}}"/>
+                                                                                                                                  ชื่อ:  <input type="text" name="compd" id="compd"  style="width:100px" value="{{$personal->compd}}"/>
+                                                                                                                                  สถานที่ทำงาน:  <input type="text" name="compa" id="compa"  style="width:100px" value="{{$personal->compa}}"/>
                                                                                                                             </td>
                                                                                                                     </tr>
                                                                                                                     <tr>
@@ -932,7 +932,7 @@
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <td>
-                                                                                                                บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ:<input type="text" id="workk" name="workk" style="width=150px" value="{{$persons->workk}}"/>
+                                                                                                                บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ:<input type="text" id="workk" name="workk" style="width=150px" value="{{$personal->workk}}"/>
 
                                                                                                             </td>
                                                                                                         </tr>
@@ -953,8 +953,8 @@
                                                                                                                 </tr>
                                                                                                                 <tr>
                                                                                                                     <td>
-                                                                                                                           ท่านเป็นเจ้าของรถประเภทใด: <input type="text" id="cardec" name="cardec" style="width=150px" value="{{$persons->cardec}}"/>
-                                                                                                                           ทะเบียน:<input type="text" id="license" name="license" style="width=150px" value="{{$persons->license}}"/>
+                                                                                                                           ท่านเป็นเจ้าของรถประเภทใด: <input type="text" id="cardec" name="cardec" style="width=150px" value="{{$personal->cardec}}"/>
+                                                                                                                           ทะเบียน:<input type="text" id="license" name="license" style="width=150px" value="{{$personal->license}}"/>
                                                                                                                         </td>
                                                                                                                     </tr>
 
