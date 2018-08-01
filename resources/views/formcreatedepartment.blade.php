@@ -9,7 +9,6 @@
   <div class="content-wrapper">
     <div class="content container-fluid">
         <div class="col-md-6">
-              
             <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title"> 
@@ -17,15 +16,12 @@
                       </h3>
                 </div>
                   <div class="box-body">
-                     
                                   {{Form::open(['url'=>'department','files' => true,'enctype'=>'multipart/form-data'])}}
                        <div class="row">
                                 <div class="col-md-2">
                                   {{Form::label('department_head_id','บริษัท')}}
                                 </div>
-                                  
                                     <div class="form-group ">
-                         
                             {{ csrf_field() }}
                                 <div class="col-md-4">
                                     <select id="country" name="company_id" class="form-control">
@@ -46,7 +42,6 @@
                               
                                <div id="myRadioGroup">
 
-                            
                              แผนก {{Form::radio('departtt', 'twoCarDiv')}}
 
                               หัวแผนก{{Form::radio('departtt', 'threeCarDiv')}}
