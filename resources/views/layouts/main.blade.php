@@ -11,9 +11,9 @@
   <link href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/AdminLTE.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/skins/skin-blue.min.css') }}" rel="stylesheet">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+  
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet"
@@ -136,7 +136,24 @@
         </main>
     </div>
 </div>
+
+
+
+<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
+<script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}" defer></script>
+<script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}" defer></script>
+<script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}" defer></script>
+<script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
+<script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}" defer></script>
 <script src="{{ asset('dist/js/adminlte.min.js') }}" defer></script>
 
+<script>
+  $(function () {
+    $('#company').DataTable()
+    $('#department').DataTable()
+    $('#position').DataTable()
+    $('#employee').DataTable()
+  })
+</script>
 </body>
 </html>
