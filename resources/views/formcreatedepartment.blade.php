@@ -19,21 +19,7 @@
                   <div class="box-body">
                      
                                   {{Form::open(['url'=>'department','files' => true,'enctype'=>'multipart/form-data'])}}
-                                      
-                      <div class="row">
-                          <div class="col-md-2">
-                            {{Form::label(' department_name','ชื่อแผนก')}}
-                          </div>
-                            <div class="col-md-5">
-                              <div class="form-group {{ $errors->has('  department_name') ? 'has-error' : '' }}">
-                               
-                                  {{Form::text('department_name','',['class'=>'form-control'])}}
-                             
-                                <span class="text-danger">{{ $errors->first('company_Name') }}</span>
-                                </div>
-                            </div>
-                          </div>
-                           <div class="row">
+                       <div class="row">
                                 <div class="col-md-2">
                                   {{Form::label('department_head_id','บริษัท')}}
                                 </div>
@@ -49,20 +35,69 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-md-1">
+                                </div> 
+
+                              </div>
+                       <div class="row">
+                           <div class="col-md-2">
+                                  {{Form::label('add','เพิ่ม')}}
+                                </div>
+                            <div class="col-md-5">
+                              
+                               <div id="myRadioGroup">
+
+                            
+                             แผนก {{Form::radio('departtt', 'twoCarDiv')}}
+
+                              หัวแผนก{{Form::radio('departtt', 'threeCarDiv')}}
+                          </div>
+
+                            </div>
+
+                          </div>
+
+                          <div class="row desc" id="twoCarDiv">
+                           <div class="col-md-2">
                                         {{Form::label('department_head_id','แผนก')}}
-                                      </div>
-                                        
-                                <div class="col-md-3">
-                                    <select id="state" name="department_head_id" class="form-control">
-                                     <option value="0">--แผนก--</option>
+                            </div>
+                                <div class="col-md-5">
+                                    <select id="state" name="department_head_id_1" class="form-control">
+                                     <option value="">--แผนก--</option>
                                  </select>
                              </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div>
 
+                               
 
-                                      
-                                  </div>
+                            </div>
+
+
+                          <div class="row desc" id="threeCarDiv">
+                           <div class="col-md-2">
+                                      {{Form::label('department_head_id','หัวแผนก')}}
+                                      </div>
+                            <div class="col-md-5">
+                             <select id="department" name="department_head_id_2" class="form-control">
+                                     <option value="0">หัวแผนก</option>
+                              </select>
+
+                            </div>
+
+                          </div>
+                        <br>
+                      <div class="row">
+                          <div class="col-md-2">
+                            {{Form::label(' department_name','ชื่อแผนก')}}
+                          </div>
+                            <div class="col-md-5">
+                              <div class="form-group {{ $errors->has('  department_name') ? 'has-error' : '' }}">
+                               
+                                  {{Form::text('department_name','',['class'=>'form-control'])}}
+                             
+                                <span class="text-danger">{{ $errors->first('company_Name') }}</span>
                                 </div>
+                            </div>
+                          </div>
+                          
                           <div class="row">
                               <div class="col-md-2">
                                 {{Form::label('remark','หมายเหตุ')}}
@@ -157,6 +192,22 @@
 
     });
 
-});</script>
+});
+
+$(document).ready(function() {
+
+    $("div.desc").hide();
+
+
+    $("input[name$='departtt']").click(function() {
+        var test = $(this).val();
+        $("div.desc").hide();
+        $("#" + test).show();
+    });
+   
+});
+
+
+            </script>
   
   @endsection

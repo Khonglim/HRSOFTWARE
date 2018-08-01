@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Department;
 use App\Company;
+use Illuminate\Support\Facades\Input;
 class DepartmentController extends Controller
 {
     /**
@@ -52,7 +53,18 @@ class DepartmentController extends Controller
         ]);
         $department = new Department;
         $department->department_name = $request->department_name;
-        $department->department_head_id = $request->department_head_id;
+        if ( Input::get('departtt') == 'threeCarDiv') {
+
+           $department->department_head_id =$request->department_head_id_2;
+
+        }elseif ( Input::get('departtt') == 'twoCarDiv') {
+
+             $department->department_head_id=$request->department_head_id_1;
+
+        }else{
+            echo "none";
+           
+        }
         $department->company_id = $request->company_id;
         $department->Remark = $request->Remark;
         $department->save();
