@@ -37,7 +37,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-     
+
         return view('formcreateemployee' );
     }
 
@@ -48,7 +48,7 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {     
+    {
         $personal = new Personal;
         $personal->prefix1 = $request->prefix1;
         $personal->name = $request->name;
@@ -187,7 +187,7 @@ class EmployeeController extends Controller
         $history->lastsalary3= $request->lastsalary3;
         $history->position3 = $request->position3;
         $history->save();
-      
+
 
         $persons = new   Persons;
         $persons->namecm = $request->namecm;
@@ -212,7 +212,7 @@ class EmployeeController extends Controller
         $persons->cardec = $request->cardec;
         $persons->license = $request->license;
         $persons->exitwork = $request->exitwork;
-      
+
         $persons->serious_ill = $request->serious_ill;
         $persons->offense = $request->offense;
         $persons->pregnant = $request->pregnant;
@@ -229,7 +229,7 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -247,8 +247,8 @@ class EmployeeController extends Controller
                 'employee' => $employee
             );
             return view('formemployee',$data);
-        } 
-       
+        }
+
     }
 
     /**
@@ -260,10 +260,10 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-  
-     
-        $personal = new Personal;
+
+
+
+        $personal = Personal::find($id);
         $personal->prefix1 = $request->prefix1;
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
@@ -308,13 +308,13 @@ class EmployeeController extends Controller
         $personal->occupation_father = $request->occupation_father;
         $personal->alivef = $request->alivef;
         $personal->namemother = $request->namemother;
-        $personal->lasrmother = $request->lasrmother;
+        $personal->lastmother = $request->lasrmother;
         $personal->occupationm = $request->occupationm;
         $personal->alivem = $request->alivem;
         $personal->province_crad = $request->province_crad;
         $personal->save();
 
-        $educational= new Educational;
+        $educational= Educational::find($id);
         $educational->primary = $request->primary;
         $educational->year1 = $request->year1;
         $educational->year2 = $request->year2;
@@ -358,7 +358,7 @@ class EmployeeController extends Controller
         $educational->majoro = $request->majoro;
         $educational->save();
 
-        $languages = new Languages;
+        $languages = Languages::find($id);
         $languages->thais  = $request->thais;
         $languages->thail  = $request->thail;
         $languages->thair  = $request->thair;
@@ -373,7 +373,7 @@ class EmployeeController extends Controller
         $languages->other  = $request->other;
         $languages->save();
 
-        $history = new History;
+        $history = History::find($id);
         $history->list_of_employed1 = $request->list_of_employed1;
         $history->job_description1 = $request->job_description1;
         $history->call1 = $request->call1;
@@ -401,9 +401,9 @@ class EmployeeController extends Controller
         $history->lastsalary3= $request->lastsalary3;
         $history->position3 = $request->position3;
         $history->save();
-      
 
-        $persons = new   Persons;
+
+        $persons = Persons::find($id);
         $persons->namecm = $request->namecm;
         $persons->lastnamecm = $request->lastnamecm;
         $persons->firm = $request->firm;
@@ -426,29 +426,16 @@ class EmployeeController extends Controller
         $persons->cardec = $request->cardec;
         $persons->license = $request->license;
         $persons->exitwork = $request->exitwork;
-      
+
         $persons->serious_ill = $request->serious_ill;
         $persons->offense = $request->offense;
         $persons->pregnant = $request->pregnant;
         $persons->because = $request->because;
         $persons->save();
+
+
         return redirect('employee');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return redirect('employee'); 
     }
 
     /**
@@ -459,10 +446,10 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $employee = Employee::find($id);
         $employee->enable =0;
         $employee->save();
-        return redirect('employee'); 
+        return redirect('employee');
     }
 }

@@ -71,7 +71,7 @@
                                       {{Form::label('department_head_id','หัวแผนก')}}
                                       </div>
                             <div class="col-md-5">
-                             <select id="department" name="department_head_id_2" class="form-control">
+                             <select id="departmente" name="department_head_id_2" class="form-control">
                                      <option value="0">หัวแผนก</option>
                               </select>
 
