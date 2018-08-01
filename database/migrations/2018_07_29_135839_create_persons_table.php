@@ -19,7 +19,8 @@ class CreatePersonsTable extends Migration
             $table->char('lastnamecm');
             $table->char('firm');
             $table->char('telecm');
-
+            $table->char('workk');
+          
             $table->char('positioncm');
             $table->char('computer');
             $table->char('fax');
@@ -27,24 +28,24 @@ class CreatePersonsTable extends Migration
             $table->char('dot');
 
             $table->char('crash1');
-            $table->char('nocrash1');
+       
 
 
             $table->char('compd');
             $table->char('compa');
 
             $table->char('crash2');
-            $table->char('nocrash2');
+         
 
             $table->char('crash3');
-            $table->char('nocrash3');
+        
 
             $table->char('yes');
-            $table->char('no');
+          
 
 
             $table->char('owncar');
-            $table->char('owncarno');
+          
 
             $table->char('dateworkk');
             $table->char('cardec');
@@ -52,16 +53,16 @@ class CreatePersonsTable extends Migration
 
             $table->char('exitwork');
             $table->char('because');
-            $table->char('noexitwork');
+           
 
             $table->char('serious_ill');
-            $table->char('no_serious_ill');
+    
 
             $table->char('offense');
-            $table->char('no_offense');
+          
 
             $table->char('pregnant');
-            $table->char('no_pregnant');
+      
 
 
 

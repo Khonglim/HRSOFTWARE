@@ -28,6 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         
+        
         $company = DB::table("company")   
         ->leftJoin('department', 'company.id', '=', 'department.company_id')
         ->get();

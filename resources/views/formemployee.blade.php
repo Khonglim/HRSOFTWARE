@@ -17,10 +17,10 @@
                     <table style="width:1300px" border="0"  cellpadding="0" cellspacing="0"  >
                             <tr>
                                     <td >
-                                                    <select style="width:65px" id="prefix"  name="prefix" >
-                                                              <option  value="ได้รับการยกเว้น">นาย</option>
-                                                              <option   value="ศึกษาวิชาทหาร">นางสาว</option>
-                                                              <option   value="ผ่านการเกณฑ์ทหาร">นาง</option>
+                                                    <select style="width:65px" id="prefix1"  name="prefix1" >
+                                                              <option  value="นาย">นาย</option>
+                                                              <option   value="นางสาว">นางสาว</option>
+                                                              <option   value="นาง">นาง</option>
                                                             </select>
                                                         
                                                         ชื่อ:&nbsp; <input type="text"name="name" id="name" required="required"style="width:100px" />&nbsp;&nbsp;&nbsp;
@@ -90,7 +90,7 @@
                                   
                                                     <td>
                                                        ที่อยู่ตามบัตรประชาชน:<textarea name="address2" id="address2" required="required"></textarea>
-                                                       เลขบัตรประชาชน:<input type="text" name="IDcard" id="IDcard" required="required"style="width:120px"/>
+                                                       เลขบัตรประชาชน:<input type="text" name="idcard" id="idcard" required="required"style="width:120px"/>
                                                        
                                                       </td>      
                                   
@@ -103,7 +103,7 @@
                                                             ออกให้ ณ อำเภอ/เขต:<input type="text" name="issued" id="issued" required="required"style="width:60px"/>
                                                             จังหวัด:<input type="text" name="province_crad" id="province_crad" required="required"style="width:60px"/>
                                                             วันออกบัตร:<input type="date" name="issueddate" id="issueddate" required='requrired' style="width:123px"/>
-                                                            บัตรหมดอายุ:<input type="date" name="expid" id="exp"      required="required" style="width:120px"/>  
+                                                            บัตรหมดอายุ:<input type="date" name="expid" id="expid"      required="required" style="width:120px"/>  
                                                            </td>    
                                   
                                                            <tr>
@@ -115,7 +115,7 @@
                                                               บัตรประจำตัวผู้เสียภาษี:<input type="text" name="texid" id="textid" required="required"style="width:80px"/>
                                                               สถานะความเป็นอยู่:
                                                                 <select style="width:80px"name="living_status"  >
-                                                                <option value="">:: เลือก ::</option>
+                                                                <option value="-">:: เลือก ::</option>
                                                                   <option  value="owm_home">บ้านส่วนตัว </option>
                                                                   <option  value="rent_home">บ้านเช่า</option>
                                                                   <option value="live_with_parents">อาศัยกับบิดามารดา</option>
@@ -124,7 +124,7 @@
                                                                 สถานะครอบครัว: 
                                                                 
                                                               <select name="marital_status"  >
-                                                                  <option  value="">:: เลือก ::</option>
+                                                                  <option  value="-">:: เลือก ::</option>
                                                                   <option  value="single">โสด</option>
                                                                   <option  value="married">สมรส</option>
                                                                   <option  value="divorced">หย่า</option>
@@ -146,13 +146,13 @@
                                                                 กรณีแต่งงาน:
                                                                 <select style="width:80px" name="if_marricd" >
                                                                     <option      value="">:: เลือก ::</option>
-                                                                    <option      value="registered">จดทะเบียนสมรส</option>
-                                                                    <option      value="non_registered">ไม่ได้จดทะเบียนสมรส</option>
+                                                                    <option      value="จดทะเบียนสมรส">จดทะเบียนสมรส</option>
+                                                                    <option      value="ไม่ได้จดทะเบียนสมรส">ไม่ได้จดทะเบียนสมรส</option>
                                                                   </select>
                                   
                                                                   คู่สมรสมีเงินได้หรือไม่:
                                                                   <select style="width:80px" name="spouse">
-                                                                      <option  value="">:: เลือก ::</option>
+                                                                      <option  value="-">:: เลือก ::</option>
                                                                       <option   value="yes">มี</option>
                                                                       <option   value="no">ไม่มี</option>
                                                                     </select>
@@ -498,7 +498,136 @@
                                                                                 <td colspan="3">&nbsp;</td>
                                                                               </tr>
                                                                            
-                                                                             
+                                                                              <tr>
+                                                        
+                                                                                <td>
+                                                                                    &emsp;&emsp;&nbsp;&nbsp;&nbsp; อื่นๆ:
+                                                                                 <input type="text" id="otherE" name="otherE" required="required" style="width:129px"/>
+                                                                                  &emsp;&emsp;
+                                                                                 <select name="year13" id="year13" >
+                                                      
+                                                                                    <option value="">:: ปี ::</option>
+                                                                                    
+                                                                                    <?php for($i=0; $i<=100; $i++) { ?>
+                                                                                    
+                                                                                    <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                                                    
+                                                                                    <?php } ?>
+                                                                                    
+                                                                                    </select>
+                                                                                 ถึง:
+                                                                                 <select name="year14" id="year14" >
+                                                      
+                                                                                    <option value="">:: ปี ::</option>
+                                                                                    
+                                                                                    <?php for($i=0; $i<=100; $i++) { ?>
+                                                                                    
+                                                                                    <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                                                    
+                                                                                    <?php } ?>
+                                                                                    
+                                                                                    </select>
+                                                                                    &emsp;&emsp;&emsp;
+                                                                                 <input type="text" id="gpao" name="gpao" required="required" style="width:50px"/>
+                                                                                 &emsp;&emsp;&emsp;
+                                                                                 <input type="text" id="majoro" name="majoro" required="required" style="width:150px"/>
+                                                                                </td>
+                                                                          </tr>
+
+                                                                          <tr>
+                                                                            <td align="right" valign="middle">&nbsp;</td>
+                                                                            <td colspan="3">&nbsp;</td>
+                                                                          </tr>
+
+
+
+                                                                
+                                                                          <tr>
+                                                                            <td align="right" valign="middle">&nbsp;</td>
+                                                                            <td colspan="3">&nbsp;</td>
+                                                                          </tr>
+
+                                                                          <tr>
+                                                                            <td >
+                                                                             ภาษาไทย:->การพูด: <select style="width:65px" id="thais" name="thais">
+                                                                                <option value="ดี">ดี</option>
+                                                                                <option  value="พอใช้">พอใช้</option>
+                                                                                <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                </select>
+                                                                            ->การฟัง: <select style="width:65px" id="thail"  name="thail">>
+                                                                                    <option value="ดี">ดี</option>
+                                                                                    <option  value="พอใช้">พอใช้</option>
+                                                                                    <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                    </select>
+                                                                            ->การอ่าน: <select style="width:65px" id="thair"  name="thair">>
+                                                                                        <option value="ดี">ดี</option>
+                                                                                        <option  value="พอใช้">พอใช้</option>
+                                                                                        <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                        </select>
+                                                        
+                                                                            </td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                              <td align="right" valign="middle">&nbsp;</td>
+                                                                              <td colspan="3">&nbsp;</td>
+                                                                            </tr>
+                                                        
+                                                        
+                                                                            <tr>
+                                                                                <td >
+                                                                                 ภาษาอังกฤษ:->การพูด: <select style="width:65px" id="engliss" name="engliss">
+                                                                                    <option value="ดี">ดี</option>
+                                                                                    <option  value="พอใช้">พอใช้</option>
+                                                                                    <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                    </select>
+                                                                                ->การฟัง: <select style="width:65px" id="englisl" name="englisl">
+                                                                                        <option value="ดี">ดี</option>
+                                                                                        <option  value="พอใช้">พอใช้</option>
+                                                                                        <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                        </select>
+                                                                                ->การอ่าน: <select style="width:65px" id="englisr" name="englisr">
+                                                                                            <option value="ดี">ดี</option>
+                                                                                            <option  value="พอใช้">พอใช้</option>
+                                                                                            <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                            </select>
+                                                            
+                                                                                </td>
+                                                                              </tr>
+                                                                            <tr>
+                                                                                <td align="right" valign="middle">&nbsp;</td>
+                                                                                <td colspan="3">&nbsp;</td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                  <td >
+                                                                                   อื่นๆ:->
+                                                                                   <input type="text" name="otherr" id="otherr" style="width:100px" name="otherr"/>
+                                                                                   การพูด: <select style="width:65px" id="othes" name="othes">
+                                                                                      <option value="ดี">ดี</option>
+                                                                                      <option  value="พอใช้">พอใช้</option>
+                                                                                      <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                      </select>
+                                                                                  ->การฟัง: <select style="width:65px" id="othel" name="othel">
+                                                                                          <option value="ดี">ดี</option>
+                                                                                          <option  value="พอใช้">พอใช้</option>
+                                                                                          <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                          </select>
+                                                                                  ->การอ่าน: <select style="width:65px" id="other" name="other">
+                                                                                              <option value="ดี">ดี</option>
+                                                                                              <option  value="พอใช้">พอใช้</option>
+                                                                                              <option  value="ไม่ดี">ไม่ดี</option>
+                                                                                              </select>
+                                                              
+                                                                                  </td>
+                                                                                </tr>
+
+
+
+
+                                                                              <tr>
+                                                                                <td align="right" valign="middle">&nbsp;</td>
+                                                                                <td colspan="3">&nbsp;</td>
+                                                                              </tr>
+                                                                           
                                                                               <tr>
                                     
                                                                                     <td>
@@ -543,17 +672,17 @@
                                                                                         </tr>
                                                                                         <tr>
                                                                                         <td>
-                                                                                         สาเหตุที่ออก:<input type="text" name="ReasonLeaving1" id="ReasonLeaving1" style="width:150px"/>
-                                                                                         เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary1" id="LastSalary1"style="width:150px"/> บาท
+                                                                                         สาเหตุที่ออก:<input type="text" name="reasonLeaving1" id="reasonleaving1" style="width:150px"/>
+                                                                                         เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary1" id="lastsalary1"style="width:150px"/> บาท
                                                                                         </td>
                                                                                     </tr>
                                                                                          
-                                                                        <tr> 
+                                                                                <tr> 
                                                                             
                                                                             <td> 
                                                                             ----------------------------------------------------------------------------------------------------------------------------------------------------
                                                                             </td>
-                                                                    </tr>
+                                                                               </tr>
                                                                            <tr>
                                                                                       <td align="right" valign="middle">&nbsp;</td>
                                                                                             <td colspan="3">&nbsp;</td>
@@ -591,8 +720,8 @@
                                                                                             </tr>
                                                                                             <tr>
                                                                                             <td>
-                                                                                             สาเหตุที่ออก:<input type="text" name="ReasonLeaving2" id="ReasonLeaving2" style="width:150px"/>
-                                                                                            เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary3" id="LastSalary3"style="width:150px"/> บาท
+                                                                                             สาเหตุที่ออก:<input type="text" name="reasonleaving2" id="reasonleaving2" style="width:150px"/>
+                                                                                            เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary2" id="lastsalary2"style="width:150px"/> บาท
                                                                                             </td>
                                                                                         </tr>
                                                                                              
@@ -637,8 +766,8 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                 <td>
-                                                                                                 สาเหตุที่ออก:<input type="text" name="ReasonLeaving3" id="ReasonLeaving3" style="width:150px"/>
-                                                                                                เงินเดือนครั้งสุดท้าย: <input type="text" name="LastSalary3" id="LastSalary3"style="width:150px"/> บาท
+                                                                                                 สาเหตุที่ออก:<input type="text" name="reasonleaving3" id="reasonleaving3" style="width:150px"/>
+                                                                                                เงินเดือนครั้งสุดท้าย: <input type="text" name="lastsalary3" id="lastsalary3"style="width:150px"/> บาท
                                                                                                 </td>
                                                                                             </tr>
                                                                                               <tr> 
@@ -728,7 +857,7 @@
                                                                                                                             <td>
                                                                                                                                     ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ): &emsp;&emsp;&emsp;&emsp;&emsp;
                                                                                                                                     <input type="checkbox" class="form-check-input" id="crash1" name="crash1"> ขัดข้อง
-                                                                                                                                    <input type="checkbox" class="form-check-input" id="nocrash1" name="nocrash1"> ไม่ขัดข้อง
+                                                                                                                                    <input type="checkbox" class="form-check-input" id="crash1" name="crash1"> ไม่ขัดข้อง
                                                                                                                             </td>
                                                                                                                     </tr> 
                                                                                                                     <tr>
@@ -749,8 +878,8 @@
                                                                                                                     <tr>
                                                                                                                             <td>
                                                                                                                                 ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
-                                                                                                                                <input type="checkbox" class="form-check-input" id="crash2" name="crash2"> ขัดข้อง
-                                                                                                                                <input type="checkbox" class="form-check-input" id="nocrash2" name="nocrash2"> ไม่ขัดข้อง      
+                                                                                                                                <input type="checkbox" class="form-check-input" id="crash2" name="crash2" value=" ขัดข้อง"> ขัดข้อง
+                                                                                                                                <input type="checkbox" class="form-check-input" id="crash2" name="crash2" value=" ไม่ขัดข้อง  "> ไม่ขัดข้อง      
                                                                                             
                                                                                                                         </td>
                                                                                                                     </tr>  
@@ -761,8 +890,8 @@
                                                                                                                     <tr>
                                                                                                                         <td>
                                                                                                                              ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                                                                             <input type="checkbox" class="form-check-input" id="crash3" name="crash3"> ขัดข้อง
-                                                                                                                             <input type="checkbox" class="form-check-input" id="nocrash3" name="nocrash13"> ไม่ขัดข้อง       
+                                                                                                                             <input type="checkbox" class="form-check-input" id="crash3" name="crash3"  value="ขัดข้อง"  > ขัดข้อง
+                                                                                                                             <input type="checkbox" class="form-check-input" id="crash3" name="crash3"  value="ไม่ขัดข้อง" > ไม่ขัดข้อง       
                                                                                             
                                                                                                                     </td>
                                                                                                                 </tr>
@@ -773,8 +902,8 @@
                                                                                                                 <tr>
                                                                                                                     <td>
                                                                                                                          ท่านสามารถขับรถยนต์ได้หรือไม่&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                                                                         <input type="checkbox" class="form-check-input" id="yes" name="yes"> ได้
-                                                                                                                         <input type="checkbox" class="form-check-input" id="no" name="no"> ไม่ได้   
+                                                                                                                         <input type="checkbox" class="form-check-input" id="yes" name="yes"  value="ได้"> ได้
+                                                                                                                         <input type="checkbox" class="form-check-input" id="yes" name="yes"  value="ไม่ได้ "> ไม่ได้   
                                                                                             
                                                                                                                 </td>
                                                                                                             </tr>
@@ -791,7 +920,7 @@
                                                                                                                 <td>
                                                                                                                     ท่านมีรถยนต์ส่วนตัวหรือไม่&emsp;&emsp;&emsp;&emsp;&emsp;
                                                                                                                         <input type="checkbox" class="form-check-input" id="owncar" name="owncar"> มี
-                                                                                                                        <input type="checkbox" class="form-check-input" id="owncarno" name="owncarno"> ไม่มี        
+                                                                                                                        <input type="checkbox" class="form-check-input" id="owncar" name="owncar"> ไม่มี        
                                                                                             
                                                                                                             </td>
                                                                                                         </tr>
@@ -834,8 +963,8 @@
                                                                                                                         </tr>
                                                                                             
                                                                                                                         <td>
-                                                                                                                                ท่านเคยให้ถูกออกจากงานหรือไม่: &emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="exitwork">เคย เพราะ<input type="ans" id="ans" name="because" style="width=150px"/>
-                                                                                                                                &emsp;&emsp;&emsp; <input type="checkbox" class="form-check-input" id="noexitwork" name="noexitwork">ไม่เคย  
+                                                                                                                                ท่านเคยให้ถูกออกจากงานหรือไม่: &emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="exitwork" name="exitwork" >เคย เพราะ<input type="ans" id="ans" name="because" style="width=150px"/>
+                                                                                                                                &emsp;&emsp;&emsp; <input type="checkbox" class="form-check-input" id="exitwork" name="exitwork">ไม่เคย  
                                                                                             
                                                                                                                              </td>
                                                                                                                          </tr> 
@@ -846,8 +975,8 @@
                                                                                                                         
                                                                                                                         <tr>
                                                                                                                             <td>
-                                                                                                                                ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="serious_ill">เคย
-                                                                                                                                <input type="checkbox" class="form-check-input" id="no_serious_ill">ไม่เคย
+                                                                                                                                ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="serious_ill" name="serious_ill">เคย
+                                                                                                                                <input type="checkbox" class="form-check-input" id="serious_ill" name="serious_ill">ไม่เคย
                                                                                                                                 </td>
                                                                                                                             </tr>
                                                                                                                             <tr>
@@ -858,7 +987,7 @@
                                                                                                                                 <tr>
                                                                                                                                     <td>
                                                                                                                                         ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="offense" name="offense">เคย
-                                                                                                                                    <input type="checkbox" class="form-check-input" id="offense" name="no_offense">ไม่เคย
+                                                                                                                                    <input type="checkbox" class="form-check-input" id="offense" name="offense">ไม่เคย
                                                                                                                                     </td>
                                                                                                                                 </tr>   
                                                                                                                             <tr>
@@ -869,7 +998,7 @@
                                                                                         <tr>
                                                                                 <td>
                                                                                     ขณะนี้คุณตั้งครรภ์หรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="pregnant" name="pregnant">ใช่
-                                                                                <input type="checkbox" class="form-check-input" id="no_pregnant" name="no_pregnant">ไม่ใช่
+                                                                                <input type="checkbox" class="form-check-input" id="pregnant" name="pregnant">ไม่ใช่
                                                                                      </td>
                                                                     </tr>                        
                                                     

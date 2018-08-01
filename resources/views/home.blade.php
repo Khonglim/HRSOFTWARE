@@ -19,63 +19,7 @@
                      <th>เพิ่มเติ่ม</th>
                   </tr>
                 </thead>
-                <tbody>
-                    @forelse($user as $l)
-                       @if($l['enable']==1)
-                      <tr>
-                    <td> {{$l['id']}} </td>
-                    <td> {{$l['name']}} 
-                        @if(auth()->user()->name ==$l['name'] )
-                        <span class="label label-success">ชื่อผู้ใช้ของคุณ</span>
-                        @endif
-                    
-                    
-                    </td>
-                    <td> {{$l['email']}} </td>
-                    <td> @if($l['isAdmin']==1) 
-                        <span class="label label-success">   Admin  </span>
-                            @else
-                            <span class="label label-info">    Member </span>
-                            @endif 
-                    
-                    
-                    
-                    </td>
-                    <td>  
-                        
-                         <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}"><i class=" fa fa-trash"></i></button>
-           
-          
-               <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
-                         <div class="modal-dialog">
-                            <div class="modal-content">
-                        <div class="modal-header">
-                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">ลบข้อมูล</h4>
-  </div>
-  <div class="modal-body">
-      {{ Form::open(['route' => ['home.destroy',$l['id'], 'method' => "DELETE"] ]) }}
-      <input type="hidden" name="_method" value="delete" / >
-       <p>คุณต้องการลบ{{$l['name']}}ใช่หรือไม่!!!!</p>  
-  </div>
-  <div class="modal-footer">
-    <button type="summit" class="btn btn-danger">ลบ</button>
-    <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
-  </div>
-  {{ Form::close() }}  
-</div>
-
-</div>
-</div>
-</td>
-      </tr>
-    @endif
-        @empty
-     <tr>
-      <td colspan="6" > No data !!</td>
-     </tr>
-         @endforelse
-      </tbody>
+              
           </table> 
            </div>
           <footer class="panel-footer">
