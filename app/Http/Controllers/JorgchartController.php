@@ -17,15 +17,15 @@ class JorgchartController extends Controller
         $position = Position::all();
        
         $data1 = array('company' => $company,'department' => $department,'position' => $position);
-        return view('/orgchartcompany',$data1);
+        return view('orgchartcompany',$data1);
     }
       public function department()
     {
-        return view('/orgchartdepartment');
+        return view('orgchartdepartment');
     }
       public function position()
     {
-        return view('/orgchartposition');
+        return view('orgchartposition');
     }
      public function test()
     {

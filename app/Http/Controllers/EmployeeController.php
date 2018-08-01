@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Personal;
 use App\Educational;
 use App\Languages;
@@ -18,7 +19,15 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('employee' );
+
+        $employee = DB::table("personal")   
+        ->leftJoin('edocational', 'personal.id_personal', '=', 'edocational.id_edocational')
+        ->leftJoin('languages', 'edocational.id_edocational', '=', 'languages.id_languages')
+        ->get();
+        dd( $employee);
+
+        
+        
     }
 
     /**

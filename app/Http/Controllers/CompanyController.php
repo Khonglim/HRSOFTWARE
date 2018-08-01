@@ -15,7 +15,7 @@ class CompanyController extends Controller
     public function index()
     {
         
-        $company = Company::where('enable', '=', 1)->paginate(4);
+        $company = Company::where('enable', '=', 1)->get();
         $data = array(
             'company' => $company
         );
