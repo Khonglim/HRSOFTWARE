@@ -34,7 +34,21 @@
                                   <div class="col-md-5">
                                     <div class="form-group ">
 
-                                  {{Form::select('department_head_id',$departments, null, ['class' => 'form-control'])}}
+                                 @if($department->department_head_id==0)
+                                      {{Form::text('department_name','Head Department',['class'=>'form-control','readonly' => 'true'])}}
+                                       @else
+                                       
+                                      @foreach($departments as $li)
+
+                                      @if($li['id']==$department->department_head_id)
+
+                                       {{Form::text('department_name',$li['department_name'],['class'=>'form-control','readonly' => 'true'])}}
+
+                                      @endif
+
+                                      @endforeach
+
+                                      @endif
                                  
                                       </div>
                                   </div>
@@ -47,7 +61,15 @@
                                       <div class="form-group ">
                                            
                    
-                                         {{Form::select('company_id',$companys, null, ['class' => 'form-control'])}}
+                                        @foreach($companys as $li)
+
+                                      @if($li['id']==$department->company_id)
+
+                                       {{Form::text('department_name',$li['company_Name'],['class'=>'form-control','readonly' => 'true'])}}
+
+                                      @endif
+
+                                      @endforeach
                                      
                                      
                                   
