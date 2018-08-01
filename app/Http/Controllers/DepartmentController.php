@@ -15,8 +15,8 @@ class DepartmentController extends Controller
     public function index()
     
     {
-        $company = Company::where('enable','=', 1)->paginate();
-        $department = Department::where('enable', '=', 1)->paginate(4);
+        $company = Company::where('enable','=', 1)->get();
+        $department = Department::where('enable', '=', 1)->get();
         $data = array('department' => $department , 'company' => $company  );
         return view('department',$data );
     }

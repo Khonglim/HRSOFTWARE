@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 use App\Position;
 use Illuminate\Http\Request;
+use App\Department;
+use App\Company;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 
 class PositionController extends Controller
 {
@@ -13,9 +17,11 @@ class PositionController extends Controller
      */
     public function index()
     {
-        $position = Position::where('enable', '=', 1)->paginate(4);
+        $position = Position::where('enable', '=', 1)->get();
+        $company = Company::where('enable', '=', 1)->get();
+        $department = Department::where('enable', '=', 1)->get();
         $data = array(
-            'position' => $position
+            'position' => $position,'department' => $department ,'company' => $company
         );
         return view('position',$data );
     }
@@ -27,7 +33,15 @@ class PositionController extends Controller
      */
     public function create()
     {
-        return view('formcreateposition' );
+         $titles = Department::where('enable','=', 1)->pluck('department_name','id');
+        $company = Company::where('enable','=', 1)->pluck('company_Name','id');
+       
+        $departments = department::where('enable','=', 1)->paginate();
+      
+        $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
+
+        return view('formcreateposition',$data );
+        
     }
 
     /**
@@ -39,7 +53,7 @@ class PositionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'position_name' => 'required|alpha',
+            'position_name' => 'required',
         
         ]);
         $position = new Position;
@@ -69,10 +83,14 @@ class PositionController extends Controller
      */
     public function edit($id)
     {
-        if($id !== '') {
+         if($id !== '') {
             $position = Position::find($id);
+            $company =  Company::where('enable','=', 1)->get();
+            $department =  department::where('enable','=', 1)->get();
+            $positions =  Position::where('enable','=', 1)->get();
+
             $data = array(
-                'position' => $position
+                'position' => $position,'positions' => $positions,'company' => $company,'department' => $department
             );
             return view('formposition',$data);
         }
@@ -88,7 +106,7 @@ class PositionController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'position_name' => 'required|alpha',
+            'position_name' => 'required',
         
         ]);
         $position =  Position::find($id);
