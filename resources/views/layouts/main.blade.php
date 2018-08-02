@@ -139,7 +139,7 @@
 
 
 <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
-<script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}" defer></script>
+
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
