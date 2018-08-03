@@ -18,7 +18,7 @@ Route::resource('department','DepartmentController');
 Route::get('department/create', 'DepartmentController@create');
 
 Route::resource('position','PositionController');
-Route::get('department//create', 'PositionControllerr@create');
+Route::get('position/create', 'PositionControllerr@create');
 
 Route::resource('employee','EmployeeController');
 Route::get('employee/create', 'EmployeeController@create');
