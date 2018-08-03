@@ -15,37 +15,33 @@ class CreatePersonalTable extends Migration
     {
         Schema::create('personal', function (Blueprint $table) {
             $table->increments('id');
-<<<<<<< HEAD
-            $table->integer('id_edocational');
-=======
->>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
-            $table->text("prefix1");
-            $table->text("name");
-            $table->text("lastname");
-            $table->text("nikname");
-            $table->text("gender");
-            $table->text("religion");
-            $table->text("birthday");
-            $table->text("nationality");
-            $table->text("race");
-            $table->text("age");
-            $table->text("height");
-            $table->text("weight");
+            $table->text("name")->nullable();
+            $table->text("lastname")->nullable();
+            $table->text("nikname")->nullable();
+            $table->text("gender")->nullable();
+            $table->text("religion")->nullable();
+            $table->text("birthday")->nullable();
+            $table->text("photo")->nullable();
+            $table->text("nationality")->nullable();
+            $table->text("race")->nullable();
+            $table->text("age")->nullable();
+            $table->text("height")->nullable();
+            $table->text("weight")->nullable();
             $table->text("brothers")->nullable();
             $table->text("number")->nullable();
-            $table->text("tel");
+            $table->text("tel")->nullable();
             $table->text("home")->nullable();
             $table->text("moblie")->nullable();
             $table->text("office")->nullable();
-            $table->text("email");
-            $table->text("address1");
-            $table->text("address2");
-            $table->text("IDcard");
-            $table->text("issued");
-            $table->text("province_crad");
-            $table->text("issueddate");
-            $table->text("expid");
-            $table->text("texid");
+            $table->text("email")->nullable();
+            $table->text("address1")->nullable();
+            $table->text("address2")->nullable();
+            $table->text("idcard")->nullable();
+            $table->text("issued")->nullable();
+            $table->text("province_crad")->nullable();
+            $table->text("issueddate")->nullable();
+            $table->text("expid")->nullable();
+            $table->text("texid")->nullable();
             $table->text("living_status")->nullable();
             $table->text("marital_status")->nullable();
             $table->text("if_marricd")->nullable();
@@ -60,150 +56,159 @@ class CreatePersonalTable extends Migration
             $table->text("over21")->nullable();
             $table->text("military_service")->nullable();
 
-            $table->text("namefather");
-            $table->text("lastfather");
-            $table->text("occupation_father");
-            $table->text("alivef");
+            $table->text("namefather")->nullable();
+            $table->text("lastfather")->nullable();
+            $table->text("occupation_father")->nullable();
+            $table->text("alivef")->nullable();
 
-            $table->text("namemother");
-            $table->text("lasrmother");
-            $table->text("occupationm");
-            $table->text("alivem");
+            $table->text("namemother")->nullable();
+            $table->text("lasrmother")->nullable();
+            $table->text("occupationm")->nullable();
+            $table->text("alivem")->nullable();
 
 
-            $table->text('primary');
-            $table->text('year1');
-            $table->text('year2');
-            $table->text('gpa');
-            $table->text('major');
+            $table->text('primary')->nullable();
+            $table->text('year1')->nullable();
+            $table->text('year2')->nullable();
+            $table->text('gpa')->nullable();
+            $table->text('major')->nullable();
 
-            $table->text('secondary');
-            $table->text('year3');
-            $table->text('year4');
-            $table->text('gpas');
-            $table->text('majors');
+            $table->text('secondary')->nullable();
+            $table->text('year3')->nullable();
+            $table->text('year4')->nullable();
+            $table->text('gpas')->nullable();
+            $table->text('majors')->nullable();
 
-            $table->text('vocation');
-            $table->text('year5');
-            $table->text('year6');
-            $table->text('gpav');
-            $table->text('majorv');
+            $table->text('vocation')->nullable();
+            $table->text('year5')->nullable();
+            $table->text('year6')->nullable();
+            $table->text('gpav')->nullable();
+            $table->text('majorv')->nullable();
 
-            $table->text('diploma');
-            $table->text('year7');
-            $table->text('year8');
-            $table->text('gpad');
-            $table->text('majord');
+            $table->text('diploma')->nullable();
+            $table->text('year7')->nullable();
+            $table->text('year8')->nullable();
+            $table->text('gpad')->nullable();
+            $table->text('majord')->nullable();
 
-            $table->text('bachelor');
-            $table->text('year9');
-            $table->text('year10');
-            $table->text('gpab');
-            $table->text('majorb');
+            $table->text('bachelor')->nullable();
+            $table->text('year9')->nullable();
+            $table->text('year10')->nullable();
+            $table->text('gpab')->nullable();
+            $table->text('majorb')->nullable();
 
-            $table->text('master');
-            $table->text('year11');
-            $table->text('year12');
-            $table->text('gpam');
-            $table->text('majorm');
+            $table->text('master')->nullable();
+            $table->text('year11')->nullable();
+            $table->text('year12')->nullable();
+            $table->text('gpam')->nullable();
+            $table->text('majorm')->nullable();
 
-            $table->text('otherE');
-            $table->text('year13');
-            $table->text('year14');
-            $table->text('gpao');
-            $table->text('majoro');
+            $table->text('otherE')->nullable();
+            $table->text('year13')->nullable();
+            $table->text('year14')->nullable();
+            $table->text('gpao')->nullable();
+            $table->text('majoro')->nullable();
 
-            $table->text('otherr');
-            $table->text('thais');
-            $table->text('thail');
-            $table->text('thair');
+            $table->text('otherr')->nullable();
+            $table->text('thais')->nullable();
+            $table->text('thail')->nullable();
+            $table->text('thair')->nullable();
 
             
-            $table->text('engliss');
-            $table->text('englisl');
-            $table->text('englisr');
+            $table->text('engliss')->nullable();
+            $table->text('englisl')->nullable();
+            $table->text('englisr')->nullable();
 
 
-            $table->text('othes');
-            $table->text('othel');
-            $table->text('other');
+            $table->text('othes')->nullable();
+            $table->text('othel')->nullable();
+            $table->text('other')->nullable();
 
 
+            $table->text('list_of_employed1')->nullable();
+            $table->text('job_description1')->nullable();
+            $table->text('call1')->nullable();
+            $table->text('start_job_duration1')->nullable();
+            $table->text('end_job_duration2')->nullable();
+            $table->text('position1')->nullable();
+            $table->text('reasonLeaving1')->nullable();
+            $table->text('lastsalary1')->nullable();
 
-            $table->text('list_of_employed1');
-            $table->text('job_description1');
-            $table->text('call1');
-            $table->text('start_job_duration1');
-            $table->text('end_job_duration2');
-            $table->text('position1');
-            $table->text('reasonLeaving1');
-            $table->text('lastsalary1');
+            $table->text('list_of_employed2')->nullable();
+            $table->text('call2')->nullable();
+            $table->text('job_description2')->nullable();
+            $table->text('start_job_duration3')->nullable();
+            $table->text('end_job_duration4')->nullable();
+            $table->text('position2')->nullable();
+            $table->text('reasonLeaving2')->nullable();
+            $table->text('lastsalary2')->nullable();
 
-            $table->text('list_of_employed2');
-            $table->text('call2');
-            $table->text('job_description2');
-            $table->text('start_job_duration3');
-            $table->text('end_job_duration4');
-            $table->text('position2');
-            $table->text('reasonLeaving2');
-            $table->text('lastsalary2');
-
-            $table->text('list_of_employed3');
-            $table->text('call3');
-            $table->text('job_description3');
-            $table->text('start_job_duration5');
-            $table->text('end_job_duration6');
-            $table->text('position3');
-            $table->text('reasonLeaving3');
-            $table->text('lastsalary3');
+            $table->text('list_of_employed3')->nullable();
+            $table->text('call3')->nullable();
+            $table->text('job_description3')->nullable();
+            $table->text('start_job_duration5')->nullable();
+            $table->text('end_job_duration6')->nullable();
+            $table->text('position3')->nullable();
+            $table->text('reasonLeaving3')->nullable();
+            $table->text('lastsalary3')->nullable();
 
 
-            $table->text('namecm');
-            $table->text('lastnamecm');
-            $table->text('firm');
-            $table->text('telecm');
-            $table->text('workk');
+            $table->text('namecm')->nullable();
+            $table->text('lastnamecm')->nullable();
+            $table->text('firm')->nullable();
+            $table->text('telecm')->nullable();
+            $table->text('workk')->nullable();
           
-            $table->text('positioncm');
-            $table->text('computer');
-            $table->text('fax');
-            $table->text('typewriter');
-            $table->text('dot');
+            $table->text('positioncm')->nullable();
+            $table->text('computer')->nullable();
+            $table->text('fax')->nullable();
+            $table->text('typewriter')->nullable();
+            $table->text('dot')->nullable();
 
-            $table->text('crash1');
+            $table->text('crash1')->nullable();
        
 
 
-            $table->text('compd');
-            $table->text('compa');
+            $table->text('compd')->nullable();
+            $table->text('compa')->nullable();
 
-            $table->text('crash2');
+            $table->text('crash2')->nullable();
          
 
-            $table->text('crash3');
+            $table->text('crash3')->nullable();
         
 
-            $table->text('yes');
+            $table->text('yes')->nullable();
           
 
-            $table->text('owncar');
+            $table->text('owncar')->nullable();
           
 
-            $table->text('dateworkk');
-            $table->text('cardec');
-            $table->text('license');
+            $table->text('dateworkk')->nullable();
+            $table->text('cardec')->nullable();
+            $table->text('license')->nullable();
 
-            $table->text('exitwork');
-            $table->text('because');
+            $table->text('exitwork')->nullable();
+            $table->text('because')->nullable();
            
 
-            $table->text('serious_ill');
+            $table->text('serious_ill')->nullable();
     
 
-            $table->text('offense');
-          
+            $table->text('offense')->nullable();
 
-            $table->text('pregnant');
+            $table->text('pregnant')->nullable();
+
+
+            $table->text('degree1')->nullable();
+            $table->text('degree2')->nullable();
+            $table->text('degree3')->nullable();
+            $table->text('degree4')->nullable();
+            $table->text('degree5')->nullable();
+            $table->text('degree6')->nullable();
+            $table->text('degree7')->nullable();
+            $table->text('degree8')->nullable();
+            
 
             $table->tinyInteger('enable')->default('1');
             $table->timestamps();

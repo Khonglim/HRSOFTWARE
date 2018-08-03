@@ -5,11 +5,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Personal;
-use App\Educational;
-use App\Languages;
-use App\Persons;
-use App\History;
-
+use Illuminate\Support\Facades\Input;
 class EmployeeController extends Controller
 {
     /**
@@ -20,24 +16,9 @@ class EmployeeController extends Controller
     public function index()
     {
 
-<<<<<<< HEAD
-        $employee = DB::table("personal")   
-        ->leftJoin('edocational', 'personal.id_personal', '=', 'edocational.id_edocational')
-        ->leftJoin('languages', 'edocational.id_edocational', '=', 'languages.id_languages')
-        ->get();
-       
-        $data = array(
-            'employee' =>   $employee
-        );
-
-        
-        return view('employee',$data );
-        
-=======
         $personal = Personal::where('enable','=', 1)->get();
         $data = array('personal' =>  $personal  );
         return view('employee',$data);
->>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
         
     }
 
@@ -61,12 +42,19 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $personal = new Personal;
-        $personal->prefix1 = $request->prefix1;
+
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
         $personal->nikname = $request->nikname;
         $personal->gender  = $request->gender;
         $personal->birthday = $request->birthday;
+
+        if(Input::hasFile('image')){
+            $file=Input::file('image');
+            $personal->photo = $file->getClientOriginalName();
+            $file->move(public_path(). '/', $file->getClientOriginalName());
+        }
+
         $personal->nationality = $request->nationality;
         $personal->race = $request->race;
         $personal->religion = $request->religion;
@@ -228,6 +216,16 @@ class EmployeeController extends Controller
         $personal->offense = $request->offense;
         $personal->pregnant = $request->pregnant;
         $personal->because = $request->because;
+
+
+        $personal->degree1 = $request->degree1;
+        $personal->degree2 = $request->degree2;
+        $personal->degree3 = $request->degree3;
+        $personal->degree4 = $request->degree4;
+        $personal->degree5 = $request->degree5;
+        $personal->degree6 = $request->degree6;
+        $personal->degree7 = $request->degree7;
+       
         $personal->save();
         return redirect('employee');
     }
@@ -254,14 +252,8 @@ class EmployeeController extends Controller
 
         if($id !== '') {
             $personal = Personal::find($id);
-<<<<<<< HEAD
-           
-            $data = array(
-                'personal' =>  $personal
-=======
             $data = array(
                 'personal' => $personal
->>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
             );
             return view('formeditemployee',$data);
         }
@@ -278,17 +270,21 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
-        $personal = Personal::find($id);
-        $personal->prefix1 = $request->prefix1;
+        $personal =  Personal::find($id);
+
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
         $personal->nikname = $request->nikname;
         $personal->gender  = $request->gender;
         $personal->birthday = $request->birthday;
+
+        if(Input::hasFile('image')){
+            $file=Input::file('image');
+            $personal->photo = $file->getClientOriginalName();
+            $file->move(public_path(). '/', $file->getClientOriginalName());
+        }
+
         $personal->nationality = $request->nationality;
         $personal->race = $request->race;
         $personal->religion = $request->religion;
@@ -450,6 +446,16 @@ class EmployeeController extends Controller
         $personal->offense = $request->offense;
         $personal->pregnant = $request->pregnant;
         $personal->because = $request->because;
+
+
+        $personal->degree1 = $request->degree1;
+        $personal->degree2 = $request->degree2;
+        $personal->degree3 = $request->degree3;
+        $personal->degree4 = $request->degree4;
+        $personal->degree5 = $request->degree5;
+        $personal->degree6 = $request->degree6;
+        $personal->degree7 = $request->degree7;
+       
         $personal->save();
        
 

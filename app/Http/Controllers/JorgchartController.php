@@ -19,21 +19,5 @@ class JorgchartController extends Controller
         $data1 = array('company' => $company,'department' => $department,'position' => $position);
         return view('orgchartcompany',$data1);
     }
-      public function department()
-    {
-        return view('orgchartdepartment');
-    }
-      public function position()
-    {
-        return view('orgchartposition');
-    }
-     public function test()
-    {
-    	$company = Company::all();
-        $department= Department::all();
-        $position = Position::all();
-        
-        $data1 = array('company' => $company,'department' => $department,'position' => $position);
-        return view('/homeshowcompany',$data1);
-    }
+     
 }

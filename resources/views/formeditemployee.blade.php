@@ -3,7 +3,7 @@
   <div class="content-wrapper">
     <div class="content container-fluid">
             <div class="col-md-7">
-                    {{Form::open(['route'=>['employee.update',$personal->id_personal],'method'=>'PUT','files' => true])}}
+                    {{Form::open(['route'=>['employee.update',$personal->id],'method'=>'PUT','files' => true])}}
             <div class="box box-default">
                     <div class="box-header with-border">
                       <h3 class="box-title">ประวัติส่วนตัว</h3>
@@ -26,7 +26,7 @@
                                                         ชื่อ:&nbsp; <input type="text"name="name" id="name" required="required"style="width:100px" value="{{$personal->name}}"/>&nbsp;&nbsp;&nbsp;
                                                         นามสกุล :<input type="text" name="lastname" id="lastname" required="required" style="width:100px" value="{{$personal->lastname}}"/>&nbsp;&nbsp;&nbsp;
                                                         ชื่อเล่น:<input type="text" name="nikname" id="nikname" required="required" style="width: 45px" value="{{$personal->nikname}}"/>&nbsp;&nbsp;&nbsp;
-                                                        เพศ:&nbsp;&nbsp;&nbsp; <input type="radio" name="gender" value="ชาย">ชาย <input type="radio" name="gender" value="หญิง">หญิง
+                                                        เพศ:&nbsp;&nbsp;&nbsp; <input type="radio" name="gender" value="male">ชาย <input type="radio" name="gender" value="female">หญิง
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -977,7 +977,7 @@
                                                                                                                         <tr>
                                                                                                                             <td>
                                                                                                                                 ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="serious_ill" name="serious_ill">เคย
-                                                                                                                                <input type="checkbox" class="form-check-input" id="serious_ill" name="serious_ill"  >ไม่เคย
+                                                                                                                                <input type="checkbox" class="form-check-input" id="serious_ill" name="serious_ill">ไม่เคย
                                                                                                                                 </td>
                                                                                                                             </tr>
                                                                                                                             <tr>

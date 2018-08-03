@@ -140,21 +140,15 @@
 
 
 
-<<<<<<< HEAD
-=======
 <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
 
->>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}" defer></script>
 
-<<<<<<< HEAD
-=======
 <script src="{{ asset('bower_components/PACE/pace.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
->>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
 <script src="{{ asset('dist/js/adminlte.min.js') }}" defer></script>
 <script src="{{ asset('dist/js/demo.js') }}" defer></script>
 

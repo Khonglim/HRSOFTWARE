@@ -26,13 +26,11 @@ Route::get('employee/create', 'EmployeeController@create');
 
 Route::get('/orgchartcompany','JorgchartController@company');
 
-Route::get('/iframechart',function () {
-    return view('iframechart');
-});
 
-Route::resource('user','UsersController');
-Route::get('user/create', 'UsersController@create');
-Route::resource('admin','AdminController');
+
+
+
+Auth::routes();
 
 Route::get('/', function () {
     return view('auth.login');
@@ -41,18 +39,15 @@ Route::get('/', function () {
 Route::resource('home','HomeController');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
 
+Route::get('iframe', function () {
 
-Route::get('my-theme', function () {
-
-    return view('welcome2');
+    return view('iframe');
 
 });
 
 Route::get('/dynamicdependent','DynamicDependent@index');
-
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 

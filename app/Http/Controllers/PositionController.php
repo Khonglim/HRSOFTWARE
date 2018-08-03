@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Position;
 use Illuminate\Http\Request;
 use App\Department;
 use App\Company;
+use App\Position;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 
@@ -36,7 +36,7 @@ class PositionController extends Controller
          $titles = Department::where('enable','=', 1)->pluck('department_name','id');
         $company = Company::where('enable','=', 1)->pluck('company_Name','id');
        
-        $departments = department::where('enable','=', 1)->paginate();
+        $departments = Department::where('enable','=', 1)->paginate();
       
         $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
 
@@ -86,7 +86,7 @@ class PositionController extends Controller
          if($id !== '') {
             $position = Position::find($id);
             $company =  Company::where('enable','=', 1)->get();
-            $department =  department::where('enable','=', 1)->get();
+            $department =  Department::where('enable','=', 1)->get();
             $positions =  Position::where('enable','=', 1)->get();
 
             $data = array(

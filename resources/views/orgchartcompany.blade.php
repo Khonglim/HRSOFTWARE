@@ -1,19 +1,17 @@
-<!DOCTYPE HTML>
 
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>Org Chart</title>
-<<<<<<< HEAD
-=======
 
->>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
+        
         <link rel="stylesheet" href="css/jquery.orgchart.css"/>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="/js/jquery.orgchart.js"></script>
-        <script src="/js/jquery.orgchart.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/jquery.orgchart.js"></script>
+        <script src="js/jquery.orgchart.min.js"></script>
        
         <script>
-
+filterSelection("all")
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
@@ -51,8 +49,8 @@ var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function(){
     var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
+    current[0].className = current[0].className.replace("active", "");
+    this.className += "active";
   });
 }
 </script>
@@ -101,21 +99,6 @@ div.body{
 
 
 }
-div.orgChart div.adjunct.node {
-    font-size: 0.9em;
-}
-div.orgChart div.node.level1.adjunct {
-    background-color: #7ccfff;
-}
-div.orgChart div.node.level2.adjunct {
-    background-color: #7ccfff;
-}
-div.orgChart div.node.level3.adjunct {
-    background-color: #7ccfff;
-}
-div.orgChart div.node.level4.adjunct {
-    background-color: #7ccfff;
-}
 div.orgChart div.node.level1 {
     background-color: #fbcece;
 }
@@ -127,9 +110,6 @@ div.orgChart div.node.level2 {
 }
 div.orgChart div.node.level3 {
     background-color: #e0cefb;
-}
-div.orgChart div.node.level4 {
-    background-color: #7ccfff;
 }
 
 .filterDiv {
@@ -213,15 +193,6 @@ div.orgChart div.node.level4 {
     </head>
 
     <body>
-
-
- 
-
-
-
- 
-                  
-
         <div id="content" style="text-align: center;" >
         
             <h1>Company Organizational chart</h1>
@@ -229,6 +200,7 @@ div.orgChart div.node.level4 {
 <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Company</button>
   <div id="myDropdown" class="dropdown-content">
+    <a><button class="btn active" onclick="filterSelection('all')"> Show all</button></a>
    @foreach($company as $l) 
  <a><button class="btn" onclick="filterSelection('{{$l['id']}}')">{{$l['company_Name']}}</button></a>
     @endforeach
@@ -259,31 +231,25 @@ div.orgChart div.node.level4 {
 
             <ul id="{{$l['company_Name']}}" style="display: none;">
                 <li>
-                    
+                    @foreach($company as $li) 
+
+                            @if($l['id']<$li['id'])
+                                {{$li['company_Name']}}
+                            @break
+                            @elseif($l['id']==$li['id'])
+                             {{$li['company_Name']}}
+                            @break
+                            @else
                                 {{$l['company_Name']}}
-                           
-                  
+                            @break
+                            @endif
+                    
+                    @endforeach
                     <ul>
                         @foreach($department as $li)
                             @if($l['id']==$li['company_id']&&$li['department_head_id']==0) 
-
                         <li>
                             {{$li['department_name']}} 
-
-                           
-                             @foreach($position as $po)
-                                    
-                                      @if($po['Department_ID']==$li['id'])
-                                       <adjunct><i>
-                                         
-                                       {{$po['position_name']}}
-                                      
-                                        </i></adjunct>
-                                       @endif
-                                          
-                             @endforeach
-
-                        
                            <ul>
                                 @foreach($department as $la)
                      
@@ -291,61 +257,30 @@ div.orgChart div.node.level4 {
                                             <li>
                                                 {{$la['department_name']}} 
 
-                                                   @foreach($position as $po)
-                                                   
-                                                                   @if($po['Department_ID']==$la['id'])
-                                                                <adjunct><i>{{$po['position_name']}} </i></adjunct>
-                                                                    @endif
-                                                     @endforeach
-
-                                                     
                                                     <ul>
-                                                        @foreach($department as $lb2) 
-                                                            @if($la['id']==$lb2['department_head_id'])
+                                                        @foreach($position as $lb) 
+                                                            @if($la['id']==$lb['Department_ID'])
                                                             <li>
-                                                                {{$lb2['department_name']}}
-
-                                                               @foreach($position as $po)
-                                                                   @if($po['Department_ID']==$la['id'])
-
-                                                                <adjunct><i>{{$po['position_name']}} </i></adjunct>
-
-                                                                    @endif
-                                                                  @endforeach
-
-                                                                 <ul>
-                                                                    @foreach($position as $po)
-                                                                   @if($po['Department_ID']==$lb2['id'])
-                                                                <li> {{$po['position_name']}}</li> 
-                                                                    @endif
-                                                                  @endforeach
-                                                                 </ul>
+                                                                {{$lb['position_name']}} 
                                                                   
-
-
-                                                                 
-                                                                 
                                                             </li> 
                                                             @endif
 
                                                            
                                                         @endforeach
                                                     </ul>
-                                                    
+
 
                                             </li>   
                                        
          
                                     @endif
-
                                 @endforeach
 
                            </ul>
-                        </li> 
-
+                        </li>  
                         @endif
                        @endforeach
-
                     </ul>
                    
                 </li>

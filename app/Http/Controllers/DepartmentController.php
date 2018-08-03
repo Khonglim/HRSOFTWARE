@@ -32,7 +32,7 @@ class DepartmentController extends Controller
        $titles = Department::where('enable','=', 1)->pluck('department_name','id');
         $company = Company::where('enable','=', 1)->pluck('company_Name','id');
        
-        $departments = department::where('enable','=', 1)->paginate();
+        $departments = Department::where('enable','=', 1)->paginate();
       
         $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
 
@@ -94,7 +94,7 @@ class DepartmentController extends Controller
         if($id !== '') {
              $department = Department::find($id);
             $companys =  Company::where('enable','=', 1)->get();
-            $departments =  department::where('enable','=', 1)->get();
+            $departments =  Department::where('enable','=', 1)->get();
             $data = array(
                 'department' => $department,'departments' => $departments,'companys' => $companys 
             );
