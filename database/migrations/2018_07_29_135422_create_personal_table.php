@@ -14,7 +14,8 @@ class CreatePersonalTable extends Migration
     public function up()
     {
         Schema::create('personal', function (Blueprint $table) {
-            $table->increments('id_personal');
+            $table->increments('id');
+            $table->integer('id_edocational');
             $table->text("prefix1");
             $table->text("name");
             $table->text("lastname");

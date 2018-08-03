@@ -14,7 +14,8 @@ class CreateEdocationalTable extends Migration
     public function up()
     {
         Schema::create('edocational', function (Blueprint $table) {
-            $table->increments('id_edocational');
+            $table->increments('id');
+            $table->integer('id_languages');
             $table->char('primary');
             $table->char('year1');
             $table->char('year2');

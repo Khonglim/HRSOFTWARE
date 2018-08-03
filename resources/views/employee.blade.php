@@ -17,14 +17,51 @@
                       <tr>
                          <th>ชื่อ</th>
                          <th>นามสกุล</th>
-                         <th>ชื่อเล่น</th>
-                         <th>วันเกิด</th>
-                         <th>เพศ</th>
-                         <th>อีเมล</th>
                          <th>เพิ่มเติ่ม</th>
                       </tr>
                     </thead>
+                    <tbody>
+                      @forelse($employee as $l)
+                    
+                     <tr>
+                   <td> {{$l->name}} </td>
+                   <td> {{$l->lastname}} </td>
                   
+                   <td>  
+                        <a href="{{'employee/'.$l->id_personal .'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
+                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$l->id_personal}}"><i class=" fa fa-trash"></i></button>
+          
+         
+              <div id="myModal{{$l->id_personal}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                           <div class="modal-content">
+                       <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">ลบข้อมูล</h4>
+      </div>
+      <div class="modal-body">
+      {{ Form::open(['route' => ['employee.destroy',$l->id_personal, 'method' => "DELETE"] ]) }}
+      <input type="hidden" name="_method" value="delete" / >
+      <p>คุณต้องการลบใช่หรือไม่!!!!</p>  
+      </div>
+      <div class="modal-footer">
+      <button type="summit" class="btn btn-danger">ลบ</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+      </div>
+      {{ Form::close() }}  
+      </div>
+      
+      </div>
+      </div>
+      </td>
+      </tr>
+   
+       @empty
+      <tr>
+      <td colspan="6" > No data !!</td>
+      </tr>
+        @endforelse
+                    </tbody>
               </table> 
                </div>
               <footer class="panel-footer">

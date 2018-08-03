@@ -24,8 +24,13 @@ class EmployeeController extends Controller
         ->leftJoin('edocational', 'personal.id_personal', '=', 'edocational.id_edocational')
         ->leftJoin('languages', 'edocational.id_edocational', '=', 'languages.id_languages')
         ->get();
-        dd( $employee);
+       
+        $data = array(
+            'employee' =>   $employee
+        );
 
+        
+        return view('employee',$data );
         
         
     }
@@ -242,11 +247,12 @@ class EmployeeController extends Controller
     {
 
         if($id !== '') {
-            $employee = Employee::find($id);
+            $personal = Personal::find($id);
+           
             $data = array(
-                'employee' => $employee
+                'personal' =>  $personal
             );
-            return view('formemployee',$data);
+            return view('formeditemployee',$data);
         }
 
     }
@@ -260,8 +266,6 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
 
         $personal = Personal::find($id);
         $personal->prefix1 = $request->prefix1;
