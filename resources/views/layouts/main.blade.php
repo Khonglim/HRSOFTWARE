@@ -11,6 +11,8 @@
   <link href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/AdminLTE.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/skins/skin-blue.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('plugins/pace/pace.min.css') }}" rel="stylesheet">
+ 
   <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -120,7 +122,7 @@
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="/orgchartcompany">แผนผังบริษัท</a></li>
+                    <li><a href="/iframe">แผนผังบริษัท</a></li>
                  </ul>
                 </li>
                
@@ -138,12 +140,24 @@
 
 
 
+<<<<<<< HEAD
+=======
+<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
+
+>>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
 <script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}" defer></script>
 
+<<<<<<< HEAD
+=======
+<script src="{{ asset('bower_components/PACE/pace.min.js') }}" defer></script>
+<script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
+>>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
 <script src="{{ asset('dist/js/adminlte.min.js') }}" defer></script>
+<script src="{{ asset('dist/js/demo.js') }}" defer></script>
+
 
 <script>
   $(function () {
@@ -153,5 +167,15 @@
     $('#employee').DataTable()
   })
 </script>
+
+
+<script type="text/javascript">
+  // To make Pace works on Ajax calls
+  $(document).ajaxStart(function () {
+    Pace.restart()
+  })
+ 
+</script>
+
 </body>
 </html>

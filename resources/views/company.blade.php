@@ -4,9 +4,9 @@
   <section class="content">
     <div class="row">
       <div class="col-xs-12">
-          @if(auth()->user()->isAdmin == 1)
+          
           <a href="company/create" class="btn btn-success" ><i class="fa fa-plus"> เพิ่มข้อมูล</i></a>
-          @endif
+          
           <br><br>
         <div class="box">
           <div class="box-header">

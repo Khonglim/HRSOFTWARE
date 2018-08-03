@@ -5,13 +5,13 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
-            @if(auth()->user()->isAdmin == 1)
+           
             <a href="position/create" class="btn btn-success" ><i class="fa fa-plus"> เพิ่มข้อมูล</i></a>
-            @endif
+           
             <br><br>
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">รายชื่อบริษัท</h3>
+              <h3 class="box-title">รายชื่อตำแหน่ง</h3>
             </div>
          
             <div class="box-body">
@@ -19,7 +19,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>ชื่อแผนก</th>
+                    <th>ชื่อตำแหน่ง</th>
                     <th>ชื่อแผนก</th>
                     <th>บริษัท</th>
                     <th>หมายเหตุ</th>
@@ -32,11 +32,27 @@
                       <tr>
                     <td> {{$l['id']}} </td>
                     <td> {{$l['position_name']}} </td>
-                    <td> {{$l['Department_ID']}} </td>
+                    @foreach($department as $de)
+
+                    
+                    @if($de['id']==$l['Department_ID'])
+                    <td> {{$de['department_name']}} </td>
+                     @foreach($company as $com)
+                     @if($com['id']==$de['company_id'])  
+                     <td> {{$com['company_Name']}} </td>
+                     @endif
+                  
+
+                    
+                    @endforeach
+
+                    @endif
+
+                    @endforeach
                     <td> {{$l['remark']}} </td>
                     <td>  
                         
-                        <a href="{{'employee/'.$l['id'].'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
+                        <a href="{{'position/'.$l['id'].'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
                         <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}"><i class=" fa fa-trash"></i></button>
           
          
@@ -76,7 +92,7 @@
                 <tfoot>
                 <tr>
                     <th>ID</th>
-                    <th>ชื่อแผนก</th>
+                    <th>ชื่อตำแหน่ง</th>
                     <th>ชื่อแผนก</th>
                     <th>บริษัท</th>
                     <th>หมายเหตุ</th>

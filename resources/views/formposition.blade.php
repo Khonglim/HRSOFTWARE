@@ -28,15 +28,41 @@
                             </div>
                           </div>
 
-                          <div class="row">
+                             <div class="row">
                                 <div class="col-md-2">
-                                  {{Form::label('position_name','ID แผนก')}}
+                                  {{Form::label('position_name','แผนก')}}
                                 </div>
                                   <div class="col-md-5">
                                     <div class="form-group {{ $errors->has('Department_ID') ? 'has-error' : '' }}">
+                                     @foreach($department as $de)
+                                     @if($de['id']==$position->Department_ID) 
+                                     {{Form::text('Department_ID',$de['department_name'] ,['class'=>'form-control','readonly' => 'true'])}}
+                                     @endif
+                                     @endforeach
+                                       
                                      
-                                        {{Form::text('Department_ID',$position->Department_ID ,['class'=>'form-control'])}}
-                                     
+                                      <span class="text-danger">{{ $errors->first('Department_ID') }}</span>
+                                      </div>
+                                  </div>
+                                </div>
+
+                                 <div class="row">
+                                <div class="col-md-2">
+                                  {{Form::label('company','บริษัท')}}
+                                </div>
+                                  <div class="col-md-5">
+                                    <div class="form-group {{ $errors->has('Department_ID') ? 'has-error' : '' }}">
+                                        @foreach($department as $de)
+                                      @foreach($company as $com)
+
+                                     @if($com['id']==$de['company_id'] && $de['id']==$position->Department_ID)
+                                     {{Form::text('Department_ID',$com['company_Name'] ,['class'=>'form-control','readonly' => 'true'])}}
+                                     @endif
+                                  
+
+                                     @endforeach
+                                        
+                                     @endforeach
                                       <span class="text-danger">{{ $errors->first('Department_ID') }}</span>
                                       </div>
                                   </div>

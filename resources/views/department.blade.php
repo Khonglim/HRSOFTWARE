@@ -4,13 +4,13 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
-            @if(auth()->user()->isAdmin == 1)
+           
             <a href="department/create" class="btn btn-success" ><i class="fa fa-plus"> เพิ่มข้อมูล</i></a>
-            @endif
+           
             <br><br>
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">รายชื่อบริษัท</h3>
+              <h3 class="box-title">รายชื่อแผนก</h3>
             </div>
          
             <div class="box-body">
@@ -19,7 +19,7 @@
                 <tr>
                     <th>ID</th>
                     <th>ชื่อแผนก</th>
-                    <th>ชื่อแผนก</th>
+                    <th>ชื่อหัวแผนก</th>
                     <th>บริษัท</th>
                     <th>หมายเหตุ</th>
                     <th>เพิ่มเติ่ม</th>
@@ -89,7 +89,7 @@
                 <tr>
                     <th>ID</th>
                     <th>ชื่อแผนก</th>
-                    <th>ชื่อแผนก</th>
+                    <th>ชื่อหัวแผนก</th>
                     <th>บริษัท</th>
                     <th>หมายเหตุ</th>
                     <th>เพิ่มเติ่ม</th>

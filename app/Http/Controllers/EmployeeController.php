@@ -20,6 +20,7 @@ class EmployeeController extends Controller
     public function index()
     {
 
+<<<<<<< HEAD
         $employee = DB::table("personal")   
         ->leftJoin('edocational', 'personal.id_personal', '=', 'edocational.id_edocational')
         ->leftJoin('languages', 'edocational.id_edocational', '=', 'languages.id_languages')
@@ -32,6 +33,11 @@ class EmployeeController extends Controller
         
         return view('employee',$data );
         
+=======
+        $personal = Personal::where('enable','=', 1)->get();
+        $data = array('personal' =>  $personal  );
+        return view('employee',$data);
+>>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
         
     }
 
@@ -103,126 +109,126 @@ class EmployeeController extends Controller
         $personal->occupationm = $request->occupationm;
         $personal->alivem = $request->alivem;
         $personal->province_crad = $request->province_crad;
+
+
+
+        $personal->primary = $request->primary;
+        $personal->year1 = $request->year1;
+        $personal->year2 = $request->year2;
+        $personal->gpa = $request->gpa;
+        $personal->major = $request->major;
+
+        $personal->secondary = $request->secondary;
+        $personal->year3 = $request->year3;
+        $personal->year4 = $request->year4;
+        $personal->gpas = $request->gpas;
+        $personal->majors = $request->majors;
+
+        $personal->vocation = $request->vocation;
+        $personal->year5 = $request->year5;
+        $personal->year6 = $request->year6;
+        $personal->gpav = $request->gpav;
+        $personal->majorv = $request->majorv;
+
+        $personal->diploma = $request->diploma;
+        $personal->year7 = $request->year7;
+        $personal->year8 = $request->year8;
+        $personal->gpad = $request->gpad;
+        $personal->majord = $request->majord;
+
+        $personal->bachelor = $request->bachelor;
+        $personal->year9 = $request->year9;
+        $personal->year10 = $request->year10;
+        $personal->gpab = $request->gpab;
+        $personal->majorb = $request->majorb;
+
+        $personal->master = $request->master;
+        $personal->year11 = $request->year11;
+        $personal->year12 = $request->year12;
+        $personal->gpam = $request->gpam;
+        $personal->majorm = $request->majorm;
+
+        $personal->otherE = $request->otherE;
+        $personal->year13 = $request->year13;
+        $personal->year14 = $request->year14;
+        $personal->gpao = $request->gpao;
+        $personal->majoro = $request->majoro;
+  
+
+     
+        $personal->thais  = $request->thais;
+        $personal->thail  = $request->thail;
+        $personal->thair  = $request->thair;
+
+        $personal->engliss  = $request->engliss;
+        $personal->englisl  = $request->englisl;
+        $personal->englisr  = $request->englisr;
+
+        $personal->otherr  = $request->otherr;
+        $personal->othes  = $request->othes;
+        $personal->othel  = $request->othel;
+        $personal->other  = $request->other;
+    
+
+        
+        $personal->list_of_employed1 = $request->list_of_employed1;
+        $personal->job_description1 = $request->job_description1;
+        $personal->call1 = $request->call1;
+        $personal->start_job_duration1 = $request->start_job_duration1;
+        $personal->end_job_duration2 = $request->end_job_duration2;
+        $personal->reasonLeaving1 = $request->reasonLeaving1;
+        $personal->lastsalary1= $request->lastsalary1;
+        $personal->position1 = $request->position1;
+
+        $personal->list_of_employed2 = $request->list_of_employed2;
+        $personal->job_description2 = $request->job_description2;
+        $personal->call2 = $request->call2;
+        $personal->start_job_duration3 = $request->start_job_duration3;
+        $personal->end_job_duration4 = $request->end_job_duration4;
+        $personal->reasonLeaving2 = $request->reasonleaving2;
+        $personal->lastsalary2= $request->lastsalary2;
+        $personal->position2 = $request->position2;
+
+        $personal->list_of_employed3 = $request->list_of_employed3;
+        $personal->job_description3 = $request->job_description3;
+        $personal->call3 = $request->call3;
+        $personal->start_job_duration5 = $request->start_job_duration5;
+        $personal->end_job_duration6 = $request->end_job_duration6;
+        $personal->reasonLeaving3 = $request->reasonleaving3;
+        $personal->lastsalary3= $request->lastsalary3;
+        $personal->position3 = $request->position3;
+     
+
+
+       
+        $personal->namecm = $request->namecm;
+        $personal->lastnamecm = $request->lastnamecm;
+        $personal->firm = $request->firm;
+        $personal->telecm = $request->telecm;
+        $personal->positioncm = $request->positioncm;
+
+        $personal->computer = $request->computer;
+        $personal->fax = $request->fax;
+        $personal->typewriter = $request->typewriter;
+        $personal->dot = $request->dot;
+        $personal->crash1 = $request->crash1;
+        $personal->compd = $request->compd;
+        $personal->compa = $request->compa;
+        $personal->crash2 = $request->crash2;
+        $personal->crash3 = $request->crash3;
+        $personal->yes = $request->yes;
+        $personal->owncar = $request->owncar;
+        $personal->workk = $request->workk;
+        $personal->dateworkk = $request->dateworkk;
+        $personal->cardec = $request->cardec;
+        $personal->license = $request->license;
+        $personal->exitwork = $request->exitwork;
+
+        $personal->serious_ill = $request->serious_ill;
+        $personal->offense = $request->offense;
+        $personal->pregnant = $request->pregnant;
+        $personal->because = $request->because;
         $personal->save();
-
-        $educational= new Educational;
-        $educational->primary = $request->primary;
-        $educational->year1 = $request->year1;
-        $educational->year2 = $request->year2;
-        $educational->gpa = $request->gpa;
-        $educational->major = $request->major;
-
-        $educational->secondary = $request->secondary;
-        $educational->year3 = $request->year3;
-        $educational->year4 = $request->year4;
-        $educational->gpas = $request->gpas;
-        $educational->majors = $request->majors;
-
-        $educational->vocation = $request->vocation;
-        $educational->year5 = $request->year5;
-        $educational->year6 = $request->year6;
-        $educational->gpav = $request->gpav;
-        $educational->majorv = $request->majorv;
-
-        $educational->diploma = $request->diploma;
-        $educational->year7 = $request->year7;
-        $educational->year8 = $request->year8;
-        $educational->gpad = $request->gpad;
-        $educational->majord = $request->majord;
-
-        $educational->bachelor = $request->bachelor;
-        $educational->year9 = $request->year9;
-        $educational->year10 = $request->year10;
-        $educational->gpab = $request->gpab;
-        $educational->majorb = $request->majorb;
-
-        $educational->master = $request->master;
-        $educational->year11 = $request->year11;
-        $educational->year12 = $request->year12;
-        $educational->gpam = $request->gpam;
-        $educational->majorm = $request->majorm;
-
-        $educational->otherE = $request->otherE;
-        $educational->year13 = $request->year13;
-        $educational->year14 = $request->year14;
-        $educational->gpao = $request->gpao;
-        $educational->majoro = $request->majoro;
-        $educational->save();
-
-        $languages = new Languages;
-        $languages->thais  = $request->thais;
-        $languages->thail  = $request->thail;
-        $languages->thair  = $request->thair;
-
-        $languages->engliss  = $request->engliss;
-        $languages->englisl  = $request->englisl;
-        $languages->englisr  = $request->englisr;
-
-        $languages->otherr  = $request->otherr;
-        $languages->othes  = $request->othes;
-        $languages->othel  = $request->othel;
-        $languages->other  = $request->other;
-        $languages->save();
-
-        $history = new History;
-        $history->list_of_employed1 = $request->list_of_employed1;
-        $history->job_description1 = $request->job_description1;
-        $history->call1 = $request->call1;
-        $history->start_job_duration1 = $request->start_job_duration1;
-        $history->end_job_duration2 = $request->end_job_duration2;
-        $history->reasonLeaving1 = $request->reasonLeaving1;
-        $history->lastsalary1= $request->lastsalary1;
-        $history->position1 = $request->position1;
-
-        $history->list_of_employed2 = $request->list_of_employed2;
-        $history->job_description2 = $request->job_description2;
-        $history->call2 = $request->call2;
-        $history->start_job_duration3 = $request->start_job_duration3;
-        $history->end_job_duration4 = $request->end_job_duration4;
-        $history->reasonLeaving2 = $request->reasonleaving2;
-        $history->lastsalary2= $request->lastsalary2;
-        $history->position2 = $request->position2;
-
-        $history->list_of_employed3 = $request->list_of_employed3;
-        $history->job_description3 = $request->job_description3;
-        $history->call3 = $request->call3;
-        $history->start_job_duration5 = $request->start_job_duration5;
-        $history->end_job_duration6 = $request->end_job_duration6;
-        $history->reasonLeaving3 = $request->reasonleaving3;
-        $history->lastsalary3= $request->lastsalary3;
-        $history->position3 = $request->position3;
-        $history->save();
-
-
-        $persons = new   Persons;
-        $persons->namecm = $request->namecm;
-        $persons->lastnamecm = $request->lastnamecm;
-        $persons->firm = $request->firm;
-        $persons->telecm = $request->telecm;
-        $persons->positioncm = $request->positioncm;
-
-        $persons->computer = $request->computer;
-        $persons->fax = $request->fax;
-        $persons->typewriter = $request->typewriter;
-        $persons->dot = $request->dot;
-        $persons->crash1 = $request->crash1;
-        $persons->compd = $request->compd;
-        $persons->compa = $request->compa;
-        $persons->crash2 = $request->crash2;
-        $persons->crash3 = $request->crash3;
-        $persons->yes = $request->yes;
-        $persons->owncar = $request->owncar;
-        $persons->workk = $request->workk;
-        $persons->dateworkk = $request->dateworkk;
-        $persons->cardec = $request->cardec;
-        $persons->license = $request->license;
-        $persons->exitwork = $request->exitwork;
-
-        $persons->serious_ill = $request->serious_ill;
-        $persons->offense = $request->offense;
-        $persons->pregnant = $request->pregnant;
-        $persons->because = $request->because;
-        $persons->save();
         return redirect('employee');
     }
 
@@ -248,9 +254,14 @@ class EmployeeController extends Controller
 
         if($id !== '') {
             $personal = Personal::find($id);
+<<<<<<< HEAD
            
             $data = array(
                 'personal' =>  $personal
+=======
+            $data = array(
+                'personal' => $personal
+>>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
             );
             return view('formeditemployee',$data);
         }
@@ -267,6 +278,10 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 03c724fb4622b33f64bc3d0b41ee09cf6674968c
         $personal = Personal::find($id);
         $personal->prefix1 = $request->prefix1;
         $personal->name = $request->name;
@@ -312,130 +327,131 @@ class EmployeeController extends Controller
         $personal->occupation_father = $request->occupation_father;
         $personal->alivef = $request->alivef;
         $personal->namemother = $request->namemother;
-        $personal->lastmother = $request->lasrmother;
+        $personal->lasrmother = $request->lasrmother;
         $personal->occupationm = $request->occupationm;
         $personal->alivem = $request->alivem;
         $personal->province_crad = $request->province_crad;
+
+
+
+        $personal->primary = $request->primary;
+        $personal->year1 = $request->year1;
+        $personal->year2 = $request->year2;
+        $personal->gpa = $request->gpa;
+        $personal->major = $request->major;
+
+        $personal->secondary = $request->secondary;
+        $personal->year3 = $request->year3;
+        $personal->year4 = $request->year4;
+        $personal->gpas = $request->gpas;
+        $personal->majors = $request->majors;
+
+        $personal->vocation = $request->vocation;
+        $personal->year5 = $request->year5;
+        $personal->year6 = $request->year6;
+        $personal->gpav = $request->gpav;
+        $personal->majorv = $request->majorv;
+
+        $personal->diploma = $request->diploma;
+        $personal->year7 = $request->year7;
+        $personal->year8 = $request->year8;
+        $personal->gpad = $request->gpad;
+        $personal->majord = $request->majord;
+
+        $personal->bachelor = $request->bachelor;
+        $personal->year9 = $request->year9;
+        $personal->year10 = $request->year10;
+        $personal->gpab = $request->gpab;
+        $personal->majorb = $request->majorb;
+
+        $personal->master = $request->master;
+        $personal->year11 = $request->year11;
+        $personal->year12 = $request->year12;
+        $personal->gpam = $request->gpam;
+        $personal->majorm = $request->majorm;
+
+        $personal->otherE = $request->otherE;
+        $personal->year13 = $request->year13;
+        $personal->year14 = $request->year14;
+        $personal->gpao = $request->gpao;
+        $personal->majoro = $request->majoro;
+  
+
+     
+        $personal->thais  = $request->thais;
+        $personal->thail  = $request->thail;
+        $personal->thair  = $request->thair;
+
+        $personal->engliss  = $request->engliss;
+        $personal->englisl  = $request->englisl;
+        $personal->englisr  = $request->englisr;
+
+        $personal->otherr  = $request->otherr;
+        $personal->othes  = $request->othes;
+        $personal->othel  = $request->othel;
+        $personal->other  = $request->other;
+    
+
+        
+        $personal->list_of_employed1 = $request->list_of_employed1;
+        $personal->job_description1 = $request->job_description1;
+        $personal->call1 = $request->call1;
+        $personal->start_job_duration1 = $request->start_job_duration1;
+        $personal->end_job_duration2 = $request->end_job_duration2;
+        $personal->reasonLeaving1 = $request->reasonLeaving1;
+        $personal->lastsalary1= $request->lastsalary1;
+        $personal->position1 = $request->position1;
+
+        $personal->list_of_employed2 = $request->list_of_employed2;
+        $personal->job_description2 = $request->job_description2;
+        $personal->call2 = $request->call2;
+        $personal->start_job_duration3 = $request->start_job_duration3;
+        $personal->end_job_duration4 = $request->end_job_duration4;
+        $personal->reasonLeaving2 = $request->reasonleaving2;
+        $personal->lastsalary2= $request->lastsalary2;
+        $personal->position2 = $request->position2;
+
+        $personal->list_of_employed3 = $request->list_of_employed3;
+        $personal->job_description3 = $request->job_description3;
+        $personal->call3 = $request->call3;
+        $personal->start_job_duration5 = $request->start_job_duration5;
+        $personal->end_job_duration6 = $request->end_job_duration6;
+        $personal->reasonLeaving3 = $request->reasonleaving3;
+        $personal->lastsalary3= $request->lastsalary3;
+        $personal->position3 = $request->position3;
+     
+
+
+       
+        $personal->namecm = $request->namecm;
+        $personal->lastnamecm = $request->lastnamecm;
+        $personal->firm = $request->firm;
+        $personal->telecm = $request->telecm;
+        $personal->positioncm = $request->positioncm;
+
+        $personal->computer = $request->computer;
+        $personal->fax = $request->fax;
+        $personal->typewriter = $request->typewriter;
+        $personal->dot = $request->dot;
+        $personal->crash1 = $request->crash1;
+        $personal->compd = $request->compd;
+        $personal->compa = $request->compa;
+        $personal->crash2 = $request->crash2;
+        $personal->crash3 = $request->crash3;
+        $personal->yes = $request->yes;
+        $personal->owncar = $request->owncar;
+        $personal->workk = $request->workk;
+        $personal->dateworkk = $request->dateworkk;
+        $personal->cardec = $request->cardec;
+        $personal->license = $request->license;
+        $personal->exitwork = $request->exitwork;
+
+        $personal->serious_ill = $request->serious_ill;
+        $personal->offense = $request->offense;
+        $personal->pregnant = $request->pregnant;
+        $personal->because = $request->because;
         $personal->save();
-
-        $educational= Educational::find($id);
-        $educational->primary = $request->primary;
-        $educational->year1 = $request->year1;
-        $educational->year2 = $request->year2;
-        $educational->gpa = $request->gpa;
-        $educational->major = $request->major;
-
-        $educational->secondary = $request->secondary;
-        $educational->year3 = $request->year3;
-        $educational->year4 = $request->year4;
-        $educational->gpas = $request->gpas;
-        $educational->majors = $request->majors;
-
-        $educational->vocation = $request->vocation;
-        $educational->year5 = $request->year5;
-        $educational->year6 = $request->year6;
-        $educational->gpav = $request->gpav;
-        $educational->majorv = $request->majorv;
-
-        $educational->diploma = $request->diploma;
-        $educational->year7 = $request->year7;
-        $educational->year8 = $request->year8;
-        $educational->gpad = $request->gpad;
-        $educational->majord = $request->majord;
-
-        $educational->bachelor = $request->bachelor;
-        $educational->year9 = $request->year9;
-        $educational->year10 = $request->year10;
-        $educational->gpab = $request->gpab;
-        $educational->majorb = $request->majorb;
-
-        $educational->master = $request->master;
-        $educational->year11 = $request->year11;
-        $educational->year12 = $request->year12;
-        $educational->gpam = $request->gpam;
-        $educational->majorm = $request->majorm;
-
-        $educational->otherE = $request->otherE;
-        $educational->year13 = $request->year13;
-        $educational->year14 = $request->year14;
-        $educational->gpao = $request->gpao;
-        $educational->majoro = $request->majoro;
-        $educational->save();
-
-        $languages = Languages::find($id);
-        $languages->thais  = $request->thais;
-        $languages->thail  = $request->thail;
-        $languages->thair  = $request->thair;
-
-        $languages->engliss  = $request->engliss;
-        $languages->englisl  = $request->englisl;
-        $languages->englisr  = $request->englisr;
-
-        $languages->otherr  = $request->otherr;
-        $languages->othes  = $request->othes;
-        $languages->othel  = $request->othel;
-        $languages->other  = $request->other;
-        $languages->save();
-
-        $history = History::find($id);
-        $history->list_of_employed1 = $request->list_of_employed1;
-        $history->job_description1 = $request->job_description1;
-        $history->call1 = $request->call1;
-        $history->start_job_duration1 = $request->start_job_duration1;
-        $history->end_job_duration2 = $request->end_job_duration2;
-        $history->reasonLeaving1 = $request->reasonLeaving1;
-        $history->lastsalary1= $request->lastsalary1;
-        $history->position1 = $request->position1;
-
-        $history->list_of_employed2 = $request->list_of_employed2;
-        $history->job_description2 = $request->job_description2;
-        $history->call2 = $request->call2;
-        $history->start_job_duration3 = $request->start_job_duration3;
-        $history->end_job_duration4 = $request->end_job_duration4;
-        $history->reasonLeaving2 = $request->reasonleaving2;
-        $history->lastsalary2= $request->lastsalary2;
-        $history->position2 = $request->position2;
-
-        $history->list_of_employed3 = $request->list_of_employed3;
-        $history->job_description3 = $request->job_description3;
-        $history->call3 = $request->call3;
-        $history->start_job_duration5 = $request->start_job_duration5;
-        $history->end_job_duration6 = $request->end_job_duration6;
-        $history->reasonLeaving3 = $request->reasonleaving3;
-        $history->lastsalary3= $request->lastsalary3;
-        $history->position3 = $request->position3;
-        $history->save();
-
-
-        $persons = Persons::find($id);
-        $persons->namecm = $request->namecm;
-        $persons->lastnamecm = $request->lastnamecm;
-        $persons->firm = $request->firm;
-        $persons->telecm = $request->telecm;
-        $persons->positioncm = $request->positioncm;
-
-        $persons->computer = $request->computer;
-        $persons->fax = $request->fax;
-        $persons->typewriter = $request->typewriter;
-        $persons->dot = $request->dot;
-        $persons->crash1 = $request->crash1;
-        $persons->compd = $request->compd;
-        $persons->compa = $request->compa;
-        $persons->crash2 = $request->crash2;
-        $persons->crash3 = $request->crash3;
-        $persons->yes = $request->yes;
-        $persons->owncar = $request->owncar;
-        $persons->workk = $request->workk;
-        $persons->dateworkk = $request->dateworkk;
-        $persons->cardec = $request->cardec;
-        $persons->license = $request->license;
-        $persons->exitwork = $request->exitwork;
-
-        $persons->serious_ill = $request->serious_ill;
-        $persons->offense = $request->offense;
-        $persons->pregnant = $request->pregnant;
-        $persons->because = $request->because;
-        $persons->save();
+       
 
 
         return redirect('employee');
@@ -451,9 +467,9 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
 
-        $employee = Employee::find($id);
-        $employee->enable =0;
-        $employee->save();
+        $personal = Personal::find($id);
+        $personal->enable =0;
+        $personal->save();
         return redirect('employee');
     }
 }

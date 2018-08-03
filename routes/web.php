@@ -26,6 +26,9 @@ Route::get('employee/create', 'EmployeeController@create');
 
 Route::get('/orgchartcompany','JorgchartController@company');
 
+Route::get('/iframechart',function () {
+    return view('iframechart');
+});
 
 Route::resource('user','UsersController');
 Route::get('user/create', 'UsersController@create');
