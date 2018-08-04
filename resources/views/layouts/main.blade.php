@@ -164,11 +164,34 @@
 
 
 <script type="text/javascript">
-  // To make Pace works on Ajax calls
-  $(document).ajaxStart(function () {
-    Pace.restart()
-  })
- 
+ $(document).ajaxStart(function() { Pace.restart(); }); 
+
+
+$(function() {
+$("#newModalFormC").validate({
+  rules: {
+    name: {
+      required: true,
+        minlength: 8,
+        maxlength: 100
+    }
+  },
+  messages: {
+    company_Name: {
+      required: "กรุณากรอกข้อมูล", 
+      minlength: "ข้อมูลต่ำกว่า 8 อักษร",
+      maxlength: "ข้อมูลเกินกว่า 100 อักษร"
+    }
+  },
+	highlight: function(element, errorClass) {
+		$(element).closest(".form-group").addClass("has-error");
+	},
+	unhighlight: function(element, errorClass) {
+		$(element).closest(".form-group").removeClass("has-error");
+	}
+});
+});
+  
 </script>
 
 </body>
