@@ -18,19 +18,19 @@
                                 <div class="col-md-2">
                                         <div class="form-group">
                                     <label for="name">ชื่อ</label> 
-                                    <input type="text" name ="name"  id="name"class="form-control" required="required" >
+                                    <input type="text" name ="name"  id="name"class="form-control"  >
                                         </div>
                                 </div> 
                                 <div class="col-md-2">
                                         <div class="form-group">
                                         <label >นามสกุล</label> 
-                                        <input type="text" name="lastname"  id="lastname" class="form-control"  required="required" >
+                                        <input type="text" name="lastname"  id="lastname" class="form-control"   >
                                     </div>
                                     </div> 
                                 <div class="col-md-2">
                                         <div class="form-group">
                                             <label >ชื่อล่น</label> 
-                                            <input type="text" class="form-control"  name="nikname"  id="nikname" required="required">
+                                            <input type="text" class="form-control"  name="nikname"  id="nikname" >
                                         </div>
                                  </div> 
                                  <div class="col-md-2">
@@ -47,7 +47,7 @@
                               </div>
                               <div class="col-md-2">
                                         <label >วันเกิด</label><br>
-                                        <input type="date"name="birthday" id="birthday" required="required" class="form-control" />
+                                        <input type="date"name="birthday" id="birthday"  class="form-control" />
   
     
                       </div>
@@ -62,7 +62,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >สัญชาติ</label>
-                                            <input type="text" name="nationality" id="nationality" required="required" class="form-control"  />
+                                            <input type="text" name="nationality" id="nationality"  class="form-control"  />
                                             </div>
                                     </div> 
     
@@ -70,32 +70,32 @@
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >เชื้อชาติ</label>
-                                            <input type="text" name="race" id="race" required="required" class="form-control"/>
+                                            <input type="text" name="race" id="race"  class="form-control"/>
                                             </div>
                                     </div> 
                                     
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >ศาสนา</label>
-                                            <input type="text" name="religion" id="religion" required="required" class="form-control" />
+                                            <input type="text" name="religion" id="religion"  class="form-control" />
                                             </div>
                                     </div> 
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >อายุ</label>
-                                            <input type="text"name="age" id="age" required="required" class="form-control"  class="form-control"/>
+                                            <input type="text"name="age" id="age"  class="form-control"  class="form-control"/>
                                             </div>
                                     </div> 
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >ส่วนสูง</label>
-                                            <input type="text" name="height" id="height" required="required"   class="form-control"/>
+                                            <input type="text" name="height" id="height"    class="form-control"/>
                                             </div>
                                     </div> 
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                            <input type="text" name="weight" id="weieht" required="required"   class="form-control"/>
+                                            <input type="text" name="weight" id="weieht"    class="form-control"/>
                                             </div>
                                     </div> 
                                 </div> 
@@ -105,67 +105,67 @@
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >พี่น้องกี่คน</label>
-                                            <input type="text" name="brothers" id="brothers" required="required"   class="form-control"/>
+                                            <input type="text" name="brothers" id="brothers"    class="form-control"/>
                                             </div>
                                     </div> 
     
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >เป็นคนที่</label>
-                                            <input type="text" name="number" id="number" required="required"   class="form-control"/>
+                                            <input type="text" name="number" id="number"    class="form-control"/>
                                             </div>
                                     </div>
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >โทรศัพท์ที่ติดต่อ</label>
-                                            <input type="text" name="tel" id="tel" required="required"   class="form-control" />
+                                            <input type="text" name="tel" id="tel"    class="form-control" />
                                             </div>
                                     </div>
     
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >โทรศัพท์บ้าน</label>
-                                            <input type="text" name="home" id="home" required="required"   class="form-control" />
+                                            <input type="text" name="home" id="home"    class="form-control" />
                                             </div>
                                     </div>
     
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >โทรศัพท์มือถือ</label>
-                                            <input type="text" name="mobile" id="mobile" required="required"   class="form-control" />
+                                            <input type="text" name="mobile" id="mobile"    class="form-control" />
                                             </div>
                                     </div>
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >โทรศัพท์สำนักงาน</label>
-                                            <input type="text" name="office" id="office" required="required"  class="form-control" />
+                                            <input type="text" name="office" id="office"   class="form-control" />
                                             </div>
                                     </div>
     
                                     <div class="col-md-3">
                                             <div class="form-group">
                                             <label >อีเมล</label>
-                                            <input type="email" name="email" id="email" required="required"  class="form-control" />
+                                            <input type="email" name="email" id="email"   class="form-control" />
                                             </div>
                                     </div>
     
                                     <div class="col-md-3">
                                             <div class="form-group">
                                             <label >ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label>
-                                            <textarea name="address1" id="address1" required="required" class="form-control"   ></textarea>
+                                            <textarea name="address1" id="address1"  class="form-control"   ></textarea>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group">
                                             <label > ที่อยู่ตามบัตรประชาชน</label>
-                                            <textarea name="address2" id="address2" required="required" class="form-control"    ></textarea>
+                                            <textarea name="address2" id="address2"  class="form-control"    ></textarea>
                                             </div>
                                     </div>
     
                                     <div class="col-md-3">
                                             <div class="form-group">
                                             <label >เลขบัตรประชาชน</label>
-                                            <input type="text" name="idcard" id="idcard" required="required"   class="form-control" />
+                                            <input type="text" name="idcard" id="idcard"    class="form-control" />
                                             </div>
                                     </div>
     
@@ -176,25 +176,25 @@
                                     <div class="col-md-3">
                                             <div class="form-group">
                                             <label >ออกให้ ณ อำเภอ/เขต:</label>
-                                            <input type="text" name="issued" id="issued" required="required"  class="form-control" />
+                                            <input type="text" name="issued" id="issued"   class="form-control" />
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group">
                                             <label >จังหวัด</label>
-                                            <input type="text" name="province_crad" id="province_crad" required="required"  class="form-control" />
+                                            <input type="text" name="province_crad" id="province_crad"   class="form-control" />
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group">
                                             <label >วันออกบัตร</label>
-                                            <input type="date" name="issueddate" id="issueddate" required="required"   class="form-control" />
+                                            <input type="date" name="issueddate" id="issueddate"    class="form-control" />
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group">
                                             <label >บัตรหมดอายุ:</label>
-                                            <input type="date" name="expid" id="expid" required="required"   class="form-control" />
+                                            <input type="date" name="expid" id="expid"    class="form-control" />
                                             </div>
                                     </div>
                             </div>
@@ -204,7 +204,7 @@
                             <div class="col-md-3">
                                     <div class="form-group">
                                     <label >บัตรประจำตัวผู้เสียภาษี</label>
-                                    <input type="text" name="้texid" id="texid" required="required"   class="form-control" />
+                                    <input type="text" name="้texid" id="texid"    class="form-control" />
                                     </div>
                             </div>
                             <div class="col-md-2">
@@ -339,19 +339,19 @@
                                             <div class="col-md-3">
                                                     <div class="form-group">
                                                     <label > ชื่อบิดา</label>
-                                                    <input type="text" name="namefather" id="namefather" required="required"  class="form-control"/>
+                                                    <input type="text" name="namefather" id="namefather"   class="form-control"/>
                                                 </div>
                                             </div>
                                                 <div class="col-md-3">
                                                         <div class="form-group">
                                                         <label >นามสกุล</label>
-                                                        <input type="text" name="lastfather" id="lastfather" required="required"  class="form-control" />
+                                                        <input type="text" name="lastfather" id="lastfather"   class="form-control" />
                                                     </div>
                                                 </div>
                                                     <div class="col-md-3">
                                                             <div class="form-group">
                                                             <label >อาชีพ</label>
-                                                            <input type="text" name="occupation_father" id="occupation_father" required="required"  class="form-control"/>
+                                                            <input type="text" name="occupation_father" id="occupation_father"   class="form-control"/>
                                                         </div>
                                                     </div>
                                                         <div class="col-md-3"><br>
@@ -365,19 +365,19 @@
                                         <div class="col-md-3">
                                                 <div class="form-group">
                                                 <label > ชื่อมารดา</label>
-                                                <input type="text" name="namemother" id="namemother" required="required"  class="form-control"  placeholder="ชื่อมารดา"/>
+                                                <input type="text" name="namemother" id="namemother"   class="form-control"  placeholder="ชื่อมารดา"/>
                                             </div>
                                         </div>
                                             <div class="col-md-3">
                                                     <div class="form-group">
                                                     <label >นามสกุล</label>
-                                                    <input type="text" name="lasrmother" id="lasrmother" required="required"  class="form-control"  placeholder="นามสกุล"/>
+                                                    <input type="text" name="lasrmother" id="lasrmother"   class="form-control"  placeholder="นามสกุล"/>
                                                 </div>
                                             </div>
                                                 <div class="col-md-3">
                                                         <div class="form-group">
                                                         <label >อาชีพ</label>
-                                                        <input type="text" name="occupationm" id="occupationm" required="required"  class="form-control"  placeholder="อาชีพ"/>
+                                                        <input type="text" name="occupationm" id="occupationm"   class="form-control"  placeholder="อาชีพ"/>
                                                     </div>
                                                 </div>
                                                     <div class="col-md-3"><br>
@@ -415,7 +415,7 @@
                                         <tbody>
                                           <tr >
                                             <td align="center" >ประถมศึกษา</td>
-                                            <td><input type="text" id="primary" name="primary" required="required"  class="form-control"   /></td>
+                                            <td><input type="text" id="primary" name="primary"   class="form-control"   /></td>
                                             <td> 
                                                    
                                                 <select name="year1" id="year1" class="form-control">
@@ -450,13 +450,13 @@
                                                 
                                                
                                                 </td>
-                                            <td><input type="text" id="gpa" name="gpa" required="required" class="form-control" /></td>
-                                            <td><input type="text" id="major" name="major" required="required" class="form-control"  /></td>
-                                            <td><input type="text" id="degree1" name="degree1" required="required1" class="form-control"/></td>
+                                            <td><input type="text" id="gpa" name="gpa"  class="form-control" /></td>
+                                            <td><input type="text" id="major" name="major"  class="form-control"  /></td>
+                                            <td><input type="text" id="degree1" name="degree1"  class="form-control"/></td>
                                           </tr>
                                           <tr>
                                                 <td>มัธยมศึกษา</td>
-                                                <td> <input type="text" id="secondary" name="secondary" required="required"  class="form-control"  /></td>
+                                                <td> <input type="text" id="secondary" name="secondary"   class="form-control"  /></td>
                                                 <td> <select name="year3" id="year3"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -480,14 +480,14 @@
                                                  <?php } ?>
         
                                              </select></td>
-                                                <td> <input type="text" id="gpas" name="gpas" required="required"  class="form-control"  /></td>
-                                                <td>  <input type="text" id="majors" name="majors" required="required" class="form-control" /></td>
-                                                <td><input type="text" id="degree2" name="degree2" required="required2"  class="form-control" /></td>
+                                                <td> <input type="text" id="gpas" name="gpas"   class="form-control"  /></td>
+                                                <td>  <input type="text" id="majors" name="majors"  class="form-control" /></td>
+                                                <td><input type="text" id="degree2" name="degree2"   class="form-control" /></td>
                                           </tr>
         
                                           <tr>
                                                 <td>อาชีวะศึกษา</td>
-                                                <td><input type="text" id="vocation" name="vocation" required="required"  class="form-control"/></td>
+                                                <td><input type="text" id="vocation" name="vocation"   class="form-control"/></td>
                                                 <td><select name="year5" id="year5" class="form-control" >
         
                                                         <option value="">:: ปี ::</option>
@@ -510,14 +510,14 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td> <input type="text" id="gpav" name="gpav" required="required"  class="form-control"/></td>
-                                                <td><input type="text" id="majorv" name="majorv" required="required" class="form-control"/></td>
-                                                <td><input type="text" id="degree3" name="degree3" required="required1" class="form-control"/></td>
+                                                <td> <input type="text" id="gpav" name="gpav"   class="form-control"/></td>
+                                                <td><input type="text" id="majorv" name="majorv"  class="form-control"/></td>
+                                                <td><input type="text" id="degree3" name="degree3"  class="form-control"/></td>
                                           </tr>
         
                                           <tr>
                                                 <td>อนุปริญญา</td>
-                                                <td><input type="text" id="diploma" name="diploma" required="required"  class="form-control"/></td>
+                                                <td><input type="text" id="diploma" name="diploma"   class="form-control"/></td>
                                                 <td><select name="year7" id="year7"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -540,15 +540,15 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td><input type="text" id="gpad" name="gpad" required="required"  class="form-control"  /></td>
-                                                <td> <input type="text" id="majord" name="majord" required="required"  class="form-control"  /></td>
-                                                <td><input type="text" id="degree4" name="degree4" required="required1"  class="form-control" /></td>
+                                                <td><input type="text" id="gpad" name="gpad"   class="form-control"  /></td>
+                                                <td> <input type="text" id="majord" name="majord"   class="form-control"  /></td>
+                                                <td><input type="text" id="degree4" name="degree4"   class="form-control" /></td>
                                           </tr>
         
         
                                           <tr>
                                                 <td>ปริญญาตรี</td>
-                                                <td><input type="text" id="bachelor" name="bachelor" required="required"  class="form-control"/></td>
+                                                <td><input type="text" id="bachelor" name="bachelor"   class="form-control"/></td>
                                                 <td><select name="year9" id="year9"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -571,16 +571,16 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td> <input type="text" id="gpab" name="gpab" required="required"  class="form-control" /></td>
-                                                <td> <input type="text" id="majorb" name="majorb" required="required" class="form-control" /></td>
-                                                <td><input type="text" id="degree5" name="degree5" required="required" class="form-control" /></td>
+                                                <td> <input type="text" id="gpab" name="gpab"   class="form-control" /></td>
+                                                <td> <input type="text" id="majorb" name="majorb"  class="form-control" /></td>
+                                                <td><input type="text" id="degree5" name="degree5"  class="form-control" /></td>
                                           </tr>
         
                                       
         
                                           <tr>
                                                 <td>ปริญญาโท</td>
-                                                <td><input type="text" id="master" name="master" required="required"  class="form-control" /> </td>
+                                                <td><input type="text" id="master" name="master"   class="form-control" /> </td>
                                                 <td> <select name="year11" id="year11"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -604,15 +604,15 @@
         
                                                         </select>
                                                 </td>
-                                                <td> <input type="text" id="gpam" name="gpam" required="required" class="form-control"/></td>
-                                                <td> <input type="text" id="majorm" name="majorm" required="required"  class="form-control"/></td>
-                                                <td><input type="text" id="degree6" name="degree6" required="required"  class="form-control" /></td>
+                                                <td> <input type="text" id="gpam" name="gpam"  class="form-control"/></td>
+                                                <td> <input type="text" id="majorm" name="majorm"   class="form-control"/></td>
+                                                <td><input type="text" id="degree6" name="degree6"   class="form-control" /></td>
                                           </tr>
         
         
                                           <tr>
                                                 <td>อื่นๆ</td>
-                                                <td> <input type="text" id="otherE" name="otherE" required="required"  class="form-control" /></td>
+                                                <td> <input type="text" id="otherE" name="otherE"   class="form-control" /></td>
                                                 <td> <select name="year13" id="year13"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -637,9 +637,9 @@
         
                                                         </select>
                                                 </td>
-                                                <td> <input type="text" id="gpao" name="gpao" required="required"  class="form-control" /></td>
-                                                <td><input type="text" id="majoro" name="majoro" required="required" class="form-control"  /></td>
-                                                <td><input type="text" id="degree7" name="degree7" required="required"  class="form-control"/></td>
+                                                <td> <input type="text" id="gpao" name="gpao"   class="form-control" /></td>
+                                                <td><input type="text" id="majoro" name="majoro"  class="form-control"  /></td>
+                                                <td><input type="text" id="degree7" name="degree7"   class="form-control"/></td>
                                           </tr>
                                         </tbody>
                                       </table>
@@ -819,11 +819,11 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td><input type="text" name="namecm" id="namecm" required="required" class="form-control"/></td>
-                            <td><input type="text" name="lastnamecm" id="lastnamecm" required="required" class="form-control"/></td>
-                            <td><input type="text" name="firm" id="firm" required="required" class="form-control"/></td>
-                            <td><input  type="text" name="telecm" id="telecm" required="required" class="form-control"/></td>
-                            <td><input  type="text" name="positioncm" id="positioncm" required="required" class="form-control"/></td>
+                            <td><input type="text" name="namecm" id="namecm"  class="form-control"/></td>
+                            <td><input type="text" name="lastnamecm" id="lastnamecm"  class="form-control"/></td>
+                            <td><input type="text" name="firm" id="firm"  class="form-control"/></td>
+                            <td><input  type="text" name="telecm" id="telecm"  class="form-control"/></td>
+                            <td><input  type="text" name="positioncm" id="positioncm"  class="form-control"/></td>
                           </tr>
                          
                         </tbody>
@@ -834,7 +834,7 @@
                     <div class="col-md-3">
                             <div class="form-group">
                         <label for="name">ความรู้พิเศษ</label> 
-                        คอมพิวเตอร์   ระบุ: <input  type="text" name="computer" id="computer" required="required" style="width:100px"/>
+                        คอมพิวเตอร์   ระบุ: <input  type="text" name="computer" id="computer"  style="width:100px"/>
                                 
                             </div>
                     </div> 
@@ -842,7 +842,7 @@
                             <div class="form-group">
                                     <input type="checkbox" class="form-check-input" id="fax" name="fax" value="เครื่องโทรสาร" > เครื่องโทรสาร 
                                     <input type="checkbox" class="form-check-input" id="typewriter" name="typewriter"  value="เครื่องพิมพ์ดีดไทย" >เครื่องพิมพ์ดีดไทย
-                                    <input type="text" name="dot" id="dot" required="required" style="width:50px"/>คำ/นาที
+                                    <input type="text" name="dot" id="dot"  style="width:50px"/>คำ/นาที
                         </div>
                         </div> 
         

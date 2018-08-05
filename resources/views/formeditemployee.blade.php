@@ -3,7 +3,7 @@
   <div class="content-wrapper">
     <div class="content container-fluid">
                
-            {{Form::open(['route'=>['employee.update',$position->id],'method'=>'PUT','files' => true])}}
+            {{Form::open(['route'=>['employee.update',$personal->id],'method'=>'PUT','files' => true])}}
         
           
         <div class="row">
