@@ -13,9 +13,6 @@
   <link href="{{ asset('plugins/pace/pace.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/skins/_all-skins.min.css') }}" rel="stylesheet">
   <link href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
-  
-  
-  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -24,7 +21,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         
 </head>
-<body class="hold-transition skin-rad sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
    
     <div id="main">
             <div class="wrapper">
@@ -344,7 +341,7 @@
   <script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}" defer></script>
   
   <script src="{{ asset('bower_components/PACE/pace.min.js') }}" defer></script>
-  <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
+  
   <script src="{{ asset('dist/js/adminlte.min.js') }}" defer></script>
   <script src="{{ asset('dist/js/demo.js') }}" defer></script>
   
@@ -360,7 +357,7 @@
   
   
   <script type="text/javascript">
-   $(document).ajaxStart(function() { Pace.restart(); }); 
+      $(document).ajaxStart(function() { Pace.restart(); }); 
   
   
   $(function() {

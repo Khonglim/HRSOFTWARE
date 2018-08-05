@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                             </div>
-                  <div class="box-footer">
+                 
                       <div class="row">
                           <div class="col-md-5">
                             {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
@@ -48,7 +48,7 @@
                           </div>
                         </div>
                         {{Form::close()}}
-                  </div>
+                 
                 </div>
               </div>
         </div>

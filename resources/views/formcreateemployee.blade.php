@@ -1,10 +1,11 @@
 @extends('layouts.main')
 @section('content')
   <div class="content-wrapper">
-    <div class="content container-fluid">
                
-        {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data'])}}  
-        
+        <div class="content container-fluid">
+               
+       
+                        {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data'])}}
           
         <div class="row">
                 <div class="col-md-12">
@@ -13,42 +14,56 @@
                       <h3 class="box-title">ประวัติส่วนตัว</h3>
                     </div>
                     <div class="box-body">
-                     
+                                  
                         <div class="row">      
                                 <div class="col-md-2">
-                                        <div class="form-group">
+                                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                                     <label for="name">ชื่อ</label> 
-                                    <input type="text" name ="name"  id="name"class="form-control"  >
+                                    {{Form::text('name','',['class'=>'form-control'])}}          
+                                   
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
                                         </div>
                                 </div> 
                                 <div class="col-md-2">
-                                        <div class="form-group">
+                                        <div class="form-group {{ $errors->has('lastname') ? 'has-error' : '' }}">
                                         <label >นามสกุล</label> 
-                                        <input type="text" name="lastname"  id="lastname" class="form-control"   >
+                                        {{Form::text('lastname','',['class'=>'form-control'])}}   
+                                        
+                                        <span class="text-danger">{{ $errors->first('lastname') }}</span>
                                     </div>
                                     </div> 
                                 <div class="col-md-2">
-                                        <div class="form-group">
+                                        <div class="form-group {{ $errors->has('nikname') ? 'has-error' : '' }}">
                                             <label >ชื่อล่น</label> 
-                                            <input type="text" class="form-control"  name="nikname"  id="nikname" >
+                                            {{Form::text('nikname','',['class'=>'form-control'])}}   
+                                            <span class="text-danger">{{ $errors->first('nikname') }}</span>
                                         </div>
                                  </div> 
                                  <div class="col-md-2">
+                                                <div class="form-group {{ $errors->has('gender') ? 'has-error' : '' }}">
                                         <label >เพศ</label><br>
-                                        <input type="radio" name="gender" value="male">ชาย <input type="radio" name="gender" value="female" >หญิง
-    
+                                       
+                                        ชาย {{ Form::radio('gender', 'ชาย') }}
+                                       
+                                        หญิง {{ Form::radio('gender', 'หญิง') }}
+                                        <br> <span class="text-danger">{{ $errors->first('gender') }}</span>
+                                </div>
                                        
                                 </div> 
     
                                 <div class="col-md-2">
-                                                <label >รูปภาพ</label><br>
+                                                <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}" >
+                                                <label >รูปภาพ</label>
                                                 {{Form::file('image')}}
-                                            
+                                                <span class="text-danger">{{ $errors->first('image') }}</span>
+                                        </div>  
                               </div>
                               <div class="col-md-2">
-                                        <label >วันเกิด</label><br>
-                                        <input type="date"name="birthday" id="birthday"  class="form-control" />
-  
+                                        <div class="form-group {{ $errors->has('birthday') ? 'has-error' : '' }}">
+                                        <label >วันเกิด</label>
+                                        {{Form::date('birthday','',['class'=>'form-control'])}}   
+                                        <span class="text-danger">{{ $errors->first('birthday') }}</span>
+                                </div>
     
                       </div>
     
@@ -58,114 +73,140 @@
                             </div>
                       
                             <div class="row">  
-                                    <div class="form-group">
-                                    <div class="col-md-2">
-                                            <div class="form-group">
-                                            <label >สัญชาติ</label>
-                                            <input type="text" name="nationality" id="nationality"  class="form-control"  />
-                                            </div>
-                                    </div> 
-    
                                     
                                     <div class="col-md-2">
-                                            <div class="form-group">
+                                        <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
+                                         <label >สัญชาติ</label>
+                                          {{Form::text('nationality','',['class'=>'form-control'])}}   
+                                           
+                                            <span class="text-danger">{{ $errors->first('nationality') }}</span>
+                                            </div>
+                                    </div> 
+                                    <div class="col-md-2">
+                                            <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
                                             <label >เชื้อชาติ</label>
-                                            <input type="text" name="race" id="race"  class="form-control"/>
+                                            {{Form::text('race','',['class'=>'form-control'])}}   
+                                           
+                                            <span class="text-danger">{{ $errors->first('race') }}</span>
                                             </div>
                                     </div> 
                                     
                                     <div class="col-md-2">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
                                             <label >ศาสนา</label>
-                                            <input type="text" name="religion" id="religion"  class="form-control" />
+                                            {{Form::text('religion','',['class'=>'form-control'])}}   
+                                           
+                                            <span class="text-danger">{{ $errors->first('religion') }}</span>
                                             </div>
                                     </div> 
                                     <div class="col-md-2">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('age') ? 'has-error' : '' }}" >
                                             <label >อายุ</label>
-                                            <input type="text"name="age" id="age"  class="form-control"  class="form-control"/>
+                                            {{Form::text('age','',['class'=>'form-control'])}}   
+                                           
+                                            <span class="text-danger">{{ $errors->first('age') }}</span>
                                             </div>
                                     </div> 
                                     <div class="col-md-2">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('height') ? 'has-error' : '' }}" >
                                             <label >ส่วนสูง</label>
-                                            <input type="text" name="height" id="height"    class="form-control"/>
+                                            {{Form::text('height','',['class'=>'form-control'])}}   
+
+                                          
+                                            <span class="text-danger">{{ $errors->first('height') }}</span>
                                             </div>
                                     </div> 
                                     <div class="col-md-2">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('weight') ? 'has-error' : '' }}" >
                                             <label >น้ำหนัก</label>
-                                            <input type="text" name="weight" id="weieht"    class="form-control"/>
+                                            {{Form::text('weight','',['class'=>'form-control'])}}   
+                                          
+                                            <span class="text-danger">{{ $errors->first('weight') }}</span>
                                             </div>
                                     </div> 
-                                </div> 
+                               
                             </div>
       
                             <div class="row">  
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >พี่น้องกี่คน</label>
-                                            <input type="text" name="brothers" id="brothers"    class="form-control"/>
+                                            {{Form::text('brothers','',['class'=>'form-control'])}}   
+                                          
                                             </div>
                                     </div> 
     
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >เป็นคนที่</label>
-                                            <input type="text" name="number" id="number"    class="form-control"/>
+                                            {{Form::text('number','',['class'=>'form-control'])}}   
+                                           
                                             </div>
                                     </div>
                                     <div class="col-md-2">
-                                            <div class="form-group">
+                                            <div class="form-group  {{ $errors->has('tel') ? 'has-error' : '' }}">
                                             <label >โทรศัพท์ที่ติดต่อ</label>
-                                            <input type="text" name="tel" id="tel"    class="form-control" />
+                                            {{Form::text('tel','',['class'=>'form-control'])}}   
+                                            
+                                            <span class="text-danger">{{ $errors->first('tel') }}</span>
                                             </div>
                                     </div>
     
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >โทรศัพท์บ้าน</label>
-                                            <input type="text" name="home" id="home"    class="form-control" />
+                                            {{Form::text('home','',['class'=>'form-control'])}}   
+                                           
                                             </div>
                                     </div>
     
                                     <div class="col-md-2">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('mobile') ? 'has-error' : '' }}">
                                             <label >โทรศัพท์มือถือ</label>
-                                            <input type="text" name="mobile" id="mobile"    class="form-control" />
+                                            {{Form::text('mobile','',['class'=>'form-control'])}}   
+                                       
+                                            <span class="text-danger">{{ $errors->first('mobile') }} </span>
                                             </div>
                                     </div>
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >โทรศัพท์สำนักงาน</label>
-                                            <input type="text" name="office" id="office"   class="form-control" />
+                                            {{Form::text('office','',['class'=>'form-control'])}}   
+                                            
+                                            </div>
+                                    </div>
+                            </div>
+                            <div class="row">  
+                                    <div class="col-md-3">
+                                            <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                                            <label>อีเมล</label>
+                                            {{Form::email('email','',['class'=>'form-control'])}}   
+                                           
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
                                             </div>
                                     </div>
     
                                     <div class="col-md-3">
-                                            <div class="form-group">
-                                            <label >อีเมล</label>
-                                            <input type="email" name="email" id="email"   class="form-control" />
-                                            </div>
-                                    </div>
-    
-                                    <div class="col-md-3">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('address1') ? 'has-error' : '' }}" >
                                             <label >ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label>
-                                            <textarea name="address1" id="address1"  class="form-control"   ></textarea>
+                                            <textarea name="address1"  required="required" class="form-control"  rows="1"  ></textarea>
+                                            <span class="text-danger">{{ $errors->first('address1') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('address2') ? 'has-error' : '' }}" >
                                             <label > ที่อยู่ตามบัตรประชาชน</label>
-                                            <textarea name="address2" id="address2"  class="form-control"    ></textarea>
+                                            <textarea name="address2"  required="required" class="form-control"  rows="1"  ></textarea>
+                                            <span class="text-danger">{{ $errors->first('address2') }}</span>
                                             </div>
                                     </div>
     
                                     <div class="col-md-3">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('idcard') ? 'has-error' : '' }}">
                                             <label >เลขบัตรประชาชน</label>
-                                            <input type="text" name="idcard" id="idcard"    class="form-control" />
+                                            {{Form::text('idcard','',['class'=>'form-control'])}}   
+                                            
+                                            <span class="text-danger">{{ $errors->first('idcard') }}</span>
                                             </div>
                                     </div>
     
@@ -174,27 +215,32 @@
     
                             <div class="row">
                                     <div class="col-md-3">
-                                            <div class="form-group">
+                                            <div class="form-group  {{ $errors->has('issued') ? 'has-error' : '' }}" >
                                             <label >ออกให้ ณ อำเภอ/เขต:</label>
-                                            <input type="text" name="issued" id="issued"   class="form-control" />
+                                            {{Form::text('issued','',['class'=>'form-control'])}}   
+                                            <span class="text-danger">{{ $errors->first('issued') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
                                             <label >จังหวัด</label>
-                                            <input type="text" name="province_crad" id="province_crad"   class="form-control" />
+                                            {{Form::date('province_crad','',['class'=>'form-control'])}} 
+                                           
+                                            <span class="text-danger">{{ $errors->first('province_crad') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
                                             <label >วันออกบัตร</label>
-                                            <input type="date" name="issueddate" id="issueddate"    class="form-control" />
+                                            {{Form::date('issueddate','',['class'=>'form-control'])}}   
+                                            <span class="text-danger">{{ $errors->first('issueddate') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
                                             <label >บัตรหมดอายุ:</label>
-                                            <input type="date" name="expid" id="expid"    class="form-control" />
+                                            {{Form::date('expid','',['class'=>'form-control'])}}   
+                                            <span class="text-danger">{{ $errors->first('expid') }}</span>
                                             </div>
                                     </div>
                             </div>
@@ -204,33 +250,35 @@
                             <div class="col-md-3">
                                     <div class="form-group">
                                     <label >บัตรประจำตัวผู้เสียภาษี</label>
-                                    <input type="text" name="้texid" id="texid"    class="form-control" />
+                                    {{Form::date('texid','',['class'=>'form-control'])}}   
+                                   
                                     </div>
                             </div>
                             <div class="col-md-2">
-                                    <div class="form-group">
+                                    <div class="form-group {{ $errors->has('living_status') ? 'has-error' : '' }}" >
                                             <label >สถานะความเป็นอยู่</label>
                                             <select name="living_status"  class="form-control">
-                                                    <option value="-">:: เลือก ::</option>
+                                                    <option value="">:: เลือก ::</option>
                                                       <option  value="owm_home">บ้านส่วนตัว </option>
                                                       <option  value="rent_home">บ้านเช่า</option>
                                                       <option value="live_with_parents">อาศัยกับบิดามารดา</option>
                                                       <option  value="live_with_other">อาศัยกับผู้อื่น</option>
                                                     </select>
+                                        <span class="text-danger">{{ $errors->first('living_status') }}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <div class="form-group">
+                                    <div class="form-group{{ $errors->has('marital_status') ? 'has-error' : '' }}" >
                                             <label >สถานะครอบครัว</label>
                                             <select name="marital_status"  class="form-control" >
-                                                    <option  value="-">:: เลือก ::</option>
+                                                    <option  value="">:: เลือก ::</option>
                                                     <option  value="single">โสด</option>
                                                     <option  value="married">สมรส</option>
                                                     <option  value="divorced">หย่า</option>
                                                     <option  value="live_with_parants">หม้าย</option>
                                                     <option  value="separated">แยกกันอยู่</option>
-    
                                                   </select>
+                                                  <span class="text-danger">{{ $errors->first('marital_status') }}</span>        
                                     </div> 
                                 </div>
     
@@ -238,10 +286,11 @@
                                         <div class="form-group">
                                                 <label >กรณีแต่งงาน</label>
                                                 <select style="width:170px" name="if_marricd"  class="form-control" >
-                                                        <option      value="">:: เลือก ::</option>
-                                                        <option      value="จดทะเบียนสมรส">จดทะเบียนสมรส</option>
-                                                        <option      value="ไม่ได้จดทะเบียนสมรส">ไม่ได้จดทะเบียนสมรส</option>
+                                                        <option  value="">:: เลือก ::</option>
+                                                        <option  value="จดทะเบียนสมรส">จดทะเบียนสมรส</option>
+                                                        <option  value="ไม่ได้จดทะเบียนสมรส">ไม่ได้จดทะเบียนสมรส</option>
                                                       </select>
+
                                         </div> 
                                     </div>
                                     <div class="col-md-2">
@@ -260,27 +309,27 @@
                             <div class="col-md-4">
                                     <div class="form-group">
                                             <label >ชื่อคู่สมรส</label>
-                                            <input type="text" name="name_spouse" id="name_spouse"  class="form-control"/>
+                                            {{Form::text('name_spouse','',['class'=>'form-control'])}}   
                                     </div> 
                                 </div>
                                 <div class="col-md-3">
                                         <div class="form-group">
                                                 <label >อาชีพคู่สมรส</label>
-                                                <input type="text" name="spouse_occupation" id="spouse_occupation"  class="form-control" />
+                                                {{Form::text('spouse_occupation','',['class'=>'form-control'])}}   
                                         </div> 
                                     </div>
     
                                     <div class="col-md-3">
                                             <div class="form-group">
                                                     <label > สถานที่ทำงาน</label>
-                                                    <input type="text" name="firm_address" id="firm_address"  class="form-control" />
+                                                    {{Form::text('firm_address','',['class'=>'form-control'])}}   
                                             </div> 
                                         </div>
     
                                         <div class="col-md-2">
                                                 <div class="form-group">
                                                         <label >โทรศัพท์</label>
-                                                        <input type="text" name="spouse_tel" id="spouse_tel"  class="form-control" />
+                                                        {{Form::text('spouse_tel','',['class'=>'form-control'])}}   
                                                 </div> 
                                             </div>
                           </div> 
@@ -289,39 +338,41 @@
                                 <div class="col-md-2">
                                 <div class="form-group">
                                         <label >จำนวนบุตรทั้งหมด</label>
-                                        <input type="text" name="children" id="children"  class="form-control" />
+                                        {{Form::text('children','',['class'=>'form-control'])}}   
                                 </div>
                             </div>
     
                             <div class="col-md-2">
                                     <div class="form-group">
                                             <label >หญิง</label>
-                                            <input type="text" name="girls" id="girls"  class="form-control" />
+                                            {{Form::text('girls','',['class'=>'form-control'])}}   
                                     </div>
                                 </div>
     
                                 <div class="col-md-2">
                                         <div class="form-group">
                                                 <label >ชาย</label>
-                                                <input type="text" name="boy" id="girls"  class="form-control" />
+                                                {{Form::text('boy','',['class'=>'form-control'])}}   
                                         </div>
                                     </div>
         
                                     <div class="col-md-2">
                                             <div class="form-group">
                                                     <label > จำนวนบุตรกำลังศึกษา</label>
-                                                    <input type="text" name="school" id="school"  class="form-control" />
+                                                    {{Form::text('school','',['class'=>'form-control'])}}  
+                                                   
                                             </div>
                                         </div>
     
                                         <div class="col-md-2">
                                                 <div class="form-group">
                                                         <label >จำนวนบุตรที่อายุเกิน21ปี</label>
-                                                        <input type="text" name="over21" id="over21"  class="form-control" />
+                                                        {{Form::text('over21','',['class'=>'form-control'])}}  
+                                                        
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
-                                                    <div class="form-group">
+                                                    <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
                                                     <label > สถานะทางทหาร</label>
                                                     <select style="width:100px" name="military_service" class="form-control" >
                                                             <option value="">ไม่มี</option>
@@ -330,6 +381,7 @@
                                                             <option  value="ผ่านการเกณฑ์ทหาร">ผ่านการเกณฑ์ทหาร</option>
                                                             <option  value="อื่นๆ">อื่นๆ</option>
                                                           </select>
+                                                          <span class="text-danger">{{ $errors->first('military_service') }}</span>
                                                         </div> 
                                                 </div>
                                 </div>
@@ -337,55 +389,71 @@
                                       
     
                                             <div class="col-md-3">
-                                                    <div class="form-group">
+                                                    <div class="form-group{{ $errors->has('namefather') ? 'has-error' : '' }}" >
                                                     <label > ชื่อบิดา</label>
-                                                    <input type="text" name="namefather" id="namefather"   class="form-control"/>
+                                                    {{Form::text('namefather','',['class'=>'form-control'])}}  
+                                                   
+                                                    <span class="text-danger">{{ $errors->first('namefather') }}</span>
                                                 </div>
                                             </div>
                                                 <div class="col-md-3">
-                                                        <div class="form-group">
+                                                        <div class="form-group {{ $errors->has('lastfather') ? 'has-error' : '' }}">
                                                         <label >นามสกุล</label>
-                                                        <input type="text" name="lastfather" id="lastfather"   class="form-control" />
+                                                        {{Form::text('lastfather','',['class'=>'form-control'])}}  
+                                                        
+                                                        <span class="text-danger">{{ $errors->first('lastfather') }}</span>
                                                     </div>
                                                 </div>
                                                     <div class="col-md-3">
-                                                            <div class="form-group">
+                                                            <div class="form-group {{ $errors->has('occupation_father') ? 'has-error' : '' }}" >
                                                             <label >อาชีพ</label>
-                                                            <input type="text" name="occupation_father" id="occupation_father"   class="form-control"/>
+                                                            {{Form::text('occupation_father','',['class'=>'form-control'])}}  
+                                                            
+                                                            <span class="text-danger">{{ $errors->first('occupation_father') }}</span>
                                                         </div>
                                                     </div>
                                                         <div class="col-md-3"><br>
-                                                            <div class="form-group">
-                                                                
-                                                                <input type="radio" name="alivef" value="ยังมีชีวิตอยู่">ยังมีชีวิตอยู่ <input type="radio" name="alivef" value="ถึงแก่กรรม">ถึงแก่กรรม
+                                                            <div class="form-group{{ $errors->has('alivef') ? 'has-error' : '' }}" >
+                                                                <input type="radio" name="alivef" value="ยังมีชีวิตอยู่">ยังมีชีวิตอยู่ 
+                                                                <input type="radio" name="alivef" value="ถึงแก่กรรม">ถึงแก่กรรม
+                                                                <br> <span class="text-danger">{{ $errors->first('alivef') }}</span>
                                                             </div>
                                                         </div>
                                 </div>
                                 <div class="row">
                                         <div class="col-md-3">
-                                                <div class="form-group">
+                                                <div class="form-group {{ $errors->has('namemother') ? 'has-error' : '' }}" >
                                                 <label > ชื่อมารดา</label>
-                                                <input type="text" name="namemother" id="namemother"   class="form-control"  placeholder="ชื่อมารดา"/>
+                                                {{Form::text('namemother','',['class'=>'form-control'])}}  
+                                               
+                                                <span class="text-danger">{{ $errors->first('namemother') }}</span>
                                             </div>
                                         </div>
                                             <div class="col-md-3">
-                                                    <div class="form-group">
+                                                    <div class="form-group {{ $errors->has('lasrmother') ? 'has-error' : '' }}" >
                                                     <label >นามสกุล</label>
-                                                    <input type="text" name="lasrmother" id="lasrmother"   class="form-control"  placeholder="นามสกุล"/>
+                                                    {{Form::text('lasrmother','',['class'=>'form-control'])}}  
+                                                    
+                                                    <span class="text-danger">{{ $errors->first('lasrmother') }}</span>
                                                 </div>
                                             </div>
                                                 <div class="col-md-3">
-                                                        <div class="form-group">
+                                                        <div class="form-group {{ $errors->has('occupationm') ? 'has-error' : '' }}" >
                                                         <label >อาชีพ</label>
-                                                        <input type="text" name="occupationm" id="occupationm"   class="form-control"  placeholder="อาชีพ"/>
+                                                        {{Form::text('occupationm','',['class'=>'form-control'])}}  
+                                                        
+                                                        <span class="text-danger">{{ $errors->first('occupationm') }}</span>
                                                     </div>
                                                 </div>
-                                                    <div class="col-md-3"><br>
-                                                        <div class="form-group">
-                                                            <input type="radio" name="alivem" value="ยังมีชีวิตอยู่">ยังมีชีวิตอยู่ <input type="radio" name="alivem" value="ถึงแก่กรรม">ถึงแก่กรรม
+                                                    <div class="col-md-3">
+                                                        <div class="form-group {{ $errors->has('alivem') ? 'has-error' : '' }}" >
+                                                           <input type="radio" name="alivem" value="ยังมีชีวิตอยู่">ยังมีชีวิตอยู่ 
+                                                           <input type="radio" name="alivem" value="ถึงแก่กรรม">ถึงแก่กรรม
+                                                            <br><span class="text-danger">{{ $errors->first('alivem') }}</span>
                                      </div>
                                 </div>
-                           </div>      
+                           </div>  
+                             
                       </div>
                   </div>
              </div>
@@ -415,7 +483,7 @@
                                         <tbody>
                                           <tr >
                                             <td align="center" >ประถมศึกษา</td>
-                                            <td><input type="text" id="primary" name="primary"   class="form-control"   /></td>
+                                            <td> {{Form::text('primary','',['class'=>'form-control'])}}</td>
                                             <td> 
                                                    
                                                 <select name="year1" id="year1" class="form-control">
@@ -450,13 +518,13 @@
                                                 
                                                
                                                 </td>
-                                            <td><input type="text" id="gpa" name="gpa"  class="form-control" /></td>
-                                            <td><input type="text" id="major" name="major"  class="form-control"  /></td>
-                                            <td><input type="text" id="degree1" name="degree1"  class="form-control"/></td>
+                                            <td>{{Form::text('gpa','',['class'=>'form-control'])}}</td>
+                                            <td>{{Form::text('major','',['class'=>'form-control'])}}</td>
+                                            <td>{{Form::text('degree1','',['class'=>'form-control'])}}</td>
                                           </tr>
                                           <tr>
                                                 <td>มัธยมศึกษา</td>
-                                                <td> <input type="text" id="secondary" name="secondary"   class="form-control"  /></td>
+                                                <td>{{Form::text('secondary','',['class'=>'form-control'])}} </td>
                                                 <td> <select name="year3" id="year3"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -480,14 +548,14 @@
                                                  <?php } ?>
         
                                              </select></td>
-                                                <td> <input type="text" id="gpas" name="gpas"   class="form-control"  /></td>
-                                                <td>  <input type="text" id="majors" name="majors"  class="form-control" /></td>
-                                                <td><input type="text" id="degree2" name="degree2"   class="form-control" /></td>
+                                                <td> {{Form::text('gpas','',['class'=>'form-control'])}}</td>
+                                                <td> {{Form::text('majors','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('degree2','',['class'=>'form-control'])}}</td>
                                           </tr>
         
                                           <tr>
                                                 <td>อาชีวะศึกษา</td>
-                                                <td><input type="text" id="vocation" name="vocation"   class="form-control"/></td>
+                                                <td>{{Form::text('vocation','',['class'=>'form-control'])}}</td>
                                                 <td><select name="year5" id="year5" class="form-control" >
         
                                                         <option value="">:: ปี ::</option>
@@ -510,14 +578,14 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td> <input type="text" id="gpav" name="gpav"   class="form-control"/></td>
-                                                <td><input type="text" id="majorv" name="majorv"  class="form-control"/></td>
-                                                <td><input type="text" id="degree3" name="degree3"  class="form-control"/></td>
+                                                <td>{{Form::text('gpav','',['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('majorv','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('degree3','',['class'=>'form-control'])}}</td>
                                           </tr>
         
                                           <tr>
                                                 <td>อนุปริญญา</td>
-                                                <td><input type="text" id="diploma" name="diploma"   class="form-control"/></td>
+                                                <td>{{Form::text('diploma','',['class'=>'form-control'])}}</td>
                                                 <td><select name="year7" id="year7"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -540,15 +608,15 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td><input type="text" id="gpad" name="gpad"   class="form-control"  /></td>
-                                                <td> <input type="text" id="majord" name="majord"   class="form-control"  /></td>
-                                                <td><input type="text" id="degree4" name="degree4"   class="form-control" /></td>
+                                                <td>{{Form::text('gpad','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('majord','',['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('degree4','',['class'=>'form-control'])}}</td>
                                           </tr>
         
         
                                           <tr>
                                                 <td>ปริญญาตรี</td>
-                                                <td><input type="text" id="bachelor" name="bachelor"   class="form-control"/></td>
+                                                <td>{{Form::text('bachelor','',['class'=>'form-control'])}}</td>
                                                 <td><select name="year9" id="year9"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -571,16 +639,16 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td> <input type="text" id="gpab" name="gpab"   class="form-control" /></td>
-                                                <td> <input type="text" id="majorb" name="majorb"  class="form-control" /></td>
-                                                <td><input type="text" id="degree5" name="degree5"  class="form-control" /></td>
+                                                <td>{{Form::text('gpab','',['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('majorb','',['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('degree5','',['class'=>'form-control'])}}</td>
                                           </tr>
         
                                       
         
                                           <tr>
                                                 <td>ปริญญาโท</td>
-                                                <td><input type="text" id="master" name="master"   class="form-control" /> </td>
+                                                <td>{{Form::text('master','',['class'=>'form-control'])}}</td>
                                                 <td> <select name="year11" id="year11"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -604,15 +672,15 @@
         
                                                         </select>
                                                 </td>
-                                                <td> <input type="text" id="gpam" name="gpam"  class="form-control"/></td>
-                                                <td> <input type="text" id="majorm" name="majorm"   class="form-control"/></td>
-                                                <td><input type="text" id="degree6" name="degree6"   class="form-control" /></td>
+                                                <td>{{Form::text('gpam','',['class'=>'form-control'])}} </td>
+                                                <td> {{Form::text('majorm','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('degree6','',['class'=>'form-control'])}}</td>
                                           </tr>
         
         
                                           <tr>
                                                 <td>อื่นๆ</td>
-                                                <td> <input type="text" id="otherE" name="otherE"   class="form-control" /></td>
+                                                <td> {{Form::text('otherE','',['class'=>'form-control'])}}</td>
                                                 <td> <select name="year13" id="year13"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -637,9 +705,9 @@
         
                                                         </select>
                                                 </td>
-                                                <td> <input type="text" id="gpao" name="gpao"   class="form-control" /></td>
-                                                <td><input type="text" id="majoro" name="majoro"  class="form-control"  /></td>
-                                                <td><input type="text" id="degree7" name="degree7"   class="form-control"/></td>
+                                                <td> {{Form::text('gpao','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('majoro','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('degree7','',['class'=>'form-control'])}}</td>
                                           </tr>
                                         </tbody>
                                       </table>
@@ -673,57 +741,103 @@
                                 <tbody>
                                   <tr>
                                     <td>ไทย</td>
-                                    <td><select style="width:65px" id="thais" name="thais" class="form-control">
+                                    <td>
+                                            <div class="form-group {{ $errors->has('thais') ? 'has-error' : '' }}">
+                                            <select style="width:90px" id="thais" name="thais" class="form-control">
+                                            <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
-                                    <td><select style="width:65px" id="thail"  name="thail" class="form-control">
+                                            </select>
+                                            <span class="text-danger">{{ $errors->first('thais') }}</span>
+                                        </div>
+                                        </td>
+                                    <td>
+                                        <div class="form-group {{ $errors->has('thail') ? 'has-error' : '' }}">
+                                            <select style="width:90px" id="thail"  name="thail" class="form-control">
+                                            <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
-                                    <td><select style="width:65px" id="thair"  name="thair" class="form-control">
+                                            </select>
+                                            <span class="text-danger">{{ $errors->first('thail') }}</span>
+                                        </div>
+                                        </td>
+                                    <td>
+                                        <div class="form-group {{ $errors->has('thair') ? 'has-error' : '' }}">
+                                            <select style="width:90px" id="thair"  name="thair" class="form-control">
+                                            <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
+                                            </select>
+                                            <span class="text-danger">{{ $errors->first('thair') }}</span>
+
+                                        </td>
                                   </tr>
                                   <tr>
                                     <td>อังกฤษ</td>
-                                    <td><select style="width:65px" id="engliss" name="engliss" class="form-control">
+                                    <td>
+                                        <div class="form-group {{ $errors->has('engliss') ? 'has-error' : '' }}">
+                                            <select style="width:90px" id="engliss" name="engliss" class="form-control">
+                                            <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
-                                    <td><select style="width:65px" id="englisl" name="englisl" class="form-control">
+                                            </select>
+                                            <span class="text-danger">{{ $errors->first('engliss') }}</span>
+
+                                        </td>
+                                    <td>
+                                        <div class="form-group {{ $errors->has('englisl') ? 'has-error' : '' }}">
+                                            <select style="width:90px" id="englisl" name="englisl" class="form-control">
+                                            <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
-                                    <td><select style="width:65px" id="englisr" name="englisr" class="form-control">
+                                            </select>
+                                            <span class="text-danger">{{ $errors->first('englisl') }}</span>
+
+                                        </td>
+                                    <td>
+                                        <div class="form-group {{ $errors->has('englisr') ? 'has-error' : '' }}">
+                                            <select style="width:90px" id="englisr" name="englisr" class="form-control">
+                                            <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
+                                            </select>
+                                            <span class="text-danger">{{ $errors->first('englisr') }}</span>
+                                            
+
+                                        </td>
                                   </tr>
                                   <tr>
                                     <td>อื่นๆ <input type="text" name="otherr" id="otherr" style="width:150px" name="otherr" class="form-control"/></td>
-                                    <td><select style="width:65px" id="othes" name="othes" class="form-control">
+                                    <td>
+                                            <select style="width:90px" id="othes" name="othes" class="form-control">
+                                                <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
-                                    <td><select style="width:65px" id="othel" name="othel" class="form-control">
+                                            </select>
+                                        </td>
+                                    <td>
+                                            <select style="width:90px" id="othel" name="othel" class="form-control">
+                                                <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
-                                    <td><select style="width:65px" id="other" name="other" class="form-control">
+                                            </select>
+                                        </td>
+                                    <td>
+                                            <select style="width:90px" id="other" name="other" class="form-control">
+                                                <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select></td>
+                                            </select>
+                                        </td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -759,34 +873,34 @@
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <td> <input type="text" name="list_of_employed1" id="list_of_employed1" class="form-control"/></td>
-                                    <td><input type="text" name="job_description1" id="job_description1" class="form-control"/></td>
-                                    <td><input type="text" name="call1" id="call1" class="form-control"/></td>
-                                    <td><input type="date" name="start_job_duration1" id="job_duration1" class="form-control"/></td>
-                                    <td><input type="date" name="end_job_duration2" id="job_duration2" class="form-control"/></td>
-                                    <td><input type="text" name="position1" id="position1" class="form-control"/></td>
-                                    <td><input type="text" name="reasonLeaving1" id="reasonleaving1" class="form-control"/></td>
-                                    <td><input type="text" name="lastsalary1" id="lastsalary1"class="form-control"/> </td>
+                                    <td> {{Form::text('list_of_employed1','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('job_description1','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('call1','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('start_job_duration1','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('end_job_duration2','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('position1','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('reasonLeaving1','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('lastsalary1','',['class'=>'form-control'])}} </td>
                                   </tr>
                                   <tr>
-                                    <td><input type="text" name="list_of_employed2" id="list_of_employed2" class="form-control"/></td>
-                                    <td><input type="text" name="job_description2" id="job_description2" class="form-control"/></td>
-                                    <td> <input type="text" name="call2" id="call2" class="form-control"/></td>
-                                    <td><input type="date" name="start_job_duration3" id="job_duration3" class="form-control"/></td>
-                                    <td><input type="date" name="end_job_duration4" id="job_duration4" class="form-control"/></td>
-                                    <td><input type="text" name="position2" id="position2" class="form-control"/></td>
-                                    <td><input type="text" name="reasonleaving2" id="reasonleaving2" class="form-control"/></td>
-                                    <td><input type="text" name="lastsalary2" id="lastsalary2"class="form-control"/></td>
+                                    <td> {{Form::text('list_of_employed2','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('job_description2','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('call2','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('start_job_duration3','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('end_job_duration4','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('position2','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('reasonleaving2','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('lastsalary2','',['class'=>'form-control'])}}</td>
                                   </tr>
                                   <tr>
-                                    <td><input type="text" name="list_of_employed3" id="list_of_employed3" class="form-control"/></td>
-                                    <td><input type="text" name="job_description3" id="job_description3" class="form-control"/></td>
-                                    <td><input type="text" name="call3" id="call3" class="form-control"/></td>
-                                    <td><input type="date" name="start_job_duration5" id="job_duration5" class="form-control"/></td>
-                                    <td><input type="date" name="end_job_duration6" id="job_duration6" class="form-control"/></td>
-                                    <td><input type="text" name="position3" id="position3" class="form-control"/></td>
-                                    <td><input type="text" name="reasonleaving3" id="reasonleaving3" class="form-control"/></td>
-                                    <td><input type="text" name="lastsalary3" id="lastsalary3"class="form-control"/> </td>
+                                    <td> {{Form::text('list_of_employed3','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('job_description3','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('call3','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('start_job_duration5','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('end_job_duration6','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('position3','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('reasonleaving3','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('lastsalary3','',['class'=>'form-control'])}} </td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -819,11 +933,37 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td><input type="text" name="namecm" id="namecm"  class="form-control"/></td>
-                            <td><input type="text" name="lastnamecm" id="lastnamecm"  class="form-control"/></td>
-                            <td><input type="text" name="firm" id="firm"  class="form-control"/></td>
-                            <td><input  type="text" name="telecm" id="telecm"  class="form-control"/></td>
-                            <td><input  type="text" name="positioncm" id="positioncm"  class="form-control"/></td>
+                            <td>
+                        <div class="form-group {{ $errors->has('namecm') ? 'has-error' : '' }}">       
+                                {{Form::text('namecm','',['class'=>'form-control'])}}
+                        
+                                <span class="text-danger">{{ $errors->first('namecm') }}</span>  
+                        </div>
+                           </td>
+                            <td>
+                                        <div class="form-group {{ $errors->has('lastnamecm') ? 'has-error' : '' }}">       
+                                    {{Form::text('lastnamecm','',['class'=>'form-control'])}}
+                                    <span class="text-danger">{{ $errors->first('lastnamecm') }}</span>  
+                                </div>
+                            </td>
+                            <td>
+                                        <div class="form-group {{ $errors->has('firm') ? 'has-error' : '' }}"> 
+                                    {{Form::text('firm','',['class'=>'form-control'])}}
+                                    <span class="text-danger">{{ $errors->first('firm') }}</span>  
+                                </div>
+                            </td>
+                            <td>
+                                        <div class="form-group {{ $errors->has('telecm') ? 'has-error' : '' }}"> 
+                                    {{Form::text('telecm','',['class'=>'form-control'])}}
+                                    <span class="text-danger">{{ $errors->first('telecm') }}</span>  
+                                </div>
+                           </td>
+                            <td>
+                                        <div class="form-group {{ $errors->has('positioncm') ? 'has-error' : '' }}"> 
+                                    {{Form::text('positioncm','',['class'=>'form-control'])}}
+                                    <span class="text-danger">{{ $errors->first('positioncm') }}</span>  
+                                </div>
+                           </td>
                           </tr>
                          
                         </tbody>
@@ -831,10 +971,10 @@
                       </table>
                     </div>
                        <div class="row">      
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                             <div class="form-group">
                         <label for="name">ความรู้พิเศษ</label> 
-                        คอมพิวเตอร์   ระบุ: <input  type="text" name="computer" id="computer"  style="width:100px"/>
+                        คอมพิวเตอร์   ระบุ:  {{Form::text('computer','')}}
                                 
                             </div>
                     </div> 
@@ -849,13 +989,16 @@
                 </div>
 
                 <div class="row">      
-                        <div class="col-md-10">
-                                <div class="form-group">
-                                        <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)</label> &emsp;&emsp;&emsp;&emsp;&emsp;
-                                        <input type="checkbox" class="form-check-input" id="crash1" name="crash1"> ขัดข้อง
-                                        <input type="checkbox" class="form-check-input" id="crash1" name="crash1"> ไม่ขัดข้อง
-                                        ชื่อ:  <input type="text" name="compd" id="compd"  style="width:100px"/>
-                                        สถานที่ทำงาน:  <input type="text" name="compa" id="compa"  style="width:100px"/>
+                        <div class="col-md-12">
+                                <div class="form-group {{ $errors->has('crash1') ? 'has-error' : '' }}">
+                                        <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)</label> &emsp;&emsp;
+                                        {{ Form::radio('crash1','ขัดข้อง') }} ขัดข้อง
+                                        {{ Form::radio('crash1','ไม่ขัดข้อง') }} ไม่ขัดข้อง
+                                        ชื่อ:  {{Form::text('compd','')}} 
+                                        สถานที่ทำงาน:  {{Form::text('compa','')}} 
+                                        <br>
+                                        <span class="text-danger">{{ $errors->first('crash1') }}</span>  
+
                                     
                                 </div>
                         </div>   
@@ -863,10 +1006,11 @@
 
                     <div class="row">      
                             <div class="col-md-10">
-                                    <div class="form-group">
+                                    <div class="form-group {{ $errors->has('crash2') ? 'has-error' : '' }}">
                                             <label>ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป </label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
-                                            <input type="checkbox" class="form-check-input" id="crash2" name="crash2" value=" ขัดข้อง"> ขัดข้อง
-                                            <input type="checkbox" class="form-check-input" id="crash2" name="crash2" value=" ไม่ขัดข้อง  "> ไม่ขัดข้อง
+                                             {{ Form::radio('crash2','ขัดข้อง') }}ขัดข้อง
+                                             {{ Form::radio('crash2','ไม่ขัดข้อง') }}ไม่ขัดข้อง<br>
+                                             <span class="text-danger">{{ $errors->first('crash2') }}</span>  
                                     </div>
                             </div>   
                         </div>
@@ -874,10 +1018,13 @@
 
                         <div class="row">      
                                 <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group {{ $errors->has('crash3') ? 'has-error' : '' }}">
                                                 <label>ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม</label>&emsp;&emsp;&emsp;&emsp;&emsp;
-                                             <input type="checkbox" class="form-check-input" id="crash3" name="crash3"  value="ขัดข้อง"  > ขัดข้อง
-                                              <input type="checkbox" class="form-check-input" id="crash3" name="crash3"  value="ไม่ขัดข้อง" > ไม่ขัดข้อง
+                                               {{ Form::radio('crash3','ขัดข้อง') }}  ขัดข้อง
+                                                 {{ Form::radio('crash3','ไม่ขัดข้อง') }}ไม่ขัดข้อง
+                                                 <br>
+                                                 <span class="text-danger">{{ $errors->first('crash3') }}</span>  
+                                            
                                             
                                         </div>
                                 </div>   
@@ -886,20 +1033,26 @@
 
                             <div class="row">      
                                     <div class="col-md-6">
-                                            <div class="form-group">
+                                            <div class="form-group {{ $errors->has('yes') ? 'has-error' : '' }}">
                                                     <label>ท่านสามารถขับรถยนต์ได้หรือไม่</label>&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                    <input type="checkbox" class="form-check-input" id="yes" name="yes"  value="ได้"> ได้
-                                                    <input type="checkbox" class="form-check-input" id="yes" name="yes"  value="ไม่ได้ "> ไม่ได้
+                                                     {{ Form::radio('yes', 'ได้') }}ได้
+                                                     {{ Form::radio('yes', 'ไม่ได้') }}ไม่ได้
+                                                     <br>
+                                                     <span class="text-danger">{{ $errors->first('yes') }}</span>  
+                                                    
                                             </div>
                                     </div>   
                                 </div>
 
                                 <div class="row">      
                                         <div class="col-md-6">
-                                                <div class="form-group">
+                                                <div class="form-group {{ $errors->has('owncar') ? 'has-error' : '' }}">
                                                         <label>ท่านมีรถยนต์ส่วนตัวหรือไม่</label>&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                        <input type="checkbox" class="form-check-input" id="owncar" name="owncar"> มี
-                                                        <input type="checkbox" class="form-check-input" id="owncar" name="owncar"> ไม่มี
+                                                        {{ Form::radio('owncar','มี') }} มี
+                                                         {{ Form::radio('owncar','ไม่มี') }}ไม่มี
+                                                         <br>
+                                                         <span class="text-danger">{{ $errors->first('owncar') }}</span>  
+        
                                                     
                                                 </div>
                                         </div>   
@@ -911,7 +1064,7 @@
                                     <div class="row">      
                                             <div class="col-md-6">
                                                     <div class="form-group">
-                                                            <label>บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ:</label><input type="text" id="workk" name="workk" style="width=150px"/>
+                                                            <label>บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ:</label> {{Form::text('workk','')}} 
                                                         
                                                     </div>
                                             </div>   
@@ -921,9 +1074,9 @@
 
                                         <div class="row">      
                                                 <div class="col-md-6">
-                                                        <div class="form-group">
-                                                                <label>ท่านพร้อมงานวันที่<label>/ <input type="date" id="dateworkk" name="dateworkk" style="width=150px"/>
-                                                            
+                                                        <div class="form-group {{ $errors->has('dateworkk') ? 'has-error' : '' }}">
+                                                                <label>ท่านพร้อมงานวันที่<label>  {{Form::date('dateworkk','')}} 
+                                                                <span class="text-danger">{{ $errors->first('dateworkk') }}</span>  
                                                         </div>
                                                 </div>   
                                             </div>
@@ -932,46 +1085,59 @@
 
 
                                             <div class="row">      
-                                                    <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                    <label>ท่านเป็นเจ้าของรถประเภทใด</label> <input type="text" id="cardec" name="cardec" style="width=150px"/>
-                                                                    <label>ทะเบียน<label><input type="text" id="license" name="license" style="width=150px"/>
+                                                    <div class="col-md-12">
+                                                            <div class="form-group ">
+                                                                    <label>ท่านเป็นเจ้าของรถประเภทใด</label> {{Form::text('cardec','')}}  
+                                                                    <label>ทะเบียน</label> {{Form::text('license','')}} 
+                                                                      
                                                                 
                                                             </div>
                                                     </div>   
                                                 </div>
                                                 <div class="row">      
-                                                        <div class="col-md-7">
-                                                                <div class="form-group">
-                                                                        <label>ท่านเคยให้ถูกออกจากงานหรือไม่</label> &emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="exitwork" name="exitwork" >เคย เพราะ<input type="ans" id="ans" name="because" style="width=150px"/>
-                                                                            &emsp;&emsp;&emsp; <input type="checkbox" class="form-check-input" id="exitwork" name="exitwork">ไม่เคย
+                                                        <div class="col-md-10">
+                                                                <div class="form-group {{ $errors->has('exitwork') ? 'has-error' : '' }}">
+                                                                        <label>ท่านเคยให้ถูกออกจากงานหรือไม่</label> &emsp;&emsp;&emsp;&emsp;&emsp;                                                                        
+                                                                        {{ Form::radio('exitwork','เคย') }} เคย เพราะ{{Form::text('because','')}}
+                                                                            &emsp;&emsp;&emsp;  
+                                                                            {{ Form::radio('exitwork','ไม่เคย') }}ไม่เคย 
+                                                                            <br>
+                                                                            <span class="text-danger">{{ $errors->first('exitwork') }}</span>  
 
                                                                 </div>
                                                         </div>   
                                                     </div>
                                                     <div class="row">      
                                                             <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                            <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="serious_ill" name="serious_ill">เคย
-                                                                                                                        <input type="checkbox" class="form-check-input" id="serious_ill" name="serious_ill">ไม่เคย
+                                                                    <div class="form-group {{ $errors->has('serious_ill') ? 'has-error' : '' }}">
+                                                                            <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                             {{ Form::radio('serious_ill','เคย') }}เคย
+                                                                             {{ Form::radio('serious_ill','ไม่เคย') }}ไม่เคย<br>
+                                                                             <span class="text-danger">{{ $errors->first('serious_ill') }}</span>  
+                                                                            
                                                                         
                                                                     </div>
                                                             </div>   
                                                         </div>
                                                         <div class="row">      
-                                                                <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                                <label>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="offense" name="offense">เคย
-                                                                                <input type="checkbox" class="form-check-input" id="offense" name="offense">ไม่เคย
-                                                                            
+                                                                <div class="col-md-12">
+                                                                        <div class="form-group  {{ $errors->has('offense') ? 'has-error' : '' }}">
+                                                                                <label>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                                {{ Form::radio('offense','เคย') }}เคย
+                                                                                    {{ Form::radio('offense','ไม่เคย') }}ไม่เคย<br>
+                                                                                <span class="text-danger">{{ $errors->first('offense') }}</span>  
+                                                                                
                                                                         </div>
                                                                 </div>   
                                                             </div>
                                                             <div class="row">      
                                                                     <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                    <label>ขณะนี้คุณตั้งครรภ์หรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" class="form-check-input" id="pregnant" name="pregnant">ใช่
-                                                                                    <input type="checkbox" class="form-check-input" id="pregnant" name="pregnant">ไม่ใช่
+                                                                            <div class="form-group {{ $errors->has('pregnant') ? 'has-error' : '' }}">
+                                                                                    <label>ขณะนี้คุณตั้งครรภ์หรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                                     {{ Form::radio('pregnant','ใช่') }}ใช่
+                                                                                    {{ Form::radio('pregnant','ไม่ใช่') }} ไม่ใช่<br>
+                                                                                    <span class="text-danger">{{ $errors->first('pregnant') }}</span>  
+                                                                                    
                                                                                 
                                                                             </div>
                                                                     </div>   
@@ -981,10 +1147,13 @@
                                                </div>            
                                            </div>
                                       </div>
-                                      <div class="form-group">
-                                       <center> {{ Form::submit('บันทึก',['class'=> 'btn btn-primary'])}} </center>   
-                                        </div>
-                                      {{ Form::close()}}     
-                </div>
+                                     
+                                      {{ Form::submit('บันทึก',['class'=> 'btn btn-primary'])}} 
+                                        
+                                      {{ Form::close()}}               
+                                     
+      </div>
+      
 </div>
+
   @endsection

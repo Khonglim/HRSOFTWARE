@@ -41,20 +41,90 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        $personal = new Personal;
 
+        $this->validate($request,[
+            'name' => 'required|min:5|max:35',
+            'lastname' => 'required|min:5|max:35',
+            'nikname' => 'required|min:5|max:35',
+            'gender' => 'required',
+
+            'image' => 'required',
+            'nationality' => 'required|min:5|max:35',
+            'birthday' => 'required',
+            'email' => 'required',
+            'address1' => 'required',
+            'tel' => 'required',
+            'race' => 'required',
+            'religion' => 'required',
+            'age' => 'required',
+
+            'height' => 'required',
+            'weight' => 'required',
+            'mobile' => 'required',
+            'email' => 'required',
+            'address2' => 'required',
+            'idcard' => 'required',
+            'issued' => 'required',
+            'province_crad' => 'required',
+            
+            'issueddate' => 'required',
+            'living_status' => 'required',
+            'issueddate' => 'required',
+            'expid' => 'required',
+            'military_service' => 'required',
+
+
+            'namefather' => 'required',
+            'lastfather' => 'required',
+            'occupation_father' => 'required',
+            'alivef' => 'required',
+
+            'namemother' => 'required',
+            'lasrmother' => 'required',
+            'occupationm' => 'required',
+            'alivem' => 'required',
+
+            'thais' => 'required',
+            'thail' => 'required',
+            'thair' => 'required',
+            
+
+            'engliss' => 'required',
+            'englisl' => 'required',
+            'englisr' => 'required',
+
+            'namecm' => 'required',
+            'lastnamecm' => 'required',
+            'firm' => 'required',
+            'telecm' => 'required',
+            'positioncm' => 'required',
+
+            'crash1' => 'required',
+            'crash2' => 'required',
+            'crash3' => 'required',
+            'yes' => 'required',
+            'owncar' => 'required',
+            'cardec' => 'required',
+            'exitwork' => 'required',
+            'serious_ill' => 'required',
+            'offense' => 'required',
+            'pregnant' => 'required'
+
+
+
+
+        ]);
+        $personal = new Personal;
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
         $personal->nikname = $request->nikname;
         $personal->gender  = $request->gender;
         $personal->birthday = $request->birthday;
-
         if(Input::hasFile('image')){
             $file=Input::file('image');
             $personal->photo = $file->getClientOriginalName();
             $file->move(public_path(). '/', $file->getClientOriginalName());
         }
-
         $personal->nationality = $request->nationality;
         $personal->race = $request->race;
         $personal->religion = $request->religion;

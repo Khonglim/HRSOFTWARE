@@ -44,6 +44,7 @@ class CompanyController extends Controller
     {
         $this->validate($request, [
             'company_Name' => 'required',
+            'remark' => 'required'
         ]);
         $company = new Company;
         $company->company_Name = $request->company_Name;
