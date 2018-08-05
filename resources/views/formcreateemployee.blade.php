@@ -4,9 +4,7 @@
     <div class="content container-fluid">
                
         {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data'])}}  
-        <div class="form-group">
-        {{ Form::submit('บันทึก',['class'=> 'btn btn-primary'])}}    
-        </div>
+        
           
         <div class="row">
                 <div class="col-md-12">
@@ -43,13 +41,14 @@
                                 </div> 
     
                                 <div class="col-md-2">
-                                            <label >วันเกิด</label><br>
-                                            <input type="date"name="birthday" id="birthday" required="required" class="form-control" />
-    
+                                                <label >รูปภาพ</label><br>
+                                                {{Form::file('image')}}
+                                            
                               </div>
                               <div class="col-md-2">
-                                    <label >รูปภาพ</label><br>
-                                    {{Form::file('image')}}
+                                        <label >วันเกิด</label><br>
+                                        <input type="date"name="birthday" id="birthday" required="required" class="form-control" />
+  
     
                       </div>
     
@@ -982,7 +981,10 @@
                                                </div>            
                                            </div>
                                       </div>
+                                      <div class="form-group">
+                                       <center> {{ Form::submit('บันทึก',['class'=> 'btn btn-primary'])}} </center>   
+                                        </div>
                                       {{ Form::close()}}     
-    </div>
+                </div>
 </div>
   @endsection
