@@ -29,7 +29,7 @@
     <div id="main">
             <div class="wrapper">
         <header class="main-header">
-            <a href="home" class="logo">
+            <a href="{{ url('/home') }}" class="logo">
                 <span class="logo-mini"></span>
                 <span class="logo-lg">NGG group  </span>
               </a>
@@ -117,7 +117,7 @@
                 <li class="header"><center>เมนู</center></li>
                
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"  ><a href="{{'/home'}}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
+                <li class="active"  ><a href="{{url('/home') }}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
               <li class="active"  ><a href="{{'/company'}}" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
                 <li class="active" ><a href="{{'/department'}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
                 <li class="active" ><a href="{{'/position'}}"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>
@@ -144,69 +144,7 @@
         </main>
     </div>
 </div>
-
-
-
-<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
-
-<script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}" defer></script>
-<script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}" defer></script>
-<script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
-<script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}" defer></script>
-
-<script src="{{ asset('bower_components/PACE/pace.min.js') }}" defer></script>
-<script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
-<script src="{{ asset('dist/js/adminlte.min.js') }}" defer></script>
-<script src="{{ asset('dist/js/demo.js') }}" defer></script>
-
-
-<script>
-  $(function () {
-    $('#company').DataTable()
-    $('#department').DataTable()
-    $('#position').DataTable()
-    $('#employee').DataTable()
-  })
-</script>
-
-
-<script type="text/javascript">
- $(document).ajaxStart(function() { Pace.restart(); }); 
-
-
-$(function() {
-$("#newModalFormC").validate({
-  rules: {
-    name: {
-      required: true,
-        minlength: 8,
-        maxlength: 100
-    }
-  },
-  messages: {
-    company_Name: {
-      required: "กรุณากรอกข้อมูล", 
-      minlength: "ข้อมูลต่ำกว่า 8 อักษร",
-      maxlength: "ข้อมูลเกินกว่า 100 อักษร"
-    }
-  },
-	highlight: function(element, errorClass) {
-		$(element).closest(".form-group").addClass("has-error");
-	},
-	unhighlight: function(element, errorClass) {
-		$(element).closest(".form-group").removeClass("has-error");
-	}
-});
-});
-  
-</script>
-
-
-
-
-
-
-  <!-- Control Sidebar -->
+<!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
@@ -398,9 +336,61 @@ $("#newModalFormC").validate({
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 
+  <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
+
+  <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}" defer></script>
+  <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}" defer></script>
+  <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
+  <script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}" defer></script>
+  
+  <script src="{{ asset('bower_components/PACE/pace.min.js') }}" defer></script>
+  <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
+  <script src="{{ asset('dist/js/adminlte.min.js') }}" defer></script>
+  <script src="{{ asset('dist/js/demo.js') }}" defer></script>
+  
+  
+  <script>
+    $(function () {
+      $('#company').DataTable()
+      $('#department').DataTable()
+      $('#position').DataTable()
+      $('#employee').DataTable()
+    })
+  </script>
+  
+  
+  <script type="text/javascript">
+   $(document).ajaxStart(function() { Pace.restart(); }); 
+  
+  
+  $(function() {
+  $("#newModalFormC").validate({
+    rules: {
+      name: {
+        required: true,
+          minlength: 8,
+          maxlength: 100
+      }
+    },
+    messages: {
+      company_Name: {
+        required: "กรุณากรอกข้อมูล", 
+        minlength: "ข้อมูลต่ำกว่า 8 อักษร",
+        maxlength: "ข้อมูลเกินกว่า 100 อักษร"
+      }
+    },
+    highlight: function(element, errorClass) {
+      $(element).closest(".form-group").addClass("has-error");
+    },
+    unhighlight: function(element, errorClass) {
+      $(element).closest(".form-group").removeClass("has-error");
+    }
+  });
+  });
+    
+  </script>
+  
+  
+  
 </body>
-
-
-
-
 </html>
