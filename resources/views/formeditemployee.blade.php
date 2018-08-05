@@ -27,7 +27,7 @@
                                 <div class="col-md-2">
                                         <div class="form-group {{ $errors->has('lastname') ? 'has-error' : '' }}">
                                         <label >นามสกุล</label> 
-                                        {{Form::text('lastname','',['class'=>'form-control'])}}   
+                                        {{Form::text('lastname',$personal->lastname,['class'=>'form-control'])}}   
                                         
                                         <span class="text-danger">{{ $errors->first('lastname') }}</span>
                                     </div>
@@ -35,7 +35,7 @@
                                 <div class="col-md-2">
                                         <div class="form-group {{ $errors->has('nikname') ? 'has-error' : '' }}">
                                             <label >ชื่อล่น</label> 
-                                            {{Form::text('nikname','',['class'=>'form-control'])}}   
+                                            {{Form::text('nikname',$personal->nikname,['class'=>'form-control'])}}   
                                             <span class="text-danger">{{ $errors->first('nikname') }}</span>
                                         </div>
                                  </div> 
@@ -61,7 +61,7 @@
                               <div class="col-md-2">
                                         <div class="form-group {{ $errors->has('birthday') ? 'has-error' : '' }}">
                                         <label >วันเกิด</label>
-                                        {{Form::date('birthday','',['class'=>'form-control'])}}   
+                                        {{Form::date('birthday',$personal->birthday,['class'=>'form-control'])}}   
                                         <span class="text-danger">{{ $errors->first('birthday') }}</span>
                                 </div>
     
@@ -77,7 +77,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
                                          <label >สัญชาติ</label>
-                                          {{Form::text('nationality','',['class'=>'form-control'])}}   
+                                          {{Form::text('nationality',$personal->nationality,['class'=>'form-control'])}}   
                                            
                                             <span class="text-danger">{{ $errors->first('nationality') }}</span>
                                             </div>
@@ -85,7 +85,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
                                             <label >เชื้อชาติ</label>
-                                            {{Form::text('race','',['class'=>'form-control'])}}   
+                                            {{Form::text('race',$personal->race,['class'=>'form-control'])}}   
                                            
                                             <span class="text-danger">{{ $errors->first('race') }}</span>
                                             </div>
@@ -94,7 +94,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
                                             <label >ศาสนา</label>
-                                            {{Form::text('religion','',['class'=>'form-control'])}}   
+                                            {{Form::text('religion',$personal->religion,['class'=>'form-control'])}}   
                                            
                                             <span class="text-danger">{{ $errors->first('religion') }}</span>
                                             </div>
@@ -102,7 +102,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('age') ? 'has-error' : '' }}" >
                                             <label >อายุ</label>
-                                            {{Form::text('age','',['class'=>'form-control'])}}   
+                                            {{Form::text('age',$personal->age,['class'=>'form-control'])}}   
                                            
                                             <span class="text-danger">{{ $errors->first('age') }}</span>
                                             </div>
@@ -110,7 +110,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('height') ? 'has-error' : '' }}" >
                                             <label >ส่วนสูง</label>
-                                            {{Form::text('height','',['class'=>'form-control'])}}   
+                                            {{Form::text('height',$personal->height,['class'=>'form-control'])}}   
 
                                           
                                             <span class="text-danger">{{ $errors->first('height') }}</span>
@@ -119,7 +119,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('weight') ? 'has-error' : '' }}" >
                                             <label >น้ำหนัก</label>
-                                            {{Form::text('weight','',['class'=>'form-control'])}}   
+                                            {{Form::text('weight',$personal->height,['class'=>'form-control'])}}   
                                           
                                             <span class="text-danger">{{ $errors->first('weight') }}</span>
                                             </div>
@@ -131,7 +131,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >พี่น้องกี่คน</label>
-                                            {{Form::text('brothers','',['class'=>'form-control'])}}   
+                                            {{Form::text('brothers',$personal->brothers,['class'=>'form-control'])}}   
                                           
                                             </div>
                                     </div> 
@@ -139,14 +139,14 @@
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >เป็นคนที่</label>
-                                            {{Form::text('number','',['class'=>'form-control'])}}   
+                                            {{Form::text('number',$personal->number,['class'=>'form-control'])}}   
                                            
                                             </div>
                                     </div>
                                     <div class="col-md-2">
                                             <div class="form-group  {{ $errors->has('tel') ? 'has-error' : '' }}">
                                             <label >โทรศัพท์ที่ติดต่อ</label>
-                                            {{Form::text('tel','',['class'=>'form-control'])}}   
+                                            {{Form::text('tel',$personal->tel,['class'=>'form-control'])}}   
                                             
                                             <span class="text-danger">{{ $errors->first('tel') }}</span>
                                             </div>
@@ -155,7 +155,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >โทรศัพท์บ้าน</label>
-                                            {{Form::text('home','',['class'=>'form-control'])}}   
+                                            {{Form::text('home',$personal->home,['class'=>'form-control'])}}   
                                            
                                             </div>
                                     </div>
@@ -163,7 +163,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('mobile') ? 'has-error' : '' }}">
                                             <label >โทรศัพท์มือถือ</label>
-                                            {{Form::text('mobile','',['class'=>'form-control'])}}   
+                                            {{Form::text('mobile',$personal->mobile,['class'=>'form-control'])}}   
                                        
                                             <span class="text-danger">{{ $errors->first('mobile') }} </span>
                                             </div>
@@ -171,7 +171,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >โทรศัพท์สำนักงาน</label>
-                                            {{Form::text('office','',['class'=>'form-control'])}}   
+                                            {{Form::text('office',$personal->office,['class'=>'form-control'])}}   
                                             
                                             </div>
                                     </div>
@@ -180,7 +180,7 @@
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                                             <label>อีเมล</label>
-                                            {{Form::email('email','',['class'=>'form-control'])}}   
+                                            {{Form::email('email',$personal->email,['class'=>'form-control'])}}   
                                            
                                             <span class="text-danger">{{ $errors->first('email') }}</span>
                                             </div>
@@ -189,14 +189,14 @@
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('address1') ? 'has-error' : '' }}" >
                                             <label >ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label>
-                                            <textarea name="address1"  required="required" class="form-control"  rows="1"  ></textarea>
+                                            <textarea name="address1"  required="required" class="form-control"  rows="1"  >{{$personal->address1}}</textarea>
                                             <span class="text-danger">{{ $errors->first('address1') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('address2') ? 'has-error' : '' }}" >
                                             <label > ที่อยู่ตามบัตรประชาชน</label>
-                                            <textarea name="address2"  required="required" class="form-control"  rows="1"  ></textarea>
+                                            <textarea name="address2"  required="required" class="form-control"  rows="1"  >{{$personal->address2}}</textarea>
                                             <span class="text-danger">{{ $errors->first('address2') }}</span>
                                             </div>
                                     </div>
@@ -204,7 +204,7 @@
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('idcard') ? 'has-error' : '' }}">
                                             <label >เลขบัตรประชาชน</label>
-                                            {{Form::text('idcard','',['class'=>'form-control'])}}   
+                                            {{Form::text('idcard',$personal->idcard,['class'=>'form-control'])}}   
                                             
                                             <span class="text-danger">{{ $errors->first('idcard') }}</span>
                                             </div>
@@ -217,14 +217,14 @@
                                     <div class="col-md-3">
                                             <div class="form-group  {{ $errors->has('issued') ? 'has-error' : '' }}" >
                                             <label >ออกให้ ณ อำเภอ/เขต:</label>
-                                            {{Form::text('issued','',['class'=>'form-control'])}}   
+                                            {{Form::text('issued',$personal->issued,['class'=>'form-control'])}}   
                                             <span class="text-danger">{{ $errors->first('issued') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
                                             <label >จังหวัด</label>
-                                            {{Form::date('province_crad','',['class'=>'form-control'])}} 
+                                            {{Form::date('province_crad',$personal->province_crad,['class'=>'form-control'])}} 
                                            
                                             <span class="text-danger">{{ $errors->first('province_crad') }}</span>
                                             </div>
@@ -232,14 +232,14 @@
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
                                             <label >วันออกบัตร</label>
-                                            {{Form::date('issueddate','',['class'=>'form-control'])}}   
+                                            {{Form::date('issueddate',$personal->issueddate,['class'=>'form-control'])}}   
                                             <span class="text-danger">{{ $errors->first('issueddate') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
                                             <label >บัตรหมดอายุ:</label>
-                                            {{Form::date('expid','',['class'=>'form-control'])}}   
+                                            {{Form::date('expid',$personal->expid,['class'=>'form-control'])}}   
                                             <span class="text-danger">{{ $errors->first('expid') }}</span>
                                             </div>
                                     </div>
@@ -250,7 +250,7 @@
                             <div class="col-md-3">
                                     <div class="form-group">
                                     <label >บัตรประจำตัวผู้เสียภาษี</label>
-                                    {{Form::date('texid','',['class'=>'form-control'])}}   
+                                    {{Form::date('texid',$personal->texid,['class'=>'form-control'])}}   
                                    
                                     </div>
                             </div>
@@ -259,10 +259,10 @@
                                             <label >สถานะความเป็นอยู่</label>
                                             <select name="living_status"  class="form-control">
                                                     <option value="">:: เลือก ::</option>
-                                                      <option  value="owm_home">บ้านส่วนตัว </option>
-                                                      <option  value="rent_home">บ้านเช่า</option>
-                                                      <option value="live_with_parents">อาศัยกับบิดามารดา</option>
-                                                      <option  value="live_with_other">อาศัยกับผู้อื่น</option>
+                                                      <option  value="บ้านส่วนตัว">บ้านส่วนตัว </option>
+                                                      <option  value="บ้านเช่า">บ้านเช่า</option>
+                                                      <option value="อาศัยกับบิดามารดา">อาศัยกับบิดามารดา</option>
+                                                      <option  value="อาศัยกับผู้อื่น">อาศัยกับผู้อื่น</option>
                                                     </select>
                                         <span class="text-danger">{{ $errors->first('living_status') }}</span>
                                     </div>
@@ -272,11 +272,11 @@
                                             <label >สถานะครอบครัว</label>
                                             <select name="marital_status"  class="form-control" >
                                                     <option  value="">:: เลือก ::</option>
-                                                    <option  value="single">โสด</option>
-                                                    <option  value="married">สมรส</option>
-                                                    <option  value="divorced">หย่า</option>
-                                                    <option  value="live_with_parants">หม้าย</option>
-                                                    <option  value="separated">แยกกันอยู่</option>
+                                                    <option  value="โสด">โสด</option>
+                                                    <option  value="สมรส">สมรส</option>
+                                                    <option  value="หย่า">หย่า</option>
+                                                    <option  value="หม้าย">หม้าย</option>
+                                                    <option  value="แยกกันอยู่">แยกกันอยู่</option>
                                                   </select>
                                                   <span class="text-danger">{{ $errors->first('marital_status') }}</span>        
                                     </div> 
@@ -297,7 +297,7 @@
                                             <div class="form-group">
                                             <label >คู่มสมรส</label>
                                             <select  name="spouse"  class="form-control">
-                                                    <option  value="-">:: เลือก ::</option>
+                                                    <option  value="">:: เลือก ::</option>
                                                     <option   value="มี">มี</option>
                                                     <option   value="ไม่มี">ไม่มี</option>
                                                   </select>
@@ -309,27 +309,27 @@
                             <div class="col-md-4">
                                     <div class="form-group">
                                             <label >ชื่อคู่สมรส</label>
-                                            {{Form::text('name_spouse','',['class'=>'form-control'])}}   
+                                            {{Form::text('name_spouse',$personal->name_spouse,['class'=>'form-control'])}}   
                                     </div> 
                                 </div>
                                 <div class="col-md-3">
                                         <div class="form-group">
                                                 <label >อาชีพคู่สมรส</label>
-                                                {{Form::text('spouse_occupation','',['class'=>'form-control'])}}   
+                                                {{Form::text('spouse_occupation',$personal->spouse_occupation,['class'=>'form-control'])}}   
                                         </div> 
                                     </div>
     
                                     <div class="col-md-3">
                                             <div class="form-group">
                                                     <label > สถานที่ทำงาน</label>
-                                                    {{Form::text('firm_address','',['class'=>'form-control'])}}   
+                                                    {{Form::text('firm_address',$personal->firm_address,['class'=>'form-control'])}}   
                                             </div> 
                                         </div>
     
                                         <div class="col-md-2">
                                                 <div class="form-group">
                                                         <label >โทรศัพท์</label>
-                                                        {{Form::text('spouse_tel','',['class'=>'form-control'])}}   
+                                                        {{Form::text('spouse_tel',$personal->spouse_tel,['class'=>'form-control'])}}   
                                                 </div> 
                                             </div>
                           </div> 
@@ -338,28 +338,28 @@
                                 <div class="col-md-2">
                                 <div class="form-group">
                                         <label >จำนวนบุตรทั้งหมด</label>
-                                        {{Form::text('children','',['class'=>'form-control'])}}   
+                                        {{Form::text('children',$personal->children,['class'=>'form-control'])}}   
                                 </div>
                             </div>
     
                             <div class="col-md-2">
                                     <div class="form-group">
                                             <label >หญิง</label>
-                                            {{Form::text('girls','',['class'=>'form-control'])}}   
+                                            {{Form::text('girls',$personal->girls,['class'=>'form-control'])}}   
                                     </div>
                                 </div>
     
                                 <div class="col-md-2">
                                         <div class="form-group">
                                                 <label >ชาย</label>
-                                                {{Form::text('boy','',['class'=>'form-control'])}}   
+                                                {{Form::text('boy',$personal->boy,['class'=>'form-control'])}}   
                                         </div>
                                     </div>
         
                                     <div class="col-md-2">
                                             <div class="form-group">
                                                     <label > จำนวนบุตรกำลังศึกษา</label>
-                                                    {{Form::text('school','',['class'=>'form-control'])}}  
+                                                    {{Form::text('school',$personal->school,['class'=>'form-control'])}}  
                                                    
                                             </div>
                                         </div>
@@ -367,7 +367,7 @@
                                         <div class="col-md-2">
                                                 <div class="form-group">
                                                         <label >จำนวนบุตรที่อายุเกิน21ปี</label>
-                                                        {{Form::text('over21','',['class'=>'form-control'])}}  
+                                                        {{Form::text('over21',$personal->over21,['class'=>'form-control'])}}  
                                                         
                                                 </div>
                                             </div>
@@ -391,7 +391,7 @@
                                             <div class="col-md-3">
                                                     <div class="form-group{{ $errors->has('namefather') ? 'has-error' : '' }}" >
                                                     <label > ชื่อบิดา</label>
-                                                    {{Form::text('namefather','',['class'=>'form-control'])}}  
+                                                    {{Form::text('namefather',$personal->father,['class'=>'form-control'])}}  
                                                    
                                                     <span class="text-danger">{{ $errors->first('namefather') }}</span>
                                                 </div>
@@ -399,7 +399,7 @@
                                                 <div class="col-md-3">
                                                         <div class="form-group {{ $errors->has('lastfather') ? 'has-error' : '' }}">
                                                         <label >นามสกุล</label>
-                                                        {{Form::text('lastfather','',['class'=>'form-control'])}}  
+                                                        {{Form::text('lastfather',$personal->lastfather,['class'=>'form-control'])}}  
                                                         
                                                         <span class="text-danger">{{ $errors->first('lastfather') }}</span>
                                                     </div>
@@ -407,7 +407,7 @@
                                                     <div class="col-md-3">
                                                             <div class="form-group {{ $errors->has('occupation_father') ? 'has-error' : '' }}" >
                                                             <label >อาชีพ</label>
-                                                            {{Form::text('occupation_father','',['class'=>'form-control'])}}  
+                                                            {{Form::text('occupation_father',$personal->occupation_father,['class'=>'form-control'])}}  
                                                             
                                                             <span class="text-danger">{{ $errors->first('occupation_father') }}</span>
                                                         </div>
@@ -424,7 +424,7 @@
                                         <div class="col-md-3">
                                                 <div class="form-group {{ $errors->has('namemother') ? 'has-error' : '' }}" >
                                                 <label > ชื่อมารดา</label>
-                                                {{Form::text('namemother','',['class'=>'form-control'])}}  
+                                                {{Form::text('namemother', $personal->namemother,['class'=>'form-control'])}}  
                                                
                                                 <span class="text-danger">{{ $errors->first('namemother') }}</span>
                                             </div>
@@ -432,7 +432,7 @@
                                             <div class="col-md-3">
                                                     <div class="form-group {{ $errors->has('lasrmother') ? 'has-error' : '' }}" >
                                                     <label >นามสกุล</label>
-                                                    {{Form::text('lasrmother','',['class'=>'form-control'])}}  
+                                                    {{Form::text('lasrmother',$personal->lasrmother,['class'=>'form-control'])}}  
                                                     
                                                     <span class="text-danger">{{ $errors->first('lasrmother') }}</span>
                                                 </div>
@@ -440,7 +440,7 @@
                                                 <div class="col-md-3">
                                                         <div class="form-group {{ $errors->has('occupationm') ? 'has-error' : '' }}" >
                                                         <label >อาชีพ</label>
-                                                        {{Form::text('occupationm','',['class'=>'form-control'])}}  
+                                                        {{Form::text('occupationm',$personal->occupationm,['class'=>'form-control'])}}  
                                                         
                                                         <span class="text-danger">{{ $errors->first('occupationm') }}</span>
                                                     </div>
@@ -483,7 +483,7 @@
                                         <tbody>
                                           <tr >
                                             <td align="center" >ประถมศึกษา</td>
-                                            <td> {{Form::text('primary','',['class'=>'form-control'])}}</td>
+                                            <td> {{Form::text('primary',$personal->primary,['class'=>'form-control'])}}</td>
                                             <td> 
                                                    
                                                 <select name="year1" id="year1" class="form-control">
@@ -518,13 +518,13 @@
                                                 
                                                
                                                 </td>
-                                            <td>{{Form::text('gpa','',['class'=>'form-control'])}}</td>
-                                            <td>{{Form::text('major','',['class'=>'form-control'])}}</td>
-                                            <td>{{Form::text('degree1','',['class'=>'form-control'])}}</td>
+                                            <td>{{Form::text('gpa',$personal->gpa,['class'=>'form-control'])}}</td>
+                                            <td>{{Form::text('major',$personal->major,['class'=>'form-control'])}}</td>
+                                            <td>{{Form::text('degree1',$personal->degree1,['class'=>'form-control'])}}</td>
                                           </tr>
                                           <tr>
                                                 <td>มัธยมศึกษา</td>
-                                                <td>{{Form::text('secondary','',['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('secondary',$personal->secondary,['class'=>'form-control'])}} </td>
                                                 <td> <select name="year3" id="year3"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -548,14 +548,14 @@
                                                  <?php } ?>
         
                                              </select></td>
-                                                <td> {{Form::text('gpas','',['class'=>'form-control'])}}</td>
-                                                <td> {{Form::text('majors','',['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('degree2','',['class'=>'form-control'])}}</td>
+                                                <td> {{Form::text('gpas',$personal->gpas,['class'=>'form-control'])}}</td>
+                                                <td> {{Form::text('majors',$personal->majors,['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('degree2',$personal->degree2,['class'=>'form-control'])}}</td>
                                           </tr>
         
                                           <tr>
                                                 <td>อาชีวะศึกษา</td>
-                                                <td>{{Form::text('vocation','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('vocation',$personal->vocation,['class'=>'form-control'])}}</td>
                                                 <td><select name="year5" id="year5" class="form-control" >
         
                                                         <option value="">:: ปี ::</option>
@@ -578,14 +578,14 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td>{{Form::text('gpav','',['class'=>'form-control'])}} </td>
-                                                <td>{{Form::text('majorv','',['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('degree3','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('gpav',$personal->gpav,['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('majorv',$personal->majorv,['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('degree3',$personal->degree3,['class'=>'form-control'])}}</td>
                                           </tr>
         
                                           <tr>
                                                 <td>อนุปริญญา</td>
-                                                <td>{{Form::text('diploma','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('diploma',$personal->diploma,['class'=>'form-control'])}}</td>
                                                 <td><select name="year7" id="year7"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -608,15 +608,15 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td>{{Form::text('gpad','',['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('majord','',['class'=>'form-control'])}} </td>
-                                                <td>{{Form::text('degree4','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('gpad',$personal->gpad,['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('majord',$personal->majord,['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('degree4',$personal->degree4,['class'=>'form-control'])}}</td>
                                           </tr>
         
         
                                           <tr>
                                                 <td>ปริญญาตรี</td>
-                                                <td>{{Form::text('bachelor','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('bachelor',$personal->bachelor,['class'=>'form-control'])}}</td>
                                                 <td><select name="year9" id="year9"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -639,16 +639,16 @@
                                                         <?php } ?>
         
                                                         </select></td>
-                                                <td>{{Form::text('gpab','',['class'=>'form-control'])}} </td>
-                                                <td>{{Form::text('majorb','',['class'=>'form-control'])}} </td>
-                                                <td>{{Form::text('degree5','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('gpab',$personal->gpab,['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('majorb',$personal->majorb,['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('degree5',$personal->degree5,['class'=>'form-control'])}}</td>
                                           </tr>
         
                                       
         
                                           <tr>
                                                 <td>ปริญญาโท</td>
-                                                <td>{{Form::text('master','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('master',$personal->master,['class'=>'form-control'])}}</td>
                                                 <td> <select name="year11" id="year11"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -672,15 +672,15 @@
         
                                                         </select>
                                                 </td>
-                                                <td>{{Form::text('gpam','',['class'=>'form-control'])}} </td>
-                                                <td> {{Form::text('majorm','',['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('degree6','',['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('gpam',$personal->gpam,['class'=>'form-control'])}} </td>
+                                                <td> {{Form::text('majorm',$personal->majorm,['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('degree6',$personal->degree6,['class'=>'form-control'])}}</td>
                                           </tr>
         
         
                                           <tr>
                                                 <td>อื่นๆ</td>
-                                                <td> {{Form::text('otherE','',['class'=>'form-control'])}}</td>
+                                                <td> {{Form::text('otherE',$personal->otherE,['class'=>'form-control'])}}</td>
                                                 <td> <select name="year13" id="year13"  class="form-control">
         
                                                         <option value="">:: ปี ::</option>
@@ -705,9 +705,9 @@
         
                                                         </select>
                                                 </td>
-                                                <td> {{Form::text('gpao','',['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('majoro','',['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('degree7','',['class'=>'form-control'])}}</td>
+                                                <td> {{Form::text('gpao',$personal->gpao,['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('majoro',$personal->majoro,['class'=>'form-control'])}}</td>
+                                                <td>{{Form::text('degree7',$personal->degree7,['class'=>'form-control'])}}</td>
                                           </tr>
                                         </tbody>
                                       </table>
@@ -809,11 +809,11 @@
                                             </select>
                                             <span class="text-danger">{{ $errors->first('englisr') }}</span>
                                             
-
+                                            ''
                                         </td>
                                   </tr>
                                   <tr>
-                                    <td>อื่นๆ <input type="text" name="otherr" id="otherr" style="width:150px" name="otherr" class="form-control"/></td>
+                                    <td>อื่นๆ{{Form::text('otherr',$personal->otherr,['class'=>'form-control'])}} </td>
                                     <td>
                                             <select style="width:90px" id="othes" name="othes" class="form-control">
                                                 <option value="">::เลือก::</option>
@@ -873,34 +873,34 @@
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <td> {{Form::text('list_of_employed1','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('job_description1','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('call1','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('start_job_duration1','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('end_job_duration2','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('position1','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('reasonLeaving1','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('lastsalary1','',['class'=>'form-control'])}} </td>
+                                    <td> {{Form::text('list_of_employed1',$personal->list_of_employed1,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('job_description1',$personal->job_description1,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('call1',$personal->call1,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('start_job_duration1',$personal->start_job_duration1,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('end_job_duration2',$personal->end_job_duration2,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('position1',$personal->position1,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('reasonLeaving1',$personal->reasonLeaving1,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('lastsalary1',$personal->lastsalary1,['class'=>'form-control'])}} </td>
                                   </tr>
                                   <tr>
-                                    <td> {{Form::text('list_of_employed2','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('job_description2','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('call2','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('start_job_duration3','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('end_job_duration4','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('position2','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('reasonleaving2','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('lastsalary2','',['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('list_of_employed2',$personal->list_of_employed2,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('job_description2',$personal->job_description2,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('call2',$personal->call2,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('start_job_duration3',$personal->start_job_duration3,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('end_job_duration4',$personal->end_job_duration4,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('position2',$personal->position2,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('reasonleaving2',$personal->reasonLeaving2,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('lastsalary2',$personal->lastsalary2,['class'=>'form-control'])}}</td>
                                   </tr>
                                   <tr>
-                                    <td> {{Form::text('list_of_employed3','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('job_description3','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('call3','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('start_job_duration5','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('end_job_duration6','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('position3','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('reasonleaving3','',['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('lastsalary3','',['class'=>'form-control'])}} </td>
+                                    <td> {{Form::text('list_of_employed3',$personal->list_of_employed3,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('job_description3',$personal->job_description3,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('call3',$personal->call3,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('start_job_duration5',$personal->start_job_duration5,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::date('end_job_duration6',$personal->end_job_duration6,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('position3',$personal->position3,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('reasonleaving3',$personal->reasonLeaving3,['class'=>'form-control'])}}</td>
+                                    <td> {{Form::text('lastsalary3',$personal->lastsalary3,['class'=>'form-control'])}} </td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -935,32 +935,32 @@
                           <tr>
                             <td>
                         <div class="form-group {{ $errors->has('namecm') ? 'has-error' : '' }}">       
-                                {{Form::text('namecm','',['class'=>'form-control'])}}
+                                {{Form::text('namecm',$personal->namecm,['class'=>'form-control'])}}
                         
                                 <span class="text-danger">{{ $errors->first('namecm') }}</span>  
                         </div>
                            </td>
                             <td>
                                         <div class="form-group {{ $errors->has('lastnamecm') ? 'has-error' : '' }}">       
-                                    {{Form::text('lastnamecm','',['class'=>'form-control'])}}
+                                    {{Form::text('lastnamecm',$personal->lastnamecm,['class'=>'form-control'])}}
                                     <span class="text-danger">{{ $errors->first('lastnamecm') }}</span>  
                                 </div>
                             </td>
                             <td>
                                         <div class="form-group {{ $errors->has('firm') ? 'has-error' : '' }}"> 
-                                    {{Form::text('firm','',['class'=>'form-control'])}}
+                                    {{Form::text('firm',$personal->firm,['class'=>'form-control'])}}
                                     <span class="text-danger">{{ $errors->first('firm') }}</span>  
                                 </div>
                             </td>
                             <td>
                                         <div class="form-group {{ $errors->has('telecm') ? 'has-error' : '' }}"> 
-                                    {{Form::text('telecm','',['class'=>'form-control'])}}
+                                    {{Form::text('telecm',$personal->telecm,['class'=>'form-control'])}}
                                     <span class="text-danger">{{ $errors->first('telecm') }}</span>  
                                 </div>
                            </td>
                             <td>
                                         <div class="form-group {{ $errors->has('positioncm') ? 'has-error' : '' }}"> 
-                                    {{Form::text('positioncm','',['class'=>'form-control'])}}
+                                    {{Form::text('positioncm',$personal->positioncm,['class'=>'form-control'])}}
                                     <span class="text-danger">{{ $errors->first('positioncm') }}</span>  
                                 </div>
                            </td>
@@ -974,7 +974,7 @@
                     <div class="col-md-5">
                             <div class="form-group">
                         <label for="name">ความรู้พิเศษ</label> 
-                        คอมพิวเตอร์   ระบุ:  {{Form::text('computer','')}}
+                        คอมพิวเตอร์   ระบุ:  {{Form::text('computer',$personal->computer)}}
                                 
                             </div>
                     </div> 
@@ -982,7 +982,7 @@
                             <div class="form-group">
                                     <input type="checkbox" class="form-check-input" id="fax" name="fax" value="เครื่องโทรสาร" > เครื่องโทรสาร 
                                     <input type="checkbox" class="form-check-input" id="typewriter" name="typewriter"  value="เครื่องพิมพ์ดีดไทย" >เครื่องพิมพ์ดีดไทย
-                                    <input type="text" name="dot" id="dot"  style="width:50px"/>คำ/นาที
+                                    {{Form::text('dot',$personal->dot)}} คำ/นาที
                         </div>
                         </div> 
         
@@ -994,8 +994,8 @@
                                         <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)</label> &emsp;&emsp;
                                         {{ Form::radio('crash1','ขัดข้อง') }} ขัดข้อง
                                         {{ Form::radio('crash1','ไม่ขัดข้อง') }} ไม่ขัดข้อง
-                                        ชื่อ:  {{Form::text('compd','')}} 
-                                        สถานที่ทำงาน:  {{Form::text('compa','')}} 
+                                        ชื่อ:  {{Form::text('compd',$personal->compd)}} 
+                                        สถานที่ทำงาน:  {{Form::text('compa',$personal->compd)}} 
                                         <br>
                                         <span class="text-danger">{{ $errors->first('crash1') }}</span>  
 
@@ -1064,7 +1064,7 @@
                                     <div class="row">      
                                             <div class="col-md-6">
                                                     <div class="form-group">
-                                                            <label>บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ:</label> {{Form::text('workk','')}} 
+                                                            <label>บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ:</label> {{Form::text('workk',$personal->workk)}} 
                                                         
                                                     </div>
                                             </div>   
@@ -1075,7 +1075,7 @@
                                         <div class="row">      
                                                 <div class="col-md-6">
                                                         <div class="form-group {{ $errors->has('dateworkk') ? 'has-error' : '' }}">
-                                                                <label>ท่านพร้อมงานวันที่<label>  {{Form::date('dateworkk','')}} 
+                                                                <label>ท่านพร้อมงานวันที่<label>  {{Form::date('dateworkk',$personal->dateworkk)}} 
                                                                 <span class="text-danger">{{ $errors->first('dateworkk') }}</span>  
                                                         </div>
                                                 </div>   
@@ -1087,8 +1087,8 @@
                                             <div class="row">      
                                                     <div class="col-md-12">
                                                             <div class="form-group ">
-                                                                    <label>ท่านเป็นเจ้าของรถประเภทใด</label> {{Form::text('cardec','')}}  
-                                                                    <label>ทะเบียน</label> {{Form::text('license','')}} 
+                                                                    <label>ท่านเป็นเจ้าของรถประเภทใด</label> {{Form::text('cardec',$personal->cardec)}}  
+                                                                    <label>ทะเบียน</label> {{Form::text('license',$personal->license)}} 
                                                                       
                                                                 
                                                             </div>
@@ -1098,7 +1098,7 @@
                                                         <div class="col-md-10">
                                                                 <div class="form-group {{ $errors->has('exitwork') ? 'has-error' : '' }}">
                                                                         <label>ท่านเคยให้ถูกออกจากงานหรือไม่</label> &emsp;&emsp;&emsp;&emsp;&emsp;                                                                        
-                                                                        {{ Form::radio('exitwork','เคย') }} เคย เพราะ{{Form::text('because','')}}
+                                                                        {{ Form::radio('exitwork','เคย') }} เคย เพราะ{{Form::text('because',$personal->because)}}
                                                                             &emsp;&emsp;&emsp;  
                                                                             {{ Form::radio('exitwork','ไม่เคย') }}ไม่เคย 
                                                                             <br>

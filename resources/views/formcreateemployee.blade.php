@@ -257,12 +257,17 @@
                             <div class="col-md-2">
                                     <div class="form-group {{ $errors->has('living_status') ? 'has-error' : '' }}" >
                                             <label >สถานะความเป็นอยู่</label>
+                                           
                                             <select name="living_status"  class="form-control">
-                                                    <option value="">:: เลือก ::</option>
-                                                      <option  value="owm_home">บ้านส่วนตัว </option>
-                                                      <option  value="rent_home">บ้านเช่า</option>
-                                                      <option value="live_with_parents">อาศัยกับบิดามารดา</option>
-                                                      <option  value="live_with_other">อาศัยกับผู้อื่น</option>
+                                                    @if( old('living_status') != '')
+                                                     <option value="{{ old('living_status') }}">{{ old('living_status') }}</option>
+                                                     @endif
+                                                      <option value="">:: เลือก ::</option>
+                                                      <option  value="บ้านส่วนตัว">บ้านส่วนตัว </option>
+                                                      <option  value="บ้านเช่า">บ้านเช่า</option>
+                                                      <option value="อาศัยกับบิดามารดา">อาศัยกับบิดามารดา</option>
+                                                      <option  value="อาศัยกับผู้อื่น">อาศัยกับผู้อื่น</option>
+                                                      
                                                     </select>
                                         <span class="text-danger">{{ $errors->first('living_status') }}</span>
                                     </div>
@@ -271,12 +276,15 @@
                                     <div class="form-group{{ $errors->has('marital_status') ? 'has-error' : '' }}" >
                                             <label >สถานะครอบครัว</label>
                                             <select name="marital_status"  class="form-control" >
+                                                        @if( old('marital_status') != '')
+                                                        <option value="{{ old('marital_status') }}">{{ old('marital_status') }}</option>
+                                                        @endif
                                                     <option  value="">:: เลือก ::</option>
-                                                    <option  value="single">โสด</option>
-                                                    <option  value="married">สมรส</option>
-                                                    <option  value="divorced">หย่า</option>
-                                                    <option  value="live_with_parants">หม้าย</option>
-                                                    <option  value="separated">แยกกันอยู่</option>
+                                                    <option  value="โสด">โสด</option>
+                                                    <option  value="สมรส">สมรส</option>
+                                                    <option  value="หย่า">หย่า</option>
+                                                    <option  value="หม้าย">หม้าย</option>
+                                                    <option  value="แยกกันอยู่">แยกกันอยู่</option>
                                                   </select>
                                                   <span class="text-danger">{{ $errors->first('marital_status') }}</span>        
                                     </div> 
@@ -286,6 +294,9 @@
                                         <div class="form-group">
                                                 <label >กรณีแต่งงาน</label>
                                                 <select style="width:170px" name="if_marricd"  class="form-control" >
+                                                                @if( old('if_marricd') != '')
+                                                                <option value="{{ old('if_marricd') }}">{{ old('if_marricd') }}</option>
+                                                                @endif
                                                         <option  value="">:: เลือก ::</option>
                                                         <option  value="จดทะเบียนสมรส">จดทะเบียนสมรส</option>
                                                         <option  value="ไม่ได้จดทะเบียนสมรส">ไม่ได้จดทะเบียนสมรส</option>
@@ -297,7 +308,10 @@
                                             <div class="form-group">
                                             <label >คู่มสมรส</label>
                                             <select  name="spouse"  class="form-control">
-                                                    <option  value="-">:: เลือก ::</option>
+                                                        @if( old('spouse') != '')
+                                                        <option value="{{ old('spouse') }}">{{ old('spouse') }}</option>
+                                                        @endif
+                                                    <option  value=" ">:: เลือก ::</option>
                                                     <option   value="มี">มี</option>
                                                     <option   value="ไม่มี">ไม่มี</option>
                                                   </select>
@@ -366,7 +380,7 @@
     
                                         <div class="col-md-2">
                                                 <div class="form-group">
-                                                        <label >จำนวนบุตรที่อายุเกิน21ปี</label>
+                                                        <label>จำนวนบุตรที่อายุเกิน21ปี</label>
                                                         {{Form::text('over21','',['class'=>'form-control'])}}  
                                                         
                                                 </div>
@@ -375,6 +389,9 @@
                                                     <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
                                                     <label > สถานะทางทหาร</label>
                                                     <select style="width:100px" name="military_service" class="form-control" >
+                                                                @if( old('military_service') != '')
+                                                                <option value="{{ old('military_service') }}">{{ old('military_service') }}</option>
+                                                                @endif
                                                             <option value="">ไม่มี</option>
                                                             <option  value="ได้รับการยกเว้น">ได้รับการยกเว้น</option>
                                                             <option  value="ศึกษาวิชาทหาร">ศึกษาวิชาทหาร</option>
@@ -390,7 +407,7 @@
     
                                             <div class="col-md-3">
                                                     <div class="form-group{{ $errors->has('namefather') ? 'has-error' : '' }}" >
-                                                    <label > ชื่อบิดา</label>
+                                                    <label> ชื่อบิดา</label>
                                                     {{Form::text('namefather','',['class'=>'form-control'])}}  
                                                    
                                                     <span class="text-danger">{{ $errors->first('namefather') }}</span>
@@ -487,12 +504,14 @@
                                             <td> 
                                                    
                                                 <select name="year1" id="year1" class="form-control">
-        
+                                                                @if( old('year1') != '')
+                                                                <option value="{{ old('year1') }}">{{ old('year1') }}</option>
+                                                                @endif
                                                     <option value="">:: ปี ::</option>
         
                                                     <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                    <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                     <?php } ?>
         
@@ -504,12 +523,14 @@
                                                 <td>
                                                
                                                      <select name="year2" id="year2" class="form-control" >
-            
+                                                                @if( old('year2') != '')
+                                                                <option value="{{ old('year2') }}">{{ old('year2') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
             
                                                         <?php for($i=0; $i<=100; $i++) { ?>
             
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                  <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
             
                                                         <?php } ?>
             
@@ -526,24 +547,28 @@
                                                 <td>มัธยมศึกษา</td>
                                                 <td>{{Form::text('secondary','',['class'=>'form-control'])}} </td>
                                                 <td> <select name="year3" id="year3"  class="form-control">
-        
+                                                                @if( old('year3') != '')
+                                                                <option value="{{ old('year1') }}">{{ old('year3') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                    <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
                                                         </select></td>
         
                                                 <td> <select name="year4" id="year4"  class="form-control">
-        
+                                                                @if( old('year4') != '')
+                                                                <option value="{{ old('year4') }}">{{ old('year4') }}</option>
+                                                                @endif
                                                  <option value="">:: ปี ::</option>
         
                                                  <?php for($i=0; $i<=100; $i++) { ?>
         
-                                             <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                              <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                  <?php } ?>
         
@@ -557,12 +582,14 @@
                                                 <td>อาชีวะศึกษา</td>
                                                 <td>{{Form::text('vocation','',['class'=>'form-control'])}}</td>
                                                 <td><select name="year5" id="year5" class="form-control" >
-        
+                                                                @if( old('year5') != '')
+                                                                <option value="{{ old('year5') }}">{{ old('year5') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                  <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
@@ -573,7 +600,7 @@
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
@@ -587,23 +614,27 @@
                                                 <td>อนุปริญญา</td>
                                                 <td>{{Form::text('diploma','',['class'=>'form-control'])}}</td>
                                                 <td><select name="year7" id="year7"  class="form-control">
-        
+                                                                @if( old('year7') != '')
+                                                                <option value="{{ old('year7') }}">{{ old('year7') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
                                                         </select></td>
                                                 <td><select name="year8" id="year8" class="form-control" >
-        
+                                                                @if( old('year8') != '')
+                                                                <option value="{{ old('year8') }}">{{ old('year8') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
@@ -618,23 +649,27 @@
                                                 <td>ปริญญาตรี</td>
                                                 <td>{{Form::text('bachelor','',['class'=>'form-control'])}}</td>
                                                 <td><select name="year9" id="year9"  class="form-control">
-        
+                                                                @if( old('year9') != '')
+                                                                <option value="{{ old('year9') }}">{{ old('year9') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
                                                         </select></td>
                                                 <td> <select name="year10" id="year10"  class="form-control">
-        
+                                                                @if( old('year9') != '')
+                                                                <option value="{{ old('year10') }}">{{ old('year10') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
@@ -650,23 +685,27 @@
                                                 <td>ปริญญาโท</td>
                                                 <td>{{Form::text('master','',['class'=>'form-control'])}}</td>
                                                 <td> <select name="year11" id="year11"  class="form-control">
-        
+                                                                @if( old('year11') != '')
+                                                                <option value="{{ old('year11') }}">{{ old('year11') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
                                                         </select></td>
                                                 <td><select name="year12" id="year12"  class="form-control">
-        
+                                                                @if( old('year12') != '')
+                                                                <option value="{{ old('year12') }}">{{ old('year12') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
@@ -682,24 +721,28 @@
                                                 <td>อื่นๆ</td>
                                                 <td> {{Form::text('otherE','',['class'=>'form-control'])}}</td>
                                                 <td> <select name="year13" id="year13"  class="form-control">
-        
+                                                                @if( old('year13') != '')
+                                                                <option value="{{ old('year13') }}">{{ old('year13') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                              <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
                                                         </select>
                                                 </td>
                                                 <td><select name="year14" id="year14"  class="form-control">
-        
+                                                                @if( old('year14') != '')
+                                                                <option value="{{ old('year14') }}">{{ old('year14') }}</option>
+                                                                @endif
                                                         <option value="">:: ปี ::</option>
         
                                                         <?php for($i=0; $i<=100; $i++) { ?>
         
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
+                                              <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
         
                                                         <?php } ?>
         
@@ -744,6 +787,9 @@
                                     <td>
                                             <div class="form-group {{ $errors->has('thais') ? 'has-error' : '' }}">
                                             <select style="width:90px" id="thais" name="thais" class="form-control">
+                                                        @if( old('thais') != '')
+                                                        <option value="{{ old('thais') }}">{{ old('thais') }}</option>
+                                                        @endif
                                             <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
@@ -755,6 +801,9 @@
                                     <td>
                                         <div class="form-group {{ $errors->has('thail') ? 'has-error' : '' }}">
                                             <select style="width:90px" id="thail"  name="thail" class="form-control">
+                                                        @if( old('thail') != '')
+                                                        <option value="{{ old('thail') }}">{{ old('thail') }}</option>
+                                                        @endif
                                             <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
@@ -766,6 +815,9 @@
                                     <td>
                                         <div class="form-group {{ $errors->has('thair') ? 'has-error' : '' }}">
                                             <select style="width:90px" id="thair"  name="thair" class="form-control">
+                                                        @if( old('thair') != '')
+                                                        <option value="{{ old('thair') }}">{{ old('thair') }}</option>
+                                                        @endif
                                             <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
@@ -780,6 +832,9 @@
                                     <td>
                                         <div class="form-group {{ $errors->has('engliss') ? 'has-error' : '' }}">
                                             <select style="width:90px" id="engliss" name="engliss" class="form-control">
+                                                        @if( old('engliss') != '')
+                                                        <option value="{{ old('engliss') }}">{{ old('engliss') }}</option>
+                                                        @endif                                                      
                                             <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
@@ -791,6 +846,9 @@
                                     <td>
                                         <div class="form-group {{ $errors->has('englisl') ? 'has-error' : '' }}">
                                             <select style="width:90px" id="englisl" name="englisl" class="form-control">
+                                                        @if( old('englisl') != '')
+                                                        <option value="{{ old('englisl') }}">{{ old('englisl') }}</option>
+                                                        @endif      
                                             <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
@@ -802,6 +860,9 @@
                                     <td>
                                         <div class="form-group {{ $errors->has('englisr') ? 'has-error' : '' }}">
                                             <select style="width:90px" id="englisr" name="englisr" class="form-control">
+                                                        @if( old('englisr') != '')
+                                                        <option value="{{ old('englisr') }}">{{ old('englisr') }}</option>
+                                                        @endif 
                                             <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
@@ -816,6 +877,9 @@
                                     <td>อื่นๆ <input type="text" name="otherr" id="otherr" style="width:150px" name="otherr" class="form-control"/></td>
                                     <td>
                                             <select style="width:90px" id="othes" name="othes" class="form-control">
+                                                        @if( old('othes') != '')
+                                                        <option value="{{ old('othes') }}">{{ old('othes') }}</option>
+                                                        @endif 
                                                 <option value="">::เลือก::</option>
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
@@ -825,6 +889,9 @@
                                     <td>
                                             <select style="width:90px" id="othel" name="othel" class="form-control">
                                                 <option value="">::เลือก::</option>
+                                                @if( old('othel') != '')
+                                                <option value="{{ old('othel') }}">{{ old('othel') }}</option>
+                                                @endif 
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>
@@ -833,6 +900,9 @@
                                     <td>
                                             <select style="width:90px" id="other" name="other" class="form-control">
                                                 <option value="">::เลือก::</option>
+                                                @if( old('other') != '')
+                                                <option value="{{ old('other') }}">{{ old('other') }}</option>
+                                                @endif
                                             <option value="ดี">ดี</option>
                                             <option  value="พอใช้">พอใช้</option>
                                             <option  value="ไม่ดี">ไม่ดี</option>

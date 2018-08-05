@@ -1,13 +1,13 @@
 @extends('layouts.main')
 @section('content')
+
  <style>
    #loader{
    visibility:hidden;
    }
    </style>
-
-  <div class="content-wrapper">
-    <div class="content container-fluid">
+<div class="content-wrapper">
+        <section class="content">
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header with-border">

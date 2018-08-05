@@ -334,14 +334,11 @@
   <div class="control-sidebar-bg"></div>
 
   <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
-
   <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}" defer></script>
   <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}" defer></script>
   <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>
   <script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}" defer></script>
-  
   <script src="{{ asset('bower_components/PACE/pace.min.js') }}" defer></script>
-  
   <script src="{{ asset('dist/js/adminlte.min.js') }}" defer></script>
   <script src="{{ asset('dist/js/demo.js') }}" defer></script>
   
@@ -359,32 +356,6 @@
   <script type="text/javascript">
       $(document).ajaxStart(function() { Pace.restart(); }); 
   
-  
-  $(function() {
-  $("#newModalFormC").validate({
-    rules: {
-      name: {
-        required: true,
-          minlength: 8,
-          maxlength: 100
-      }
-    },
-    messages: {
-      company_Name: {
-        required: "กรุณากรอกข้อมูล", 
-        minlength: "ข้อมูลต่ำกว่า 8 อักษร",
-        maxlength: "ข้อมูลเกินกว่า 100 อักษร"
-      }
-    },
-    highlight: function(element, errorClass) {
-      $(element).closest(".form-group").addClass("has-error");
-    },
-    unhighlight: function(element, errorClass) {
-      $(element).closest(".form-group").removeClass("has-error");
-    }
-  });
-  });
-    
   </script>
   
   
