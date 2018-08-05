@@ -118,10 +118,10 @@
                
                 <!-- Optionally, you can add icons to the links -->
                 <li class="active"  ><a href="{{url('/home') }}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
-              <li class="active"  ><a href="{{'/company'}}" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
-                <li class="active" ><a href="{{'/department'}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
-                <li class="active" ><a href="{{'/position'}}"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>
-                <li class="active"  ><a href="{{'/employee'}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
+              <li class="active"  ><a href="{{url('/company')}}" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
+                <li class="active" ><a href="{{url('/department')}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
+                <li class="active" ><a href="{{url('/position')}}"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>
+                <li class="active"  ><a href="{{url('/employee')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
                 <li class="treeview">
                   <a href="#"><i class="glyphicon glyphicon-eye-open"></i> <span>ดูแผนผัง HR บริษัท</span>
                     <span class="pull-right-container">
