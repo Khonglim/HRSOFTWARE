@@ -36,6 +36,12 @@ Route::get('states/get/{id}', 'DynamicDependent@getStates');
 
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 
-Route::get('pdf','PDFController@pdf');
+Route::get('/pdf', function () {
+    $data = [
+        'name'=>'อะไรสักอย่าง ไม่รู้นามสกุลอะไร'
+    ];
+    $pdf = PDF::loadView('pdf', $data);
+    return @$pdf->stream();
+});
 
 

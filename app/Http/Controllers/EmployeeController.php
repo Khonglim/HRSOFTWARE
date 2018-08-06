@@ -43,9 +43,9 @@ class EmployeeController extends Controller
     {
 
         $this->validate($request,[
-            'name' => 'required|min:5|max:35',
-            'lastname' => 'required|min:5|max:35',
-            'nikname' => 'required|min:5|max:35',
+            'name' => 'required|max:35',
+            'lastname' => 'required|max:35',
+            'nikname' => 'required|max:35',
             'gender' => 'required',
 
             'image' => 'required',
@@ -336,13 +336,13 @@ class EmployeeController extends Controller
     {
 
         $this->validate($request,[
-            'name' => 'required|min:5|max:35',
-            'lastname' => 'required|min:5|max:35',
-            'nikname' => 'required|min:5|max:35',
+            'name' => 'required|max:35',
+            'lastname' => 'requiredmax:35',
+            'nikname' => 'required|max:35',
             'gender' => 'required',
 
             
-            'nationality' => 'required|min:5|max:35',
+            'nationality' => 'required|max:35',
             'birthday' => 'required',
             'email' => ['required',Rule::unique('personal')->ignore($request->id),],
             'address1' => 'required',
