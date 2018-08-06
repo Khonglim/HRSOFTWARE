@@ -189,14 +189,14 @@
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('address1') ? 'has-error' : '' }}" >
                                             <label >ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label>
-                                            <textarea name="address1"  required="required" class="form-control"  rows="1"  ></textarea>
+                                            <textarea name="address1"  required="required" class="form-control"  rows="1"  >{{ old('address1') }}</textarea>
                                             <span class="text-danger">{{ $errors->first('address1') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('address2') ? 'has-error' : '' }}" >
                                             <label > ที่อยู่ตามบัตรประชาชน</label>
-                                            <textarea name="address2"  required="required" class="form-control"  rows="1"  ></textarea>
+                                            <textarea name="address2"  required="required" class="form-control"  rows="1" >{{ old('address2') }}</textarea>
                                             <span class="text-danger">{{ $errors->first('address2') }}</span>
                                             </div>
                                     </div>
@@ -250,42 +250,34 @@
                             <div class="col-md-3">
                                     <div class="form-group">
                                     <label >บัตรประจำตัวผู้เสียภาษี</label>
-                                    {{Form::date('texid','',['class'=>'form-control'])}}   
+                                    {{Form::text('texid','',['class'=>'form-control'])}}   
                                    
                                     </div>
                             </div>
                             <div class="col-md-2">
                                     <div class="form-group {{ $errors->has('living_status') ? 'has-error' : '' }}" >
                                             <label >สถานะความเป็นอยู่</label>
-                                           
-                                            <select name="living_status"  class="form-control">
-                                                    @if( old('living_status') != '')
-                                                     <option value="{{ old('living_status') }}">{{ old('living_status') }}</option>
-                                                     @endif
-                                                      <option value="">:: เลือก ::</option>
-                                                      <option  value="บ้านส่วนตัว">บ้านส่วนตัว </option>
-                                                      <option  value="บ้านเช่า">บ้านเช่า</option>
-                                                      <option value="อาศัยกับบิดามารดา">อาศัยกับบิดามารดา</option>
-                                                      <option  value="อาศัยกับผู้อื่น">อาศัยกับผู้อื่น</option>
-                                                      
-                                                    </select>
+                                            {{ Form::select('living_status', [
+                                                            '' => '::เลือก::', 
+                                                            'บ้านส่วนตัว' => 'บ้านส่วนตัว',
+                                                            'บ้านเช่า' => 'บ้านเช่า',
+                                                            'อาศัยกับบิดามารดา'=> 'อาศัยกับบิดามารดา',
+                                                            'อาศัยกับผู้อื่น'=>'อาศัยกับผู้อื่น'
+                                                ],null, ['class' => 'form-control']) }}
                                         <span class="text-danger">{{ $errors->first('living_status') }}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <div class="form-group{{ $errors->has('marital_status') ? 'has-error' : '' }}" >
+                                    <div class="form-group {{ $errors->has('marital_status') ? 'has-error' : '' }}" >
                                             <label >สถานะครอบครัว</label>
-                                            <select name="marital_status"  class="form-control" >
-                                                        @if( old('marital_status') != '')
-                                                        <option value="{{ old('marital_status') }}">{{ old('marital_status') }}</option>
-                                                        @endif
-                                                    <option  value="">:: เลือก ::</option>
-                                                    <option  value="โสด">โสด</option>
-                                                    <option  value="สมรส">สมรส</option>
-                                                    <option  value="หย่า">หย่า</option>
-                                                    <option  value="หม้าย">หม้าย</option>
-                                                    <option  value="แยกกันอยู่">แยกกันอยู่</option>
-                                                  </select>
+                                            {{ Form::select('marital_status', [
+                                                '' => '::เลือก::', 
+                                                'โสด' => 'โสด',
+                                                'สมรส' => 'สมรส',
+                                                'หย่า'=> 'หย่า',
+                                                'หม้าย'=>'หม้าย',
+                                                'แยกกันอยู่'=>'แยกกันอยู่'
+                                    ],null, ['class' => 'form-control']) }}
                                                   <span class="text-danger">{{ $errors->first('marital_status') }}</span>        
                                     </div> 
                                 </div>
@@ -293,28 +285,21 @@
                                 <div class="col-md-2">
                                         <div class="form-group">
                                                 <label >กรณีแต่งงาน</label>
-                                                <select style="width:170px" name="if_marricd"  class="form-control" >
-                                                                @if( old('if_marricd') != '')
-                                                                <option value="{{ old('if_marricd') }}">{{ old('if_marricd') }}</option>
-                                                                @endif
-                                                        <option  value="">:: เลือก ::</option>
-                                                        <option  value="จดทะเบียนสมรส">จดทะเบียนสมรส</option>
-                                                        <option  value="ไม่ได้จดทะเบียนสมรส">ไม่ได้จดทะเบียนสมรส</option>
-                                                      </select>
-
+                                                {{ Form::select('if_marricd', [
+                                                        '' =>'::เลือก::', 
+                                                        'จดทะเบียนสมรส' => 'จดทะเบียนสมรส',
+                                                        'ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'
+                                            ],null, ['class' => 'form-control']) }}
                                         </div> 
                                     </div>
                                     <div class="col-md-2">
                                             <div class="form-group">
                                             <label >คู่มสมรส</label>
-                                            <select  name="spouse"  class="form-control">
-                                                        @if( old('spouse') != '')
-                                                        <option value="{{ old('spouse') }}">{{ old('spouse') }}</option>
-                                                        @endif
-                                                    <option  value=" ">:: เลือก ::</option>
-                                                    <option   value="มี">มี</option>
-                                                    <option   value="ไม่มี">ไม่มี</option>
-                                                  </select>
+                                            {{ Form::select('spouse', [
+                                                        '' =>'::เลือก::', 
+                                                        'มี' => 'มี',
+                                                        'ไม่มี' => 'ไม่มี'
+                                            ],null, ['class' => 'form-control']) }}
                                             </div>
                                     </div>
                                 
@@ -388,16 +373,12 @@
                                             <div class="col-md-2">
                                                     <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
                                                     <label > สถานะทางทหาร</label>
-                                                    <select style="width:100px" name="military_service" class="form-control" >
-                                                                @if( old('military_service') != '')
-                                                                <option value="{{ old('military_service') }}">{{ old('military_service') }}</option>
-                                                                @endif
-                                                            <option value="">ไม่มี</option>
-                                                            <option  value="ได้รับการยกเว้น">ได้รับการยกเว้น</option>
-                                                            <option  value="ศึกษาวิชาทหาร">ศึกษาวิชาทหาร</option>
-                                                            <option  value="ผ่านการเกณฑ์ทหาร">ผ่านการเกณฑ์ทหาร</option>
-                                                            <option  value="อื่นๆ">อื่นๆ</option>
-                                                          </select>
+                                                    {{ Form::select('military_service', [
+                                                        '' =>'::ไม่มี::', 
+                                                        'ได้รับการยกเว้น' => 'ได้รับการยกเว้น',
+                                                        'ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร',
+                                                        'ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'
+                                            ],null, ['class' => 'form-control']) }}
                                                           <span class="text-danger">{{ $errors->first('military_service') }}</span>
                                                         </div> 
                                                 </div>
@@ -406,7 +387,7 @@
                                       
     
                                             <div class="col-md-3">
-                                                    <div class="form-group{{ $errors->has('namefather') ? 'has-error' : '' }}" >
+                                                    <div class="form-group {{ $errors->has('namefather') ? 'has-error' : '' }}" >
                                                     <label> ชื่อบิดา</label>
                                                     {{Form::text('namefather','',['class'=>'form-control'])}}  
                                                    
@@ -431,12 +412,14 @@
                                                     </div>
                                                         <div class="col-md-3"><br>
                                                             <div class="form-group{{ $errors->has('alivef') ? 'has-error' : '' }}" >
-                                                                <input type="radio" name="alivef" value="ยังมีชีวิตอยู่">ยังมีชีวิตอยู่ 
-                                                                <input type="radio" name="alivef" value="ถึงแก่กรรม">ถึงแก่กรรม
+                                                                {{ Form::radio('alivef', 'ชาย') }}ยังมีชีวิตอยู่
+                                       
+                                                                 {{ Form::radio('alivef', 'หญิง') }}ถึงแก่กรรม
+                                                               
                                                                 <br> <span class="text-danger">{{ $errors->first('alivef') }}</span>
                                                             </div>
                                                         </div>
-                                </div>
+                                                  </div>
                                 <div class="row">
                                         <div class="col-md-3">
                                                 <div class="form-group {{ $errors->has('namemother') ? 'has-error' : '' }}" >
@@ -464,8 +447,9 @@
                                                 </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group {{ $errors->has('alivem') ? 'has-error' : '' }}" >
-                                                           <input type="radio" name="alivem" value="ยังมีชีวิตอยู่">ยังมีชีวิตอยู่ 
-                                                           <input type="radio" name="alivem" value="ถึงแก่กรรม">ถึงแก่กรรม
+                                                                {{ Form::radio('alivem', 'ชาย') }}ยังมีชีวิตอยู่
+                                       
+                                                                 {{ Form::radio('alivem', 'หญิง') }}ถึงแก่กรรม
                                                             <br><span class="text-danger">{{ $errors->first('alivem') }}</span>
                                      </div>
                                 </div>
@@ -786,43 +770,34 @@
                                     <td>ไทย</td>
                                     <td>
                                             <div class="form-group {{ $errors->has('thais') ? 'has-error' : '' }}">
-                                            <select style="width:90px" id="thais" name="thais" class="form-control">
-                                                        @if( old('thais') != '')
-                                                        <option value="{{ old('thais') }}">{{ old('thais') }}</option>
-                                                        @endif
-                                            <option value="">::เลือก::</option>
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                                {{ Form::select('thais', [
+                                                        '' =>'::เลือก::', 
+                                                        'ดี' => 'ดี',
+                                                        'พอใช้' => 'พอใช้',
+                                                        'ไม่ดี' => 'ไม่ดี'
+                                                   ],null, ['class' => 'form-control']) }}
                                             <span class="text-danger">{{ $errors->first('thais') }}</span>
                                         </div>
                                         </td>
                                     <td>
                                         <div class="form-group {{ $errors->has('thail') ? 'has-error' : '' }}">
-                                            <select style="width:90px" id="thail"  name="thail" class="form-control">
-                                                        @if( old('thail') != '')
-                                                        <option value="{{ old('thail') }}">{{ old('thail') }}</option>
-                                                        @endif
-                                            <option value="">::เลือก::</option>
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                                {{ Form::select('thail', [
+                                                        '' =>'::เลือก::', 
+                                                        'ดี' => 'ดี',
+                                                        'พอใช้' => 'พอใช้',
+                                                        'ไม่ดี' => 'ไม่ดี'
+                                                   ],null, ['class' => 'form-control']) }}
                                             <span class="text-danger">{{ $errors->first('thail') }}</span>
                                         </div>
                                         </td>
                                     <td>
                                         <div class="form-group {{ $errors->has('thair') ? 'has-error' : '' }}">
-                                            <select style="width:90px" id="thair"  name="thair" class="form-control">
-                                                        @if( old('thair') != '')
-                                                        <option value="{{ old('thair') }}">{{ old('thair') }}</option>
-                                                        @endif
-                                            <option value="">::เลือก::</option>
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                                {{ Form::select('thair', [
+                                                '' =>'::เลือก::', 
+                                                'ดี' => 'ดี',
+                                                'พอใช้' => 'พอใช้',
+                                                'ไม่ดี' => 'ไม่ดี'
+                                           ],null, ['class' => 'form-control']) }}
                                             <span class="text-danger">{{ $errors->first('thair') }}</span>
 
                                         </td>
@@ -831,43 +806,35 @@
                                     <td>อังกฤษ</td>
                                     <td>
                                         <div class="form-group {{ $errors->has('engliss') ? 'has-error' : '' }}">
-                                            <select style="width:90px" id="engliss" name="engliss" class="form-control">
-                                                        @if( old('engliss') != '')
-                                                        <option value="{{ old('engliss') }}">{{ old('engliss') }}</option>
-                                                        @endif                                                      
-                                            <option value="">::เลือก::</option>
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                                {{ Form::select('engliss', [
+                                                        '' =>'::เลือก::', 
+                                                        'ดี' => 'ดี',
+                                                        'พอใช้' => 'พอใช้',
+                                                        'ไม่ดี' => 'ไม่ดี'
+                                                   ],null, ['class' => 'form-control']) }}
                                             <span class="text-danger">{{ $errors->first('engliss') }}</span>
 
                                         </td>
                                     <td>
                                         <div class="form-group {{ $errors->has('englisl') ? 'has-error' : '' }}">
-                                            <select style="width:90px" id="englisl" name="englisl" class="form-control">
-                                                        @if( old('englisl') != '')
-                                                        <option value="{{ old('englisl') }}">{{ old('englisl') }}</option>
-                                                        @endif      
-                                            <option value="">::เลือก::</option>
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                                {{ Form::select('englisl', [
+                                                        '' =>'::เลือก::', 
+                                                        'ดี' => 'ดี',
+                                                        'พอใช้' => 'พอใช้',
+                                                        'ไม่ดี' => 'ไม่ดี'
+                                                   ],null, ['class' => 'form-control']) }}
                                             <span class="text-danger">{{ $errors->first('englisl') }}</span>
 
                                         </td>
                                     <td>
                                         <div class="form-group {{ $errors->has('englisr') ? 'has-error' : '' }}">
-                                            <select style="width:90px" id="englisr" name="englisr" class="form-control">
-                                                        @if( old('englisr') != '')
-                                                        <option value="{{ old('englisr') }}">{{ old('englisr') }}</option>
-                                                        @endif 
-                                            <option value="">::เลือก::</option>
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                                {{ Form::select('englisr', [
+                                                        '' =>'::เลือก::', 
+                                                        'ดี' => 'ดี',
+                                                        'พอใช้' => 'พอใช้',
+                                                        'ไม่ดี' => 'ไม่ดี'
+                                                   ],null, ['class' => 'form-control']) }}
+        
                                             <span class="text-danger">{{ $errors->first('englisr') }}</span>
                                             
 
@@ -876,37 +843,28 @@
                                   <tr>
                                     <td>อื่นๆ <input type="text" name="otherr" id="otherr" style="width:150px" name="otherr" class="form-control"/></td>
                                     <td>
-                                            <select style="width:90px" id="othes" name="othes" class="form-control">
-                                                        @if( old('othes') != '')
-                                                        <option value="{{ old('othes') }}">{{ old('othes') }}</option>
-                                                        @endif 
-                                                <option value="">::เลือก::</option>
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                        {{ Form::select('othes', [
+                                                '' =>'::เลือก::', 
+                                                'ดี' => 'ดี',
+                                                'พอใช้' => 'พอใช้',
+                                                'ไม่ดี' => 'ไม่ดี'
+                                           ],null, ['class' => 'form-control']) }}
                                         </td>
                                     <td>
-                                            <select style="width:90px" id="othel" name="othel" class="form-control">
-                                                <option value="">::เลือก::</option>
-                                                @if( old('othel') != '')
-                                                <option value="{{ old('othel') }}">{{ old('othel') }}</option>
-                                                @endif 
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                        {{ Form::select('othel', [
+                                                '' =>'::เลือก::', 
+                                                'ดี' => 'ดี',
+                                                'พอใช้' => 'พอใช้',
+                                                'ไม่ดี' => 'ไม่ดี'
+                                           ],null, ['class' => 'form-control']) }}
                                         </td>
                                     <td>
-                                            <select style="width:90px" id="other" name="other" class="form-control">
-                                                <option value="">::เลือก::</option>
-                                                @if( old('other') != '')
-                                                <option value="{{ old('other') }}">{{ old('other') }}</option>
-                                                @endif
-                                            <option value="ดี">ดี</option>
-                                            <option  value="พอใช้">พอใช้</option>
-                                            <option  value="ไม่ดี">ไม่ดี</option>
-                                            </select>
+                                        {{ Form::select('other', [
+                                                '' =>'::เลือก::', 
+                                                'ดี' => 'ดี',
+                                                'พอใช้' => 'พอใช้',
+                                                'ไม่ดี' => 'ไม่ดี'
+                                           ],null, ['class' => 'form-control']) }}
                                         </td>
                                   </tr>
                                 </tbody>

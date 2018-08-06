@@ -51,25 +51,26 @@ class EmployeeController extends Controller
             'image' => 'required',
             'nationality' => 'required|min:5|max:35',
             'birthday' => 'required',
-            'email' => 'required',
+            'email' =>'required',
             'address1' => 'required',
-            'tel' => 'required',
+            'tel' => 'required|numeric',
             'race' => 'required',
             'religion' => 'required',
-            'age' => 'required',
+            'age' => 'required|numeric',
 
-            'height' => 'required',
-            'weight' => 'required',
-            'mobile' => 'required',
+            'height' => 'required|numeric',
+            'weight' => 'required|numeric',
+            'mobile' => 'required|numeric',
             'email' => 'required',
             'address2' => 'required',
-            'idcard' => 'required',
+            'idcard' => 'required|numeric',
             'issued' => 'required',
             'province_crad' => 'required',
             
             'issueddate' => 'required',
             'living_status' => 'required',
             'issueddate' => 'required',
+            'marital_status' => 'required',
             'expid' => 'required',
             'military_service' => 'required',
 
@@ -104,15 +105,11 @@ class EmployeeController extends Controller
             'crash3' => 'required',
             'yes' => 'required',
             'owncar' => 'required',
-            'cardec' => 'required',
+           
             'exitwork' => 'required',
             'serious_ill' => 'required',
             'offense' => 'required',
             'pregnant' => 'required'
-
-
-
-
         ]);
         $personal = new Personal;
         $personal->name = $request->name;
@@ -337,6 +334,83 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->validate($request,[
+            'name' => 'required|min:5|max:35',
+            'lastname' => 'required|min:5|max:35',
+            'nikname' => 'required|min:5|max:35',
+            'gender' => 'required',
+
+            
+            'nationality' => 'required|min:5|max:35',
+            'birthday' => 'required',
+            'email' => ['required',Rule::unique('personal')->ignore($request->id),],
+            'address1' => 'required',
+            'tel' => 'required|numeric',
+            'race' => 'required',
+            'religion' => 'required',
+            'age' => 'required|numeric',
+
+            'height' => 'required|numeric',
+            'weight' => 'required|numeric',
+            'mobile' => 'required|numeric',
+            'email' => 'required',
+            'address2' => 'required',
+            'idcard' => 'required|numeric',
+            'issued' => 'required',
+            'province_crad' => 'required',
+            
+            'issueddate' => 'required',
+            'living_status' => 'required',
+            'issueddate' => 'required',
+            'marital_status' => 'required',
+            'expid' => 'required',
+            'military_service' => 'required',
+
+
+            'namefather' => 'required',
+            'lastfather' => 'required',
+            'occupation_father' => 'required',
+            'alivef' => 'required',
+
+            'namemother' => 'required',
+            'lasrmother' => 'required',
+            'occupationm' => 'required',
+            'alivem' => 'required',
+
+            'thais' => 'required',
+            'thail' => 'required',
+            'thair' => 'required',
+            
+
+            'engliss' => 'required',
+            'englisl' => 'required',
+            'englisr' => 'required',
+
+            'namecm' => 'required',
+            'lastnamecm' => 'required',
+            'firm' => 'required',
+            'telecm' => 'required',
+            'positioncm' => 'required',
+
+            'crash1' => 'required',
+            'crash2' => 'required',
+            'crash3' => 'required',
+            'yes' => 'required',
+            'owncar' => 'required',
+            'cardec' => 'required',
+            'exitwork' => 'required',
+            'serious_ill' => 'required',
+            'offense' => 'required',
+            'pregnant' => 'required'
+        ]);
+
+
+
+
+
+
+
 
 
         $personal =  Personal::find($id);
