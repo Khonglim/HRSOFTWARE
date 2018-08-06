@@ -12,22 +12,30 @@
 */
 
 Route::resource('company','CompanyController');
+
 Route::resource('department','DepartmentController');
+
 Route::resource('position','PositionController');
+
 Route::resource('employee','EmployeeController');
+
 Route::get('/orgchartcompany','JorgchartController@company');
+
 Auth::routes();
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', function () {return view('auth.login');});
+
 Route::resource('home','HomeController');
+
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('iframe', function () {
 
-    return view('iframe');
+Route::get('iframe', function () {return view('iframe');});
 
-});
 Route::get('/dynamicdependent','DynamicDependent@index');
+
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
+
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
+
+Route::get('pdf','PDFController@pdf');
+
 
