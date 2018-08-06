@@ -257,8 +257,6 @@ class EmployeeController extends Controller
         $personal->position3 = $request->position3;
      
 
-
-       
         $personal->namecm = $request->namecm;
         $personal->lastnamecm = $request->lastnamecm;
         $personal->firm = $request->firm;

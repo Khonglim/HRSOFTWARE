@@ -60,7 +60,7 @@
                     <input type="submit" value="Sign In" name="login">
             </form>
           
-              
+            <p>Don't Have an Account ? <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></p>
                 </div>
                 <!-- /.login-box-body -->
               </div>
