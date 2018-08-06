@@ -60,7 +60,7 @@ class EmployeeController extends Controller
 
             'height' => 'required|numeric',
             'weight' => 'required|numeric',
-            'mobile' => 'required|numeric',
+            'moblie' => 'required|numeric',
             'email' => 'required',
             'address2' => 'required',
             'idcard' => 'required|numeric',
@@ -353,7 +353,7 @@ class EmployeeController extends Controller
 
             'height' => 'required|numeric',
             'weight' => 'required|numeric',
-            'mobile' => 'required|numeric',
+            'moblie' => 'required|numeric',
             'email' => 'required',
             'address2' => 'required',
             'idcard' => 'required|numeric',
@@ -398,7 +398,7 @@ class EmployeeController extends Controller
             'crash3' => 'required',
             'yes' => 'required',
             'owncar' => 'required',
-            'cardec' => 'required',
+            
             'exitwork' => 'required',
             'serious_ill' => 'required',
             'offense' => 'required',

@@ -161,11 +161,11 @@
                                     </div>
     
                                     <div class="col-md-2">
-                                            <div class="form-group {{ $errors->has('mobile') ? 'has-error' : '' }}">
+                                            <div class="form-group {{ $errors->has('moblie') ? 'has-error' : '' }}">
                                             <label >โทรศัพท์มือถือ</label>
-                                            {{Form::text('mobile','',['class'=>'form-control'])}}   
+                                            {{Form::text('moblie','',['class'=>'form-control'])}}   
                                        
-                                            <span class="text-danger">{{ $errors->first('mobile') }} </span>
+                                            <span class="text-danger">{{ $errors->first('moblie') }} </span>
                                             </div>
                                     </div>
                                     <div class="col-md-2">
@@ -486,42 +486,10 @@
                                             <td align="center" >ประถมศึกษา</td>
                                             <td> {{Form::text('primary','',['class'=>'form-control'])}}</td>
                                             <td> 
-                                                   
-                                                <select name="year1" id="year1" class="form-control">
-                                                                @if( old('year1') != '')
-                                                                <option value="{{ old('year1') }}">{{ old('year1') }}</option>
-                                                                @endif
-                                                    <option value="">:: ปี ::</option>
-        
-                                                    <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                    <?php } ?>
-        
-                                                    </select>
-                                                    
-                                            
-                                           
+                                        {{Form::text('year1','',['class'=>'form-control'])}} 
                                                 </td>
                                                 <td>
-                                               
-                                                     <select name="year2" id="year2" class="form-control" >
-                                                                @if( old('year2') != '')
-                                                                <option value="{{ old('year2') }}">{{ old('year2') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-            
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-            
-                                                  <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-            
-                                                        <?php } ?>
-            
-                                                        </select>
-                                                    
-                                                
-                                               
+                                               {{Form::text('year2','',['class'=>'form-control'])}} 
                                                 </td>
                                             <td>{{Form::text('gpa','',['class'=>'form-control'])}}</td>
                                             <td>{{Form::text('major','',['class'=>'form-control'])}}</td>
@@ -530,33 +498,9 @@
                                           <tr>
                                                 <td>มัธยมศึกษา</td>
                                                 <td>{{Form::text('secondary','',['class'=>'form-control'])}} </td>
-                                                <td> <select name="year3" id="year3"  class="form-control">
-                                                                @if( old('year3') != '')
-                                                                <option value="{{ old('year1') }}">{{ old('year3') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
+                                                <td> {{Form::text('year3','',['class'=>'form-control'])}} </td>
         
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                    <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-        
-                                                <td> <select name="year4" id="year4"  class="form-control">
-                                                                @if( old('year4') != '')
-                                                                <option value="{{ old('year4') }}">{{ old('year4') }}</option>
-                                                                @endif
-                                                 <option value="">:: ปี ::</option>
-        
-                                                 <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                              <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                 <?php } ?>
-        
-                                             </select></td>
+                                                <td>{{Form::text('year4','',['class'=>'form-control'])}} </td>
                                                 <td> {{Form::text('gpas','',['class'=>'form-control'])}}</td>
                                                 <td> {{Form::text('majors','',['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('degree2','',['class'=>'form-control'])}}</td>
@@ -565,30 +509,8 @@
                                           <tr>
                                                 <td>อาชีวะศึกษา</td>
                                                 <td>{{Form::text('vocation','',['class'=>'form-control'])}}</td>
-                                                <td><select name="year5" id="year5" class="form-control" >
-                                                                @if( old('year5') != '')
-                                                                <option value="{{ old('year5') }}">{{ old('year5') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                  <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-                                                <td> <select name="year6" id="year6" class="form-control" >
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
+                                                <td>{{Form::text('year5','',['class'=>'form-control'])}} </td>
+                                                <td> {{Form::text('year6','',['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('gpav','',['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('majorv','',['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('degree3','',['class'=>'form-control'])}}</td>
@@ -597,32 +519,8 @@
                                           <tr>
                                                 <td>อนุปริญญา</td>
                                                 <td>{{Form::text('diploma','',['class'=>'form-control'])}}</td>
-                                                <td><select name="year7" id="year7"  class="form-control">
-                                                                @if( old('year7') != '')
-                                                                <option value="{{ old('year7') }}">{{ old('year7') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-                                                <td><select name="year8" id="year8" class="form-control" >
-                                                                @if( old('year8') != '')
-                                                                <option value="{{ old('year8') }}">{{ old('year8') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
+                                                <td>{{Form::text('year7','',['class'=>'form-control'])}} </td>
+                                                <td>{{Form::text('year8','',['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('gpad','',['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('majord','',['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('degree4','',['class'=>'form-control'])}}</td>
@@ -632,32 +530,8 @@
                                           <tr>
                                                 <td>ปริญญาตรี</td>
                                                 <td>{{Form::text('bachelor','',['class'=>'form-control'])}}</td>
-                                                <td><select name="year9" id="year9"  class="form-control">
-                                                                @if( old('year9') != '')
-                                                                <option value="{{ old('year9') }}">{{ old('year9') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-                                                <td> <select name="year10" id="year10"  class="form-control">
-                                                                @if( old('year9') != '')
-                                                                <option value="{{ old('year10') }}">{{ old('year10') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
+                                                <td> {{Form::text('year9','',['class'=>'form-control'])}}  </td>
+                                                <td>{{Form::text('year10','',['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('gpab','',['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('majorb','',['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('degree5','',['class'=>'form-control'])}}</td>
@@ -668,32 +542,9 @@
                                           <tr>
                                                 <td>ปริญญาโท</td>
                                                 <td>{{Form::text('master','',['class'=>'form-control'])}}</td>
-                                                <td> <select name="year11" id="year11"  class="form-control">
-                                                                @if( old('year11') != '')
-                                                                <option value="{{ old('year11') }}">{{ old('year11') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-                                                <td><select name="year12" id="year12"  class="form-control">
-                                                                @if( old('year12') != '')
-                                                                <option value="{{ old('year12') }}">{{ old('year12') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                      <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select>
+                                                <td>{{Form::text('year11','',['class'=>'form-control'])}}</td>
+                                                <td>
+                                                {{Form::text('year12','',['class'=>'form-control'])}}     
                                                 </td>
                                                 <td>{{Form::text('gpam','',['class'=>'form-control'])}} </td>
                                                 <td> {{Form::text('majorm','',['class'=>'form-control'])}}</td>
@@ -704,33 +555,11 @@
                                           <tr>
                                                 <td>อื่นๆ</td>
                                                 <td> {{Form::text('otherE','',['class'=>'form-control'])}}</td>
-                                                <td> <select name="year13" id="year13"  class="form-control">
-                                                                @if( old('year13') != '')
-                                                                <option value="{{ old('year13') }}">{{ old('year13') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                              <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select>
+                                                <td>       
+                                                         {{Form::text('year13','',['class'=>'form-control'])}}
                                                 </td>
-                                                <td><select name="year14" id="year14"  class="form-control">
-                                                                @if( old('year14') != '')
-                                                                <option value="{{ old('year14') }}">{{ old('year14') }}</option>
-                                                                @endif
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                              <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select>
+                                                <td>
+                                                        {{Form::text('year14','',['class'=>'form-control'])}}
                                                 </td>
                                                 <td> {{Form::text('gpao','',['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('majoro','',['class'=>'form-control'])}}</td>

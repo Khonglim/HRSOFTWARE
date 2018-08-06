@@ -159,11 +159,11 @@
                                     </div>
     
                                     <div class="col-md-2">
-                                            <div class="form-group {{ $errors->has('mobile') ? 'has-error' : '' }}">
+                                            <div class="form-group {{ $errors->has('moblie') ? 'has-error' : '' }}">
                                             <label >โทรศัพท์มือถือ</label>
-                                            {{Form::text('mobile',$personal->mobile,['class'=>'form-control'])}}   
+                                            {{Form::text('moblie',$personal->moblie,['class'=>'form-control'])}}   
                                        
-                                            <span class="text-danger">{{ $errors->first('mobile') }} </span>
+                                            <span class="text-danger">{{ $errors->first('moblie') }} </span>
                                             </div>
                                     </div>
                                     <div class="col-md-2">
@@ -256,8 +256,7 @@
                                     <div class="form-group {{ $errors->has('living_status') ? 'has-error' : '' }}" >
                                             <label >สถานะความเป็นอยู่</label>
                                                     {{ Form::select('living_status', [
-                                                          
-                                                            '' => '::เลือก::', 
+                                                          $personal->living_status=>$personal->living_status,
                                                             'บ้านส่วนตัว' => 'บ้านส่วนตัว',
                                                             'บ้านเช่า' => 'บ้านเช่า',
                                                             'อาศัยกับบิดามารดา'=> 'อาศัยกับบิดามารดา',
@@ -271,7 +270,7 @@
                                     <div class="form-group{{ $errors->has('marital_status') ? 'has-error' : '' }}" >
                                             <label >สถานะครอบครัว</label>
                                                   {{ Form::select('marital_status', [
-                                                            '' => '::เลือก::', 
+                                                              $personal->marital_status=>$personal->marital_status,
                                                             'โสด' => 'โสด',
                                                             'สมรส' => 'สมรส',
                                                             'หย่า'=> 'หย่า',
@@ -286,7 +285,7 @@
                                         <div class="form-group">
                                                 <label >กรณีแต่งงาน</label>
                                                       {{ Form::select('if_marricd', [
-                                                            '' =>'::เลือก::', 
+                                                            $personal->if_marricd=>$personal->if_marricd, 
                                                             'จดทะเบียนสมรส' => 'จดทะเบียนสมรส',
                                                             'ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'
                                                 ],null, ['class' => 'form-control']) }}
@@ -296,7 +295,7 @@
                                             <div class="form-group">
                                             <label >คู่มสมรส</label>
                                                   {{ Form::select('spouse', [
-                                                        '' =>'::เลือก::', 
+                                                       $personal->spouse=>$personal->spouse,
                                                         'มี' => 'มี',
                                                         'ไม่มี' => 'ไม่มี'
                                             ],null, ['class' => 'form-control']) }}
@@ -375,7 +374,7 @@
                                                     <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
                                                     <label > สถานะทางทหาร</label>
                                                           {{ Form::select('military_service', [
-                                                                '' =>'::ไม่มี::', 
+                                                              $personal->military_service=>$personal->military_service, 
                                                                 'ได้รับการยกเว้น' => 'ได้รับการยกเว้น',
                                                                 'ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร',
                                                                 'ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'
@@ -390,7 +389,7 @@
                                             <div class="col-md-3">
                                                     <div class="form-group  {{ $errors->has('namefather') ? 'has-error' : '' }}" >
                                                     <label > ชื่อบิดา</label>
-                                                    {{Form::text('namefather',$personal->father,['class'=>'form-control'])}}  
+                                                    {{Form::text('namefather',$personal->namefather,['class'=>'form-control'])}}  
                                                    
                                                     <span class="text-danger">{{ $errors->first('namefather') }}</span>
                                                 </div>
@@ -491,39 +490,11 @@
                                           <tr >
                                             <td align="center" >ประถมศึกษา</td>
                                             <td> {{Form::text('primary',$personal->primary,['class'=>'form-control'])}}</td>
-                                            <td> 
-                                                   
-                                                <select name="year1" id="year1" class="form-control">
-        
-                                                    <option value="">:: ปี ::</option>
-        
-                                                    <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                    <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                    <?php } ?>
-        
-                                                    </select>
-                                                    
-                                            
-                                           
+                                            <td>      
+                                                {{Form::text('year1',$personal->year1,['class'=>'form-control'])}}
                                                 </td>
                                                 <td>
-                                               
-                                                     <select name="year2" id="year2" class="form-control" >
-            
-                                                        <option value="">:: ปี ::</option>
-            
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-            
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-            
-                                                        <?php } ?>
-            
-                                                        </select>
-                                                    
-                                                
-                                               
+                                                {{Form::text('year2',$personal->year2,['class'=>'form-control'])}}
                                                 </td>
                                             <td>{{Form::text('gpa',$personal->gpa,['class'=>'form-control'])}}</td>
                                             <td>{{Form::text('major',$personal->major,['class'=>'form-control'])}}</td>
@@ -532,29 +503,12 @@
                                           <tr>
                                                 <td>มัธยมศึกษา</td>
                                                 <td>{{Form::text('secondary',$personal->secondary,['class'=>'form-control'])}} </td>
-                                                <td> <select name="year3" id="year3"  class="form-control">
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-        
-                                                <td> <select name="year4" id="year4"  class="form-control">
-        
-                                                 <option value="">:: ปี ::</option>
-        
-                                                 <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                             <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                 <?php } ?>
-        
-                                             </select></td>
+                                                <td> 
+                                                {{Form::text('year3',$personal->year3,['class'=>'form-control'])}}
+                                                </td>
+                                                <td> 
+                                                {{Form::text('year4',$personal->year4,['class'=>'form-control'])}}    
+                                                </td>
                                                 <td> {{Form::text('gpas',$personal->gpas,['class'=>'form-control'])}}</td>
                                                 <td> {{Form::text('majors',$personal->majors,['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('degree2',$personal->degree2,['class'=>'form-control'])}}</td>
@@ -563,28 +517,13 @@
                                           <tr>
                                                 <td>อาชีวะศึกษา</td>
                                                 <td>{{Form::text('vocation',$personal->vocation,['class'=>'form-control'])}}</td>
-                                                <td><select name="year5" id="year5" class="form-control" >
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-                                                <td> <select name="year6" id="year6" class="form-control" >
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
+                                                <td>
+                                                {{Form::text('year5',$personal->year5,['class'=>'form-control'])}}  
+                                                </td>
+                                                <td> 
+                                                                {{Form::text('year6',$personal->year6,['class'=>'form-control'])}}     
+
+                                                </td>
                                                 <td>{{Form::text('gpav',$personal->gpav,['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('majorv',$personal->majorv,['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('degree3',$personal->degree3,['class'=>'form-control'])}}</td>
@@ -593,28 +532,12 @@
                                           <tr>
                                                 <td>อนุปริญญา</td>
                                                 <td>{{Form::text('diploma',$personal->diploma,['class'=>'form-control'])}}</td>
-                                                <td><select name="year7" id="year7"  class="form-control">
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-                                                <td><select name="year8" id="year8" class="form-control" >
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
+                                                <td>
+                                                {{Form::text('year7',$personal->year7,['class'=>'form-control'])}} 
+                                                </td>
+                                                <td>
+                                                {{Form::text('year8',$personal->year8,['class'=>'form-control'])}} 
+                                                </td>
                                                 <td>{{Form::text('gpad',$personal->gpad,['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('majord',$personal->majord,['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('degree4',$personal->degree4,['class'=>'form-control'])}}</td>
@@ -624,28 +547,10 @@
                                           <tr>
                                                 <td>ปริญญาตรี</td>
                                                 <td>{{Form::text('bachelor',$personal->bachelor,['class'=>'form-control'])}}</td>
-                                                <td><select name="year9" id="year9"  class="form-control">
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-                                                <td> <select name="year10" id="year10"  class="form-control">
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
+                                                <td>
+                                                                {{Form::text('year9',$personal->year9,['class'=>'form-control'])}} 
+                                                </td>
+                                                <td> {{Form::text('year10',$personal->year10,['class'=>'form-control'])}}    </td>
                                                 <td>{{Form::text('gpab',$personal->gpab,['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('majorb',$personal->majorb,['class'=>'form-control'])}} </td>
                                                 <td>{{Form::text('degree5',$personal->degree5,['class'=>'form-control'])}}</td>
@@ -656,28 +561,12 @@
                                           <tr>
                                                 <td>ปริญญาโท</td>
                                                 <td>{{Form::text('master',$personal->master,['class'=>'form-control'])}}</td>
-                                                <td> <select name="year11" id="year11"  class="form-control">
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select></td>
-                                                <td><select name="year12" id="year12"  class="form-control">
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select>
+                                                <td> 
+                                                                {{Form::text('year11',$personal->year11,['class'=>'form-control'])}}
+                                                        
+                                                </td>
+                                                <td>
+                                                                {{Form::text('year12',$personal->year12,['class'=>'form-control'])}}  
                                                 </td>
                                                 <td>{{Form::text('gpam',$personal->gpam,['class'=>'form-control'])}} </td>
                                                 <td> {{Form::text('majorm',$personal->majorm,['class'=>'form-control'])}}</td>
@@ -688,40 +577,19 @@
                                           <tr>
                                                 <td>อื่นๆ</td>
                                                 <td> {{Form::text('otherE',$personal->otherE,['class'=>'form-control'])}}</td>
-                                                <td> <select name="year13" id="year13"  class="form-control">
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select>
+                                                <td> 
+                                                             {{Form::text('year13',$personal->year13,['class'=>'form-control'])}}
                                                 </td>
-                                                <td><select name="year14" id="year14"  class="form-control">
-        
-                                                        <option value="">:: ปี ::</option>
-        
-                                                        <?php for($i=0; $i<=100; $i++) { ?>
-        
-                                                        <option value="<?php echo date("Y")-$i; ?>"><?php echo date("Y")-$i+543; ?></option>
-        
-                                                        <?php } ?>
-        
-                                                        </select>
+                                                <td>
+                                                                {{Form::text('year14',$personal->year1,['class'=>'form-control'])}}
                                                 </td>
                                                 <td> {{Form::text('gpao',$personal->gpao,['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('majoro',$personal->majoro,['class'=>'form-control'])}}</td>
                                                 <td>{{Form::text('degree7',$personal->degree7,['class'=>'form-control'])}}</td>
                                           </tr>
                                         </tbody>
-                                      </table>
-                              </div>
-
-
-
+                                </table>
+                        </div>
                   </div>  
            </div>            
      </div>
@@ -752,7 +620,7 @@
                                             <div class="form-group {{ $errors->has('thais') ? 'has-error' : '' }}">
                                          
                                             {{ Form::select('thais', [
-                                                '' =>'::เลือก::', 
+                                                 $personal->thais=>$personal->thais,
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
@@ -765,7 +633,7 @@
                                     <td>
                                         <div class="form-group {{ $errors->has('thail') ? 'has-error' : '' }}">
                                             {{ Form::select('thail', [
-                                                '' =>'::เลือก::', 
+                                                 $personal->thail=>$personal->thail, 
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
@@ -777,7 +645,7 @@
                                         <div class="form-group {{ $errors->has('thair') ? 'has-error' : '' }}">
                                             
                                             {{ Form::select('thair', [
-                                                '' =>'::เลือก::', 
+                                                 $personal->thair=>$personal->thair, 
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
@@ -792,7 +660,7 @@
                                         <div class="form-group {{ $errors->has('engliss') ? 'has-error' : '' }}">
                                          
                                          {{ Form::select('engliss', [
-                                                '' =>'::เลือก::', 
+                                               $personal->engliss=>$personal->engliss, 
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
@@ -803,7 +671,7 @@
                                     <td>
                                         <div class="form-group {{ $errors->has('englisl') ? 'has-error' : '' }}">
                                             {{ Form::select('englisl', [
-                                                '' =>'::เลือก::', 
+                                                $personal->englisl=>$personal->englisl, 
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
@@ -814,7 +682,7 @@
                                     <td>
                                         <div class="form-group {{ $errors->has('englisr') ? 'has-error' : '' }}">
                                             {{ Form::select('englisr', [
-                                                '' =>'::เลือก::', 
+                                                $personal->englisr=>$personal->englisr,
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
@@ -829,7 +697,7 @@
                                     <td>อื่นๆ{{Form::text('otherr',$personal->otherr,['class'=>'form-control'])}} </td>
                                     <td>
                                             {{ Form::select('othes', [
-                                                '' =>'::เลือก::', 
+                                                 $personal->othes=>$personal->othes, 
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
@@ -837,7 +705,7 @@
                                         </td>
                                     <td>
                                             {{ Form::select('othel', [
-                                                '' =>'::เลือก::', 
+                                                $personal->othel=>$personal->othel,
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
@@ -846,7 +714,7 @@
                                         </td>
                                     <td>
                                             {{ Form::select('other', [
-                                                '' =>'::เลือก::', 
+                                                $personal->other=>$personal->other, 
                                                 'ดี' => 'ดี',
                                                 'พอใช้' => 'พอใช้',
                                                 'ไม่ดี' => 'ไม่ดี'
