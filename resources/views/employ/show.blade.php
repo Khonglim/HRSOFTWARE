@@ -3,782 +3,714 @@
   <div class="content-wrapper">
                
         <div class="content container-fluid">  
-        <div class="row">
-                <div class="col-md-12">
-                <div class="box box-danger">
-                    <div class="box-header">
-                      <h3 class="box-title">ประวัติส่วนตัว {{$personal->name}}  {{$personal->lastname}} </h3>
-                    </div>
-                    <div class="box-body">
-                                  
-                        <div class="row">  
-                                <div class="col-md-2">
-                                        <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}" >
-                                            <img src="{{URL::asset($personal->photo)}}" height="50" width="50" >
-                                            
+
+                <h2 class="page-header">ข้อมูลของ {{$personal->name}}  {{$personal->lastname}} </h2>
+          
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- Custom Tabs -->
+                    <div class="nav-tabs-custom">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_1" data-toggle="tab">ประวัติส่วนตัว</a></li>
+                        <li><a href="#tab_2" data-toggle="tab">ประวัติการศึกษา</a></li>
+                        <li><a href="#tab_3" data-toggle="tab">ภาษา</a></li>
+                        <li><a href="#tab_4" data-toggle="tab">ประวัติการทำงาน</a></li>
+                        <li><a href="#tab_5" data-toggle="tab">อื่นๆ</a></li>
+                       
+                        <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1">
+                                <div class="row">
+                                        
+                                        <div class="col-md-2">
+                                                <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}" >
+                                                <img src="{{URL::asset($personal->photo)}}" height="75" width="75" >
                                             </div>  
-                                  </div>    
-                                <div class="col-md-2">
-
-                                       
-                                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                    <label for="name">ชื่อ:</label> 
-                                    {{Form::label($personal->name)}}          
-                                    {{Form::label($personal->lastname)}} 
-                                    <span class="text-danger">{{ $errors->first('name') }}</span>
-                                        </div>
-                                </div> 
-                        
-                                <div class="col-md-2">
-                                        <div class="form-group {{ $errors->has('nikname') ? 'has-error' : '' }}">
-                                            <label >ชื่อล่น:</label> 
-                                            {{Form::label($personal->nikname)}}  
-                                        </div>
-                                 </div> 
-                                 <div class="col-md-2">
-                                                <div class="form-group {{ $errors->has('gender') ? 'has-error' : '' }}">
-                                        <label >เพศ:</label>
-                                        {{Form::label($personal->gender)}}  
-                                         <span class="text-danger">{{ $errors->first('gender') }}</span>
+                                     </div> 
                                 </div>
-                                       
-                                </div> 
-                              <div class="col-md-2">
-                                        <div class="form-group {{ $errors->has('birthday') ? 'has-error' : '' }}">
-                                        <label >วันเกิด</label>
-                                        {{Form::date('birthday',$personal->birthday,['class'=>'form-control'])}}   
-                                        <span class="text-danger">{{ $errors->first('birthday') }}</span>
-                                </div>
-                        </div>
-                            </div>
-                      
-                            <div class="row">  
-                                    
-                                    <div class="col-md-2">
-                                        <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
-                                         <label >สัญชาติ</label>
-                                          {{Form::text('nationality',$personal->nationality,['class'=>'form-control'])}}   
-                                           
-                                            <span class="text-danger">{{ $errors->first('nationality') }}</span>
-                                            </div>
-                                    </div> 
-                                    <div class="col-md-2">
-                                            <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
-                                            <label >เชื้อชาติ</label>
-                                            {{Form::text('race',$personal->race,['class'=>'form-control'])}}   
-                                           
-                                            <span class="text-danger">{{ $errors->first('race') }}</span>
-                                            </div>
-                                    </div> 
-                                    
-                                    <div class="col-md-2">
-                                            <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
-                                            <label >ศาสนา</label>
-                                            {{Form::text('religion',$personal->religion,['class'=>'form-control'])}}   
-                                           
-                                            <span class="text-danger">{{ $errors->first('religion') }}</span>
-                                            </div>
-                                    </div> 
-                                    <div class="col-md-2">
-                                            <div class="form-group {{ $errors->has('age') ? 'has-error' : '' }}" >
-                                            <label >อายุ</label>
-                                            {{Form::text('age',$personal->age,['class'=>'form-control'])}}   
-                                           
-                                            <span class="text-danger">{{ $errors->first('age') }}</span>
-                                            </div>
-                                    </div> 
-                                    <div class="col-md-2">
-                                            <div class="form-group {{ $errors->has('height') ? 'has-error' : '' }}" >
-                                            <label >ส่วนสูง</label>
-                                            {{Form::text('height',$personal->height,['class'=>'form-control'])}}   
-
-                                          
-                                            <span class="text-danger">{{ $errors->first('height') }}</span>
-                                            </div>
-                                    </div> 
-                                    <div class="col-md-2">
-                                            <div class="form-group {{ $errors->has('weight') ? 'has-error' : '' }}" >
-                                            <label >น้ำหนัก</label>
-                                            {{Form::text('weight',$personal->height,['class'=>'form-control'])}}   
-                                          
-                                            <span class="text-danger">{{ $errors->first('weight') }}</span>
-                                            </div>
-                                    </div> 
-                               
-                            </div>
-      
-                            <div class="row">  
-                                    <div class="col-md-2">
-                                            <div class="form-group">
-                                            <label >พี่น้องกี่คน</label>
-                                            {{Form::text('brothers',$personal->brothers,['class'=>'form-control'])}}   
-                                          
-                                            </div>
-                                    </div> 
-    
-                                    <div class="col-md-2">
-                                            <div class="form-group">
-                                            <label >เป็นคนที่</label>
-                                            {{Form::text('number',$personal->number,['class'=>'form-control'])}}   
-                                           
-                                            </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                            <div class="form-group  {{ $errors->has('tel') ? 'has-error' : '' }}">
-                                            <label >โทรศัพท์ที่ติดต่อ</label>
-                                            {{Form::text('tel',$personal->tel,['class'=>'form-control'])}}   
+                                <div class="row">  
+                                   <div class="col-md-2">
+                                                <div class="form-group ">
+                                            <label for="name">ชื่อ:</label> 
+                                            {{Form::label($personal->name)}}          
+                                            {{Form::label($personal->lastname)}} 
                                             
-                                            <span class="text-danger">{{ $errors->first('tel') }}</span>
-                                            </div>
-                                    </div>
-    
-                                    <div class="col-md-2">
-                                            <div class="form-group">
-                                            <label >โทรศัพท์บ้าน</label>
-                                            {{Form::text('home',$personal->home,['class'=>'form-control'])}}   
-                                           
-                                            </div>
-                                    </div>
-    
-                                    <div class="col-md-2">
-                                            <div class="form-group {{ $errors->has('moblie') ? 'has-error' : '' }}">
-                                            <label >โทรศัพท์มือถือ</label>
-                                            {{Form::text('moblie',$personal->moblie,['class'=>'form-control'])}}   
-                                       
-                                            <span class="text-danger">{{ $errors->first('moblie') }} </span>
-                                            </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                            <div class="form-group">
-                                            <label >โทรศัพท์สำนักงาน</label>
-                                            {{Form::text('office',$personal->office,['class'=>'form-control'])}}   
-                                            
-                                            </div>
-                                    </div>
-                            </div>
-                            <div class="row">  
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                            <label>อีเมล</label>
-                                            {{Form::email('email',$personal->email,['class'=>'form-control'])}}   
-                                           
-                                            <span class="text-danger">{{ $errors->first('email') }}</span>
-                                            </div>
-                                    </div>
-    
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('address1') ? 'has-error' : '' }}" >
-                                            <label >ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label>
-                                            <textarea name="address1"  required="required" class="form-control"  rows="1"  >{{$personal->address1}}</textarea>
-                                            <span class="text-danger">{{ $errors->first('address1') }}</span>
-                                            </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('address2') ? 'has-error' : '' }}" >
-                                            <label > ที่อยู่ตามบัตรประชาชน</label>
-                                            <textarea name="address2"  required="required" class="form-control"  rows="1"  >{{$personal->address2}}</textarea>
-                                            <span class="text-danger">{{ $errors->first('address2') }}</span>
-                                            </div>
-                                    </div>
-    
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('idcard') ? 'has-error' : '' }}">
-                                            <label >เลขบัตรประชาชน</label>
-                                            {{Form::text('idcard',$personal->idcard,['class'=>'form-control'])}}   
-                                            
-                                            <span class="text-danger">{{ $errors->first('idcard') }}</span>
-                                            </div>
-                                    </div>     
-                            </div>
-                            <div class="row">
-                                    <div class="col-md-3">
-                                            <div class="form-group  {{ $errors->has('issued') ? 'has-error' : '' }}" >
-                                            <label >ออกให้ ณ อำเภอ/เขต:</label>
-                                            {{Form::text('issued',$personal->issued,['class'=>'form-control'])}}   
-                                            <span class="text-danger">{{ $errors->first('issued') }}</span>
-                                            </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
-                                            <label >จังหวัด</label>
-                                            {{Form::text('province_crad',$personal->province_crad,['class'=>'form-control'])}} 
-                                           
-                                            <span class="text-danger">{{ $errors->first('province_crad') }}</span>
-                                            </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
-                                            <label >วันออกบัตร</label>
-                                            {{Form::date('issueddate',$personal->issueddate,['class'=>'form-control'])}}   
-                                            <span class="text-danger">{{ $errors->first('issueddate') }}</span>
-                                            </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
-                                            <label >บัตรหมดอายุ:</label>
-                                            {{Form::date('expid',$personal->expid,['class'=>'form-control'])}}   
-                                            <span class="text-danger">{{ $errors->first('expid') }}</span>
-                                            </div>
-                                    </div>
-                            </div>
-    
-    
-                      <div class="row">
-                            <div class="col-md-3">
-                                    <div class="form-group">
-                                    <label >บัตรประจำตัวผู้เสียภาษี</label>
-                                    {{Form::date('texid',$personal->texid,['class'=>'form-control'])}}   
-                                   
-                                    </div>
-                            </div>
-                            <div class="col-md-2">
-                                    <div class="form-group {{ $errors->has('living_status') ? 'has-error' : '' }}" >
-                                            <label >สถานะความเป็นอยู่</label>
-                                                    {{ Form::select('living_status', [
-                                                          $personal->living_status=>$personal->living_status,
-                                                            'บ้านส่วนตัว' => 'บ้านส่วนตัว',
-                                                            'บ้านเช่า' => 'บ้านเช่า',
-                                                            'อาศัยกับบิดามารดา'=> 'อาศัยกับบิดามารดา',
-                                                            'อาศัยกับผู้อื่น'=>'อาศัยกับผู้อื่น'
-                                                ],null, ['class' => 'form-control']) }}
-
-                                        <span class="text-danger">{{ $errors->first('living_status') }}</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group{{ $errors->has('marital_status') ? 'has-error' : '' }}" >
-                                            <label >สถานะครอบครัว</label>
-                                                  {{ Form::select('marital_status', [
-                                                              $personal->marital_status=>$personal->marital_status,
-                                                            'โสด' => 'โสด',
-                                                            'สมรส' => 'สมรส',
-                                                            'หย่า'=> 'หย่า',
-                                                            'หม้าย'=>'หม้าย',
-                                                            'แยกกันอยู่'=>'แยกกันอยู่'
-                                                ],null, ['class' => 'form-control']) }}
-                                                  <span class="text-danger">{{ $errors->first('marital_status') }}</span>        
-                                    </div> 
-                                </div>
-    
-                                <div class="col-md-2">
-                                        <div class="form-group">
-                                                <label >กรณีแต่งงาน</label>
-                                                      {{ Form::select('if_marricd', [
-                                                            $personal->if_marricd=>$personal->if_marricd, 
-                                                            'จดทะเบียนสมรส' => 'จดทะเบียนสมรส',
-                                                            'ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'
-                                                ],null, ['class' => 'form-control']) }}
-                                        </div> 
-                                    </div>
-                                    <div class="col-md-2">
-                                            <div class="form-group">
-                                            <label >คู่มสมรส</label>
-                                                  {{ Form::select('spouse', [
-                                                       $personal->spouse=>$personal->spouse,
-                                                        'มี' => 'มี',
-                                                        'ไม่มี' => 'ไม่มี'
-                                            ],null, ['class' => 'form-control']) }}
-
-                                            </div>
-                                    </div>
-                                
-                      </div>
-                    <div class="row">
-                            <div class="col-md-4">
-                                    <div class="form-group">
-                                            <label >ชื่อคู่สมรส</label>
-                                            {{Form::text('name_spouse',$personal->name_spouse,['class'=>'form-control'])}}   
-                                    </div> 
-                                </div>
-                                <div class="col-md-3">
-                                        <div class="form-group">
-                                                <label >อาชีพคู่สมรส</label>
-                                                {{Form::text('spouse_occupation',$personal->spouse_occupation,['class'=>'form-control'])}}   
-                                        </div> 
-                                    </div>
-    
-                                    <div class="col-md-3">
-                                            <div class="form-group">
-                                                    <label > สถานที่ทำงาน</label>
-                                                    {{Form::text('firm_address',$personal->firm_address,['class'=>'form-control'])}}   
-                                            </div> 
-                                        </div>
-    
-                                        <div class="col-md-2">
-                                                <div class="form-group">
-                                                        <label >โทรศัพท์</label>
-                                                        {{Form::text('spouse_tel',$personal->spouse_tel,['class'=>'form-control'])}}   
-                                                </div> 
-                                            </div>
-                          </div> 
-                          
-                          <div class="row">
-                                <div class="col-md-2">
-                                <div class="form-group">
-                                        <label >จำนวนบุตรทั้งหมด</label>
-                                        {{Form::text('children',$personal->children,['class'=>'form-control'])}}   
-                                </div>
-                            </div>
-    
-                            <div class="col-md-2">
-                                    <div class="form-group">
-                                            <label >หญิง</label>
-                                            {{Form::text('girls',$personal->girls,['class'=>'form-control'])}}   
-                                    </div>
-                                </div>
-    
-                                <div class="col-md-2">
-                                        <div class="form-group">
-                                                <label >ชาย</label>
-                                                {{Form::text('boy',$personal->boy,['class'=>'form-control'])}}   
-                                        </div>
-                                    </div>
-        
-                                    <div class="col-md-2">
-                                            <div class="form-group">
-                                                    <label > จำนวนบุตรกำลังศึกษา</label>
-                                                    {{Form::text('school',$personal->school,['class'=>'form-control'])}}  
-                                                   
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-md-2">
-                                                <div class="form-group">
-                                                        <label >จำนวนบุตรที่อายุเกิน21ปี</label>
-                                                        {{Form::text('over21',$personal->over21,['class'=>'form-control'])}}  
-                                                        
                                                 </div>
+                                        </div> 
+                                
+                                        <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label >ชื่อล่น:</label> 
+                                                    {{Form::label($personal->nikname)}}  
+                                                </div>
+                                         </div> 
+                                         <div class="col-md-2">
+                                                        <div class="form-group">
+                                                <label >เพศ:</label>
+                                                {{Form::label($personal->gender)}}  
+                                                 <span class="text-danger">{{ $errors->first('gender') }}</span>
+                                        </div>
+                                               
+                                        </div> 
+                                      <div class="col-md-2">
+                                                <div class="form-group">
+                                                <label >วันเกิด</label>
+                                                {{Form::label($personal->birthday)}}   
+                                                
+                                        </div>
+                                </div>
+                                <div class="col-md-2">
+                                        <div class="form-group ">
+                                         <label >สัญชาติ</label>
+                                          {{Form::label($personal->nationality)}}   
+                                           
+                                            <span class="text-danger"></span>
+                                            </div>
+                                    </div> 
+                             </div>
+                              
+                                    <div class="row">  
+                                            
+                                           
+                                            <div class="col-md-2">
+                                                    <div class="form-group" >
+                                                    <label >เชื้อชาติ</label>
+                                                    {{Form::label($personal->race)}}   
+                                                    </div>
+                                            </div> 
+                                            
+                                            <div class="col-md-2">
+                                                    <div class="form-group" >
+                                                    <label >ศาสนา</label>
+                                                    {{Form::label($personal->religion)}}   
+                                                    </div>
+                                            </div> 
+                                            <div class="col-md-2">
+                                                    <div class="form-group" >
+                                                    <label >อายุ</label>
+                                                    {{Form::label($personal->age)}}   
+                                                   
+                                                    
+                                                    </div>
+                                            </div> 
+                                            <div class="col-md-2">
+                                                    <div class="form-group" >
+                                                    <label >ส่วนสูง</label>
+                                                    {{Form::label($personal->height)}}   
+                                                    </div>
+                                            </div> 
+                                            <div class="col-md-2">
+                                                    <div class="form-group " >
+                                                    <label >น้ำหนัก</label>
+                                                    {{Form::label($personal->height)}}   
+                                                    </div>
+                                            </div> 
+                                       
+                                    </div>
+              
+                                    <div class="row">  
+                                            <div class="col-md-2">
+                                                    <div class="form-group">
+                                                    <label >พี่น้องกี่คน</label>
+                                                    {{Form::label($personal->brothers)}}   
+                                                  
+                                                    </div>
+                                            </div> 
+            
+                                            <div class="col-md-2">
+                                                    <div class="form-group">
+                                                    <label >เป็นคนที่</label>
+                                                    {{Form::label($personal->number)}}   
+                                                   
+                                                    </div>
                                             </div>
                                             <div class="col-md-2">
-                                                    <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
-                                                    <label > สถานะทางทหาร</label>
-                                                          {{ Form::select('military_service', [
-                                                              $personal->military_service=>$personal->military_service, 
-                                                                'ได้รับการยกเว้น' => 'ได้รับการยกเว้น',
-                                                                'ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร',
-                                                                'ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'
-                                                    ],null, ['class' => 'form-control']) }}
-                                                          <span class="text-danger">{{ $errors->first('military_service') }}</span>
-                                                        </div> 
-                                                </div>
-                                </div>
-                                <div class="row">
-                                      
-    
-                                            <div class="col-md-3">
-                                                    <div class="form-group  {{ $errors->has('namefather') ? 'has-error' : '' }}" >
-                                                    <label > ชื่อบิดา</label>
-                                                    {{Form::text('namefather',$personal->namefather,['class'=>'form-control'])}}  
+                                                    <div class="form-group ">
+                                                    <label >โทรศัพท์ที่ติดต่อ</label>
+                                                    {{Form::label($personal->tel)}}   
+                                                    
+                                                    
+                                                    </div>
+                                            </div>
+            
+                                            <div class="col-md-2">
+                                                    <div class="form-group">
+                                                    <label >โทรศัพท์บ้าน</label>
+                                                    {{Form::label($personal->home)}}   
                                                    
-                                                    <span class="text-danger">{{ $errors->first('namefather') }}</span>
+                                                    </div>
+                                            </div>
+            
+                                            <div class="col-md-2">
+                                                    <div class="form-group ">
+                                                    <label >โทรศัพท์มือถือ</label>
+                                                    {{Form::label($personal->moblie)}}   
+                                               
+                                                  
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                    <div class="form-group">
+                                                    <label >โทรศัพท์สำนักงาน</label>
+                                                    {{Form::label($personal->office)}}   
+                                                    
+                                                    </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">  
+                                            <div class="col-md-3">
+                                                    <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                                                    <label>อีเมล</label>
+                                                    {{Form::label($personal->email)}}   
+                                                   
+                                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                                    </div>
+                                            </div>
+            
+                                            <div class="col-md-3">
+                                                    <div class="form-group" >
+                                                    <label >ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label>
+                                                    {{Form::label($personal->address1)}}
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                    <div class="form-group" >
+                                                    <label > ที่อยู่ตามบัตรประชาชน</label>
+                                                    {{Form::label($personal->address2)}}
+                                                    
+                                                    </div>
+                                            </div>
+            
+                                            <div class="col-md-3">
+                                                    <div class="form-group">
+                                                    <label >เลขบัตรประชาชน</label>
+                                                    {{Form::label($personal->idcard)}}   
+                                                    </div>
+                                            </div>     
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-md-3">
+                                                    <div class="form-group " >
+                                                    <label >ออกให้ ณ อำเภอ/เขต:</label>
+                                                    {{Form::label($personal->issued)}}   
+                                                    
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                    <div class="form-group" >
+                                                    <label >จังหวัด</label>
+                                                    {{Form::label($personal->province_crad)}} 
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                    <div class="form-group" >
+                                                    <label >วันออกบัตร</label>
+                                                    {{Form::label($personal->issueddate)}}   
+                                                    <span class="text-danger">{{ $errors->first('issueddate') }}</span>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                    <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
+                                                    <label >บัตรหมดอายุ:</label>
+                                                    {{Form::label($personal->expid)}}   
+                                                    <span class="text-danger">{{ $errors->first('expid') }}</span>
+                                                    </div>
+                                            </div>
+                                    </div>
+            
+            
+                              <div class="row">
+                                    <div class="col-md-3">
+                                            <div class="form-group">
+                                            <label >บัตรประจำตัวผู้เสียภาษี</label>
+                                            {{Form::label($personal->texid)}}   
+                                           
+                                            </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                            <div class="form-group" >
+                                                    <label >สถานะความเป็นอยู่</label>
+                                                    {{Form::label($personal->living_status)}}   
+        
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group" >
+                                                    <label >สถานะครอบครัว</label>
+                                                    {{Form::label($personal->marital_status)}}   
+                                                               
+                                            </div> 
+                                        </div>
+            
+                                        <div class="col-md-2">
+                                                <div class="form-group">
+                                                        <label >กรณีแต่งงาน</label>
+                                                    
+                                                    @if($personal->if_marricd =='')
+                                                    {{Form::label('ไม่มี')}}
+                                                    @else
+                                                    {{Form::label($personal->if_marricd)}}
+                                                      @endif   
+                                                       
+                            
+                                                </div> 
+                                            </div>
+                                            <div class="col-md-2">
+                                                    <div class="form-group">
+        
+                                                    <label >คู่มสมรส</label>
+                                                    @if($personal->spouse =='')
+                                                    {{Form::label('ไม่มี')}}
+                                                    @else
+                                                    {{Form::label($personal->spouse)}}
+                                                      @endif    
+        
+                                                    </div>
+                                            </div>
+                                        
+                              </div>
+                            <div class="row">
+                                    <div class="col-md-4">
+                                            <div class="form-group">
+                                                    <label >ชื่อคู่สมรส</label>
+                                                    {{Form::label($personal->name_spouse)}}   
+                                            </div> 
+                                        </div>
+                                        <div class="col-md-3">
+                                                <div class="form-group">
+                                                        <label >อาชีพคู่สมรส</label>
+                                                        {{Form::label($personal->spouse_occupation)}}   
+                                                </div> 
+                                            </div>
+            
+                                            <div class="col-md-3">
+                                                    <div class="form-group">
+                                                            <label > สถานที่ทำงาน</label>
+                                                            {{Form::label($personal->firm_address)}}   
+                                                    </div> 
+                                                </div>
+            
+                                                <div class="col-md-2">
+                                                        <div class="form-group">
+                                                                <label >โทรศัพท์</label>
+                                                                {{Form::label($personal->spouse_tel)}}   
+                                                        </div> 
+                                                    </div>
+                                  </div> 
+                                  
+                                  <div class="row">
+                                        <div class="col-md-2">
+                                        <div class="form-group">
+                                                <label >จำนวนบุตรทั้งหมด</label>
+                                                {{Form::label($personal->children)}}   
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-md-2">
+                                            <div class="form-group">
+                                                    <label >หญิง</label>
+        
+                                                    {{Form::label($personal->girls)}}
+                                                    
+                                            </div>
+                                        </div>
+            
+                                        <div class="col-md-2">
+                                                <div class="form-group">
+                                                        <label >ชาย</label>
+        
+                                                        {{Form::label($personal->boy)}}   
                                                 </div>
                                             </div>
-                                                <div class="col-md-3">
-                                                        <div class="form-group {{ $errors->has('lastfather') ? 'has-error' : '' }}">
-                                                        <label >นามสกุล</label>
-                                                        {{Form::text('lastfather',$personal->lastfather,['class'=>'form-control'])}}  
-                                                        
-                                                        <span class="text-danger">{{ $errors->first('lastfather') }}</span>
+                
+                                            <div class="col-md-2">
+                                                    <div class="form-group">
+                                                            <label > จำนวนบุตรกำลังศึกษา</label>
+                                                            {{Form::label($personal->school)}}  
+                                                           
                                                     </div>
                                                 </div>
-                                                    <div class="col-md-3">
-                                                            <div class="form-group {{ $errors->has('occupation_father') ? 'has-error' : '' }}" >
-                                                            <label >อาชีพ</label>
-                                                            {{Form::text('occupation_father',$personal->occupation_father,['class'=>'form-control'])}}  
-                                                            
-                                                            <span class="text-danger">{{ $errors->first('occupation_father') }}</span>
+            
+                                                <div class="col-md-2">
+                                                        <div class="form-group">
+                                                                <label >จำนวนบุตรที่อายุเกิน21ปี</label>
+                                                                {{Form::label($personal->over21,'คน')}}  
+                                                                
                                                         </div>
                                                     </div>
-                                                        <div class="col-md-3"><br>
-                                                            <div class="form-group{{ $errors->has('alivef') ? 'has-error' : '' }}" >
-                                                                        @if($personal->alivef == 'ยังมีชีวิตอยู่')
-                                                                        {{ Form::radio('alivef', 'ยังมีชีวิตอยู่',true) }}ยังมีชีวิตอยู่ 
-                                                                        {{ Form::radio('alivef', 'ถึงแก่กรรม') }}ถึงแก่กรรม
-                                                                       @else
-                                                                       {{ Form::radio('alivef', 'ยังมีชีวิตอยู่') }}ยังมีชีวิตอยู่ 
-                                                                        {{ Form::radio('alivef', 'ถึงแก่กรรม',true) }}ถึงแก่กรรม
-                                                                       @endif
-
-                                                                <br> <span class="text-danger">{{ $errors->first('alivef') }}</span>
+                                                    <div class="col-md-2">
+                                                            <div class="form-group " >
+                                                            <label > สถานะทางทหาร</label>
+                                                            {{Form::label($personal->military_service)}}  
+                                                                  
+                                                                </div> 
+                                                        </div>
+                                        </div>
+                                        <div class="row">
+                                              
+            
+                                                    <div class="col-md-3">
+                                                            <div class="form-group" >
+                                                            <label > ชื่อบิดา</label>
+                                                            {{Form::label($personal->namefather)}}  
+                                                        </div>
+                                                    </div>
+                                                        <div class="col-md-3">
+                                                                <div class="form-group">
+                                                                <label >นามสกุล</label>
+                                                                {{Form::label($personal->lastfather)}}  
                                                             </div>
                                                         </div>
-                                </div>
-                                <div class="row">
-                                        <div class="col-md-3">
-                                                <div class="form-group {{ $errors->has('namemother') ? 'has-error' : '' }}" >
-                                                <label > ชื่อมารดา</label>
-                                                {{Form::text('namemother', $personal->namemother,['class'=>'form-control'])}}  
-                                               
-                                                <span class="text-danger">{{ $errors->first('namemother') }}</span>
-                                            </div>
+                                                            <div class="col-md-3">
+                                                                    <div class="form-group" >
+                                                                    <label >อาชีพ</label>
+                                                                    {{Form::label($personal->occupation_father)}}  
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                                <div class="col-md-3"><br>
+                                                                    <div class="form-group" >
+                                                                    <label >สถานะ</label>
+                                                                    {{Form::label($personal->alivef)}}
+                                                         
+                                                                    </div>
+                                                                </div>
                                         </div>
-                                            <div class="col-md-3">
-                                                    <div class="form-group {{ $errors->has('lasrmother') ? 'has-error' : '' }}" >
-                                                    <label >นามสกุล</label>
-                                                    {{Form::text('lasrmother',$personal->lasrmother,['class'=>'form-control'])}}  
-                                                    
-                                                    <span class="text-danger">{{ $errors->first('lasrmother') }}</span>
-                                                </div>
-                                            </div>
+                                        <div class="row">
                                                 <div class="col-md-3">
-                                                        <div class="form-group {{ $errors->has('occupationm') ? 'has-error' : '' }}" >
-                                                        <label >อาชีพ</label>
-                                                        {{Form::text('occupationm',$personal->occupationm,['class'=>'form-control'])}}  
+                                                        <div class="form-group" >
+                                                        <label > ชื่อมารดา</label>
+                                                        {{Form::label($personal->namemother)}}  
+                                                       
                                                         
-                                                        <span class="text-danger">{{ $errors->first('occupationm') }}</span>
                                                     </div>
                                                 </div>
                                                     <div class="col-md-3">
-                                                        <div class="form-group {{ $errors->has('alivem') ? 'has-error' : '' }}" >
-                                                                        @if($personal->alivem == 'ยังมีชีวิตอยู่')
-                                                                         {{ Form::radio('alivem', 'ยังมีชีวิตอยู่',true) }}ยังมีชีวิตอยู่ 
-                                                                         {{ Form::radio('alivem', 'ถึงแก่กรรม') }}ถึงแก่กรรม
-                                                                        @else
-                                                                        {{ Form::radio('alivem', 'ยังมีชีวิตอยู่') }}ยังมีชีวิตอยู่ 
-                                                                         {{ Form::radio('alivem', 'ถึงแก่กรรม',true) }}ถึงแก่กรรม
-                                                                        @endif
-                                         <br><span class="text-danger">{{ $errors->first('alivem') }}</span>
-                                     </div>
+                                                            <div class="form-group" >
+                                                            <label >นามสกุล</label>
+                                                            {{Form::label($personal->lasrmother)}}  
+                                                        </div>
+                                                    </div>
+                                                        <div class="col-md-3">
+                                                                <div class="form-group " >
+                                                                <label >อาชีพ</label>
+                                                                {{Form::label($personal->occupationm)}}  
+                                                                
+                                                               
+                                                            </div>
+                                                        </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-group" >
+                                                                        <label >สถานะ</label>
+                                                                        {{Form::label($personal->alivem)}}
+                                                 
+                                             </div>
+                                        </div>
+                                   </div>  
+                              </div>
+                       
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_2">
+                                <div class="box-body table-responsive no-padding">
+                                        <table class="table table-bordered">
+                                                <thead>
+                                                  <tr>
+                                                    <th>ระดับการศึกษา</th>
+                                                    <th>ชื่อสถาบัน</th>
+                                                    <th>เริ่มปีการศึกษา</th>
+                                                    <th>จบปีการศึกษา</th>
+                                                    <th>เกรดเฉลี่ย</th>
+                                                    <th>สาขา</th>
+                                                    <th>วุฒที่ได้รับ</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr >
+                                                    <td align="center" >ประถมศึกษา</td>
+                                                    <td> {{Form::text('primary',$personal->primary,['class'=>'form-control'])}}</td>
+                                                    <td>      
+                                                        {{Form::text('year1',$personal->year1,['class'=>'form-control'])}}
+                                                        </td>
+                                                        <td>
+                                                        {{Form::text('year2',$personal->year2,['class'=>'form-control'])}}
+                                                        </td>
+                                                    <td>{{Form::text('gpa',$personal->gpa,['class'=>'form-control'])}}</td>
+                                                    <td>{{Form::text('major',$personal->major,['class'=>'form-control'])}}</td>
+                                                    <td>{{Form::text('degree1',$personal->degree1,['class'=>'form-control'])}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                        <td>มัธยมศึกษา</td>
+                                                        <td>{{Form::text('secondary',$personal->secondary,['class'=>'form-control'])}} </td>
+                                                        <td> 
+                                                        {{Form::text('year3',$personal->year3,['class'=>'form-control'])}}
+                                                        </td>
+                                                        <td> 
+                                                        {{Form::text('year4',$personal->year4,['class'=>'form-control'])}}    
+                                                        </td>
+                                                        <td> {{Form::text('gpas',$personal->gpas,['class'=>'form-control'])}}</td>
+                                                        <td> {{Form::text('majors',$personal->majors,['class'=>'form-control'])}}</td>
+                                                        <td>{{Form::text('degree2',$personal->degree2,['class'=>'form-control'])}}</td>
+                                                  </tr>
+                
+                                                  <tr>
+                                                        <td>อาชีวะศึกษา</td>
+                                                        <td>{{Form::text('vocation',$personal->vocation,['class'=>'form-control'])}}</td>
+                                                        <td>
+                                                        {{Form::text('year5',$personal->year5,['class'=>'form-control'])}}  
+                                                        </td>
+                                                        <td> 
+                                                                        {{Form::text('year6',$personal->year6,['class'=>'form-control'])}}     
+        
+                                                        </td>
+                                                        <td>{{Form::text('gpav',$personal->gpav,['class'=>'form-control'])}} </td>
+                                                        <td>{{Form::text('majorv',$personal->majorv,['class'=>'form-control'])}}</td>
+                                                        <td>{{Form::text('degree3',$personal->degree3,['class'=>'form-control'])}}</td>
+                                                  </tr>
+                
+                                                  <tr>
+                                                        <td>อนุปริญญา</td>
+                                                        <td>{{Form::text('diploma',$personal->diploma,['class'=>'form-control'])}}</td>
+                                                        <td>
+                                                        {{Form::text('year7',$personal->year7,['class'=>'form-control'])}} 
+                                                        </td>
+                                                        <td>
+                                                        {{Form::text('year8',$personal->year8,['class'=>'form-control'])}} 
+                                                        </td>
+                                                        <td>{{Form::text('gpad',$personal->gpad,['class'=>'form-control'])}}</td>
+                                                        <td>{{Form::text('majord',$personal->majord,['class'=>'form-control'])}} </td>
+                                                        <td>{{Form::text('degree4',$personal->degree4,['class'=>'form-control'])}}</td>
+                                                  </tr>
+                
+                
+                                                  <tr>
+                                                        <td>ปริญญาตรี</td>
+                                                        <td>{{Form::text('bachelor',$personal->bachelor,['class'=>'form-control'])}}</td>
+                                                        <td>
+                                                                        {{Form::text('year9',$personal->year9,['class'=>'form-control'])}} 
+                                                        </td>
+                                                        <td> {{Form::text('year10',$personal->year10,['class'=>'form-control'])}}    </td>
+                                                        <td>{{Form::text('gpab',$personal->gpab,['class'=>'form-control'])}} </td>
+                                                        <td>{{Form::text('majorb',$personal->majorb,['class'=>'form-control'])}} </td>
+                                                        <td>{{Form::text('degree5',$personal->degree5,['class'=>'form-control'])}}</td>
+                                                  </tr>
+                
+                                              
+                
+                                                  <tr>
+                                                        <td>ปริญญาโท</td>
+                                                        <td>{{Form::text('master',$personal->master,['class'=>'form-control'])}}</td>
+                                                        <td> 
+                                                                        {{Form::text('year11',$personal->year11,['class'=>'form-control'])}}
+                                                                
+                                                        </td>
+                                                        <td>
+                                                                        {{Form::text('year12',$personal->year12,['class'=>'form-control'])}}  
+                                                        </td>
+                                                        <td>{{Form::text('gpam',$personal->gpam,['class'=>'form-control'])}} </td>
+                                                        <td> {{Form::text('majorm',$personal->majorm,['class'=>'form-control'])}}</td>
+                                                        <td>{{Form::text('degree6',$personal->degree6,['class'=>'form-control'])}}</td>
+                                                  </tr>
+                
+                
+                                                  <tr>
+                                                        <td>อื่นๆ</td>
+                                                        <td> {{Form::text('otherE',$personal->otherE,['class'=>'form-control'])}}</td>
+                                                        <td> 
+                                                                     {{Form::text('year13',$personal->year13,['class'=>'form-control'])}}
+                                                        </td>
+                                                        <td>
+                                                                        {{Form::text('year14',$personal->year1,['class'=>'form-control'])}}
+                                                        </td>
+                                                        <td> {{Form::text('gpao',$personal->gpao,['class'=>'form-control'])}}</td>
+                                                        <td>{{Form::text('majoro',$personal->majoro,['class'=>'form-control'])}}</td>
+                                                        <td>{{Form::text('degree7',$personal->degree7,['class'=>'form-control'])}}</td>
+                                                  </tr>
+                                                </tbody>
+                                        </table>
                                 </div>
-                           </div>  
-                      </div>
-                  </div>
-             </div>
-        </div>
-        <div class="row">
-                <div class="col-md-12">
-                  <div class="box box-danger">
-                    <div class="box-header">
-                      <h3 class="box-title">ประวัติการศึกษา</h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="box-body table-responsive no-padding">
-                                <table class="table table-bordered">
-                                        <thead>
-                                          <tr>
-                                            <th>ระดับการศึกษา</th>
-                                            <th>ชื่อสถาบัน</th>
-                                            <th>เริ่มปีการศึกษา</th>
-                                            <th>จบปีการศึกษา</th>
-                                            <th>เกรดเฉลี่ย</th>
-                                            <th>สาขา</th>
-                                            <th>วุฒที่ได้รับ</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr >
-                                            <td align="center" >ประถมศึกษา</td>
-                                            <td> {{Form::text('primary',$personal->primary,['class'=>'form-control'])}}</td>
-                                            <td>      
-                                                {{Form::text('year1',$personal->year1,['class'=>'form-control'])}}
-                                                </td>
-                                                <td>
-                                                {{Form::text('year2',$personal->year2,['class'=>'form-control'])}}
-                                                </td>
-                                            <td>{{Form::text('gpa',$personal->gpa,['class'=>'form-control'])}}</td>
-                                            <td>{{Form::text('major',$personal->major,['class'=>'form-control'])}}</td>
-                                            <td>{{Form::text('degree1',$personal->degree1,['class'=>'form-control'])}}</td>
-                                          </tr>
-                                          <tr>
-                                                <td>มัธยมศึกษา</td>
-                                                <td>{{Form::text('secondary',$personal->secondary,['class'=>'form-control'])}} </td>
-                                                <td> 
-                                                {{Form::text('year3',$personal->year3,['class'=>'form-control'])}}
-                                                </td>
-                                                <td> 
-                                                {{Form::text('year4',$personal->year4,['class'=>'form-control'])}}    
-                                                </td>
-                                                <td> {{Form::text('gpas',$personal->gpas,['class'=>'form-control'])}}</td>
-                                                <td> {{Form::text('majors',$personal->majors,['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('degree2',$personal->degree2,['class'=>'form-control'])}}</td>
-                                          </tr>
-        
-                                          <tr>
-                                                <td>อาชีวะศึกษา</td>
-                                                <td>{{Form::text('vocation',$personal->vocation,['class'=>'form-control'])}}</td>
-                                                <td>
-                                                {{Form::text('year5',$personal->year5,['class'=>'form-control'])}}  
-                                                </td>
-                                                <td> 
-                                                                {{Form::text('year6',$personal->year6,['class'=>'form-control'])}}     
-
-                                                </td>
-                                                <td>{{Form::text('gpav',$personal->gpav,['class'=>'form-control'])}} </td>
-                                                <td>{{Form::text('majorv',$personal->majorv,['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('degree3',$personal->degree3,['class'=>'form-control'])}}</td>
-                                          </tr>
-        
-                                          <tr>
-                                                <td>อนุปริญญา</td>
-                                                <td>{{Form::text('diploma',$personal->diploma,['class'=>'form-control'])}}</td>
-                                                <td>
-                                                {{Form::text('year7',$personal->year7,['class'=>'form-control'])}} 
-                                                </td>
-                                                <td>
-                                                {{Form::text('year8',$personal->year8,['class'=>'form-control'])}} 
-                                                </td>
-                                                <td>{{Form::text('gpad',$personal->gpad,['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('majord',$personal->majord,['class'=>'form-control'])}} </td>
-                                                <td>{{Form::text('degree4',$personal->degree4,['class'=>'form-control'])}}</td>
-                                          </tr>
-        
-        
-                                          <tr>
-                                                <td>ปริญญาตรี</td>
-                                                <td>{{Form::text('bachelor',$personal->bachelor,['class'=>'form-control'])}}</td>
-                                                <td>
-                                                                {{Form::text('year9',$personal->year9,['class'=>'form-control'])}} 
-                                                </td>
-                                                <td> {{Form::text('year10',$personal->year10,['class'=>'form-control'])}}    </td>
-                                                <td>{{Form::text('gpab',$personal->gpab,['class'=>'form-control'])}} </td>
-                                                <td>{{Form::text('majorb',$personal->majorb,['class'=>'form-control'])}} </td>
-                                                <td>{{Form::text('degree5',$personal->degree5,['class'=>'form-control'])}}</td>
-                                          </tr>
-        
-                                      
-        
-                                          <tr>
-                                                <td>ปริญญาโท</td>
-                                                <td>{{Form::text('master',$personal->master,['class'=>'form-control'])}}</td>
-                                                <td> 
-                                                                {{Form::text('year11',$personal->year11,['class'=>'form-control'])}}
-                                                        
-                                                </td>
-                                                <td>
-                                                                {{Form::text('year12',$personal->year12,['class'=>'form-control'])}}  
-                                                </td>
-                                                <td>{{Form::text('gpam',$personal->gpam,['class'=>'form-control'])}} </td>
-                                                <td> {{Form::text('majorm',$personal->majorm,['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('degree6',$personal->degree6,['class'=>'form-control'])}}</td>
-                                          </tr>
-        
-        
-                                          <tr>
-                                                <td>อื่นๆ</td>
-                                                <td> {{Form::text('otherE',$personal->otherE,['class'=>'form-control'])}}</td>
-                                                <td> 
-                                                             {{Form::text('year13',$personal->year13,['class'=>'form-control'])}}
-                                                </td>
-                                                <td>
-                                                                {{Form::text('year14',$personal->year1,['class'=>'form-control'])}}
-                                                </td>
-                                                <td> {{Form::text('gpao',$personal->gpao,['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('majoro',$personal->majoro,['class'=>'form-control'])}}</td>
-                                                <td>{{Form::text('degree7',$personal->degree7,['class'=>'form-control'])}}</td>
-                                          </tr>
-                                        </tbody>
-                                </table>
                         </div>
-                  </div>  
-           </div>            
-     </div>
-</div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_3">
+                                <div class="box-body table-responsive no-padding">
+                                        <table class="table table-bordered">
+                                                <thead>
+                                                  <tr>
+                                                    <th>ประเภทภาษา</th>
+                                                    <th>การพูด</th>
+                                                    <th>การเข้าใจ</th>
+                                                    <th>การเขียน</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <td>ไทย</td>
+                                                    <td>
+                                                            <div class="form-group {{ $errors->has('thais') ? 'has-error' : '' }}">
+                                                         
+                                                            {{ Form::select('thais', [
+                                                                 $personal->thais=>$personal->thais,
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                
+                
+                                                            <span class="text-danger">{{ $errors->first('thais') }}</span>
+                                                        </div>
+                                                        </td>
+                                                    <td>
+                                                        <div class="form-group {{ $errors->has('thail') ? 'has-error' : '' }}">
+                                                            {{ Form::select('thail', [
+                                                                 $personal->thail=>$personal->thail, 
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                                                            <span class="text-danger">{{ $errors->first('thail') }}</span>
+                                                        </div>
+                                                        </td>
+                                                    <td>
+                                                        <div class="form-group {{ $errors->has('thair') ? 'has-error' : '' }}">
+                                                            
+                                                            {{ Form::select('thair', [
+                                                                 $personal->thair=>$personal->thair, 
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                                                            <span class="text-danger">{{ $errors->first('thair') }}</span>
+                
+                                                        </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>อังกฤษ</td>
+                                                    <td>
+                                                        <div class="form-group {{ $errors->has('engliss') ? 'has-error' : '' }}">
+                                                         
+                                                         {{ Form::select('engliss', [
+                                                               $personal->engliss=>$personal->engliss, 
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                                                            <span class="text-danger">{{ $errors->first('engliss') }}</span>
+                
+                                                        </td>
+                                                    <td>
+                                                        <div class="form-group {{ $errors->has('englisl') ? 'has-error' : '' }}">
+                                                            {{ Form::select('englisl', [
+                                                                $personal->englisl=>$personal->englisl, 
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                                                            <span class="text-danger">{{ $errors->first('englisl') }}</span>
+                
+                                                        </td>
+                                                    <td>
+                                                        <div class="form-group {{ $errors->has('englisr') ? 'has-error' : '' }}">
+                                                            {{ Form::select('englisr', [
+                                                                $personal->englisr=>$personal->englisr,
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                
+                                                            <span class="text-danger">{{ $errors->first('englisr') }}</span>
+                                                        </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>อื่นๆ{{Form::text('otherr',$personal->otherr,['class'=>'form-control'])}} </td>
+                                                    <td>
+                                                            {{ Form::select('othes', [
+                                                                 $personal->othes=>$personal->othes, 
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                                                        </td>
+                                                    <td>
+                                                            {{ Form::select('othel', [
+                                                                $personal->othel=>$personal->othel,
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                
+                                                        </td>
+                                                    <td>
+                                                            {{ Form::select('other', [
+                                                                $personal->other=>$personal->other, 
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control']) }}
+                                                        </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                        </div> 
+                        </div>
+
+                        <div class="tab-pane" id="tab_4">
+                                <div class="box-body table-responsive no-padding">
+                                        <table class="table table-bordered">
+                                                <thead>
+                                                  <tr>
+                                                    <th>ชื่อสถานที่ประกอบการ</th>
+                                                    <th>ลักษณะงานที่รับผิดชอบ</th>
+                                                    <th>โทร</th>
+                                                    <th>ระยะงานเริ่ม</th>
+                                                    <th>ระยะงานสิ้นสุด</th>
+                                                    <th>ตำแหน่ง</th>
+                                                    <th>สาเหตุที่ออก</th>
+                                                    <th>เงินเดือนครั้งสุดท้าย</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <td> {{Form::text('list_of_employed1',$personal->list_of_employed1,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('job_description1',$personal->job_description1,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('call1',$personal->call1,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::date('start_job_duration1',$personal->start_job_duration1,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::date('end_job_duration2',$personal->end_job_duration2,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('position1',$personal->position1,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('reasonLeaving1',$personal->reasonLeaving1,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('lastsalary1',$personal->lastsalary1,['class'=>'form-control'])}} </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td> {{Form::text('list_of_employed2',$personal->list_of_employed2,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('job_description2',$personal->job_description2,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('call2',$personal->call2,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::date('start_job_duration3',$personal->start_job_duration3,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::date('end_job_duration4',$personal->end_job_duration4,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('position2',$personal->position2,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('reasonleaving2',$personal->reasonLeaving2,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('lastsalary2',$personal->lastsalary2,['class'=>'form-control'])}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td> {{Form::text('list_of_employed3',$personal->list_of_employed3,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('job_description3',$personal->job_description3,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('call3',$personal->call3,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::date('start_job_duration5',$personal->start_job_duration5,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::date('end_job_duration6',$personal->end_job_duration6,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('position3',$personal->position3,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('reasonleaving3',$personal->reasonLeaving3,['class'=>'form-control'])}}</td>
+                                                    <td> {{Form::text('lastsalary3',$personal->lastsalary3,['class'=>'form-control'])}} </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                         </div> 
+                              </div>
+      
 
 
-<div class="row">
-        <div class="col-md-12">
-          <div class="box box-danger">
-            <div class="box-header">
-              <h3 class="box-title">ภาษา</h3>
-            </div>
-            <div class="box-body">
-                <div class="box-body table-responsive no-padding">
-                        <table class="table table-bordered">
-                                <thead>
-                                  <tr>
-                                    <th>ประเภทภาษา</th>
-                                    <th>การพูด</th>
-                                    <th>การเข้าใจ</th>
-                                    <th>การเขียน</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>ไทย</td>
-                                    <td>
-                                            <div class="form-group {{ $errors->has('thais') ? 'has-error' : '' }}">
-                                         
-                                            {{ Form::select('thais', [
-                                                 $personal->thais=>$personal->thais,
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
+                              <div class="tab-pane" id="tab_5">
 
+                                    <label>บุคลที่ไม่ใช่ญาติซึ่งทราบประวัติของท่านและบริษัทฯ สามารถสอบถามได้</label>
 
-                                            <span class="text-danger">{{ $errors->first('thais') }}</span>
-                                        </div>
-                                        </td>
-                                    <td>
-                                        <div class="form-group {{ $errors->has('thail') ? 'has-error' : '' }}">
-                                            {{ Form::select('thail', [
-                                                 $personal->thail=>$personal->thail, 
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
-                                            <span class="text-danger">{{ $errors->first('thail') }}</span>
-                                        </div>
-                                        </td>
-                                    <td>
-                                        <div class="form-group {{ $errors->has('thair') ? 'has-error' : '' }}">
-                                            
-                                            {{ Form::select('thair', [
-                                                 $personal->thair=>$personal->thair, 
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
-                                            <span class="text-danger">{{ $errors->first('thair') }}</span>
-
-                                        </td>
-                                  </tr>
-                                  <tr>
-                                    <td>อังกฤษ</td>
-                                    <td>
-                                        <div class="form-group {{ $errors->has('engliss') ? 'has-error' : '' }}">
-                                         
-                                         {{ Form::select('engliss', [
-                                               $personal->engliss=>$personal->engliss, 
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
-                                            <span class="text-danger">{{ $errors->first('engliss') }}</span>
-
-                                        </td>
-                                    <td>
-                                        <div class="form-group {{ $errors->has('englisl') ? 'has-error' : '' }}">
-                                            {{ Form::select('englisl', [
-                                                $personal->englisl=>$personal->englisl, 
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
-                                            <span class="text-danger">{{ $errors->first('englisl') }}</span>
-
-                                        </td>
-                                    <td>
-                                        <div class="form-group {{ $errors->has('englisr') ? 'has-error' : '' }}">
-                                            {{ Form::select('englisr', [
-                                                $personal->englisr=>$personal->englisr,
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
-
-                                            <span class="text-danger">{{ $errors->first('englisr') }}</span>
-                                        </td>
-                                  </tr>
-                                  <tr>
-                                    <td>อื่นๆ{{Form::text('otherr',$personal->otherr,['class'=>'form-control'])}} </td>
-                                    <td>
-                                            {{ Form::select('othes', [
-                                                 $personal->othes=>$personal->othes, 
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
-                                        </td>
-                                    <td>
-                                            {{ Form::select('othel', [
-                                                $personal->othel=>$personal->othel,
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
-
-                                        </td>
-                                    <td>
-                                            {{ Form::select('other', [
-                                                $personal->other=>$personal->other, 
-                                                'ดี' => 'ดี',
-                                                'พอใช้' => 'พอใช้',
-                                                'ไม่ดี' => 'ไม่ดี'
-                                           ],null, ['class' => 'form-control']) }}
-                                        </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                        </div>  
-                 </div>  
-              </div>            
-     </div>
-</div>
-
-
-
-
-<div class="row">
-        <div class="col-md-12">
-          <div class="box box-danger">
-            <div class="box-header">
-              <h3 class="box-title">ประวัติการทำงาน</h3>
-            </div>
-            <div class="box-body">
-                <div class="box-body table-responsive no-padding">
-                        <table class="table table-bordered">
-                                <thead>
-                                  <tr>
-                                    <th>ชื่อสถานที่ประกอบการ</th>
-                                    <th>ลักษณะงานที่รับผิดชอบ</th>
-                                    <th>โทร</th>
-                                    <th>ระยะงานเริ่ม</th>
-                                    <th>ระยะงานสิ้นสุด</th>
-                                    <th>ตำแหน่ง</th>
-                                    <th>สาเหตุที่ออก</th>
-                                    <th>เงินเดือนครั้งสุดท้าย</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td> {{Form::text('list_of_employed1',$personal->list_of_employed1,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('job_description1',$personal->job_description1,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('call1',$personal->call1,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('start_job_duration1',$personal->start_job_duration1,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('end_job_duration2',$personal->end_job_duration2,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('position1',$personal->position1,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('reasonLeaving1',$personal->reasonLeaving1,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('lastsalary1',$personal->lastsalary1,['class'=>'form-control'])}} </td>
-                                  </tr>
-                                  <tr>
-                                    <td> {{Form::text('list_of_employed2',$personal->list_of_employed2,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('job_description2',$personal->job_description2,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('call2',$personal->call2,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('start_job_duration3',$personal->start_job_duration3,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('end_job_duration4',$personal->end_job_duration4,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('position2',$personal->position2,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('reasonleaving2',$personal->reasonLeaving2,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('lastsalary2',$personal->lastsalary2,['class'=>'form-control'])}}</td>
-                                  </tr>
-                                  <tr>
-                                    <td> {{Form::text('list_of_employed3',$personal->list_of_employed3,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('job_description3',$personal->job_description3,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('call3',$personal->call3,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('start_job_duration5',$personal->start_job_duration5,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::date('end_job_duration6',$personal->end_job_duration6,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('position3',$personal->position3,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('reasonleaving3',$personal->reasonLeaving3,['class'=>'form-control'])}}</td>
-                                    <td> {{Form::text('lastsalary3',$personal->lastsalary3,['class'=>'form-control'])}} </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                         </div> 
-                   </div>  
-             </div>            
-        </div>
-</div>
-
-<div class="row">
-        <div class="col-md-12">
-          <div class="box box-danger">
-            <div class="box-header">
-              <h3 class="box-title">อื่นๆ</h3>
-            </div>
-            <div class="box-body">
-         
-                <label>บุคลที่ไม่ใช่ญาติซึ่งทราบประวัติของท่านและบริษัทฯ สามารถสอบถามได้</label>
-                <div class="box-body table-responsive no-padding">
+                                       <div class="box-body table-responsive no-padding">
                         <div class="form-group">
                 <table class="table table-bordered">
                         <thead>
@@ -1053,16 +985,56 @@
                                                                             </div>
                                                                     </div>   
                                                                 </div>                                               
-                                                           </div>      
-                                                      </div>  
-                                               </div>            
-                                           </div>
-                                      </div>
-                                     
-                                      {{ Form::submit('บันทึก',['class'=> 'btn btn-primary'])}} 
-                                        
-                                      {{ Form::close()}}               
-                                     
+                                                           </div>    
+                                  </div>
+          
+
+
+
+
+
+
+                        <!-- /.tab-pane -->
+                      </div>
+                      <!-- /.tab-content -->
+                    </div>
+                    <!-- nav-tabs-custom -->
+                  </div>
+             
+                  <!-- /.col -->
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+
+
+
+
+
+
+                                    
       </div>
       
 </div>
