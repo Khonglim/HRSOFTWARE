@@ -371,7 +371,7 @@
                                                     <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
                                                     <label > สถานะทางทหาร</label>
                                                           {{ Form::select('military_service', [
-                                                              $personal->military_service=>$personal->military_service, 
+                                                               $personal->military_service=>$personal->military_service, 
                                                                 'ได้รับการยกเว้น' => 'ได้รับการยกเว้น',
                                                                 'ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร',
                                                                 'ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'
