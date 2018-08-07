@@ -21,393 +21,208 @@
                       </ul>
                       <div class="tab-content">
                         <div class="tab-pane active" id="tab_1">
-                                <div class="row">
-                                        
+                               
                                         <div class="col-md-2">
                                                 <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}" >
-                                                <img src="{{URL::asset($personal->photo)}}" height="75" width="75" >
+                                                <img src="{{URL::asset($personal->photo)}}" height="85" width="85" >
                                             </div>  
                                      </div> 
-                                </div>
-                                <div class="row">  
-                                   <div class="col-md-2">
-                                                <div class="form-group ">
-                                            <label for="name">ชื่อ:</label> 
-                                            {{Form::label($personal->name)}}          
-                                            {{Form::label($personal->lastname)}} 
-                                            
-                                                </div>
-                                        </div> 
-                                
-                                        <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label >ชื่อล่น:</label> 
-                                                    {{Form::label($personal->nikname)}}  
-                                                </div>
-                                         </div> 
-                                         <div class="col-md-2">
-                                                        <div class="form-group">
-                                                <label >เพศ:</label>
-                                                {{Form::label($personal->gender)}}  
-                                                 <span class="text-danger">{{ $errors->first('gender') }}</span>
-                                        </div>
-                                               
-                                        </div> 
-                                      <div class="col-md-2">
-                                                <div class="form-group">
-                                                <label >วันเกิด</label>
-                                                {{Form::label($personal->birthday)}}   
-                                                
-                                        </div>
-                                </div>
-                                <div class="col-md-2">
-                                        <div class="form-group ">
-                                         <label >สัญชาติ</label>
-                                          {{Form::label($personal->nationality)}}   
-                                           
-                                            <span class="text-danger"></span>
-                                            </div>
-                                    </div> 
-                             </div>
-                              
-                                    <div class="row">  
-                                            
-                                           
-                                            <div class="col-md-2">
-                                                    <div class="form-group" >
-                                                    <label >เชื้อชาติ</label>
-                                                    {{Form::label($personal->race)}}   
-                                                    </div>
-                                            </div> 
-                                            
-                                            <div class="col-md-2">
-                                                    <div class="form-group" >
-                                                    <label >ศาสนา</label>
-                                                    {{Form::label($personal->religion)}}   
-                                                    </div>
-                                            </div> 
-                                            <div class="col-md-2">
-                                                    <div class="form-group" >
-                                                    <label >อายุ</label>
-                                                    {{Form::label($personal->age)}}   
-                                                   
-                                                    
-                                                    </div>
-                                            </div> 
-                                            <div class="col-md-2">
-                                                    <div class="form-group" >
-                                                    <label >ส่วนสูง</label>
-                                                    {{Form::label($personal->height)}}   
-                                                    </div>
-                                            </div> 
-                                            <div class="col-md-2">
-                                                    <div class="form-group " >
-                                                    <label >น้ำหนัก</label>
-                                                    {{Form::label($personal->height)}}   
-                                                    </div>
-                                            </div> 
-                                       
-                                    </div>
-              
-                                    <div class="row">  
-                                            <div class="col-md-2">
-                                                    <div class="form-group">
-                                                    <label >พี่น้องกี่คน</label>
-                                                    {{Form::label($personal->brothers)}}   
-                                                  
-                                                    </div>
-                                            </div> 
-            
-                                            <div class="col-md-2">
-                                                    <div class="form-group">
-                                                    <label >เป็นคนที่</label>
-                                                    {{Form::label($personal->number)}}   
-                                                   
-                                                    </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                    <div class="form-group ">
-                                                    <label >โทรศัพท์ที่ติดต่อ</label>
-                                                    {{Form::label($personal->tel)}}   
-                                                    
-                                                    
-                                                    </div>
-                                            </div>
-            
-                                            <div class="col-md-2">
-                                                    <div class="form-group">
-                                                    <label >โทรศัพท์บ้าน</label>
-                                                    {{Form::label($personal->home)}}   
-                                                   
-                                                    </div>
-                                            </div>
-            
-                                            <div class="col-md-2">
-                                                    <div class="form-group ">
-                                                    <label >โทรศัพท์มือถือ</label>
-                                                    {{Form::label($personal->moblie)}}   
-                                               
-                                                  
-                                                    </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                    <div class="form-group">
-                                                    <label >โทรศัพท์สำนักงาน</label>
-                                                    {{Form::label($personal->office)}}   
-                                                    
-                                                    </div>
-                                            </div>
-                                    </div>
-                                    <div class="row">  
-                                            <div class="col-md-3">
-                                                    <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                                    <label>อีเมล</label>
-                                                    {{Form::label($personal->email)}}   
-                                                   
-                                                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                                                    </div>
-                                            </div>
-            
-                                            <div class="col-md-3">
-                                                    <div class="form-group" >
-                                                    <label >ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label>
-                                                    {{Form::label($personal->address1)}}
-                                                    </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                    <div class="form-group" >
-                                                    <label > ที่อยู่ตามบัตรประชาชน</label>
-                                                    {{Form::label($personal->address2)}}
-                                                    
-                                                    </div>
-                                            </div>
-            
-                                            <div class="col-md-3">
-                                                    <div class="form-group">
-                                                    <label >เลขบัตรประชาชน</label>
-                                                    {{Form::label($personal->idcard)}}   
-                                                    </div>
-                                            </div>     
-                                    </div>
-                                    <div class="row">
-                                            <div class="col-md-3">
-                                                    <div class="form-group " >
-                                                    <label >ออกให้ ณ อำเภอ/เขต:</label>
-                                                    {{Form::label($personal->issued)}}   
-                                                    
-                                                    </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                    <div class="form-group" >
-                                                    <label >จังหวัด</label>
-                                                    {{Form::label($personal->province_crad)}} 
-                                                    </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                    <div class="form-group" >
-                                                    <label >วันออกบัตร</label>
-                                                    {{Form::label($personal->issueddate)}}   
-                                                    <span class="text-danger">{{ $errors->first('issueddate') }}</span>
-                                                    </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                    <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
-                                                    <label >บัตรหมดอายุ:</label>
-                                                    {{Form::label($personal->expid)}}   
-                                                    <span class="text-danger">{{ $errors->first('expid') }}</span>
-                                                    </div>
-                                            </div>
-                                    </div>
-            
-            
-                              <div class="row">
-                                    <div class="col-md-3">
-                                            <div class="form-group">
-                                            <label >บัตรประจำตัวผู้เสียภาษี</label>
-                                            {{Form::label($personal->texid)}}   
-                                           
-                                            </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                            <div class="form-group" >
-                                                    <label >สถานะความเป็นอยู่</label>
-                                                    {{Form::label($personal->living_status)}}   
-        
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group" >
-                                                    <label >สถานะครอบครัว</label>
-                                                    {{Form::label($personal->marital_status)}}   
-                                                               
-                                            </div> 
-                                        </div>
-            
-                                        <div class="col-md-2">
-                                                <div class="form-group">
-                                                        <label >กรณีแต่งงาน</label>
-                                                    
-                                                    @if($personal->if_marricd =='')
-                                                    {{Form::label('ไม่มี')}}
-                                                    @else
-                                                    {{Form::label($personal->if_marricd)}}
-                                                      @endif   
-                                                       
                             
-                                                </div> 
-                                            </div>
-                                            <div class="col-md-2">
-                                                    <div class="form-group">
-        
-                                                    <label >คู่มสมรส</label>
-                                                    @if($personal->spouse =='')
-                                                    {{Form::label('ไม่มี')}}
-                                                    @else
-                                                    {{Form::label($personal->spouse)}}
-                                                      @endif    
-        
-                                                    </div>
-                                            </div>
-                                        
-                              </div>
-                            <div class="row">
-                                    <div class="col-md-4">
-                                            <div class="form-group">
-                                                    <label >ชื่อคู่สมรส</label>
-                                                    {{Form::label($personal->name_spouse)}}   
-                                            </div> 
-                                        </div>
-                                        <div class="col-md-3">
-                                                <div class="form-group">
-                                                        <label >อาชีพคู่สมรส</label>
-                                                        {{Form::label($personal->spouse_occupation)}}   
-                                                </div> 
-                                            </div>
-            
-                                            <div class="col-md-3">
-                                                    <div class="form-group">
-                                                            <label > สถานที่ทำงาน</label>
-                                                            {{Form::label($personal->firm_address)}}   
-                                                    </div> 
-                                                </div>
-            
-                                                <div class="col-md-2">
-                                                        <div class="form-group">
-                                                                <label >โทรศัพท์</label>
-                                                                {{Form::label($personal->spouse_tel)}}   
-                                                        </div> 
-                                                    </div>
-                                  </div> 
-                                  
-                                  <div class="row">
-                                        <div class="col-md-2">
-                                        <div class="form-group">
-                                                <label >จำนวนบุตรทั้งหมด</label>
-                                                {{Form::label($personal->children)}}   
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-2">
-                                            <div class="form-group">
-                                                    <label >หญิง</label>
-        
-                                                    {{Form::label($personal->girls)}}
-                                                    
-                                            </div>
-                                        </div>
-            
-                                        <div class="col-md-2">
-                                                <div class="form-group">
-                                                        <label >ชาย</label>
-        
-                                                        {{Form::label($personal->boy)}}   
-                                                </div>
-                                            </div>
-                
-                                            <div class="col-md-2">
-                                                    <div class="form-group">
-                                                            <label > จำนวนบุตรกำลังศึกษา</label>
-                                                            {{Form::label($personal->school)}}  
-                                                           
-                                                    </div>
-                                                </div>
-            
-                                                <div class="col-md-2">
-                                                        <div class="form-group">
-                                                                <label >จำนวนบุตรที่อายุเกิน21ปี</label>
-                                                                {{Form::label($personal->over21,'คน')}}  
-                                                                
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                            <div class="form-group " >
-                                                            <label > สถานะทางทหาร</label>
-                                                            {{Form::label($personal->military_service)}}  
-                                                                  
-                                                                </div> 
-                                                        </div>
-                                        </div>
-                                        <div class="row">
-                                              
-            
-                                                    <div class="col-md-3">
-                                                            <div class="form-group" >
-                                                            <label > ชื่อบิดา</label>
-                                                            {{Form::label($personal->namefather)}}  
-                                                        </div>
-                                                    </div>
-                                                        <div class="col-md-3">
-                                                                <div class="form-group">
-                                                                <label >นามสกุล</label>
-                                                                {{Form::label($personal->lastfather)}}  
-                                                            </div>
-                                                        </div>
-                                                            <div class="col-md-3">
-                                                                    <div class="form-group" >
-                                                                    <label >อาชีพ</label>
-                                                                    {{Form::label($personal->occupation_father)}}  
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                                <div class="col-md-3"><br>
-                                                                    <div class="form-group" >
-                                                                    <label >สถานะ</label>
-                                                                    {{Form::label($personal->alivef)}}
-                                                         
-                                                                    </div>
-                                                                </div>
-                                        </div>
-                                        <div class="row">
-                                                <div class="col-md-3">
-                                                        <div class="form-group" >
-                                                        <label > ชื่อมารดา</label>
-                                                        {{Form::label($personal->namemother)}}  
-                                                       
-                                                        
-                                                    </div>
-                                                </div>
-                                                    <div class="col-md-3">
-                                                            <div class="form-group" >
-                                                            <label >นามสกุล</label>
-                                                            {{Form::label($personal->lasrmother)}}  
-                                                        </div>
-                                                    </div>
-                                                        <div class="col-md-3">
-                                                                <div class="form-group " >
-                                                                <label >อาชีพ</label>
-                                                                {{Form::label($personal->occupationm)}}  
-                                                                
-                                                               
-                                                            </div>
-                                                        </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-group" >
-                                                                        <label >สถานะ</label>
-                                                                        {{Form::label($personal->alivem)}}
-                                                 
-                                             </div>
-                                        </div>
-                                   </div>  
+                                {{Form::label('ชื่อ:')}} {{$personal->name}} {{$personal->lastname}}&emsp;{{Form::label('ชื่อเล่น:')}} {{$personal->nikname}}           
+                                &emsp;{{Form::label('เพศ:')}}  {{$personal->gender}}&emsp;{{Form::label('วันเกิด')}} {{$personal->birthday}}&emsp;  
+                                {{Form::label('สัญชาติ:')}} {{$personal->nationality}}&emsp; {{Form::label('เชื้อชาติ:')}} {{$personal->race}}                  
+                                &emsp;{{Form::label('ศาสนา:')}} {{$personal->religion}}&emsp;{{Form::label('อายุ:')}} {{$personal->age}}     
+                                &emsp;{{Form::label('ส่วนสูง:')}} {{$personal->height}}
+                                
+                                <br><br>
+                                {{Form::label('น้ำหนัก:')}} {{$personal->height}} 
+                                &emsp;{{Form::label('พี่น้องกี่คน:')}} 
+
+                                @if($personal->brothers == '')
+                                ::ว่าง::
+                                @else
+                                {{$personal->brothers}}
+                                @endif
+                                &emsp; 
+                                {{Form::label('เป็นคนที่:')}}  
+                                @if($personal->number == '')
+                                ว่าง
+                                @else
+                                {{$personal->number}}
+                                @endif
+                                &emsp; 
+                                {{Form::label('โทรศัพท์บ้าน:')}} {{$personal->home}} &emsp;  {{Form::label('โทรศัพท์มือถือ:')}} {{$personal->moblie}}              
+                                &emsp; {{Form::label('โทรศัพท์สำนักงาน:')}}           
+                                @if($personal->office == '')
+                                ::ว่าง::
+                                @else
+                                {{$personal->office}}
+                                @endif 
+                                <br><br> 
+                               
+                                {{Form::label('อีเมล:')}}  {{$personal->email}} 
+                                &emsp;  
+                                {{Form::label("ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก:")}} {{$personal->address1}}           
+                                <br><br>  
+                                {{Form::label("ที่อยู่ตามบัตรประชาชน:")}} {{$personal->address2}}      
+                                &emsp; 
+                                {{Form::label("เลขบัตรประชาชน:")}} {{$personal->idcard}}           
+                                &emsp;        
+                                {{Form::label("ออกให้ ณ อำเภอ/เขต:")}} {{$personal->issued}}         
+                                &emsp;
+                                {{Form::label("จังหวัด:")}} {{$personal->province_crad}}  
+                                <br><br> 
+                                {{Form::label("วันออกบัตร:")}} {{$personal->issueddate}}         
+                                &emsp;
+                                {{Form::label("บัตรหมดอายุ:")}} {{$personal->expid}}              
+                                &emsp;  
+                                {{Form::label("บัตรประจำตัวผู้เสียภาษี:")}} 
+                                @if($personal->texid =='')
+                                ว่าง
+                                @else
+                               {{$personal->texid}}
+                                @endif 
+                                &emsp;         
+                                {{Form::label("สถานะความเป็นอยู่:")}} {{$personal->living_status}}           
+                                &emsp;   
+                                {{Form::label("สถานะครอบครัว:")}} {{$personal->marital_status}}   
+                                &emsp;   
+                                {{Form::label("กรณีแต่งงาน:")}} 
+                                @if($personal->if_marricd =='')
+                                ว่าง
+                                @else
+                               {{$personal->if_marricd}}
+                                @endif 
+                                <br><br> 
+                                {{Form::label("คู่มสมรส:")}} 
+                                @if($personal->spouse =='')
+                                ว่าง
+                                @else
+                               {{$personal->spouse}}
+                                @endif 
+                                &emsp;
+                                {{Form::label("คู่มสมรส:")}}
+                                @if($personal->spouse =='')
+                                ว่าง
+                                @else
+                                {{$personal->spouse}}
+                                @endif 
+
+                                &emsp;
+                                {{Form::label("อาชีพคู่สมรส:")}}
+                                @if($personal->spouse_occupation =='')
+                                ว่าง
+                                @else
+                                {{$personal->spouse_occupation}}
+                                @endif
+
+                                &emsp;
+
+                                {{Form::label("สถานที่ทำงาน:")}}
+                                @if($personal->firm_address =='')
+                                ว่าง
+                                @else
+                                {{$personal->firm_address}}
+                                @endif
+
+                                &emsp;
+                                
+                                {{Form::label("โทรศัพท์:")}}
+                                @if($personal->spouse_tel =='')
+                                ว่าง
+                                @else
+                                {{$personal->spouse_tel}}
+                                @endif
+
+                                &emsp;
+
+                                {{Form::label("จำนวนบุตรทั้งหมด:")}}
+                                @if($personal->children =='')
+                                ว่าง
+                                @else
+                                {{$personal->children}}
+                                @endif
+
+                                &emsp;
+
+                                {{Form::label("หญิง:")}}
+                                @if($personal->girls =='')
+                                ว่าง
+                                @else
+                                {{$personal->girls}}
+                                @endif
+                                &emsp;
+
+                                {{Form::label("ชาย:")}}
+                                @if($personal->boy =='')
+                                ว่าง
+                                @else
+                                {{$personal->boy}}
+                                @endif
+                                <br><br> 
+
+                                {{Form::label("จำนวนบุตรกำลังศึกษา:")}}
+                                @if($personal->school =='')
+                                ว่าง
+                                @else
+                                {{$personal->school}}
+                                @endif
+
+                                &emsp;
+
+                                {{Form::label("จำนวนบุตรที่อายุเกิน21ปี:")}}
+                                @if($personal->over21 =='')
+                                ว่าง
+                                @else
+                                {{$personal->over21}}
+                                @endif
+
+                                &emsp;
+
+                                {{Form::label("สถานะทางทหาร:")}}
+                                @if($personal->military_service =='')
+                                ว่าง
+                                @else
+                                {{$personal->military_service}}
+                                @endif
+
+                                &emsp;
+
+                                {{Form::label("สถานะทางทหาร:")}}
+                                @if($personal->military_service =='')
+                                ว่าง
+                                @else
+                                {{$personal->military_service}}
+                                @endif
+                                <br><br> 
+
+                                {{Form::label("ชื่อบิดา:")}}
+                                {{$personal->namefather}}  
+                                &emsp;
+                                {{Form::label("นามสกุล:")}}
+                                {{$personal->lastfather}}  
+                                &emsp;
+                                {{Form::label("อาชีพ:")}}
+                                {{$personal->occupation_father}} 
+                                &emsp;
+                                {{Form::label("สถานะ")}}
+                                {{$personal->alivef}}       
+
+                                <br><br> 
+
+                                {{Form::label("ชื่อมารดา:")}}
+                                {{$personal->namemother}}
+                                &emsp;
+                                {{Form::label("นามสกุล:")}}
+                                {{$personal->lasrmother}}  
+                                &emsp;
+                                {{Form::label("อาชีพ:")}}
+                                {{$personal->occupationm}} 
+                                &emsp;
+                                {{Form::label("สถานะ:")}}
+                                {{$personal->alivem}}     
+
+                                       
                               </div>
                        
                         <!-- /.tab-pane -->
@@ -428,19 +243,60 @@
                                                 <tbody>
                                                   <tr >
                                                     <td align="center" >ประถมศึกษา</td>
-                                                    <td> {{Form::text('primary',$personal->primary,['class'=>'form-control'])}}</td>
-                                                    <td>      
-                                                        {{Form::text('year1',$personal->year1,['class'=>'form-control'])}}
+                                                    <td> 
+                                                                @if($personal->primary =='')
+                                                                ว่าง
+                                                                @else
+                                                                {{$personal->primary}}
+                                                                @endif
+                                                
+                                                
+                                                </td>
+                                                    <td> 
+                                                         @if($personal->year1 =='')
+                                                                ว่าง
+                                                                @else
+                                                                {{$personal->year1}}
+                                                                @endif
+
+                                                       
                                                         </td>
                                                         <td>
-                                                        {{Form::text('year2',$personal->year2,['class'=>'form-control'])}}
+                                                        @if($personal->year2 =='')
+                                                                        ว่าง
+                                                         @else
+                                                                {{$personal->year2}}
+                                                         @endif
+
+
+                                                       
                                                         </td>
-                                                    <td>{{Form::text('gpa',$personal->gpa,['class'=>'form-control'])}}</td>
-                                                    <td>{{Form::text('major',$personal->major,['class'=>'form-control'])}}</td>
-                                                    <td>{{Form::text('degree1',$personal->degree1,['class'=>'form-control'])}}</td>
+                                                    <td>
+                                                     @if($personal->gpa =='')
+                                                                ว่าง
+                                                     @else
+                                                        {{$personal->gpa}}
+                                                     @endif
+
+                                                    </td>
+                                                    <td>
+                                                @if($personal->major =='')
+                                                   ว่าง
+                                                @else
+                                                 {{$personal->major}}
+                                                 @endif             
+                                                </td>
+                                              <td>
+                                                @if($personal->degree1 =='')
+
+                                                        ว่าง
+                                                 @else
+                                                    {{$personal->degree1}}
+                                                 @endif     
+                                        </td>
                                                   </tr>
                                                   <tr>
-                                                        <td>มัธยมศึกษา</td>
+                                                        <td align="center">มัธยมศึกษา</td>
                                                         <td>{{Form::text('secondary',$personal->secondary,['class'=>'form-control'])}} </td>
                                                         <td> 
                                                         {{Form::text('year3',$personal->year3,['class'=>'form-control'])}}
@@ -454,7 +310,7 @@
                                                   </tr>
                 
                                                   <tr>
-                                                        <td>อาชีวะศึกษา</td>
+                                                        <td align="center">อาชีวะศึกษา</td>
                                                         <td>{{Form::text('vocation',$personal->vocation,['class'=>'form-control'])}}</td>
                                                         <td>
                                                         {{Form::text('year5',$personal->year5,['class'=>'form-control'])}}  
@@ -469,7 +325,7 @@
                                                   </tr>
                 
                                                   <tr>
-                                                        <td>อนุปริญญา</td>
+                                                        <td  align="center">อนุปริญญา</td>
                                                         <td>{{Form::text('diploma',$personal->diploma,['class'=>'form-control'])}}</td>
                                                         <td>
                                                         {{Form::text('year7',$personal->year7,['class'=>'form-control'])}} 
@@ -498,7 +354,7 @@
                                               
                 
                                                   <tr>
-                                                        <td>ปริญญาโท</td>
+                                                        <td  align="center">ปริญญาโท</td>
                                                         <td>{{Form::text('master',$personal->master,['class'=>'form-control'])}}</td>
                                                         <td> 
                                                                         {{Form::text('year11',$personal->year11,['class'=>'form-control'])}}
@@ -514,7 +370,7 @@
                 
                 
                                                   <tr>
-                                                        <td>อื่นๆ</td>
+                                                        <td align="center">อื่นๆ</td>
                                                         <td> {{Form::text('otherE',$personal->otherE,['class'=>'form-control'])}}</td>
                                                         <td> 
                                                                      {{Form::text('year13',$personal->year13,['class'=>'form-control'])}}
