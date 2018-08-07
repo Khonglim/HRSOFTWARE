@@ -3,16 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
-        
-        <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <style>
         @font-face {
             font-family: 'THSarabunNew';
             font-style: normal;
             font-weight: normal;
-            src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype');
+            src: url("{{URL::asset('fonts/THSarabunNew.ttf') }}") format('truetype');
         }
 
         body {
