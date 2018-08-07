@@ -686,8 +686,6 @@
                                            ],null, ['class' => 'form-control']) }}
 
                                             <span class="text-danger">{{ $errors->first('englisr') }}</span>
-                                            
-                                            ''
                                         </td>
                                   </tr>
                                   <tr>
