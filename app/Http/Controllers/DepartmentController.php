@@ -18,7 +18,7 @@ class DepartmentController extends Controller
         $company = Company::where('enable','=', 1)->get();
         $department = Department::where('enable', '=', 1)->get();
         $data = array('department' => $department , 'company' => $company  );
-        return view('department',$data );
+        return view('department/department',$data );
     }
 
     /**
@@ -36,7 +36,7 @@ class DepartmentController extends Controller
       
         $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
 
-        return view('formcreatedepartment',$data );
+        return view('department/formcreatedepartment',$data );
     }
 
     /**

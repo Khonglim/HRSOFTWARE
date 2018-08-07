@@ -23,7 +23,7 @@ class PositionController extends Controller
         $data = array(
             'position' => $position,'department' => $department ,'company' => $company
         );
-        return view('position',$data );
+        return view('position/position',$data );
     }
 
     /**
@@ -40,7 +40,7 @@ class PositionController extends Controller
       
         $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
 
-        return view('formcreateposition',$data );
+        return view('position/formcreateposition',$data );
         
     }
 
@@ -92,7 +92,7 @@ class PositionController extends Controller
             $data = array(
                 'position' => $position,'positions' => $positions,'company' => $company,'department' => $department
             );
-            return view('formposition',$data);
+            return view('position/formposition',$data);
         }
     }
 

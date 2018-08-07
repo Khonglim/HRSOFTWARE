@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Personal;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Validation\Rule;
 class EmployeeController extends Controller
 {
     /**
@@ -18,7 +18,7 @@ class EmployeeController extends Controller
 
         $personal = Personal::where('enable','=', 1)->get();
         $data = array('personal' =>  $personal  );
-        return view('employee',$data);
+        return view('employ/employee',$data);
         
     }
 
@@ -30,7 +30,7 @@ class EmployeeController extends Controller
     public function create()
     {
 
-        return view('formcreateemployee' );
+        return view('employ/formcreateemployee' );
     }
 
     /**
@@ -61,7 +61,6 @@ class EmployeeController extends Controller
             'height' => 'required|numeric',
             'weight' => 'required|numeric',
             'moblie' => 'required|numeric',
-            'email' => 'required',
             'address2' => 'required',
             'idcard' => 'required|numeric',
             'issued' => 'required',
@@ -303,6 +302,11 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
+        $personal = Personal::find($id);
+        $data = array(
+            'personal' =>  $personal
+        );
+        return view('employ/show',$data);
 
     }
 
@@ -320,7 +324,7 @@ class EmployeeController extends Controller
             $data = array(
                 'personal' => $personal
             );
-            return view('formeditemployee',$data);
+            return view('employ/formeditemployee',$data);
         }
 
     }
@@ -337,14 +341,14 @@ class EmployeeController extends Controller
 
         $this->validate($request,[
             'name' => 'required|max:35',
-            'lastname' => 'requiredmax:35',
+            'lastname' => 'required',
             'nikname' => 'required|max:35',
             'gender' => 'required',
 
             
             'nationality' => 'required|max:35',
             'birthday' => 'required',
-            'email' => ['required',Rule::unique('personal')->ignore($request->id),],
+            'email' => ['required',Rule::unique('personal')->ignore($id), ],
             'address1' => 'required',
             'tel' => 'required|numeric',
             'race' => 'required',
@@ -354,7 +358,6 @@ class EmployeeController extends Controller
             'height' => 'required|numeric',
             'weight' => 'required|numeric',
             'moblie' => 'required|numeric',
-            'email' => 'required',
             'address2' => 'required',
             'idcard' => 'required|numeric',
             'issued' => 'required',
@@ -404,17 +407,7 @@ class EmployeeController extends Controller
             'offense' => 'required',
             'pregnant' => 'required'
         ]);
-
-
-
-
-
-
-
-
-
         $personal =  Personal::find($id);
-
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
         $personal->nikname = $request->nikname;

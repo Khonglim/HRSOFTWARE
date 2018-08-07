@@ -31,6 +31,7 @@
             
              <td>  
                   <a href="{{'employee/'.$l['id'].'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
+                  {{ Html::link('employee/'.$l['id'], 'View', array('class'=> 'btn btn-primary')) }}
                   <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}"><i class=" fa fa-trash"></i></button>
         <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
                   <div class="modal-dialog">

@@ -21,7 +21,7 @@ class CompanyController extends Controller
         );
 
         
-        return view('company',$data );
+        return view('company/company',$data );
     }
 
     /**
@@ -31,7 +31,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('fromcreatcompany');
+        return view('company/fromcreatcompany');
     }
 
     /**
@@ -78,7 +78,7 @@ class CompanyController extends Controller
             $data = array(
                 'company' => $company
             );
-            return view('formompany',$data);
+            return view('company/formompany',$data);
         }
     }
 
