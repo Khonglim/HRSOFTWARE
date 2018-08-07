@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-xs-12">
           @if(auth()->user()->isAdmin == 1)
-          <a href="employee/create" class="btn btn-success" ><i class="fa fa-plus"> เพิ่มข้อมูล</i></a>
+          <a href="employee/create" class="btn btn-success" ><i class="fa fa-user-plus"> เพิ่มข้อมูล</i></a>
           @endif
           <br><br>
         <div class="box">
@@ -30,8 +30,8 @@
              <td> {{$l['lastname']}} </td>
             
              <td>  
-                  <a href="{{'employee/'.$l['id'].'/edit'}}" class="btn btn-primary btn-xs" ><i class="fa fa-pencil"></i></a>
-                  {{ Html::link('employee/'.$l['id'], 'View', array('class'=> 'btn btn-primary')) }}
+                  <a href="{{'employee/'.$l['id']}}" class="btn btn-primary btn-xs" ><i class="fa fa-search"></i></a>
+                  <a href="{{'employee/'.$l['id'].'/edit'}}" class="btn btn-success btn-xs " ><i class="fa fa-pencil"></i></a>
                   <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$l['id']}}"><i class=" fa fa-trash"></i></button>
         <div id="myModal{{$l['id']}}" class="modal fade" role="dialog">
                   <div class="modal-dialog">
