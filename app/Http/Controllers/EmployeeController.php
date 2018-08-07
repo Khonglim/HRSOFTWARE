@@ -49,7 +49,7 @@ class EmployeeController extends Controller
             'gender' => 'required',
 
             'image' => 'required',
-            'nationality' => 'required|min:5|max:35',
+            'nationality' => 'required|max:35',
             'birthday' => 'required',
             'email' =>'required',
             'address1' => 'required',

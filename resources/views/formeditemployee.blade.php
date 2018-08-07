@@ -206,11 +206,8 @@
                                             
                                             <span class="text-danger">{{ $errors->first('idcard') }}</span>
                                             </div>
-                                    </div>
-    
-                                    
+                                    </div>     
                             </div>
-    
                             <div class="row">
                                     <div class="col-md-3">
                                             <div class="form-group  {{ $errors->has('issued') ? 'has-error' : '' }}" >
