@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Personal;
+
 use Illuminate\Support\Facades\Input;
 use Illuminate\Validation\Rule;
 class EmployeeController extends Controller
@@ -613,4 +614,8 @@ class EmployeeController extends Controller
         $personal->save();
         return redirect('employee');
     }
+
+
+
+
 }

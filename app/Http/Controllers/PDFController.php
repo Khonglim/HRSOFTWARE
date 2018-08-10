@@ -1,16 +1,15 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Company;
+use App\Personal;
 use PDF;
 
 class PDFController extends Controller
 {
-    public function pdf()
+    public function pdf($id)
     {
-        $company = Company::all();
-        $pdf = PDF::loadView('pdf',['company' => $company]);
-        return @$pdf->stream();
+        $personal = Personal::find($id);
+        $pdf = PDF::loadView('employ.pdf',['personal' => $personal ]);
+        return $pdf->stream();
     }
 }

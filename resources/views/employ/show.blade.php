@@ -7,7 +7,7 @@
                 <h2 class="page-header">ข้อมูลของ {{$personal->name}}  {{$personal->lastname}} </h2>
           
                 <div class="row">
-                  <div class="col-md-10">
+                  {{-- <div class="col-md-10"> --}}
                     <!-- Custom Tabs -->
                     <div class="nav-tabs-custom">
                       <ul class="nav nav-tabs">

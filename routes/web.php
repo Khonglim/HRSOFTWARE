@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PDFController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,27 +31,18 @@ Route::get('/', function ()
 });
 
 Route::resource('home','HomeController');
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('iframe', function () {
     
     return view('iframe');
 
 });
 
+
 Route::get('/dynamicdependent','DynamicDependent@index');
-
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
-
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 
-Route::get('/pdf', function () {
-    $data = [
-        'name'=>'อะไรสักอย่าง ไม่รู้นามสกุลอะไร'
-    ];
-    $pdf = PDF::loadView('pdf', $data);
-    return @$pdf->stream();
-});
+Route::get('/pdf/{id}','PDFController@pdf' );
 
 
