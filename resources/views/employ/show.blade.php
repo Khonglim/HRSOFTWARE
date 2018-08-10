@@ -35,7 +35,7 @@
                                 &emsp;{{Form::label('ส่วนสูง:')}} {{$personal->height}}
                                 
                                 <br><br>
-                                {{Form::label('น้ำหนัก:')}} {{$personal->height}} 
+                                {{Form::label('น้ำหนัก:')}} {{$personal->weight}} 
                                 &emsp;{{Form::label('พี่น้องกี่คน:')}} 
 
                                 @if($personal->brothers == '')

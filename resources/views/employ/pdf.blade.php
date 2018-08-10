@@ -29,11 +29,15 @@
 
         body {
             font-family: "THSarabunNew";
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
-    {{Form::label('ชื่อ:')}} {{$personal->name}} {{$personal->lastname}} {{Form::label('ชื่อเล่น:')}} {{$personal->nikname}}           
+        
+        <p> ชื่อ: {{$personal->name}} {{$personal->lastname}}  ชื่อเล่น:  {{$personal->nikname}} </p>   
+          
+                  
     {{Form::label('เพศ:')}}  {{$personal->gender}}{{Form::label('วันเกิด')}} {{$personal->birthday}}  
     {{Form::label('สัญชาติ:')}} {{$personal->nationality}} {{Form::label('เชื้อชาติ:')}} {{$personal->race}}                  
     {{Form::label('ศาสนา:')}} {{$personal->religion}}{{Form::label('อายุ:')}} {{$personal->age}}     

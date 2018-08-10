@@ -10,6 +10,7 @@ class PDFController extends Controller
     {
         $personal = Personal::find($id);
         $pdf = PDF::loadView('employ.pdf',['personal' => $personal ]);
+       
         return $pdf->stream();
     }
 }

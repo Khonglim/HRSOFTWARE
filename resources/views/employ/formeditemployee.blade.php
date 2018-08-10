@@ -117,7 +117,7 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('weight') ? 'has-error' : '' }}" >
                                             <label >น้ำหนัก</label>
-                                            {{Form::text('weight',$personal->height,['class'=>'form-control'])}}   
+                                            {{Form::text('weight',$personal->weight,['class'=>'form-control'])}}   
                                           
                                             <span class="text-danger">{{ $errors->first('weight') }}</span>
                                             </div>
