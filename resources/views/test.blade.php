@@ -9,7 +9,7 @@
     <input type="radio" name="{{$c->id}}" id="choice2" value="2" />{{$c->choice2}}<br><br><br>
 @endforeach    
 
-{{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+{{ Form::submit('ตรวจคำตอบ',['class'=> 'btn btn-primary'])}}
 
 {{Form::close()}}
 </div>
