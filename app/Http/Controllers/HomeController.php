@@ -28,20 +28,13 @@ class HomeController extends Controller
     public function index()
     {
         
-        
-      $choice = DB::connection('mysql2')->select("SELECT * FROM tb_choice");
-    
-     $data = array(
-        'choice' =>  $choice
-    );
-
-    
-    return view('home',$data );
+    return view('home');
     }
 
-    public function destroy($id)
-    {
-        
-        
-    }
+
+
+    
+
+
+
 }

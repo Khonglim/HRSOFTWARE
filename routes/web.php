@@ -21,6 +21,10 @@ Route::resource('position','PositionController');
 
 Route::resource('employee','EmployeeController');
 
+Route::resource('answer','AnswerController');
+
+Route::post('answer','AnswerController@answer');
+
 Route::get('/orgchartcompany','JorgchartController@company');
 
 Auth::routes();
