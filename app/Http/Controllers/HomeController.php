@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\User;
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -29,20 +29,19 @@ class HomeController extends Controller
     {
         
         
-        $company = DB::table("company")   
-        ->leftJoin('department', 'company.id', '=', 'department.company_id')
-        ->get();
-        $data = array('company' => $company);
-        return view('home',$data );
-       
+      $choice = DB::connection('mysql2')->select("SELECT * FROM tb_choice");
+    
+     $data = array(
+        'choice' =>  $choice
+    );
+
+    
+    return view('home',$data );
     }
 
     public function destroy($id)
     {
         
-        $user = User::find($id);
-        $user->enable =0;
-        $user->save();
-        return redirect('home'); 
+        
     }
 }
