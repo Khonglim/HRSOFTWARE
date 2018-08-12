@@ -13,4 +13,12 @@ class PDFController extends Controller
        
         return $pdf->stream();
     }
+
+    public function pdftest()
+    {
+        
+        $pdf = PDF::loadView('ans');
+       
+        return @$pdf->stream();
+    }
 }

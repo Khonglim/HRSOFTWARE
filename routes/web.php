@@ -47,6 +47,6 @@ Route::get('/dynamicdependent','DynamicDependent@index');
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 
-Route::get('/pdf/{id}','PDFController@pdf' );
+Route::get('/pdf','PDFController@pdftest' );
 
 

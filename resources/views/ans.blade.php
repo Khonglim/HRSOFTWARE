@@ -1,4 +1,3 @@
-
 @extends('layouts.main')
 @section('content')
 
@@ -7,7 +6,6 @@ $i=0;
 $j=0;
 $k=0;
 $f=0;
-
 $o=0;
 $w=0;
 $h=0;
@@ -122,7 +120,12 @@ $p=0;
         
               <div class="box-body">
                   <div class ="form-group">
-               คะแนนของคุณ: {{ $name =  $_POST["name"]   }} 
+                      @foreach($_POST as $choice => $name)
+                      @if($choice != '_token')
+                      คะแนนของคุณ: {{ $name }} 
+                      @endif
+                      @endforeach
+              
               </div>
               <div class ="form-group">
                    <table class="table table-bordered">
@@ -189,15 +192,15 @@ $p=0;
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">ExportPDF</button>
+                {{ Html::link('answer','Back',array('class ' => 'btn btn-primary')) }}
+  
               </div>
               <!-- /.box-footer -->
             
           </div>
         </div> 
          
-</div>
-  </div>
+
+
  
-  @endsection
+@endsection
