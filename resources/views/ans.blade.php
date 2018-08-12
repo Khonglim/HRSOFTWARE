@@ -112,14 +112,6 @@ $p=0;
          @endif
          @endforeach
          @endif
-
-
-
-
-
-
-
-
   <div class="content-wrapper">
     <div class="content container-fluid">
         <div class="col-md-11">
@@ -132,7 +124,7 @@ $p=0;
                   <div class ="form-group">
                คะแนนของคุณ: {{ $name =  $_POST["name"]   }} 
               </div>
-              
+              <div class ="form-group">
                    <table class="table table-bordered">
                       <thead>
                         <tr>
@@ -157,7 +149,12 @@ $p=0;
                         </tr>
                       </tbody>
                     </table>
-
+                  </div>
+                  <div class ="form-group">
+                    ท่านได้คะแนน "I" กับ "E" อย่างไหนมากกว่ากันตอบ @if($i>$j) "I" @else "E" @endif หมายเหตุ:ถ้าได้คะแนน "I" เท่ากับ "E" จะไม่นับคะแนนข้อ 11<br>
+                    ท่านได้คะแนน "S" กับ "N" อย่างไหนมากกว่ากันตอบ @if($k>$f) "S" @else "N" @endif หมายเหตุ:ถ้าได้คะแนน "S" เท่ากับ "N" จะไม่นับคะแนนข้อ 16
+                    </div>
+                  <div class ="form-group">
                     <table class="table table-bordered">
                         <thead>
                           <tr>
@@ -184,11 +181,16 @@ $p=0;
                           </tr>
                         </tbody>
                       </table>
+                    </div>
+                    <div class ="form-group">
+                        ท่านได้คะแนน "T" กับ "F" อย่างไหนมากกว่ากันตอบ @if($o>$w) "T" @else "F" @endif หมายเหตุ:ถ้าได้คะแนน "T" เท่ากับ "F" จะไม่นับคะแนนข้อ 11<br>
+                        ท่านได้คะแนน "J" กับ "P" อย่างไหนมากกว่ากันตอบ @if($h>$p) "J" @else "P" @endif หมายเหตุ:ถ้าได้คะแนน "J" เท่ากับ "P" จะไม่นับคะแนนข้อ 16
+                        </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                <button type="submit" class="btn btn-info pull-right">ExportPDF</button>
               </div>
               <!-- /.box-footer -->
             
