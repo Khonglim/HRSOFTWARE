@@ -6,7 +6,7 @@
 
                 <h2 class="page-header">ข้อมูลของ {{$personal->name}}  {{$personal->lastname}} </h2>
           
-                <div class="row">
+               
                   {{-- <div class="col-md-10"> --}}
                     <!-- Custom Tabs -->
                     <div class="nav-tabs-custom">
@@ -1036,7 +1036,7 @@
                                 {{$personal->namecm}}
                         
                                
-                        </div>
+                        
                            </td>
                             <td>
                                              
@@ -1054,7 +1054,7 @@
                                         
                                     {{$personal->telecm}}
                                      
-                                </div>
+                                
                            </td>
                             <td>
                                        
@@ -1240,14 +1240,8 @@
                                                                     </div>   
                                                                 </div>                                               
                                                            </div>    
-                                  </div>
-          
-
-
-
-
-
-
+                                  
+        
                         <!-- /.tab-pane -->
                       </div>
                       <!-- /.tab-content -->
@@ -1257,38 +1251,7 @@
              
                   <!-- /.col -->
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  
-
-
-
-
-
-
-
-                                    
+                            
       </div>
       
 </div>

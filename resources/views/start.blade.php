@@ -23,7 +23,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
+             
                 {{ Form::submit('เริ่มทำข้อสอบ',['class'=> 'btn btn-primary'])}}
               </div>
               <!-- /.box-footer -->
