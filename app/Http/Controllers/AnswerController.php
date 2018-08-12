@@ -10,7 +10,7 @@ class AnswerController extends Controller
     {
         return view('start' );
     }
-    public function create()
+    public function start()
     {
         $choice = DB::connection('mysql2')->select("SELECT * FROM tb_choice");
         $data = array( 'choice' =>  $choice);
@@ -20,8 +20,7 @@ class AnswerController extends Controller
     public function answer()
     {
       
-        $choice = DB::connection('mysql2')->select("SELECT * FROM tb_choice");
-        $data = array( 'choice' =>  $choice);
-        return view('ans',$data);
+        
+        return view('ans');
     }
 }

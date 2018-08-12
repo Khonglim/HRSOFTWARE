@@ -122,13 +122,17 @@ $p=0;
 
   <div class="content-wrapper">
     <div class="content container-fluid">
-        <div class="col-md-6">
+        <div class="col-md-11">
         <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">การให้คะแนน: นับ 1 คะแนน สำหรับแต่ละคำตอบของท่านในแบบเฉลยต่อไปนี้</h3>
             </div>
         
               <div class="box-body">
+                  <div class ="form-group">
+               คะแนนของคุณ: {{ $name =  $_POST["name"]   }} 
+              </div>
+              
                    <table class="table table-bordered">
                       <thead>
                         <tr>
