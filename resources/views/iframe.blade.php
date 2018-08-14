@@ -2,7 +2,7 @@
 @section('content')
 <div class="content-wrapper">
     <section class="content">
-        <iframe src="{{URL::to('/orgchartcompany')}}" width="100%" height="600"></iframe>
+        <iframe src="{{URL::to('/orgchartcompany')}}" width="100%" height="800"></iframe>
 </section>
 </div>
 @endsection
