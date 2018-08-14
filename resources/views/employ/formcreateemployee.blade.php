@@ -415,9 +415,9 @@
                                                     </div>
                                                         <div class="col-md-3"><br>
                                                             <div class="form-group{{ $errors->has('alivef') ? 'has-error' : '' }}" >
-                                                                {{ Form::radio('alivef', 'ชาย') }}ยังมีชีวิตอยู่
+                                                                {{ Form::radio('alivef', 'ยังมีชีวิตอยู่') }}ยังมีชีวิตอยู่
                                        
-                                                                 {{ Form::radio('alivef', 'หญิง') }}ถึงแก่กรรม
+                                                                 {{ Form::radio('alivef', 'ยังมีชีวิตอยู่') }}ถึงแก่กรรม
                                                                
                                                                 <br> <span class="text-danger">{{ $errors->first('alivef') }}</span>
                                                             </div>
@@ -450,9 +450,9 @@
                                                 </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group {{ $errors->has('alivem') ? 'has-error' : '' }}" >
-                                                                {{ Form::radio('alivem', 'ชาย') }}ยังมีชีวิตอยู่
+                                                                {{ Form::radio('alivem', 'ยังมีชีวิตอยู่') }}ยังมีชีวิตอยู่
                                        
-                                                                 {{ Form::radio('alivem', 'หญิง') }}ถึงแก่กรรม
+                                                                 {{ Form::radio('alivem', 'ยังมีชีวิตอยู่') }}ถึงแก่กรรม
                                                             <br><span class="text-danger">{{ $errors->first('alivem') }}</span>
                                      </div>
                                 </div>
@@ -1021,7 +1021,7 @@
                                            </div>
                                       </div>
                                      
-                                      {{ Form::submit('บันทึก',['class'=> 'btn btn-primary'])}} 
+                                      {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
                                         
                                       {{ Form::close()}}               
                                      

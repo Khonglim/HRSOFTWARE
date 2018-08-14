@@ -1092,7 +1092,7 @@
                                            </div>
                                       </div>
                                      
-                                      {{ Form::submit('บันทึก',['class'=> 'btn btn-primary'])}} 
+                                      {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
                                         
                                       {{ Form::close()}}               
                                      
