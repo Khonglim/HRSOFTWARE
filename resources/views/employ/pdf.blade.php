@@ -48,26 +48,28 @@
             <td>ชื่อ: {{$personal->name}} {{$personal->lastname}} </td>
             <td>ชื่อเล่น: {{$personal->nikname}}</td>
             <td>เพศ: {{$personal->gender}}</td>
-            <td>วันเกิด: {{$personal->birthday}} </td>
+            <td colspan="2">วันเกิด: {{$personal->birthday}} </td>
             <td>สัญชาติ: {{$personal->nationality}}</td>
-            <td>เชื้อชาติ: {{$personal->race}} </td>
+            
           </tr>
           <tr>
+            <td>เชื้อชาติ: {{$personal->race}} </td>
             <td>ศาสนา: {{$personal->religion}}</td>
             <td>อายุ: {{$personal->age}}     </td>
             <td>เพศ: {{$personal->gender}}</td>
             <td>ส่วนสูง: {{$personal->height}}</td>
             <td>น้ำหนัก: {{$personal->height}} </td>
-            <td>
-                พี่น้องกี่คน:  
-                @if($personal->brothers == '')
-                ::ว่าง::
-                @else
-                {{$personal->brothers}}
-                @endif
-            </td>
+            
           </tr>
           <tr>
+                <td>
+                        พี่น้องกี่คน:  
+                        @if($personal->brothers == '')
+                        ::ว่าง::
+                        @else
+                        {{$personal->brothers}}
+                        @endif
+                    </td>
             <td>
                 เป็นคนที่:  
                 @if($personal->number == '')
@@ -78,10 +80,7 @@
             </td>
             <td>Dooley</td>
             <td colspan="2">โทรศัพท์บ้าน: {{$personal->home}}   </td>
-            <td colspan="2">โทรศัพท์มือถือ: {{$personal->moblie}}  </td>
-           
-         
-
+            <td>โทรศัพท์มือถือ: {{$personal->moblie}}  </td>
           </tr>
 
           <tr>
@@ -103,17 +102,15 @@
           </tr>
           <tr>
                 <td colspan="2">
-                        ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก: {{$personal->address1}}  
+                        ที่อยู่ตามบัตรประชาชน: {{$personal->address2}}  
                 </td>
-                <td colspan="2">
+                <td colspan="3">
                         เลขบัตรประชาชน: {{$personal->idcard}}    
                 </td>
             
-                    <td colspan="2">
+                    <td>
                             ออกให้ ณ อำเภอ/เขต: {{$personal->issued}}   
                     </td>
-          
-               
             </tr>
             <tr>
                 <td>
@@ -248,12 +245,7 @@
                             @endif
                     </td>
                     <td colspan="3">
-                            สถานะทางทหาร:
-                                @if($personal->military_service =='')
-                                ว่าง
-                                @else
-                                {{$personal->military_service}}
-                                @endif
+                            
                         </td>
                 </tr>
                 <tr>
@@ -264,7 +256,7 @@
                 <tr>
                     <td colspan="2">ชื่อมารดา: {{$personal->namemother}} {{$personal->lasrmother}}</td>
                     <td colspan="2">อาชีพ: {{$personal->occupationm}}</td>
-                    <td colspan="">สถานะ:{{$personal->alivem}} </td>
+                    <td colspan="2">สถานะ:{{$personal->alivem}} </td>
                 </tr>
         </tbody>
       </table>
