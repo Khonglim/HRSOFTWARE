@@ -30,7 +30,7 @@
         <header class="main-header">
             <a href="{{ url('/home') }}" class="logo">
                 <span class="logo-mini"></span>
-                <span class="logo-lg">NGG group  </span>
+                <span class="logo-lg">HR Software</span>
               </a>
             <nav class="navbar navbar-static-top" role="navigation">
               <!-- Sidebar toggle button-->

@@ -12,6 +12,9 @@
                 <div class="box box-danger">
                     <div class="box-header">
                       <h3 class="box-title">ประวัติส่วนตัว</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                      </div>
                     </div>
                     <div class="box-body">
                                   
@@ -189,14 +192,14 @@
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('address1') ? 'has-error' : '' }}" >
                                             <label >ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label>
-                                            <textarea name="address1"  required="required" class="form-control"  rows="1"  >{{ old('address1') }}</textarea>
+                                            <textarea name="address1"  class="form-control"  rows="1"  >{{ old('address1') }}</textarea>
                                             <span class="text-danger">{{ $errors->first('address1') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('address2') ? 'has-error' : '' }}" >
                                             <label > ที่อยู่ตามบัตรประชาชน</label>
-                                            <textarea name="address2"  required="required" class="form-control"  rows="1" >{{ old('address2') }}</textarea>
+                                            <textarea name="address2" class="form-control"  rows="1" >{{ old('address2') }}</textarea>
                                             <span class="text-danger">{{ $errors->first('address2') }}</span>
                                             </div>
                                     </div>
@@ -374,7 +377,7 @@
                                                     <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
                                                     <label > สถานะทางทหาร</label>
                                                     {{ Form::select('military_service', [
-                                                        '' =>'::ไม่มี::', 
+                                                        '-' =>'::ไม่มี::', 
                                                         'ได้รับการยกเว้น' => 'ได้รับการยกเว้น',
                                                         'ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร',
                                                         'ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'
@@ -466,6 +469,9 @@
                   <div class="box box-danger">
                     <div class="box-header">
                       <h3 class="box-title">ประวัติการศึกษา</h3>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                      </div>
                     </div>
                     <div class="box-body">
                         <div class="box-body table-responsive no-padding">
@@ -582,6 +588,9 @@
           <div class="box box-danger">
             <div class="box-header">
               <h3 class="box-title">ภาษา</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
             </div>
             <div class="box-body">
                 <div class="box-body table-responsive no-padding">
@@ -712,6 +721,10 @@
           <div class="box box-danger">
             <div class="box-header">
               <h3 class="box-title">ประวัติการทำงาน</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+
             </div>
             <div class="box-body">
                 <div class="box-body table-responsive no-padding">
@@ -772,6 +785,9 @@
           <div class="box box-danger">
             <div class="box-header">
               <h3 class="box-title">อื่นๆ</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
             </div>
             <div class="box-body">
          

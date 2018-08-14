@@ -19,27 +19,27 @@ $p=0;
              || ($choice == '27' && $answer == '2') || ($choice == '32' && $answer == '2'))
              <?php    $i++ ;?>
               @endif 
-              @if(($choice == '2' && $answer == '2' ) || ($choice == '6' && $answer == '2')
+              @if(($choice == '2' && $answer == '2' )|| ($choice == '6' && $answer == '2')
               || ($choice == '11' && $answer == '2' )|| ($choice == '15' && $answer == '1') 
               || ($choice == '19' && $answer == '1') || ($choice == '22' && $answer == '2') 
               || ($choice == '27' && $answer == '1') || ($choice == '32' && $answer == '1'))
               <?php    $j++; ?>
                @endif 
 
-               @if(($choice == '1' && $answer == '2' ) || ($choice == '10' && $answer == '2')
+               @if(($choice == '1' && $answer == '2' )|| ($choice == '10' && $answer == '2')
                || ($choice == '13' && $answer == '1' )|| ($choice == '16' && $answer == '1') 
                || ($choice == '17' && $answer == '1') || ($choice == '21' && $answer == '1') 
                || ($choice == '28' && $answer == '2') || ($choice == '30' && $answer == '2'))
                <?php    $k++ ;?>
                 @endif 
-                @if(($choice == '1' && $answer == '1' ) || ($choice == '10' && $answer =='1')
+                @if(($choice == '1' && $answer == '1' )|| ($choice == '10' && $answer =='1')
                 || ($choice == '13' && $answer == '2' )|| ($choice == '16' && $answer == '2') 
                 || ($choice == '17' && $answer == '2') || ($choice == '21' && $answer == '2') 
                 || ($choice == '28' && $answer == '1') || ($choice == '30' && $answer == '1'))
                 <?php    $f++; ?>
                  @endif 
 
-                 @if(($choice == '3' && $answer == '1' ) || ($choice == '5' && $answer =='1')
+                 @if(($choice == '3' && $answer == '1' )|| ($choice == '5' && $answer =='1')
                  || ($choice == '12' && $answer == '1' )|| ($choice == '14' && $answer == '2') 
                  || ($choice == '20' && $answer == '1') || ($choice == '24' && $answer == '2') 
                  || ($choice == '25' && $answer == '1') || ($choice == '29' && $answer == '2'))
@@ -53,13 +53,13 @@ $p=0;
                    @endif  
               
 
-                   @if(($choice == '4' && $answer == '1' ) || ($choice == '7' && $answer =='1')
+                   @if(($choice == '4' && $answer == '1' )|| ($choice == '7' && $answer =='1')
                    || ($choice == '8' && $answer == '2' )|| ($choice == '9' && $answer == '1') 
                    || ($choice == '18' && $answer == '2') || ($choice == '23' && $answer == '2') 
                    || ($choice == '26' && $answer == '1') || ($choice == '31' && $answer == '1'))
                    <?php    $h++; ?>
                     @endif
-                    @if(($choice == '4' && $answer == '2' ) || ($choice == '7' && $answer =='2')
+                    @if(($choice == '4' && $answer == '2' )|| ($choice == '7' && $answer =='2')
                     || ($choice == '8' && $answer == '1' )|| ($choice == '9' && $answer == '2') 
                     || ($choice == '18' && $answer == '1') || ($choice == '23' && $answer == '1') 
                     || ($choice == '26' && $answer == '2') || ($choice == '31' && $answer == '2'))
@@ -110,6 +110,7 @@ $p=0;
          @endif
          @endforeach
          @endif
+         
   <div class="content-wrapper">
     <div class="content container-fluid">
         <div class="col-md-11">
@@ -120,11 +121,7 @@ $p=0;
         
               <div class="box-body">
                   <div class ="form-group">
-                      @foreach($_POST as $choice => $name)
-                      @if($choice != '_token')
-                      คะแนนของคุณ: {{ $name }} 
-                      @endif
-                      @endforeach
+                    คะแนนของคุณ: {{ $name =  $_POST["name"]   }} 
               
               </div>
               <div class ="form-group">
@@ -193,14 +190,8 @@ $p=0;
               <!-- /.box-body -->
               <div class="box-footer">
                 {{ Html::link('answer','Back',array('class ' => 'btn btn-primary')) }}
-  
               </div>
               <!-- /.box-footer -->
-            
           </div>
         </div> 
-         
-
-
- 
 @endsection

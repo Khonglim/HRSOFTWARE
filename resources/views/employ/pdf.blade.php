@@ -34,6 +34,8 @@
     </style>
 </head>
 <body>
+
+    
         
         <p> ชื่อ: {{$personal->name}} {{$personal->lastname}}  ชื่อเล่น:  {{$personal->nikname}} </p>   
           

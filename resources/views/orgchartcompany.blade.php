@@ -200,7 +200,7 @@ div.orgChart div.node.level3 {
 <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Company</button>
   <div id="myDropdown" class="dropdown-content">
-    <a><button class="btn active" onclick="filterSelection('all')"> Show all</button></a>
+    
    @foreach($company as $l) 
  <a><button class="btn" onclick="filterSelection('{{$l['id']}}')">{{$l['company_Name']}}</button></a>
     @endforeach
