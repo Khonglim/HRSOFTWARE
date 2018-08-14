@@ -121,7 +121,7 @@ $p=0;
         
               <div class="box-body">
                   <div class ="form-group">
-                    คะแนนของคุณ: {{ $name =  $_POST["name"]   }} 
+                
               
               </div>
               <div class ="form-group">

@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('content')
+
   <div class="content-wrapper">
     <div class="content container-fluid">
 
@@ -8,14 +9,18 @@
             <div class="box-header with-border">
               <h3 class="box-title">แบบประเมินบุคลิกภาพ</h3>
             </div>
-            {{Form::open(['url'=>'start','method'=>'POST'])}}
+          
+          
               <div class="box-body">
                   <div class="col-md-7">
                 <div class="form-group">
+                  {{Form::open(['url'=>'start','method'=>'POST'])}}
                    
-                    {{Form::label('ชื่อ-สกุล')}}   
-                      {{Form::text('name','',['class'=>'form-control'])}}   
-                    
+                    {{Form::label('ชื่อ')}}   
+                    {{Form::text('name','',['class'=>'form-control'])}}   
+                    {{Form::label('นามสกุล')}}   
+                    {{Form::text('lastname','',['class'=>'form-control'])}}   
+                   
                   </div>
                  
                 </div>

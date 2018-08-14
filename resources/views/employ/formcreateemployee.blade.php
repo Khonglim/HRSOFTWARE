@@ -1022,11 +1022,7 @@
                                       </div>
                                      
                                       {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
-                                        
-                                      {{ Form::close()}}               
-                                     
-      </div>
-      
+                                      {{ Form::close()}}                                       
+      </div> 
 </div>
-
   @endsection

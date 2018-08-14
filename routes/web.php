@@ -21,9 +21,9 @@ Route::resource('position','PositionController');
 
 Route::resource('employee','EmployeeController');
 
-Route::resource('answer','AnswerController');
-Route::post('start','AnswerController@start');
-Route::post('answer','AnswerController@answer');
+Route::get('/answer','AnswerController@index');
+Route::post('/start','AnswerController@start');
+Route::post('/endtest','AnswerController@answer');
 
 Route::get('/orgchartcompany','JorgchartController@company');
 

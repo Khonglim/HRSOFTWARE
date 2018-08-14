@@ -1,20 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AnswerController extends Controller
 {
     public function index()
     {
-        return view('start' );
+        
+
+        return view('start');
     }
     public function start()
-    {
-        $choice = DB::connection('mysql2')->select("SELECT * FROM tb_choice");
-        $data = array( 'choice' =>  $choice);
-        
+    {   $testemp = DB::table('personal')->get();
+         
+        $choice = DB::table('tb_choice')->get();
+        $data = array( 'choice' =>  $choice,'testemp' =>  $testemp);
         return view('test',$data);
     }
     public function answer()
