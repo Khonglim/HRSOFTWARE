@@ -15,7 +15,7 @@
                   <div class="box-body">
                       <div id="topbar">
                           
-                          <h3><p id="showTime" data-minutes-left="2"></p></h3>
+                          <h3><p id="showTime" data-minutes-left="0.1"></p></h3>
                         
                           </div>
                     <div class ="row">

@@ -90,6 +90,11 @@ window.onclick = function(event) {
    
 
                     }
+div.orgChart div.adjunct.node {
+    font-size: .6em;
+
+
+}
 div.body{
   background-color: #fbcece;
 }          
@@ -108,8 +113,20 @@ div.orgChart div.node.level1.special {
 div.orgChart div.node.level2 {
     background-color: #cefbce;
 }
+div.orgChart div.node.level2.special {
+    background-color: white;
+}
 div.orgChart div.node.level3 {
     background-color: #e0cefb;
+}
+div.orgChart div.node.level3.special {
+    background-color: white;
+}
+div.orgChart div.node.level4 {
+    background-color: #38a8ff;
+}
+div.orgChart div.node.level4.special {
+    background-color: white;
 }
 
 .filterDiv {
@@ -250,25 +267,103 @@ div.orgChart div.node.level3 {
                             @if($l['id']==$li['company_id']&&$li['department_head_id']==0) 
                         <li>
                             {{$li['department_name']}} 
+                              @foreach($position as $po)
+                                    
+                                      @if($po['Department_ID']==$li['id'])
+                                       <adjunct><i>
+                                         
+                                       {{$po['position_name']}}
+                                      
+                                        </i></adjunct>
+                                       @endif
+                                          
+                             @endforeach
                            <ul>
                                 @foreach($department as $la)
                      
                                     @if($li['id']==$la['department_head_id']&&$la['department_head_id']>0) 
                                             <li>
-                                                {{$la['department_name']}} 
+                                                  @foreach($department as $lu) 
 
-                                                    <ul>
-                                                        @foreach($position as $lb) 
-                                                            @if($la['id']==$lb['Department_ID'])
-                                                            <li>
-                                                                {{$lb['position_name']}} 
-                                                                  
-                                                            </li> 
-                                                            @endif
+                                                        @if($la['id']==$lu['id'])
+                                                         {{$lu['department_name']}} 
+                                                       
+                                                        @endif
+                                                @endforeach
 
-                                                           
-                                                        @endforeach
-                                                    </ul>
+                                             @foreach($position as $po)
+                                                    
+                                                      @if($po['Department_ID']==$la['id'])
+                                                       <adjunct><i>
+                                                         
+                                                       {{$po['position_name']}}
+                                                      
+                                                        </i></adjunct>
+                                                       @endif
+                                                          
+                                             @endforeach
+                                                <ul> 
+                                                  @foreach($department as $lz)
+
+                                                  @if($la['id']==$lz['department_head_id']&&$lz['department_head_id']>0) 
+                                                  <li> 
+                                                     @foreach($department as $lui) 
+
+                                                        @if($lz['id']==$lui['id'])
+                                                         {{$lui['department_name']}} 
+                                                       
+                                                        @endif
+                                                @endforeach
+
+                                             @foreach($position as $po)
+                                                    
+                                                      @if($po['Department_ID']==$lz['id'])
+                                                       <adjunct><i>
+                                                         
+                                                       {{$po['position_name']}}
+                                                      
+                                                        </i></adjunct>
+                                                       @endif
+                                                          
+                                             @endforeach
+                                                  
+
+                                                     <ul>
+                                                       @foreach($department as $ll)
+
+                                                       @if($lz['id']==$ll['department_head_id']&&$ll['department_head_id']>0)
+
+                                                       <li>
+                                                         @foreach($department as $luil) 
+
+                                                        @if($ll['id']==$luil['id'])
+                                                         {{$ll['department_name']}} 
+                                                       
+                                                        @endif
+                                                @endforeach
+
+                                             @foreach($position as $po)
+                                                    
+                                                      @if($po['Department_ID']==$ll['id'])
+                                                       <adjunct><i>
+                                                         
+                                                       {{$po['position_name']}}
+                                                      
+                                                        </i></adjunct>
+                                                       @endif
+                                                          
+                                             @endforeach
+                                                        
+
+                                                       </li>
+                                                       @endif
+                                                       @endforeach
+                                                     </ul>
+                                                  </li>
+                                                   @endif
+                                                  @endforeach
+                                                </ul>
+                                                   
 
 
                                             </li>   
