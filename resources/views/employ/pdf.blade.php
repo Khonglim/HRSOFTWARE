@@ -29,61 +29,132 @@
 
         body {
             font-family: "THSarabunNew";
-            font-size: 20px;
+            font-size: 16px;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td,th{
+            border:1px solid;
         }
     </style>
 </head>
 <body>
-
-    
-        
-        <p> ชื่อ: {{$personal->name}} {{$personal->lastname}}  ชื่อเล่น:  {{$personal->nikname}} </p>   
-          
-                  
-    {{Form::label('เพศ:')}}  {{$personal->gender}}{{Form::label('วันเกิด')}} {{$personal->birthday}}  
-    {{Form::label('สัญชาติ:')}} {{$personal->nationality}} {{Form::label('เชื้อชาติ:')}} {{$personal->race}}                  
-    {{Form::label('ศาสนา:')}} {{$personal->religion}}{{Form::label('อายุ:')}} {{$personal->age}}     
-    {{Form::label('ส่วนสูง:')}} {{$personal->height}}
-    
-    <br><br>
-    {{Form::label('น้ำหนัก:')}} {{$personal->height}} 
-    {{Form::label('พี่น้องกี่คน:')}} 
-
-    @if($personal->brothers == '')
-    ::ว่าง::
-    @else
-    {{$personal->brothers}}
-    @endif
-     
-    {{Form::label('เป็นคนที่:')}}  
-    @if($personal->number == '')
-    ว่าง
-    @else
-    {{$personal->number}}
-    @endif
-     
-    {{Form::label('โทรศัพท์บ้าน:')}} {{$personal->home}}   {{Form::label('โทรศัพท์มือถือ:')}} {{$personal->moblie}}              
-     {{Form::label('โทรศัพท์สำนักงาน:')}}           
-    @if($personal->office == '')
-    ::ว่าง::
-    @else
-    {{$personal->office}}
-    @endif 
-    <br><br> 
-   
-    {{Form::label('อีเมล:')}}  {{$personal->email}} 
-      
-    {{Form::label("ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก:")}} {{$personal->address1}}           
-    <br><br>  
-    {{Form::label("ที่อยู่ตามบัตรประชาชน:")}} {{$personal->address2}}      
-     
-    {{Form::label("เลขบัตรประชาชน:")}} {{$personal->idcard}}           
+<center><h3>ข้อมูลประวัติ</h3></center>
+    <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>ชื่อ: {{$personal->name}} {{$personal->lastname}} </td>
+            <td>ชื่อเล่น:  {{$personal->nikname}}</td>
+            <td> {{Form::label('เพศ:')}}  {{$personal->gender}}</td>
+            <td>{{Form::label('วันเกิด')}} {{$personal->birthday}} </td>
+            <td>{{Form::label('สัญชาติ:')}} {{$personal->nationality}}</td>
+            <td> {{Form::label('เชื้อชาติ:')}} {{$personal->race}} </td>
+          </tr>
+          <tr>
+            <td> {{Form::label('ศาสนา:')}} {{$personal->religion}}</td>
+            <td> {{Form::label('อายุ:')}} {{$personal->age}}     </td>
+            <td> {{Form::label('เพศ:')}}  {{$personal->gender}}</td>
+            <td> {{Form::label('ส่วนสูง:')}} {{$personal->height}}</td>
+            <td> {{Form::label('น้ำหนัก:')}} {{$personal->height}} </td>
+            <td>  {{Form::label('พี่น้องกี่คน:')}}  
             
-    {{Form::label("ออกให้ ณ อำเภอ/เขต:")}} {{$personal->issued}}         
+                @if($personal->brothers == '')
+                ::ว่าง::
+                @else
+                {{$personal->brothers}}
+                @endif
+            
+            </td>
+          </tr>
+          <tr>
+            <td> {{Form::label('เป็นคนที่:')}}  
+                @if($personal->number == '')
+                ว่าง
+                @else
+                {{$personal->number}}
+                @endif
+            </td>
+            <td>Dooley</td>
+            <td colspan="2"> {{Form::label('โทรศัพท์บ้าน:')}} {{$personal->home}}   </td>
+            <td colspan="2">  {{Form::label('โทรศัพท์มือถือ:')}} {{$personal->moblie}}  </td>
+           
+         
+
+          </tr>
+
+          <tr>
+                <td>  {{Form::label('โทรศัพท์สำนักงาน:')}}           
+                        @if($personal->office == '')
+                        ::ว่าง::
+                        @else
+                        {{$personal->office}}
+                        @endif 
+                    </td>
+
+
+                <td>
+                        {{Form::label('อีเมล:')}}  {{$personal->email}} 
+                </td>
+                <td colspan="4">
+                        {{Form::label("ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก:")}} {{$personal->address1}}  
+                </td>
+               
+          </tr>
+          <tr>
+                <td colspan="2">
+                        {{Form::label("ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก:")}} {{$personal->address1}}  
+                </td>
+                <td colspan="2">
+                        {{Form::label("เลขบัตรประชาชน:")}} {{$personal->idcard}}    
+                </td>
+            
+                    <td colspan="2">
+                            {{Form::label("ออกให้ ณ อำเภอ/เขต:")}} {{$personal->issued}}   
+                    </td>
+          
+               
+            </tr>
+            <tr>
+                <td>
+                        {{Form::label("วันออกบัตร:")}} {{$personal->issueddate}}  
+                </td>
+                      
+                <td>
+                       
+                </td>
+
+                <td>
+                       
+                </td>
+                <td>
+                       
+                </td>
+                <td>
+                       
+                </td>
+                <td>
+                       
+                </td>
+                </tr>
+        </tbody>
+      </table>
+        
+        
+   
+   
+      
+            
+     
+   
+     
+            
+            
+          
     
-    {{Form::label("จังหวัด:")}} {{$personal->province_crad}}  
-    <br><br> 
-    {{Form::label("วันออกบัตร:")}} {{$personal->issueddate}}         
+    
+    
     
     {{Form::label("บัตรหมดอายุ:")}} {{$personal->expid}}              
       
