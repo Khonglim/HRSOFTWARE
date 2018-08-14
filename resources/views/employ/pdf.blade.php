@@ -46,30 +46,30 @@
         <tbody>
           <tr>
             <td>ชื่อ: {{$personal->name}} {{$personal->lastname}} </td>
-            <td>ชื่อเล่น:  {{$personal->nikname}}</td>
-            <td> {{Form::label('เพศ:')}}  {{$personal->gender}}</td>
-            <td>{{Form::label('วันเกิด')}} {{$personal->birthday}} </td>
-            <td>{{Form::label('สัญชาติ:')}} {{$personal->nationality}}</td>
-            <td> {{Form::label('เชื้อชาติ:')}} {{$personal->race}} </td>
+            <td>ชื่อเล่น: {{$personal->nikname}}</td>
+            <td>เพศ: {{$personal->gender}}</td>
+            <td>วันเกิด: {{$personal->birthday}} </td>
+            <td>สัญชาติ: {{$personal->nationality}}</td>
+            <td>เชื้อชาติ: {{$personal->race}} </td>
           </tr>
           <tr>
-            <td> {{Form::label('ศาสนา:')}} {{$personal->religion}}</td>
-            <td> {{Form::label('อายุ:')}} {{$personal->age}}     </td>
-            <td> {{Form::label('เพศ:')}}  {{$personal->gender}}</td>
-            <td> {{Form::label('ส่วนสูง:')}} {{$personal->height}}</td>
-            <td> {{Form::label('น้ำหนัก:')}} {{$personal->height}} </td>
-            <td>  {{Form::label('พี่น้องกี่คน:')}}  
-            
+            <td>ศาสนา: {{$personal->religion}}</td>
+            <td>อายุ: {{$personal->age}}     </td>
+            <td>เพศ: {{$personal->gender}}</td>
+            <td>ส่วนสูง: {{$personal->height}}</td>
+            <td>น้ำหนัก: {{$personal->height}} </td>
+            <td>
+                พี่น้องกี่คน:  
                 @if($personal->brothers == '')
                 ::ว่าง::
                 @else
                 {{$personal->brothers}}
                 @endif
-            
             </td>
           </tr>
           <tr>
-            <td> {{Form::label('เป็นคนที่:')}}  
+            <td>
+                เป็นคนที่:  
                 @if($personal->number == '')
                 ว่าง
                 @else
@@ -77,15 +77,16 @@
                 @endif
             </td>
             <td>Dooley</td>
-            <td colspan="2"> {{Form::label('โทรศัพท์บ้าน:')}} {{$personal->home}}   </td>
-            <td colspan="2">  {{Form::label('โทรศัพท์มือถือ:')}} {{$personal->moblie}}  </td>
+            <td colspan="2">โทรศัพท์บ้าน: {{$personal->home}}   </td>
+            <td colspan="2">โทรศัพท์มือถือ: {{$personal->moblie}}  </td>
            
          
 
           </tr>
 
           <tr>
-                <td>  {{Form::label('โทรศัพท์สำนักงาน:')}}           
+                <td>
+                    โทรศัพท์สำนักงาน:           
                         @if($personal->office == '')
                         ::ว่าง::
                         @else
@@ -94,214 +95,179 @@
                     </td>
 
 
-                <td>
-                        {{Form::label('อีเมล:')}}  {{$personal->email}} 
-                </td>
+                <td>อีเมล: {{$personal->email}}</td>
                 <td colspan="4">
-                        {{Form::label("ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก:")}} {{$personal->address1}}  
+                    ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก: {{$personal->address1}}
                 </td>
                
           </tr>
           <tr>
                 <td colspan="2">
-                        {{Form::label("ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก:")}} {{$personal->address1}}  
+                        ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก: {{$personal->address1}}  
                 </td>
                 <td colspan="2">
-                        {{Form::label("เลขบัตรประชาชน:")}} {{$personal->idcard}}    
+                        เลขบัตรประชาชน: {{$personal->idcard}}    
                 </td>
             
                     <td colspan="2">
-                            {{Form::label("ออกให้ ณ อำเภอ/เขต:")}} {{$personal->issued}}   
+                            ออกให้ ณ อำเภอ/เขต: {{$personal->issued}}   
                     </td>
           
                
             </tr>
             <tr>
                 <td>
-                        {{Form::label("วันออกบัตร:")}} {{$personal->issueddate}}  
+                        วันออกบัตร: {{$personal->issueddate}}  
                 </td>
                       
                 <td>
-                       
+                        บัตรหมดอายุ: {{$personal->expid}}     
                 </td>
 
-                <td>
-                       
+                <td colspan="4">
+                        บัตรประจำตัวผู้เสียภาษี: 
+                            @if($personal->texid =='')
+                                ว่าง
+                            @else
+                                {{$personal->texid}}
+                            @endif 
                 </td>
-                <td>
-                       
-                </td>
-                <td>
-                       
-                </td>
-                <td>
-                       
-                </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                            สถานะความเป็นอยู่: {{$personal->living_status}}  
+                    </td>
+                    <td colspan="2">
+                            สถานะครอบครัว: {{$personal->marital_status}} 
+                    </td>
+                    <td colspan="2">
+                        กรณีแต่งงาน:
+                            @if($personal->if_marricd =='')
+                                ว่าง
+                            @else
+                                {{$personal->if_marricd}}
+                            @endif                                                                      
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                                คู่มสมรส: 
+                                    @if($personal->spouse =='')
+                                        ว่าง
+                                    @else
+                                        {{$personal->spouse}}
+                                    @endif
+                            </td>
+                        <td>
+                                ชื่อสมรส:
+                                    @if($personal->name_spouse =='')
+                                    ว่าง
+                                    @else
+                                    {{$personal->name_spouse}}
+                                    @endif
+                            </td>
+                    <td colspan="2">
+                        อาชีพคู่สมรส:
+                            @if($personal->spouse_occupation =='')
+                                ว่าง
+                            @else
+                                {{$personal->spouse_occupation}}
+                            @endif
+                    </td>
+                    <td>
+                        สถานที่ทำงาน:
+                            @if($personal->firm_address =='')
+                            ว่าง
+                            @else
+                            {{$personal->firm_address}}
+                            @endif
+                    </td>
+                    <td>
+                        โทรศัพท์:
+                            @if($personal->spouse_tel =='')
+                            ว่าง
+                            @else
+                            {{$personal->spouse_tel}}
+                            @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        จำนวนบุตรทั้งหมด:
+                            @if($personal->children =='')
+                                ว่าง
+                            @else
+                                {{$personal->children}}
+                            @endif
+                            คน
+                    </td>
+                    <td>
+                        หญิง:
+                            @if($personal->girls =='')
+                            ว่าง
+                            @else
+                            {{$personal->girls}}
+                            @endif
+                            คน
+                    </td>
+                    <td>
+                        ชาย:
+                            @if($personal->boy =='')
+                            ว่าง
+                            @else
+                            {{$personal->boy}}
+                            @endif
+                            คน
+                    </td>
+                    <td colspan="2">
+                        จำนวนบุตรกำลังศึกษา:
+                            @if($personal->school =='')
+                            ว่าง
+                            @else
+                            {{$personal->school}}
+                            @endif
+                            คน
+                    </td>
+                    <td>
+                        จำนวนบุตรที่อายุเกิน21ปี:
+                            @if($personal->over21 =='')
+                            ว่าง
+                            @else
+                            {{$personal->over21}}
+                            @endif
+                            คน
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        สถานะทางทหาร:
+                            @if($personal->military_service =='')
+                                ว่าง
+                            @else
+                                {{$personal->military_service}}
+                            @endif
+                    </td>
+                    <td colspan="3">
+                            สถานะทางทหาร:
+                                @if($personal->military_service =='')
+                                ว่าง
+                                @else
+                                {{$personal->military_service}}
+                                @endif
+                        </td>
+                </tr>
+                <tr>
+                        <td colspan="2">ชื่อบิดา: {{$personal->namefather}} {{$personal->lastfather}}</td>
+                        <td colspan="2">อาชีพ: {{$personal->occupation_father}}</td>
+                        <td colspan="2">สถานะ: {{$personal->alivef}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ชื่อมารดา: {{$personal->namemother}} {{$personal->lasrmother}}</td>
+                    <td colspan="2">อาชีพ: {{$personal->occupationm}}</td>
+                    <td colspan="">สถานะ:{{$personal->alivem}} </td>
                 </tr>
         </tbody>
       </table>
-        
-        
-   
-   
-      
-            
-     
-   
-     
-            
-            
-          
     
-    
-    
-    
-    {{Form::label("บัตรหมดอายุ:")}} {{$personal->expid}}              
-      
-    {{Form::label("บัตรประจำตัวผู้เสียภาษี:")}} 
-    @if($personal->texid =='')
-    ว่าง
-    @else
-   {{$personal->texid}}
-    @endif 
-             
-    {{Form::label("สถานะความเป็นอยู่:")}} {{$personal->living_status}}           
-       
-    {{Form::label("สถานะครอบครัว:")}} {{$personal->marital_status}}   
-       
-    {{Form::label("กรณีแต่งงาน:")}} 
-    @if($personal->if_marricd =='')
-    ว่าง
-    @else
-   {{$personal->if_marricd}}
-    @endif 
-    <br><br> 
-    {{Form::label("คู่มสมรส:")}} 
-    @if($personal->spouse =='')
-    ว่าง
-    @else
-   {{$personal->spouse}}
-    @endif 
-    
-    {{Form::label("ชื่อสมรส:")}}
-    @if($personal->name_spouse =='')
-    ว่าง
-    @else
-    {{$personal->name_spouse}}
-    @endif 
-
-    
-    {{Form::label("อาชีพคู่สมรส:")}}
-    @if($personal->spouse_occupation =='')
-    ว่าง
-    @else
-    {{$personal->spouse_occupation}}
-    @endif
-
-    
-
-    {{Form::label("สถานที่ทำงาน:")}}
-    @if($personal->firm_address =='')
-    ว่าง
-    @else
-    {{$personal->firm_address}}
-    @endif
-
-    
-    
-    {{Form::label("โทรศัพท์:")}}
-    @if($personal->spouse_tel =='')
-    ว่าง
-    @else
-    {{$personal->spouse_tel}}
-    @endif
-
-    
-
-    {{Form::label("จำนวนบุตรทั้งหมด:")}}
-    @if($personal->children =='')
-    ว่าง
-    @else
-    {{$personal->children}}
-    @endif
-
-    
-
-    {{Form::label("หญิง:")}}
-    @if($personal->girls =='')
-    ว่าง
-    @else
-    {{$personal->girls}}
-    @endif
-    
-
-    {{Form::label("ชาย:")}}
-    @if($personal->boy =='')
-    ว่าง
-    @else
-    {{$personal->boy}}
-    @endif
-    <br><br> 
-
-    {{Form::label("จำนวนบุตรกำลังศึกษา:")}}
-    @if($personal->school =='')
-    ว่าง
-    @else
-    {{$personal->school}}
-    @endif
-
-    
-
-    {{Form::label("จำนวนบุตรที่อายุเกิน21ปี:")}}
-    @if($personal->over21 =='')
-    ว่าง
-    @else
-    {{$personal->over21}}
-    @endif
-
-    
-
-    {{Form::label("สถานะทางทหาร:")}}
-    @if($personal->military_service =='')
-    ว่าง
-    @else
-    {{$personal->military_service}}
-    @endif
-
-    
-
-    {{Form::label("สถานะทางทหาร:")}}
-    @if($personal->military_service =='')
-    ว่าง
-    @else
-    {{$personal->military_service}}
-    @endif
-    <br><br> 
-
-    {{Form::label("ชื่อบิดา:")}}
-    {{$personal->namefather}}  
-    
-    {{Form::label("นามสกุล:")}}
-    {{$personal->lastfather}}  
-    
-    {{Form::label("อาชีพ:")}}
-    {{$personal->occupation_father}} 
-    
-    {{Form::label("สถานะ")}}
-    {{$personal->alivef}}       
-
-    <br><br> 
-
-    {{Form::label("ชื่อมารดา:")}}
-    {{$personal->namemother}}
-    
-    {{Form::label("นามสกุล:")}}
-    {{$personal->lasrmother}}  
-    
-    {{Form::label("อาชีพ:")}}
-    {{$personal->occupationm}} 
-    
-    {{Form::label("สถานะ:")}}
-    {{$personal->alivem}}  
 </body>
 </html>
