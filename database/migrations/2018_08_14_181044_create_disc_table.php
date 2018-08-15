@@ -15,7 +15,6 @@ class CreateDiscTable extends Migration
     {
         Schema::create('disc', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('question');
             $table->string('choice1');
             $table->string('choice2');
             $table->string('choice3');
