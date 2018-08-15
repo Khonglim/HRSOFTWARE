@@ -10,6 +10,7 @@ $o=0;
 $w=0;
 $h=0;
 $p=0;
+$q=0;
 ?>
         @foreach($_POST as $choice => $answer)
            @if($choice != '_token')
@@ -122,7 +123,16 @@ $p=0;
               <div class="box-body">
                   <div class ="form-group">
                 
-              
+                    @foreach($_POST as $choice => $answer)
+                      @if($choice != '_token')
+                      <?php    $q++; ?>
+                     ข้อ: {{$choice}} ตอบ {{$answer}} 
+                      @if($q == '10')
+                      <br>
+                      <?php    $q='0'; ?>
+                      @endif
+                      @endif
+                    @endforeach
               </div>
               <div class ="form-group">
                    <table class="table table-bordered">

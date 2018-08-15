@@ -69,10 +69,6 @@
                                 </div>
     
                       </div>
-    
-    
-    
-                             
                             </div>
                       
                             <div class="row">  
@@ -80,25 +76,37 @@
                                     <div class="col-md-2">
                                         <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
                                          <label >สัญชาติ</label>
-                                          {{Form::text('nationality','',['class'=>'form-control'])}}   
-                                           
+                                          {{ Form::select('nationality', [
+                                                'ไทย' => 'ไทย', 
+                                                'คริสต์' => 'คริสต์',
+                                                'อิสลาม' => 'อิสลาม',
+                                                'อื่นๆ'=> 'อื่นๆ'
+                                    ],null, ['class' => 'form-control']) }}
                                             <span class="text-danger">{{ $errors->first('nationality') }}</span>
                                             </div>
                                     </div> 
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
                                             <label >เชื้อชาติ</label>
-                                            {{Form::text('race','',['class'=>'form-control'])}}   
-                                           
+                                            {{ Form::select('race', [
+                                                'ไทย' => 'ไทย', 
+                                                'คริสต์' => 'คริสต์',
+                                                'อิสลาม' => 'อิสลาม',
+                                                'อื่นๆ'=> 'อื่นๆ'
+                                    ],null, ['class' => 'form-control']) }}
                                             <span class="text-danger">{{ $errors->first('race') }}</span>
                                             </div>
                                     </div> 
                                     
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
-                                            <label >ศาสนา</label>
-                                            {{Form::text('religion','',['class'=>'form-control'])}}   
-                                           
+                                            <label>ศาสนา</label>  
+                                            {{ Form::select('religion', [
+                                                'ไทย' => 'ไทย', 
+                                                'พุทธ' => 'พุทธ',
+                                                'อิสลาม' => 'อิสลาม',
+                                                'อื่นๆ'=> 'อื่นๆ'
+                                    ],null, ['class' => 'form-control']) }}
                                             <span class="text-danger">{{ $errors->first('religion') }}</span>
                                             </div>
                                     </div> 
@@ -211,25 +219,23 @@
                                             
                                             <span class="text-danger">{{ $errors->first('idcard') }}</span>
                                             </div>
-                                    </div>
-    
-                                    
+                                    </div>      
                             </div>
-    
                             <div class="row">
+                                <div class="col-md-3">
+                                        <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
+                                                <label >จังหวัด</label>         
+                                   {{ Form::select('province_crad', [ '' => '::เลือก::','กรุณาเลือกจังหวัด' =>$items],null, ['class' => 'form-control','id'=>'province_crad']) }}          
+                                        <span class="text-danger">{{ $errors->first('province_crad') }}</span>
+                                                        </div>
+                                   </div>
                                     <div class="col-md-3">
                                             <div class="form-group  {{ $errors->has('issued') ? 'has-error' : '' }}" >
                                             <label >ออกให้ ณ อำเภอ/เขต:</label>
-                                            {{Form::text('issued','',['class'=>'form-control'])}}   
+                                      
+                                            {{ Form::select('issued', [ '' => '::เลือก::','อำเภอ/เขต' =>$sub],null, ['class' => 'form-control','id'=>'issued']) }}          
+                                            <span class="text-danger">{{ $errors->first('province_crad') }}</span> 
                                             <span class="text-danger">{{ $errors->first('issued') }}</span>
-                                            </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
-                                            <label >จังหวัด</label>
-                                            {{Form::text('province_crad','',['class'=>'form-control'])}} 
-                                           
-                                            <span class="text-danger">{{ $errors->first('province_crad') }}</span>
                                             </div>
                                     </div>
                                     <div class="col-md-3">
@@ -1020,9 +1026,11 @@
                                                </div>            
                                            </div>
                                       </div>
-                                     
+                                  
+
                                       {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
-                                      {{ Form::close()}}                                       
+                                      {{ Form::close()}}      
+                            
       </div> 
-</div>
+</div>         
   @endsection

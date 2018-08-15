@@ -113,7 +113,7 @@
 
                     $.each(data, function(key, value){
 
-                        $('select[id="state"]').append('<option value="'+ key +'">' + value + '</option>');
+                        $('select[id="state"]').append('<option value="'+ key +'">' + value  + '</option>');
 
                     });
                 },

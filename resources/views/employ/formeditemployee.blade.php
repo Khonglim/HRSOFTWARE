@@ -78,7 +78,13 @@
                                     <div class="col-md-2">
                                         <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
                                          <label >สัญชาติ</label>
-                                          {{Form::text('nationality',$personal->nationality,['class'=>'form-control'])}}   
+                                         {{ Form::select('nationality', [
+                                                 $personal->nationality = $personal->nationality,
+                                                'ไทย' => 'ไทย', 
+                                                'คริสต์' => 'คริสต์',
+                                                'อิสลาม' => 'อิสลาม',
+                                                'อื่นๆ'=> 'อื่นๆ'
+                                    ],null, ['class' => 'form-control']) }}   
                                            
                                             <span class="text-danger">{{ $errors->first('nationality') }}</span>
                                             </div>
@@ -86,7 +92,13 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
                                             <label >เชื้อชาติ</label>
-                                            {{Form::text('race',$personal->race,['class'=>'form-control'])}}   
+                                            {{ Form::select('race', [
+                                                $personal->race = $personal->race,
+                                                'ไทย' => 'ไทย', 
+                                                'คริสต์' => 'คริสต์',
+                                                'อิสลาม' => 'อิสลาม',
+                                                'อื่นๆ'=> 'อื่นๆ'
+                                    ],null, ['class' => 'form-control']) }}  
                                            
                                             <span class="text-danger">{{ $errors->first('race') }}</span>
                                             </div>
@@ -95,7 +107,14 @@
                                     <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
                                             <label >ศาสนา</label>
-                                            {{Form::text('religion',$personal->religion,['class'=>'form-control'])}}   
+                                            {{ Form::select('religion', [
+                                                  $personal->religion = $personal->religion,  
+                                                  'พุทธ' => 'พุทธ',
+                                                  'คริสต์' => 'คริสต์', 
+                                                
+                                                'อิสลาม' => 'อิสลาม',
+                                                'อื่นๆ'=> 'อื่นๆ'
+                                    ],null, ['class' => 'form-control']) }}  
                                            
                                             <span class="text-danger">{{ $errors->first('religion') }}</span>
                                             </div>
@@ -212,6 +231,13 @@
                                     </div>     
                             </div>
                             <div class="row">
+                                        <div class="col-md-3">
+                                                        <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
+                                                          <label >จังหวัด</label>
+                                                            {{ Form::select('province_crad', [$personal->province_crad=>$personal->province_crad,'กรุณาเลือกจังหวัด' =>$items],null, ['class' => 'form-control']) }}
+                                                             <span class="text-danger">{{ $errors->first('province_crad') }}</span>
+                                                        </div>
+                                            </div>
                                     <div class="col-md-3">
                                             <div class="form-group  {{ $errors->has('issued') ? 'has-error' : '' }}" >
                                             <label >ออกให้ ณ อำเภอ/เขต:</label>
@@ -219,14 +245,7 @@
                                             <span class="text-danger">{{ $errors->first('issued') }}</span>
                                             </div>
                                     </div>
-                                    <div class="col-md-3">
-                                            <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
-                                            <label >จังหวัด</label>
-                                            {{Form::text('province_crad',$personal->province_crad,['class'=>'form-control'])}} 
-                                           
-                                            <span class="text-danger">{{ $errors->first('province_crad') }}</span>
-                                            </div>
-                                    </div>
+                                   
                                     <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
                                             <label >วันออกบัตร</label>
