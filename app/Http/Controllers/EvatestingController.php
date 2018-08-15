@@ -17,7 +17,7 @@ class EvatestingController extends Controller
         $evatest = Evatest::all();
         $a =0;
          $data = array(
-            'evatest' => $evatest ,'a' => $a
+            'evatest' => $evatest 
         );        return view("testeva/starttest",$data);
     }
 
