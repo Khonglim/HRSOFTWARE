@@ -31,6 +31,8 @@ Route::post('ansdisc','DisctestController@answer');
 
 Route::get('/orgchartcompany','JorgchartController@company');
 
+Route::resource('evatesting','EvatestingController');
+
 Auth::routes();
 Route::get('/', function () 
 {

@@ -130,6 +130,7 @@
                   <ul class="treeview-menu">
                     <li><a href="/answer">MBTI</a></li>
                     <li><a href="/disctest">DISC</a></li>
+                    <li><a href="/evatesting">Evaluation Testing</a></li>
                  </ul>
                 </li>
                 <li class="treeview">
