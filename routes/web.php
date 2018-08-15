@@ -25,6 +25,10 @@ Route::get('/answer','AnswerController@index');
 Route::post('/start','AnswerController@start');
 Route::post('/endtest','AnswerController@answer');
 
+Route::resource('disctest','DisctestController');
+Route::post('testdisc','DisctestController@start');
+Route::post('ansdisc','DisctestController@answer');
+
 Route::get('/orgchartcompany','JorgchartController@company');
 
 Auth::routes();

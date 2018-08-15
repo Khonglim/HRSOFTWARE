@@ -121,7 +121,17 @@
                 <li class="active" ><a href="{{url('/department')}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
                 <li class="active" ><a href="{{url('/position')}}"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>
                 <li class="active"  ><a href="{{url('/employee')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
-                <li class="active"  ><a href="{{url('/answer') }}" ><i class="  fa  fa-check-circle"></i> <span>ทดสอบ</span></a></li>
+                <li class="treeview">
+                  <a href="#"><i class="fa fa-book"></i> <span>ทดสอบ</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="/answer">MBTI</a></li>
+                    <li><a href="/disctest">DISC</a></li>
+                 </ul>
+                </li>
                 <li class="treeview">
                   <a href="#"><i class="glyphicon glyphicon-eye-open"></i> <span>ดูแผนผัง HR บริษัท</span>
                     <span class="pull-right-container">
