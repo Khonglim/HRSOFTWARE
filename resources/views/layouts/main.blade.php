@@ -373,6 +373,7 @@
     <script>
        $(function () {
         $("#showTime").startTimer({
+         
           onComplete:function(){
             alert("หมดเวลาทำแบบทดสอบแล้วค่ะ.")
             $("#test1").submit();

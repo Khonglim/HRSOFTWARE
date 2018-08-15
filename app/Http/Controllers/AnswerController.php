@@ -14,7 +14,7 @@ class AnswerController extends Controller
     }
     public function start()
     {   $testemp = DB::table('personal')->get();
-         
+       
         $choice = DB::table('tb_choice')->get();
         $data = array( 'choice' =>  $choice,'testemp' =>  $testemp);
         return view('test',$data);
