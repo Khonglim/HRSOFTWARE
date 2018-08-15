@@ -17,9 +17,9 @@
                   {{Form::open(['url'=>'start','method'=>'POST'])}}
                    
                     {{Form::label('ชื่อ')}}   
-                    {{Form::text('name','',['class'=>'form-control'])}}   
+                    {{Form::text('name','',['class'=>'form-control','required'])}}   
                     {{Form::label('นามสกุล')}}   
-                    {{Form::text('lastname','',['class'=>'form-control'])}}   
+                    {{Form::text('lastname','',['class'=>'form-control','required'])}}   
                    
                   </div>
                   <p> หมายเหตุ:ในแต่ละข้อให้เลือกเพียงตัวเลือก "ก" หรือ "ข" เพียงตัวเลือกเดียวที่สอดคล้องกับตัวท่านมากที่สุด<br>(แม้จะชอบทั้งคู่ก็ต้องเลือกเพียงตัวเลือกเดียวเท่านั้น) </p>

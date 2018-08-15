@@ -1,5 +1,40 @@
 [
     {
+        "name": "baraear/laravel-thailand",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/baraear/laravel-thailand.git",
+            "reference": "4ce4266948d846ee9f419d0d57a4830f34cc4b16"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/baraear/laravel-thailand/zipball/4ce4266948d846ee9f419d0d57a4830f34cc4b16",
+            "reference": "4ce4266948d846ee9f419d0d57a4830f34cc4b16",
+            "shasum": ""
+        },
+        "time": "2018-02-12T06:53:59+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Baraear\\ThaiAddress\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "baraear",
+                "email": "baraear@gmail.com"
+            }
+        ],
+        "description": "The package may help Laravel developer store user address by easily way"
+    },
+    {
         "name": "barryvdh/laravel-dompdf",
         "version": "v0.8.2",
         "version_normalized": "0.8.2.0",

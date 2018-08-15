@@ -115,6 +115,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'B' => 
         array (
             'Barryvdh\\DomPDF\\' => 16,
+            'Baraear\\ThaiAddress\\' => 20,
         ),
         'A' => 
         array (
@@ -305,6 +306,10 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src',
         ),
+        'Baraear\\ThaiAddress\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/baraear/laravel-thailand/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -375,6 +380,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Http\\Controllers\\CompanyController' => __DIR__ . '/../..' . '/app/Http/Controllers/CompanyController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DepartmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/DepartmentController.php',
+        'App\\Http\\Controllers\\DisctestController' => __DIR__ . '/../..' . '/app/Http/Controllers/DisctestController.php',
         'App\\Http\\Controllers\\DynamicDependent' => __DIR__ . '/../..' . '/app/Http/Controllers/DynamicDependent.php',
         'App\\Http\\Controllers\\EmployeeController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmployeeController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
@@ -399,6 +405,21 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Test' => __DIR__ . '/../..' . '/app/Test.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'Baraear\\ThaiAddress\\Contracts\\District' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Contracts/District.php',
+        'Baraear\\ThaiAddress\\Contracts\\PostalCode' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Contracts/PostalCode.php',
+        'Baraear\\ThaiAddress\\Contracts\\Province' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Contracts/Province.php',
+        'Baraear\\ThaiAddress\\Contracts\\SubDistrict' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Contracts/SubDistrict.php',
+        'Baraear\\ThaiAddress\\Controllers\\ThaiAddressController' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Controllers/ThaiAddressController.php',
+        'Baraear\\ThaiAddress\\Models\\District' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Models/District.php',
+        'Baraear\\ThaiAddress\\Models\\PostalCode' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Models/PostalCode.php',
+        'Baraear\\ThaiAddress\\Models\\Province' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Models/Province.php',
+        'Baraear\\ThaiAddress\\Models\\SubDistrict' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Models/SubDistrict.php',
+        'Baraear\\ThaiAddress\\Resources\\DistrictResource' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Resources/DistrictResource.php',
+        'Baraear\\ThaiAddress\\Resources\\PostalCodeResource' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Resources/PostalCodeResource.php',
+        'Baraear\\ThaiAddress\\Resources\\ProvinceResource' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Resources/ProvinceResource.php',
+        'Baraear\\ThaiAddress\\Resources\\ThaiAddressResource' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Resources/ThaiAddressResource.php',
+        'Baraear\\ThaiAddress\\ThaiAddressServiceProvider' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/ThaiAddressServiceProvider.php',
+        'Baraear\\ThaiAddress\\Traits\\SearchableTrait' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Traits/SearchableTrait.php',
         'Barryvdh\\DomPDF\\Facade' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/Facade.php',
         'Barryvdh\\DomPDF\\PDF' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/PDF.php',
         'Barryvdh\\DomPDF\\ServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/ServiceProvider.php',
@@ -3859,6 +3880,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'ThaiAddressTablesSeeder' => __DIR__ . '/../..' . '/database/seeds/ThaiAddressTablesSeeder.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',

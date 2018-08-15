@@ -4,8 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17ea61533b9f01058b66aa4109ed7017",
+    "content-hash": "36fe3dddf9accbafaba7b7a51f69c526",
     "packages": [
+        {
+            "name": "baraear/laravel-thailand",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/baraear/laravel-thailand.git",
+                "reference": "4ce4266948d846ee9f419d0d57a4830f34cc4b16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/baraear/laravel-thailand/zipball/4ce4266948d846ee9f419d0d57a4830f34cc4b16",
+                "reference": "4ce4266948d846ee9f419d0d57a4830f34cc4b16",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Baraear\\ThaiAddress\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "baraear",
+                    "email": "baraear@gmail.com"
+                }
+            ],
+            "description": "The package may help Laravel developer store user address by easily way",
+            "time": "2018-02-12T06:53:59+00:00"
+        },
         {
             "name": "barryvdh/laravel-dompdf",
             "version": "v0.8.2",

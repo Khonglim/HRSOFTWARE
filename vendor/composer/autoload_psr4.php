@@ -51,5 +51,6 @@ return array(
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Barryvdh\\DomPDF\\' => array($vendorDir . '/barryvdh/laravel-dompdf/src'),
+    'Baraear\\ThaiAddress\\' => array($vendorDir . '/baraear/laravel-thailand/src'),
     'App\\' => array($baseDir . '/app'),
 );

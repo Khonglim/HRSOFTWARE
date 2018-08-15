@@ -37,7 +37,7 @@
               <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
               @endif
               @endforeach
-             
+            
                   </div>
                   <!-- /.box-body -->
 
@@ -45,10 +45,10 @@
                       @foreach ($testemp as $l)
                       @if(($l->name ==  $name =  $_POST["name"]) && ($l->lastname ==  $lastname =  $_POST["lastname"]))
                       
-                    {{ Form::submit('ตรวจคำตอบ',['class'=> 'btn btn-primary'])}}
+                    {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
                     @else
                                
-                    {{ Html::link('answer','ย้อนกลับ',array('class ' => 'btn btn-primary')) }}
+                    {{ Html::link('answer','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
                     @endif
                     @endforeach
                   </div>

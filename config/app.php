@@ -149,6 +149,7 @@ return [
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Baraear\ThaiAddress\ThaiAddressServiceProvider::class,
 
         /*
          * Package Service Providers...
