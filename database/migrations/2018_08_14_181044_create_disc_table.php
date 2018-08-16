@@ -19,10 +19,10 @@ class CreateDiscTable extends Migration
             $table->string('choice2');
             $table->string('choice3');
             $table->string('choice4');
-            $table->string('answer1');
-            $table->string('answer2');
-            $table->string('answer3');
-            $table->string('answer4');
+            $table->integer('answer1');
+            $table->integer('answer2');
+            $table->integer('answer3');
+            $table->integer('answer4');
         });
     }
 

@@ -21,6 +21,8 @@ Route::resource('position','PositionController');
 
 Route::resource('employee','EmployeeController');
 
+Route::resource('mbti','TestmbtiController');
+
 Route::get('/answer','AnswerController@index');
 Route::post('/start','AnswerController@start');
 Route::post('/endtest','AnswerController@answer');

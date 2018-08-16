@@ -18,8 +18,8 @@ class CreateTbChoiceTable extends Migration
             $table->string('question');
             $table->string('choice1');
             $table->string('choice2');
-            $table->integer('answer1');
-            $table->integer('answer2');
+            $table->string('answer1');
+            $table->string('answer2');
            
         });
     }

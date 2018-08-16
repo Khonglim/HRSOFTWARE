@@ -128,7 +128,7 @@
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="/answer">MBTI</a></li>
+                    <li><a href="{{url('/mbti') }}">MBTI</a></li>
                     <li><a href="/disctest">DISC</a></li>
                     <li><a href="/evatesting">Evaluation Testing</a></li>
                  </ul>
@@ -362,6 +362,8 @@
       $('#department').DataTable()
       $('#position').DataTable()
       $('#employee').DataTable()
+      $('#testmbti').DataTable()
+      
     });
   </script>
   
