@@ -37,21 +37,21 @@
             	 {{Form::open(['url'=>'evatesting','files' => true,'enctype'=>'multipart/form-data'])}}
               <thead>
               	<tr>
-              		<th colspan="10" style="text-align: center;">ด้านที่ 1 การประเมินด้านคุณสมบัติของพนักงาน (Core compentency )</th>
+              		<th colspan="10" style="text-align: center;width: 100%;">ด้านที่ 1 การประเมินด้านคุณสมบัติของพนักงาน (Core compentency )</th>
               	</tr>
 
               	<tr>
-              		<th colspan="5" rowspan="2" style="text-align: center;" >หัวข้อ</th>
-					<th colspan="5" style="text-align: center;" >ระดับคะแนนการประเมิน </th>
+              		<th colspan="5" rowspan="2" style="text-align: center;width: 60%;" >หัวข้อ</th>
+					<th colspan="5" style="text-align: center;width: 40%;" >ระดับคะแนนการประเมิน </th>
 
               	</tr>
 
               <tr>
-                <th style="text-align: center;">1<br>(ต้องปรับปรุง)</th>
-                <th style="text-align: center;">2<br>(พอใช้)</th>
-                <th style="text-align: center;">3<br>(ดี)</th>
-                <th style="text-align: center;">4<br>(ดีมาก)</th>
-                <th style="text-align: center;">5<br>(ดีเลิศ)</th>
+                <th style="text-align: center;width: 8%;">1<br>(ต้องปรับปรุง)</th>
+                <th style="text-align: center;width: 8%;">2<br>(พอใช้)</th>
+                <th style="text-align: center;width: 8%;">3<br>(ดี)</th>
+                <th style="text-align: center;width: 8%;">4<br>(ดีมาก)</th>
+                <th style="text-align: center;width: 8%;">5<br>(ดีเลิศ)</th>
              </tr>
              
 
@@ -428,35 +428,35 @@
                 <th style="text-align: center;">5<br>(ดีเลิศ)</th>
              </tr>
 
-             <tr><td colspan="5">1. แสดงออกถึงความรับผิดชอบ และความกระตือรือร้น ความตั้งใจในการปฏิบัติงาน เมื่อได้รับมอบหมายงานไม่ว่าจะเป็นงานปัจจุบันหรืองานเพิ่มเติม / งานพิเศษจากผู้บริหารสูงสุด<br>	(Show of for responsibility, enthusiasm on routine work or when being assigned by CEO )</td>
+             <tr><td colspan="5">1. แสดงออกถึงความรับผิดชอบ และความกระตือรือร้น ความตั้งใจในการปฏิบัติงาน เมื่อได้รับมอบหมายงานไม่ว่าจะเป็นงานปัจจุบันหรืองานเพิ่มเติม / งานพิเศษจากผู้บริหารสูงสุด	(Show of for responsibility, enthusiasm on routine work or when being assigned by CEO )</td>
 			 	 <td style="text-align: center;">{{Form::radio('5.1', '1')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.1', '2')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.1', '3')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.1', '4')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.1', '5')}}</td>
              </tr>
-             <tr><td colspan="5">2. มีส่วนร่วมในการดำเนินงานของหน่วยงานที่สังกัดอยู่เสมอ ทั้งในด้านการเสนอแนวคิด การแจ้งปัญหาและแก้ไขปัญหา หรือการลงมือปฏิบัติ โดยมีวิธีการต่างๆ ในการปฏิบัติงานที่เป็นประโยชน์ <br>(Participation on work whether by ideas, inform about problems, advise solution and doing in order to create good performance and good results	)</td>
+             <tr><td colspan="5">2. มีส่วนร่วมในการดำเนินงานของหน่วยงานที่สังกัดอยู่เสมอ ทั้งในด้านการเสนอแนวคิด การแจ้งปัญหาและแก้ไขปัญหา หรือการลงมือปฏิบัติ โดยมีวิธีการต่างๆ ในการปฏิบัติงานที่เป็นประโยชน์ (Participation on work whether by ideas, inform about problems, advise solution and doing in order to create good performance and good results	)</td>
 			 	 <td style="text-align: center;">{{Form::radio('5.2', '1')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.2', '2')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.2', '3')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.2', '4')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.2', '5')}}</td>
              </tr>
-             <tr><td colspan="5">3. มีพฤติกรรมการให้ความช่วยเหลือ / อำนวยความสะดวกในการปฏิบัติงานให้กับหน่วยงานที่เกี่ยวข้อง และ เพื่อนร่วมงาน (ผู้ใต้บังคับบัญชา)<br> 	(Services mind and cooperate with other functions of work and acts according to rule and regulation with colleague and subordinates.)</td>
+             <tr><td colspan="5">3. มีพฤติกรรมการให้ความช่วยเหลือ / อำนวยความสะดวกในการปฏิบัติงานให้กับหน่วยงานที่เกี่ยวข้อง และ เพื่อนร่วมงาน (ผู้ใต้บังคับบัญชา) 	(Services mind and cooperate with other functions of work and acts according to rule and regulation with colleague and subordinates.)</td>
 			 	 <td style="text-align: center;">{{Form::radio('5.3', '1')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.3', '2')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.3', '3')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.3', '4')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.3', '5')}}</td>
              </tr>
-             <tr><td colspan="5">4.มีการกระตุ้นความสร้างสรรค์และการจัดการบริหารงานเป็นแบบทีมเวิร์ค <br>(Stimulate for creativity and manage team work.)</td>
+             <tr><td colspan="5">4.มีการกระตุ้นความสร้างสรรค์และการจัดการบริหารงานเป็นแบบทีมเวิร์ค (Stimulate for creativity and manage team work.)</td>
 			 	 <td style="text-align: center;">{{Form::radio('5.4', '1')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.4', '2')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.4', '3')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.4', '4')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.4', '5')}}</td>
              </tr>
-             <tr><td colspan="5">5. การเข้าร่วมกิจกรรมและร่วมทำโครงการต่างๆ ที่บริษัทจัดขึ้น<br>	(Participate in activities of company and act according to rule and regulation of company.)</td>
+             <tr><td colspan="5">5. การเข้าร่วมกิจกรรมและร่วมทำโครงการต่างๆ ที่บริษัทจัดขึ้น (Participate in activities of company and act according to rule and regulation of company.)</td>
 			 	 <td style="text-align: center;">{{Form::radio('5.5', '1')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.5', '2')}}</td>
 				 <td style="text-align: center;">{{Form::radio('5.5', '3')}}</td>
