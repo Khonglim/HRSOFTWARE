@@ -35,7 +35,7 @@ class TestdiscController extends Controller
      */
     public function store(Request $request)
     {
-        //
+  
     }
 
     /**

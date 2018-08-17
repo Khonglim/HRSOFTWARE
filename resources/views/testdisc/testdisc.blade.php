@@ -8,7 +8,7 @@
 }
 
 </style>
-   <?php  $i=1;  $w=1;   $h=1;   $l=1;  $q=1; $a=1; $b=15; $c=30; $d=45; ?>
+   <?php  $i=0; $r=0; $t=0; $y=0;  $w=0;   $h=0;   $l=0;  $q=0; $a=0; $b=15; $c=30; $d=45; ?>
    <div class="content-wrapper">
         <div class="content container-fluid">
           
@@ -32,78 +32,80 @@
                 </thead>
                 <tbody>
                         @foreach ( $disc as $dis )
-                  <tr>
-                    <td > <select class='nodup{{$w++}}' for='{{$i++}}' name="choice{{$a++}}"  >
+                    <tr>
+                        <td>
+                      
+                   <select class='nodup{{++$w}}' for='{{++$i}}' name="choice{{++$a}}"  >
                             <option>เลือก</option>
                               <option   value='{{$dis->answer1}}'>1</option>
                             <option  value='{{$dis->answer2}}'>2</option>
                             <option  value='{{$dis->answer3}}'>3</option>
                             <option  value='{{$dis->answer4}}'>4</option>
-                          </select> {{$dis->choice1}}
-                        
+                          </select> {{$dis->choice1}} {{$a}} {{$w}} {{$i}}
+                     
+                         
+                       
+           
                         </td>
-                    <td>  <select class='nodup{{$h++}}' for='{{$i++}}' name="choice{{$b++}}"  >
+                    <td>  <select class='nodup{{++$h}}' for='{{++$r}}' name="choice{{++$b}}"  >
                             <option>เลือก</option>
                             <option   value='{{$dis->answer1}}'>1</option>
                             <option   value='{{$dis->answer2}}'>2</option>
                             <option   value='{{$dis->answer3}}'>3</option>
                             <option   value='{{$dis->answer4}}'>4</option>
-                          </select>    {{$dis->choice2}}
+                          </select>    {{$dis->choice2}} {{$b}} {{$h}}  {{$r}}
                         
-                        
+             
                         </td>
-                    <td><select class='nodup{{$l++}}' for='{{$i++}}' name="choice{{$c++}}"  >
+                    <td><select class='nodup{{++$l}}' for='{{++$t}}' name="choice{{++$c}}"  >
                             <option>เลือก</option>
                             <option   value='{{$dis->answer1}}'>1</option>
                             <option  value='{{$dis->answer2}}'>2</option>
                             <option  value='{{$dis->answer3}}'>3</option>
                             <option  value='{{$dis->answer4}}'>4</option>
-                          </select>      {{$dis->choice3}}</td>
+                          </select>      {{$dis->choice3}} {{$c}} {{$l}}  {{$t}}
+                  
+          
+                        </td>
                           
-                    <td> <select class='nodup{{$q++}}' for='{{$i++}}' name="choice{{$d++}}"  >
+                    <td> <select class='nodup{{++$q}}' for='{{++$y}}' name="choice{{++$d}}"  >
                             <option>เลือก</option>
                             <option   value='{{$dis->answer1}}'>1</option>
                             <option  value='{{$dis->answer2}}'>2</option>
                             <option   value='{{$dis->answer3}}'>3</option>
                             <option  value='{{$dis->answer4}}'>4</option>
-                          </select>  {{$dis->choice4}}
+                          </select>  {{$dis->choice4}} {{$d}} {{$q}}  {{$y}}
+                  
+        
+
                           </td>
                   </tr>
+      
                   @endforeach
                 </tbody>
               </table>
 
 
                 <div class="form-group">
-               
-        
-         
-               
-                     
-                @if(($a=='12') &&($b=='26')&& ($c=='41')&& ($d='56'))
-                <?php 
-                $a=1;
-                $b=15;
-                $c=30;
-                $d=45;
-                ?>
-        @endif
-          
+   
+                        @if(($a=='12') &&($b=='27')&& ($c=='42')&& ($d='57'))
+                        <?php 
+                        $a=0;
+                        $b=15;
+                        $c=30;
+                        $d=45;
+                        ?>
+                @endif
                   </div>
                   <!-- /.box-body -->
 
                   <div class="box-footer">
-                   
-
-
 
                     {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
                                             {{Form::close()}}
                 
                   </div>
                   <!-- /.box-footer -->
-               
-                 
               </div>
             </div>
         </div>

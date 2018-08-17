@@ -22,7 +22,7 @@ body {
                         
                     @if($choice != '_token')
                     <?php    $c++; ?>
-                     ข้อ{{$x++}} คะแนน  {{$answer}} &emsp; 
+                     ข้อ{{$choice}} คะแนน  {{$answer}} &emsp; 
                    
                       @if($c == '4')
                       <br>
@@ -33,22 +33,7 @@ body {
                   </li>
                   </ul>  
                 
-                  @switch($answer=$_POST['choice1'])
-                  @case('2')
-                  {{$h+=2}}
-                      @break
-                  @case('3')
-                     {{$h+=3}}
-                      @break
-              @endswitch
-                       @switch($answer=$_POST['choice2'])
-                  @case('2')
-                  {{$h+=2}}
-                      @break
-                  @case('3')
-                     {{$h+=3}}
-                      @break
-              @endswitch
+                  
               <div class="box-footer">
                   {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}}
                   {{Form::close()}}
