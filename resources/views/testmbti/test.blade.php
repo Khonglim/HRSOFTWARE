@@ -29,9 +29,9 @@ $q=0;
                         <div class ="form-group">
                       <div class="col-md-3">
 
-                        <label> ชื่อ::</label> {{Form::text("name",$c->name,['class'=>'form-control','readonly'])}}  
-                        <label> นามสกุล::</label> {{Form::text("lastname",$c->lastname,['class'=>'form-control','readonly'])}}
-                        <label> ไอดี::</label> {{Form::text("ID",$c->id,['class'=>'form-control','readonly'])}}    
+                      <label> ชื่อ::{{$c->name}}</label>   <input type="text" name="name" value="{{$c->name}}" hidden/>
+                      <label> นามสกุล::{{$c->lastname}}</label> <input type="text" name="lastname" value="{{$c->lastname}}" hidden/>
+                      <label> ไอดี::{{$c->id}}</label>      <input type="text" name="ID" value="{{$c->id}}" hidden/>
                     </div>  
                   </div>   
                 </div>  

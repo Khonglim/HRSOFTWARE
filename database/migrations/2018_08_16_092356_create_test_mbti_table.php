@@ -27,7 +27,7 @@ class CreateTestMbtiTable extends Migration
             $table->string('scoreJ')->nullable();
             $table->string('scoreP')->nullable();
             
-            $table->string('answerTE')->nullable();
+            $table->string('answerIE')->nullable();
             $table->string('answerSN')->nullable();
             $table->string('answerTF')->nullable();
             $table->string('answerJP')->nullable();

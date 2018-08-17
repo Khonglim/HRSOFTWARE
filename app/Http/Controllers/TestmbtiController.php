@@ -45,6 +45,22 @@ class TestmbtiController extends Controller
         $testmbti->name = $request->name;
         $testmbti->lastname = $request->lastname;
         $testmbti->id_personal = $request->ID;
+
+        $testmbti->scoreI = $request->scoreI;
+        $testmbti->scoreE = $request->scoreE;
+        $testmbti->scoreS = $request->scoreS;
+        $testmbti->scoreN = $request->scoreN;
+        $testmbti->scoreT = $request->scoreT;
+        $testmbti->scoreF = $request->scoreF;
+        $testmbti->scoreJ = $request->scoreJ;
+        $testmbti->scoreP= $request->scoreP;
+        $testmbti->answerIE = $request->answerIE;
+        $testmbti->answerSN = $request->answerSN;
+        $testmbti->answerTF = $request->answerTF;
+        $testmbti->answerJP = $request->answerJP;
+        $testmbti->conclude = $request->conclude;
+        $testmbti->meaning = $request->meaning;
+
         $testmbti->answer1 = $request->question1;
         $testmbti->answer2 = $request->question2;
         $testmbti->answer3 = $request->question3;
