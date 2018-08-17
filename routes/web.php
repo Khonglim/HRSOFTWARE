@@ -24,14 +24,15 @@ Route::resource('employee','EmployeeController');
 Route::resource('mbti','TestmbtiController');
 
 Route::resource('disc','TestdiscController');
+
 Route::resource('disctest','DisctestController');
 
 Route::post('/start','AnswerController@start');
 Route::post('/endtest','AnswerController@answer');
 
 
-Route::post('testdisc','DisctestController@start');
-Route::post('ansdisc','DisctestController@answer');
+Route::post('/testdisc','AnswerController@startdisc');
+Route::post('/ansdisc','AnswerController@answerdisc');
 
 Route::get('/orgchartcompany','JorgchartController@company');
 

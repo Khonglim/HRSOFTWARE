@@ -20,4 +20,15 @@ class AnswerController extends Controller
     {
         return view('testmbti/ans');
     }
+    public function startdisc()
+    {
+        $personal = DB::table('personal')->get();
+        $disc = DB::table('disc')->get();
+        $data = array( 'disc' =>  $disc,'personal' =>  $personal);
+        return view('testdisc/testdisc',$data);
+    }
+    public function answerdisc()
+    {
+        return view('testdisc/ansdisc');
+    }
 }
