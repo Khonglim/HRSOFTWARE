@@ -129,7 +129,7 @@
                   </a>
                   <ul class="treeview-menu">
                     <li><a href="{{url('/mbti') }}">MBTI</a></li>
-                    <li><a href="/disctest">DISC</a></li>
+                    <li><a href="{{url('/disc') }}">DISC</a></li>
                     <li><a href="/evatesting">Evaluation Testing</a></li>
                  </ul>
                 </li>

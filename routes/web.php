@@ -23,11 +23,13 @@ Route::resource('employee','EmployeeController');
 
 Route::resource('mbti','TestmbtiController');
 
-Route::get('/answer','AnswerController@index');
+Route::resource('disc','TestdiscController');
+Route::resource('disctest','DisctestController');
+
 Route::post('/start','AnswerController@start');
 Route::post('/endtest','AnswerController@answer');
 
-Route::resource('disctest','DisctestController');
+
 Route::post('testdisc','DisctestController@start');
 Route::post('ansdisc','DisctestController@answer');
 

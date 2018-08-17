@@ -14,10 +14,6 @@ class DisctestController extends Controller
     }
     public function start()
     {
-        
-        
-       
-
         $personal = DB::table('personal')->get();
         $disc = DB::table('disc')->get();
         $data = array( 'disc' =>  $disc,'personal' =>  $personal);

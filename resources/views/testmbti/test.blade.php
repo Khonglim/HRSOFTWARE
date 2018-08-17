@@ -66,6 +66,7 @@ $q=0;
                     @if(($l->name ==  $name =  $_POST["name"]) && ($l->lastname ==  $lastname =  $_POST["lastname"]))
                          <?php  $p++; ?>
                            {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
+                           {{Form::close()}}
                              @else
                           @if($q > '0' && $p =='0' )       
                                   {{ Html::link('mbti','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
