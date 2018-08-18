@@ -22,7 +22,7 @@ body {
                         
                     @if($choice != '_token')
                     <?php    $c++; ?>
-                     ข้อ{{$choice}} คะแนน  {{$answer}} &emsp; 
+                     ข้อ{{$x++}} คะแนน  {{$answer}} &emsp; 
                    
                       @if($c == '4')
                       <br>

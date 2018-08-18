@@ -3,12 +3,19 @@
    @section('content')
    <style>
    body {
-    font-family: "THSarabunNew";
+    
     font-size: 15px;
 }
 
 </style>
-   <?php  $i=0; $r=0; $t=0; $y=0;  $w=0;   $h=0;   $l=0;  $q=0; $a=0; $b=15; $c=30; $d=45; ?>
+   <?php  $i=1;     $r=1; 
+                  $l=45;  
+          $y=1;   $w=30; 
+          $h=1;    $t=15; 
+          $q=1; 
+   
+   
+   $a=0; $b=15; $c=30; $d=45; ?>
    <div class="content-wrapper">
         <div class="content container-fluid">
           
@@ -21,82 +28,52 @@
                   <div class="box-body">
             {{Form::open(['url'=>'ansdisc','method'=>'POST'])}}
 
-            <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th style="text-align:center" >D</th>
-                    <th style="text-align:center">I</th>
-                    <th style="text-align:center">S</th>
-                    <th style="text-align:center" >C</th>
-                  </tr>
-                </thead>
-                <tbody>
+      
                         @foreach ( $disc as $dis )
-                    <tr>
-                        <td>
-                      
-                   <select class='nodup{{++$w}}' for='{{++$i}}' name="choice{{++$a}}"  >
-                            <option>เลือก</option>
-                              <option   value='{{$dis->answer1}}'>1</option>
-                            <option  value='{{$dis->answer2}}'>2</option>
-                            <option  value='{{$dis->answer3}}'>3</option>
-                            <option  value='{{$dis->answer4}}'>4</option>
-                          </select> {{$dis->choice1}} {{$a}} {{$w}} {{$i}}
-                     
+                        {{$i}}
+                        <select name="chioe{{$r++}}"  class="uniqueSelection{{$i++}}">
+                                <option value=''>กรุณาเลือก</option>
+                                <option value='1'>Steve Jobs</option>
+                                <option value='2'>Roger Federuer</option>
+                                <option value='3'>Tiger Woods</option>
+                                <option value='4'>Tiger Woods</option>
+                              </select>{{$i}}{{$r}}&emsp;
                          
                        
            
-                        </td>
-                    <td>  <select class='nodup{{++$h}}' for='{{++$r}}' name="choice{{++$b}}"  >
-                            <option>เลือก</option>
-                            <option   value='{{$dis->answer1}}'>1</option>
-                            <option   value='{{$dis->answer2}}'>2</option>
-                            <option   value='{{$dis->answer3}}'>3</option>
-                            <option   value='{{$dis->answer4}}'>4</option>
-                          </select>    {{$dis->choice2}} {{$b}} {{$h}}  {{$r}}
-                        
-             
-                        </td>
-                    <td><select class='nodup{{++$l}}' for='{{++$t}}' name="choice{{++$c}}"  >
-                            <option>เลือก</option>
-                            <option   value='{{$dis->answer1}}'>1</option>
-                            <option  value='{{$dis->answer2}}'>2</option>
-                            <option  value='{{$dis->answer3}}'>3</option>
-                            <option  value='{{$dis->answer4}}'>4</option>
-                          </select>      {{$dis->choice3}} {{$c}} {{$l}}  {{$t}}
-                  
+                              {{$y}}
+                    <select name="chioe{{$t++}}" class="uniqueSelection{{$y++}}">
+                            <option value=''>กรุณาเลือก</option>
+                            <option value='1'>Steve Jobs</option>
+                            <option value='2'>Roger Federuer</option>
+                            <option value='3'>Tiger Woods</option>
+                            <option value='4'>Tiger Woods</option>
+                          </select>&emsp;
+                          {{$h}}
+                        <select name="chioe{{$w++}}"  class="uniqueSelection{{$h++}}">
+                            <option value=''>กรุณาเลือก</option>
+                            <option value='1'>Steve Jobs</option>
+                            <option value='2'>Roger Federuer</option>
+                            <option value='3'>Tiger Woods</option>
+                            <option value='4'>Tiger Woods</option>
+                          </select>
           
-                        </td>
-                          
-                    <td> <select class='nodup{{++$q}}' for='{{++$y}}' name="choice{{++$d}}"  >
-                            <option>เลือก</option>
-                            <option   value='{{$dis->answer1}}'>1</option>
-                            <option  value='{{$dis->answer2}}'>2</option>
-                            <option   value='{{$dis->answer3}}'>3</option>
-                            <option  value='{{$dis->answer4}}'>4</option>
-                          </select>  {{$dis->choice4}} {{$d}} {{$q}}  {{$y}}
-                  
+                          {{$q}}
+                        <select name="chioe{{$l++}}"  class="uniqueSelection{{$q++}}">
+                            <option value=''>กรุณาเลือก</option>
+                            <option value='1'>Steve Jobs</option>
+                            <option value='2'>Roger Federuer</option>
+                            <option value='3'>Tiger Woods</option>
+                            <option value='4'>Tiger Woods</option>
+                          </select>&emsp; <br><br>
         
 
-                          </td>
-                  </tr>
       
                   @endforeach
-                </tbody>
-              </table>
+                
 
 
-                <div class="form-group">
-   
-                        @if(($a=='12') &&($b=='27')&& ($c=='42')&& ($d='57'))
-                        <?php 
-                        $a=0;
-                        $b=15;
-                        $c=30;
-                        $d=45;
-                        ?>
-                @endif
-                  </div>
+             
                   <!-- /.box-body -->
 
                   <div class="box-footer">
@@ -113,189 +90,195 @@
    </div>
 
 
-   <script type="text/javascript">
-    $(document).ready(function(){
-      $("select.nodup1").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup1").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function() {
+		$(".uniqueSelection1").change(function(){
+			var indx = $(".uniqueSelection1").index(this);
+			var currentVal = $("option:selected",this).val();
+			
+			$(".uniqueSelection1").each(function(index,val){
+				if(indx != index){
+					$(this).find("option[value='"+currentVal+"']").hide();
+				}
+			});
+		});
+        
+	});
+  </script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".uniqueSelection2").change(function(){
+			var indx = $(".uniqueSelection2").index(this);
+			var currentVal = $("option:selected",this).val();
+			
+			$(".uniqueSelection2").each(function(index,val){
+				if(indx != index){
+					$(this).find("option[value='"+currentVal+"']").hide();
+				}
+			});
+		});
+	});
+  </script>
 
-    $(document).ready(function(){
-      $("select.nodup2").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup2").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
+<script type="text/javascript">
+	$(document).ready(function() {
+		
 
-$(document).ready(function(){
-      $("select.nodup3").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup3").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
+		$(".uniqueSelection3").change(function(){
+			var indx = $(".uniqueSelection3").index(this);
+			var currentVal = $("option:selected",this).val();
+			
+			$(".uniqueSelection3").each(function(index,val){
+				if(indx != index){
+					$(this).find("option[value='"+currentVal+"']").hide();
+				}
+			});
+		});
+	});
+  </script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	
 
-
-$(document).ready(function(){
-      $("select.nodup4").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup4").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-
-
-
-$(document).ready(function(){
-      $("select.nodup5").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup5").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-
-
-$(document).ready(function(){
-      $("select.nodup6").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup6").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-
-$(document).ready(function(){
-      $("select.nodup7").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup7").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-$(document).ready(function(){
-      $("select.nodup8").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup8").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-$(document).ready(function(){
-      $("select.nodup9").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup9").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-    $(document).ready(function(){
-      $("select.nodup10").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup10").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-   $(document).ready(function(){
-      $("select.nodup11").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup11").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-   $(document).ready(function(){
-      $("select.nodup12").change(function(){
-          var curSelection = $(this).attr("for")-1,
-              curOption = $("option:selected",this).val();
-          $("select.nodup12").each(function(index,value){
-              if(curSelection != index){
-                  $("option[value='"+curOption+"']",this)
-                  .attr("disabled","disabled");
-              }
-          });
-      });
-    });
-
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
+		$(".uniqueSelection4").change(function(){
+			var indx = $(".uniqueSelection4").index(this);
+			var currentVal = $("option:selected",this).val();
+			
+			$(".uniqueSelection4").each(function(index,val){
+				if(indx != index){
+					$(this).find("option[value='"+currentVal+"']").hide();
+				}
+			});
+		});
+	});
+  </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+           
     
+            $(".uniqueSelection5").change(function(){
+                var indx = $(".uniqueSelection5").index(this);
+                var currentVal = $("option:selected",this).val();
+                
+                $(".uniqueSelection5").each(function(index,val){
+                    if(indx != index){
+                        $(this).find("option[value='"+currentVal+"']").hide();
+                    }
+                });
+            });
+        });
+      </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+           
     
+            $(".uniqueSelection6").change(function(){
+                var indx = $(".uniqueSelection6").index(this);
+                var currentVal = $("option:selected",this).val();
+                
+                $(".uniqueSelection6").each(function(index,val){
+                    if(indx != index){
+                        $(this).find("option[value='"+currentVal+"']").hide();
+                    }
+                });
+            });
+        });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+           
+    
+            $(".uniqueSelection7").change(function(){
+                var indx = $(".uniqueSelection7").index(this);
+                var currentVal = $("option:selected",this).val();
+                
+                $(".uniqueSelection7").each(function(index,val){
+                    if(indx != index){
+                        $(this).find("option[value='"+currentVal+"']").hide();
+                    }
+                });
+            });
+        });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+           
+    
+            $(".uniqueSelection8").change(function(){
+                var indx = $(".uniqueSelection8").index(this);
+                var currentVal = $("option:selected",this).val();
+                
+                $(".uniqueSelection8").each(function(index,val){
+                    if(indx != index){
+                        $(this).find("option[value='"+currentVal+"']").hide();
+                    }
+                });
+            });
+        });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+           
+    
+            $(".uniqueSelection9").change(function(){
+                var indx = $(".uniqueSelection9").index(this);
+                var currentVal = $("option:selected",this).val();
+                
+                $(".uniqueSelection9").each(function(index,val){
+                    if(indx != index){
+                        $(this).find("option[value='"+currentVal+"']").hide();
+                    }
+                });
+            });
+        });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          
+    
+            $(".uniqueSelection10").change(function(){
+                var indx = $(".uniqueSelection10").index(this);
+                var currentVal = $("option:selected",this).val();
+                
+                $(".uniqueSelection10").each(function(index,val){
+                    if(indx != index){
+                        $(this).find("option[value='"+currentVal+"']").hide();
+                    }
+                });
+            });
+        });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+           
+    
+            $(".uniqueSelection11").change(function(){
+                var indx = $(".uniqueSelection11").index(this);
+                var currentVal = $("option:selected",this).val();
+                
+                $(".uniqueSelection11").each(function(index,val){
+                    if(indx != index){
+                        $(this).find("option[value='"+currentVal+"']").hide();
+                    }
+                });
+            });
+        });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+           
+    
+            $(".uniqueSelection12").change(function(){
+                var indx = $(".uniqueSelection12").index(this);
+                var currentVal = $("option:selected",this).val();
+                
+                $(".uniqueSelection12").each(function(index,val){
+                    if(indx != index){
+                        $(this).find("option[value='"+currentVal+"']").hide();
+                    }
+                });
+            });
+        });
+      </script>
    @endsection
