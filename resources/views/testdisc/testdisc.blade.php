@@ -27,51 +27,69 @@
              
                   <div class="box-body">
             {{Form::open(['url'=>'ansdisc','method'=>'POST'])}}
-
-      
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="text-align:center" >D</th>
+                    <th style="text-align:center">I</th>
+                    <th style="text-align:center">S</th>
+                    <th style="text-align:center" >C</th>
+                  </tr>
+                </thead>
+                <tbody>
                         @foreach ( $disc as $dis )
-                        {{$i}}
+                  <tr>
+      
+                      <td>
+                      
                         <select name="chioe{{$r++}}"  class="uniqueSelection{{$i++}}">
                                 <option value=''>กรุณาเลือก</option>
-                                <option value='1'>Steve Jobs</option>
-                                <option value='2'>Roger Federuer</option>
-                                <option value='3'>Tiger Woods</option>
-                                <option value='4'>Tiger Woods</option>
-                              </select>{{$i}}{{$r}}&emsp;
-                         
-                       
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                              </select>{{$dis->choice1}}
+                      </td>
+                       <td>
            
-                              {{$y}}
+                             
                     <select name="chioe{{$t++}}" class="uniqueSelection{{$y++}}">
                             <option value=''>กรุณาเลือก</option>
-                            <option value='1'>Steve Jobs</option>
-                            <option value='2'>Roger Federuer</option>
-                            <option value='3'>Tiger Woods</option>
-                            <option value='4'>Tiger Woods</option>
-                          </select>&emsp;
-                          {{$h}}
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                          </select>{{$dis->choice2}}
+                          
+                       </td>
+                       <td>
                         <select name="chioe{{$w++}}"  class="uniqueSelection{{$h++}}">
                             <option value=''>กรุณาเลือก</option>
-                            <option value='1'>Steve Jobs</option>
-                            <option value='2'>Roger Federuer</option>
-                            <option value='3'>Tiger Woods</option>
-                            <option value='4'>Tiger Woods</option>
-                          </select>
-          
-                          {{$q}}
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                          </select>{{$dis->choice3}}
+                       </td>
+                       <td>
+                          
                         <select name="chioe{{$l++}}"  class="uniqueSelection{{$q++}}">
                             <option value=''>กรุณาเลือก</option>
-                            <option value='1'>Steve Jobs</option>
-                            <option value='2'>Roger Federuer</option>
-                            <option value='3'>Tiger Woods</option>
-                            <option value='4'>Tiger Woods</option>
-                          </select>&emsp; <br><br>
-        
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                          </select>{{$dis->choice4}}
+                        </td>
 
       
-                  @endforeach
+               
                 
 
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
 
              
                   <!-- /.box-body -->
