@@ -43,7 +43,7 @@
                       <td>
                       
                         <select name="chioe{{$r++}}"  class="uniqueSelection{{$i++}}">
-                                <option value=0>กรุณาเลือก</option>
+                                <option value=0>เลือก</option>
                                 <option value= 1>1</option>
                                 <option value=2>2</option>
                                 <option value=3>3</option>
@@ -54,7 +54,7 @@
            
                              
                     <select name="chioe{{$t++}}" class="uniqueSelection{{$y++}}">
-                            <option value=0>กรุณาเลือก</option>
+                            <option value=0>เลือก</option>
                             <option value=1>1</option>
                             <option value=2>2</option>
                             <option value=3>3</option>
@@ -64,7 +64,7 @@
                        </td>
                        <td>
                         <select name="chioe{{$w++}}"  class="uniqueSelection{{$h++}}">
-                            <option value=0>กรุณาเลือก</option>
+                            <option value=0>เลือก</option>
                             <option value=1>1</option>
                             <option value=2>2</option>
                             <option value=3>3</option>
@@ -74,7 +74,7 @@
                        <td>
                           
                         <select name="chioe{{$l++}}"  class="uniqueSelection{{$q++}}">
-                            <option value=0>กรุณาเลือก</option>
+                            <option value=0>เลือก</option>
                             <option value=1>1</option>
                             <option value=2>2</option>
                             <option value=3>3</option>
