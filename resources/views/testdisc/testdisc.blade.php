@@ -19,7 +19,7 @@
    <div class="content-wrapper">
         <div class="content container-fluid">
           
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title"> แบบทดสอบบุคลิกภาพ DISC </h3>
@@ -43,42 +43,42 @@
                       <td>
                       
                         <select name="chioe{{$r++}}"  class="uniqueSelection{{$i++}}">
-                                <option value=''>กรุณาเลือก</option>
-                                <option value='1'>1</option>
-                                <option value='2'>2</option>
-                                <option value='3'>3</option>
-                                <option value='4'>4</option>
+                                <option value=0>กรุณาเลือก</option>
+                                <option value= 1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
                               </select>{{$dis->choice1}}
                       </td>
                        <td>
            
                              
                     <select name="chioe{{$t++}}" class="uniqueSelection{{$y++}}">
-                            <option value=''>กรุณาเลือก</option>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                            <option value='4'>4</option>
+                            <option value=0>กรุณาเลือก</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
                           </select>{{$dis->choice2}}
                           
                        </td>
                        <td>
                         <select name="chioe{{$w++}}"  class="uniqueSelection{{$h++}}">
-                            <option value=''>กรุณาเลือก</option>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                            <option value='4'>4</option>
+                            <option value=0>กรุณาเลือก</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
                           </select>{{$dis->choice3}}
                        </td>
                        <td>
                           
                         <select name="chioe{{$l++}}"  class="uniqueSelection{{$q++}}">
-                            <option value=''>กรุณาเลือก</option>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                            <option value='4'>4</option>
+                            <option value=0>กรุณาเลือก</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
                           </select>{{$dis->choice4}}
                         </td>
 

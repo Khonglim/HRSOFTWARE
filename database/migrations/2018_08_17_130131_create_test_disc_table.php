@@ -29,7 +29,7 @@ class CreateTestDiscTable extends Migration
             $table->char('scoreC',100)->nullable();
 
             $table->char('answer1',1)->nullable();
-            $table->char('answer1',1)->nullable();
+            $table->char('answer2',1)->nullable();
             $table->char('answer3',1)->nullable();
             $table->char('answer4',1)->nullable();
             $table->char('answer5',1)->nullable();
@@ -39,7 +39,7 @@ class CreateTestDiscTable extends Migration
             $table->char('answer9',1)->nullable();
             $table->char('answer10',1)->nullable();
             $table->char('answer11',1)->nullable();
-            $table->char('answer11',1)->nullable();
+            $table->char('answer12',1)->nullable();
             $table->char('answer13',1)->nullable();
             $table->char('answer14',1)->nullable();
             $table->char('answer15',1)->nullable();
@@ -47,19 +47,19 @@ class CreateTestDiscTable extends Migration
             $table->char('answer17',1)->nullable();
             $table->char('answer18',1)->nullable();
             $table->char('answer19',1)->nullable();
-            $table->char('answer10',1)->nullable();
-            $table->char('answer11',1)->nullable();
-            $table->char('answer11',1)->nullable();
-            $table->char('answer13',1)->nullable();
-            $table->char('answer14',1)->nullable();
-            $table->char('answer15',1)->nullable();
-            $table->char('answer16',1)->nullable();
-            $table->char('answer17',1)->nullable();
-            $table->char('answer18',1)->nullable();
-            $table->char('answer19',1)->nullable();
+            $table->char('answer20',1)->nullable();
+            $table->char('answer21',1)->nullable();
+            $table->char('answer22',1)->nullable();
+            $table->char('answer23',1)->nullable();
+            $table->char('answer24',1)->nullable();
+            $table->char('answer25',1)->nullable();
+            $table->char('answer26',1)->nullable();
+            $table->char('answer27',1)->nullable();
+            $table->char('answer28',1)->nullable();
+            $table->char('answer29',1)->nullable();
             $table->char('answer30',1)->nullable();
             $table->char('answer31',1)->nullable();
-            $table->char('answer31',1)->nullable();
+            $table->char('answer32',1)->nullable();
             $table->char('answer33',1)->nullable();
             $table->char('answer34',1)->nullable();
             $table->char('answer35',1)->nullable();
@@ -69,7 +69,7 @@ class CreateTestDiscTable extends Migration
             $table->char('answer39',1)->nullable();
             $table->char('answer40',1)->nullable();
             $table->char('answer41',1)->nullable();
-            $table->char('answer41',1)->nullable();
+            $table->char('answer42',1)->nullable();
             $table->char('answer43',1)->nullable();
             $table->char('answer44',1)->nullable();
 
