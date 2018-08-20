@@ -89,7 +89,7 @@ body {
                   <ul class="list-group">
                     <li class="list-group-item">
                       @if ( ($i >=30) && ($s >=30) && ($d<30) && ($c < 30 ) )
-                           @if ( $i>$s || $i<$s )
+                           @if ( $i>=$s || $i<=$s )
                            IS or SI
                             RELATER: Advisor/Merciful/Counselor
                                Warm, sympathetic, understanding; good listener, stable, 
@@ -104,7 +104,7 @@ body {
                        
 
                       @if ( ($i >=30) && ($s >=30) && ($c >=30) )
-                         @if ( ($s>$c && $s>$i && $c>$i) ||  ($s>$i && $s>$c && $i>$c) )
+                         @if ( ($s>=$c && $s>=$i && $c>=$i) ||  ($s>=$i && $s>=$c && $i>=$c) )
                       SCI or SIC
                       SUPPORTER: Advocate/Peacemaker/Agent
                       Can be very detail-oriented; moderate, thorough, dependable; steady, sociable, independent, individualistic; 
@@ -115,7 +115,7 @@ body {
                       @endif 
 
                    @if ( ($i >=30)  && ($c >=30) && ($s<30) && ($d < 30 ) )
-                      @if ( ($i>$c) ||  ($c>$i) )
+                      @if ( ($i>=$c) ||  ($c>=$i) )
                       IC or CI
                    PROMOTER/ANALYZER: Assessor/Teacher/Appraiser
                   Outgoing, at home with strangers, develops friends easily; 
@@ -125,7 +125,7 @@ body {
                    @endif 
 
               @if ( ($d >=30)  && ($s >=30) && ($c >=30) && ($i<30))
-                  @if ( ($d>$s && $d>$c && $s>$c) )
+                  @if ($d>=$s && $d>=$c && $s>=$c)
                    DS; DSC; SD
                    CONDUCTOR/COORDINATOR: Attainer/Achiever/Perseveres
                    Objective, analytical, determined, task-oriented; independent, 
@@ -135,7 +135,7 @@ body {
                    @endif 
                 @endif 
                 @if ( ($d >=30)  && ($s >=30) && ($c<30) && ($i<30))
-                @if ( ($d>$s) ||  ($s>$d) )
+                @if ( ($d>=$s) ||  ($s>=$d) )
                 DS; DSC; SD
                 CONDUCTOR/COORDINATOR: Attainer/Achiever/Perseveres
                 Objective, analytical, determined, task-oriented; independent, 
@@ -147,7 +147,7 @@ body {
 
 
               @if ( ($d >=30)  && ($i >=30) && ($s<30) && ($c < 30 ) )
-                @if ( ($d>$i) ||  ($i>$d)  )
+                @if ( ($d>=$i)  )
                 DI
                 PERSUADER: Concluder/Doer/Gets results
                 Forceful, direct, individualistio; can be impatient, competitive; 
@@ -170,7 +170,7 @@ body {
             @endif 
 
             @if ( ($d >=30)  && ($c >=30) && ($s>=30) && ($i<30) )
-                @if ( ($d>$c) ||  ($c>$d) || ($d>$c && $d>$s && $c>$s) )
+                @if ( ($d>=$c) ||  ($c>=$d) || ($d>=$c && $d>=$s && $c>=$s) )
 
                 DC; DCS; CD
                 IMPLEMENTTOR/CONDUCTOR: Designer/Administrator/Creator
@@ -184,7 +184,7 @@ body {
               @endif 
 
               @if ( ($d >=30)  && ($c >=30) && ($s<30) && ($i<30) )
-              @if ( ($d>$c) ||  ($c>$d) )
+              @if ( ($d>=$c) ||  ($c>=$d) )
 
               DC; DCS; CD
               IMPLEMENTTOR/CONDUCTOR: Designer/Administrator/Creator
@@ -211,21 +211,10 @@ body {
 
 
 
-            @if ( ($d >=30)  && ($i >=30) && ($s<30) && ($c < 30 ) )
-                @if ( ($d=$i))
-
-               D=I PERSUADER: Influencer/Implement/Inspires
-                High energy, optimistic, aggressive, confident; goal-minded, 
-                harnesses people to accomplish goals; can be impatient having little 
-                time for details; loses interest once challenge is gone; goal is 
-                control of environment; fears losing, failing, loss of prestige.
-                
-              
-                 @endif 
-              @endif 
+          
 
               @if ( ($d >=30)  && ($c >=30) && ($s>=30) && ($i < 30) )
-              @if (($s>$d && $s>$d && $d>$c) || ($s>$c && $s>$d && $c>$d)  )
+              @if (($s>=$d && $s>=$d && $d>=$c) || ($s>=$c && $s>=$d && $c>=$d)  )
 
               SDC; SCD
               COORDINATOR/SUPPORT: Inquirer/Investigator/Consistent
@@ -248,8 +237,8 @@ body {
           @endif 
 
           @if ( ($c >=30)  && ($i >=30) && ($s>=30) &&  ($d<30) )
-          @if (($c>$i && $c>$s && $i>$s) || ($c>$s && $c>$i && $s>$i)  
-               || ($i>$s && $i>$c && $s>$c) || ($i>$c && $i>$s && $c>$s))
+          @if (($c>=$i && $c>=$s && $i>=$s) || ($c>=$s && $c>=$i && $s>=$i)  
+               || ($i>=$s && $i>=$c && $s>=$c) || ($i>=$c && $i>=$s && $c>=$s))
            CIS; CSI; ISC; ICS
             COORDINATOR/ANALYZER: Practitioner/Realist/Steadfast
             Results-oriented, verbally fluent, loyal; friendly, enthusiastic, informal, talkative; 
@@ -262,7 +251,7 @@ body {
         @endif   
 
         @if ( ($c >=30)  && ($s >=30) && ($d<30) && ($i < 30 ) )
-        @if ($c>$s  || $c<$s)
+        @if ($c>=$s  || $c<=$s)
         CS; SC
         COORDINATOR: Precisionist/Traditionalist/Perfectionist
                Orderly, systematic, precise, attentive to detail; tactful, highly diplomatic, 
@@ -277,7 +266,7 @@ body {
 
 
         @if ( ($i >=30)  && ($d >=30) && ($s<30) && ($c < 30 ) )
-        @if ($i>$d  )
+        @if ($i>=$d  )
         ID
         COORDINATOR: Precisionist/Traditionalist/Perfectionist
         Orderly, systematic, precise, attentive to detail; tactful, highly diplomatic, 

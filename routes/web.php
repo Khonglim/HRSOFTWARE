@@ -69,3 +69,12 @@ Route::get('summbti', function () {
     return view("summary/summbti",$data);
 
 });
+Route::get('sumdisc', function () {
+    
+    $testmbti =  Testmbti::all();
+    $data = array(
+        'testmbti' => $testmbti
+    );
+    return view("summary/summbti",$data);
+
+});
