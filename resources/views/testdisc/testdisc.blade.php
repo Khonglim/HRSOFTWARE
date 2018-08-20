@@ -26,7 +26,30 @@
                 </div>
              
                   <div class="box-body">
-            {{Form::open(['url'=>'ansdisc','method'=>'POST'])}}
+                      <div  class="row">
+                        <div class ="form-group">
+                                <div class="col-md-2">
+                                        <div class="alert alert-success">
+                                                &emsp;  นาที    <strong id="showTimeDisc" data-minutes-left="3"></strong>
+                            </div> 
+                            </div>  
+                            <div class="col-md-3">
+                                <div class="alert alert-danger">
+                                        <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr;
+                                      </div>
+                                    </div> 
+                                      <div class="col-md-4">
+                                      <div class="alert alert-info">
+                                            <strong>ตัวอย่าง::</strong> 1 โผงผาง 4 ครึกครื้น 2 พูดน้อย 3 ลงรายละเอียด.
+                                          </div>
+                                        </div> 
+                                    </div>
+                                   
+                                           
+                                   
+                                </div>
+                                
+            {{Form::open(['url'=>'ansdisc','method'=>'POST','id'=>'testdisc'])}}
             <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -40,7 +63,7 @@
                         @foreach ( $disc as $dis )
                   <tr>
       
-                      <td>
+                      <td >
                       
                         <select name="chioe{{$r++}}"  class="uniqueSelection{{$i++}}">
                                 <option value=0>เลือก</option>

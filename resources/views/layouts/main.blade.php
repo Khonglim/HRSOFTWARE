@@ -121,14 +121,17 @@
                 <li class="active" ><a href="{{url('/department')}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
                 <li class="active" ><a href="{{url('/position')}}"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>
                 <li class="active"  ><a href="{{url('/employee')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
+                <li class="active"  ><a href="{{url('/mbti') }}"><i class="fa fa-book"></i> <span>ทดสอบ MBTI</span></a></li>
+                <li class="active"  ><a href="{{url('/disc') }}"><i class="fa fa-book"></i> <span>ทดสอบ DISC</span></a></li>
+                <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
                 <li class="treeview">
-                  <a href="#"><i class="fa fa-book"></i> <span>ทดสอบ</span>
+                  <a href="#"><i class="fa fa-book"></i> <span>ผลการทดสอบ</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="{{url('/mbti') }}">MBTI</a></li>
+                    <li><a href="{{url('/summbti') }}">SumMBTI</a></li>
                     <li><a href="{{url('/disc') }}">DISC</a></li>
                     <li><a href="/evatesting">Evaluation Testing</a></li>
                  </ul>
@@ -382,6 +385,16 @@
             $("#test1").submit();
           }
         })
+
+
+ $("#showTimeDisc").startTimer({
+         
+         onComplete:function(){
+           alert("หมดเวลาทำแบบทดสอบแล้วค่ะ.")
+           $("#testdisc").submit();
+         }
+       })
+
     });
   
 </script>
