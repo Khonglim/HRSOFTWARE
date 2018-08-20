@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\PDFController;
-
+use App\Testmbti;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,4 +60,12 @@ Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 
 Route::get('/pdf/{id}','PDFController@pdf' );
 
+Route::get('summbti', function () {
+    
+    $testmbti =  Testmbti::all();
+    $data = array(
+        'testmbti' => $testmbti
+    );
+    return view("summary/summbti",$data);
 
+});
