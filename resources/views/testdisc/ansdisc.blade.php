@@ -78,7 +78,7 @@ body {
                                @endif
                          <?php $u++; ?>
                                      @if($u <=  $col) 
-                                     <input type="radio" name="choice{{$r++}}"  value="{{$answer}}" checked  hidden/>
+                                     <input type="radio" name="{{$choice}}"  value="{{$answer}}" checked  hidden/>
                                              <td>ข้อ{{$x++}}:: {{$answer}}  คะแนน  </td>   
                                     @endif
                                            @if($u==$col)

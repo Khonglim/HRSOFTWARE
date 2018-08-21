@@ -157,16 +157,38 @@ table{
                     <h3>คำตอบที่คุณเลือก:</h3>
                     <ul class="list-group">
                         <li class="list-group-item">
-                      @foreach($_POST as $choice => $answer)
-                      @if($choice != '_token'&& $choice != 'name'  && $choice != 'lastname'  && $choice != 'ID')
-                      <?php    $x++; ?>
-                      &emsp;  <input type="radio" name="question{{$r++}}"  value="{{$answer}}" checked  hidden/>ข้อ: {{$a++}}  ตอบ {{$answer}}&emsp;
-                      @if($x == '10')
-                      <br>
-                      <?php    $x='0'; ?>
-                        @endif
-                      @endif
-                    @endforeach
+                  
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th style="text-align:center">M</th>
+                                    <th style="text-align:center">B</th>
+                                    <th style="text-align:center">T</th>
+                                    <th style="text-align:center">I</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                <?php  $col=4; $u=0;?>   
+                                @foreach($_POST as $choice => $answer)
+                                @if($choice != '_token'&& $choice != 'name'  && $choice != 'lastname'  && $choice != 'ID')
+                                         @if($u==0) 
+                                              <?php echo "<tr align=center>"; ?>
+                                           @endif
+                                     <?php $u++; ?>
+                                                 @if($u <=  $col) 
+                                                 <input type="radio" name="{{$choice}}"  value="{{$answer}}" checked  hidden/>
+                                                         <td>{{$choice}}:: ตอบ {{$answer}}   </td>   
+                                                @endif
+                                                       @if($u==$col)
+                                                              <?php $u=0; ?>
+                                              <?php echo "</tr>"; ?>
+                                        @endif
+                                   @endif
+                                 @endforeach
+                                   
+                                </tbody>
+                              
+                              </table>
                   </li>
                   </ul>
               </div>
