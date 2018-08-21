@@ -43,19 +43,18 @@ $q=0;
                      <?php  $i++; ?>
                      <h4>  <input type="radio" name="question{{$c->id}}" id="choice1" value="{{$c->answer1}}" />{{$c->choice1}} </h4> 
                      <h4> <input type="radio" name="question{{$c->id}}" id="choice2" value="{{$c->answer2}}" />{{$c->choice2}}</h4><br><br><br>
-                     @if($i == "32")
-                          @Break
-                     @endif
+                   
                 @endforeach    
              
                @else
-                  @if($j =='0' && $r >'0')
-               <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
-               <?php  $r--;   $j--; ?>
-               @endif
+                  
               @endif
               @endforeach
-            
+              @if($j =='0' && $r >'0')
+              <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
+              <?php  $r--;   $j--; ?>
+              @endif
+              
                   </div>
                   <!-- /.box-body -->
 

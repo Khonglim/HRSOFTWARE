@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PDFController;
 use App\Testmbti;
+use App\Testdisc;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,7 +72,7 @@ Route::get('summbti', function () {
 });
 Route::get('sumdisc', function () {
     
-    $testmbti =  Testmbti::all();
+    $testmbti =  Testdisc::all();
     $data = array(
         'testmbti' => $testmbti
     );

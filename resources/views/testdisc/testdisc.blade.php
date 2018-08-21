@@ -4,7 +4,7 @@
    <style>
    body {
     
-    font-size: 15px;
+    font-size: 16px;
 }
 
 </style>
@@ -15,7 +15,7 @@
           $q=1; 
    
    
-   $a=0; $b=15; $c=30; $d=45; ?>
+   $a=0; $b=15; $c=30; $d=45;  $r=0; $j=0; $k=0; $p=0; $k=0; ?>
    <div class="content-wrapper">
         <div class="content container-fluid">
           
@@ -26,102 +26,129 @@
                 </div>
              
                   <div class="box-body">
-                      <div  class="row">
-                        <div class ="form-group">
-                                <div class="col-md-2">
-                                        <div class="alert alert-success">
-                                                &emsp;  นาที    <strong id="showTimeDisc" data-minutes-left="3"></strong>
-                            </div> 
-                            </div>  
-                            <div class="col-md-3">
-                                <div class="alert alert-danger">
-                                        <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr;
-                                      </div>
-                                    </div> 
-                                      <div class="col-md-4">
-                                      <div class="alert alert-info">
-                                            <strong>ตัวอย่าง::</strong> 1 โผงผาง 4 ครึกครื้น 2 พูดน้อย 3 ลงรายละเอียด.
+                        {{Form::open(['url'=>'ansdisc','method'=>'POST','id'=>'testdisc'])}}
+                        @foreach ($testemp as $c)
+                        <?php  $r++; ?>
+                        @if((($c->name ==  $name =  $_POST["name"]) && ($c->lastname ==  $lastname =  $_POST["lastname"])))
+                        <?php  $j++; ?>
+                        <div  class="row">
+                            <div class ="form-group">
+                                    <div class="col-md-2">
+                                            <div class="alert alert-success">
+                                                    &emsp;  นาที    <strong id="showTimeDisc" data-minutes-left="3"></strong>
+                                  </div> 
+                                </div>  
+                                <div class="col-md-3">
+                                    <div class="alert alert-danger">
+                                            <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr;
                                           </div>
                                         </div> 
+                                          <div class="col-md-4">
+                                          <div class="alert alert-info">
+                                                <strong>ผู้ทำข้อสอบ::</strong> {{$name =  $_POST["name"]}} {{$lastname =  $_POST["lastname"]}}
+                                                <input type="text" name="name" value="{{$name =$_POST['name']}}" hidden/>
+                                                <input type="text" name="lastname" value="{{$lastname= $_POST['lastname']}}" hidden/>
+                                                <input type="text" name="id_personal" value="{{$c->id}}" hidden/>
+                                              
+                                              </div>
+                                            </div> 
+                                        </div>
                                     </div>
-                                   
-                                           
-                                   
-                                </div>
-                                
-            {{Form::open(['url'=>'ansdisc','method'=>'POST','id'=>'testdisc'])}}
-            <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th style="text-align:center" >D</th>
-                    <th style="text-align:center">I</th>
-                    <th style="text-align:center">S</th>
-                    <th style="text-align:center" >C</th>
-                  </tr>
-                </thead>
-                <tbody>
-                        @foreach ( $disc as $dis )
-                  <tr>
-      
-                      <td >
-                      
-                        <select name="chioe{{$r++}}"  class="uniqueSelection{{$i++}}">
-                                <option value=0>เลือก</option>
-                                <option value= 1>1</option>
-                                <option value=2>2</option>
-                                <option value=3>3</option>
-                                <option value=4>4</option>
-                              </select>{{$dis->choice1}}
-                      </td>
-                       <td>
-           
-                             
-                    <select name="chioe{{$t++}}" class="uniqueSelection{{$y++}}">
-                            <option value=0>เลือก</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                          </select>{{$dis->choice2}}
-                          
-                       </td>
-                       <td>
-                        <select name="chioe{{$w++}}"  class="uniqueSelection{{$h++}}">
-                            <option value=0>เลือก</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                          </select>{{$dis->choice3}}
-                       </td>
-                       <td>
-                          
-                        <select name="chioe{{$l++}}"  class="uniqueSelection{{$q++}}">
-                            <option value=0>เลือก</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                          </select>{{$dis->choice4}}
-                        </td>
 
-      
-               
-                
+                                    <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th style="text-align:center" >D</th>
+                                <th style="text-align:center">I</th>
+                                <th style="text-align:center">S</th>
+                                <th style="text-align:center" >C</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                    @foreach ( $disc as $dis )
+                                     
+                              <tr>
+                  
+                                  <td >
+                                  
+                                    <select name="chioe{{$r++}}"  class="uniqueSelection{{$i++}}">
+                                            <option value=0>เลือก</option>
+                                            <option value= 1>1</option>
+                                            <option value=2>2</option>
+                                            <option value=3>3</option>
+                                            <option value=4>4</option>
+                                          </select>&emsp;{{$dis->choice1}}
+                                  </td>
+                                   <td>
+                       
+                                         
+                                <select name="chioe{{$t++}}" class="uniqueSelection{{$y++}}">
+                                        <option value=0>เลือก</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
+                                      </select>&emsp;{{$dis->choice2}}
+                                      
+                                   </td>
+                                   <td>
+                                    <select name="chioe{{$w++}}"  class="uniqueSelection{{$h++}}">
+                                        <option value=0>เลือก</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
+                                      </select>&emsp;{{$dis->choice3}}
+                                   </td>
+                                   <td>
+                                      
+                                    <select name="chioe{{$l++}}"  class="uniqueSelection{{$q++}}">
+                                        <option value=0>เลือก</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
+                                      </select>&emsp;{{$dis->choice4}}
+                                    </td>
+                            </tr>
+                          
+                            @endforeach
+                          </tbody>
+                        </table>
 
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
+                        @else
+                  
+                    @endif
+
+         @endforeach
+                   
+         @if($j =='0' && $r >'0')
+         <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
+         <?php  $r--;   $j--; ?>
+            @endif           
+          
+            
+            
 
              
                   <!-- /.box-body -->
 
                   <div class="box-footer">
 
-                    {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
-                                            {{Form::close()}}
-                
+                    @foreach ($testemp as $l)
+                      <?php  $k++; ?>
+                    @if((($l->name ==  $name =  $_POST["name"]) && ($l->lastname ==  $lastname =  $_POST["lastname"])))
+                         <?php  $p++; ?>
+                           {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
+                           {{Form::close()}}
+                          
+                 
+                           @endif
+                    @endforeach
+                    @if($k > '0' && $p =='0' )       
+                                  {{ Html::link('disc','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
+                             
+                                  @endif
                   </div>
                   <!-- /.box-footer -->
               </div>
