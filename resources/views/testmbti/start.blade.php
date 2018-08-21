@@ -4,7 +4,9 @@
   <div class="content-wrapper">
     <div class="content container-fluid">
 <div class="row">
-        <div class="col-md-5">
+    <div class="col-md-3">
+      </div>
+        <div class="col-md-4">
         <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">แบบประเมินบุคลิกภาพ</h3>
@@ -12,6 +14,7 @@
           
           
               <div class="box-body">
+                 
                   <div class="col-md-7">
                 <div class="form-group">
                   {{Form::open(['url'=>'start','method'=>'POST'])}}
@@ -32,7 +35,7 @@
               <!-- /.box-body -->
               <div class="box-footer">
              
-                {{ Form::submit('เริ่มทำข้อสอบ',['class'=> 'btn btn-primary'])}}
+              <center>  {{ Form::submit('เริ่มทำข้อสอบ',['class'=> 'btn btn-primary'])}} </center>
               </div>
               <!-- /.box-footer -->
               {{Form::close()}}
