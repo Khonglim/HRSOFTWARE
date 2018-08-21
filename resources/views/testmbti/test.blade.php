@@ -46,35 +46,36 @@ $q=0;
                    
                 @endforeach    
              
-               @else
+                <div class="box-footer">
+                  
+            
+                  {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
+                  {{Form::close()}}
+         
+     
+          
+         </div>
                   
               @endif
               @endforeach
+
+
               @if($j =='0' && $r >'0')
               <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
-              <?php  $r--;   $j--; ?>
+              <div class="box-footer">
+                  
+            
+             
+            {{ Html::link('mbti','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
+   
+        
+       </div>
               @endif
               
                   </div>
                   <!-- /.box-body -->
 
-                  <div class="box-footer">
-                  
-                  @foreach ($testemp as $l)
-                      <?php  $q++; ?>
-                    @if(($l->name ==  $name =  $_POST["name"]) && ($l->lastname ==  $lastname =  $_POST["lastname"]))
-                         <?php  $p++; ?>
-                           {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
-                           {{Form::close()}}
-                             @else
-                          @if($q > '0' && $p =='0' )       
-                                  {{ Html::link('mbti','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
-                    <?php  $q--;    $p--;  ?>
-                    @endif
-                           @endif
-                    @endforeach
-                   
-                  </div>
+            
                   <!-- /.box-footer -->
                
                  

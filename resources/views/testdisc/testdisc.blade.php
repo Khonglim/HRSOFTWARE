@@ -116,7 +116,15 @@
                           </tbody>
                         </table>
 
-                        @else
+                        <div class="box-footer">
+
+                           
+                                   {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
+                                   {{Form::close()}}
+                                 
+                                     
+                                        
+                          </div>
                   
                     @endif
 
@@ -125,6 +133,15 @@
          @if($j =='0' && $r >'0')
          <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
          <?php  $r--;   $j--; ?>
+         <div class="box-footer">
+
+            {{ Html::link('disc','ยกเลิก',array('class ' => 'btn btn-danger')) }}
+                  
+             
+                 
+                     
+                        
+          </div>
             @endif           
           
             
@@ -133,23 +150,7 @@
              
                   <!-- /.box-body -->
 
-                  <div class="box-footer">
-
-                    @foreach ($testemp as $l)
-                      <?php  $k++; ?>
-                    @if((($l->name ==  $name =  $_POST["name"]) && ($l->lastname ==  $lastname =  $_POST["lastname"])))
-                         <?php  $p++; ?>
-                           {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
-                           {{Form::close()}}
-                          
-                 
-                           @endif
-                    @endforeach
-                    @if($k > '0' && $p =='0' )       
-                                  {{ Html::link('disc','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
-                             
-                                  @endif
-                  </div>
+                  
                   <!-- /.box-footer -->
               </div>
             </div>

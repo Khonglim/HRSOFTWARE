@@ -8,7 +8,7 @@ table{
             font-size: 16px;
         }
         body {
-            font-family: "THSarabunNew";
+           
             font-size: 16px;
         }
 </style>
