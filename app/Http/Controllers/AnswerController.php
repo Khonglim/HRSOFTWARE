@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class AnswerController extends Controller
 {
     public function index()
@@ -22,9 +21,9 @@ class AnswerController extends Controller
     }
     public function startdisc()
     {
-        $personal = DB::table('personal')->get();
+        $testemp= DB::table('personal')->get();
         $disc = DB::table('disc')->get();
-        $data = array( 'disc' =>  $disc,'personal' =>  $personal);
+        $data = array( 'disc' =>  $disc,'testemp' =>  $testemp);
         return view('testdisc/testdisc',$data);
     }
     public function answerdisc()

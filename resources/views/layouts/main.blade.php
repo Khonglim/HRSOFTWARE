@@ -125,14 +125,14 @@
                 <li class="active"  ><a href="{{url('/disc') }}"><i class="fa fa-book"></i> <span>ทดสอบ DISC</span></a></li>
                 <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
                 <li class="treeview">
-                  <a href="#"><i class="fa fa-angle-double-right"></i> <span>ผลการทดสอบ</span>
+                  <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="{{url('/summbti') }}">SumMBTI</a></li>
-                    <li><a href="{{url('/sumdisc') }}">SunDISC</a></li>
+                    <li><a href="{{url('/summbti') }}">รวม MBTI บุคคล</a></li>
+                    <li><a href="{{url('/sumdisc') }}">รวม DISC บุคคล</a></li>
                   </ul>
                 </li>
 
@@ -143,7 +143,7 @@
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="/iframe">แผนผังบริษัท</a></li>
+                    <li><a href="{{url('/iframe') }}">แผนผังบริษัท</a></li>
                  </ul>
                 </li>
                

@@ -2,11 +2,13 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Personal;
+use App\Testmbti;
+use App\Testdisc;
 use PDF;
 
 class PDFController extends Controller
 {
-    public function pdf($id)
+    public function pdfemployee($id)
     {
         $personal = Personal::find($id);
         $pdf = PDF::loadView('employ.pdf',['personal' => $personal ]);
@@ -14,11 +16,20 @@ class PDFController extends Controller
         return $pdf->stream();
     }
 
-    public function pdftest()
+    public function pdftestmbti($id)
     {
-        
-        $pdf = PDF::loadView('ans');
+        $testmbti = Testmbti::find($id);
+        $pdf = PDF::loadView('testmbti.pdf_mbti',['testmbti' =>  $testmbti ]);
        
-        return @$pdf->stream();
+        return $pdf->stream();
+    }
+
+    
+    public function pdftestdisc($id)
+    {
+        $testdisc = Testdisc::find($id);
+        $pdf = PDF::loadView('testdisc.pdf_disc',['testdisc' =>  $testdisc]);
+       
+        return $pdf->stream();
     }
 }

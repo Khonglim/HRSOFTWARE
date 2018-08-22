@@ -25,6 +25,7 @@ $q=0;
                           <h3><p id="showTime" data-minutes-left="180"></p></h3>
                           </div>
                           {{Form::open(['url'=>'endtest','id'=>'test1','method'=>'POST'])}}
+                          @csrf
                     <div class ="row">
                         <div class ="form-group">
                       <div class="col-md-3">
@@ -43,39 +44,39 @@ $q=0;
                      <?php  $i++; ?>
                      <h4>  <input type="radio" name="question{{$c->id}}" id="choice1" value="{{$c->answer1}}" />{{$c->choice1}} </h4> 
                      <h4> <input type="radio" name="question{{$c->id}}" id="choice2" value="{{$c->answer2}}" />{{$c->choice2}}</h4><br><br><br>
-                     @if($i == "32")
-                          @Break
-                     @endif
+                   
                 @endforeach    
              
-               @else
-                  @if($j =='0' && $r >'0')
-               <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
-               <?php  $r--;   $j--; ?>
-               @endif
+                <div class="box-footer">
+                  
+            
+                  {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
+                  {{Form::close()}}
+         
+     
+          
+         </div>
+                  
               @endif
               @endforeach
+
+
+              @if($j =='0' && $r >'0')
+              <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
+              <div class="box-footer">
+                  
             
+             
+            {{ Html::link('mbti','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
+   
+        
+       </div>
+              @endif
+              
                   </div>
                   <!-- /.box-body -->
 
-                  <div class="box-footer">
-                  
-                  @foreach ($testemp as $l)
-                      <?php  $q++; ?>
-                    @if(($l->name ==  $name =  $_POST["name"]) && ($l->lastname ==  $lastname =  $_POST["lastname"]))
-                         <?php  $p++; ?>
-                           {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
-                           {{Form::close()}}
-                             @else
-                          @if($q > '0' && $p =='0' )       
-                                  {{ Html::link('mbti','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
-                    <?php  $q--;    $p--;  ?>
-                    @endif
-                           @endif
-                    @endforeach
-                   
-                  </div>
+            
                   <!-- /.box-footer -->
                
                  

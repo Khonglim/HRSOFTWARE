@@ -2,13 +2,15 @@
 @section('content')
   <div class="content-wrapper">
     <div class="content container-fluid">
-
-        <div class="col-md-6">
+        <div class="col-md-2">
+          </div>
+        <div class="col-md-7">
         <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">แบบทดสอบบุคลิกภาพ</h3>
             </div>
             {{Form::open(['url'=>'testdisc','method'=>'POST'])}}
+            @csrf
               <div class="box-body">
                   
               <div class="row">
@@ -29,20 +31,23 @@
                   แสดงสิ่งที่เป็นตัวตนของคุณน้อยที่สุด คุณสามารถใช้ตัวเลขแต่ละตัวได้เพียงหนึ่งครั้งในแต่ละบรรทัด คำตอบในแต่ละคำตอบไม่มีถูกหรือ ผิด คำตอบ ในแต่ละข้อควรคำนึงถึงลักษณะตัวตนที่แท้จริง
                   ของคุณมากกว่าการคำนึงสิ่งที่ต้องการเป็น.  (จับเวลา3นาที)
                 </label>
-                <div class="col-md-7">
+                <div class="col-md-2">
+                  </div>
+                <div class="col-md-8">
                     <div class="alert alert-danger">
-                        <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr; หรือคลิกดูตัวอย่าง
+                        <center>   <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr; หรือคลิกดูตัวอย่าง </center>
                       </div>
                     </div>
+                 
               </div>
             </div>
               <!-- /.box-body -->
               <div class="box-footer">
                   
-                {{ Form::submit('เริ่มทำข้อสอบ',['class'=> 'btn btn-primary'])}}
+               <center> {{ Form::submit('เริ่มทำข้อสอบ',['class'=> 'btn btn-primary'])}} 
              <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">ตัวอย่าง</button>
-
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">ตัวอย่าง</button>
+</center>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">

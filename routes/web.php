@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PDFController;
 use App\Testmbti;
+use App\Testdisc;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,16 +22,18 @@ Route::resource('position','PositionController');
 
 Route::resource('employee','EmployeeController');
 
-Route::resource('mbti','TestmbtiController');
 
-Route::resource('disc','TestdiscController');
+
 
 Route::resource('disctest','DisctestController');
 
+
+Route::resource('mbti','TestmbtiController');
 Route::post('/start','AnswerController@start');
 Route::post('/endtest','AnswerController@answer');
 
 
+Route::resource('disc','TestdiscController');
 Route::post('/testdisc','AnswerController@startdisc');
 Route::post('/ansdisc','AnswerController@answerdisc');
 
@@ -58,7 +61,10 @@ Route::get('/dynamicdependent','DynamicDependent@index');
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 
-Route::get('/pdf/{id}','PDFController@pdf' );
+Route::get('/pdfemployee/{id}','PDFController@pdfemployee' );
+
+Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' );
+Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' );
 
 Route::get('summbti', function () {
     
@@ -71,10 +77,10 @@ Route::get('summbti', function () {
 });
 Route::get('sumdisc', function () {
     
-    $testmbti =  Testmbti::all();
+    $testdisc =  Testdisc::all();
     $data = array(
-        'testmbti' => $testmbti
+        'testdisc' => $testdisc
     );
-    return view("summary/summbti",$data);
+    return view("summary/sumdisc",$data);
 
 });
