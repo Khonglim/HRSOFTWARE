@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use App\Testmbti;
-
+use App\Testdisc;
 class TestmbtiController extends Controller
 {
     /**

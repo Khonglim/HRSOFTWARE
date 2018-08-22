@@ -5,7 +5,7 @@
 <div class="col-md-12">
         <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">รายชื่อที่ทดสอบเรียบร้อยแล้ว</h3>
+              <h3 class="box-title">รายชื่อที่ทดสอบเรียบร้อยแล้ว(MBTI)</h3>
             </div>
           
           
