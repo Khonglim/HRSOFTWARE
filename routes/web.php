@@ -61,9 +61,11 @@ Route::get('/dynamicdependent','DynamicDependent@index');
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 
-Route::get('/pdf/{id}','PDFController@pdf' );
+Route::get('/pdfemployee/{id}','PDFController@pdfemployee' );
+
 Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' );
 Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' );
+
 Route::get('summbti', function () {
     
     $testmbti =  Testmbti::all();

@@ -8,7 +8,7 @@ use PDF;
 
 class PDFController extends Controller
 {
-    public function pdf($id)
+    public function pdfemployee($id)
     {
         $personal = Personal::find($id);
         $pdf = PDF::loadView('employ.pdf',['personal' => $personal ]);
@@ -19,7 +19,7 @@ class PDFController extends Controller
     public function pdftestmbti($id)
     {
         $testmbti = Testmbti::find($id);
-        $pdf = PDF::loadView('testmbti.pdf_mbti',['testmbti ' =>  $testmbti ]);
+        $pdf = PDF::loadView('testmbti.pdf_mbti',['testmbti' =>  $testmbti ]);
        
         return $pdf->stream();
     }
@@ -28,7 +28,7 @@ class PDFController extends Controller
     public function pdftestdisc($id)
     {
         $testdisc = Testdisc::find($id);
-        $pdf = PDF::loadView('testdisc.pdf_disc',['testdisc' =>  $testdisc ]);
+        $pdf = PDF::loadView('testdisc.pdf_disc',['testdisc' =>  $testdisc]);
        
         return $pdf->stream();
     }

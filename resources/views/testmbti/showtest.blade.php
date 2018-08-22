@@ -284,7 +284,7 @@
 						<!-- /.box-body -->
 						<div class="box-footer">
 							<center>
-									<a href="{{url('pdftestdisc/'.$l['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+									<a href="{{url('pdftestmbti/'.$testmbti->id)}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
 							</center>
 						</div>		
 					</div>

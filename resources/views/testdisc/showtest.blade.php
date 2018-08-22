@@ -174,49 +174,64 @@
 																
                                                                 <tr>
                                                                         <td align ="center">
-                                                                                ข้อ 33: ตอบ    {{$testdisc->answer29}}	
+                                                                                ข้อ 33: ตอบ    {{$testdisc->answer33}}	
                                                                         </td>
             
                                                                         <td align ="center">
-                                                                                ข้อ	34: ตอบ	  {{$testdisc->answer30}}
+                                                                                ข้อ	34: ตอบ	  {{$testdisc->answer34}}
                                                                         </td>
                                                                         <td align ="center">
-                                                                                ข้อ	35: ตอบ{{$testdisc->answer31}}
+                                                                                ข้อ	35: ตอบ{{$testdisc->answer35}}
                                                                         </td>
                                                                         <td align ="center">
-                                                                                ข้อ	36: ตอบ	{{$testdisc->answer32}}
+                                                                                ข้อ	36: ตอบ	{{$testdisc->answer36}}
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                             <td align ="center">
-                                                                                    ข้อ	37: ตอบ		{{$testdisc->answer29}}	
+                                                                                    ข้อ	37: ตอบ		{{$testdisc->answer37}}	
                                                                             </td>
                 
                                                                             <td align ="center">
-                                                                                    ข้อ	38: ตอบ		{{$testdisc->answer30}}
+                                                                                    ข้อ	38: ตอบ		{{$testdisc->answer38}}
                                                                             </td>
                                                                             <td align ="center">
-                                                                                    ข้อ	39: ตอบ			{{$testdisc->answer31}}
+                                                                                    ข้อ	39: ตอบ			{{$testdisc->answer39}}
                                                                             </td>
                                                                             <td align ="center">
-                                                                                    ข้อ	40: ตอบ	{{$testdisc->answer32}}
+                                                                                    ข้อ	40: ตอบ	{{$testdisc->answer40}}
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                                 <td align ="center">
-                                                                                        ข้อ 41: ตอบ		{{$testdisc->answer29}}	
+                                                                                        ข้อ 41: ตอบ		{{$testdisc->answer41}}	
                                                                                 </td>
                     
                                                                                 <td align ="center">
-                                                                                        ข้อ 42: ตอบ		{{$testdisc->answer30}}
+                                                                                        ข้อ 42: ตอบ		{{$testdisc->answer42}}
                                                                                 </td>
                                                                                 <td align ="center">
-                                                                                        ข้อ 43: ตอบ			{{$testdisc->answer31}}
+                                                                                        ข้อ 43: ตอบ			{{$testdisc->answer43}}
                                                                         </td>
                                                                                 <td align ="center">
-                                                                                        ข้อ 44: ตอบ	{{$testdisc->answer32}}
+                                                                                        ข้อ 44: ตอบ	{{$testdisc->answer44}}
                                                                                 </td>
-									 </tr>              
+																			 </tr> 
+																			 <tr>
+																					<td align ="center">
+																							ข้อ 45: ตอบ		{{$testdisc->answer45}}	
+																					</td>
+						
+																					<td align ="center">
+																							ข้อ 46: ตอบ		{{$testdisc->answer46}}
+																					</td>
+																					<td align ="center">
+																							ข้อ 47: ตอบ			{{$testdisc->answer47}}
+																			</td>
+																					<td align ="center">
+																							ข้อ 48: ตอบ	{{$testdisc->answer48}}
+																					</td>
+																				 </tr>                 
 									</td>
 									<td align ="center">
 										รวม {{$testdisc->scoreD}} คะแนน
