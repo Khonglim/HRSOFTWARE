@@ -25,6 +25,7 @@ $q=0;
                           <h3><p id="showTime" data-minutes-left="180"></p></h3>
                           </div>
                           {{Form::open(['url'=>'endtest','id'=>'test1','method'=>'POST'])}}
+                          @csrf
                     <div class ="row">
                         <div class ="form-group">
                       <div class="col-md-3">

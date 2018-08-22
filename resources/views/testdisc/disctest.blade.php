@@ -2,14 +2,15 @@
 @section('content')
   <div class="content-wrapper">
     <div class="content container-fluid">
-        <div class="col-md-3">
+        <div class="col-md-2">
           </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
         <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">แบบทดสอบบุคลิกภาพ</h3>
             </div>
             {{Form::open(['url'=>'testdisc','method'=>'POST'])}}
+            @csrf
               <div class="box-body">
                   
               <div class="row">
@@ -32,7 +33,7 @@
                 </label>
                 <div class="col-md-2">
                   </div>
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="alert alert-danger">
                         <center>   <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr; หรือคลิกดูตัวอย่าง </center>
                       </div>

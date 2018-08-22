@@ -76,6 +76,6 @@ Route::get('sumdisc', function () {
     $data = array(
         'testmbti' => $testmbti
     );
-    return view("summary/summbti",$data);
+    return view("summary/sumdisc",$data);
 
 });

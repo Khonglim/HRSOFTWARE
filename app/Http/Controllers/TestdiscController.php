@@ -47,6 +47,8 @@ class TestdiscController extends Controller
         $testdisc->scoreI =$request->scoreI;
         $testdisc->scoreS =$request->scoreS;
         $testdisc->scoreC = $request->scoreC;
+
+
         $testdisc->answer1 = $request->choice1;
         $testdisc->answer2 = $request->choice2;
         $testdisc->answer3 = $request->choice3;
@@ -109,7 +111,12 @@ class TestdiscController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $testdisc = Testdisc::find($id);
+        $data = array(
+            'testdisc' =>  $testdisc
+        );
+        return view('testdisc/showtest',$data);
     }
 
     /**

@@ -38,7 +38,8 @@
                                                     &emsp;  นาที    <strong id="showTimeDisc" data-minutes-left="3"></strong>
                                   </div> 
                                 </div>  
-                                <div class="col-md-3">
+                                <div class="col-md-4
+                                ">
                                     <div class="alert alert-danger">
                                             <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr;
                                           </div>
@@ -71,7 +72,7 @@
                   
                                   <td >
                                   
-                                    <select name="chioe{{$r++}}"  class="uniqueSelection{{$i++}}">
+                                    <select name="chioe{{$a++}}"  class="uniqueSelection{{$i++}}">
                                             <option value=0>เลือก</option>
                                             <option value= 1>1</option>
                                             <option value=2>2</option>

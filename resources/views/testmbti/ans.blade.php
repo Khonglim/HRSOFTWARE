@@ -122,6 +122,7 @@ table{
               <h3 class="box-title">การให้คะแนน: นับ 1 คะแนน สำหรับแต่ละคำตอบของท่านในแบบเฉลยต่อไปนี้</h3>
             </div>
             {{Form::open(['url'=>'mbti',])}}
+            @csrf
               <div class="box-body">
                   <div class ="form-group">
                       <div class="row"> 

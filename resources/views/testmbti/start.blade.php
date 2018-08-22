@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-md-3">
       </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">แบบประเมินบุคลิกภาพ</h3>
@@ -24,13 +24,14 @@
                     {{Form::text('lastname','',['class'=>'form-control','required'])}}   
                    
                   </div>
-                  <label>หมายเหตุ:ในแต่ละข้อให้เลือกเพียงตัวเลือก "ก" หรือ "ข" เพียงตัวเลือกเดียวที่สอดคล้องกับตัวท่านมากที่สุด<br>(แม้จะชอบทั้งคู่ก็ต้องเลือกเพียงตัวเลือกเดียวเท่านั้น)
-                    <br>(จับเวลา 3 นาที)
                   
-                  </label>
                 </div>
-               
-
+                <div class="col-md-12">
+                  <label>หมายเหตุ:ในแต่ละข้อให้เลือกเพียงตัวเลือก "ก" หรือ "ข" เพียงตัวเลือกเดียวที่สอดคล้องกับตัวท่านมากที่สุด  <br>(แม้จะชอบทั้งคู่ก็ต้องเลือกเพียงตัวเลือกเดียวเท่านั้น)
+                  <br> <br><center>(จับเวลา 3 นาที)  </center>
+                
+                </label>
+              </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
