@@ -29,7 +29,7 @@ class InterviewController extends Controller
         $data = array(
             'interview' => $interview ,  'scoreinterviewp' => $scoreinterviewp
         );   
-        return view('rate/forminterview');
+        return view('rate/forminterview',$data);
     }
 
     /**

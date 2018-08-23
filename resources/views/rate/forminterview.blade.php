@@ -30,6 +30,11 @@
             <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
+                           
+                    
+                  
+                     
+
             <table  id="customers">
                     <thead>
                       <tr>
@@ -65,12 +70,10 @@
                             <td rowspan="3" colspan="1" style="text-align:center" >
 
                              
-                                       
-                                    <input type="radio" id="score_1" name="score_1" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_1" name="score_1" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_1" name="score_1" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_1" name="score_1" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_1" name="score_1" value="5"/> 5
+                                      @foreach ($scoreinterviewp as $item)
+                                      <input type="radio" id="score_1" name="score_1" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                    @endforeach
+                                   
 
 
                             </td>
@@ -95,18 +98,14 @@
                                  background, Institute and GPA)</td>
                             <td rowspan="3" colspan="1" style="text-align:center" >
 
-                             
-                                       
-                                    <input type="radio" id="score_2" name="score_2" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_2" name="score_2" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_2" name="score_2" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_2" name="score_2" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_2" name="score_2" value="5"/> 5
+                                    @foreach ($scoreinterviewp as $item)
+                                    <input type="radio" id="score_2" name="score_2" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                  @endforeach
 
 
                             </td>
                             <td rowspan="3" colspan="1" >
-                                    <textarea class="form-control" rows="3" name="comment1"></textarea>
+                                    <textarea class="form-control" rows="3" name="comment2"></textarea>
                                 </td>
                     
                       </tr>
@@ -116,18 +115,14 @@
                                 (Computer literacy:<br> Consider computer skills related to working requirements)</td>
                             <td rowspan="3" colspan="1" style="text-align:center" >
 
-                             
-                                       
-                                    <input type="radio" id="score_3" name="score_3" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_3" name="score_3" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_3" name="score_3" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_3" name="score_3" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_3" name="score_3" value="5"/> 5
+                                    @foreach ($scoreinterviewp as $item)
+                                    <input type="radio" id="score_3" name="score_3" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                  @endforeach
 
 
                             </td>
                             <td rowspan="3" colspan="1" >
-                                    <textarea class="form-control" rows="3" name="comment1"></textarea>
+                                    <textarea class="form-control" rows="3" name="comment3"></textarea>
                                 </td>
                     
                       </tr>
@@ -141,17 +136,14 @@
                              <td rowspan="3" colspan="1" style="text-align:center" >
  
                               
-                                        
-                                    <input type="radio" id="score_4" name="score_4" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_4" name="score_4" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_4" name="score_4" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_4" name="score_4" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_4" name="score_4" value="5"/> 5
+                                    @foreach ($scoreinterviewp as $item)
+                                    <input type="radio" id="score_4" name="score_4" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                  @endforeach
  
  
                              </td>
                              <td rowspan="3" colspan="1" >
-                                     <textarea class="form-control" rows="3" name="comment1"></textarea>
+                                     <textarea class="form-control" rows="3" name="comment4"></textarea>
                                  </td>
                      
                        </tr>
@@ -167,17 +159,14 @@
                               <td rowspan="3" colspan="1" style="text-align:center" >
   
                                
-                                         
-                                    <input type="radio" id="score_5" name="score_5" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_5" name="score_5" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_5" name="score_5" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_5" name="score_5" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_5" name="score_5" value="5"/> 5
-  
+                                 
+                                    @foreach ($scoreinterviewp as $item)
+                                    <input type="radio" id="score_5" name="score_5" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                  @endforeach
   
                               </td>
                               <td rowspan="3" colspan="1" >
-                                      <textarea class="form-control" rows="4" name="comment1"></textarea>
+                                      <textarea class="form-control" rows="4" name="comment5"></textarea>
                                   </td>
                       
                         </tr>
@@ -194,17 +183,15 @@
                                <td rowspan="3" colspan="1" style="text-align:center" >
    
                                 
-                                          
-                                    <input type="radio" id="score_6" name="score_6" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_6" name="score_6" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_6" name="score_6" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_6" name="score_6" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_6" name="score_6" value="5"/> 5
+                               
+                                    @foreach ($scoreinterviewp as $item)
+                                    <input type="radio" id="score_6" name="score_6" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                  @endforeach
    
    
                                </td>
                                <td rowspan="3" colspan="1" >
-                                       <textarea class="form-control" rows="3" name="comment1"></textarea>
+                                       <textarea class="form-control" rows="3" name="comment6"></textarea>
                                    </td>
                        
                          </tr>
@@ -222,17 +209,14 @@
                                 <td rowspan="3" colspan="1" style="text-align:center" >
     
                                  
-                                           
-                                        <input type="radio" id="score_7" name="score_7" value="1"/> 1 &emsp;
-                                        <input type="radio" id="score_7" name="score_7" value="2"/>2 &emsp;
-                                        <input type="radio" id="score_7" name="score_7" value="3"/> 3 &emsp;
-                                        <input type="radio" id="score_7" name="score_7" value="4"/> 4 &emsp;
-                                        <input type="radio" id="score_7" name="score_7" value="5"/> 5
+                                        @foreach ($scoreinterviewp as $item)
+                                        <input type="radio" id="score_7" name="score_7" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                      @endforeach
     
     
                                 </td>
                                 <td rowspan="3" colspan="1" >
-                                        <textarea class="form-control" rows="5" name="comment1"></textarea>
+                                        <textarea class="form-control" rows="5" name="comment7"></textarea>
                                     </td>
                         
                           </tr>
@@ -247,18 +231,13 @@
                                         </td>
                                  <td rowspan="3" colspan="1" style="text-align:center" >
      
-                                  
-                                            
-                                        <input type="radio" id="score_8" name="score_8" value="1"/> 1&emsp;
-                                        <input type="radio" id="score_8" name="score_8" value="2"/> 2&emsp;
-                                        <input type="radio" id="score_8" name="score_8" value="3"/> 3&emsp;
-                                        <input type="radio" id="score_8" name="score_8" value="4"/> 4&emsp;
-                                        <input type="radio" id="score_8" name="score_8" value="5"/> 5
-     
+                                        @foreach ($scoreinterviewp as $item)
+                                        <input type="radio" id="score_8" name="score_8" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                      @endforeach
      
                                  </td>
                                  <td rowspan="3" colspan="1" >
-                                         <textarea class="form-control" rows="3" name="comment1"></textarea>
+                                         <textarea class="form-control" rows="3" name="comment8"></textarea>
                                      </td>
                          
                            </tr>
@@ -273,16 +252,15 @@
                                          </td>
                                   <td rowspan="3" colspan="1" style="text-align:center" >
          
-                                        <input type="radio" id="score_9" name="score_9" value="1"/> 1&emsp;
-                                        <input type="radio" id="score_9" name="score_9" value="2"/> 2&emsp;
-                                        <input type="radio" id="score_9" name="score_9" value="3"/> 3&emsp;
-                                        <input type="radio" id="score_9" name="score_9" value="4"/> 4&emsp;
-                                        <input type="radio" id="score_9" name="score_9" value="5"/> 5
+                                      
+                                        @foreach ($scoreinterviewp as $item)
+                                        <input type="radio" id="score_9" name="score_9" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                      @endforeach
       
       
                                   </td>
                                   <td rowspan="3" colspan="1" >
-                                          <textarea class="form-control" rows="2" name="comment1"></textarea>
+                                          <textarea class="form-control" rows="2" name="comment9"></textarea>
                                       </td>
                           
                             </tr>
@@ -300,16 +278,14 @@
        
                                     
                                               
-                                        <input type="radio" id="score_10" name="score_10" value="1"/> 1&emsp;
-                                        <input type="radio" id="score_10" name="score_10" value="2"/> 2&emsp;
-                                        <input type="radio" id="score_10" name="score_10" value="3"/> 3&emsp;
-                                        <input type="radio" id="score_10" name="score_10" value="4"/> 4&emsp;
-                                        <input type="radio" id="score_10" name="score_10" value="5"/> 5
+                                        @foreach ($scoreinterviewp as $item)
+                                        <input type="radio" id="score_10" name="score_10" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                      @endforeach
        
        
                                    </td>
                                    <td rowspan="3" colspan="1" >
-                                           <textarea class="form-control" rows="5" name="comment1"></textarea>
+                                           <textarea class="form-control" rows="5" name="comment10"></textarea>
                                        </td>
                            
                              </tr>
@@ -328,16 +304,13 @@
         
                                      
                                                
-                                            <input type="radio" id="score_11" name="score_11" value="1"/> 1&emsp;
-                                            <input type="radio" id="score_11" name="score_11" value="2"/> 2&emsp;
-                                            <input type="radio" id="score_11" name="score_11" value="3"/> 3&emsp;
-                                            <input type="radio" id="score_11" name="score_11" value="4"/> 4&emsp;
-                                            <input type="radio" id="score_11" name="score_11" value="5"/> 5
-        
+                                            @foreach ($scoreinterviewp as $item)
+                                            <input type="radio" id="score_11" name="score_11" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                          @endforeach
         
                                     </td>
                                     <td rowspan="3" colspan="1" >
-                                            <textarea class="form-control" rows="4" name="comment1"></textarea>
+                                            <textarea class="form-control" rows="4" name="comment11"></textarea>
                                         </td>
                             
                               </tr>
@@ -354,17 +327,14 @@
                                      <td rowspan="3" colspan="1" style="text-align:center" >
          
                                       
-                                                
-                                            <input type="radio" id="score_12" name="score_12" value="1"/> 1&emsp;
-                                            <input type="radio" id="score_12" name="score_12" value="2"/> 2&emsp;
-                                            <input type="radio" id="score_12" name="score_12" value="3"/> 3&emsp;
-                                            <input type="radio" id="score_12" name="score_12" value="4"/> 4&emsp;
-                                            <input type="radio" id="score_12" name="score_12" value="5"/> 5
+                                            @foreach ($scoreinterviewp as $item)
+                                            <input type="radio" id="score_12" name="score_12" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                          @endforeach
          
          
                                      </td>
                                      <td rowspan="3" colspan="1" >
-                                             <textarea class="form-control" rows="4" name="comment1"></textarea>
+                                             <textarea class="form-control" rows="4" name="comment12"></textarea>
                                          </td>
                              
                                </tr>
@@ -381,17 +351,13 @@
                                       <td rowspan="3" colspan="1" style="text-align:center" >
           
                                        
-                                                 
-                                            <input type="radio" id="score_13" name="score_13" value="1"/> 1&emsp;
-                                            <input type="radio" id="score_13" name="score_13" value="2"/> 2&emsp;
-                                            <input type="radio" id="score_13" name="score_13" value="3"/> 3&emsp;
-                                            <input type="radio" id="score_13" name="score_13" value="4"/> 4&emsp;
-                                            <input type="radio" id="score_13" name="score_13" value="5"/> 5
-          
+                                            @foreach ($scoreinterviewp as $item)
+                                            <input type="radio" id="score_13" name="score_13" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                          @endforeach
           
                                       </td>
                                       <td rowspan="3" colspan="1" >
-                                              <textarea class="form-control" rows="1" name="comment1"></textarea>
+                                              <textarea class="form-control" rows="1" name="comment13"></textarea>
                                           </td>
                               
                                 </tr>
@@ -403,17 +369,14 @@
                                         <td rowspan="3" colspan="1" style="text-align:center" >
             
                                          
-                                                   
-                                                <input type="radio" id="score_14" name="score_14" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_14" name="score_14" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_14" name="score_14" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_14" name="score_14" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_14" name="score_14" value="5"/>5
+                                                @foreach ($scoreinterviewp as $item)
+                                                <input type="radio" id="score_14" name="score_14" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                              @endforeach
             
             
                                         </td>
                                         <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
+                                                <textarea class="form-control" rows="1" name="comment14"></textarea>
                                             </td>
                                 
                                   </tr>
@@ -424,18 +387,12 @@
                                                </td>
                                         <td rowspan="3" colspan="1" style="text-align:center" >
             
-                                         
-                                                   
-                                                <input type="radio" id="score_15" name="score_15" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_15" name="score_15" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_15" name="score_15" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_15" name="score_15" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_15" name="score_15" value="5"/> 5
-            
-            
+                                                @foreach ($scoreinterviewp as $item)
+                                                <input type="radio" id="score_15" name="score_15" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                              @endforeach
                                         </td>
                                         <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
+                                                <textarea class="form-control" rows="1" name="comment15"></textarea>
                                             </td>
                                 
                                   </tr>
@@ -446,18 +403,13 @@
                                                </td>
                                         <td rowspan="3" colspan="1" style="text-align:center" >
             
-                                         
-                                                
-                                                <input type="radio" id="score_16" name="score_16" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_16" name="score_16" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_16" name="score_16" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_16" name="score_16" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_16" name="score_16" value="5"/>5
-            
+                                                @foreach ($scoreinterviewp as $item)
+                                                <input type="radio" id="score_16" name="score_16" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                              @endforeach
             
                                         </td>
                                         <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
+                                                <textarea class="form-control" rows="1" name="comment16"></textarea>
                                             </td>
                                 
                                   </tr>
@@ -469,17 +421,13 @@
                                         <td rowspan="3" colspan="1" style="text-align:center" >
             
                                          
-                                                   
-                                                <input type="radio" id="score_17" name="score_17" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_17" name="score_17" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_17" name="score_17" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_17" name="score_17" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_17" name="score_17" value="5"/> 5
-            
+                                                @foreach ($scoreinterviewp as $item)
+                                                <input type="radio" id="score_17" name="score_17" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                              @endforeach
             
                                         </td>
                                         <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
+                                                <textarea class="form-control" rows="1" name="comment17"></textarea>
                                             </td>
                                 
                                   </tr>
@@ -490,18 +438,14 @@
                                                </td>
                                         <td rowspan="3" colspan="1" style="text-align:center" >
             
-                                         
-                                                   
-                                                <input type="radio" id="score_18" name="score_18" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_18" name="score_18" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_18" name="score_18" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_18" name="score_18" value="4"/>4&emsp;
-                                                <input type="radio" id="score_18" name="score_18" value="5"/> 5
+                                                @foreach ($scoreinterviewp as $item)
+                                                <input type="radio" id="score_18" name="score_18" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                              @endforeach
             
             
                                         </td>
                                         <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
+                                                <textarea class="form-control" rows="1" name="comment18"></textarea>
                                             </td>
                                 
                                   </tr>
@@ -513,18 +457,13 @@
                                                </td>
                                         <td rowspan="3" colspan="1" style="text-align:center" >
             
-                                         
-                                                   
-                                                <input type="radio" id="score_19" name="score_19" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_19" name="score_19" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_19" name="score_19" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_19" name="score_19" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_19" name="score_19" value="5"/> 5
-            
+                                                @foreach ($scoreinterviewp as $item)
+                                                <input type="radio" id="score_19" name="score_19" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                              @endforeach
             
                                         </td>
                                         <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
+                                                <textarea class="form-control" rows="1" name="comment19"></textarea>
                                             </td>
                                 
                                   </tr>
@@ -534,19 +473,12 @@
                                               
                                                </td>
                                         <td rowspan="3" colspan="1" style="text-align:center" >
-            
-                                         
-                                                   
-                                                <input type="radio" id="score_20" name="score_20" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_20" name="score_20" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_20" name="score_20" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_20" name="score_20" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_20" name="score_20" value="5"/> 5
-            
-            
+                                                @foreach ($scoreinterviewp as $item)
+                                                <input type="radio" id="score_20" name="score_20" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                              @endforeach
                                         </td>
                                         <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
+                                                <textarea class="form-control" rows="1" name="comment20"></textarea>
                                             </td>
                                 
                                   </tr>
