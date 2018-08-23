@@ -39,7 +39,7 @@ body {
               <h3 class="box-title">รายงานผลการทดสอบ</div>
               <div class="box-body">
                   {{Form::open(['url'=>'disc',])}}
-                  
+                  {{ csrf_field() }}
                   @isset($_POST['id_personal'])
                   <label> ชื่อ:: {{$id_personal= $_POST['id_personal']}}</label> 
                   <input type="text" name="id_personal" value="{{$id_personal= $_POST['id_personal']}}" hidden/>

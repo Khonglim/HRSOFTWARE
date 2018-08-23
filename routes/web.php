@@ -84,3 +84,11 @@ Route::get('sumdisc', function () {
     return view("summary/sumdisc",$data);
 
 });
+
+Route::get('rate', function () {
+    
+    
+
+    return view("rate/forminterview");
+
+});

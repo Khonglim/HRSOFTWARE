@@ -27,6 +27,7 @@
              
                   <div class="box-body">
                         {{Form::open(['url'=>'ansdisc','method'=>'POST','id'=>'testdisc'])}}
+                        {{ csrf_field() }}
                         @foreach ($testemp as $c)
                         <?php  $r++; ?>
                         @if((($c->name ==  $name =  $_POST["name"]) && ($c->lastname ==  $lastname =  $_POST["lastname"])))

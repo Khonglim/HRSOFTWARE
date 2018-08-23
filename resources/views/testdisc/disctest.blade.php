@@ -10,7 +10,7 @@
               <h3 class="box-title">แบบทดสอบบุคลิกภาพ</h3>
             </div>
             {{Form::open(['url'=>'testdisc','method'=>'POST'])}}
-            @csrf
+            {{ csrf_field() }}
               <div class="box-body">
                   
               <div class="row">
