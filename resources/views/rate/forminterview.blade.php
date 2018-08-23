@@ -44,7 +44,7 @@
                    
                     <tbody>
                       <tr>
-                        <td style="text-align:center" colspan="3" >ชื่อผู้สมัคร (Applicant’s Name).............................  ตำแหน่งผู้สมัคร (Position)  …………………………………</td>
+                        <td style="text-align:center" colspan="3" >ชื่อผู้สมัคร (Applicant’s Name) <input type="text" name="aname"  /> ตำแหน่งผู้สมัคร (Position)  <input type="text" name="alastname"  /></td>
                         
                       </tr>
                       <tr>
