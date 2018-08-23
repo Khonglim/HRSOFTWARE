@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
 class InterviewController extends Controller
 {
     /**
@@ -23,6 +24,11 @@ class InterviewController extends Controller
      */
     public function create()
     {
+        $interview = DB::table('_interview')->get();
+        $scoreinterviewp = DB::table('_scoreinterview')->get();
+        $data = array(
+            'interview' => $interview ,  'scoreinterviewp' => $scoreinterviewp
+        );   
         return view('rate/forminterview');
     }
 

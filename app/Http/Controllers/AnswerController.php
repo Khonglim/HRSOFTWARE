@@ -17,6 +17,7 @@ class AnswerController extends Controller
     }
     public function answer()
     {
+        
         return view('testmbti/ans');
     }
     public function startdisc()
