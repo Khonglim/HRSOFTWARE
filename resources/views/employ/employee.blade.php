@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-xs-12">
           @if(auth()->user()->isAdmin == 1)
-          <a href="employee/create" class="btn btn-success" ><i class="fa fa-user-plus"> เพิ่มข้อมูล</i></a>
+          <a href="employee/create" class="btn btn-success" ><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
           @endif
           <br><br>
         <div class="box">

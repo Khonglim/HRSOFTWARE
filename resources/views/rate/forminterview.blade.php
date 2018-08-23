@@ -5,7 +5,6 @@
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
-           
 
         }
         
@@ -28,6 +27,9 @@
         </style>
 <div class="content-wrapper">
     <div class="content container-fluid">
+            <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
             <table  id="customers">
                     <thead>
                       <tr>
@@ -562,7 +564,13 @@
             
                                         </td>
                                         <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" id="conclude"   rows="1" name="comment1"></textarea>
+                                                {{ Form::select('conclusion', [
+                                                    '' => 'สรุปผล',
+                                                    'ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)' => 'ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)', 
+                                                    'รอเปรียบเทียบ (Potential candidate)  (51-69 คะแนน)' => 'รอเปรียบเทียบ (Potential candidate)  (51-69 คะแนน)',
+                                                    'ไม่ว่าจ้าง (Reject)  (ต่ำกว่า 50 คะแนน)' => 'ไม่ว่าจ้าง (Reject)  (ต่ำกว่า 50 คะแนน)',
+                                                    'เหมาะสมกับตำแหน่งอื่น (For other position)	'=> 'เหมาะสมกับตำแหน่งอื่น (For other position)	'
+                                        ],null, ['class' => 'form-control']) }}
                                                
                                             </td>
                                 
@@ -614,6 +622,9 @@
         </div>
     </div>
 </div>
+    </div>
+</div>
+
 
 
         <script type='text/javascript'>

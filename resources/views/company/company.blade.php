@@ -8,7 +8,7 @@
           <a href="company/create" class="btn btn-success" ><i class="fa fa-plus"> เพิ่มข้อมูล</i></a>
           @endif
           <br><br>
-        <div class="box">
+        <div class="box"  >
           <div class="box-header">
             <h3 class="box-title">รายชื่อบริษัท</h3>
           </div>

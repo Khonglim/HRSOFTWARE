@@ -124,6 +124,7 @@
                 <li class="active"  ><a href="{{url('/mbti') }}"><i class="fa fa-book"></i> <span>ทดสอบ MBTI</span></a></li>
                 <li class="active"  ><a href="{{url('/disc') }}"><i class="fa fa-book"></i> <span>ทดสอบ DISC</span></a></li>
                 <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
+                <li class="active"  ><a href="{{url('/rate') }}"><i class="fa fa-book"></i> <span>แบบประเมินผลสัมภาษณ์ </span></a></li>
                 <li class="treeview">
                   <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
                     <span class="pull-right-container">
