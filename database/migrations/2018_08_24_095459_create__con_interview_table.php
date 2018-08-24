@@ -15,8 +15,8 @@ class CreateConInterviewTable extends Migration
     {
         Schema::create('_con_interview', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_personal')->nullable();;
-            $table->integer('chioce')->nullable();;
+            $table->integer('id_personal')->nullable();
+            $table->integer('chioce')->nullable();
             $table->integer('score');
             $table->timestamps();
         });

@@ -16,6 +16,7 @@ class CreateCommentInterviewTable extends Migration
         Schema::create('comment_interview', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_posinal');
+            $table->integer('chioce')->nullable();
             $table->string('comment_interview')->nullable();
             $table->tinyInteger('comment_enable')->default('1');
             $table->timestamps();
