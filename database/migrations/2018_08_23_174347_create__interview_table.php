@@ -16,6 +16,7 @@ class CreateInterviewTable extends Migration
         Schema::create('_interview', function (Blueprint $table) {
             $table->increments('id');
             $table->mediumText('choice');
+            $table->integer('id_head');
         });
     }
 

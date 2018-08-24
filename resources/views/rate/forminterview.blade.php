@@ -30,6 +30,11 @@
             <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
+                           
+                    
+                  
+                     
+
             <table  id="customers">
                     <thead>
                       <tr>
@@ -58,496 +63,118 @@
                       <tr>
                             <th colspan="3">บุคลิคลักษณะ (Appearance) </th>
                      </tr>
-
+                     @foreach ($interview as $i)
+                     @if ($i->id_head == 1)
                      <tr>
-                            <td rowspan="3" >1. บุคลิกลักษณะ พิจารณาท่วงทีกิริยามารยาท และ ความเหมาะสมของ<br>การแต่งกาย 
-                                (Appearance, Manner and Personality: Consider overall<br> appearance, Mannerism, Poise, presentation, Speech)</td>
-                            <td rowspan="3" colspan="1" style="text-align:center" >
-
-                             
-                                       
-                                    <input type="radio" id="score_1" name="score_1" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_1" name="score_1" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_1" name="score_1" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_1" name="score_1" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_1" name="score_1" value="5"/> 5
+                            <td  style="width:50% " >{{ $i->choice}}
+                            <td  colspan="1" style="text-align:center " >
+                                    @foreach ($scoreinterviewp as $item)
+                                      <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                    @endforeach
+                                   
 
 
                             </td>
-                            <td rowspan="3" colspan="1" >
+                            <td> <textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
 
-
-                                    <textarea class="form-control" rows="3" name="comment1"></textarea>
-
-
-
-
-                                </td>
-                    
+                   
                       </tr>
-                      <tr></tr> <tr></tr>
+                      @endif
+                      @endforeach
+            
                       <tr>
                             <th colspan="3" >คุณสมบัติ (Qualification) </th>
                      </tr>
+                     @foreach ($interview as $i)
+                     @if ($i->id_head == 2) 
                      <tr>
-                            <td rowspan="3" >2. การศึกษา/การฝึกอบรม พิจารณาประวัติการศึกษา สถาบัน และผลการ<br>
-                                เรียน และการฝึกอบรม (Education/Training: Consider educational<br>
-                                 background, Institute and GPA)</td>
-                            <td rowspan="3" colspan="1" style="text-align:center" >
+                           
+                            <td  style="width:50% " >{{ $i->choice   }}
+                            <td  style="text-align:center" >
 
-                             
-                                       
-                                    <input type="radio" id="score_2" name="score_2" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_2" name="score_2" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_2" name="score_2" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_2" name="score_2" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_2" name="score_2" value="5"/> 5
+                                    @foreach ($scoreinterviewp as $item)
+                                    <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                  @endforeach
 
 
                             </td>
-                            <td rowspan="3" colspan="1" >
-                                    <textarea class="form-control" rows="3" name="comment1"></textarea>
-                                </td>
-                    
+                        <td><textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
+                          
                       </tr>
-                      <tr></tr> <tr></tr>
-                     <tr>
-                            <td rowspan="3" >3. ทักษะทางคอมพิวเตอร์ พิจารณาความชำนาญในการใช้งานคอมพิวเตอรืโปรแกรมต่างๆ ที่เกี่ยวข้องกับงาน <br>
-                                (Computer literacy:<br> Consider computer skills related to working requirements)</td>
-                            <td rowspan="3" colspan="1" style="text-align:center" >
-
-                             
-                                       
-                                    <input type="radio" id="score_3" name="score_3" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_3" name="score_3" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_3" name="score_3" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_3" name="score_3" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_3" name="score_3" value="5"/> 5
-
-
-                            </td>
-                            <td rowspan="3" colspan="1" >
-                                    <textarea class="form-control" rows="3" name="comment1"></textarea>
-                                </td>
-                    
-                      </tr>
-
-                      <tr></tr> <tr></tr>
-                      <tr>
-                             <td rowspan="3" >4. ทักษะด้านภาษา พิจารณาความสามารถทางด้านภาษาที่ 2 หรือภาษาที่ 3 <br>
-                                 เช่น ภาษาอังกฤษ ภาษาจีน ภาษาญี่ปุ่น หรืออื่นๆ (Language skills: <br>
-                                  Consider 2nd or 3rd language proficiency i.e. English, Chinese, Japanese and etc.)
-                                    </td>
-                             <td rowspan="3" colspan="1" style="text-align:center" >
- 
-                              
-                                        
-                                    <input type="radio" id="score_4" name="score_4" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_4" name="score_4" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_4" name="score_4" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_4" name="score_4" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_4" name="score_4" value="5"/> 5
- 
- 
-                             </td>
-                             <td rowspan="3" colspan="1" >
-                                     <textarea class="form-control" rows="3" name="comment1"></textarea>
-                                 </td>
-                     
-                       </tr>
- 
-                       <tr></tr> <tr></tr>
-                       <tr>
-                              <td rowspan="3" >5. ประสบการณ์ทำงาน พิจารณาประสบการณ์ ความสามารถ ความรู้ ทางเทคนิคที่เกี่ยวข้องและเป็น<br>
-                                  ประโยชน์กับตำแหน่งงานที่สมัคร<br>
-                                    (Relevant Experience: Consider working experience,<br> 
-                                    professional skills and technical knowledge in position related areas)
-                                    
-                                     </td>
-                              <td rowspan="3" colspan="1" style="text-align:center" >
+                 
+                      @endif
+                      @endforeach
   
-                               
-                                         
-                                    <input type="radio" id="score_5" name="score_5" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_5" name="score_5" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_5" name="score_5" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_5" name="score_5" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_5" name="score_5" value="5"/> 5
-  
-  
-                              </td>
-                              <td rowspan="3" colspan="1" >
-                                      <textarea class="form-control" rows="4" name="comment1"></textarea>
-                                  </td>
                       
-                        </tr>
-  
-                        <tr></tr> <tr></tr>
                         <tr>
                                 <th  colspan="3">สมรรถนะความสามารถ (Competencies)</th>
                          </tr>
                         <tr>
-                               <td rowspan="3" >6. การพัฒนาตนเอง ความสามารถในการเรียนรู้ และใส่ใจในการพัฒนา<br>
-                                   ตนเอง (Ability to learn and commitment for self-development)
-                                     
-                                      </td>
-                               <td rowspan="3" colspan="1" style="text-align:center" >
-   
-                                
-                                          
-                                    <input type="radio" id="score_6" name="score_6" value="1"/> 1&emsp;
-                                    <input type="radio" id="score_6" name="score_6" value="2"/> 2&emsp;
-                                    <input type="radio" id="score_6" name="score_6" value="3"/> 3&emsp;
-                                    <input type="radio" id="score_6" name="score_6" value="4"/> 4&emsp;
-                                    <input type="radio" id="score_6" name="score_6" value="5"/> 5
-   
-   
-                               </td>
-                               <td rowspan="3" colspan="1" >
-                                       <textarea class="form-control" rows="3" name="comment1"></textarea>
-                                   </td>
+                                @foreach ($interview as $i)
+                                @if ($i->id_head == 3)
+                                <tr>
+                                       <td  style="width:50% " >{{ $i->choice}}
+                                       <td  colspan="1" style="text-align:center " >
+                                               @foreach ($scoreinterviewp as $item)
+                                                 <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                               @endforeach
+                                              
+           
+           
+                                       </td>
+                                       <td> <textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
+           
+                              
+                                 </tr>
+                                 @endif
+                                 @endforeach
                        
                          </tr>
-
-                         <tr></tr> <tr></tr>
-                         
-                         <tr>
-                                <td rowspan="3" >7. ความสามารถในการวิเคราะห์ปัญหา ตลอดจนข้อคิดเห็นต่างๆในการ<br>
-                                    แก้ไขปัญหาเหล่านั้น (Problem solving skills and analytical reasoning<br>
-                                     ability: Consider articulation and organization of information, thoughts<br>
-                                      and ideas during interview, mental alertness, keenness of mind, grasp of<br>
-                                       complex ideas, problem-solving ability)
-                                      
-                                       </td>
-                                <td rowspan="3" colspan="1" style="text-align:center" >
-    
-                                 
-                                           
-                                        <input type="radio" id="score_7" name="score_7" value="1"/> 1 &emsp;
-                                        <input type="radio" id="score_7" name="score_7" value="2"/>2 &emsp;
-                                        <input type="radio" id="score_7" name="score_7" value="3"/> 3 &emsp;
-                                        <input type="radio" id="score_7" name="score_7" value="4"/> 4 &emsp;
-                                        <input type="radio" id="score_7" name="score_7" value="5"/> 5
-    
-    
-                                </td>
-                                <td rowspan="3" colspan="1" >
-                                        <textarea class="form-control" rows="5" name="comment1"></textarea>
-                                    </td>
-                        
-                          </tr>
-
-                          <tr></tr> <tr></tr>
-                         
-                          <tr>
-                                 <td rowspan="3" >8. การให้ความร่วมมือ การติดต่อประสานงานกับผู้อื่น และความสามารถ <br>
-                                     ในการสื่อข้อความ (Coordination / Interpersonal and Communication <br>
-                                      /skills)
-                                       
-                                        </td>
-                                 <td rowspan="3" colspan="1" style="text-align:center" >
-     
-                                  
-                                            
-                                        <input type="radio" id="score_8" name="score_8" value="1"/> 1&emsp;
-                                        <input type="radio" id="score_8" name="score_8" value="2"/> 2&emsp;
-                                        <input type="radio" id="score_8" name="score_8" value="3"/> 3&emsp;
-                                        <input type="radio" id="score_8" name="score_8" value="4"/> 4&emsp;
-                                        <input type="radio" id="score_8" name="score_8" value="5"/> 5
-     
-     
-                                 </td>
-                                 <td rowspan="3" colspan="1" >
-                                         <textarea class="form-control" rows="3" name="comment1"></textarea>
-                                     </td>
-                         
-                           </tr>
-
-
-                           <tr></tr> <tr></tr>
-                         
-                           <tr>
-                                  <td rowspan="3" >9. ความคิดริเริ่ม / การเสนอข้อคิดเห็น / การยอมรับและปรับตัวเข้ากับการ<br>
-                                      เปลี่ยนแปลง (Innovation / Creativity and adaptability to new ideas and changes)
-                                        
-                                         </td>
-                                  <td rowspan="3" colspan="1" style="text-align:center" >
-         
-                                        <input type="radio" id="score_9" name="score_9" value="1"/> 1&emsp;
-                                        <input type="radio" id="score_9" name="score_9" value="2"/> 2&emsp;
-                                        <input type="radio" id="score_9" name="score_9" value="3"/> 3&emsp;
-                                        <input type="radio" id="score_9" name="score_9" value="4"/> 4&emsp;
-                                        <input type="radio" id="score_9" name="score_9" value="5"/> 5
-      
-      
-                                  </td>
-                                  <td rowspan="3" colspan="1" >
-                                          <textarea class="form-control" rows="2" name="comment1"></textarea>
-                                      </td>
-                          
-                            </tr>
-                            <tr></tr> <tr></tr>
-                         
-                            <tr>
-                                   <td rowspan="3" >10. ทัศนคติ และวุฒิภาวะ พิจารณาจากความสัมพันธ์กับหัวหน้างาน เพื่อน<br>
-                                       ร่วมงาน เหตุผลการลาออก ความรับผิดชอบต่องาน ทัศนคติต่องานและ<br>
-                                        ครอบครัว (Attitude ad Maturity: Consider friction with former <br>
-                                        Supervisors, colleague relationships, reason for leaving jobs, sense of <br>
-                                        responsibility, attitude towards work and towards family)
-                                         
-                                          </td>
-                                   <td rowspan="3" colspan="1" style="text-align:center" >
-       
-                                    
-                                              
-                                        <input type="radio" id="score_10" name="score_10" value="1"/> 1&emsp;
-                                        <input type="radio" id="score_10" name="score_10" value="2"/> 2&emsp;
-                                        <input type="radio" id="score_10" name="score_10" value="3"/> 3&emsp;
-                                        <input type="radio" id="score_10" name="score_10" value="4"/> 4&emsp;
-                                        <input type="radio" id="score_10" name="score_10" value="5"/> 5
-       
-       
-                                   </td>
-                                   <td rowspan="3" colspan="1" >
-                                           <textarea class="form-control" rows="5" name="comment1"></textarea>
-                                       </td>
-                           
-                             </tr>
-                             <tr></tr> <tr></tr>
                              <tr>
                                     <th  colspan="3">ความรู้เกี่ยวบริษัท และตำแหน่งงาน (Company & Position Knowledge)</th>
                              </tr>
                              <tr>
-                                    <td rowspan="3" >11. ความรู้เกี่ยวกับบริษัท พิจารณาจากการหาข้อมูลของบริษัท และ <br>
-                                        ความเข้าใจในการดำเนินธุรกิจของบริษัท รวมถึงมุมมองต่อบริษัท (Company <br> 
-                                        knowledge: Consider how well preparation on company’s information <br> 
-                                        as well as company perception)
-                                          
+                                    @foreach ($interview as $i)
+                                    @if ($i->id_head == 4)
+                                    <tr>
+                                           <td  style="width:50% " >{{ $i->choice}}
+                                           <td  colspan="1" style="text-align:center " >
+                                                   @foreach ($scoreinterviewp as $item)
+                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                                   @endforeach
+                                                  
+               
+               
                                            </td>
-                                    <td rowspan="3" colspan="1" style="text-align:center" >
-        
-                                     
-                                               
-                                            <input type="radio" id="score_11" name="score_11" value="1"/> 1&emsp;
-                                            <input type="radio" id="score_11" name="score_11" value="2"/> 2&emsp;
-                                            <input type="radio" id="score_11" name="score_11" value="3"/> 3&emsp;
-                                            <input type="radio" id="score_11" name="score_11" value="4"/> 4&emsp;
-                                            <input type="radio" id="score_11" name="score_11" value="5"/> 5
-        
-        
-                                    </td>
-                                    <td rowspan="3" colspan="1" >
-                                            <textarea class="form-control" rows="4" name="comment1"></textarea>
-                                        </td>
-                            
-                              </tr>
-
-
-                              <tr></tr> <tr></tr>
-                              <tr>
-                                     <td rowspan="3" >12. ความรอบรู้ในตำแหน่งงานที่สมัคร พิจารณาความ<br>
-                                         เข้าใจในลักษณะงาน แนวปฏิบัติ ข้อจำกัด และวิธีการ<br>
-                                         บริหาร (Position knowledge: Consider overall<br>
-                                          position’s role & responsibilities understanding)
-                                           
-                                            </td>
-                                     <td rowspan="3" colspan="1" style="text-align:center" >
-         
-                                      
-                                                
-                                            <input type="radio" id="score_12" name="score_12" value="1"/> 1&emsp;
-                                            <input type="radio" id="score_12" name="score_12" value="2"/> 2&emsp;
-                                            <input type="radio" id="score_12" name="score_12" value="3"/> 3&emsp;
-                                            <input type="radio" id="score_12" name="score_12" value="4"/> 4&emsp;
-                                            <input type="radio" id="score_12" name="score_12" value="5"/> 5
-         
-         
-                                     </td>
-                                     <td rowspan="3" colspan="1" >
-                                             <textarea class="form-control" rows="4" name="comment1"></textarea>
-                                         </td>
-                             
+                                           <td> <textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
+               
+                                  
+                                     </tr>
+                                     @endif
+                                     @endforeach
                                </tr>
-
-
-                               <tr></tr> <tr></tr>
                                <tr>
                                       <th  colspan="3">ความเหมาะสมกับวัฒนธรรมองค์กร (Cultural Fit-Core Values)</th>
                                </tr>
                                <tr>
-                                      <td rowspan="3" >13. ซื่อสัตย์ (Honest)
-                                            
-                                             </td>
-                                      <td rowspan="3" colspan="1" style="text-align:center" >
-          
-                                       
-                                                 
-                                            <input type="radio" id="score_13" name="score_13" value="1"/> 1&emsp;
-                                            <input type="radio" id="score_13" name="score_13" value="2"/> 2&emsp;
-                                            <input type="radio" id="score_13" name="score_13" value="3"/> 3&emsp;
-                                            <input type="radio" id="score_13" name="score_13" value="4"/> 4&emsp;
-                                            <input type="radio" id="score_13" name="score_13" value="5"/> 5
-          
-          
-                                      </td>
-                                      <td rowspan="3" colspan="1" >
-                                              <textarea class="form-control" rows="1" name="comment1"></textarea>
-                                          </td>
-                              
-                                </tr>
-                                <tr></tr> <tr></tr>
-                                <tr>
-                                        <td rowspan="3" >14. รู้จักคุณค่าของสิ่งต่าง อาทิ ทรัทพ์สิน ความรู้ (Worth)
-                                              
-                                               </td>
-                                        <td rowspan="3" colspan="1" style="text-align:center" >
-            
-                                         
-                                                   
-                                                <input type="radio" id="score_14" name="score_14" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_14" name="score_14" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_14" name="score_14" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_14" name="score_14" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_14" name="score_14" value="5"/>5
-            
-            
-                                        </td>
-                                        <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
-                                            </td>
-                                
-                                  </tr>
-                                  <tr></tr> <tr></tr>
-                                  <tr>
-                                        <td rowspan="3" >15. มุ่งมั่น ขยัน อดทน (Wealth Human Resources)
-                                              
-                                               </td>
-                                        <td rowspan="3" colspan="1" style="text-align:center" >
-            
-                                         
-                                                   
-                                                <input type="radio" id="score_15" name="score_15" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_15" name="score_15" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_15" name="score_15" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_15" name="score_15" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_15" name="score_15" value="5"/> 5
-            
-            
-                                        </td>
-                                        <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
-                                            </td>
-                                
-                                  </tr>
-                                  <tr></tr> <tr></tr>
-                                  <tr>
-                                        <td rowspan="3" >16. ตั้งมั่นในการบรรลุเป้าหมาย ตามเวลากำหนด (Target &Achievement) 
-                                              
-                                               </td>
-                                        <td rowspan="3" colspan="1" style="text-align:center" >
-            
-                                         
-                                                
-                                                <input type="radio" id="score_16" name="score_16" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_16" name="score_16" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_16" name="score_16" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_16" name="score_16" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_16" name="score_16" value="5"/>5
-            
-            
-                                        </td>
-                                        <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
-                                            </td>
-                                
-                                  </tr>
-                                  <tr></tr> <tr></tr>
-                                  <tr>
-                                        <td rowspan="3" >17. พร้อมรับฟัง และ เปิดใจในสิ่งต่างๆ (Open Mind)
-                                              
-                                               </td>
-                                        <td rowspan="3" colspan="1" style="text-align:center" >
-            
-                                         
-                                                   
-                                                <input type="radio" id="score_17" name="score_17" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_17" name="score_17" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_17" name="score_17" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_17" name="score_17" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_17" name="score_17" value="5"/> 5
-            
-            
-                                        </td>
-                                        <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
-                                            </td>
-                                
-                                  </tr>
-                                  <tr></tr> <tr></tr>
-                                  <tr>
-                                        <td rowspan="3" >18. ใจบริการ (Service Mind)
-                                              
-                                               </td>
-                                        <td rowspan="3" colspan="1" style="text-align:center" >
-            
-                                         
-                                                   
-                                                <input type="radio" id="score_18" name="score_18" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_18" name="score_18" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_18" name="score_18" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_18" name="score_18" value="4"/>4&emsp;
-                                                <input type="radio" id="score_18" name="score_18" value="5"/> 5
-            
-            
-                                        </td>
-                                        <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
-                                            </td>
-                                
-                                  </tr>
-
-                                  <tr></tr> <tr></tr>
-                                  <tr>
-                                        <td rowspan="3" >19. คิดสร้างสรรค์ (Creativity)
-                                              
-                                               </td>
-                                        <td rowspan="3" colspan="1" style="text-align:center" >
-            
-                                         
-                                                   
-                                                <input type="radio" id="score_19" name="score_19" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_19" name="score_19" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_19" name="score_19" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_19" name="score_19" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_19" name="score_19" value="5"/> 5
-            
-            
-                                        </td>
-                                        <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
-                                            </td>
-                                
-                                  </tr>
-                                  <tr></tr> <tr></tr>
-                                  <tr>
-                                        <td rowspan="3" >20. เพียงพอ พอเพียง (Sufficiency Economy)
-                                              
-                                               </td>
-                                        <td rowspan="3" colspan="1" style="text-align:center" >
-            
-                                         
-                                                   
-                                                <input type="radio" id="score_20" name="score_20" value="1"/> 1&emsp;
-                                                <input type="radio" id="score_20" name="score_20" value="2"/> 2&emsp;
-                                                <input type="radio" id="score_20" name="score_20" value="3"/> 3&emsp;
-                                                <input type="radio" id="score_20" name="score_20" value="4"/> 4&emsp;
-                                                <input type="radio" id="score_20" name="score_20" value="5"/> 5
-            
-            
-                                        </td>
-                                        <td rowspan="3" colspan="1" >
-                                                <textarea class="form-control" rows="1" name="comment1"></textarea>
-                                            </td>
+                                    @foreach ($interview as $i)
+                                    @if ($i->id_head == 5)
+                                    <tr>
+                                           <td  style="width:50% " >{{ $i->choice}}
+                                           <td  colspan="1" style="text-align:center " >
+                                                   @foreach ($scoreinterviewp as $item)
+                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                                   @endforeach
+                                                  
+               
+               
+                                           </td>
+                                           <td> <textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
+               
+                                  
+                                     </tr>
+                                     @endif
+                                     @endforeach
                                 
                                   </tr>
                         

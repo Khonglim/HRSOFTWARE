@@ -22,6 +22,7 @@ Route::resource('position','PositionController');
 
 Route::resource('employee','EmployeeController');
 
+Route::resource('rate','InterviewController');
 
 
 
