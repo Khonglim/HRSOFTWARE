@@ -66,6 +66,7 @@ class CreateTestMbtiTable extends Migration
             $table->string('answer30')->nullable();
             $table->string('answer31')->nullable();
             $table->string('answer32')->nullable();
+            $table->tinyInteger('mbti_enable')->default('1');
             $table->timestamps();
         });
     }

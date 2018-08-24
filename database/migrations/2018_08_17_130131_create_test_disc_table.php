@@ -78,7 +78,7 @@ class CreateTestDiscTable extends Migration
             $table->integer('answer46')->nullable();
             $table->integer('answer47')->nullable();
             $table->integer('answer48')->nullable();
-            
+            $table->tinyInteger('disc_enable')->default('1');
 
 
 

@@ -31,7 +31,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                            
-                    
+          {{Form::open(['url'=>'rate'])}}
                   
                      
 
@@ -49,7 +49,13 @@
                    
                     <tbody>
                       <tr>
-                        <td style="text-align:center" colspan="3" >ชื่อผู้สมัคร (Applicant’s Name) <input type="text" name="aname"  /> ตำแหน่งผู้สมัคร (Position)  <input type="text" name="alastname"  /></td>
+                        <td style="text-align:center" colspan="3" >ชื่อผู้สมัคร (Applicant’s Name)
+                            <select id="country" name="employee" >
+                            <option value="">--เลือกชื่อผู้สมัคร--</option>
+                            @foreach ($employee  as $e)
+                            <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
+                            @endforeach
+                        </select> ตำแหน่งผู้สมัคร (Position)    {{ Form::select('ngg_position', [ '' => '::เลือก::','ต่ำแหน่ง' =>$items],null, ['id'=>'ngg_position']) }}  </td>
                         
                       </tr>
                       <tr>
@@ -63,9 +69,12 @@
                       <tr>
                             <th colspan="3">บุคลิคลักษณะ (Appearance) </th>
                      </tr>
+                     <?php  $s=0;  ?>
                      @foreach ($interview as $i)
                      @if ($i->id_head == 1)
+                     <?php $s++ ?>
                      <tr>
+                            <input type="radio" name="chioce{{$s}}"  value="{{$s}}" checked hidden />
                             <td  style="width:50% " >{{ $i->choice}}
                             <td  colspan="1" style="text-align:center " >
                                     @foreach ($scoreinterviewp as $item)
@@ -85,10 +94,13 @@
                       <tr>
                             <th colspan="3" >คุณสมบัติ (Qualification) </th>
                      </tr>
+                    
                      @foreach ($interview as $i)
                      @if ($i->id_head == 2) 
+                     <?php $s++ ?>
+                     <input type="radio" name="chioce{{$s}}" value="{{$s}}" checked  hidden />
                      <tr>
-                           
+                    
                             <td  style="width:50% " >{{ $i->choice   }}
                             <td  style="text-align:center" >
 
@@ -112,6 +124,8 @@
                         <tr>
                                 @foreach ($interview as $i)
                                 @if ($i->id_head == 3)
+                                <?php $s++ ?>
+                                <input type="radio" name="chioce{{$s}}" value="{{$s}}" checked  hidden />
                                 <tr>
                                        <td  style="width:50% " >{{ $i->choice}}
                                        <td  colspan="1" style="text-align:center " >
@@ -136,6 +150,8 @@
                              <tr>
                                     @foreach ($interview as $i)
                                     @if ($i->id_head == 4)
+                                    <?php $s++ ?>
+                                    <input type="radio" name="chioce{{$s}}" value="{{$s}}" checked  hidden />
                                     <tr>
                                            <td  style="width:50% " >{{ $i->choice}}
                                            <td  colspan="1" style="text-align:center " >
@@ -159,6 +175,8 @@
                                <tr>
                                     @foreach ($interview as $i)
                                     @if ($i->id_head == 5)
+                                    <?php $s++ ?>
+                                    <input type="radio" name="chioce{{$s}}" value="{{$s}}" checked  hidden />
                                     <tr>
                                            <td  style="width:50% " >{{ $i->choice}}
                                            <td  colspan="1" style="text-align:center " >
@@ -186,7 +204,7 @@
                                         <td rowspan="3" colspan="1" style="text-align:center" >
             
                                          
-                                                <input type="text" id="total" readonly style="text-align:center"/>
+                                                <input  name="total" type="text" id="total" readonly style="text-align:center"/>
                                               
             
                                         </td>
@@ -216,28 +234,28 @@
             <tr>
                 <td style="text-align:center" >5</td>
                 <td style="text-align:center"  > <input type="text" id="ch5" readonly style="text-align:center" /></td>
-                <td style="text-align:center"><input type="text" id="rs5"  readonly style="text-align:center" /></td>
+                <td style="text-align:center"><input type="text" id="rs5"  readonly style="text-align:center" name="rs5"/></td>
             </tr>
             <tr>
                 <td style="text-align:center">4</td>
                 <td style="text-align:center"><input type="text" id="ch4"  readonly style="text-align:center"/></td>
-                <td style="text-align:center"><input type="text" id="rs4"  readonly style="text-align:center"/></td>
+                <td style="text-align:center"><input type="text" id="rs4"  readonly style="text-align:center" name="rs4"/></td>
             <tr>
             <tr>
                 <td style="text-align:center">3</td>
                 <td style="text-align:center"><input type="text" id="ch3"  readonly style="text-align:center"/></td>
-                <td style="text-align:center"><input type="text" id="rs3" readonly style="text-align:center"/></td>
+                <td style="text-align:center"><input type="text" id="rs3" readonly style="text-align:center" name="rs3"/></td>
             </tr>
             <tr>
                 <td style="text-align:center">2</td>
                 <td style="text-align:center"><input type="text" id="ch2" readonly style="text-align:center" />
                 </td >
-                <td style="text-align:center"><input type="text" id="rs2" readonly style="text-align:center"/></td>
+                <td style="text-align:center"><input type="text" id="rs2" readonly style="text-align:center" name="rs2"/></td>
             </tr>
             <tr>
                 <td style="text-align:center">1</td>
                 <td style="text-align:center"><input type="text" id="ch1" readonly style="text-align:center"/></td>
-                <td style="text-align:center"><input type="text" id="rs1" readonly style="text-align:center"/></td>
+                <td style="text-align:center"><input type="text" id="rs1" readonly style="text-align:center" name="rs1"/></td>
             </tr>
            
         </table>

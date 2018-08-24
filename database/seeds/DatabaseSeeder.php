@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TestTableSeeder::class);
         $this->call(DiscTableSeeder::class);
         $this->call(InterviewTableSeeder::class);
+        $this->call(Ngg_positionTableSeeder::class);
         $this->call(ScoreinterviewTableSeeder::class);
-        //$this->call(ThaiAddressTablesSeeder::class);
+        $this->call(ThaiAddressTablesSeeder::class);
     }
 }
