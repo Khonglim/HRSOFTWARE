@@ -45,11 +45,11 @@
     <table class="table table-bordered">
         <tbody>
           <tr>
-            <td >ชื่อ: {{$personal->name}} {{$personal->lastname}} </td>
+            <td colspan="2">ชื่อ: {{$personal->name}} {{$personal->lastname}} </td>
             <td>ชื่อเล่น: {{$personal->nikname}}</td>
             <td>เพศ: {{$personal->gender}}</td>
             <td colspan="2">วันเกิด: {{$personal->birthday}} </td>
-            <td colspan="3">อายุ: {{$personal->age}}</td>
+            <td colspan="2">อายุ: {{$personal->age}}</td>
             
           </tr>
           <tr>
@@ -319,132 +319,121 @@
                     <td>{{$personal->majoro}}</td>
                     <td>{{$personal->degree7}}</td>
                 </tr>
-        </tbody>
-    </table>
-        <hr><br><br><br><br><br><br><hr>
-    <table>
-        <tbody>
                 <tr>
-                    <th colspan="8" align=center>ภาษา</th>
-                </tr>
-                <thead>
-                    <tr>
-                        <th colspan="2">ประเภทภาษา</th>
-                        <th colspan="2">การพูด</th>
-                        <th colspan="2">การเข้าใจ</th>
-                        <th colspan="2">การเขียน</th>
+                        <th colspan="8" align=center>ภาษา</th>
                     </tr>
-                </thead>
-                <tr>
-                    <td colspan="2">ไทย</td>
-                    <td colspan="2">{{$personal->thais}}</td>
-                    <td colspan="2">{{$personal->thail}}</td>
-                    <td colspan="2">{{$personal->thair}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">อังกฤษ</td>
-                    <td colspan="2">{{$personal->engliss}}</td>
-                    <td colspan="2">{{$personal->englisl}}</td>
-                    <td colspan="2">{{$personal->englisr}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">อื่นๆ : {{$personal->otherr}}</td>
-                    <td colspan="2">{{$personal->othes}}</td>
-                    <td colspan="2">{{$personal->othel}}</td>
-                    <td colspan="2">{{$personal->other}}</td>
-                </tr>
-                <tr><td colspan="8"></td></tr>
-                <tr>
-                    <th colspan="8" align=center>ประวัติการทำงาน</th>
-                </tr>
-                <thead>
+                    <thead>
                         <tr>
-                          <th>ชื่อสถานที่ประกอบการ</th>
-                          <th>ลักษณะงานที่รับผิดชอบ</th>
-                          <th>โทร</th>
-                          <th>ระยะงานเริ่ม</th>
-                          <th>ระยะงานสิ้นสุด</th>
-                          <th>ตำแหน่ง</th>
-                          <th>สาเหตุที่ออก</th>
-                          <th>เงินเดือนครั้งสุดท้าย</th>
+                            <th colspan="2">ประเภทภาษา</th>
+                            <th colspan="2">การพูด</th>
+                            <th colspan="2">การเข้าใจ</th>
+                            <th colspan="2">การเขียน</th>
                         </tr>
-                      </thead>
+                    </thead>
+                    <tr>
+                        <td colspan="2">ไทย</td>
+                        <td colspan="2">{{$personal->thais}}</td>
+                        <td colspan="2">{{$personal->thail}}</td>
+                        <td colspan="2">{{$personal->thair}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">อังกฤษ</td>
+                        <td colspan="2">{{$personal->engliss}}</td>
+                        <td colspan="2">{{$personal->englisl}}</td>
+                        <td colspan="2">{{$personal->englisr}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">อื่นๆ : {{$personal->otherr}}</td>
+                        <td colspan="2">{{$personal->othes}}</td>
+                        <td colspan="2">{{$personal->othel}}</td>
+                        <td colspan="2">{{$personal->other}}</td>
+                    </tr>
+                    <tr> <th colspan="8" align=center>ประวัติการทำงาน</th></tr>
+                    <thead>
                         <tr>
-                            <td>{{$personal->list_of_employed1}}</td>
-                            <td>{{$personal->job_description1}}</td>
-                            <td>{{$personal->call1}}</td>
-                            <td>{{$personal->start_job_duration1}}</td>
-                            <td>{{$personal->end_job_duration2}}</td>
-                            <td>{{$personal->position1}}</td>
-                            <td>{{$personal->reasonLeaving1}}</td>
-                            <td>{{$personal->lastsalary1}}</td>
+                            <th align=center>ชื่อสถานประกอบการ</th>
+                            <th align=center>ลักษณะงานที่รับผิดชอบ</th>
+                            <th align=center>โทร</th>
+                            <th align=center>ระยะงานเริ่ม</th>
+                            <th align=center>ระยะงานสิ้นสุด</th>
+                            <th align=center>ตำแหน่ง</th>
+                            <th align=center>สาเหตุที่ออก</th>
+                            <th align=center>เงินเดือนครั้งสุดท้าย</th>
                         </tr>
-                        <tr>
-                            <td>{{$personal->list_of_employed2}}</td>
-                            <td>{{$personal->job_description2}}</td>
-                            <td>{{$personal->call2}}</td>
-                            <td>{{$personal->start_job_duration3}}</td>
-                            <td>{{$personal->end_job_duration4}}</td>
-                            <td>{{$personal->position2}}</td>
-                            <td>{{$personal->reasonLeaving2}}</td>
-                            <td>{{$personal->lastsalary2}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{$personal->list_of_employed3}}</td>
-                            <td>{{$personal->job_description3}}</td>
-                            <td>{{$personal->call3}}</td>
-                            <td>{{$personal->start_job_duration5}}</td>
-                            <td>{{$personal->end_job_duration6}}</td>
-                            <td>{{$personal->position3}}</td>
-                            <td>{{$personal->reasonLeaving3}}</td>
-                            <td>{{$personal->lastsalary3}}</td>
-                        </tr>
-                        <tr><td colspan="8"></td></tr>
-                        <tr>
-                            <th colspan="8" align=center>อื่นๆ</th>
-                        </tr>
-                        <tr>
-                            <td colspan="3">บุคคลที่สามารถติดต่อได้ ชื่อ :{{$personal->namecm}}</td>
-                            <td colspan="2">ความสัมพันธ์ : {{$personal->lastnamecm}}</td>
-                            <td colspan="3">โทร : {{$personal->telecm}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">สถานที่ทำงาน : {{$personal->firm}}</td>
-                            <td colspan="4">ตำแหน่ง : {{$personal->positioncm}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">ความรู้พิเศษ :คอมพิวเตอร์ {{$personal->computer}} </td>
-                            <td colspan="5">อื่นๆ : {{$personal->fax}} {{$personal->typewriter}} {{$personal->dot}} คำ/นาที</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">ในตำแหน่งที่ต้องการต้องมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ) : {{$personal->crash1}}</td>
-                            <td colspan="5">ชื่อ : {{$personal->compd}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; สถานที่ทำงาน : {{$personal->compa}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป : {{$personal->crash2}}</td>
-                            <td colspan="4">ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม : {{$personal->crash3}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">ท่านสามารถขับรถยนต์ได้หรือไม่ : {{$personal->yes}}</td>
-                            <td colspan="5">ท่านมีรถยนต์ส่วนตัวหรือไม่ : {{$personal->owncar}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ : {{$personal->workk}}</td>
-                            <td colspan="5">ท่านพร้อมงานวันที่ : {{$personal->dateworkk}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="8">ท่านเป็นเจ้าของรถประเภทใด : {{$personal->cardec}} &emsp;&emsp;&emsp;&emsp;&emsp; ทะเบียน : {{$personal->license}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="8">ท่านเคยให้ถูกออกจากงานหรือไม่ : {{$personal->exitwork}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; เพราะ : {{$personal->because}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="8">ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่ : {{$personal->serious_ill}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5">ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือเป็นบุคคลล้มละลายหรือไม่ : {{$personal->offense}}</td>
-                            <td colspan="3">ขณะนี้คุณตั้งครรภ์หรือไม่ : {{$personal->pregnant}}</td>
-                        </tr>
+                    </thead>
+                    <tr>
+                        <td>{{$personal->list_of_employed1}}</td>
+                        <td>{{$personal->job_description1}}</td>
+                        <td>{{$personal->call1}}</td>
+                        <td>{{$personal->start_job_duration1}}</td>
+                        <td>{{$personal->end_job_duration2}}</td>
+                        <td>{{$personal->position1}}</td>
+                        <td>{{$personal->reasonLeaving1}}</td>
+                        <td>{{$personal->lastsalary1}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{$personal->list_of_employed2}}</td>
+                        <td>{{$personal->job_description2}}</td>
+                        <td>{{$personal->call2}}</td>
+                        <td>{{$personal->start_job_duration3}}</td>
+                        <td>{{$personal->end_job_duration4}}</td>
+                        <td>{{$personal->position2}}</td>
+                        <td>{{$personal->reasonLeaving2}}</td>
+                        <td>{{$personal->lastsalary2}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{$personal->list_of_employed3}}</td>
+                        <td>{{$personal->job_description3}}</td>
+                        <td>{{$personal->call3}}</td>
+                        <td>{{$personal->start_job_duration5}}</td>
+                        <td>{{$personal->end_job_duration6}}</td>
+                        <td>{{$personal->position3}}</td>
+                        <td>{{$personal->reasonLeaving3}}</td>
+                        <td>{{$personal->lastsalary3}}</td>
+                    </tr>
+                    <tr><th colspan="8" align=center>อื่นๆ</th></tr>
+                    <tr>
+                        <td colspan="3">บุคคลที่สามารถติดต่อได้ ชื่อ: {{$personal->namecm}}</td>
+                        <td colspan="2">ความสัมพันธ์ : {{$personal->lastnamecm}}</td>
+                        <td colspan="3">โทร : {{$personal->telecm}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">สถานที่ทำงาน : {{$personal->firm}}</td>
+                        <td colspan="4">ตำแหน่ง : {{$personal->positioncm}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">ความรู้พิเศษ :คอมพิวเตอร์ {{$personal->computer}}</td>
+                        <td colspan="5">อื่นๆ :{{$personal->fax}} {{$personal->typewriter}} {{$personal->dot}} คำ/นาที</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">ในตำแหน่งที่ต้องมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ) :{{$personal->crash1}}</td>
+                        <td colspan="5">ชื่อ :{{$personal->compd}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; สถานที่ทำงาน : {{$personal->compa}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป : {{$personal->crash2}}</td>
+                        <td colspan="4">ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม : {{$personal->crash3}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">ท่านสามารถขับรถยนต์ได้หรือไม่ : {{$personal->yes}}</td>
+                        <td colspan="5">ท่านมีรถยนต์ส่วนตัวหรือไม่ : {{$personal->owncar}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ : {{$personal->workk}}</td>
+                        <td colspan="5">ท่านพร้อมทำงานวันที่ : {{$personal->dateworkk}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">ท่านเป็นเจ้าของรถประเภทใด : {{$personal->cardec}} &emsp;&emsp;&emsp;&emsp;&emsp; ทะเบียน : {{$personal->license}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">ท่านเคยให้ถูกออกจากงานหรือไม่ : {{$personal->exitwork}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; เพราะ : {{$personal->because}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่ : {{$personal->serious_ill}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือเป็นบุคคลล้มละลายหรือไม่ : {{$personal->offense}}</td>
+                        <td colspan="3">ขณะนี้คุณตั้งครรภ์หรือไม่ : {{$personal->pregnant}}</td>
+                    </tr>
         </tbody>
       </table>
     
