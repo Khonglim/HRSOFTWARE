@@ -49,42 +49,171 @@ class InterviewController extends Controller
     {
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce1;
         $comment_interview->comment_interview  = $request->comment1;
         $comment_interview->save();
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce2;
         $comment_interview->comment_interview  = $request->comment2;
         $comment_interview->save();
 
-        $con_interview = new Con_interview;
-        $con_interview->score =  $request->score_1; 
-        $con_interview->id_personal = $request->employee;
-        $con_interview->chioce = $request->chioce1;
-        $con_interview->save();
+        
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce3;
         $comment_interview->comment_interview  = $request->comment3;
         $comment_interview->save();
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce4;
         $comment_interview->comment_interview  = $request->comment4;
         $comment_interview->save();
 
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce5;
         $comment_interview->comment_interview  = $request->comment5;
+        $comment_interview->save();
+
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce6;
+        $comment_interview->comment_interview  = $request->comment6;
         $comment_interview->save();
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
-        $comment_interview->comment_interview  = $request->comment1;
+        $comment_interview->chioce = $request->chioce7;
+        $comment_interview->comment_interview  = $request->comment7;
         $comment_interview->save();
 
 
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce7;
+        $comment_interview->comment_interview  = $request->comment7;
+        $comment_interview->save();
+
+
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce8;
+        $comment_interview->comment_interview  = $request->comment8;
+        $comment_interview->save();
+
+
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce9;
+        $comment_interview->comment_interview  = $request->comment9;
+        $comment_interview->save();
+
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce10;
+        $comment_interview->comment_interview  = $request->comment10;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce11;
+        $comment_interview->comment_interview  = $request->comment11;
+        $comment_interview->save();
+
+
+
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce12;
+        $comment_interview->comment_interview  = $request->comment13;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce7;
+        $comment_interview->comment_interview  = $request->comment14;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce15;
+        $comment_interview->comment_interview  = $request->comment15;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce16;
+        $comment_interview->comment_interview  = $request->comment16;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce17;
+        $comment_interview->comment_interview  = $request->comment17;
+        $comment_interview->save();
+
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce18;
+        $comment_interview->comment_interview  = $request->comment18;
+        $comment_interview->save();
+
+
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce19;
+        $comment_interview->comment_interview  = $request->comment19;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce20;
+        $comment_interview->comment_interview  = $request->comment20;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->comment_interview  = $request->conclusion;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->comment_interview  = $request->ngg_position;
+        $comment_interview->save();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $con_interview = new Con_interview;
+        $con_interview->score =  $request->score_1; 
+        $con_interview->id_personal = $request->employee;
+        $con_interview->chioce = $request->chioce1;
+        $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_2; 
