@@ -367,7 +367,9 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
     );
 
     public static $classMap = array (
+        'App\\Comment_interview' => __DIR__ . '/../..' . '/app/Comment_interview.php',
         'App\\Company' => __DIR__ . '/../..' . '/app/Company.php',
+        'App\\Con_interview' => __DIR__ . '/../..' . '/app/Con_interview.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Department' => __DIR__ . '/../..' . '/app/Department.php',
         'App\\Disc' => __DIR__ . '/../..' . '/app/Disc.php',
@@ -3908,6 +3910,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',

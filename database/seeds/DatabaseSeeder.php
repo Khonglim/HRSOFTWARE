@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(InterviewTableSeeder::class);
         $this->call(Ngg_positionTableSeeder::class);
         $this->call(ScoreinterviewTableSeeder::class);
-        $this->call(ThaiAddressTablesSeeder::class);
+       // $this->call(ThaiAddressTablesSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }

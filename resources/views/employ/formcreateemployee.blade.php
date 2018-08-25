@@ -4,8 +4,7 @@
                
         <div class="content container-fluid">
                
-       
-                        {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data'])}}
+                {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data'])}}
           
         <div class="row">
                 <div class="col-md-12">
