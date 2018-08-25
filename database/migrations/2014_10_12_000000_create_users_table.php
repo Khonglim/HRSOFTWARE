@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->char('name');
             $table->char('password');
-            $table->boolean('isAdmin')->default('1');
+            $table->boolean('isAdmin')->default('0');
             $table->tinyInteger('enable')->default('1');
             $table->rememberToken();
             $table->timestamps();

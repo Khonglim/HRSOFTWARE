@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ScoreinterviewTableSeeder::class);
        // $this->call(ThaiAddressTablesSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(Inter_supTableSeeder::class);
     }
 }

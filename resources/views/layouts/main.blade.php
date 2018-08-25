@@ -114,27 +114,26 @@
               <!-- Sidebar Menu -->
               <ul class="sidebar-menu" data-widget="tree">
                 <li class="header"><center>เมนู</center></li>
-               
                 <!-- Optionally, you can add icons to the links -->
+                @if(auth()->user()->isAdmin == 1)
                 <li class="active"  ><a href="{{url('/home') }}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
-              <li class="active"  ><a href="{{url('/company')}}" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
+                <li class="active"  ><a href="{{url('/company')}}" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
                 <li class="active" ><a href="{{url('/department')}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
                 <li class="active" ><a href="{{url('/position')}}"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>
                 <li class="active"  ><a href="{{url('/employee')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
                 <li class="active"  ><a href="{{url('/mbti') }}"><i class="fa fa-book"></i> <span>ทดสอบ MBTI</span></a></li>
                 <li class="active"  ><a href="{{url('/disc') }}"><i class="fa fa-book"></i> <span>ทดสอบ DISC</span></a></li>
-                <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
-                <li class="active"  ><a href="{{url('rate/create') }}"><i class="fa fa-book"></i> <span>แบบประเมินผลสัมภาษณ์ </span></a></li>
+
                 <li class="treeview">
-                  <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
+                  <a href="#"><i class="glyphicon glyphicon-eye-open"></i> <span>แบบประเมินผลสัมภาษณ์</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="{{url('/summbti') }}">รวม MBTI บุคคล</a></li>
-                    <li><a href="{{url('/sumdisc') }}">รวม DISC บุคคล</a></li>
-                  </ul>
+                    <li><a href="{{url('rate/create') }}"><i class="fa fa-book"></i> <span>ระดับปฎิบัติการ</span></a></li>
+                    <li><a href="{{url('rate/create') }}"><i class="fa fa-book"></i> <span>ระดับบังคับบัญชาขึ้นไป</span></a></li>
+                 </ul>
                 </li>
 
                 <li class="treeview">
@@ -147,6 +146,23 @@
                     <li><a href="{{url('/iframe') }}">แผนผังบริษัท</a></li>
                  </ul>
                 </li>
+                <li class="treeview">
+                  <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="{{url('/summbti') }}">รวม MBTI บุคคล</a></li>
+                    <li><a href="{{url('/sumdisc') }}">รวม DISC บุคคล</a></li>
+                  </ul>
+                </li>
+                @endif
+                @if(auth()->user()->isAdmin == 0)
+                <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
+               @endif
+              
+
                
            
               <!-- /.sidebar-menu -->
