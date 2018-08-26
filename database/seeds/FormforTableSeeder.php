@@ -1,5 +1,5 @@
 <?php
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Database\Seeder;
 
 class FormforTableSeeder extends Seeder
@@ -23,4 +23,5 @@ class FormforTableSeeder extends Seeder
             'form' => 'manager',
         ]);
     }
+    
 }
