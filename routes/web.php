@@ -24,7 +24,7 @@ Route::resource('employee','EmployeeController');
 
 Route::resource('rate','InterviewController');
 
-
+Route::resource('rate_sup','Interview_supController');
 
 Route::resource('disctest','DisctestController');
 

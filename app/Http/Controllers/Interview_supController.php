@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use DB;
 class Interview_supController extends Controller
 {
     /**
@@ -24,17 +24,6 @@ class Interview_supController extends Controller
      */
     public function create()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
         $interview = DB::table('_interview_sup')->get();
         $scoreinterviewp = DB::table('_scoreinterview')->get();
         $employee = DB::table('personal')->get();
@@ -46,7 +35,18 @@ class Interview_supController extends Controller
         $data = array(
             'interview' => $interview ,'scoreinterviewp' => $scoreinterviewp ,'items'=> $items, 'employee' => $employee 
         );   
-        return view('rate/forminterview',$data);
+        return view('rate/from_sup',$data);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+       //
     }
 
     /**

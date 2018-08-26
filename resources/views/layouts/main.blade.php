@@ -132,7 +132,7 @@
                   </a>
                   <ul class="treeview-menu">
                     <li><a href="{{url('rate/create') }}"><i class="fa fa-book"></i> <span>ระดับปฎิบัติการ</span></a></li>
-                    <li><a href="{{url('rate/create') }}"><i class="fa fa-book"></i> <span>ระดับบังคับบัญชาขึ้นไป</span></a></li>
+                    <li><a href="{{url('rate_sup/create') }}"><i class="fa fa-book"></i> <span>ระดับบังคับบัญชาขึ้นไป</span></a></li>
                  </ul>
                 </li>
 
