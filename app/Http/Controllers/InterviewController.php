@@ -96,14 +96,6 @@ class InterviewController extends Controller
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
-        $comment_interview->chioce = $request->chioce7;
-        $comment_interview->comment_interview  = $request->comment7;
-        $comment_interview->save();
-
-
-
-        $comment_interview = new Comment_interview;
-        $comment_interview->id_posinal = $request->employee;
         $comment_interview->chioce = $request->chioce8;
         $comment_interview->comment_interview  = $request->comment8;
         $comment_interview->save();
@@ -117,11 +109,13 @@ class InterviewController extends Controller
         $comment_interview->save();
 
 
+
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
         $comment_interview->chioce = $request->chioce10;
         $comment_interview->comment_interview  = $request->comment10;
         $comment_interview->save();
+
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
@@ -129,18 +123,24 @@ class InterviewController extends Controller
         $comment_interview->comment_interview  = $request->comment11;
         $comment_interview->save();
 
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce12;
+        $comment_interview->comment_interview  = $request->comment12;
+        $comment_interview->save();
+
 
 
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
-        $comment_interview->chioce = $request->chioce12;
+        $comment_interview->chioce = $request->chioce13;
         $comment_interview->comment_interview  = $request->comment13;
         $comment_interview->save();
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
-        $comment_interview->chioce = $request->chioce7;
+        $comment_interview->chioce = $request->chioce14;
         $comment_interview->comment_interview  = $request->comment14;
         $comment_interview->save();
 
@@ -183,13 +183,16 @@ class InterviewController extends Controller
         $comment_interview->comment_interview  = $request->comment20;
         $comment_interview->save();
 
+       
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce103;
         $comment_interview->comment_interview  = $request->conclusion;
         $comment_interview->save();
 
         $comment_interview = new Comment_interview;
         $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce101;
         $comment_interview->comment_interview  = $request->ngg_position;
         $comment_interview->save();
 
@@ -337,36 +340,42 @@ class InterviewController extends Controller
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->rs5; 
+        $con_interview->chioce = $request->chioce105;
         $con_interview->id_personal = $request->employee;
         
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->rs3; 
+        $con_interview->chioce = $request->chioce106;
         $con_interview->id_personal = $request->employee;
        
         $con_interview->save();
 
         $con_interview = new Con_interview;
-        $con_interview->score =  $request->rs3;
+        $con_interview->score =  $request->rs4; 
+        $con_interview->chioce = $request->chioce107;
         $con_interview->id_personal = $request->employee;
-     
+       
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->rs2;
+        $con_interview->chioce = $request->chioce108;
         $con_interview->id_personal = $request->employee;
       
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->rs1; 
+        $con_interview->chioce = $request->chioce109;
         $con_interview->id_personal = $request->employee;
     
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->total; 
+        $con_interview->chioce = $request->chioce102;
         $con_interview->id_personal = $request->employee;
      
         $con_interview->save();

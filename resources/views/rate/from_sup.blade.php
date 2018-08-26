@@ -29,6 +29,9 @@
     <div class="content container-fluid">             
           {{Form::open(['url'=>'rate_sup'])}}
           <div class="box-body table-responsive no-padding">
+             
+               
+              
             <table  id="customers">
                     <thead>
                       <tr>
@@ -50,7 +53,7 @@
                             <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
                             @endforeach
                         </select> ตำแหน่งผู้สมัคร (Position)    {{ Form::select('ngg_position', [ '' => '::เลือก::','ต่ำแหน่ง' =>$items],null, ['id'=>'ngg_position']) }}  </td>
-                        
+                        <input type="radio" name="chioce101" value="101" checked  hidden />
                       </tr>
                       <tr>
                         <td rowspan="2" style="text-align:center">ข้อพิจารณา (OBSERVATIONS)</td>
@@ -196,13 +199,15 @@
                                               
                                                </td>
                                         <td style="text-align:center" >
-            
+                                            
+                                                <input type="radio" name="chioce107" value="107" checked  hidden />
                                          
                                                 <input  name="total" type="text" id="total" readonly style="text-align:center"/>
                                               
             
                                         </td>
                                         <td >
+                                                <input type="radio" name="chioce100" value="100" checked  hidden />
                                                 {{ Form::select('conclusion', [
                                                     '' => 'สรุปผล',
                                                     'ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)' => 'ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)', 
@@ -229,28 +234,51 @@
             <tr>
                 <td style="text-align:center" >5</td>
                 <td style="text-align:center"  > <input type="text" id="ch5" readonly style="text-align:center" /></td>
-                <td style="text-align:center"><input type="text" id="rs5"  readonly style="text-align:center" name="rs5"/></td>
+                <td style="text-align:center"><input type="text" id="rs5"  readonly style="text-align:center" name="rs5"/>
+                    <input type="radio" name="chioce102" value="102" checked  hidden />
+                    
+                
+                </td>
             </tr>
             <tr>
                 <td style="text-align:center">4</td>
                 <td style="text-align:center"><input type="text" id="ch4"  readonly style="text-align:center"/></td>
-                <td style="text-align:center"><input type="text" id="rs4"  readonly style="text-align:center" name="rs4"/></td>
+                <td style="text-align:center"><input type="text" id="rs4"  readonly style="text-align:center" name="rs4"/>
+                
+
+                    <input type="radio" name="chioce103" value="103" checked  hidden />
+                 
+                </td>
             <tr>
             <tr>
                 <td style="text-align:center">3</td>
                 <td style="text-align:center"><input type="text" id="ch3"  readonly style="text-align:center"/></td>
-                <td style="text-align:center"><input type="text" id="rs3" readonly style="text-align:center" name="rs3"/></td>
+                <td style="text-align:center"><input type="text" id="rs3" readonly style="text-align:center" name="rs3"/>
+                 
+                    <input type="radio" name="chioce104" value="104" checked  hidden />
+            
+                </td>
             </tr>
             <tr>
                 <td style="text-align:center">2</td>
                 <td style="text-align:center"><input type="text" id="ch2" readonly style="text-align:center" />
                 </td >
-                <td style="text-align:center"><input type="text" id="rs2" readonly style="text-align:center" name="rs2"/></td>
+                <td style="text-align:center"><input type="text" id="rs2" readonly style="text-align:center" name="rs2"/>
+                   
+                    <input type="radio" name="chioce105" value="105" checked  hidden />
+                    
+                
+                </td>
             </tr>
             <tr>
                 <td style="text-align:center">1</td>
                 <td style="text-align:center"><input type="text" id="ch1" readonly style="text-align:center"/></td>
-                <td style="text-align:center"><input type="text" id="rs1" readonly style="text-align:center" name="rs1"/></td>
+                <td style="text-align:center"><input type="text" id="rs1" readonly style="text-align:center" name="rs1"/>
+                
+                   
+                    <input type="radio" name="chioce106" value="106" checked  hidden />
+                  
+                </td>
             </tr>
            
         </table>

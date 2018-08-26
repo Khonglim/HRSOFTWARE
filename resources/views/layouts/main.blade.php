@@ -125,7 +125,7 @@
                 <li class="active"  ><a href="{{url('/disc') }}"><i class="fa fa-book"></i> <span>ทดสอบ DISC</span></a></li>
 
                 <li class="treeview">
-                  <a href="#"><i class="glyphicon glyphicon-eye-open"></i> <span>แบบประเมินผลสัมภาษณ์</span>
+                  <a href="#"><i class="fa fa-angle-double-right"></i><span>แบบประเมินผลสัมภาษณ์</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                       </span>
@@ -137,7 +137,7 @@
                 </li>
 
                 <li class="treeview">
-                  <a href="#"><i class="glyphicon glyphicon-eye-open"></i> <span>ดูแผนผัง HR บริษัท</span>
+                  <a href="#"><i class="fa fa-angle-double-right"></i><span>ดูแผนผัง HR บริษัท</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                       </span>
