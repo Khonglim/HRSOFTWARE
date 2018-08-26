@@ -41,6 +41,9 @@ Route::post('/ansdisc','AnswerController@answerdisc');
 Route::get('/orgchartcompany','JorgchartController@company');
 
 Route::resource('evatesting','EvatestingController');
+Route::post('istestertotest','Evatesting2Controller@test');
+Route::post('starttest','Evatesting2Controller@test2');
+Route::get('evareport/{id}/report','Evatesting2Controller@test3');
 
 Auth::routes();
 Route::get('/', function () 

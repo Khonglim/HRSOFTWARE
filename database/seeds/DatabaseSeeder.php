@@ -19,6 +19,11 @@ class DatabaseSeeder extends Seeder
         $this->call(ThaiAddressTablesSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(Inter_supTableSeeder::class);
+        $this->call(EmployeetotestTableSeeder::class);
+        $this->call(PartofTableSeeder::class);
+        $this->call(QuestionTableSeeder::class);
+        $this->call(FormforTableSeeder::class);
+        $this->call(Ngg_employeeTableSeeder::class);
        
     }
 }

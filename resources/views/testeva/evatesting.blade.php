@@ -36,16 +36,17 @@
             <table class="table table-bordered table-striped">
             	 {{Form::open(['url'=>'evatesting','files' => true,'enctype'=>'multipart/form-data'])}}
               <thead>
+              	
               	<tr>
               		<th colspan="10" style="text-align: center;width: 100%;">ด้านที่ 1 การประเมินด้านคุณสมบัติของพนักงาน (Core compentency )</th>
               	</tr>
-
+              	
               	<tr>
               		<th colspan="5" rowspan="2" style="text-align: center;width: 60%;" >หัวข้อ</th>
 					<th colspan="5" style="text-align: center;width: 40%;" >ระดับคะแนนการประเมิน </th>
 
               	</tr>
-
+			
               <tr>
                 <th style="text-align: center;width: 8%;">1<br>(ต้องปรับปรุง)</th>
                 <th style="text-align: center;width: 8%;">2<br>(พอใช้)</th>
@@ -202,7 +203,7 @@
 				 <td style="text-align: center;">{{Form::radio('2.6', '4')}}</td>
 				 <td style="text-align: center;">{{Form::radio('2.6','5')}}</td>
              </tr>
-             <tr><td colspan="5">7. ความสามารถในการสรุปงานและการนำเสนองานได้อย่างมืออาชีพ (Ability to summarize and do report as professional	)</td>
+             <tr><td colspan="5">7. ความสามารถในการสรุปงานและการนำเสนองานได้อย่างมืออาชีพ (Ability to summarize and do report as professional)</td>
 			 	 <td style="text-align: center;">{{Form::radio('2.7', '1')}}</td>
 				 <td style="text-align: center;">{{Form::radio('2.7', '2')}}</td>
 				 <td style="text-align: center;">{{Form::radio('2.7', '3')}}</td>
@@ -239,14 +240,14 @@
                 <th style="text-align: center;">5<br>(ดีเลิศ)</th>
              </tr>
 
-             <tr><td colspan="5">1. ความรู้ในระบบการทำงาน รวมถึงการบริหารจัดการ การมอบหมายงาน การควบคุมและติดตามงาน			(1. Knowledge of management assign job and follow up)</td>
+             <tr><td colspan="5">1. ความรู้ในระบบการทำงาน รวมถึงการบริหารจัดการ การมอบหมายงาน การควบคุมและติดตามงาน	(1. Knowledge of management assign job and follow up)</td>
 			 	 <td style="text-align: center;">{{Form::radio('3.1', '1')}}</td>
 				 <td style="text-align: center;">{{Form::radio('3.1', '2')}}</td>
 				 <td style="text-align: center;">{{Form::radio('3.1', '3')}}</td>
 				 <td style="text-align: center;">{{Form::radio('3.1', '4')}}</td>
 				 <td style="text-align: center;">{{Form::radio('3.1', '5')}}</td>
              </tr>
-             <tr><td colspan="5">2. ความรู้ในผลิตภัณฑ์และสินค้า รวมถึงกระบวนการผลิต (Knowledge of products and services, include production process)</td>
+             <tr><td colspan="5">2.ความรู้ในผลิตภัณฑ์และสินค้า รวมถึงกระบวนการผลิต (Knowledge of products and services, include production process)</td>
 			 	 <td style="text-align: center;">{{Form::radio('3.2', '1')}}</td>
 				 <td style="text-align: center;">{{Form::radio('3.2', '2')}}</td>
 				 <td style="text-align: center;">{{Form::radio('3.2', '3')}}</td>

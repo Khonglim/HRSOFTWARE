@@ -3,7 +3,16 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Evatest;
+use App\Partof;
+use App\Formfor;
+use App\Question;
+use App\Resulteva;
+use App\Resulteva2;
+use App\Resulteva3;
+use App\Ngg_employee;
+use App\Employeetotest;
+use App\Ngg_evaluate_result;
+use Illuminate\Support\Facades\Input;
 
 class EvatestingController extends Controller
 {
@@ -14,12 +23,26 @@ class EvatestingController extends Controller
      */
     public function index()
     {
-        $evatest = Evatest::all();
-        $a =0;
-         $data = array(
-            'evatest' => $evatest 
-        );        return view("testeva/starttest",$data);
+        $employeetotests = Employeetotest::all();
+        $ngg_employees = Ngg_employee::all();
+        $ngg_evaluate_results = Ngg_evaluate_result::all();
+        
+       $users = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_by_employee', '=', 'ngg_employee.nem_id')
+
+            ->get();
+
+
+
+        $data = array(
+            'users' => $users,
+            'employeetotests' => $employeetotests,
+            'ngg_evaluate_results' => $ngg_evaluate_results,
+            'ngg_employees' => $ngg_employees
+        );  
+         return view("testeva/filltertodo",$data );
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -28,7 +51,8 @@ class EvatestingController extends Controller
      */
     public function create()
     {
-        return view("testeva/evatesting");
+        
+        //
     }
 
     /**
@@ -38,24 +62,202 @@ class EvatestingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $request->validate([
-                            'part1_1' => 'required',
-                            'part1_2' => 'required',
-                            'part1_3' => 'required',
-                            'part1_4' => 'required',
-                            'part1_5' => 'required',
-                        ]);
+    { 
+       
+        
 
-        $evatest = new Evatest;
-        $evatest->part1_1 = $request->part1_1;
-        $evatest->part1_2 = $request->part1_2;
-        $evatest->part1_3 = $request->part1_3;
-        $evatest->part1_4 = $request->part1_4;
-        $evatest->part1_5 = $request->part1_5;
-        $evatest->save();
-        $a =1;
-        return redirect('testeva/starttest',$a);
+        if ( Input::get('forms1_id')=='1') {
+
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_11');
+        $result->nes_q_point = Input::get('11');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_12');
+        $result->nes_q_point = Input::get('12');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_13');
+        $result->nes_q_point = Input::get('13');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_14');
+        $result->nes_q_point = Input::get('14');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_15');
+        $result->nes_q_point = Input::get('15');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_16');
+        $result->nes_q_point = Input::get('16');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_17');
+        $result->nes_q_point = Input::get('17');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_18');
+        $result->nes_q_point = Input::get('18');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_19');
+        $result->nes_q_point = Input::get('19');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_110');
+        $result->nes_q_point = Input::get('110');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_21');
+        $result->nes_q_point = Input::get('21');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_22');
+        $result->nes_q_point = Input::get('22');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_23');
+        $result->nes_q_point = Input::get('23');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_24');
+        $result->nes_q_point = Input::get('24');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_25');
+        $result->nes_q_point = Input::get('25');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_26');
+        $result->nes_q_point = Input::get('26');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_27');
+        $result->nes_q_point = Input::get('27');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_28');
+        $result->nes_q_point = Input::get('28');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_31');
+        $result->nes_q_point = Input::get('31');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_32');
+        $result->nes_q_point = Input::get('32');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_33');
+        $result->nes_q_point = Input::get('33');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_34');
+        $result->nes_q_point = Input::get('34');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_35');
+        $result->nes_q_point = Input::get('35');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_36');
+        $result->nes_q_point = Input::get('36');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_41');
+        $result->nes_q_point = Input::get('41');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_42');
+        $result->nes_q_point = Input::get('42');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_43');
+        $result->nes_q_point = Input::get('43');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_44');
+        $result->nes_q_point = Input::get('44');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_45');
+        $result->nes_q_point = Input::get('45');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_46');
+        $result->nes_q_point = Input::get('46');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save(); $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_51');
+        $result->nes_q_point = Input::get('51');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_52');
+        $result->nes_q_point = Input::get('52');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_53');
+        $result->nes_q_point = Input::get('53');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_54');
+        $result->nes_q_point = Input::get('54');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        $result =  new Ngg_evaluate_result;
+        $result->nes_q_id = Input::get('t_55');
+        $result->nes_q_point = Input::get('55');
+        $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+        
+
+       }
+        elseif (Input::get('forms1_id')=='2') {
+            echo "no data";
+
+       }
+       else{
+ 
+       echo "no data";
+       
+       }
+        
+       
+
+        return redirect("evatesting");
     }
 
     /**
