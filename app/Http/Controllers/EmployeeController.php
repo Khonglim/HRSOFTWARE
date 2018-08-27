@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Personal;
-use Baraear\ThaiAddress\Models\SubDistrict;
-use Baraear\ThaiAddress\Models\District;
-use Baraear\ThaiAddress\Models\Province;
-use Baraear\ThaiAddress\Models\PostalCode;
+
 
 use Illuminate\Support\Facades\Input;
 use Illuminate\Validation\Rule;
@@ -35,19 +32,9 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        $items = array();
-        $provinces = Province::all();
-        $districts = District::all();
-        foreach ($provinces as $province){
-            
-            $items[$province->name] = $province->name;
-        }
-        foreach ($districts as $district){
-            
-            $sub[$district->name] = $district->name;
-        }
+       
         
-        return view('employ/formcreateemployee', compact('items',$items,'sub', $district));
+        return view('employ/formcreateemployee');
     }
 
     /**

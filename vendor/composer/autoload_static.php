@@ -80,10 +80,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
         ),
-        'J' => 
-        array (
-            'JeroenNoten\\LaravelAdminLte\\' => 28,
-        ),
         'I' => 
         array (
             'Illuminate\\' => 11,
@@ -115,7 +111,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'B' => 
         array (
             'Barryvdh\\DomPDF\\' => 16,
-            'Baraear\\ThaiAddress\\' => 20,
         ),
         'A' => 
         array (
@@ -246,10 +241,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
-        'JeroenNoten\\LaravelAdminLte\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src',
-        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -305,10 +296,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Barryvdh\\DomPDF\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src',
-        ),
-        'Baraear\\ThaiAddress\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/baraear/laravel-thailand/src',
         ),
         'App\\' => 
         array (
@@ -384,6 +371,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\CompanyController' => __DIR__ . '/../..' . '/app/Http/Controllers/CompanyController.php',
+        'App\\Http\\Controllers\\Con_allController' => __DIR__ . '/../..' . '/app/Http/Controllers/Con_allController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DepartmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/DepartmentController.php',
         'App\\Http\\Controllers\\DisctestController' => __DIR__ . '/../..' . '/app/Http/Controllers/DisctestController.php',
@@ -426,21 +414,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Testdisc' => __DIR__ . '/../..' . '/app/Testdisc.php',
         'App\\Testmbti' => __DIR__ . '/../..' . '/app/Testmbti.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'Baraear\\ThaiAddress\\Contracts\\District' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Contracts/District.php',
-        'Baraear\\ThaiAddress\\Contracts\\PostalCode' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Contracts/PostalCode.php',
-        'Baraear\\ThaiAddress\\Contracts\\Province' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Contracts/Province.php',
-        'Baraear\\ThaiAddress\\Contracts\\SubDistrict' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Contracts/SubDistrict.php',
-        'Baraear\\ThaiAddress\\Controllers\\ThaiAddressController' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Controllers/ThaiAddressController.php',
-        'Baraear\\ThaiAddress\\Models\\District' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Models/District.php',
-        'Baraear\\ThaiAddress\\Models\\PostalCode' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Models/PostalCode.php',
-        'Baraear\\ThaiAddress\\Models\\Province' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Models/Province.php',
-        'Baraear\\ThaiAddress\\Models\\SubDistrict' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Models/SubDistrict.php',
-        'Baraear\\ThaiAddress\\Resources\\DistrictResource' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Resources/DistrictResource.php',
-        'Baraear\\ThaiAddress\\Resources\\PostalCodeResource' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Resources/PostalCodeResource.php',
-        'Baraear\\ThaiAddress\\Resources\\ProvinceResource' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Resources/ProvinceResource.php',
-        'Baraear\\ThaiAddress\\Resources\\ThaiAddressResource' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Resources/ThaiAddressResource.php',
-        'Baraear\\ThaiAddress\\ThaiAddressServiceProvider' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/ThaiAddressServiceProvider.php',
-        'Baraear\\ThaiAddress\\Traits\\SearchableTrait' => __DIR__ . '/..' . '/baraear/laravel-thailand/src/Traits/SearchableTrait.php',
         'Barryvdh\\DomPDF\\Facade' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/Facade.php',
         'Barryvdh\\DomPDF\\PDF' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/PDF.php',
         'Barryvdh\\DomPDF\\ServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/ServiceProvider.php',
@@ -1989,20 +1962,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
-        'JeroenNoten\\LaravelAdminLte\\AdminLte' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/AdminLte.php',
-        'JeroenNoten\\LaravelAdminLte\\Console\\AdminLteMakeCommand' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Console/AdminLteMakeCommand.php',
-        'JeroenNoten\\LaravelAdminLte\\Console\\MakeAdminLteCommand' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Console/MakeAdminLteCommand.php',
-        'JeroenNoten\\LaravelAdminLte\\Events\\BuildingMenu' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Events/BuildingMenu.php',
-        'JeroenNoten\\LaravelAdminLte\\Http\\ViewComposers\\AdminLteComposer' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Http/ViewComposers/AdminLteComposer.php',
-        'JeroenNoten\\LaravelAdminLte\\Menu\\ActiveChecker' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/ActiveChecker.php',
-        'JeroenNoten\\LaravelAdminLte\\Menu\\Builder' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Builder.php',
-        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\ActiveFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/ActiveFilter.php',
-        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\ClassesFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/ClassesFilter.php',
-        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\FilterInterface' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/FilterInterface.php',
-        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\GateFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/GateFilter.php',
-        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\HrefFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/HrefFilter.php',
-        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\SubmenuFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/SubmenuFilter.php',
-        'JeroenNoten\\LaravelAdminLte\\ServiceProvider' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/ServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3911,7 +3870,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
-        'ThaiAddressTablesSeeder' => __DIR__ . '/../..' . '/database/seeds/ThaiAddressTablesSeeder.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',
