@@ -157,6 +157,7 @@
                     <li><a href="{{url('/sumdisc') }}">รวม DISC บุคคล</a></li>
                   </ul>
                 </li>
+                <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
                 @endif
                 @if(auth()->user()->isAdmin == 0)
                 <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
