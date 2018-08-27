@@ -407,12 +407,7 @@ function myFunction() {
                       $p5final= $p5final/$count;
                       $totle= $p1final+$p2final+$p3final+$p4final+$p5final; ?>
 
-                      {{$p1final}}
-                      {{$p2final}}
-                      {{$p3final}}
-                      {{$p4final}}
-                      {{$p5final}}
-                      {{$totle}}
+                     
                         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                        <script type="text/javascript">
                                       google.charts.load('current', {'packages':['corechart']});
