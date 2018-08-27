@@ -23,7 +23,7 @@ $q=0;
                       @if(($c->name ==  $name =  $_POST["name"]) && ($c->lastname ==  $lastname =  $_POST["lastname"]))
                       <?php  $j++; ?>
                       <div id="topbar">
-                          <h3><p id="showTime" data-minutes-left="180"></p></h3>
+                          <h3><p id="showTime" data-minutes-left="3"></p></h3>
                           </div>
                           {{Form::open(['url'=>'endtest','id'=>'test1','method'=>'POST'])}}
                           @csrf

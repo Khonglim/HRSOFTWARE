@@ -46,7 +46,7 @@
                   
                <center> {{ Form::submit('เริ่มทำข้อสอบ',['class'=> 'btn btn-primary'])}} 
              <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">ตัวอย่าง</button>
+    <!--  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">ตัวอย่าง</button>-->
 </center>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
