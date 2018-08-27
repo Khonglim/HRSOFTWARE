@@ -25,7 +25,7 @@ function myFunction() {
           </div>
           <!-- /.box-header -->
           <div class="box-body">
-            <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ พนักงาน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();
+            <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ ผู้ประเมิน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();
             $data2 = array();$data3 = array();$data4 = array();$data5 = array(); ?>
              
    
@@ -48,9 +48,6 @@ function myFunction() {
                                       <?php $f=$part->part;?> 
                                         @break
                                 @endswitch
-
-                                
-                        
                                  @endforeach 
                     
                          <button onclick="myFunction()" >ตารางแสดงผล</button>
@@ -131,7 +128,7 @@ function myFunction() {
                            <tr>
                             @if($i==35)
 
-                            <td> {{Form::label('nee_id1',$ngg_emp->nem_nickname)}}</td>
+                            <td> {{Form::label('คุณ','คุณ')}}{{Form::label('nee_id1',$ngg_emp->nem_nickname)}}</td>
                             <td  >{{$p1}}<?php  $p1final+=$p1;?></td>
                             <td > {{$p2}}<?php  $p2final+=$p2;?></td>
                             <td > {{$p3}}<?php  $p3final+=$p3;?></td>
