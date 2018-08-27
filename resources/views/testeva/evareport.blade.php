@@ -1,7 +1,21 @@
 @extends('layouts.main')
 @section('content')
- 
+ <style>
+#myDIV {
 
+}
+</style>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 <div class="content-wrapper">
   <section class="content">
     <div class="row">
@@ -40,8 +54,10 @@
                         
                                  @endforeach 
                     
-                                   
-                      <table  class="table table-bordered table-striped">
+                         <button onclick="myFunction()" >ตารางแสดงผล</button>
+
+                        <div id="myDIV" style="display: none;">
+                            <table  class="table table-bordered table-striped">
                         <thead>
                           <tr >
                             <th style="text-align: center;width: 10%;height: 70px;" >
@@ -149,8 +165,57 @@
                         </tbody>
 
                       </table>
+
+                        </div>            
+                    
                       <br><br>
 
+                      <div class="row">
+
+                <div class="col-md-100">
+
+                   @switch($totle)
+                                      @case($totle>90)
+                                        <h1 style="text-align: center;">เกรด A+ </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีเลิศ</h3>
+                                          @break
+                                      @case($totle>80 && $totle<91)
+                                        <h1 style="text-align: center;">เกรด A </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีเยี่ยม</h3>
+                                          @break
+                                      @case($totle>70 && $totle<81)
+                                        <h1 style="text-align: center;">เกรด B+ </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีมาก</h3>
+                                          @break
+                                      @case($totle>60 && $totle<71)
+                                        <h1 style="text-align: center;">เกรด B </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ ดี</h3>
+                                          @break
+                                      @case($totle>50 && $totle<61)
+                                        <h1 style="text-align: center;">เกรด C+ </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ พอใช้</h3>
+                                          @break
+                                      @case($totle>40 && $totle<51)
+                                        <h1 style="text-align: center;">เกรด C </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ พอใช้</h3>
+                                          @break
+                                      @case($totle>30 && $totle<41)
+                                        <h1 style="text-align: center;">เกรด D+ </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ ควรปรับปรุง</h3>
+                                          @break
+                                      @case($totle>20 && $totle<31)
+                                        <h1 style="text-align: center;">เกรด D </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ ควรปรับปรุง</h3>
+                                          @break
+                                      @case($totle<21)
+                                        <h1 style="text-align: center;">เกรด E </h1>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ ไม่มีประสิทธิภาพ</h3>
+                                         @break
+                                  @endswitch
+
+                </div>
+              </div>
+<br>
               <div class="row">
                 <div class="col-md-6">
                   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -412,51 +477,7 @@
                        <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
                   </div>
               </div>
-              <div class="row">
-
-                <div class="col-md-100">
-
-                   @switch($totle)
-                                      @case($totle>90)
-                                        <h1 style="text-align: center;">เกรด A+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีเลิศ</h3>
-                                          @break
-                                      @case($totle>80 && $totle<91)
-                                        <h1 style="text-align: center;">เกรด A </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีเยี่ยม</h3>
-                                          @break
-                                      @case($totle>70 && $totle<81)
-                                        <h1 style="text-align: center;">เกรด B+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีมาก</h3>
-                                          @break
-                                      @case($totle>60 && $totle<71)
-                                        <h1 style="text-align: center;">เกรด B </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ดี</h3>
-                                          @break
-                                      @case($totle>50 && $totle<61)
-                                        <h1 style="text-align: center;">เกรด C+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ พอใช้</h3>
-                                          @break
-                                      @case($totle>40 && $totle<51)
-                                        <h1 style="text-align: center;">เกรด C </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ พอใช้</h3>
-                                          @break
-                                      @case($totle>30 && $totle<41)
-                                        <h1 style="text-align: center;">เกรด D+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ควรปรับปรุง</h3>
-                                          @break
-                                      @case($totle>20 && $totle<31)
-                                        <h1 style="text-align: center;">เกรด D </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ควรปรับปรุง</h3>
-                                          @break
-                                      @case($totle<21)
-                                        <h1 style="text-align: center;">เกรด E </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ไม่มีประสิทธิภาพ</h3>
-                                         @break
-                                  @endswitch
-
-                </div>
-              </div>
+              
           </div>
         </div>
       </div>

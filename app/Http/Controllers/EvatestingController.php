@@ -241,7 +241,7 @@ class EvatestingController extends Controller
         
        
 
-        return redirect("evatesting");
+        return redirect("home");
     }
 
     /**
