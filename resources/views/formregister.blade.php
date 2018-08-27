@@ -211,6 +211,7 @@
                     </div>
                     </div> <br>
                 <div class="row">
+                    <div class="col-md-1"></div>
                     <div class="col-md-4">
                         <div class="form-group {{ $errors->has('address1') ? 'has-error' : '' }}" >
                             <label>ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก *</label>
@@ -218,7 +219,7 @@
                                 <span class="text-danger">{{ $errors->first('address1') }}</span>
                             </div>
                     </div>
-                    <div class="col-md-3"></div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-4">
                         <div class="form-group {{ $errors->has('address2') ? 'has-error' : '' }}" >
                             <label > ที่อยู่ตามบัตรประชาชน *</label>
