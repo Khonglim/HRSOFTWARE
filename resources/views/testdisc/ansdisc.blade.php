@@ -197,7 +197,7 @@ body {
 
 
               @if ( ($d >=30)  && ($i >=30) && ($s<30) && ($c < 30 ) )
-                @if ( ($d>=$i)  )
+                @if ( ($d>$i)  )
                 DI
                 PERSUADER: Concluder/Doer/Gets results
                 Forceful, direct, individualistio; can be impatient, competitive; 
@@ -286,7 +286,21 @@ body {
 
             @endif 
 
-
+            @if ( ($d >=30)  && ($i >=30) && ($s<30) && ($c < 30 ) )
+            @if ( ($d=$i)  )
+            D=I
+            PERSUADER: Influencer/Implement/Inspires
+            High energy, optimistic, aggressive, confident; goal-minded, harnesses people to accomplish goals; 
+            can be impatient having little time for details; loses interest once challenge is gone; goal is control of 
+            environment; fears losing, failing, loss of prestige.
+            
+            <input type="text" name="meaning" value="  D=I
+            PERSUADER: Influencer/Implement/Inspires
+            High energy, optimistic, aggressive, confident; goal-minded, harnesses people to accomplish goals; 
+            can be impatient having little time for details; loses interest once challenge is gone; goal is control of 
+            environment; fears losing, failing, loss of prestige." hidden/>
+             @endif 
+          @endif 
 
           
 
@@ -374,7 +388,7 @@ doesn’t adapt quickly to change; holds
 
 
         @if ( ($i >=30)  && ($d >=30) && ($s<30) && ($c < 30 ) )
-        @if ($i>=$d  )
+        @if ($i>$d  )
         ID
         COORDINATOR: Precisionist/Traditionalist/Perfectionist
         Orderly, systematic, precise, attentive to detail; tactful, highly diplomatic, 
