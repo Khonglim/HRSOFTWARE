@@ -155,9 +155,11 @@
                   <ul class="treeview-menu">
                     <li><a href="{{url('/summbti') }}">รวม MBTI บุคคล</a></li>
                     <li><a href="{{url('/sumdisc') }}">รวม DISC บุคคล</a></li>
+                    <li><a href="{{url('/summeva') }}">รวม DISC บุคคล</a></li>
                   </ul>
                 </li>
                 <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
+                <li class="active"  ><a href="{{url('/con_all') }}"><i class="fa fa-book"></i> <span>สรุปผลรวม</span></a></li>
                 @endif
                 @if(auth()->user()->isAdmin == 0)
                 <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
@@ -384,7 +386,7 @@
       $('#position').DataTable()
       $('#employee').DataTable()
       $('#testmbti').DataTable()
-      
+      $('#conall').DataTable()
     });
   </script>
   

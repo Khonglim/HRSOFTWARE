@@ -6,7 +6,7 @@ body {
   font-size: 15px;
 }
 </style>
-<?php $x=0; $h=0;  $d=0;  $i=0;  $s=0;   $c=0; $r=1; ?>
+<?php $x=0; $h=0;  $d=0;  $i=0;  $s=0;   $c=0; $r=1; $v=1;?>
 <?php $resultArray = array(); ?>
 @foreach($_POST as $choice => $answer)             
 @if($choice != '_token' && $choice != 'name' && $choice != 'lastname' && $choice != 'id_personal')
@@ -79,7 +79,7 @@ body {
                          <?php $u++; ?>
                                      @if($u <=  $col) 
                                      <input type="text" name="choice{{$r++}}"  value="{{$answer}}" checked  hidden/>
-                                             <td>ข้อ:{{$choice}} {{$answer}}  คะแนน  </td>   
+                                             <td>ข้อ:{{$v++}} {{$answer}}  คะแนน  </td>   
                                     @endif
                                            @if($u==$col)
                                                   <?php $u=0; ?>

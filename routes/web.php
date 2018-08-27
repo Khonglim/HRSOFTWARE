@@ -28,6 +28,7 @@ Route::resource('rate_sup','Interview_supController');
 
 Route::resource('disctest','DisctestController');
 
+Route::resource('con_all', 'Con_allController');
 
 Route::resource('mbti','TestmbtiController');
 Route::post('/start','AnswerController@start');
@@ -44,6 +45,8 @@ Route::resource('evatesting','EvatestingController');
 Route::post('istestertotest','Evatesting2Controller@test');
 Route::post('starttest','Evatesting2Controller@test2');
 Route::get('evareport/{id}/report','Evatesting2Controller@test3');
+Route::get('summeva','Evatesting2Controller@test4');
+
 
 Auth::routes();
 Route::get('/', function () 
