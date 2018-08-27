@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Con_interview;
+use App\Comment_interview;
+use App\Comment_sup;
+use App\Inter_sup;
 use App\Personal;
+
 class Con_allController extends Controller
 {
     /**
@@ -50,8 +55,16 @@ class Con_allController extends Controller
     public function show($id)
     {
         $personal = Personal::find($id);
+        $comment_interview  = Comment_interview ::all();
+        $con_interview  = Con_interview::all();
+        $inter_sup  = Inter_sup::all();
+        $comment_sup  = Comment_sup::all();
         $data = array(
-            'personal' =>  $personal
+            'personal' =>  $personal,
+            'comment_interview' =>  $comment_interview ,
+            'con_interview' =>  $con_interview ,
+            'inter_sup' =>  $inter_sup,
+            'comment_sup' =>  $comment_sup,
         );
         return view('con_all/show',$data);
 
