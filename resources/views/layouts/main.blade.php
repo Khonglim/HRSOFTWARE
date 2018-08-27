@@ -155,6 +155,7 @@
                   <ul class="treeview-menu">
                     <li><a href="{{url('/summbti') }}">รวม MBTI บุคคล</a></li>
                     <li><a href="{{url('/sumdisc') }}">รวม DISC บุคคล</a></li>
+                    <li><a href="{{url('/summeva') }}">รวม DISC บุคคล</a></li>
                   </ul>
                 </li>
                 <li class="active"  ><a href="{{url('/evatesting') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
