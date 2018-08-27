@@ -49,16 +49,17 @@ class Evatesting2Controller extends Controller
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
             $ngg_employee = Ngg_employee::all();
             $ngg_evaluate_results = Ngg_evaluate_result::all();
-            $id = $id/$id;
-            $question = DB::table('question')->where('id_form', '=', $id)->get();
-            $partof = DB::table('partof')->where('id_form', '=', $id)->get();
+            
+            $question = DB::table('question')->where('id_form', '=', 1)->get();
+            $partof = DB::table('partof')->where('id_form', '=', 1)->get();
             $data = array(
 
                 'employeetotests' => $employeetotests,
                 'ngg_evaluate_results' => $ngg_evaluate_results,
                 'ngg_employee' => $ngg_employee,
                 'partof' => $partof,
-                'question' => $question 
+                'question' => $question, 
+                'idtest' => $id
 
             );
 
