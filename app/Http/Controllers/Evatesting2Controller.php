@@ -67,4 +67,27 @@ class Evatesting2Controller extends Controller
         
         
     }
+    public function test4()
+    {
+         $employeetotests = Employeetotest::all();
+        $ngg_employees = Ngg_employee::all();
+        $ngg_evaluate_results = Ngg_evaluate_result::all();
+        
+       $users = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_by_employee', '=', 'ngg_employee.nem_id')
+
+            ->get();
+
+
+
+        $data = array(
+            'users' => $users,
+            'employeetotests' => $employeetotests,
+            'ngg_evaluate_results' => $ngg_evaluate_results,
+            'ngg_employees' => $ngg_employees
+        );  
+         return view("summary/summeva",$data );
+        
+        
+    }
 }
