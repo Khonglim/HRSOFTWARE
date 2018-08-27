@@ -51,7 +51,7 @@
                 </tr>
                 <tr>
                   <th colspan="5" style="text-align: center;width: 50%;height: 70px;">
-                  รายชื่อผู้กถูกประเมิน
+                  รายชื่อผู้ถูกประเมิน
                   </th>
                    <th colspan="5" style="text-align: center;width: 50%;height: 70px;">
                  เลือก

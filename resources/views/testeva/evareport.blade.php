@@ -2,7 +2,6 @@
 @section('content')
  <style>
 #myDIV {
-
 }
 </style>
 
@@ -29,7 +28,7 @@ function myFunction() {
             <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ พนักงาน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();
             $data2 = array();$data3 = array();$data4 = array();$data5 = array(); ?>
              
-    
+   
                                 @foreach($partof as $part)
 
                                  @switch($part->id_part)
@@ -167,7 +166,15 @@ function myFunction() {
                       </table>
 
                         </div>            
-                    
+                   @if($p1final!=0)  
+                   <?php  
+                      $p1final=number_format($p1final/$count, 2);
+                      $p2final=number_format($p2final/$count, 2); 
+                      $p3final=number_format($p3final/$count, 2); 
+                      $p4final=number_format($p4final/$count, 2); 
+                      $p5final=number_format($p5final/$count, 2); 
+                      $totle= $p1final+$p2final+$p3final+$p4final+$p5final; ?>
+
                       <br><br>
 
                       <div class="row">
@@ -177,41 +184,51 @@ function myFunction() {
                    @switch($totle)
                                       @case($totle>90)
                                         <h1 style="text-align: center;">เกรด A+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีเลิศ</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: ดีเลิศ</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                           @break
                                       @case($totle>80 && $totle<91)
                                         <h1 style="text-align: center;">เกรด A </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีเยี่ยม</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: ดีเยี่ยม</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                           @break
                                       @case($totle>70 && $totle<81)
                                         <h1 style="text-align: center;">เกรด B+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ดีมาก</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: ดีมาก</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                           @break
                                       @case($totle>60 && $totle<71)
                                         <h1 style="text-align: center;">เกรด B </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ดี</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: ดี</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                           @break
                                       @case($totle>50 && $totle<61)
                                         <h1 style="text-align: center;">เกรด C+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ พอใช้</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: พอใช้</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                           @break
                                       @case($totle>40 && $totle<51)
                                         <h1 style="text-align: center;">เกรด C </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ พอใช้</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: พอใช้</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                           @break
                                       @case($totle>30 && $totle<41)
                                         <h1 style="text-align: center;">เกรด D+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ควรปรับปรุง</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                           @break
                                       @case($totle>20 && $totle<31)
                                         <h1 style="text-align: center;">เกรด D </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ควรปรับปรุง</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                           @break
                                       @case($totle<21)
                                         <h1 style="text-align: center;">เกรด E </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ ไม่มีประสิทธิภาพ</h3>
+                                        <h3 style="text-align: center;">ระดับสักยภาพ: ไม่มีประสิทธิภาพ</h3>
+                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
                                          @break
                                   @endswitch
+                                  
 
                 </div>
               </div>
@@ -397,17 +414,14 @@ function myFunction() {
                        <div id="columnchart_material_p5" style="width: 800px; height: 500px;"></div>
                 </div>
               </div>            
-           <div class="row"> 
+          
+           
+ 
+       
+                 
+ <div class="row"> 
            <div class="col-md-6">
-                  <?php  
-                      $p1final= $p1final/$count;
-                      $p2final= $p2final/$count;
-                      $p3final= $p3final/$count;
-                      $p4final= $p4final/$count;
-                      $p5final= $p5final/$count;
-                      $totle= $p1final+$p2final+$p3final+$p4final+$p5final; ?>
 
-                     
                         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                        <script type="text/javascript">
                                       google.charts.load('current', {'packages':['corechart']});
@@ -435,7 +449,7 @@ function myFunction() {
                                     </script>
                      <div id="piechart" style="width: 900px; height: 500px;"></div>
                 
-                     <p>คะเเนนเต้ม100 ได้ทั้งหมด</p>
+                     
 
 
                 </div>
@@ -472,7 +486,9 @@ function myFunction() {
                        <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
                   </div>
               </div>
-              
+              @else
+              <h1> ยังไม่มีข้อมูล</h1>
+                   @endif
           </div>
         </div>
       </div>

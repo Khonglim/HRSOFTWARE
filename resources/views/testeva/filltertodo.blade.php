@@ -11,13 +11,16 @@
            
           </div>
           <!-- /.box-header -->
-          <div class="box-body">
+          <div class="box-body" style="display: none;">
              <div class="col-md-4">
                 <div class="form-group">
-                  {{Form::open(['url'=>'istestertotest','method'=>'POST'])}}
+                 
+                   <?php    $i=Auth::user()->name; ?>
+                 
+                   {{Form::open(['url'=>'istestertotest','method'=>'POST'])}}
 
                     {{Form::label('id_employee','รหัส พนักงาน')}}   
-                    {{Form::text('id_employee','',['class'=>'form-control','required'])}}   
+                    {{Form::text('id_employee',$i,['class'=>'form-control','required'])}}   
                    
                   </div>
                  <div class="col-md-20">
@@ -33,7 +36,7 @@
               <!-- /.box-footer -->
         </div>
       </div>
-     
+      
 
 </section>
 </div>
