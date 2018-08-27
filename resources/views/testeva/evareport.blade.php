@@ -185,47 +185,47 @@ function myFunction() {
                                       @case($totle>90)
                                         <h1 style="text-align: center;">เกรด A+ </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: ดีเลิศ</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>80 && $totle<91)
                                         <h1 style="text-align: center;">เกรด A </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: ดีเยี่ยม</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>70 && $totle<81)
                                         <h1 style="text-align: center;">เกรด B+ </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: ดีมาก</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>60 && $totle<71)
                                         <h1 style="text-align: center;">เกรด B </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: ดี</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>50 && $totle<61)
                                         <h1 style="text-align: center;">เกรด C+ </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: พอใช้</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>40 && $totle<51)
                                         <h1 style="text-align: center;">เกรด C </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: พอใช้</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>30 && $totle<41)
                                         <h1 style="text-align: center;">เกรด D+ </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>20 && $totle<31)
                                         <h1 style="text-align: center;">เกรด D </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle<21)
                                         <h1 style="text-align: center;">เกรด E </h1>
                                         <h3 style="text-align: center;">ระดับสักยภาพ: ไม่มีประสิทธิภาพ</h3>
-                                        <h2>คะเเนนเต้ม100 ได้ทั้งหมด {{$totle}}</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                          @break
                                   @endswitch
                                   
