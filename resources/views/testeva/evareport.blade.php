@@ -26,7 +26,7 @@ function myFunction() {
           <!-- /.box-header -->
           <div class="box-body">
             <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ ผู้ประเมิน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();
-            $data2 = array();$data3 = array();$data4 = array();$data5 = array(); ?>
+            $data2 = array();$data3 = array();$data4 = array();$data5 = array(); $istest=''; ?>
              
    
                                 @foreach($partof as $part)
@@ -48,6 +48,9 @@ function myFunction() {
                                       <?php $f=$part->part;?> 
                                         @break
                                 @endswitch
+
+                                
+                        
                                  @endforeach 
                     
                          <button onclick="myFunction()" >ตารางแสดงผล</button>
@@ -86,7 +89,9 @@ function myFunction() {
 
                   @if( $ngg_eva->nes_evaluate_employee_id == $emp->nee_id )
                 @foreach($ngg_employee as $ngg_emp)
-
+                  @if($ngg_emp->nem_id == $idtest)
+                   <?php  $istest=$ngg_emp->nem_nickname; ?>
+                  @endif
                    
                      
                        @if($ngg_emp->nem_id == $emp->nee_is_employee  )
@@ -180,48 +185,51 @@ function myFunction() {
 
                    @switch($totle)
                                       @case($totle>90)
+                                        
+                                        <h2>ผลการประเมินของคุณ {{$istest}} </h2>
                                         <h1 style="text-align: center;">เกรด A+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: ดีเลิศ</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: ดีเลิศ</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>80 && $totle<91)
                                         <h1 style="text-align: center;">เกรด A </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: ดีเยี่ยม</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: ดีเยี่ยม</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>70 && $totle<81)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
                                         <h1 style="text-align: center;">เกรด B+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: ดีมาก</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: ดีมาก</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>60 && $totle<71)
                                         <h1 style="text-align: center;">เกรด B </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: ดี</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: ดี</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>50 && $totle<61)
                                         <h1 style="text-align: center;">เกรด C+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: พอใช้</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: พอใช้</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>40 && $totle<51)
                                         <h1 style="text-align: center;">เกรด C </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: พอใช้</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: พอใช้</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>30 && $totle<41)
                                         <h1 style="text-align: center;">เกรด D+ </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>20 && $totle<31)
                                         <h1 style="text-align: center;">เกรด D </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle<21)
                                         <h1 style="text-align: center;">เกรด E </h1>
-                                        <h3 style="text-align: center;">ระดับสักยภาพ: ไม่มีประสิทธิภาพ</h3>
+                                        <h2 style="text-align: center;">ระดับสักยภาพ: ไม่มีประสิทธิภาพ</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                          @break
                                   @endswitch
