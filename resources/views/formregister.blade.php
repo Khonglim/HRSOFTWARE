@@ -506,20 +506,18 @@
                     </div>
                     </div>
                 <div class="row">
-                    <div class="col-md-2">
+                        <div class="col-md-1"></div>
+                    <div class="col-md-3">
                         <div class="form-group">
                                 <label>เกรดเฉลี่ย :</label>
                                 {{Form::text('gpa','',['class'=>'form-control'])}}
                             </div>
+                            <div class="form-group">
+                                    <label>สาขา :</label>
+                                    {{Form::text('major','',['class'=>'form-control'])}}
+                                    </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>สาขา :</label>
-                            {{Form::text('major','',['class'=>'form-control'])}}
-                            </div>
-                    </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-3"></div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label>วุฒิที่ได้รับ :</label>
@@ -552,20 +550,18 @@
                     </div>
                     </div>
                 <div class="row">
-                    <div class="col-md-2">
+                        <div class="col-md-1"></div>
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>เกรดเฉลี่ย :</label>
                                 {{Form::text('gpas','',['class'=>'form-control'])}}
                             </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <div class="form-group">
+                            <div class="form-group">
                             <label>สาขา :</label>
                                 {{Form::text('majors','',['class'=>'form-control'])}}
                             </div>
-                    </div>
-                    <div class="col-md-1"></div>
+                        </div>
+                    <div class="col-md-3"></div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label>วุฒิที่ได้รับ :</label>
@@ -598,20 +594,18 @@
                     </div>
                     </div>
                 <div class="row">
-                    <div class="col-md-2">
+                        <div class="col-md-1"></div>
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>เกรดเฉลี่ย :</label>
                                 {{Form::text('gpav','',['class'=>'form-control'])}}
                             </div>
+                            <div class="form-group">
+                                    <label>สาขา :</label>
+                                        {{Form::text('majorv','',['class'=>'form-control'])}}
+                                    </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>สาขา :</label>
-                                {{Form::text('majorv','',['class'=>'form-control'])}}
-                            </div>
-                    </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-3"></div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label>วุฒิที่ได้รับ :</label>
@@ -644,20 +638,18 @@
                     </div>
                     </div>
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>เกรดเฉลี่ย :</label>
                                 {{Form::text('gpad','',['class'=>'form-control'])}}
                             </div>
+                            <div class="form-group">
+                                    <label>สาขา :</label>
+                                    {{Form::text('majord','',['class'=>'form-control'])}}
+                                    </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>สาขา :</label>
-                            {{Form::text('majord','',['class'=>'form-control'])}}
-                            </div>
-                    </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-3"></div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label>วุฒิที่ได้รับ :</label>
@@ -690,20 +682,18 @@
                     </div>
                     </div>
                 <div class="row">
-                    <div class="col-md-2">
+                        <div class="col-md-1"></div>
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>เกรดเฉลี่ย :</label>
                                 {{Form::text('gpab','',['class'=>'form-control'])}}
                             </div>
+                            <div class="form-group">
+                                    <label>สาขา :</label>
+                                        {{Form::text('majorb','',['class'=>'form-control'])}}
+                                    </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>สาขา :</label>
-                                {{Form::text('majorb','',['class'=>'form-control'])}}
-                            </div>
-                    </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-3"></div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label>วุฒิที่ได้รับ :</label>
@@ -736,20 +726,18 @@
                     </div>
                     </div>
                 <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label>เกรดเฉลี่ย :</label>
                                     {{Form::text('gpam','',['class'=>'form-control'])}}
                                 </div>
+                                <div class="form-group">
+                                        <label>สาขา :</label>
+                                            {{Form::text('majorm','',['class'=>'form-control'])}}
+                                        </div>
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>สาขา :</label>
-                                    {{Form::text('majorm','',['class'=>'form-control'])}}
-                                </div>
-                        </div>
-                        <div class="col-md-1"></div>
+                        <div class="col-md-3"></div>
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label>วุฒิที่ได้รับ :</label>
@@ -782,20 +770,18 @@
                     </div>
                     </div>
                 <div class="row">
-                    <div class="col-md-2">
+                        <div class="col-md-1"></div>
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>เกรดเฉลี่ย :</label>
                                 {{Form::text('gpao','',['class'=>'form-control'])}}
                             </div>
+                            <div class="form-group">
+                                    <label>สาขา :</label>
+                                        {{Form::text('majoro','',['class'=>'form-control'])}}
+                                    </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>สาขา :</label>
-                                {{Form::text('majoro','',['class'=>'form-control'])}}
-                            </div>
-                    </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-3"></div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label>วุฒิที่ได้รับ :</label>
