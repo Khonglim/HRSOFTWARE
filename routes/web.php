@@ -28,6 +28,7 @@ Route::resource('rate_sup','Interview_supController');
 
 Route::resource('disctest','DisctestController');
 
+Route::resource('con_all', 'Con_allController');
 
 Route::resource('mbti','TestmbtiController');
 Route::post('/start','AnswerController@start');

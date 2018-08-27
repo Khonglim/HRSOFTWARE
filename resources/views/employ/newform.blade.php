@@ -115,7 +115,7 @@
                     <div class="col-md-5">
                         <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
                             <label>ศาสนา *</label>  
-                            {{ Form::select('religion', ['ไทย' => 'ไทย','พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
+                            {{ Form::select('religion', ['พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
                             <span class="text-danger">{{ $errors->first('religion') }}</span>
                             </div>
                     </div>
@@ -152,8 +152,8 @@
                     <div class="col-md-3">
                         <div class="from-group">
                             <label >ออกให้ ณ อำเภอ/เขต:*</label>
-                            {{ Form::select('issued', [ '' => '::เลือก::','อำเภอ/เขต' =>$sub],null, ['class' => 'form-control','id'=>'issued']) }}          
-                            <span class="text-danger">{{ $errors->first('province_crad') }}</span> 
+                            {{Form::text('issued','',['class'=>'form-control'])}}          
+                            
                             <span class="text-danger">{{ $errors->first('issued') }}</span>
                             </div>  
                     </div>
