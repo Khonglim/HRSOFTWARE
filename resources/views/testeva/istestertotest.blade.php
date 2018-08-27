@@ -51,7 +51,7 @@
                 </tr>
                 <tr>
                   <th colspan="5" style="text-align: center;width: 50%;height: 70px;">
-                  รายชื่อผู้กถูกประเมิน
+                  รายชื่อผู้ถูกประเมิน
                   </th>
                    <th colspan="5" style="text-align: center;width: 50%;height: 70px;">
                  เลือก
@@ -77,6 +77,7 @@
  {{Form::open(['url'=>'starttest','method'=>'POST'])}}
                  <tr>
                     <td colspan="5" style="text-align: center;width: 50%;height: 70px;">
+                      {{Form::label('คุณ','คุณ')}}
                    {{Form::label('id_employee1',$emp2->nem_nickname)}}
                    
                     </td>
