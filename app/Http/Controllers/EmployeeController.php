@@ -47,7 +47,7 @@ class EmployeeController extends Controller
             $sub[$district->name] = $district->name;
         }
         
-        return view('employ/formcreateemployee', compact('items',$items,'sub', $district));
+        return view('formregister', compact('items',$items,'sub', $district));
     }
 
     /**
