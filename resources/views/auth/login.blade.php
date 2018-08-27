@@ -52,15 +52,13 @@
             <strong>{{ $errors->first('password') }}</strong>
         </span>
     @endif
-                <span><input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}</span>
-                <h6><a class="btn btn-link" href="{{ route('password.request') }}">
-              {{ __('Forgot Your Password?') }}
-          </a></h6>
+             
+      
                     <div class="clearfix"></div>
-                    <input type="submit" value="Sign In" name="login">
+                 <center>   <input type="submit" value="Sign In" name="login"> </center>
             </form>
           
-            <p>Don't Have an Account ? <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></p>
+           
                 </div>
                 <!-- /.login-box-body -->
               </div>
