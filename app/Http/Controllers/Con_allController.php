@@ -9,6 +9,9 @@ use App\Comment_sup;
 use App\Inter_sup;
 use App\Personal;
 
+use App\Testdisc;
+use App\Testmbti;
+
 class Con_allController extends Controller
 {
     /**
@@ -55,6 +58,8 @@ class Con_allController extends Controller
     public function show($id)
     {
         $personal = Personal::find($id);
+        $testdisc  =  Testdisc::all();
+        $testmbti  =  Testmbti::all();
         $comment_interview  = Comment_interview ::all();
         $con_interview  = Con_interview::all();
         $inter_sup  = Inter_sup::all();
@@ -65,6 +70,8 @@ class Con_allController extends Controller
             'con_interview' =>  $con_interview ,
             'inter_sup' =>  $inter_sup,
             'comment_sup' =>  $comment_sup,
+            'testdisc'  =>  $testdisc ,
+            'testmbti' =>  $testmbti 
         );
         return view('con_all/show',$data);
 
