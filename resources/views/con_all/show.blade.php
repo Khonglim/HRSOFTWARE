@@ -7,14 +7,41 @@
 
 <!---------------------------------------------------ทดสอบ MBTI -------------------------------------------------------->
 
- @foreach ($testdisc as $testdis )
- @if (	$testdis->id_personal == $personal->id)
-   
-    {{ $testdis->meaning }} <br>
- @endif
-@endforeach
+ 
 
 
+<ul class="list-group">
+        @foreach ($testmbti as  $testmbtis )
+        @if (	 $testmbtis->id_personal == $personal->id)
+    <li class="list-group-item">
+
+
+        <label for="con">ผลสรุปการทดสอบ MBTI</label><br>
+       
+           {{ $testmbtis->conclude }} 
+           {{  $testmbtis->meaning }} <br>
+       
+
+
+
+
+    </li>
+       
+    @endif
+    @endforeach
+
+    @foreach ($testdisc as $testdis )
+    @if (	$testdis->id_personal == $personal->id)
+    <li class="list-group-item">
+
+            <label for="con">ผลสรุปการทดสอบ DISC</label><br>
+            {{ $testdis->meaning }} <br>
+
+    </li>
+
+    @endif
+    @endforeach
+    <li class="list-group-item">Third item</li>
 
 
 
@@ -23,15 +50,12 @@
 
  <!---------------------------------------------------ทดสอบ DISC -------------------------------------------------------->
 
- @foreach ($testmbti as  $testmbtis )
- @if (	 $testmbtis->id_personal == $personal->id)
- {{ $testmbtis->conclude }} 
-    {{  $testmbtis->meaning }} <br>
+
+
+
+ 
    
- @endif
-@endforeach
-
-
+    
 
 
 
@@ -86,7 +110,7 @@
  <!------------------------------------------------------------------------------------------------------------------------>
 
  
-
+</ul>
 
 
         </div>
