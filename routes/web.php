@@ -3,11 +3,6 @@
 use App\Http\Controllers\PDFController;
 use App\Testmbti;
 use App\Testdisc;
-
-use Baraear\ThaiAddress\Models\SubDistrict;
-use Baraear\ThaiAddress\Models\District;
-use Baraear\ThaiAddress\Models\Province;
-use Baraear\ThaiAddress\Models\PostalCode;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,7 +51,7 @@ Route::get('summeva','Evatesting2Controller@test4');
 Auth::routes();
 Route::get('/', function () 
 {
-    return view('auth.login');
+    return view('wellcome');
 
 });
 
@@ -107,18 +102,9 @@ Route::get('rate', function () {
 
 Route::get('form', function () {
     
-    $items = array();
-    $provinces = Province::all();
-    $districts = District::all();
-    foreach ($provinces as $province){
-        
-        $items[$province->name] = $province->name;
-    }
-    foreach ($districts as $district){
-        
-        $sub[$district->name] = $district->name;
-    }
+   
+    
 
-    return view("formregister", compact('items',$items,'sub', $district));
+    return view("formregister");
 
 });

@@ -408,6 +408,8 @@
          
           onComplete:function(){
             alert("หมดเวลาทำแบบทดสอบแล้วค่ะ.")
+
+
             $("#test1").submit();
           }
         })
@@ -422,8 +424,40 @@
        })
 
     });
-  
+
 </script>
+
+<script type="text/javascript">
+  function fncSubmit()
+  {
+      if(document.getElementById('radio1').checked  == false )
+      {
+          alert('คุณตอบคำถามไม่ครบ!!!!');
+          return false;
+      } 
+  }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
 .jst-hours {

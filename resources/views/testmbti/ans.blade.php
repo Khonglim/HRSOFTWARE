@@ -764,6 +764,7 @@ table{
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
+               
                 <center>
                   {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}}
             {{Form::close()}}
