@@ -2,11 +2,11 @@
 @section('content')
   
 
-
 <div class="container">
-        <br>
-        <form action="#" id="myForm" role="form" data-toggle="validator" method="post" accept-charset="utf-8">
-
+       
+        <br><br>
+              
+                {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data','id'=>'myForm','role'=>'form','data-toggle'=>'validator','accept-charset'=>'utf-8'])}}
         <!-- SmartWizard html -->
         <div id="smartwizard">
             <ul>
@@ -14,7 +14,7 @@
                 <li><a href="#step-2">ขั้นตอน 2<br /><small>ประวัติการศึกษา</small></a></li>
                 <li><a href="#step-3">ขั้นตอน 3<br /><small>ด้านภาษา</small></a></li>
                 <li><a href="#step-4">ขั้นตอน 4<br /><small>ด้านการทำงาน</small></a></li>
-                <li><a href="#step-5">ขั้นตอน 4<br /><small>อื่นๆ</small></a></li>
+                <li><a href="#step-5">ขั้นตอน 5<br /><small>อื่นๆ</small></a></li>
             </ul>
 
             <div>
@@ -26,24 +26,31 @@
 
                                 <div class="row">
                                         <div class="col-md-1"></div>
-                                      <div class="col-md-4">
+                                        <div class="col-md-2">
+                                                <div class="form-group {{ $errors->has('fronname') ? 'has-error' : '' }}">
+                                                        <label for="fronname">คำนำหน้า</label><label class="text-danger">*</label>   
+                                                        {{ Form::select('fronname', [ '' => '::เลือก::', 'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control']) }}   
+                                                        <span class="text-danger">{{ $errors->first('fronname') }}</span>
+                                                    </div>
+                                          </div>
+                                      <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                                    <label for="name">ชื่อ *</label> 
+                                                    <label for="name">ชื่อ</label><label class="text-danger">*</label>   
                                                     {{Form::text('name','',['class'=>'form-control'])}}          
                                                     <span class="text-danger">{{ $errors->first('name') }}</span>
                                                 </div>
                                       </div>
-                                      <div class="col-md-2"></div>
+                                     
                                       <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('lastname') ? 'has-error' : '' }}">
-                                                    <label>นามสกุล *</label> 
+                                                    <label>นามสกุล</label><label class="text-danger">*</label>   
                                                     {{Form::text('lastname','',['class'=>'form-control'])}}   
                                                     <span class="text-danger">{{ $errors->first('lastname') }}</span>
                                                 </div>
                                       </div>
                                       <div class="col-md-2">
                                             <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}" >
-                                                    <label>รูปภาพ *</label>
+                                                    <label>รูปภาพ</label><label class="text-danger">*</label>  
                                                     {{Form::file('image')}}
                                                     <span class="text-danger">{{ $errors->first('image') }}</span>
                                                 </div>
@@ -53,7 +60,7 @@
                                         <div class="col-md-1"></div>
                                             <div class="col-md-4">
                                                     <div class="form-group {{ $errors->has('nikname') ? 'has-error' : '' }}">
-                                                            <label>ชื่อเล่น *</label> 
+                                                            <label>ชื่อเล่น</label><label class="text-danger">*</label>   
                                                             {{Form::text('nikname','',['class'=>'form-control'])}}   
                                                             <span class="text-danger">{{ $errors->first('nikname') }}</span>
                                                         </div>
@@ -61,7 +68,7 @@
                                             <div class="col-md-2"></div>
                                             <div class="col-md-3">
                                                     <div class="form-group {{ $errors->has('birthday') ? 'has-error' : '' }}">
-                                                            <label>วันเกิด *</label>
+                                                            <label>วันเกิด</label><label class="text-danger">*</label>  
                                                             {{Form::date('birthday','',['class'=>'form-control'])}}   
                                                             <span class="text-danger">{{ $errors->first('birthday') }}</span>
                                                         </div>
@@ -71,12 +78,12 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('age') ? 'has-error' : '' }}" >
-                                                    <label>อายุ *</label>
+                                                    <label>อายุ</label><label class="text-danger">*</label>  
                                                     {{Form::text('age','',['class'=>'form-control'])}}   
                                                     <span class="text-danger">{{ $errors->first('age') }}</span>
                                                 </div>
                                             <div class="form-group {{ $errors->has('gender') ? 'has-error' : '' }}">
-                                                    <label>เพศ *</label> &nbsp;&nbsp;
+                                                    <label>เพศ </label><label class="text-danger">*</label>   &nbsp;&nbsp;
                                                     {{ Form::radio('gender', 'ชาย') }}  ชาย <br> &emsp;&emsp;&emsp;
                                                     {{ Form::radio('gender', 'หญิง') }} หญิง 
                                                     <span class="text-danger">{{ $errors->first('gender') }}</span>
@@ -85,12 +92,12 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('weight') ? 'has-error' : '' }}" >
-                                                    <label>น้ำหนัก *</label>
+                                                    <label>น้ำหนัก</label><label class="text-danger">*</label>  
                                                     {{Form::text('weight','',['class'=>'form-control'])}}   
                                                     <span class="text-danger">{{ $errors->first('weight') }}</span>
                                                 </div>
                                             <div class="form-group {{ $errors->has('height') ? 'has-error' : '' }}" >
-                                                    <label>ส่วนสูง *</label>
+                                                    <label>ส่วนสูง</label><label class="text-danger">*</label>  
                                                     {{Form::text('height','',['class'=>'form-control'])}}   
                                                     <span class="text-danger">{{ $errors->first('height') }}</span>
                                                 </div>
@@ -103,7 +110,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
-                                                <label>สัญชาติ *</label>
+                                                <label>สัญชาติ</label><label class="text-danger">*</label>  
                                                 {{ Form::select('nationality', ['ไทย' => 'ไทย','คริสต์' => 'คริสต์','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
                                                 <span class="text-danger">{{ $errors->first('nationality') }}</span>
                                                 </div>
@@ -111,7 +118,7 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
-                                                <label>เชื้อชาติ *</label>
+                                                <label>เชื้อชาติ</label><label class="text-danger">*</label>  
                                                 {{ Form::select('race', ['ไทย' => 'ไทย','คริสต์' => 'คริสต์','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
                                                 <span class="text-danger">{{ $errors->first('race') }}</span>
                                                 </div>
@@ -121,8 +128,8 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
-                                                <label>ศาสนา *</label>  
-                                                {{ Form::select('religion', ['ไทย' => 'ไทย','พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
+                                                <label>ศาสนา</label><label class="text-danger">*</label>  
+                                                {{ Form::select('religion', ['พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
                                                 <span class="text-danger">{{ $errors->first('religion') }}</span>
                                                 </div>
                                         </div>
@@ -150,7 +157,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('idcard') ? 'has-error' : '' }}">
-                                                <label>เลขบัตรประชาชน*</label>
+                                                <label>เลขบัตรประชาชน</label><label class="text-danger">*</label>  
                                                 {{Form::text('idcard','',['class'=>'form-control'])}}   
                                                 <span class="text-danger">{{ $errors->first('idcard') }}</span>
                                                 </div>
@@ -158,7 +165,7 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-3">
                                             <div class="from-group">
-                                                <label >ออกให้ ณ อำเภอ/เขต:*</label>
+                                                <label >ออกให้ ณ อำเภอ/เขต:</label><label class="text-danger">*</label>  
                                                 {{ Form::text('issued','' , ['class' => 'form-control','id'=>'issued']) }}          
                                                 <span class="text-danger">{{ $errors->first('province_crad') }}</span> 
                                                 <span class="text-danger">{{ $errors->first('issued') }}</span>
@@ -169,7 +176,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
-                                                <label >จังหวัด*</label>         
+                                                <label >จังหวัด</label><label class="text-danger">*</label>           
                                                 {{ Form::text('province_crad','', ['class' => 'form-control','id'=>'province_crad']) }}          
                                                 <span class="text-danger">{{ $errors->first('province_crad') }}</span>
                                                 </div>
@@ -179,7 +186,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
-                                                <label >วันออกบัตร:*</label>
+                                                <label >วันออกบัตร:</label><label class="text-danger">*</label>  
                                                 {{Form::date('issueddate','',['class'=>'form-control'])}}   
                                                 <span class="text-danger">{{ $errors->first('issueddate') }}</span>
                                                 </div>
@@ -187,7 +194,7 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
-                                                <label >บัตรหมดอายุ:*</label>
+                                                <label >บัตรหมดอายุ:</label><label class="text-danger">*</label>  
                                                 {{Form::date('expid','',['class'=>'form-control'])}}   
                                                 <span class="text-danger">{{ $errors->first('expid') }}</span>
                                                 </div>
@@ -204,8 +211,8 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
-                                                <label > สถานะทางทหาร*</label>
-                                                    {{ Form::select('military_service', ['-' =>'::ไม่มี::','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control']) }}
+                                                <label>สถานะทางทหาร</label><label class="text-danger">*</label>  
+                                                    {{ Form::select('military_service', ['' =>'::เลือก::','-' =>'::ไม่มี::','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control']) }}
                                                 <span class="text-danger">{{ $errors->first('military_service') }}</span>
                                                 </div>
                                         </div>
@@ -214,7 +221,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('address1') ? 'has-error' : '' }}" >
-                                                <label>ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก *</label>
+                                                <label>ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก</label><label class="text-danger">*</label>
                                                     <textarea name="address1"  class="form-control"  rows="3" >{{ old('address1') }}</textarea>
                                                     <span class="text-danger">{{ $errors->first('address1') }}</span>
                                                 </div>
@@ -222,7 +229,7 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('address2') ? 'has-error' : '' }}" >
-                                                <label > ที่อยู่ตามบัตรประชาชน *</label>
+                                                <label > ที่อยู่ตามบัตรประชาชน</label><label class="text-danger">*</label>  
                                                     <textarea name="address2" class="form-control"  rows="3" >{{ old('address2') }}</textarea>
                                                     <span class="text-danger">{{ $errors->first('address2') }}</span>
                                                 </div>
@@ -233,7 +240,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group  {{ $errors->has('tel') ? 'has-error' : '' }}">
-                                                <label >โทรศัพท์ที่ติดต่อ:*</label>
+                                                <label >โทรศัพท์ที่ติดต่อ:</label><label class="text-danger">*</label>  
                                                     {{Form::text('tel','',['class'=>'form-control'])}}   
                                                     <span class="text-danger">{{ $errors->first('tel') }}</span>
                                                 </div>
@@ -241,7 +248,7 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label >โทรศัพท์บ้าน:*</label>
+                                                <label >โทรศัพท์บ้าน:</label>
                                                 {{Form::text('home','',['class'=>'form-control'])}} 
                                                 </div>
                                         </div>
@@ -250,7 +257,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('moblie') ? 'has-error' : '' }}">
-                                                <label >โทรศัพท์มือถือ:*</label>
+                                                <label >โทรศัพท์มือถือ:</label><label class="text-danger">*</label>  
                                                 {{Form::text('moblie','',['class'=>'form-control'])}}   
                                                 <span class="text-danger">{{ $errors->first('moblie') }} </span>
                                                 </div>
@@ -267,7 +274,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-5">
                                             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                                <label>อีเมล:*</label>
+                                                <label>อีเมล:</label><label class="text-danger">*</label>  
                                                 {{Form::email('email','',['class'=>'form-control'])}}   
                                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                                                 </div>
@@ -280,7 +287,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('living_status') ? 'has-error' : '' }}" >
-                                                <label >สถานะความเป็นอยู่:*</label>
+                                                <label >สถานะความเป็นอยู่:</label><label class="text-danger">*</label>  
                                                     {{ Form::select('living_status', ['' => '::เลือก::', 
                                                                                 'บ้านส่วนตัว' => 'บ้านส่วนตัว',
                                                                                 'บ้านเช่า' => 'บ้านเช่า',
@@ -293,7 +300,7 @@
                                         <div class="col-md-3"></div>
                                         <div class="col-md-3">
                                             <div class="form-group {{ $errors->has('marital_status') ? 'has-error' : '' }}" >
-                                                <label >สถานะครอบครัว</label>
+                                                <label >สถานะครอบครัว</label><label class="text-danger">*</label>  
                                                     {{ Form::select('marital_status', [
                                                                                 '' => '::เลือก::', 
                                                                                 'โสด' => 'โสด',
@@ -398,7 +405,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('namefather') ? 'has-error' : '' }}" >
-                                                <label> ชื่อบิดา :*</label>
+                                                <label> ชื่อบิดา :</label><label class="text-danger">*</label>  
                                                 {{Form::text('namefather','',['class'=>'form-control'])}}                                    
                                                 <span class="text-danger">{{ $errors->first('namefather') }}</span>
                                                 </div>
@@ -406,7 +413,7 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('lastfather') ? 'has-error' : '' }}">
-                                                <label >นามสกุล :*</label>
+                                                <label >นามสกุล :</label><label class="text-danger">*</label>  
                                                 {{Form::text('lastfather','',['class'=>'form-control'])}}                                      
                                                 <span class="text-danger">{{ $errors->first('lastfather') }}</span>
                                                 </div>
@@ -416,7 +423,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('occupation_father') ? 'has-error' : '' }}" >
-                                                <label >อาชีพ :*</label>
+                                                <label >อาชีพ :</label><label class="text-danger">*</label>  
                                                 {{Form::text('occupation_father','',['class'=>'form-control'])}}                                      
                                                 <span class="text-danger">{{ $errors->first('occupation_father') }}</span>
                                                 </div>
@@ -434,7 +441,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('namemother') ? 'has-error' : '' }}" >
-                                                <label > ชื่อมารดา :*</label>
+                                                <label > ชื่อมารดา :</label><label class="text-danger">*</label>  
                                                 {{Form::text('namemother','',['class'=>'form-control'])}}                                     
                                                 <span class="text-danger">{{ $errors->first('namemother') }}</span>
                                                 </div>
@@ -442,7 +449,7 @@
                                         <div class="col-md-2"></div>
                                         <div class="col-md-5">
                                             <div class="form-group {{ $errors->has('lasrmother') ? 'has-error' : '' }}" >
-                                                <label >นามสกุล :*</label>
+                                                <label >นามสกุล:</label><label class="text-danger">*</label>  
                                                 {{Form::text('lasrmother','',['class'=>'form-control'])}}                                      
                                                 <span class="text-danger">{{ $errors->first('lasrmother') }}</span>
                                                 </div>
@@ -452,7 +459,7 @@
                                         <div class="col-md-1"></div>
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('occupationm') ? 'has-error' : '' }}" >
-                                                <label>อาชีพ :*</label>
+                                                <label>อาชีพ :</label><label class="text-danger">*</label>  
                                                 {{Form::text('occupationm','',['class'=>'form-control'])}}                                      
                                                 <span class="text-danger">{{ $errors->first('occupationm') }}</span>
                                                 </div>
@@ -477,7 +484,11 @@
                 <div id="step-2">
                     <div id="form-step-1" role="form" data-toggle="validator">
                         <div class="form-group">
-                                <div class="row"><h4><label>ประถมศึกษา</label></h4></div>
+                                <div class="row">
+                                        <div class="col-md-5"></div>
+                                        <h4><label>ประถมศึกษา</label></h4>
+                                
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-4">
@@ -516,8 +527,12 @@
                                             </div>
                                     </div>
                                     </div>
-                               
-                                <div class="row"><h4><label>มัธยมศึกษา</label></h4></div>
+                                    <hr>
+                                <div class="row">
+                                        <div class="col-md-5"></div>
+                                    <h4><label>มัธยมศึกษา</label></h4>
+                                
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-4">
@@ -556,8 +571,12 @@
                                             </div>
                                     </div>
                                     </div>
-                    
-                                <div class="row"><h4><label>อาชีวะศึกษา</label></h4></div>
+                                    <hr>
+                                <div class="row">
+                                        <div class="col-md-5"></div>
+                                    <h4><label>อาชีวะศึกษา</label></h4>
+                                
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-4">
@@ -596,8 +615,12 @@
                                             </div>
                                     </div>
                                     </div>
-                              
-                                <div class="row"><h4><label>อนุปริญญา</label></h4></div>
+                                    <hr>
+                                <div class="row">
+                                        <div class="col-md-5"></div>
+                                    <h4><label>อนุปริญญา</label></h4>
+                                
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>                    
                                     <div class="col-md-4">
@@ -636,8 +659,12 @@
                                             </div>
                                     </div>
                                     </div>
-                               
-                                <div class="row"><h4><label>ปริญญาตรี</label></h4></div>
+                                    <hr>
+                                <div class="row">
+                                        <div class="col-md-5"></div>
+                                    <h4><label>ปริญญาตรี</label></h4>
+                                
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-4">
@@ -676,8 +703,10 @@
                                             </div>
                                     </div>
                                     </div>
-                             
-                                <div class="row"><h4><label>ปริญญาโท</label></h4></div>
+                             <hr>
+                                <div class="row">
+                                        <div class="col-md-5"></div>
+                                    <h4><label>ปริญญาโท</label></h4></div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-4">
@@ -716,8 +745,12 @@
                                                 </div>
                                         </div>
                                         </div>
+                                        <hr>
+                                <div class="row">
+                                        <div class="col-md-5"></div>
+                                    <h4><label>อื่นๆ</label></h4>
                                 
-                                <div class="row"><h4><label>อื่นๆ</label></h4></div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-4">
@@ -888,30 +921,407 @@
                     </div>
                 </div>
                 <div id="step-4" class="">
-                    <h2>Terms and Conditions</h2>
-                    <p>
-                        Terms and conditions: Keep your smile :)
-                    </p>
+                    <h2>ด้านการทำงาน</h2>
                     <div id="form-step-3" role="form" data-toggle="validator">
                         <div class="form-group">
-                            <label for="terms">I agree with the T&C</label>
-                            <input type="checkbox" id="terms" data-error="Please accept the Terms and Conditions" required>
-                            <div class="help-block with-errors"></div>
+                                <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                    <label>1.ชื่อสถานที่ประกอบการ :</label>
+                                                        {{Form::text('list_of_employed1','',['class'=>'form-control'])}}
+                                            </div>     
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>ลักษณะงานที่รับผิดชอบ :</label>
+                                                    {{Form::text('job_description1','',['class'=>'form-control'])}}
+                                                </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                    <label>ระยะงานเริ่ม</label>
+                                                    {{Form::date('start_job_duration1','',['class'=>'form-control'])}}
+                                                    
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3"><label>ระยะงานสิ้นสุด</label>
+                                            {{Form::date('end_job_duration2','',['class'=>'form-control'])}} </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                    <label> ตำแหน่ง</label>
+                                                    {{Form::text('position1','',['class'=>'form-control'])}}
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                    <label>สาเหตุที่ออก</label>     
+                                                        {{Form::text('reasonLeaving1','',['class'=>'form-control'])}}
+                                                        
+                                            </div>    
+                                        </div>
+                                        <div class="col-md-1"></div>    
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>เงินเดือนครั้งสุดท้าย</label>
+                                                    {{Form::text('lastsalary1','',['class'=>'form-control'])}}
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                            <br>  <br>  <br>  
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>2.ชื่อสถานที่ประกอบการ :</label>
+                                                    {{Form::text('list_of_employed2','',['class'=>'form-control'])}}
+                                                </div>     
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>ลักษณะงานที่รับผิดชอบ :</label>
+                                                    {{Form::text('job_description2','',['class'=>'form-control'])}}
+                                                </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>ระยะงานเริ่ม</label>
+                                                    {{Form::date('start_job_duration3','',['class'=>'form-control'])}}
+                                               
+                                                </div>
+                                        </div>
+                                        <div class="col-md-3">
+
+
+
+                                                <label>ระยะงานสิ้นสุด</label>
+                                                {{Form::date('end_job_duration4','',['class'=>'form-control'])}} 
+
+
+
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label> ตำแหน่ง</label>
+                                                    {{Form::text('position2','',['class'=>'form-control'])}}
+                                                </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>สาเหตุที่ออก</label>     
+                                                    {{Form::text('reasonLeaving2','',['class'=>'form-control'])}}
+                                                </div>    
+                                        </div>
+                                        <div class="col-md-1"></div>    
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>เงินเดือนครั้งสุดท้าย</label>
+                                                    {{Form::text('lastsalary2','',['class'=>'form-control'])}}
+                                                </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                       <br>  <br>    
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>3.ชื่อสถานที่ประกอบการ :</label>
+                                                    {{Form::text('list_of_employed3','',['class'=>'form-control'])}}
+                                                </div>     
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>ลักษณะงานที่รับผิดชอบ :</label>
+                                                    {{Form::text('job_description3','',['class'=>'form-control'])}}
+                                                </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>ระยะงานเริ่ม</label>
+                                                    {{Form::date('start_job_duration5','',['class'=>'form-control'])}}
+                                                
+                                                </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                                <label>ระยะงานสิ้นสุด</label>
+                                                {{Form::date('end_job_duration6','',['class'=>'form-control'])}} 
+
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label> ตำแหน่ง</label>
+                                                    {{Form::text('position3','',['class'=>'form-control'])}}
+                                                </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>สาเหตุที่ออก</label>     
+                                                    {{Form::text('reasonLeaving3','',['class'=>'form-control'])}}
+                                                </div>    
+                                        </div>
+                                        <div class="col-md-1"></div>    
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>เงินเดือนครั้งสุดท้าย</label>
+                                                    {{Form::text('lastsalary3','',['class'=>'form-control'])}}
+                                                </div>
+                                        </div>
+                                        </div>
+                                        <div class="help-block with-errors"></div>
                         </div>
                     </div>
 
 
                 </div>
+
+                <div id="step-5" class="">
+                        <div id="form-step-3" role="form" data-toggle="validator">
+                            <div class="form-group">
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>บุคลที่ไม่ใช่ญาติซึ่งทราบประวัติของท่านและบริษัทฯ สามารถสอบถามได้</label>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group {{ $errors->has('namecm') ? 'has-error' : '' }}">
+                                                    <label>ชื่อ-นามสกุล : *</label>       
+                                                        {{Form::text('namecm','',['class'=>'form-control'])}}                                
+                                                        <span class="text-danger">{{ $errors->first('namecm') }}</span>  
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-5">
+                                                <div class="form-group {{ $errors->has('lastnamecm') ? 'has-error' : '' }}"> 
+                                                    <label>ความสัมพันธ์ : *</label>
+                                                        {{Form::text('lastnamecm','',['class'=>'form-control'])}}
+                                                        <span class="text-danger">{{ $errors->first('lastnamecm') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-md-5">                            
+                                                        <div class="form-group {{ $errors->has('telecm') ? 'has-error' : '' }}">
+                                                            <label>โทรศัพท์ : *</label>
+                                                                {{Form::text('telecm','',['class'=>'form-control'])}}
+                                                                <span class="text-danger">{{ $errors->first('telecm') }}</span>  
+                                                            </div>
+                                            </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group {{ $errors->has('firm') ? 'has-error' : '' }}">
+                                                    <label>สถานที่ทำงาน/ที่อยู่ : *่</label>          
+                                                        {{Form::text('firm','',['class'=>'form-control'])}}
+                                                        <span class="text-danger">{{ $errors->first('firm') }}</span>  
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-3">                            
+                                                <div class="form-group {{ $errors->has('positioncm') ? 'has-error' : '' }}"> 
+                                                    <label>ตำแหน่ง : *</label>
+                                                        {{Form::text('positioncm','',['class'=>'form-control'])}}
+                                                        <span class="text-danger">{{ $errors->first('positioncm') }}</span>  
+                                                    </div>
+                                            </div>                        
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="name">ความรู้พิเศษ</label> 
+                                                    คอมพิวเตอร์  ระบุ:  {{Form::text('computer','',['class'=>'form-control'])}}                                                
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-4">
+                                                <div class="form-group"> <br><br>
+                                                    <input type="checkbox" class="form-check-input" id="fax" name="fax" value="เครื่องโทรสาร" > เครื่องโทรสาร &emsp;&emsp;
+                                                    <input type="checkbox" class="form-check-input" id="typewriter" name="typewriter"  value="เครื่องพิมพ์ดีดไทย" >เครื่องพิมพ์ดีดไทย  &emsp;&emsp;
+                                                    <input type="text" name="dot" id="dot"  style="width:50px"/>คำ/นาที
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group {{ $errors->has('crash1') ? 'has-error' : '' }}">
+                                                    <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ) : *</label> &emsp;&emsp;
+                                                        {{ Form::radio('crash1','ขัดข้อง') }} ขัดข้อง
+                                                        {{ Form::radio('crash1','ไม่ขัดข้อง') }} ไม่ขัดข้อง                                    
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    ชื่อ:  {{Form::text('compd','',['class'=>'form-control'])}} 
+                                                    <span class="text-danger">{{ $errors->first('crash1') }}</span>  
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    สถานที่ทำงาน:  {{Form::text('compa','',['class'=>'form-control'])}} 
+                                                    <span class="text-danger">{{ $errors->first('crash1') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group {{ $errors->has('crash2') ? 'has-error' : '' }}">
+                                                    <label>ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป : *</label> &emsp;&emsp;&ensp;
+                                                        {{ Form::radio('crash2','ขัดข้อง') }}ขัดข้อง    &emsp;&emsp;&emsp;&emsp;
+                                                        {{ Form::radio('crash2','ไม่ขัดข้อง') }}ไม่ขัดข้อง
+                                                        <span class="text-danger">{{ $errors->first('crash2') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group {{ $errors->has('crash3') ? 'has-error' : '' }}">
+                                                    <label>ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม : *</label>&emsp;&emsp;
+                                                        {{ Form::radio('crash3','ขัดข้อง') }}  ขัดข้อง  &emsp;&emsp;&emsp;&emsp;
+                                                        {{ Form::radio('crash3','ไม่ขัดข้อง') }}ไม่ขัดข้อง                                
+                                                        <span class="text-danger">{{ $errors->first('crash3') }}</span>                        
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group {{ $errors->has('yes') ? 'has-error' : '' }}">
+                                                    <label>ท่านสามารถขับรถยนต์ได้หรือไม่ : *</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
+                                                        {{ Form::radio('yes', 'ได้') }}ได้  &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
+                                                        {{ Form::radio('yes', 'ไม่ได้') }}ไม่ได้
+                                                    <span class="text-danger">{{ $errors->first('yes') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group {{ $errors->has('owncar') ? 'has-error' : '' }}">
+                                                    <label>ท่านมีรถยนต์ส่วนตัวหรือไม่ : *</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
+                                                        {{ Form::radio('owncar','มี') }} มี &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+                                                        {{ Form::radio('owncar','ไม่มี') }}ไม่มี
+                                                        <span class="text-danger">{{ $errors->first('owncar') }}</span> 
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ:</label> {{Form::text('workk','',['class'=>'form-control'])}} 
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-3">
+                                                    <div class="form-group {{ $errors->has('dateworkk') ? 'has-error' : '' }}">
+                                                            <label>ท่านพร้อมงานวันที่ : *</label>  
+                                                            {{Form::date('dateworkk','',['class' => 'form-control'])}} 
+                                                            <span class="text-danger">{{ $errors->first('dateworkk') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group ">
+                                                    <label>ท่านเป็นเจ้าของรถประเภทใด :</label> {{Form::text('cardec','',['class' => 'form-control'])}}  
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>ทะเบียน :</label> {{Form::text('license','',['class' => 'form-control'])}} 
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group {{ $errors->has('exitwork') ? 'has-error' : '' }}">
+                                                    <label>ท่านเคยให้ถูกออกจากงานหรือไม่ : *</label> &emsp;&emsp;                                                                  
+                                                        {{ Form::radio('exitwork','เคย') }} เคย เพราะ &emsp; {{Form::text('because','')}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     
+                                                        {{ Form::radio('exitwork','ไม่เคย') }}ไม่เคย 
+                                                        <span class="text-danger">{{ $errors->first('exitwork') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group {{ $errors->has('serious_ill') ? 'has-error' : '' }}">
+                                                    <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่? : *</label>&emsp;&emsp;
+                                                    {{ Form::radio('serious_ill','เคย') }}เคย &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                    {{ Form::radio('serious_ill','ไม่เคย') }}ไม่เคย
+                                                    <span class="text-danger">{{ $errors->first('serious_ill') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group  {{ $errors->has('offense') ? 'has-error' : '' }}">
+                                                    <label>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่? : *</label>&emsp;&emsp;&emsp;&ensp;
+                                                    {{ Form::radio('offense','เคย') }}เคย   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                    {{ Form::radio('offense','ไม่เคย') }}ไม่เคย
+                                                    <span class="text-danger">{{ $errors->first('offense') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div> <br>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group {{ $errors->has('pregnant') ? 'has-error' : '' }}">
+                                                    <label>ขณะนี้คุณตั้งครรภ์หรือไม่? : *</label>&emsp;&emsp;
+                                                    {{ Form::radio('pregnant','ใช่') }}ใช่ &emsp;&emsp;&emsp;
+                                                    {{ Form::radio('pregnant','ไม่ใช่') }} ไม่ใช่
+                                                    <span class="text-danger">{{ $errors->first('pregnant') }}</span>  
+                                                    </div>
+                                            </div>
+                                            </div>
+                                            <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+
+
+
+
+
+
+
+
             </div>
-        </div>
+     
+ 
+        {{ Form::close()}}
 
-        </form>
-
-
-
-
-
-
+        <br><br>
+        <br>
+    
+</div>
+                  
+  
 
 
 
