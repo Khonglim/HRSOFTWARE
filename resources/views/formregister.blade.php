@@ -26,6 +26,12 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
    
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet">
+
+
+
+
+
+
 </head>
 
 <body>
@@ -65,7 +71,7 @@
 		                                	
 		                                    	<div class="picture-container">
 		                                        	<div class="picture">
-                                        				<img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                                        				<img src="{{URL::asset('img/default-avatar.png')}}" class="picture-src" id="wizardPicturePreview" title=""/>
 		                                            	<input type="file" id="wizard-picture" required>
 		                                        	</div>
 		                                        	<h6>อัพโหลดรูปภาพ</h6>
@@ -77,7 +83,7 @@
                                                     <div class="col-md-2 ">
                                                        <div class="input-group">
                                                         <div class="form-group label-floating">
-                                                            <label class="control-label">คำนำ<small>*</small></label>
+                                                            <label class="control-label">คำนำ<small class="text-danger">*</small></label>
                                                         {{ Form::select('fronname', [ '' => '', 'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control','required']) }} 
                                                        </div>
                                                     </div>
@@ -86,7 +92,7 @@
                                                 <div class="col-md-3 ">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
-                                                             <label class="control-label">ชื่อ<small>*</small></label>
+                                                             <label class="control-label">ชื่อ<small class="text-danger">*</small></label>
                                                              {{Form::text('name','',['class'=>'form-control','required'])}}
                                                         </div>
                                                      </div>
@@ -95,7 +101,7 @@
                                                  <div class="col-md-3 ">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
-                                                             <label class="control-label">นามสกุล<small>*</small></label>
+                                                             <label class="control-label">นามสกุล<small class="text-danger">*</small></label>
                                                              {{Form::text('lastname','',['class'=>'form-control','required'])}} 
                                                         </div>
                                                      </div>
@@ -104,7 +110,7 @@
                                                  <div class="col-md-3 ">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
-                                                             <label class="control-label">ชื่อเล่น<small>*</small></label>
+                                                             <label class="control-label">ชื่อเล่น<small class="text-danger">*</small></label>
                                                              {{Form::text('nikname','',['class'=>'form-control','required'])}}  
                                                         </div>
                                                      </div>
@@ -119,7 +125,7 @@
                                                  <div class="col-md-3">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
-                                                                <label >วันเกิด*</label>
+                                                                <label >วันเกิด<small class="text-danger">*</small></label>
                                                              {{Form::date('birthday','',['class'=>'form-control','required'])}}   
                                                         </div>
                                                      </div>
@@ -128,20 +134,22 @@
                                                  <div class="col-md-3"><br>
                                                  <div class="input-group">
                                                         <div class="form-group label-floating">
-                                                               <label class="control-label">อายุ<small>*</small></label>
+                                                               <label class="control-label">อายุ<small class="text-danger">*</small></label>
                                                                {{Form::text('age','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}   
                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-3">
+                                                <div class="col-md-3"><br>
 
                                                        
                                                         <div class="input-group">
                                                                 <div class="form-group label-floating">
-                                                                       <label class="control-label">เพศ<small>*</small></label><br>
-                                                                       <input type="radio" name="gender"  value="ชาย" required /> ชาย  
-                                                                       <input type="radio" name="gender"  value="หญิง" required> หญิง
+                                                                       <label class="control-label">เพศ<small class="text-danger">*</small></label> 
+
+
+                                                                       {{ Form::select('gender', [ '' => '', 'ชาย' => 'ชาย','หญิง' => 'หญิง'],null, ['class' => 'form-control','required']) }} 
+                                                                       
                                                                        
                                                                </div>
                                                             </div>
@@ -158,7 +166,7 @@
 
                                                     <div class="input-group">
                                                             <div class="form-group label-floating">
-                                                                   <label class="control-label">นำหนัก<small>*</small></label>
+                                                                   <label class="control-label">นำหนัก<small class="text-danger">*</small></label>
                                                                    {{Form::text('weight','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$"])}}   
                                                            </div>
                                                         </div>
@@ -168,7 +176,7 @@
                                               <div class="col-md-4">
                                                     <div class="input-group">
                                                             <div class="form-group label-floating">
-                                                                   <label class="control-label">ส่วนสูง/ซม.<small >*</small></label>
+                                                                   <label class="control-label">ส่วนสูง/ซม.<small class="text-danger">*</small></label>
                                                                    {{Form::text('height','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"3"])}}
                                                            </div>
                                                         </div>
@@ -184,7 +192,7 @@
                                                 <div class="col-md-1"></div>
                                                 <div class="col-md-4">
                                                     <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
-                                                        <label>สัญชาติ</label><label class="text-danger">*</label>  
+                                                        <label>สัญชาติ<small class="text-danger">*</small></label>  
                                                         {{ Form::select('nationality', ['ไทย' => 'ไทย','คริสต์' => 'คริสต์','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
                                                         <span class="text-danger">{{ $errors->first('nationality') }}</span>
                                                         </div>
@@ -192,7 +200,7 @@
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-4">
                                                     <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
-                                                        <label>เชื้อชาติ</label><label class="text-danger">*</label>  
+                                                        <label>เชื้อชาติ<small class="text-danger">*</small></label>  
                                                         {{ Form::select('race', ['ไทย' => 'ไทย','คริสต์' => 'คริสต์','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
                                                         <span class="text-danger">{{ $errors->first('race') }}</span>
                                                         </div>
@@ -243,7 +251,7 @@
                                                                 <div class="col-md-4">
                                                                         <div class="input-group">
                                                                                 <div class="form-group label-floating">
-                                                                                        <label class="control-label">เลขบัตรประชาชน*</label>
+                                                                                        <label class="control-label">เลขบัตรประชาชน<small class="text-danger">*</small></label>
                                                                                         {{Form::text('idcard','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"13"])}}   
                                                                                </div>
                                                                             </div>
@@ -253,7 +261,7 @@
                                                                 <div class="col-md-3">
                                                                         <div class="input-group">
                                                                                 <div class="form-group label-floating">
-                                                                                        <label class="control-label">ออกให้ ณ อำเภอ/เขต*</label>
+                                                                                        <label class="control-label">ออกให้ ณ อำเภอ/เขต<small class="text-danger">*</small></label>
                                                                                      {{ Form::text('issued','' , ['class' => 'form-control','id'=>'issued','required']) }}    
                                                                                </div>
                                                                             </div>
@@ -267,7 +275,7 @@
                                                                         <div class="col-md-3">
                                                                                 <div class="input-group">
                                                                                         <div class="form-group label-floating">
-                                                                                                <label class="control-label">จังหวัด*</label>
+                                                                                                <label class="control-label">จังหวัด<small class="text-danger">*</small></label>
                                                                                                 {{ Form::text('province_crad','', ['class' => 'form-control','id'=>'province_crad','required']) }}     
                                                                                        </div>
                                                                                     </div>
@@ -279,7 +287,7 @@
                                                                                 <div class="col-md-1"></div>
                                                                                 <div class="col-md-4">
                                                                                     <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
-                                                                                            <label class="control-label"><h4>วันนออกบัตร*</h4></label>
+                                                                                            <label class="control-label"><h4>วันนออกบัตร<small class="text-danger">*</small></h4></label>
                                                                                         {{Form::date('issueddate','',['class'=>'form-control','required'])}}   
                                                                                         <span class="text-danger">{{ $errors->first('issueddate') }}</span>
                                                                                         </div>
@@ -287,7 +295,7 @@
                                                                                 <div class="col-md-2"></div>
                                                                                 <div class="col-md-4">
                                                                                     <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
-                                                                                            <label class="control-label"><h4>บัตรหมดอายุ*</h4></label>
+                                                                                            <label class="control-label"><h4>บัตรหมดอายุ<small class="text-danger">*</small></h4></label>
                                                                                         {{Form::date('expid','',['class'=>'form-control','required'])}}   
                                                                                         <span class="text-danger">{{ $errors->first('expid') }}</span>
                                                                                         </div>
@@ -304,7 +312,7 @@
 
                                                                                                 <div class="input-group">
                                                                                                         <div class="form-group label-floating">
-                                                                                                                <label class="control-label">บัตรประจำตัวผู้เสียภาษี*</label>
+                                                                                                                <label class="control-label">บัตรประจำตัวผู้เสียภาษี<small class="text-danger">*</small></label>
                                                                                                                 {{Form::text('texid','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"13"])}}      
                                                                                                        </div>
                                                                                                     </div>
@@ -312,7 +320,7 @@
                                                                                         <div class="col-md-2"></div>
                                                                                         <div class="col-md-3">
                                                                                             <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
-                                                                                                    <label class="control-label"><h4>สถานะทางทหาร*</h4></label> 
+                                                                                                    <label class="control-label"><h4>สถานะทางทหาร<small class="text-danger">*</small></h4></label> 
                                                                                                     {{ Form::select('military_service', ['' =>'::เลือก::','-' =>'::ไม่มี::','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control','required']) }}
                                                                                                 <span class="text-danger">{{ $errors->first('military_service') }}</span>
                                                                                                 </div>
@@ -329,7 +337,7 @@
 
                                                                                                  <div class="input-group">
                                                                                                         <div class="form-group label-floating">
-                                                                                                                <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้*</label>
+                                                                                                                <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้<small class="text-danger">*</small></label>
                                                                                                                 <textarea name="address1"  class="form-control"  rows="3"  required>{{ old('address1') }}</textarea>     
                                                                                                        </div>
                                                                                                     </div>
@@ -342,7 +350,7 @@
                                                                                                 <div class="col-md-2"></div>
                                                                                                 <div class="col-md-4">
                                                                                                         <div class="form-group label-floating">
-                                                                                                                <label class="control-label">ที่อยู่ตามบัตรประชาชน*</label>
+                                                                                                                <label class="control-label">ที่อยู่ตามบัตรประชาชน<small class="text-danger">*</small></label>
                                                                                                                 <textarea name="address2" class="form-control"  rows="3" required >{{ old('address2') }}</textarea> 
                                                                                                        </div>
 
@@ -355,7 +363,7 @@
                                                                                                         <div class="col-md-1"></div>
                                                                                                         <div class="col-md-4">
                                                                                                                 <div class="form-group label-floating">
-                                                                                                                        <label class="control-label">โทรศัพท์ที่ติดต่อ*</label>
+                                                                                                                        <label class="control-label">โทรศัพท์ที่ติดต่อ<small class="text-danger">*</small></label>
                                                                                                                         {{Form::text('tel','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}   
                                                                                                                </div>
                                                                                                             
@@ -377,7 +385,7 @@
                                                                                                                 <div class="col-md-1"></div>
                                                                                                                 <div class="col-md-4">
                                                                                                                         <div class="form-group label-floating">
-                                                                                                                                <label class="control-label">โทรศัพท์มือถือ*</label>
+                                                                                                                                <label class="control-label">โทรศัพท์มือถือ<small class="text-danger">*</small></label>
                                                                                                                                 {{Form::text('moblie','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}    
                                                                                                                        </div>
                                                                                                                   
@@ -395,7 +403,7 @@
                                                                                                                         <div class="col-md-1"></div>
                                                                                                                         <div class="col-md-4">
                                                                                                                                 <div class="form-group label-floating">
-                                                                                                                                        <label class="control-label">อีเมล*</label>
+                                                                                                                                        <label class="control-label">อีเมล<small class="text-danger">*</small></label>
                                                                                                                                         {{Form::email('email','',['class'=>'form-control','required'])}}   
                                                                                                                                </div>
                                                                                                                                
@@ -549,7 +557,7 @@
                                                                                                                                                 <div class="col-md-1"></div>
                                                                                                                                                 <div class="col-md-4">
                                                                                                                                                         <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">  ชื่อบิดา*</label>
+                                                                                                                                                                <label class="control-label">  ชื่อบิดา<small class="text-danger">*</small></label>
                                                                                                                                                                 {{Form::text('namefather','',['class'=>'form-control','required'])}}   
                                                                                                                                                        </div>
                                                                                                                                                 
@@ -557,7 +565,7 @@
                                                                                                                                                 <div class="col-md-2"></div>
                                                                                                                                                 <div class="col-md-4">
                                                                                                                                                         <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label"> นามสกุล*</label>
+                                                                                                                                                                <label class="control-label"> นามสกุล<small class="text-danger">*</small></label>
                                                                                                                                                                 {{Form::text('lastfather','',['class'=>'form-control','required'])}}   
                                                                                                                                                        </div>
                                                                                                                                                    
@@ -567,7 +575,7 @@
                                                                                                                                                 <div class="col-md-1"></div>
                                                                                                                                                 <div class="col-md-4">
                                                                                                                                                         <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label"> อาชีพ*</label>
+                                                                                                                                                                <label class="control-label"> อาชีพ<small class="text-danger">*</small></label>
                                                                                                                                                                 {{Form::text('occupation_father','',['class'=>'form-control','required'])}}   
                                                                                                                                                        </div>
                                                                                                                                                 
@@ -575,7 +583,7 @@
                                                                                                                                                 <div class="col-md-2"></div>
                                                                                                                                                 <div class="col-md-3">
                                                                                                                                                         <div class="form-group label-floating"> 
-                                                                                                                                                            <label class="control-label"><h4>สถานะ*</h4></label><br>
+                                                                                                                                                            <label class="control-label"><h4>สถานะ<small class="text-danger">*</small></h4></label><br>
                                                                                                                                                         <input type="radio" name="alivef"  value="ยังมีชีวิตอยู่" required />ยังมีชีวิตอยู่
                                                                                                                                                         <input type="radio" name="alivef"  value="ถึงแก่กรรม" required/> ถึงแก่กรรม                                
                                                                                                                                                        
@@ -586,7 +594,7 @@
                                                                                                                                                 <div class="col-md-1"></div>
                                                                                                                                                 <div class="col-md-4">
                                                                                                                                                         <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">ชื่อมารดา*</label>
+                                                                                                                                                                <label class="control-label">ชื่อมารดา<small class="text-danger">*</small></label>
                                                                                                                                                                 {{Form::text('namemother','',['class'=>'form-control','required'])}} 
                                                                                                                                                        </div>
                                                                                                                                                   
@@ -594,7 +602,7 @@
                                                                                                                                                 <div class="col-md-2"></div>
                                                                                                                                                 <div class="col-md-5">
                                                                                                                                                         <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">นามสกุล*</label>
+                                                                                                                                                                <label class="control-label">นามสกุล<small class="text-danger">*</small></label>
                                                                                                                                                                 {{Form::text('lasrmother','',['class'=>'form-control','required'])}}  
                                                                                                                                                        </div>
                                                                                                                                                  
