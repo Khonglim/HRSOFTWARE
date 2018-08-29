@@ -3973,6 +3973,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'provinceTableSeeder' => __DIR__ . '/../..' . '/database/seeds/provinceTableSeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
