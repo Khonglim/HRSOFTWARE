@@ -11,7 +11,7 @@
               <div class="probootstrap-subheading mb-5">
                 <p class="h4 font-weight-normal text-light"> Cien Sesto NGGTP TAI Xian  UW  Other</p>
               </div>
-            <p><a href="{{url('/form')}}" class="btn btn-primary mr-2 mb-2">สมัครงาน</a></p>
+            <p>  <a href="employee/create" class="btn btn-success" >สมัครงาน</a>
             </div>
           </div>
         </div>

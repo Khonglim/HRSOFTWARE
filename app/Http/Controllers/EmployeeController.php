@@ -34,7 +34,7 @@ class EmployeeController extends Controller
     {
        
         
-        return view('employ/formcreateemployee');
+        return view('formregister');
     }
 
     /**
@@ -46,74 +46,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request,[
-            'name' => 'required|max:35',
-            'lastname' => 'required|max:35',
-            'nikname' => 'required|max:35',
-            'gender' => 'required',
-
-            'image' => 'required',
-            'nationality' => 'required|max:35',
-            'birthday' => 'required',
-            'email' =>'required',
-            'address1' => 'required',
-            'tel' => 'required|numeric',
-            'race' => 'required',
-            'religion' => 'required',
-            'age' => 'required|numeric',
-
-            'height' => 'required|numeric',
-            'weight' => 'required|numeric',
-            'moblie' => 'required|numeric',
-            'address2' => 'required',
-            'idcard' => 'required|numeric',
-            'issued' => 'required',
-            'province_crad' => 'required',
-            
-            'issueddate' => 'required',
-            'living_status' => 'required',
-            'issueddate' => 'required',
-            'marital_status' => 'required',
-            'expid' => 'required',
-            'military_service' => 'required',
-
-
-            'namefather' => 'required',
-            'lastfather' => 'required',
-            'occupation_father' => 'required',
-            'alivef' => 'required',
-
-            'namemother' => 'required',
-            'lasrmother' => 'required',
-            'occupationm' => 'required',
-            'alivem' => 'required',
-
-            'thais' => 'required',
-            'thail' => 'required',
-            'thair' => 'required',
-            
-
-            'engliss' => 'required',
-            'englisl' => 'required',
-            'englisr' => 'required',
-
-            'namecm' => 'required',
-            'lastnamecm' => 'required',
-            'firm' => 'required',
-            'telecm' => 'required',
-            'positioncm' => 'required',
-
-            'crash1' => 'required',
-            'crash2' => 'required',
-            'crash3' => 'required',
-            'yes' => 'required',
-            'owncar' => 'required',
-           
-            'exitwork' => 'required',
-            'serious_ill' => 'required',
-            'offense' => 'required',
-            'pregnant' => 'required'
-        ]);
+        
         $personal = new Personal;
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
@@ -295,7 +228,7 @@ class EmployeeController extends Controller
         $personal->degree7 = $request->degree7;
        
         $personal->save();
-        return redirect('employee');
+        return redirect('/');
     }
 
     /**
