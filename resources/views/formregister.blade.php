@@ -1393,57 +1393,67 @@
                                                         </div>
                                                     <div class="row">
                                                         <div class="col-md-5">
-                                                            <div class="form-group {{ $errors->has('namecm') ? 'has-error' : '' }}">
-                                                                <label>ชื่อ-นามสกุล : *</label>       
-                                                                    {{Form::text('namecm','',['class'=>'form-control'])}}                                
-                                                                    <span class="text-danger">{{ $errors->first('namecm') }}</span>  
-                                                                </div>
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label class="control-label">ชื่อ-นามสกุล*</label>
+                                                                            {{Form::text('namecm','',['class'=>'form-control'])}}        
+                                                                       </div>
+                                                                    </div> 
+                                                          
                                                         </div>
                                                         <div class="col-md-2"></div>
                                                         <div class="col-md-5">
-                                                            <div class="form-group {{ $errors->has('lastnamecm') ? 'has-error' : '' }}"> 
-                                                                <label>ความสัมพันธ์ : *</label>
-                                                                    {{Form::text('lastnamecm','',['class'=>'form-control'])}}
-                                                                    <span class="text-danger">{{ $errors->first('lastnamecm') }}</span>  
-                                                                </div>
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label class="control-label">ความสัมพันธ์*</label>
+                                                                            {{Form::text('namecm','',['class'=>'form-control'])}}        
+                                                                       </div>
+                                                                    </div> 
+                                                         
                                                         </div>
                                                         </div>
                                                     <div class="row">
-                                                        <div class="col-md-5">                            
-                                                                    <div class="form-group {{ $errors->has('telecm') ? 'has-error' : '' }}">
-                                                                        <label>โทรศัพท์ : *</label>
-                                                                            {{Form::text('telecm','',['class'=>'form-control'])}}
-                                                                            <span class="text-danger">{{ $errors->first('telecm') }}</span>  
-                                                                        </div>
-                                                        </div>
+                                                        <div class="col-md-5">   
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label class="control-label">โทรศัพท์*</label>
+                                                                            {{Form::text('namecm','',['class'=>'form-control'])}}        
+                                                                       </div>
+                                                                </div>        
+                                                            </div>
                                                         </div>
                                                     <div class="row">
                                                         <div class="col-md-5">
-                                                            <div class="form-group {{ $errors->has('firm') ? 'has-error' : '' }}">
-                                                                <label>สถานที่ทำงาน/ที่อยู่ : *่</label>          
-                                                                    {{Form::text('firm','',['class'=>'form-control'])}}
-                                                                    <span class="text-danger">{{ $errors->first('firm') }}</span>  
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label class="control-label">สถานที่ทำงาน/ที่อยู่ *่</label>
+                                                                            {{Form::text('firm','',['class'=>'form-control'])}}   
+                                                                       </div>
                                                                 </div>
                                                         </div>
                                                        
-                                                        <div class="col-md-3">                            
-                                                            <div class="form-group {{ $errors->has('positioncm') ? 'has-error' : '' }}"> 
-                                                                <label>ตำแหน่ง : *</label>
-                                                                    {{Form::text('positioncm','',['class'=>'form-control'])}}
-                                                                    <span class="text-danger">{{ $errors->first('positioncm') }}</span>  
-                                                                </div>
+                                                        <div class="col-md-3">   
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label class="control-label">ตำแหน่ง*</label>
+                                                                            {{Form::text('positioncm','',['class'=>'form-control'])}}
+                                                                       </div>
+                                                                </div>                   
                                                         </div>                        
                                                         </div>
                                                    <hr>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="name">ความรู้พิเศษ</label> 
-                                                                คอมพิวเตอร์  ระบุ:  {{Form::text('computer','',['class'=>'form-control'])}}                                                
-                                                                </div>
-                                                        </div>
+
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label class="control-label">ความรู้พิเศษ คอมพิวเตอร์  ระบุ:*</label>
+                                                                            {{Form::text('computer','',['class'=>'form-control'])}}      
+                                                                       </div>
+                                                                </div> 
+                                                          </div>
                                                         <div class="col-md-2"></div>
-                                                        <div class="col-md-4">
+                                                        <div class="col-md-5">
                                                             <div class="form-group"> <br><br>
                                                                 <input type="checkbox" class="form-check-input" id="fax" name="fax" value="เครื่องโทรสาร" > เครื่องโทรสาร &emsp;&emsp;
                                                                 <input type="checkbox" class="form-check-input" id="typewriter" name="typewriter"  value="เครื่องพิมพ์ดีดไทย" >เครื่องพิมพ์ดีดไทย  &emsp;&emsp;
