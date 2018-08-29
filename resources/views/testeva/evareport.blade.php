@@ -3,9 +3,14 @@
  <style>
 #myDIV {
 }
+#swapname {
+    position: absolute;
+    top: 48px;
+    right: 15px;
+}
 </style>
-
 <script>
+
 function myFunction() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
@@ -14,19 +19,26 @@ function myFunction() {
         x.style.display = "none";
     }
 }
+
 </script>
+ 
+ <link href="{{ asset('plugins/pace/pace.min.css') }}" rel="stylesheet">
+<script src="{{ asset('bower_components/PACE/pace.min.js') }}" defer></script>
+  
 <div class="content-wrapper">
-  <section class="content">
+  <section class="content" >
     <div class="row">
-      <div class="col-xs-12">
-        <div class="box">
+      <div class="col-xs-12,col-md-6,col-ms-3" >
+        <div class="box"  style="background-color: #edf9ff;">
           <div class="box-header" style=" text-align: center;">
             <h2 class="box-title" >ผลการประเมิน</h2>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+
             <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ ผู้ประเมิน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();
-            $data2 = array();$data3 = array();$data4 = array();$data5 = array(); $istest=''; ?>
+            $data2 = array();$data3 = array();$data4 = array();$data5 = array(); $istest=''; $change=''; $change2=0;$data1change = array();
+            $data2change = array();$data3change = array();$data4change = array();$data5change = array();?>
              
    
                                 @foreach($partof as $part)
@@ -52,8 +64,61 @@ function myFunction() {
                                 
                         
                                  @endforeach 
-                    
-                         <button onclick="myFunction()" >ตารางแสดงผล</button>
+                          <div id="swapname"><input type="button" class="btn btn-default "  value="ไม่แสดงชื่อ"  id="myButton1" onClick="myFunction2()"></div>
+        
+                          <button onclick="myFunction()" >ตารางแสดงผล</button>
+                          <div id="chart_div"></div>
+                             <script>
+            function myFunction2() {
+        var ele11 = document.getElementById("toggleText11");
+        var ele12 = document.getElementById("toggleText12");
+        var ele21 = document.getElementById("toggleText21");
+        var ele22 = document.getElementById("toggleText22");
+        var ele31 = document.getElementById("toggleText31");
+        var ele32 = document.getElementById("toggleText32");
+        var ele41 = document.getElementById("toggleText41");
+        var ele42 = document.getElementById("toggleText42");
+        var ele51 = document.getElementById("toggleText51");
+        var ele52 = document.getElementById("toggleText52");
+        var text = document.getElementById("myButton1");
+
+         if(ele11.style.display == "none" && ele12.style.display == "block") {
+
+            ele11.style.display = "block";
+            ele12.style.display = "none";
+            ele21.style.display = "block";
+            ele22.style.display = "none";
+            ele31.style.display = "block";
+            ele32.style.display = "none";
+            ele41.style.display = "block";
+            ele42.style.display = "none";
+            ele51.style.display = "block";
+            ele52.style.display = "none";
+            text.value = "ไม่แสดงชื่อ";
+             
+        }
+        else{
+            ele11.style.display = "none";
+            ele12.style.display = "block";
+            ele21.style.display = "none";
+            ele22.style.display = "block";
+            ele31.style.display = "none";
+            ele32.style.display = "block";
+            ele41.style.display = "none";
+            ele42.style.display = "block";
+            ele51.style.display = "none";
+            ele52.style.display = "block";
+            
+
+            text.value = "แสดงชื่อ";
+
+        }
+                  
+            }
+               
+            </script>
+
+                   
 
                         <div id="myDIV" style="display: none;">
                             <table  class="table table-bordered table-striped">
@@ -133,20 +198,33 @@ function myFunction() {
                            <tr>
                             @if($i==35)
 
-                            <td> {{Form::label('คุณ','คุณ')}}{{Form::label('nee_id1',$ngg_emp->nem_nickname)}}</td>
-                            <td  >{{$p1}}<?php  $p1final+=$p1;?></td>
-                            <td > {{$p2}}<?php  $p2final+=$p2;?></td>
-                            <td > {{$p3}}<?php  $p3final+=$p3;?></td>
-                            <td >{{$p4}}<?php  $p4final+=$p4;?></td>
+
+                            <?php  $change = $ngg_emp->nem_nickname; $change2++;?>
+
+                             
+
+                            <td>{{Form::label('คุณ','คุณ')}}{{Form::label('nee_id1',$change)}}</td>
+                            
+                            <td>{{$p1}}<?php  $p1final+=$p1;?></td>
+                            <td>{{$p2}}<?php  $p2final+=$p2;?></td>
+                            <td>{{$p3}}<?php  $p3final+=$p3;?></td>
+                            <td>{{$p4}}<?php  $p4final+=$p4;?></td>
                             <td>{{$p5}}<?php  $p5final+=$p5;?></td>
 
                                              
                             <?php $i=0;$count++;
-                                  array_push($data1, $ngg_emp->nem_nickname,$p1);
-                                  array_push($data2, $ngg_emp->nem_nickname,$p2);
-                                  array_push($data3, $ngg_emp->nem_nickname,$p3);
-                                  array_push($data4, $ngg_emp->nem_nickname,$p4);
-                                  array_push($data5, $ngg_emp->nem_nickname,$p5);
+                                  array_push($data1, $change,$p1);
+                                  array_push($data2, $change,$p2);
+                                  array_push($data3, $change,$p3);
+                                  array_push($data4, $change,$p4);
+                                  array_push($data5, $change,$p5);
+
+                                  array_push($data1change, $change2,$p1);
+                                  array_push($data2change, $change2,$p2);
+                                  array_push($data3change, $change2,$p3);
+                                  array_push($data4change, $change2,$p4);
+                                  array_push($data5change, $change2,$p5);
+                                 
 
                             ?>
                         
@@ -177,59 +255,61 @@ function myFunction() {
                       $p5final=number_format($p5final/$count, 2); 
                       $totle= $p1final+$p2final+$p3final+$p4final+$p5final; ?>
 
+           
+
                       <br><br>
 
                       <div class="row">
 
-                <div class="col-md-100">
+                <div class="col-md-12">
 
                    @switch($totle)
                                       @case($totle>90)
                                         
                                         <h2>ผลการประเมินของคุณ {{$istest}} </h2>
                                         <h1 style="text-align: center;">เกรด A+ </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: ดีเลิศ</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ดีเลิศ</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>80 && $totle<91)
                                         <h1 style="text-align: center;">เกรด A </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: ดีเยี่ยม</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ดีเยี่ยม</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>70 && $totle<81)
                                         <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
                                         <h1 style="text-align: center;">เกรด B+ </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: ดีมาก</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ดีมาก</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>60 && $totle<71)
                                         <h1 style="text-align: center;">เกรด B </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: ดี</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ดี</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>50 && $totle<61)
                                         <h1 style="text-align: center;">เกรด C+ </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: พอใช้</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: พอใช้</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>40 && $totle<51)
                                         <h1 style="text-align: center;">เกรด C </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: พอใช้</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: พอใช้</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>30 && $totle<41)
                                         <h1 style="text-align: center;">เกรด D+ </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ควรปรับปรุง</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle>20 && $totle<31)
                                         <h1 style="text-align: center;">เกรด D </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: ควรปรับปรุง</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ควรปรับปรุง</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                           @break
                                       @case($totle<21)
                                         <h1 style="text-align: center;">เกรด E </h1>
-                                        <h2 style="text-align: center;">ระดับสักยภาพ: ไม่มีประสิทธิภาพ</h2>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ไม่มีประสิทธิภาพ</h2>
                                         <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
                                          @break
                                   @endswitch
@@ -237,9 +317,7 @@ function myFunction() {
 
                 </div>
               </div>
-<br>
-              <div class="row">
-                <div class="col-md-6">
+              </div>
                   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
@@ -260,22 +338,20 @@ function myFunction() {
 
                           var options = {
                             chart: {
-                              title: '{{$b}}'
+                              title: '{{$b}}',
+                               'width':200,
+                               'height':150
                               
                             }
                           };
 
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1'));
+                           chart.draw(data, google.charts.Bar.convertOptions(options));
 
-                          chart.draw(data, google.charts.Bar.convertOptions(options));
+                          
                         }
 
                       </script>
-                       <div id="columnchart_material_p1" style="width: 800px; height: 500px;"></div>
-                </div>
-                <br>
-                 <div class="col-md-5">
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
                         google.charts.setOnLoadCallback(drawChart);
@@ -306,13 +382,6 @@ function myFunction() {
                         }
 
                       </script>
-                       <div id="columnchart_material_p2" style="width: 800px; height: 500px;"></div>
-                </div>
-              </div>  
- <br>
-              <div class="row">
-                <div class="col-md-6">
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
                         google.charts.setOnLoadCallback(drawChart);
@@ -343,11 +412,6 @@ function myFunction() {
                         }
 
                       </script>
-                       <div id="columnchart_material_p3" style="width: 800px; height: 500px;"></div>
-                </div>
-                 <br>
-                 <div class="col-md-5">
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
                         google.charts.setOnLoadCallback(drawChart);
@@ -378,13 +442,6 @@ function myFunction() {
                         }
 
                       </script>
-                       <div id="columnchart_materialp4" style="width: 800px; height: 500px;"></div>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-md-6">
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
                         google.charts.setOnLoadCallback(drawChart);
@@ -416,16 +473,167 @@ function myFunction() {
                         }
 
                       </script>
-                       <div id="columnchart_material_p5" style="width: 800px; height: 500px;"></div>
-                </div>
-              </div>            
+
+                       <script type="text/javascript">
+                        google.charts.load('current', {'packages':['bar']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                          var data = google.visualization.arrayToDataTable([
+                            ['{{$b}}', 'คะเเนน'],
+                              <?php
+                            for ($x=1; $x <count($data1change) ; $x+=2) { 
+                              
+                                echo  "['".$data1change[$x-1]."', '".$data1change[$x]."'],";
+                            }
+                             
+                              ?>
+                            ['คะเเนนเต็ม',10]
+                          ]);
+
+                          var options = {
+                            chart: {
+                              title: '{{$b}}',
+                               'width':200,
+                               'height':150
+                              
+                            }
+                          };
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1_1'));
+
+                          chart.draw(data, google.charts.Bar.convertOptions(options));
+                        }
+
+                      </script>
+                      <script type="text/javascript">
+                        google.charts.load('current', {'packages':['bar']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                          var data = google.visualization.arrayToDataTable([
+                           ['{{$c}}', 'คะเเนน'],
+                              <?php
+                            for ($x=1; $x <count($data2change) ; $x+=2) { 
+                              
+                                echo  "['".$data2change[$x-1]."', '".$data2change[$x]."'],";
+                            }
+                             
+                              ?>
+                            ['คะเเนนเต็ม', 20]
+                          ]);
+
+                          var options = {
+                            chart: {
+                              title: '{{$c}}'
+                             
+                            }
+                          };
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p2_2'));
+
+                          chart.draw(data, google.charts.Bar.convertOptions(options));
+                        }
+
+                      </script>
+                      <script type="text/javascript">
+                        google.charts.load('current', {'packages':['bar']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                          var data = google.visualization.arrayToDataTable([
+                           ['{{$d}}', 'คะเเนน'],
+                              <?php
+                            for ($x=1; $x <count($data3change) ; $x+=2) { 
+                              
+                                echo  "['".$data3change[$x-1]."', '".$data3change[$x]."'],";
+                            }
+                             
+                              ?>
+                            ['คะเเนนเต็ม', 20]
+                          ]);
+
+                          var options = {
+                            chart: {
+                              title: '{{$d}}'
+                              
+                            }
+                          };
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p3_3'));
+
+                          chart.draw(data, google.charts.Bar.convertOptions(options));
+                        }
+
+                      </script>
+                      <script type="text/javascript">
+                        google.charts.load('current', {'packages':['bar']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                          var data = google.visualization.arrayToDataTable([
+                           ['{{$e}}', 'คะเเนน'],
+                              <?php
+                            for ($x=1; $x <count($data4change) ; $x+=2) { 
+                              
+                                echo  "['".$data4change[$x-1]."', '".$data4change[$x]."'],";
+                            }
+                             
+                              ?>
+                            ['คะเเนนเต็ม', 25]
+                          ]);
+
+                          var options = {
+                            chart: {
+                              title: '{{$e}}'
+                             
+                            }
+                          };
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_materialp4_4'));
+
+                          chart.draw(data, google.charts.Bar.convertOptions(options));
+                        }
+
+                      </script>
+                      <script type="text/javascript">
+                        google.charts.load('current', {'packages':['bar']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                          var data = google.visualization.arrayToDataTable([
+
+                           ['{{$f}}', 'คะเเนน'],
+                              <?php
+                            for ($x=1; $x <count($data5change) ; $x+=2) { 
+                              
+                                echo  "['".$data5change[$x-1]."', '".$data5change[$x]."'],";
+                            }
+                             
+                              ?>
+                            ['คะเเนนเต็ม', 15]
+                          ]);
+
+                          var options = {
+                            chart: {
+                              title: '{{$f}}'
+                            
+                            }
+                          };
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p5_5'));
+
+                          chart.draw(data, google.charts.Bar.convertOptions(options));
+                        }
+
+                      </script>
+                     
+              
           
            
  
        
                  
- <div class="row"> 
-           <div class="col-md-6">
 
                         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                        <script type="text/javascript">
@@ -452,14 +660,6 @@ function myFunction() {
                                         chart.draw(data, options);
                                       }
                                     </script>
-                     <div id="piechart" style="width: 900px; height: 500px;"></div>
-                
-                     
-
-
-                </div>
-                <div class="col-md-5">
-                      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
                         google.charts.setOnLoadCallback(drawChart);
@@ -488,18 +688,217 @@ function myFunction() {
                         }
 
                       </script>
-                       <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
-                  </div>
+                <div>
+               <div class="row">
+          <div class="col-md-6" >
+                <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info" >
+            <div class="box-header with-border">
+              <h3 class="box-title">{{$b}}</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
               </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" id="toggleText11" >
+                  <div id="columnchart_material_p1" style="width: 780px; height:500px;"></div> 
+
+            </div>
+             <div class="box-body" id="toggleText12" >
+                   <div id="columnchart_material_p1_1" style="width: 780px; height:500px;" ></div>     
+            </div>
+           
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+             
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div> 
+        <!-- /.col -->
+ 
+
+        <div class="col-md-6">
+                <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info" >
+            <div class="box-header with-border">
+              <h3 class="box-title">{{$c}}</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" id="toggleText21" >
+                       <div id="columnchart_material_p2" style="width: 780px; height:500px;"></div>
+            </div>
+            <div class="box-body" id="toggleText22" >
+                    <div id="columnchart_material_p2_2" style="width: 780px; height:500px;"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+                     
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        </div>
+
+        <div class=" row"> 
+        <div class="col-md-6">
+                <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info" >
+            <div class="box-header with-border">
+              <h3 class="box-title">{{$d}}</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" id="toggleText31">
+              <div id="columnchart_material_p3" style="width: 780px; height:500px;"></div>
+            </div>
+             <div class="box-body" id="toggleText32" >
+                    <div id="columnchart_material_p3_3" style="width: 780px; height:500px;"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+             
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-6">
+                <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info" >
+            <div class="box-header with-border">
+              <h3 class="box-title">{{$e}}</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" id="toggleText41" >
+                        <div id="columnchart_materialp4" style="width: 780px; height:500px;"></div>
+            </div>
+            <div class="box-body" id="toggleText42" >
+                     <div id="columnchart_materialp4_4" style="width: 780px; height:500px;"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+             
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+        <div class="row">
+        <div class="col-md-6">
+                <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info" >
+            <div class="box-header with-border">
+              <h3 class="box-title">{{$f}}</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" id="toggleText51">
+                    <div id="columnchart_material_p5" style="width: 780px; height:500px;"></div>
+            </div>
+             <div class="box-body" id="toggleText52" >
+                     <div id="columnchart_material_p5_5" style="width: 780px; height:500px;"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+             
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->  
+      </div>
+      
+      <div class="row">
+         <div class="col-md-6">
+                <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info" >
+            <div class="box-header with-border">
+              <h3 class="box-title">คะเเนนสุทธิ</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                         
+                           <div id="piechart" style="width: 900px; height: 500px;"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+             
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+          <div class="col-md-6">
+                <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info" >
+            <div class="box-header with-border">
+              <h3 class="box-title">คะเเนนสุทธิ</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                       
+                         <div id="columnchart_material" style="width: 780px; height:500px;"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+             
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        </div>
+        </div>
+
               @else
               <h1> ยังไม่มีข้อมูล</h1>
                    @endif
-          </div>
+          
         </div>
       </div>
     </div>
   </section>
 </div>
-         
-     
+    
+   
   @endsection
