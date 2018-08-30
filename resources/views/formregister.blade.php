@@ -26,12 +26,6 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
    
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet">
-
-
-
-
-
-
 </head>
 
 <body>
