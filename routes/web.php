@@ -46,6 +46,7 @@ Route::post('istestertotest','Evatesting2Controller@test');
 Route::post('starttest','Evatesting2Controller@test2');
 Route::get('evareport/{id}/report','Evatesting2Controller@test3');
 Route::get('summeva','Evatesting2Controller@test4');
+Route::get('evareport/{id}/evareportblindname','Evatesting2Controller@test5');
 
 
 Auth::routes();
