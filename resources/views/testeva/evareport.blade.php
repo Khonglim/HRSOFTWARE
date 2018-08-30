@@ -8,6 +8,13 @@
     top: 48px;
     right: 15px;
 }
+.chart {
+  width: 100%; 
+  min-height: 400px;
+}
+.row {
+  margin:0 !important;
+}
 </style>
 <script>
 
@@ -21,7 +28,7 @@ function myFunction() {
 }
 
 </script>
-  
+   <script src='https://www.google.com/jsapi'></script>
 <div class="content-wrapper">
   <section class="content" >
     <div class="row">
@@ -356,9 +363,9 @@ function myFunction() {
                   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
-                        google.charts.setOnLoadCallback(drawChart);
+                        google.charts.setOnLoadCallback(drawChart1);
 
-                        function drawChart() {
+                        function drawChart1() {
                           var data = google.visualization.arrayToDataTable([
                             ['{{$b}}', 'คะเเนน'],
                               <?php
@@ -372,16 +379,19 @@ function myFunction() {
                           ]);
 
                           var options = {
+                            height: 400,
                             chart: {
                               title: '{{$b}}',
-                               'width':200,
-                               'height':150
-                              
+                               
                             }
                           };
 
-                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1'));
-                           chart.draw(data, google.charts.Bar.convertOptions(options));
+                           
+                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1'));
+                              chart.draw(data, google.charts.Bar.convertOptions(options));
+                        $(window).resize(function(){
+                                  drawChart1();
+                        });
 
                           
                         }
@@ -389,9 +399,9 @@ function myFunction() {
                       </script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
-                        google.charts.setOnLoadCallback(drawChart);
+                        google.charts.setOnLoadCallback(drawChart2);
 
-                        function drawChart() {
+                        function drawChart2() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$c}}', 'คะเเนน'],
                               <?php
@@ -405,6 +415,7 @@ function myFunction() {
                           ]);
 
                           var options = {
+                            height: 400,
                             chart: {
                               title: '{{$c}}'
                              
@@ -414,14 +425,17 @@ function myFunction() {
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p2'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
+                          $(window).resize(function(){
+                                  drawChart2();
+                        });
                         }
 
                       </script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
-                        google.charts.setOnLoadCallback(drawChart);
+                        google.charts.setOnLoadCallback(drawChart3);
 
-                        function drawChart() {
+                        function drawChart3() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$d}}', 'คะเเนน'],
                               <?php
@@ -435,6 +449,7 @@ function myFunction() {
                           ]);
 
                           var options = {
+                            height:400,
                             chart: {
                               title: '{{$d}}'
                               
@@ -444,14 +459,17 @@ function myFunction() {
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p3'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
+                          $(window).resize(function(){
+                                  drawChart3();
+                        });
                         }
 
                       </script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
-                        google.charts.setOnLoadCallback(drawChart);
+                        google.charts.setOnLoadCallback(drawChart4);
 
-                        function drawChart() {
+                        function drawChart4() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$e}}', 'คะเเนน'],
                               <?php
@@ -465,6 +483,7 @@ function myFunction() {
                           ]);
 
                           var options = {
+                            height:400,
                             chart: {
                               title: '{{$e}}'
                              
@@ -474,14 +493,17 @@ function myFunction() {
                           var chart = new google.charts.Bar(document.getElementById('columnchart_materialp4'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
+                          $(window).resize(function(){
+                                  drawChart4();
+                        });
                         }
 
                       </script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
-                        google.charts.setOnLoadCallback(drawChart);
+                        google.charts.setOnLoadCallback(drawChart5);
 
-                        function drawChart() {
+                        function drawChart5() {
                           var data = google.visualization.arrayToDataTable([
 
                            ['{{$f}}', 'คะเเนน'],
@@ -496,6 +518,7 @@ function myFunction() {
                           ]);
 
                           var options = {
+                            height:400,
                             chart: {
                               title: '{{$f}}'
                             
@@ -505,6 +528,9 @@ function myFunction() {
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p5'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
+                          $(window).resize(function(){
+                                  drawChart5();
+                        });
                         }
 
                       </script>
@@ -527,12 +553,16 @@ function myFunction() {
                                         ]);
 
                                         var options = {
+                                          height:400,
                                           title: 'คะเเนนสุทธิ'
                                         };
 
-                                        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-                                        chart.draw(data, options);
+                                         function resize() {
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                          chart.draw(data, options);
+                              }
+                      window.onload = resize();
+                      window.onresize = resize;
                                       }
                                     </script>
                       <script type="text/javascript">
@@ -551,6 +581,7 @@ function myFunction() {
                           ]);
 
                           var options = {
+                            height:400,
                             chart: {
                               title: 'การประเมินประจำปี',
                               subtitle: 'ผลการประเมินประจำปี',
@@ -560,6 +591,9 @@ function myFunction() {
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
+                          $(window).resize(function(){
+                                  drawChart();
+                        });
                         }
 
                       </script>
@@ -576,8 +610,8 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body" id="toggleText11" >
-                  <div id="columnchart_material_p1" style="width: 780px; height:500px;"></div> 
+            <div class="box-body">
+                  <div id="columnchart_material_p1" class="charts"></div> 
 
             </div>
             <!-- /.box-body -->
@@ -633,8 +667,8 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body" id="toggleText21" >
-                       <div id="columnchart_material_p2" style="width: 780px; height:500px;"></div>
+            <div class="box-body" >
+                       <div id="columnchart_material_p2" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -690,8 +724,8 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body" id="toggleText31">
-              <div id="columnchart_material_p3" style="width: 780px; height:500px;"></div>
+            <div class="box-body" >
+              <div id="columnchart_material_p3" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -744,8 +778,8 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body" id="toggleText41" >
-                        <div id="columnchart_materialp4" style="width: 780px; height:500px;"></div>
+            <div class="box-body" >
+                        <div id="columnchart_materialp4" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -799,8 +833,8 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body" id="toggleText51">
-                    <div id="columnchart_material_p5" style="width: 780px; height:500px;"></div>
+            <div class="box-body">
+                    <div id="columnchart_material_p5" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -854,7 +888,7 @@ function myFunction() {
             <!-- /.box-header -->
             <div class="box-body">
                          
-                           <div id="piechart" style="width: 900px; height: 500px;"></div>
+                           <div id="piechart"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -879,7 +913,7 @@ function myFunction() {
             <!-- /.box-header -->
             <div class="box-body">
                        
-                         <div id="columnchart_material" style="width: 780px; height:500px;"></div>
+                         <div id="columnchart_material" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">

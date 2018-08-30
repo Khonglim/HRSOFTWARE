@@ -12,6 +12,7 @@ use App\Resulteva3;
 use App\Ngg_employee;
 use App\Employeetotest;
 use App\Ngg_evaluate_result;
+use App\Ngg_evaresult_comment;
 use Illuminate\Support\Facades\Input;
 
 class EvatestingController extends Controller
@@ -101,7 +102,19 @@ class EvatestingController extends Controller
         $result->nes_q_id = Input::get('t_110');
         $result->nes_q_point = Input::get('110');
         $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save(); 
+
+        $result= new Ngg_evaresult_comment;
+        $result->nec_q_id = Input::get('c_111');
+        if (Input::get('10')=='') {
+            $result->nec_comment='-';
+        }
+        else{
+            $result->nec_comment= Input::get('10');
+        }
+        $result->nec_evaluate_employee_id= Input::get('nee_id2');
         $result->save();
+
         $result =  new Ngg_evaluate_result;
         $result->nes_q_id = Input::get('t_21');
         $result->nes_q_point = Input::get('21');
@@ -142,6 +155,18 @@ class EvatestingController extends Controller
         $result->nes_q_point = Input::get('28');
         $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
         $result->save();
+
+        $result= new Ngg_evaresult_comment;
+        $result->nec_q_id = Input::get('c_29');
+        if (Input::get('20')=='') {
+            $result->nec_comment='-';
+        }
+        else{
+            $result->nec_comment= Input::get('20');
+        }
+        $result->nec_evaluate_employee_id= Input::get('nee_id2');
+        $result->save();
+
         $result =  new Ngg_evaluate_result;
         $result->nes_q_id = Input::get('t_31');
         $result->nes_q_point = Input::get('31');
@@ -172,6 +197,18 @@ class EvatestingController extends Controller
         $result->nes_q_point = Input::get('36');
         $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
         $result->save();
+
+        $result= new Ngg_evaresult_comment;
+        $result->nec_q_id = Input::get('c_37');
+         if (Input::get('30')=='') {
+           $result->nec_comment='-';
+        }
+        else{
+            $result->nec_comment= Input::get('30');
+        }
+        $result->nec_evaluate_employee_id= Input::get('nee_id2');
+        $result->save();
+
         $result =  new Ngg_evaluate_result;
         $result->nes_q_id = Input::get('t_41');
         $result->nes_q_point = Input::get('41');
@@ -201,7 +238,23 @@ class EvatestingController extends Controller
         $result->nes_q_id = Input::get('t_46');
         $result->nes_q_point = Input::get('46');
         $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
-        $result->save(); $result =  new Ngg_evaluate_result;
+        $result->save(); 
+
+        $result= new Ngg_evaresult_comment;
+        $result->nec_q_id = Input::get('c_47');
+        if (Input::get('4A')!='' && Input::get('4B')=='') {
+                $result->nec_comment= Input::get('4A');
+        }
+        elseif(Input::get('4A')=='' && Input::get('4B')!=''){
+                $result->nec_comment= Input::get('4B');  
+        } 
+        else{
+                 $result->nec_comment='-';
+        }
+        $result->nec_evaluate_employee_id= Input::get('nee_id2');
+        $result->save();
+
+        $result =  new Ngg_evaluate_result;
         $result->nes_q_id = Input::get('t_51');
         $result->nes_q_point = Input::get('51');
         $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
@@ -225,6 +278,17 @@ class EvatestingController extends Controller
         $result->nes_q_id = Input::get('t_55');
         $result->nes_q_point = Input::get('55');
         $result->nes_evaluate_employee_id = Input::get('nee_id2'); 
+        $result->save();
+
+        $result= new Ngg_evaresult_comment;
+        $result->nec_q_id = Input::get('c_56');
+        if (Input::get('50')=='') {
+            $result->nec_comment='-';
+        }
+        else{
+            $result->nec_comment= Input::get('50');
+        }
+        $result->nec_evaluate_employee_id= Input::get('nee_id2');
         $result->save();
         
 

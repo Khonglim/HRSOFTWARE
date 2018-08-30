@@ -128,12 +128,13 @@
                   </tr>
                   @elseif($questiontest['id_part']==$partoftest['id_part']&&$questiontest['q_subpart']==$partoftest['subpart']&&$questiontest['point']=='-')
                   <tr>
-                    <td colspan="5" style="width: 60%;height: 70px;">{{$questiontest->ask}}</td>
-                     
-                    <td colspan="5" style="width: 60%;height: 70px;">
+                     <td colspan="5" style="width: 60%;height: 70px;">{{$questiontest->ask}}</td>
 
-                    <textarea class="form-control" name={{$questiontest->id_part}}{{$questiontest->q_id}} ></textarea></td>
-                    
+                    <td style="display: none;"><input name='c_{{$questiontest->id_part}}{{$questiontest->q_id}}' type="text" value={{$questiontest->id}}></td>
+
+                    <td colspan="5" style="width: 60%;height: 70px;">
+                      <textarea class="form-control" name={{$questiontest->id_part}}{{$questiontest->q_subpart}}></textarea>
+                    </td>
                     
                    
                   </tr>
