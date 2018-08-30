@@ -12,6 +12,7 @@ use App\Resulteva3;
 use App\Ngg_employee;
 use App\Employeetotest;
 use App\Ngg_evaluate_result;
+use App\Ngg_evaresult_comment;
 use Illuminate\Support\Facades\Input;
 
 
@@ -41,7 +42,7 @@ class Evatesting2Controller extends Controller
         ); 
         return view("testeva/starttest",$data);
     }
-     public function test3($id)
+      public function test3($id)
     {
           if($id !== '') {
 
@@ -49,9 +50,10 @@ class Evatesting2Controller extends Controller
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
             $ngg_employee = Ngg_employee::all();
             $ngg_evaluate_results = Ngg_evaluate_result::all();
-            
+            $ngg_evaresult_comment = Ngg_evaresult_comment::all();
             $question = DB::table('question')->where('id_form', '=', 1)->get();
             $partof = DB::table('partof')->where('id_form', '=', 1)->get();
+            
             $data = array(
 
                 'employeetotests' => $employeetotests,
@@ -59,7 +61,8 @@ class Evatesting2Controller extends Controller
                 'ngg_employee' => $ngg_employee,
                 'partof' => $partof,
                 'question' => $question, 
-                'idtest' => $id
+                'idtest' => $id,
+                'ngg_evaresult_comment'=>$ngg_evaresult_comment
 
             );
 
@@ -74,20 +77,47 @@ class Evatesting2Controller extends Controller
         $ngg_employees = Ngg_employee::all();
         $ngg_evaluate_results = Ngg_evaluate_result::all();
         
+        
        $users = DB::table('employeetotest')
             ->leftJoin('ngg_employee', 'employeetotest.nee_by_employee', '=', 'ngg_employee.nem_id')
-
             ->get();
-
-
-
         $data = array(
             'users' => $users,
             'employeetotests' => $employeetotests,
             'ngg_evaluate_results' => $ngg_evaluate_results,
-            'ngg_employees' => $ngg_employees
+            'ngg_employees' => $ngg_employees,
+            
         );  
          return view("summary/summeva",$data );
+        
+        
+    }
+    public function test5($id)
+    {
+          if($id !== '') {
+
+            
+            $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
+            $ngg_employee = Ngg_employee::all();
+            $ngg_evaluate_results = Ngg_evaluate_result::all();
+            $ngg_evaresult_comment = Ngg_evaresult_comment::all();
+            $question = DB::table('question')->where('id_form', '=', 1)->get();
+            $partof = DB::table('partof')->where('id_form', '=', 1)->get();
+            
+            $data = array(
+
+                'employeetotests' => $employeetotests,
+                'ngg_evaluate_results' => $ngg_evaluate_results,
+                'ngg_employee' => $ngg_employee,
+                'partof' => $partof,
+                'question' => $question, 
+                'idtest' => $id,
+                'ngg_evaresult_comment'=>$ngg_evaresult_comment
+
+            );
+
+            return view('testeva/evareportblindname',$data);
+        }
         
         
     }
