@@ -24,6 +24,9 @@ class DatabaseSeeder extends Seeder
         $this->call(FormforTableSeeder::class);
         $this->call(Ngg_employeeTableSeeder::class);
         $this->call(provinceTableSeeder::class);
+        $this->call(Ngg_evaluate_employeeTableSeeder::class);
+        $this->call(Ngg_levelTableSeeder::class);
+        $this->call(Ngg_sectorTableSeeder::class);
        
     }
 }

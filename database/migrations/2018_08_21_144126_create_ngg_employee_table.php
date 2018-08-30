@@ -15,8 +15,23 @@ class CreateNggEmployeeTable extends Migration
     {
         Schema::create('ngg_employee', function (Blueprint $table) {
             $table->increments('nem_id');
-            $table->string('nem_nickname');
             $table->string('nem_code');
+            $table->string('nem_id_card',20);
+            $table->string('nem_thai_title',50);
+            $table->string('nem_thai_firstname',200);
+            $table->string('nem_thai_lastname',200);
+            $table->string('nem_eng_title',50);
+            $table->string('nem_eng_firstname',200);
+            $table->string('nem_eng_lastname',200);
+            $table->string('nem_nickname');
+            $table->date('nem_birthday');
+            $table->tinyInteger('nem_company_id');
+            $table->tinyInteger('nem_position_id');
+            $table->tinyInteger('nem_department_id');
+            $table->tinyInteger('nem_sector_id');
+            $table->tinyInteger('nem_level_id');
+            $table->string('nem_remark');
+            $table->tinyInteger('nem_enable')->default('1');
             
         });
     }
