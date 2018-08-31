@@ -44,19 +44,19 @@
                    
                     <tbody>
                       <tr>
-                        <td style="text-align:center">ชื่อผู้สมัคร (Applicant’s Name)
+                        <td style="text-align:center" colspan="2">ชื่อผู้สมัคร (Applicant’s Name)
                             <select id="country" name="employee" required >
                             <option value="">--เลือกชื่อผู้สมัคร--</option>
                             @foreach ($employee  as $e)
                             <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
                             @endforeach
                       
-                        <td style="text-align:center" colspan="1">
-                            ตำแหน่งผู้สมัคร (Position)  
+                        <td style="text-align:center"colspan="1">
+                            ตำแหน่งผู้สมัคร (Position)  <br>
                         <input type="text" name="ngg_position" required>
                         
                         </td>
-                        <td>
+                     
                       </tr>
                       <tr>
                         <td rowspan="2" style="text-align:center">ข้อพิจารณา (OBSERVATIONS)</td>

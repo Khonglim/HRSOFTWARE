@@ -93,19 +93,13 @@ Route::get('sumdisc', function () {
 
 });
 
-Route::get('rate', function () {
-    
-    
+Route::get('rate', function () {return view("rate/forminterview");});
 
-    return view("rate/forminterview");
 
-});
+Route::get('form', function () {return view("formregister");});
 
-Route::get('form', function () {
-    
-   
-    
 
-    return view("formregister");
+Route::get('interview', function () { return view("rate/index");});
 
-});
+
+Route::get('save', function () { return view("rate/save");});

@@ -381,7 +381,7 @@ class Interview_supController extends Controller
        
 
 
-        return redirect('rate_sup/create');
+        return redirect('save');
     }
 
     /**

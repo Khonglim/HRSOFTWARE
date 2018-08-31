@@ -397,7 +397,7 @@ class InterviewController extends Controller
        
 
 
-        return redirect('rate/create');
+        return redirect('save');
 
 
 
