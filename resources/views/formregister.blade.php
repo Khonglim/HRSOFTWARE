@@ -26,6 +26,8 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
    
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet">
+
+    
 </head>
 
 <body>
@@ -37,36 +39,41 @@
 		        <div class="col-md-12 ">
 		            <!--      Wizard container        -->
 		            <div class="wizard-container">
-		                <div class="card wizard-card" data-color="green" id="wizardProfile">
+		                <div class="card wizard-card" data-color="orange" id="wizardProfile">
 		                   
                                     {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data','role'=>'form','data-toggle'=>'validator'])}}
 		                <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
 
-		                    	<div class="wizard-header">
+		                      <!--	<div class="wizard-header">
 		                        	<h3 class="wizard-title">
                                         NGG GROUP.
 		                        	</h3>
 									<h5>Cien Sesto NGGTP TAI Xian UW Other</h5>
-		                    	</div>
+		                    	</div>  -->
 								<div class="wizard-navigation">
 									<ul>
-			                            <li><a href="#about" data-toggle="tab">ประวัติส่วนตัว</a></li>
-			                            <li><a href="#account" data-toggle="tab">ประวัติการศึกษา</a></li>
+                                       <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>  
+                                        <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>  
+                                          <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li> 
+                                         <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li> 
+			                            <li><a href="#account" data-toggle="tab">การศึกษา</a></li>
                                         <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li>
-                                        <li><a href="#work" data-toggle="tab">ประวัติการทำงาน</a></li>
+                                        <li><a href="#work" data-toggle="tab">การทำงาน</a></li>
                                         <li><a href="#another" data-toggle="tab">อื่นๆ</a></li>
 			                        </ul>
 								</div>
 
 		                        <div class="tab-content">
-		                            <div class="tab-pane" id="about">
-		                           
+		                            <div class="tab-pane" id="about1">
+                                           
+                              
 		                                	<h4 class="info-text"> ประวัติส่วนตัว</h4>
 		                                	
 		                                    	<div class="picture-container">
+                                             
 		                                        	<div class="picture">
                                         				<img src="{{URL::asset('img/default-avatar.png')}}" class="picture-src" id="wizardPicturePreview" title=""/>
-		                                            	<input type="file" id="wizard-picture" required>
+		                                            	<input type="file" id="wizard-picture">
 		                                        	</div>
 		                                        	<h6>อัพโหลดรูปภาพ</h6>
                                                 </div>
@@ -182,7 +189,6 @@
 
                                         <div class="row">
 
-
                                                 <div class="col-md-1"></div>
                                                 <div class="col-md-4">
                                                     <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
@@ -205,844 +211,562 @@
                                                 <div class="col-md-1"></div>
                                                 <div class="col-md-4">
                                                     <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
-                                                        <label>ศาสนา</label><label class="text-danger">*</label>  
+                                                        <label>ศาสนา<small class="text-danger">*</small></label>  
                                                         {{ Form::select('religion', ['พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
                                                         <span class="text-danger">{{ $errors->first('religion') }}</span>
                                                         </div>
                                                 </div>
-                                                </div>
-                                                <hr>
 
-
-                                                <div class="row">
-                                                        <div class="col-md-1"></div>
-                                                        <div class="col-md-4">
-
-                                                                <div class="input-group">
-                                                                        <div class="form-group label-floating">
-                                                                                <label class="control-label">พี่น้องกี่คน</label>
-                                                                                {{Form::text('brothers','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
-                                                                       </div>
-                                                                    </div>
-                                                           
-                                                        </div>
-                                                        <div class="col-md-2"></div>
-                                                        <div class="col-md-4">
-                                                                <div class="input-group">
-                                                                        <div class="form-group label-floating">
-                                                                                <label class="control-label">เป็นคนที่</label>
-                                                                                {{Form::text('number','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
-                                                                       </div>
-                                                                    </div>
-                                                            
-                                                        </div>
-                                                        </div>
-
-
-
-                                                        <div class="row">
-                                                                <div class="col-md-1"></div>
-                                                                <div class="col-md-4">
-                                                                        <div class="input-group">
-                                                                                <div class="form-group label-floating">
-                                                                                        <label class="control-label">เลขบัตรประชาชน<small class="text-danger">*</small></label>
-                                                                                        {{Form::text('idcard','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"13"])}}   
-                                                                               </div>
-                                                                            </div>
-                                                                  
-                                                                </div>
-                                                                <div class="col-md-2"></div>
-                                                                <div class="col-md-3">
-                                                                        <div class="input-group">
-                                                                                <div class="form-group label-floating">
-                                                                                        <label class="control-label">ออกให้ ณ อำเภอ/เขต<small class="text-danger">*</small></label>
-                                                                                     {{ Form::text('issued','' , ['class' => 'form-control','id'=>'issued','required']) }}    
-                                                                               </div>
-                                                                            </div>
-                                                                    
-                                                                </div>
-                                                                </div>
-
-
-                                                                <div class="row">
-                                                                        <div class="col-md-1"></div>
-                                                                        <div class="col-md-3">
-                                                                                <div class="input-group">
-                                                                                        <div class="form-group label-floating">
-                                                                                                <label class="control-label">จังหวัด<small class="text-danger">*</small></label>
-                                                                                                {{ Form::text('province_crad','', ['class' => 'form-control','id'=>'province_crad','required']) }}     
-                                                                                       </div>
-                                                                                    </div>
-                                                                        </div>
-                                                                        </div>
-
-<hr>
-                                    <div class="row">
-                                                                                <div class="col-md-1"></div>
-                                                                                <div class="col-md-4">
-                                                                                    <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
-                                                                                            <label class="control-label"><h4>วันนออกบัตร<small class="text-danger">*</small></h4></label>
-                                                                                        {{Form::date('issueddate','',['class'=>'form-control','required'])}}   
-                                                                                        <span class="text-danger">{{ $errors->first('issueddate') }}</span>
-                                                                                        </div>
-                                                                                </div>
-                                                                                <div class="col-md-2"></div>
-                                                                                <div class="col-md-4">
-                                                                                    <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
-                                                                                            <label class="control-label"><h4>บัตรหมดอายุ<small class="text-danger">*</small></h4></label>
-                                                                                        {{Form::date('expid','',['class'=>'form-control','required'])}}   
-                                                                                        <span class="text-danger">{{ $errors->first('expid') }}</span>
-                                                                                        </div>
-                                                                                </div>
-                                                                                </div> 
-
-
-
-
-                                                                                <div class="row">
-                                                                                        <div class="col-md-1"></div>
-                                                                                        <div class="col-md-4">
-                                                                                        
-
-                                                                                                <div class="input-group">
-                                                                                                        <div class="form-group label-floating">
-                                                                                                                <label class="control-label">บัตรประจำตัวผู้เสียภาษี<small class="text-danger">*</small></label>
-                                                                                                                {{Form::text('texid','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"13"])}}      
-                                                                                                       </div>
-                                                                                                    </div>
-                                                                                        </div>
-                                                                                        <div class="col-md-2"></div>
-                                                                                        <div class="col-md-3">
-                                                                                            <div class="form-group {{ $errors->has('military_service') ? 'has-error' : '' }}" >
-                                                                                                    <label class="control-label"><h4>สถานะทางทหาร<small class="text-danger">*</small></h4></label> 
-                                                                                                    {{ Form::select('military_service', ['' =>'::เลือก::','-' =>'::ไม่มี::','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control','required']) }}
-                                                                                                <span class="text-danger">{{ $errors->first('military_service') }}</span>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                        </div>
-
-
-
-                                                                                        <div class="row">
-                                                                                                <div class="col-md-1"></div>
-                                                                                                <div class="col-md-4 ">
-                                                                                                    
-
-
-                                                                                                 <div class="input-group">
-                                                                                                        <div class="form-group label-floating">
-                                                                                                                <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้<small class="text-danger">*</small></label>
-                                                                                                                <textarea name="address1"  class="form-control"  rows="3"  required>{{ old('address1') }}</textarea>     
-                                                                                                       </div>
-                                                                                                    </div>
-
-
-
-
-
-                                                                                                </div>
-                                                                                                <div class="col-md-2"></div>
-                                                                                                <div class="col-md-4">
-                                                                                                        <div class="form-group label-floating">
-                                                                                                                <label class="control-label">ที่อยู่ตามบัตรประชาชน<small class="text-danger">*</small></label>
-                                                                                                                <textarea name="address2" class="form-control"  rows="3" required >{{ old('address2') }}</textarea> 
-                                                                                                       </div>
-
-                                                                                                
-                                                                                                </div>
-                                                                                                </div>
-
-
-                                                                                                <div class="row">
-                                                                                                        <div class="col-md-1"></div>
-                                                                                                        <div class="col-md-4">
-                                                                                                                <div class="form-group label-floating">
-                                                                                                                        <label class="control-label">โทรศัพท์ที่ติดต่อ<small class="text-danger">*</small></label>
-                                                                                                                        {{Form::text('tel','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}   
-                                                                                                               </div>
-                                                                                                            
-                                                                                                        </div>
-                                                                                                        <div class="col-md-2"></div>
-                                                                                                             <div class="col-md-4">
-                                                                                                                <div class="form-group label-floating">
-                                                                                                                        <label class="control-label">โทรศัพท์บ้าน</label>
-                                                                                                                        {{Form::text('home','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}   
-                                                                                                               </div>
-                                                                                                          
-                                                                                                            </div>
-                                                                                                        </div>
-
-
-
-
-                                                                                                        <div class="row">
-                                                                                                                <div class="col-md-1"></div>
-                                                                                                                <div class="col-md-4">
-                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                <label class="control-label">โทรศัพท์มือถือ<small class="text-danger">*</small></label>
-                                                                                                                                {{Form::text('moblie','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}    
-                                                                                                                       </div>
-                                                                                                                  
-                                                                                                                </div>
-                                                                                                                <div class="col-md-2"></div>
-                                                                                                                <div class="col-md-3">
-                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                <label class="control-label">โทรศัพท์สำนักงาน</label>
-                                                                                                                                {{Form::text('office','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}    
-                                                                                                                       </div>
-                                                                                                                       
-                                                                                                                </div>
-                                                                                                                </div>
-                                                                                                                <div class="row">
-                                                                                                                        <div class="col-md-1"></div>
-                                                                                                                        <div class="col-md-4">
-                                                                                                                                <div class="form-group label-floating">
-                                                                                                                                        <label class="control-label">อีเมล<small class="text-danger">*</small></label>
-                                                                                                                                        {{Form::email('email','',['class'=>'form-control','required'])}}   
-                                                                                                                               </div>
-                                                                                                                               
-                                                                                                                         
-                                                                                                                        </div>
-                                                                                                                        </div>
-                                                                                                                        <hr>
-                                                                                                                        <div class="row">
-                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                <div class="col-md-3">
-                                                                                                                                    <div class="form-group {{ $errors->has('living_status') ? 'has-error' : '' }}" >
-                                                                                                                                        <label >สถานะความเป็นอยู่:</label><label class="text-danger">*</label>  
-                                                                                                                                            {{ Form::select('living_status', ['' => '::เลือก::', 
-                                                                                                                                                                        'บ้านส่วนตัว' => 'บ้านส่วนตัว',
-                                                                                                                                                                        'บ้านเช่า' => 'บ้านเช่า',
-                                                                                                                                                                        'อาศัยกับบิดามารดา'=> 'อาศัยกับบิดามารดา',
-                                                                                                                                                                        'อาศัยกับผู้อื่น'=>'อาศัยกับผู้อื่น'
-                                                                                                                                                            ],null, ['class' => 'form-control','required']) }}
-                                                                                                                                                    <span class="text-danger">{{ $errors->first('living_status') }}</span>
-                                                                                                                                        </div>
-                                                                                                                                </div>
-                                                                                                                                <div class="col-md-3"></div>
-                                                                                                                                <div class="col-md-3">
-                                                                                                                                    <div class="form-group {{ $errors->has('marital_status') ? 'has-error' : '' }}" >
-                                                                                                                                        <label >สถานะครอบครัว</label><label class="text-danger">*</label>  
-                                                                                                                                            {{ Form::select('marital_status', [
-                                                                                                                                                                        '' => '::เลือก::', 
-                                                                                                                                                                        'โสด' => 'โสด',
-                                                                                                                                                                        'สมรส' => 'สมรส',
-                                                                                                                                                                        'หย่า'=> 'หย่า',
-                                                                                                                                                                        'หม้าย'=>'หม้าย',
-                                                                                                                                                                        'แยกกันอยู่'=>'แยกกันอยู่'
-                                                                                                                                                            ],null, ['class' => 'form-control','required']) }}
-                                                                                                                                                    <span class="text-danger">{{ $errors->first('marital_status') }}</span>        
-                                                                                                                                            </div>
-                                                                                                                                </div>
-                                                                                                                                </div>
-                                                                                                                                <div class="row">
-                                                                                                                                        <div class="col-md-1"></div>
-                                                                                                                                        <div class="col-md-3">
-                                                                                                                                            <div class="form-group">
-                                                                                                                                                <label >กรณีแต่งงาน</label>
-                                                                                                                                                    {{ Form::select('if_marricd', ['' =>'::เลือก::','จดทะเบียนสมรส' => 'จดทะเบียนสมรส','ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'],null, ['class' => 'form-control']) }}
-                                                                                                                                                </div>
-                                                                                                                                        </div>
-                                                                                                                                        <div class="col-md-3"></div>
-                                                                                                                                        <div class="col-md-3">
-                                                                                                                                            <div class="form-group">
-                                                                                                                                                <label >คู่มสมรส</label>
-                                                                                                                                                    {{ Form::select('spouse', ['' =>'::เลือก::','มี' => 'มี','ไม่มี' => 'ไม่มี'],null, ['class' => 'form-control']) }}
-                                                                                                                                                </div>
-                                                                                                                                        </div>
-                                                                                                                                        </div>
-                                                                                                                                        <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-3">
-                                                                                                                                                    <div class="form-group">
-                                                                                                                                                        <label >กรณีแต่งงาน</label>
-                                                                                                                                                            {{ Form::select('if_marricd', ['' =>'::เลือก::','จดทะเบียนสมรส' => 'จดทะเบียนสมรส','ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'],null, ['class' => 'form-control']) }}
-                                                                                                                                                        </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-md-3"></div>
-                                                                                                                                                <div class="col-md-3">
-                                                                                                                                                    <div class="form-group">
-                                                                                                                                                        <label >คู่มสมรส</label>
-                                                                                                                                                            {{ Form::select('spouse', ['' =>'::เลือก::','มี' => 'มี','ไม่มี' => 'ไม่มี'],null, ['class' => 'form-control']) }}
-                                                                                                                                                        </div>
-                                                                                                                                                </div>
-                                                                                                                                                </div>
-                                                                                                                                            <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">ชื่อคู่สมรส</label>
-                                                                                                                                                                {{Form::text('name_spouse','',['class'=>'form-control'])}}     
-                                                                                                                                                       </div>
-                                                                                                                                                 
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-md-2"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">อาชีพคู่สมรส</label>
-                                                                                                                                                                {{Form::text('spouse_occupation','',['class'=>'form-control'])}}    
-                                                                                                                                                       </div>
-                                                                                                                                                  
-                                                                                                                                                </div>
-                                                                                                                                                </div>
-                                                                                                                                            <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">สถานที่ทำงาน</label>
-                                                                                                                                                                {{Form::text('firm_address','',['class'=>'form-control'])}}     
-                                                                                                                                                       </div>
-                                                                                                                            
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-md-2"></div>
-                                                                                                                                                <div class="col-md-3">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">โทรศัพท์</label>
-                                                                                                                                                                {{Form::text('spouse_tel','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}      
-                                                                                                                                                       </div>
-                                                                                                                                                </div>
-                                                                                                                                                </div>
-                                                                                                                                            <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">จำนวนบุตรทั้งหมด/คน</label>
-                                                                                                                                                                {{Form::text('children','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
-                                                                                                                                                       </div>
-                                                                                                                                                   
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-md-2"></div>
-                                                                                                                                                <div class="col-md-2">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">หญิง/คน</label>
-                                                                                                                                                                {{Form::text('girls','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}   
-                                                                                                                                                       </div>
-                                                                                                                                                       
-                                                                                                                                                    </div>
-                                                                                                                                                    <div class="col-md-2">
-                                                                                                                                                            <div class="form-group label-floating">
-                                                                                                                                                                    <label class="control-label">ชาย/คน </label>
-                                                                                                                                                                            {{Form::text('boy','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}     
-                                                                                                                                                           </div>
-                                                                                                                                                       
-                                                                                                                                                    </div>
-                                                                                                                                                
-                                                                                                                                                </div>
-                                                                                                                                                <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label"> จำนวนบุตรกำลังศึกษา/คน </label>
-                                                                                                                                                                {{Form::text('school','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}       
-                                                                                                                                                       </div>
-                                                                                                                            
-                                                                                                                                                </div>        
-                                                                                                                                                <div class="col-md-2"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label"> จำนวนบุตรที่อายุเกิน21ปี/คน </label>
-                                                                                                                                                                {{Form::text('over21','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}       
-                                                                                                                                                       </div>
-                                                                                                                                              
-                                                                                                                                                </div>
-                                                                                                                                                </div> 
-                                                                                                                                              <hr>
-                                                                                                                                            <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">  ชื่อบิดา<small class="text-danger">*</small></label>
-                                                                                                                                                                {{Form::text('namefather','',['class'=>'form-control','required'])}}   
-                                                                                                                                                       </div>
-                                                                                                                                                
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-md-2"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label"> นามสกุล<small class="text-danger">*</small></label>
-                                                                                                                                                                {{Form::text('lastfather','',['class'=>'form-control','required'])}}   
-                                                                                                                                                       </div>
-                                                                                                                                                   
-                                                                                                                                                </div>
-                                                                                                                                                </div>
-                                                                                                                                            <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label"> อาชีพ<small class="text-danger">*</small></label>
-                                                                                                                                                                {{Form::text('occupation_father','',['class'=>'form-control','required'])}}   
-                                                                                                                                                       </div>
-                                                                                                                                                
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-md-2"></div>
-                                                                                                                                                <div class="col-md-3">
-                                                                                                                                                        <div class="form-group label-floating"> 
-                                                                                                                                                            <label class="control-label"><h4>สถานะ<small class="text-danger">*</small></h4></label><br>
-                                                                                                                                                        <input type="radio" name="alivef"  value="ยังมีชีวิตอยู่" required />ยังมีชีวิตอยู่
-                                                                                                                                                        <input type="radio" name="alivef"  value="ถึงแก่กรรม" required/> ถึงแก่กรรม                                
-                                                                                                                                                       
-                                                                                                                                                        </div>
-                                                                                                                                                </div>
-                                                                                                                                                </div>
-                                                                                                                                            <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">ชื่อมารดา<small class="text-danger">*</small></label>
-                                                                                                                                                                {{Form::text('namemother','',['class'=>'form-control','required'])}} 
-                                                                                                                                                       </div>
-                                                                                                                                                  
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-md-2"></div>
-                                                                                                                                                <div class="col-md-5">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">นามสกุล<small class="text-danger">*</small></label>
-                                                                                                                                                                {{Form::text('lasrmother','',['class'=>'form-control','required'])}}  
-                                                                                                                                                       </div>
-                                                                                                                                                 
-                                                                                                                                                </div>
-                                                                                                                                                </div>
-                                                                                                                                            <div class="row">
-                                                                                                                                                <div class="col-md-1"></div>
-                                                                                                                                                <div class="col-md-4">
-                                                                                                                                                        <div class="form-group label-floating">
-                                                                                                                                                                <label class="control-label">อาชีพ*</label>
-                                                                                                                                                                {{Form::text('occupationm','',['class'=>'form-control','required'])}} 
-                                                                                                                                                       </div>
-                                                                                                                                                  
-                                                                                                                                                </div>
-                                                                                                                                                <div class="col-md-2"></div>
-                                                                                                                                                <div class= "col-md-3">
-                                                                                                                                                    <div class="form-group label-floating"> 
-                                                                                                                                                            <label class="control-label"><h4>สถานะ*</h4></label><br>
-                                                                                                                                                        <input type="radio" name="alivem"  value="ยังมีชีวิตอยู่" required />ยังมีชีวิตอยู่
-                                                                                                                                                        <input type="radio" name="alivem"  value="ถึงแก่กรรม" required/> ถึงแก่กรรม
-                                                                                                                                                       
-                                                                                                                                                       
-                                                                                                                                                        </div>
-                                                                                                                                                </div>
-                                                                                                                                                </div>
-                                             
-
-
+                                                
                                     </div>
-                                    
-
-		                            <div class="tab-pane" id="account">
-                                            
-                                            <div class="row">
-                                                   
-                                                <h4 class="info-text" >ประถมศึกษา</h4></div>
-                                            <div class="row">
-                                                <div class="col-md-1"></div>
                                                 
-                                                <div class="col-md-4">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">ชื่อสถาบัน*</label>
-                                                                    {{Form::text('primary','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
 
-
-
-                                                </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เริ่มปีการศึกษา*</label>
-                                                                    {{Form::text('year1','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">จบปีการศึกษา*</label>
-                                                                        {{Form::text('year2','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                                </div> 
-                                                
-                                                </div>
-                                                </div>
-                                            <div class="row">
-                                                    <div class="col-md-1"></div>
-                                                <div class="col-md-3">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เกรดเฉลี่ย</label>
-                                                                    {{Form::text('gpa','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">สาขา</label>
-                                                                        {{Form::text('major','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                                </div> 
-
-
-                                                       
-                                                </div>
-                                                <div class="col-md-3"></div>
-                                                <div class="col-md-2">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">วุฒิที่ได้รับ</label>
-                                                                    {{Form::text('degree1','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                </div>
-                                                </div>
-                                          <hr>
-                                            <div class="row"><h4 class="info-text">มัธยมศึกษา</h4></div>
-                                            <div class="row">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-4">
-                                                
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">ชื่อสถาบัน*</label>
-                                                                    {{Form::text('secondary','',['class'=>'form-control','required'])}}
-                                                               </div>
-                                                            </div> 
-                                                </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">เริ่มปีการศึกษา*</label>
-                                                                        {{Form::text('year3','',['class'=>'form-control','required'])}}
-                                                                   </div>
-                                                                </div> 
-                                                                <div class="input-group">
-                                                                        <div class="form-group label-floating">
-                                                                            <label class="control-label">จบปีการศึกษา*</label>
-                                                                            {{Form::text('year4','',['class'=>'form-control','required'])}}
-                                                                       </div>
-                                                                 </div> 
+                                    <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-4">
+                        
+                                                    <div class="input-group">
+                                                            <div class="form-group label-floating">
+                                                                    <label class="control-label">พี่น้องกี่คน</label>
+                                                                    {{Form::text('brothers','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
+                                                           </div>
                                                         </div>
-                                                </div>
-                                                </div>
-                                            <div class="row">
-                                                    <div class="col-md-1"></div>
-                                                <div class="col-md-3">
+                                               
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-4">
+                                                    <div class="input-group">
+                                                            <div class="form-group label-floating">
+                                                                    <label class="control-label">เป็นคนที่</label>
+                                                                    {{Form::text('number','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
+                                                           </div>
+                                                        </div>
+                                                        
+                                            </div>
+                                            </div>
+                                               
+                                                                                                                       
+                                                                                                                      
+                                                                                                                                             
+    
+       </div>
+       <div class="tab-pane" id="about2">                        
+         <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-4">
+                                    <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                    <label class="control-label">เลขบัตรประชาชน<small class="text-danger">*</small></label>
+                                                    {{Form::text('idcard','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"13"])}}   
+                                           </div>
+                                        </div>
+                              
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3">
+                                    <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                    <label class="control-label">ออกให้ ณ อำเภอ/เขต<small class="text-danger">*</small></label>
+                                                 {{ Form::text('issued','' , ['class' => 'form-control','id'=>'issued','required']) }}    
+                                           </div>
+                                        </div>
+                                
+                               </div>
+                            </div>
 
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เกรดเฉลี่ย*</label>
-                                                                    {{Form::text('gpas','',['class'=>'form-control','required'])}}
-                                                               </div>
-                                                            </div> 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">สาขา*</label>
-                                                                        {{Form::text('majors','',['class'=>'form-control','required'])}}
-                                                                   </div>
-                                                                </div> 
-                                                   
-                                                    
+
+                            <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-3">
+                                            <div class="input-group">
+                                                    <div class="form-group label-floating">
+                                                            <label class="control-label">จังหวัด<small class="text-danger">*</small></label>
+                                                            {{ Form::text('province_crad','', ['class' => 'form-control','id'=>'province_crad','required']) }}     
+                                                   </div>
+                                                </div>
+                                    </div>
+                                    </div>
+
+                                  <hr>
+                                           <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-3">
+                                                <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
+                                                        <label class="control-label"><h4>วันนออกบัตร<small class="text-danger">*</small></h4></label>
+                                                    {{Form::date('issueddate','',['class'=>'form-control','required'])}}   
+                                                    <span class="text-danger">{{ $errors->first('issueddate') }}</span>
                                                     </div>
-                                                <div class="col-md-3"></div>
-                                                <div class="col-md-2">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">วุฒิที่ได้รับ*</label>
-                                                                    {{Form::text('degree2','',['class'=>'form-control','required'])}}
-                                                               </div>
-                                                            </div> 
-
-                                                  
-                                                </div>
-                                                </div>
-                                         <hr>
-                                            <div class="row"><h4 class="info-text">อาชีวะศึกษา</h4></div>
-                                            <div class="row">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-4">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">ชื่อสถาบัน*</label>
-                                                                    {{Form::text('vocation','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เริ่มปีการศึกษา*</label>
-                                                                    {{Form::text('year5','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">จบปีการศึกษา*</label>
-                                                                        {{Form::text('year6','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                             </div> 
-                                                </div>
-                                                </div>
-                                            <div class="row">
-                                                    <div class="col-md-1"></div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label>เกรดเฉลี่ย :</label>
-                                                            {{Form::text('gpav','',['class'=>'form-control'])}}
-                                                        </div>
-                                                        <div class="form-group">
-                                                                <label>สาขา :</label>
-                                                                    {{Form::text('majorv','',['class'=>'form-control'])}}
-                                                                </div>
-                                                </div>
-                                                <div class="col-md-3"></div>
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <label>วุฒิที่ได้รับ :</label>
-                                                            {{Form::text('degree3','',['class'=>'form-control'])}}
-                                                        </div>
-                                                </div>
-                                                </div>
-                                          <hr>
-                                            <div class="row"><h4 class="info-text">อนุปริญญา </h4></div>
-                                            <div class="row">
-                                                <div class="col-md-1"></div>                    
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>ชื่อสถาบัน :</label>
-                                                            {{Form::text('diploma','',['class'=>'form-control'])}}
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
-
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เริ่มปีการศึกษา*</label>
-                                                                    {{Form::text('year7','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">จบปีการศึกษา*</label>
-                                                                        {{Form::text('year8','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                             </div> 
-                                                </div>
-                                                </div>
-                                            <div class="row">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label>เกรดเฉลี่ย :</label>
-                                                            {{Form::text('gpad','',['class'=>'form-control'])}}
-                                                        </div>
-                                                        <div class="form-group">
-                                                                <label>สาขา :</label>
-                                                                {{Form::text('majord','',['class'=>'form-control'])}}
-                                                                </div>
-                                                </div>
-                                                <div class="col-md-3"></div>
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <label>วุฒิที่ได้รับ :</label>
-                                                        {{Form::text('degree4','',['class'=>'form-control'])}}
-                                                        </div>
-                                                </div>
-                                                </div>
-                                           <hr>
-                                            <div class="row"><h4  class="info-text" >ปริญญาตรี</h4></div>
-                                            <div class="row">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-4">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">ชื่อสถาบัน *</label>
-                                                                    {{Form::text('bachelor','',['class'=>'form-control','required'])}}
-                                                               </div>
-                                                            </div> 
-                                                 
-                                                </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เริ่มปีการศึกษา*</label>
-                                                                    {{Form::text('year9','',['class'=>'form-control','required'])}}
-                                                               </div>
-                                                            </div> 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">จบปีการศึกษา*</label>
-                                                                        {{Form::text('year10','',['class'=>'form-control','required'])}}
-                                                                   </div>
-                                                             </div> 
-                                              
-                                                </div>
-                                                </div>
-                                            <div class="row">
-                                                    <div class="col-md-1"></div>
-                                                <div class="col-md-3">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เกรดเฉลี่ย*</label>
-                                                                    {{Form::text('gpab','',['class'=>'form-control','required'])}}
-                                                               </div>
-                                                            </div> 
-                                                  
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">สาขา *</label>
-                                                                    {{Form::text('bachelor','',['class'=>'form-control','required'])}}
-                                                               </div>
-                                                            </div> 
-                                                    
-                                                </div>
-                                                <div class="col-md-3"></div>
-                                                <div class="col-md-2">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">วุฒิที่ได้รับ*</label>
-                                                                    {{Form::text('degree5','',['class'=>'form-control','required'])}}
-                                                               </div>
-                                                            </div> 
-                                                 
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-3">
+                                                <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
+                                                        <label class="control-label"><h4>บัตรหมดอายุ<small class="text-danger">*</small></h4></label>
+                                                    {{Form::date('expid','',['class'=>'form-control','required'])}}   
+                                                    <span class="text-danger">{{ $errors->first('expid') }}</span>
                                                     </div>
-                                                </div>
-                                            <hr>
-                                            <div class="row"><h4 class="info-text">ปริญญาโท</h4></div>
-                                            <div class="row">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-4">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">ชื่อสถาบัน</label>
-                                                                    {{Form::text('master','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                 
-                                                   
-                                                </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
+                                            </div>
+                                            </div> 
 
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เริ่มปีการศึกษา*</label>
-                                                                    {{Form::text('year11','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">จบปีการศึกษา*</label>
-                                                                        {{Form::text('year12','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                             </div> 
-                                                     </div>
-                                                </div>
+
+
+
                                             <div class="row">
                                                     <div class="col-md-1"></div>
                                                     <div class="col-md-3">
+                                                    
+
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
-                                                                        <label class="control-label">เกรดเฉลี่ย</label>
-                                                                        {{Form::text('gpam','',['class'=>'form-control'])}}
+                                                                            <label class="control-label">บัตรประจำตัวผู้เสียภาษี<small class="text-danger">*</small></label>
+                                                                            {{Form::text('texid','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"13"])}}      
                                                                    </div>
-                                                                </div> 
-                                                                <div class="input-group">
-                                                                        <div class="form-group label-floating">
-                                                                            <label class="control-label">สาขา</label>
-                                                                            {{Form::text('majorm','',['class'=>'form-control'])}}
-                                                                       </div>
-                                                                    </div> 
-                                                          
+                                                                </div>
                                                     </div>
-                                                    <div class="col-md-3"></div>
-                                                    <div class="col-md-2">
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">วุฒิที่ได้รับ</label>
-                                                                        {{Form::text('degree6','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                                </div> 
-                                                      
+                                                    <div class="col-md-2"></div>
+                                                    <div class="col-md-3">
+                                                            <div class="form-group label-floating">
+                                                                <label class="control-label">สถานะทางทหาร<small class="text-danger">*</small></label> 
+                                                                {{ Form::select('military_service', ['' =>'','-' =>'ไม่มี','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control','required']) }}
+                                                            <span class="text-danger">{{ $errors->first('military_service') }}</span>
+                                                            </div>
                                                     </div>
                                                     </div>
-                                            <hr>
-                                            <div class="row"><h4 class="info-text" >อื่นๆ</h4></div>
-                                            <div class="row">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-4">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">ชื่อสถาบัน</label>
-                                                                    {{Form::text('otherE','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                 
-                                                </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
 
 
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เริ่มปีการศึกษา*</label>
-                                                                    {{Form::text('year13','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label">จบปีการศึกษา*</label>
-                                                                        {{Form::text('year14','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                             </div> 
 
-                                                  
-                                                </div>
-                                                </div>
-                                            <div class="row">
-                                                    <div class="col-md-1"></div>
-                                                <div class="col-md-3">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">เกรดเฉลี่ย</label>
-                                                                    {{Form::text('gpao','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                            <div class="input-group">
+                                                    <div class="row">
+                                                            <div class="col-md-1"></div>
+                                                            <div class="col-md-3 ">
+                                                                
+
+
+                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
-                                                                        <label class="control-label">สาขา</label>
-                                                                        {{Form::text('majoro','',['class'=>'form-control'])}}
+                                                                            <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้<small class="text-danger">*</small></label>
+                                                                            <textarea name="address1"  class="form-control"  rows="3"  required>{{ old('address1') }}</textarea>     
                                                                    </div>
-                                                                </div> 
-                                                        
-                                                </div>
-                                                <div class="col-md-3"></div>
-                                                <div class="col-md-2">
-                                                        <div class="input-group">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">วุฒิที่ได้รับ</label>
-                                                                    {{Form::text('degree7','',['class'=>'form-control'])}}
-                                                               </div>
-                                                            </div> 
-                                                    </div>
-                                                </div>
+                                                                </div>
+
+
+
+
+
+                                                            </div>
+                                                            <div class="col-md-2"></div>
+                                                            <div class="col-md-3">
+                                                                    <div class="form-group label-floating">
+                                                                            <label class="control-label">ที่อยู่ตามบัตรประชาชน<small class="text-danger">*</small></label>
+                                                                            <textarea name="address2" class="form-control"  rows="3" required >{{ old('address2') }}</textarea> 
+                                                                   </div>
+
+                                                            
+                                                            </div>
+                                                            </div>
+
+
+                                                            <div class="row">
+                                                                    <div class="col-md-1"></div>
+                                                                    <div class="col-md-3">
+                                                                            <div class="form-group label-floating">
+                                                                                    <label class="control-label">โทรศัพท์ที่ติดต่อ<small class="text-danger">*</small></label>
+                                                                                    {{Form::text('tel','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}   
+                                                                           </div>
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-md-2"></div>
+                                                                         <div class="col-md-3">
+                                                                            <div class="form-group label-floating">
+                                                                                    <label class="control-label">โทรศัพท์บ้าน</label>
+                                                                                    {{Form::text('home','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}   
+                                                                           </div>
+                                                                      
+                                                                        </div>
+                                                                    </div>
+
+
+
+
+                                                                    <div class="row">
+                                                                            <div class="col-md-1"></div>
+                                                                            <div class="col-md-3">
+                                                                                    <div class="form-group label-floating">
+                                                                                            <label class="control-label">โทรศัพท์มือถือ<small class="text-danger">*</small></label>
+                                                                                            {{Form::text('moblie','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}    
+                                                                                   </div>
+                                                                              
+                                                                            </div>
+                                                                            <div class="col-md-2"></div>
+                                                                            <div class="col-md-3">
+                                                                                    <div class="form-group label-floating">
+                                                                                            <label class="control-label">โทรศัพท์สำนักงาน</label>
+                                                                                            {{Form::text('office','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}    
+                                                                                   </div>
+                                                                                   
+                                                                            </div>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                    <div class="col-md-1"></div>
+                                                                                    <div class="col-md-3">
+                                                                                            <div class="form-group label-floating">
+                                                                                                    <label class="control-label">อีเมล<small class="text-danger">*</small></label>
+                                                                                                    {{Form::email('email','',['class'=>'form-control','required'])}}   
+                                                                                           </div>
+                                                                                           
+                                                                                     
+                                                         </div>
+                                        </div>
+        </div>                          
+        
+        
+        <div class="tab-pane" id="about3">
+
+                <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3">
+                            <div class="form-group label-floating">
+                                <label class="control-label" >สถานะความเป็นอยู่<small class="text-danger">*</small></label>  
+                                    {{ Form::select('living_status', ['' => '', 
+                                                                'บ้านส่วนตัว' => 'บ้านส่วนตัว',
+                                                                'บ้านเช่า' => 'บ้านเช่า',
+                                                                'อาศัยกับบิดามารดา'=> 'อาศัยกับบิดามารดา',
+                                                                'อาศัยกับผู้อื่น'=>'อาศัยกับผู้อื่น'
+                                                    ],null, ['class' => 'form-control','required']) }}
+                                            <span class="text-danger">{{ $errors->first('living_status') }}</span>
+                                </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <div class="form-group label-floating">
+                                <label class="control-label" >สถานะครอบครัว<small class="text-danger">*</small></label>  
+                                    {{ Form::select('marital_status', [
+                                                                '' => '', 
+                                                                'โสด' => 'โสด',
+                                                                'สมรส' => 'สมรส',
+                                                                'หย่า'=> 'หย่า',
+                                                                'หม้าย'=>'หม้าย',
+                                                                'แยกกันอยู่'=>'แยกกันอยู่'
+                                                    ],null, ['class' => 'form-control','required']) }}
+                                            <span class="text-danger">{{ $errors->first('marital_status') }}</span>        
                                     </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-3">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label" >กรณีแต่งงาน</label>
+                                            {{ Form::select('if_marricd', ['' =>'','จดทะเบียนสมรส' => 'จดทะเบียนสมรส','ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'],null, ['class' => 'form-control']) }}
+                                        </div>
+                                </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label" >คู่มสมรส</label>
+                                            {{ Form::select('spouse', ['' =>'','มี' => 'มี','ไม่มี' => 'ไม่มี'],null, ['class' => 'form-control']) }}
+                                        </div>
+                                </div>
+                                </div>
+                             
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                        <label class="control-label">ชื่อคู่สมรส</label>
+                                                        {{Form::text('name_spouse','',['class'=>'form-control'])}}     
+                                               </div>
+                                         
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                        <label class="control-label">อาชีพคู่สมรส</label>
+                                                        {{Form::text('spouse_occupation','',['class'=>'form-control'])}}    
+                                               </div>
+                                          
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                        <label class="control-label">สถานที่ทำงาน</label>
+                                                        {{Form::text('firm_address','',['class'=>'form-control'])}}     
+                                               </div>
+                    
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-3">
+                                                <div class="form-group label-floating">
+                                                        <label class="control-label">โทรศัพท์</label>
+                                                        {{Form::text('spouse_tel','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}      
+                                               </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                        <label class="control-label">จำนวนบุตรทั้งหมด/คน</label>
+                                                        {{Form::text('children','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
+                                               </div>
+                                           
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2">
+                                                <div class="form-group label-floating">
+                                                        <label class="control-label">หญิง/คน</label>
+                                                        {{Form::text('girls','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}   
+                                               </div>
+                                               
+                                            </div>
+                                            <div class="col-md-2">
+                                                    <div class="form-group label-floating">
+                                                            <label class="control-label">ชาย/คน </label>
+                                                                    {{Form::text('boy','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}     
+                                                   </div>
+                                               
+                                            </div>
+                                        
+                                        </div>
+                                        <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                        <label class="control-label"> จำนวนบุตรกำลังศึกษา/คน </label>
+                                                        {{Form::text('school','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}       
+                                               </div>
+                    
+                                        </div>        
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                        <label class="control-label"> จำนวนบุตรที่อายุเกิน21ปี/คน </label>
+                                                        {{Form::text('over21','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}       
+                                               </div>
+                                      
+                                        </div>
+                                        </div>   
+        </div> 
+        
+        
+        <div class="tab-pane" id="about4">
+
+
+                <div class="row">
+                      <div class="col-md-1"></div>
+                     <div class="col-md-4">
+                      <div class="form-group label-floating">
+                   <label class="control-label">  ชื่อบิดา<small class="text-danger">*</small></label>
+                    {{Form::text('namefather','',['class'=>'form-control','required'])}}   
+                          </div>
+                                                                                                                                                                
+                                  </div>
+                  <div class="col-md-2"></div>
+                                             <div class="col-md-3">
+                                              <div class="form-group label-floating">
+                      <label class="control-label"> นามสกุล<small class="text-danger">*</small></label>
+                                       {{Form::text('lastfather','',['class'=>'form-control','required'])}}   
+                                 </div>
+                                                                                                                                                                   
+                    </div>
+                  </div>
+                         <div class="row">
+                            <div class="col-md-1"></div>
+                 <div class="col-md-4">
+                             <div class="form-group label-floating">
+                            <label class="control-label"> อาชีพ<small class="text-danger">*</small></label>
+                              {{Form::text('occupation_father','',['class'=>'form-control','required'])}}   
+                                         </div>
+                                                                                                                                                                
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-3">
+                                 <div class="form-group label-floating"> 
+                             <label class="control-label">สถานะ<small class="text-danger">*</small></label>
+                
+                           {{ Form::select('alivef', [ '' => '', 'ยังมีชีวิตอยู่' => 'ยังมีชีวิตอยู่','ถึงแก่กรรม' => 'ถึงแก่กรรม'],null, ['class' => 'form-control','required']) }} 
+                                                                                                                                                                                                   
+                                                                                                                                                                       
+                                       </div>
+                                         </div>
+                                         </div>
+                                 <div class="row">
+                        <div class="col-md-1"></div>
+                                 <div class="col-md-4">
+                            <div class="form-group label-floating">
+                        <label class="control-label">ชื่อมารดา<small class="text-danger">*</small></label>
+                     {{Form::text('namemother','',['class'=>'form-control','required'])}}
+                                                               </div>
+                                                                                                                                                                  
+                                                           </div>
+                                                 <div class="col-md-2"></div>
+                                            <div class="col-md-3">
+                                                                             <div class="form-group label-floating">
+                                                 <label class="control-label">นามสกุล<small class="text-danger">*</small></label>
+                                           {{Form::text('lasrmother','',['class'=>'form-control','required'])}}  
+                                             </div>
+                                                                                                                                                                 
+                                                </div>
+                                     </div>
+                                 <div class="row">
+                                                  <div class="col-md-1"></div>
+                                      <div class="col-md-4">
+                                                    <div class="form-group label-floating">
+                                                         <label class="control-label">อาชีพ<small class="text-danger">*</small></label>
+                                                  {{Form::text('occupationm','',['class'=>'form-control','required'])}} 
+                                            </div>
+                                                                                                                                                                  
+                                         </div>
+                                   <div class="col-md-2"></div>
+                                  <div class= "col-md-3">
+                                 <div class="form-group label-floating"> 
+                                           <label class="control-label">สถานะ<small class="text-danger">*</small></label>
+                
+                     {{ Form::select('alivem', [ '' => '', 'ยังมีชีวิตอยู่' => 'ยังมีชีวิตอยู่','ถึงแก่กรรม' => 'ถึงแก่กรรม'],null, ['class' => 'form-control','required']) }} 
+                                                                                                                                                                     
+                                                                                                                                                                       
+                      </div>
+                  </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+        <div class="tab-pane" id="account">
+
+        <h4 class="text-danger">  กรุณาคลิกเลือกที่ต้องการระบุการศึกษา </h4>
+                <table class="table table-striped" id="foo">
+                        <thead>
+                          <tr>
+                            <th style="text-align:center">ระดับการศึกษา</th>
+                            <th style="text-align:center">สถาบัน</th>
+                            <th style="text-align:center">เริ่มปีการศึกษา</th>
+                            <th style="text-align:center">จบปีการศึกษา</th>
+                            <th style="text-align:center">เกรดเฉลี่ย</th>
+                            <th style="text-align:center">วุฒิที่ได้รับ</th>
+                            <th style="text-align:center">สาขา</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="text-align:center"> <input type="checkbox" id="form_setchange1"/><br> ประถมศึกษา  </td>
+                            <td>
+                            {{Form::text('primary','',['class'=>'form-control','id'=>'primary','disabled','required'])}}
+                            </td>
+                            <td>{{Form::text('year1','',['class'=>'form-control','id'=>'year1','disabled','required'])}}</td>
+                            <td> {{Form::text('year2','',['class'=>'form-control','id'=>'year2','disabled','required'])}}</td>
+                            <td> {{Form::text('gpa','',['class'=>'form-control','id'=>'gpa','disabled','required'])}}</td>
+                            <td>   {{Form::text('degree1','',['class'=>'form-control','id'=>'degree1','disabled','required'])}}</td>
+                            <td> {{Form::text('major','',['class'=>'form-control','id'=>'major','disabled','required'])}}</td>
+                          </tr>
+                          
+                          <tr>
+                            <td style="text-align:center"><input type="checkbox" id="form_setchange2" /><br>มัธยมศึกษา</td>
+                            <td>{{Form::text('secondary','',['class'=>'form-control','required','id'=>'secondary','disabled'])}}</td>
+                            <td>{{Form::text('year3','',['class'=>'form-control','required','id'=>'year3','disabled'])}}</td>
+                            <td>{{Form::text('year4','',['class'=>'form-control','required','id'=>'year4','disabled'])}}</td>
+                            <td>{{Form::text('gpas','',['class'=>'form-control','required','id'=>'gpas','disabled'])}}</td>
+                            <td> {{Form::text('degree2','',['class'=>'form-control','id'=>'degree2','disabled'])}}</td>
+                            <td>{{Form::text('majors','',['class'=>'form-control','required','id'=>'majors','disabled'])}}</td>
+                          </tr>
+                        
+                          <tr>
+                            <td style="text-align:center"><input type="checkbox" id="form_setchange3"/><br>อาชีวะศึกษา</td>
+                            <td>{{Form::text('vocation','',['class'=>'form-control','id'=>'vocation','disabled','required'])}}</td>
+                            <td>{{Form::text('year5','',['class'=>'form-control','id'=>'year5','disabled','required'])}}</td>
+                            <td>{{Form::text('year6','',['class'=>'form-control','id'=>'year6','disabled','required'])}}</td>
+                            <td>{{Form::text('gpav','',['class'=>'form-control','id'=>'gpav','disabled','required'])}}</td>
+                            <td> {{Form::text('degree3','',['class'=>'form-control','id'=>'degree3','disabled','required'])}}</td>
+                            <td> {{Form::text('majorv','',['class'=>'form-control','id'=>'majorv','disabled','required'])}}</td>
+                           
+                          </tr>
+                         
+                          <tr>
+                                <td style="text-align:center"><input type="checkbox" id="form_setchange4"/><br>อนุปริญญา</td>
+                                <td>  {{Form::text('diploma','',['class'=>'form-control','id'=>'diploma','disabled','required'])}}</td>
+                                <td> {{Form::text('year7','',['class'=>'form-control','id'=>'year7','disabled','required'])}}</td>
+                                <td> {{Form::text('year8','',['class'=>'form-control','id'=>'year8','disabled','required'])}}</td>
+                                <td>{{Form::text('gpad','',['class'=>'form-control','id'=>'gpad','disabled','required'])}}</td>
+                                <td>  {{Form::text('majord','',['class'=>'form-control','id'=>'majord','disabled','required'])}}</td>
+                                <td>{{Form::text('degree4','',['class'=>'form-control','id'=>'degree4','disabled','required'])}}</td>
+                              </tr>
+
+                              <tr>
+                                    <td style="text-align:center"><input type="checkbox" id="form_setchange5"/><br>ปริญญาตรี</td>
+                                    <td> {{Form::text('bachelor','',['class'=>'form-control','required','id'=>'bachelor','disabled'])}}</td>
+                                    <td>{{Form::text('year9','',['class'=>'form-control','required','id'=>'year9','disabled'])}}</td>
+                                    <td>{{Form::text('year10','',['class'=>'form-control','required','id'=>'year10','disabled'])}}</td>
+                                    <td>{{Form::text('gpab','',['class'=>'form-control','required','id'=>'gpab','disabled'])}}</td>
+                                    <td>{{Form::text('majorb','',['class'=>'form-control','required','id'=>'majorb','disabled'])}}</td>
+                                    <td>{{Form::text('degree5','',['class'=>'form-control','required','id'=>'degree5','disabled'])}}</td>
+                                  </tr>
+
+
+                         <tr>
+                            <td style="text-align:center"><input type="checkbox" id="form_setchange6"/><br>ปริญญาโท</td>
+                            <td>{{Form::text('master','',['class'=>'form-control','id'=>'master','disabled','required'])}}</td>
+                            <td>{{Form::text('year11','',['class'=>'form-control','id'=>'year11','disabled','required'])}}</td>
+                            <td>{{Form::text('year12','',['class'=>'form-control','id'=>'year12','disabled','required'])}}</td>
+                            <td>{{Form::text('gpam','',['class'=>'form-control','id'=>'gpam','disabled','required'])}}</td>
+                            <td>{{Form::text('majorm','',['class'=>'form-control','id'=>'majorm','disabled','required'])}}</td>
+                            <td>{{Form::text('degree6','',['class'=>'form-control','id'=>'degree6','disabled','required'])}}</td>
+
+                          </tr>
+
+                           <tr>
+                                <td style="text-align:center"><input type="checkbox" id="form_setchange7"/><br>อื่นๆ</td>
+                                <td>{{Form::text('otherE','',['class'=>'form-control','id'=>'otherE','disabled','required'])}}</td>
+                                <td>{{Form::text('year13','',['class'=>'form-control','id'=>'year13','disabled','required'])}}</td>
+                                <td>{{Form::text('year14','',['class'=>'form-control','id'=>'year14','disabled','required'])}}</td>
+                                <td>{{Form::text('gpao','',['class'=>'form-control','id'=>'gpao','disabled','required'])}}</td>
+                                <td>{{Form::text('majoro','',['class'=>'form-control','id'=>'majoro','disabled','required'])}}</td>
+                                <td>{{Form::text('degree7','',['class'=>'form-control','id'=>'degree7','disabled','required'])}}</td>
+                              </tr>
+
+                        </tbody>
+
+                    </table>                  
+            </div>
 		                            <div class="tab-pane" id="language">
-                                            <table class="table table-bordered">
+                                            <table class="table table-striped">
                                                     <thead>
                                                       <tr>
-                                                        <th>ประเภทภาษา</th>
-                                                        <th>การพูด</th>
-                                                        <th>การเข้าใจ</th>
-                                                        <th>การเขียน</th>
+                                                        <th style="text-align:center">ประเภทภาษา</th>
+                                                        <th style="text-align:center">การพูด</th>
+                                                        <th style="text-align:center">การเข้าใจ</th>
+                                                        <th style="text-align:center">การเขียน</th>
                                                       </tr>
                                                     </thead>
                                                     <tbody>
                                                       <tr>
-                                                        <td>ไทย *</td>
+                                                        <td style="text-align:center">ไทย *</td>
                                                         <td>
                                                                 <div class="form-group {{ $errors->has('thais') ? 'has-error' : '' }}">
                                                                     {{ Form::select('thais', [
@@ -1078,7 +802,7 @@
                                                             </td>
                                                       </tr>
                                                       <tr>
-                                                        <td>อังกฤษ *</td>
+                                                        <td style="text-align:center"> อังกฤษ *</td>
                                                         <td>
                                                             <div class="form-group {{ $errors->has('engliss') ? 'has-error' : '' }}">
                                                                     {{ Form::select('engliss', [
@@ -1116,7 +840,7 @@
                                                             </td>
                                                       </tr>
                                                       <tr>
-                                                        <td>อื่นๆ <input type="text" name="otherr" id="otherr" style="width:150px" name="otherr" class="form-control"/></td>
+                                                        <td style="text-align:center" >อื่นๆ <input type="text" name="otherr"  style="width:100%"  id="otherr"  name="otherr" class="form-control"/> </td>
                                                         <td>
                                                             {{ Form::select('othes', [
                                                                     '' =>'::เลือก::', 
@@ -1218,7 +942,9 @@
                                                                         {{Form::text('reasonLeaving1','',['class'=>'form-control'])}}
                                                                    </div>
                                                                 </div>   
-                                                    </div>
+                                                        </div>
+
+                                                       
                                                     <div class="col-md-1"></div>    
                                                     <div class="col-md-5">
 
@@ -1231,7 +957,7 @@
                                                     
                                                     </div>
                                                     </div>
-                                               
+                                               <hr>
                                                 <div class="row">
                                                         <div class="col-md-1"></div>
                                                     <div class="col-md-3">
@@ -1309,7 +1035,7 @@
                                                      
                                                         </div>
                                                     </div>
-                                               
+                                                    <hr>
                                                 <div class="row">
                                                         <div class="col-md-1"></div>
                                                     <div class="col-md-3">
@@ -1635,12 +1361,281 @@
 </body>
     <!--   Core JS Files   -->
     <script src="{{ asset('js/jquery-2.2.4.min.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('js/jquery.bootstrap.js') }}" defer></script>
     <script src="{{ asset('js/material-bootstrap-wizard.js') }}" defer></script>
     <script src="{{ asset('js/jquery.validate.min.js') }}" defer></script>
     
+    <script>
+        $('#form_setchange1').change(function() {
+          var $check = $(this);
+          if ($check.prop('checked')) {
+            $("#primary").removeAttr("disabled"); 
+            $("#year1").removeAttr("disabled"); 
+            $("#year2").removeAttr("disabled"); 
+            $("#gpa").removeAttr("disabled"); 
+            $("#degree1").removeAttr("disabled"); 
+            $("#major").removeAttr("disabled");  
+           
 
+          } else {
+          $("#primary").val('');
+            $("#primary").attr("disabled", "disabled"); 
+
+             $("#year1").val('');
+            $("#year1").attr("disabled", "disabled"); 
+
+             $("#year2").val('');
+            $("#year2").attr("disabled", "disabled"); 
+
+     
+             $("#gpa").val('');
+            $("#gpa").attr("disabled", "disabled"); 
+
+
+            $("#degree1").val('');
+            $("#degree1").attr("disabled", "disabled"); 
+
+
+             $("#major").val('');
+            $("#major").attr("disabled", "disabled");  
+          }
+       });
+       
+       
+       
+       
+       
+       
+       $('#form_setchange2').change(function() {
+          var $check = $(this);
+          if ($check.prop('checked')) {
+            $("#secondary").removeAttr("disabled"); 
+            $("#year3").removeAttr("disabled"); 
+            $("#year4").removeAttr("disabled"); 
+            $("#gpas").removeAttr("disabled"); 
+            $("#degree2").removeAttr("disabled"); 
+            $("#majors").removeAttr("disabled");  
+           
+
+          } else {
+          $("#secondary").val('');
+            $("#secondary").attr("disabled", "disabled"); 
+
+             $("#year3").val('');
+            $("#year3").attr("disabled", "disabled"); 
+
+             $("#year4").val('');
+            $("#year4").attr("disabled", "disabled"); 
+
+     
+             $("#gpas").val('');
+            $("#gpas").attr("disabled", "disabled"); 
+
+
+            $("#degree2").val('');
+            $("#degree2").attr("disabled", "disabled"); 
+
+
+             $("#majors").val('');
+            $("#majors").attr("disabled", "disabled");  
+          }
+       });
+       
+       
+       
+       
+       
+       $('#form_setchange3').change(function() {
+          var $check = $(this);
+          if ($check.prop('checked')) {
+            $("#vocation").removeAttr("disabled"); 
+            $("#year5").removeAttr("disabled"); 
+            $("#year6").removeAttr("disabled"); 
+            $("#gpav").removeAttr("disabled"); 
+            $("#degree3").removeAttr("disabled"); 
+            $("#majorv").removeAttr("disabled");  
+           
+
+          } else {
+          $("#vocation").val('');
+            $("#vocation").attr("disabled", "disabled"); 
+
+             $("#year5").val('');
+            $("#year5").attr("disabled", "disabled"); 
+
+             $("#year6").val('');
+            $("#year6").attr("disabled", "disabled"); 
+
+     
+             $("#gpav").val('');
+            $("#gpav").attr("disabled", "disabled"); 
+
+
+            $("#degree3").val('');
+            $("#degree3").attr("disabled", "disabled"); 
+
+
+             $("#majorv").val('');
+            $("#majorv").attr("disabled", "disabled");  
+          }
+       });
+       
+       
+       
+       
+       
+       
+       $('#form_setchange4').change(function() {
+          var $check = $(this);
+          if ($check.prop('checked')) {
+            $("#diploma").removeAttr("disabled"); 
+            $("#year7").removeAttr("disabled"); 
+            $("#year8").removeAttr("disabled"); 
+            $("#gpad").removeAttr("disabled"); 
+            $("#degree4").removeAttr("disabled"); 
+            $("#majord").removeAttr("disabled");  
+           
+
+          } else {
+          $("#diploma").val('');
+            $("#diploma").attr("disabled", "disabled"); 
+
+             $("#year7").val('');
+            $("#year7").attr("disabled", "disabled"); 
+
+             $("#year8").val('');
+            $("#year8").attr("disabled", "disabled"); 
+
+     
+             $("#gpad").val('');
+            $("#gpad").attr("disabled", "disabled"); 
+
+
+            $("#degree4").val('');
+            $("#degree4").attr("disabled", "disabled"); 
+
+
+             $("#majord").val('');
+            $("#majord").attr("disabled", "disabled");  
+          }
+       });
+       
+       
+       
+       
+       $('#form_setchange5').change(function() {
+          var $check = $(this);
+          if ($check.prop('checked')) {
+            $("#bachelor").removeAttr("disabled"); 
+            $("#year9").removeAttr("disabled"); 
+            $("#year10").removeAttr("disabled"); 
+            $("#gpab").removeAttr("disabled"); 
+            $("#degree5").removeAttr("disabled"); 
+            $("#majorb").removeAttr("disabled");  
+           
+
+          } else {
+          $("#bachelor").val('');
+            $("#bachelor").attr("disabled", "disabled"); 
+
+             $("#year9").val('');
+            $("#year9").attr("disabled", "disabled"); 
+
+             $("#year10").val('');
+            $("#year10").attr("disabled", "disabled"); 
+
+     
+             $("#gpab").val('');
+            $("#gpab").attr("disabled", "disabled"); 
+
+
+            $("#degree5").val('');
+            $("#degree5").attr("disabled", "disabled"); 
+
+
+             $("#majorb").val('');
+            $("#majorb").attr("disabled", "disabled");  
+          }
+       });
+       
+       
+       
+         
+       $('#form_setchange6').change(function() {
+          var $check = $(this);
+          if ($check.prop('checked')) {
+            $("#master").removeAttr("disabled"); 
+            $("#year11").removeAttr("disabled"); 
+            $("#year12").removeAttr("disabled"); 
+            $("#gpam").removeAttr("disabled"); 
+            $("#degree6").removeAttr("disabled"); 
+            $("#majorm").removeAttr("disabled");  
+           
+
+          } else {
+          $("#master").val('');
+            $("#master").attr("disabled", "disabled"); 
+
+             $("#year11").val('');
+            $("#year11").attr("disabled", "disabled"); 
+
+             $("#year12").val('');
+            $("#year12").attr("disabled", "disabled"); 
+
+     
+             $("#gpam").val('');
+            $("#gpam").attr("disabled", "disabled"); 
+
+
+            $("#degree6").val('');
+            $("#degree6").attr("disabled", "disabled"); 
+
+
+             $("#majorm").val('');
+            $("#majorm").attr("disabled", "disabled");  
+          }
+       });
+       
+       
+       $('#form_setchange7').change(function() {
+          var $check = $(this);
+          if ($check.prop('checked')) {
+            $("#otherE").removeAttr("disabled"); 
+            $("#year13").removeAttr("disabled"); 
+            $("#year14").removeAttr("disabled"); 
+            $("#gpao").removeAttr("disabled"); 
+            $("#degree7").removeAttr("disabled"); 
+            $("#majoro").removeAttr("disabled");  
+           
+
+          } else {
+          $("#otherE").val('');
+            $("#otherE").attr("disabled", "disabled"); 
+
+             $("#year13").val('');
+            $("#year13").attr("disabled", "disabled"); 
+
+             $("#year14").val('');
+            $("#year14").attr("disabled", "disabled"); 
+
+     
+             $("#gpao").val('');
+            $("#gpao").attr("disabled", "disabled"); 
+
+
+            $("#degree7").val('');
+            $("#degree7").attr("disabled", "disabled"); 
+
+
+             $("#majoro").val('');
+            $("#majoro").attr("disabled", "disabled");  
+          }
+       });
+       
+       
+        </script>
 	<!--  Plugin for the Wizard -->
 	
 

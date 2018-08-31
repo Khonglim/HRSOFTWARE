@@ -191,7 +191,23 @@ class Interview_supController extends Controller
        $comment_sup->comment_interview  = $request->ngg_position;
        $comment_sup->save();
 
+       $comment_sup = new Comment_sup;
+       $comment_sup->id_posinal = $request->employee;
+       $comment_sup->chioce = $request->chioce199;
+       $comment_sup->comment_interview  = $request->ansinterview;
+       $comment_sup->save();
 
+       $comment_sup = new Comment_sup;
+       $comment_sup->id_posinal = $request->employee;
+       $comment_sup->chioce = $request->chioce200;
+       $comment_sup->comment_interview  = $request->dateinterviwe_sup;
+       $comment_sup->save();
+
+       $comment_sup = new Comment_sup;
+       $comment_sup->id_posinal = $request->employee;
+       $comment_sup->chioce = $request->chioce320;
+       $comment_sup->comment_interview  = $request->nametest;
+       $comment_sup->save();
 
 
         $inter_sup = new Inter_sup;
@@ -365,7 +381,7 @@ class Interview_supController extends Controller
        
 
 
-        return redirect('home');
+        return redirect('rate_sup/create');
     }
 
     /**

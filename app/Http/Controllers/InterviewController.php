@@ -198,12 +198,26 @@ class InterviewController extends Controller
 
 
 
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce123;
+        $comment_interview->comment_interview  = $request->dateinterviwe;
+        $comment_interview->save();
+
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce169;
+        $comment_interview->comment_interview  = $request->ans_sup;
+        $comment_interview->save();
 
 
 
 
-
-
+        $comment_interview = new Comment_interview;
+        $comment_interview->id_posinal = $request->employee;
+        $comment_interview->chioce = $request->chioce320;
+        $comment_interview->comment_interview  = $request->nametest;
+        $comment_interview->save();
 
 
 
@@ -383,7 +397,7 @@ class InterviewController extends Controller
        
 
 
-        return redirect('home');
+        return redirect('rate/create');
 
 
 

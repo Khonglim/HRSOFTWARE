@@ -1,8 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.interview')
 @section('content')
 <style>
         #customers {
-            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-family: 'Prompt', sans-serif;
             border-collapse: collapse;
             width: 100%;
             
@@ -25,35 +25,36 @@
             color:  black;
         }
         </style>
-<div class="content-wrapper">
-    <div class="content container-fluid">             
+        <div class="container">
           {{Form::open(['url'=>'rate_sup'])}}
           <div class="box-body table-responsive no-padding">
-             
-               
-              
             <table  id="customers">
-                    <thead>
+                   
                       <tr>
                         <th style="text-align:center" colspan="2">แบบประเมินผลการสัมภาษณ์ (Interview Appraisal Form)
                                <br> ระดับบังคับบัญชาขึ้นไป (Supervisory Level)
                                 </th>
-                        <th  style="text-align:center" colspan="2" >ฝ่ายทัรพยากรบุคคล (Human Resources Dept.)
-                               <br> วันที่ (Date) <input type="date" name="dateinterviwe" />
+                        <th  style="text-align:center" colspan="2" >ฝ่ายทัรพยากรบุคคล <br>(Human Resources Dept.)
+                               <br> วันที่ (Date)  <br>  <input type="date" name="dateinterviwe_sup" >
+                               <input type="radio" name="chioce200" value="200" checked  hidden />
                                 </th>
                         
                       </tr>
                    
                     <tbody>
                       <tr>
-                        <td style="text-align:center" colspan="3" >ชื่อผู้สมัคร (Applicant’s Name)
+                        <td style="text-align:center" colspan="2" >ชื่อผู้สมัคร (Applicant’s Name)
                             <select id="country" name="employee" >
                             <option value="">--เลือกชื่อผู้สมัคร--</option>
                             @foreach ($employee  as $e)
                             <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
                             @endforeach
-                        </select> ตำแหน่งผู้สมัคร (Position)    {{ Form::select('ngg_position', [ '' => '::เลือก::','ต่ำแหน่ง' =>$items],null, ['id'=>'ngg_position']) }}  </td>
-                        <input type="radio" name="chioce101" value="101" checked  hidden />
+                        </select>
+
+                        <td  style="text-align:center">
+                             ตำแหน่งผู้สมัคร (Position)    {{ Form::text('ngg_position', '', ['id'=>'ngg_position']) }}  </td>
+                            <input type= "hidden" name="chioce101" value="101"  />
+                        </td>
                       </tr>
                       <tr>
                         <td rowspan="2" style="text-align:center">ข้อพิจารณา (OBSERVATIONS)</td>
@@ -71,17 +72,17 @@
                      @if ($i->id_head == 1)
                      <?php $s++ ?>
                      <tr>
-                            <input type="radio" name="chioce{{$s}}"  value="{{$s}}" checked hidden />
-                            <td  style="width:30% " >{{ $i->choice}}
+                            <input type= "hidden" name="chioce{{$s}}"  value="{{$s}}"   />
+                            <td  style="width:40% " >{{ $i->choice}}
                             <td  colspan="1" style="text-align:center " >
                                     @foreach ($scoreinterviewp as $item)
-                                      <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                      <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
                                     @endforeach
                                    
 
 
                             </td>
-                            <td> <textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
+                            <td   style="width:30% "> <textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
 
                    
                       </tr>
@@ -95,14 +96,14 @@
                      @foreach ($interview as $i)
                      @if ($i->id_head == 2) 
                      <?php $s++ ?>
-                     <input type="radio" name="chioce{{$s}}" value="{{$s}}" checked  hidden />
+                     <input type= "hidden" name="chioce{{$s}}" value="{{$s}}" />
                      <tr>
                     
-                            <td  style="width:30% " >{{ $i->choice   }}
+                            <td  style="width:20% " >{{ $i->choice   }}
                             <td  style="text-align:center" >
 
                                     @foreach ($scoreinterviewp as $item)
-                                    <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                    <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
                                   @endforeach
 
 
@@ -122,12 +123,12 @@
                                 @foreach ($interview as $i)
                                 @if ($i->id_head == 3)
                                 <?php $s++ ?>
-                                <input type="radio" name="chioce{{$s}}" value="{{$s}}" checked  hidden />
+                                <input type= "hidden" name="chioce{{$s}}" value="{{$s}}"  />
                                 <tr>
-                                       <td  style="width:40% " >{{ $i->choice}}
+                                       <td  style="width:20% " >{{ $i->choice}}
                                        <td  style="text-align:center " >
                                                @foreach ($scoreinterviewp as $item)
-                                                 <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                                 <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
                                                @endforeach
                                               
            
@@ -148,12 +149,12 @@
                                     @foreach ($interview as $i)
                                     @if ($i->id_head == 4)
                                     <?php $s++ ?>
-                                    <input type="radio" name="chioce{{$s}}" value="{{$s}}" checked  hidden />
+                                    <input type= "hidden" name="chioce{{$s}}" value="{{$s}}"  />
                                     <tr>
-                                           <td  style="width:40% " >{{ $i->choice}}
+                                           <td  style="width:20% " >{{ $i->choice}}
                                            <td  colspan="1" style="text-align:center " >
                                                    @foreach ($scoreinterviewp as $item)
-                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
                                                    @endforeach
                                                   
                
@@ -173,12 +174,12 @@
                                     @foreach ($interview as $i)
                                     @if ($i->id_head == 5)
                                     <?php $s++ ?>
-                                    <input type="radio" name="chioce{{$s}}" value="{{$s}}" checked  hidden />
+                                    <input type= "hidden" name="chioce{{$s}}" value="{{$s}}" />
                                     <tr>
-                                           <td  style="width:40% " >{{ $i->choice}}
+                                           <td  style="width:20% " >{{ $i->choice}}
                                            <td  colspan="1" style="text-align:center " >
                                                    @foreach ($scoreinterviewp as $item)
-                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&emsp;
+                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
                                                    @endforeach
                                                   
                
@@ -200,21 +201,15 @@
                                                </td>
                                         <td style="text-align:center" >
                                             
-                                                <input type="radio" name="chioce107" value="107" checked  hidden />
+                                                <input  type= "hidden" name="chioce107" value="107"  />
                                          
                                                 <input  name="total" type="text" id="total" readonly style="text-align:center"/>
                                               
             
                                         </td>
                                         <td >
-                                                <input type="radio" name="chioce100" value="100" checked  hidden />
-                                                {{ Form::select('conclusion', [
-                                                    '' => 'สรุปผล',
-                                                    'ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)' => 'ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)', 
-                                                    'รอเปรียบเทียบ (Potential candidate)  (51-69 คะแนน)' => 'รอเปรียบเทียบ (Potential candidate)  (51-69 คะแนน)',
-                                                    'ไม่ว่าจ้าง (Reject)  (ต่ำกว่า 50 คะแนน)' => 'ไม่ว่าจ้าง (Reject)  (ต่ำกว่า 50 คะแนน)',
-                                                    'เหมาะสมกับตำแหน่งอื่น (For other position)	'=> 'เหมาะสมกับตำแหน่งอื่น (For other position)	'
-                                        ],null, ['class' => 'form-control']) }}
+                                                <input  type= "hidden" name="chioce100" value="100"  />
+                                                แนะนำ: <textarea  name="conclusion" type="text" id="conclude" readonly style="text-align:center"></textarea>
                                                
                                             </td>
                                 
@@ -223,6 +218,18 @@
                   </table>
           </div>
 
+<br><br>
+<input type="radio" name="chioce199" value="199" checked  hidden />
+    ความคิดเห็น:
+<textarea class="form-control" rows="3" name="ansinterview"></textarea>
+<br><br>
+<div class="row">
+        <div class="col-md-4">ชิ่อผู้ประเมิน: 
+        
+        <input type="text" name="nametest"   class="form-control" >
+        <input type="hidden"  name="chioce320"  value="320" >
+        </div>
+        </div>
 <br><br>
 <center>
         <table border="2" bordercolor="black"  >
@@ -235,7 +242,7 @@
                 <td style="text-align:center" >5</td>
                 <td style="text-align:center"  > <input type="text" id="ch5" readonly style="text-align:center" /></td>
                 <td style="text-align:center"><input type="text" id="rs5"  readonly style="text-align:center" name="rs5"/>
-                    <input type="radio" name="chioce102" value="102" checked  hidden />
+                    <input  type= "hidden" name="chioce102" value="102"  />
                     
                 
                 </td>
@@ -246,7 +253,7 @@
                 <td style="text-align:center"><input type="text" id="rs4"  readonly style="text-align:center" name="rs4"/>
                 
 
-                    <input type="radio" name="chioce103" value="103" checked  hidden />
+                    <input  type= "hidden" name="chioce103" value="103"  />
                  
                 </td>
             <tr>
@@ -255,7 +262,7 @@
                 <td style="text-align:center"><input type="text" id="ch3"  readonly style="text-align:center"/></td>
                 <td style="text-align:center"><input type="text" id="rs3" readonly style="text-align:center" name="rs3"/>
                  
-                    <input type="radio" name="chioce104" value="104" checked  hidden />
+                    <input  type= "hidden" name="chioce104" value="104"  />
             
                 </td>
             </tr>
@@ -265,7 +272,7 @@
                 </td >
                 <td style="text-align:center"><input type="text" id="rs2" readonly style="text-align:center" name="rs2"/>
                    
-                    <input type="radio" name="chioce105" value="105" checked  hidden />
+                    <input  type= "hidden"  name="chioce105" value="105"  />
                     
                 
                 </td>
@@ -276,7 +283,7 @@
                 <td style="text-align:center"><input type="text" id="rs1" readonly style="text-align:center" name="rs1"/>
                 
                    
-                    <input type="radio" name="chioce106" value="106" checked  hidden />
+                    <input  type= "hidden" name="chioce106" value="106"  />
                   
                 </td>
             </tr>
@@ -288,12 +295,10 @@
     <div class="form-group" style="text-align:center">
             {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}}
         </div>
-    </div>
-</div>
+
  
 
-
-
+    </div>
         <script type='text/javascript'>
    
         var add_value = [];
@@ -302,6 +307,7 @@
         var xCnt3 = 0 ;
         var xCnt2 = 0 ;
         var xCnt1 = 0 ;
+        var pont = 0 ;
         $('input[type=radio]').change(function(){
         // add value
         add_value[this.name] = this.value;
@@ -356,11 +362,27 @@
 
        $('#ch1').val(xCnt1);
        $('#rs1').val(xScore1 );
+       pont =  xCnt1+ xCnt2 +xCnt3 + xCnt4+ xCnt5;
        xconclude = xScore5 + xScore4 + xScore3 + xScore2 + xScore1;
        $('#total').val(xconclude);
-    if( xconclude >= 70){
+       if( xconclude >= 70 &&   pont == 20){
         $('#conclude').val("ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)");
+        alert(' แนะนำ ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)');
+    }
 
+    if( xconclude >= 51 && xconclude <= 69 &&   pont == 20 ){
+        $('#conclude').val("รอเปรียบเทียบ (Potential candidate)  (51-69 คะแนน)");
+        alert('แนะนำ รอเปรียบเทียบ (Potential candidate)  (51-69 คะแนน)');
+    }
+
+    if( xconclude < 50  &&   pont == 20 ){
+        $('#conclude').val("ไม่ว่าจ้าง (Reject)  (ต่ำกว่า 50 คะแนน)");
+        alert('แนะนำ ไม่ว่าจ้าง (Reject)  (ต่ำกว่า 50 คะแนน)');
+    }
+
+ if( xconclude == 50  &&   pont == 20 ){
+        $('#conclude').val("เหมาะสมกับตำแหน่งอื่น (For other position)");
+        alert(' แนะนำเหมาะสมกับตำแหน่งอื่น (For other position)');
     }
 
         });

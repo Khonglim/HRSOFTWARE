@@ -12,10 +12,22 @@
                 <p class="h4 font-weight-normal text-light"> Cien Sesto NGGTP TAI Xian  UW  Other</p>
               </div>
             <p>  <a href="employee/create" class="btn btn-success" >สมัครงาน</a>
+
+
+
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+              
+
+
+
+
             </div>
           </div>
         </div>
       </div>
     </section>
-</header>  
+</header> 
+
+
+
 @endsection
