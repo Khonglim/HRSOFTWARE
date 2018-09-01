@@ -20,7 +20,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  href="https://fonts.googleapis.com/css?family=Prompt">
+<style>
+body {
+  font-family: 'Prompt', sans-serif;
+ 
+}
         <style>
             body {
                      
