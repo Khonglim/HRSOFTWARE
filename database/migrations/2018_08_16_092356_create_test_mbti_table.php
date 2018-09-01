@@ -33,6 +33,7 @@ class CreateTestMbtiTable extends Migration
             $table->string('answerJP')->nullable();
             $table->string('conclude')->nullable();
             $table->text('meaning')->nullable();
+            $table->text('meaningtwo')->nullable();
             
             $table->string('answer1')->nullable();
             $table->string('answer2')->nullable();

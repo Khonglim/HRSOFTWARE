@@ -60,6 +60,7 @@ class TestmbtiController extends Controller
         $testmbti->answerJP = $request->answerJP;
         $testmbti->conclude = $request->conclude;
         $testmbti->meaning = $request->meaning;
+        $testmbti->meaningtwo = $request->concludetwo;
 
         $testmbti->answer1 = $request->question1;
         $testmbti->answer2 = $request->question2;

@@ -535,6 +535,11 @@ class EmployeeController extends Controller
         $personal->degree6 = $request->degree6;
         $personal->degree7 = $request->degree7;
        
+        $personal->talent = $request->talent;
+        $personal->portfolio1 = $request->portfolio1;
+        $personal->portfolio2 = $request->degree2;
+        $personal->portfolio3= $request->degree3;
+
         $personal->save();
        
 

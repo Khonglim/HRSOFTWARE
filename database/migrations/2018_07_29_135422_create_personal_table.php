@@ -208,8 +208,11 @@ class CreatePersonalTable extends Migration
             $table->text('degree6')->nullable();
             $table->text('degree7')->nullable();
             $table->text('degree8')->nullable();
-            
-
+            $table->text('talent')->nullable();
+            $table->text('portfolio1')->nullable();
+            $table->text('portfolio2')->nullable();
+            $table->text('portfolio3')->nullable();
+           
             $table->tinyInteger('enable')->default('1');
             $table->timestamps();
         });
