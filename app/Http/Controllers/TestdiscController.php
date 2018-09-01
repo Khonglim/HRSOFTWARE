@@ -99,7 +99,7 @@ class TestdiscController extends Controller
         $testdisc->answer47 = $request->choice47;
         $testdisc->answer48 = $request->choice48;
         $testdisc->save();
-        return redirect('disc'); 
+        return redirect('savedisc'); 
 
     }
 
