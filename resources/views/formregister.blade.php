@@ -52,13 +52,13 @@
 		                    	</div>  -->
 								<div class="wizard-navigation">
 									<ul>
-                                       <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>  
-                                        <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>  
-                                          <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li> 
-                                         <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li> 
-			                            <li><a href="#account" data-toggle="tab">การศึกษา</a></li>
-                                        <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li>
-                                        <li><a href="#work" data-toggle="tab">การทำงาน</a></li>
+                                 <!--       <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>  -->
+                                  <!--       <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>  -->
+                                   <!--        <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li> -->
+                                  <!--        <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li> -->
+			                       <!--      <li><a href="#account" data-toggle="tab">การศึกษา</a></li>-->
+                                     <!--    <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li>-->
+                                      <!--   <li><a href="#work" data-toggle="tab">การทำงาน</a></li>-->
                                         <li><a href="#another" data-toggle="tab">อื่นๆ</a></li>
 			                        </ul>
 								</div>
@@ -873,7 +873,7 @@
                                     <div class="tab-pane" id="work">
                                             <div class="row">
                                                     <div class="col-md-1"></div>
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-5">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label">1.ชื่อสถานที่ประกอบการ</label>
@@ -1120,6 +1120,7 @@
                                                         </div>
                                                         </div>
                                                     <div class="row">
+                                                            <div class="col-md-1"></div>
                                                         <div class="col-md-5">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
@@ -1129,7 +1130,7 @@
                                                                     </div> 
                                                           
                                                         </div>
-                                                        <div class="col-md-2"></div>
+                                                        
                                                         <div class="col-md-5">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
@@ -1138,10 +1139,10 @@
                                                                        </div>
                                                                     </div> 
                                                          
+
                                                         </div>
-                                                        </div>
-                                                    <div class="row">
-                                                        <div class="col-md-5">   
+                                                       
+                                                        <div class="col-md-3 col-md-offset-1">   
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
                                                                             <label class="control-label">โทรศัพท์*</label>
@@ -1149,33 +1150,70 @@
                                                                        </div>
                                                                 </div>        
                                                             </div>
+
+                                                            <div class="col-md-3">
+                                                                    <div class="input-group">
+                                                                            <div class="form-group label-floating">
+                                                                                <label class="control-label">สถานที่ทำงาน/ที่อยู่ *่</label>
+                                                                                {{Form::text('firm','',['class'=>'form-control'])}}   
+                                                                           </div>
+                                                                    </div>
+                                                            </div>
+
+                                                            <div class="col-md-3">   
+                                                                    <div class="input-group">
+                                                                            <div class="form-group label-floating">
+                                                                                <label class="control-label">ตำแหน่ง*</label>
+                                                                                {{Form::text('positioncm','',['class'=>'form-control'])}}
+                                                                           </div>
+                                                                    </div>                   
+                                                            </div>      
                                                         </div>
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                                <div class="input-group">
-                                                                        <div class="form-group label-floating">
-                                                                            <label class="control-label">สถานที่ทำงาน/ที่อยู่ *่</label>
-                                                                            {{Form::text('firm','',['class'=>'form-control'])}}   
-                                                                       </div>
-                                                                </div>
+                                                   <hr>
+
+                                                   <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label >ความสามารถพิเศษ*  </label><textarea  name="talent" type="text"  style="text-align:center" class ='form-control'></textarea>
+                                                             
+                                                            </div>
                                                         </div>
-                                                       
-                                                        <div class="col-md-3">   
-                                                                <div class="input-group">
-                                                                        <div class="form-group label-floating">
-                                                                            <label class="control-label">ตำแหน่ง*</label>
-                                                                            {{Form::text('positioncm','',['class'=>'form-control'])}}
-                                                                       </div>
-                                                                </div>                   
-                                                        </div>                        
-                                                        </div>
+                                                    
+                                                           
+                                                    </div>
+
+                                                    <div class="row" >
+
+                                                        
+                                                                   
+                                                                    <div class="col-md-3">
+                                                                            <div class="picture-container">
+                                                                               
+                                                                                <input type="file" name="portfolio1" >                                                                    "
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                                <div class="picture-container">
+                                                                                   
+                                                                                    <input type="file" name="portfolio2" >                                                                    "
+                                                                                </div>
+                                                                            </div>
+                                                                    
+                                                                            <div class="col-md-3">
+                                                                                    <div class="picture-container">
+                                                                                       
+                                                                                        <input type="file" name="portfolio3" >                                                                    "
+                                                                                    </div>
+                                                                                </div>
+
+                                                    </div> 
                                                    <hr>
                                                     <div class="row">
                                                         <div class="col-md-4">
-
+                                                                <div class="col-md-1"></div>
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
-                                                                            <label class="control-label">ความรู้พิเศษ คอมพิวเตอร์  ระบุ:*</label>
+                                                                            <label class="control-label">ความรู้พิเศษ คอมพิวเตอร์ระบุ:*</label>
                                                                             {{Form::text('computer','',['class'=>'form-control'])}}      
                                                                        </div>
                                                                 </div> 
@@ -1635,6 +1673,24 @@
        });
        
        
+       $('#form_setchange7').change(function() {
+          var $check = $(this);
+          if ($check.prop('checked')) {
+            $("#otherE").removeAttr("disabled"); 
+          } else {
+          $("#otherE").val('');
+            $("#otherE").attr("disabled", "disabled"); 
+          }
+       });
+       
+
+
+
+
+
+
+
+
         </script>
 	<!--  Plugin for the Wizard -->
 	
