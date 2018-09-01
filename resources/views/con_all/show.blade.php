@@ -25,7 +25,7 @@
          ผลสรุป  {{ $testmbtis->conclude }} 
            {{  $testmbtis->meaning }} <br><br>
           
-           <label for="con">  ผลสรุป ด้านกาคิด</label><br>
+           <label for="con">  ผลสรุป ด้านการคิด</label><br>
          
            {{  $testmbtis->meaningtwo  }} 
 

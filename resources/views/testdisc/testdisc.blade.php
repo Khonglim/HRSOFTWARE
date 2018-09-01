@@ -37,7 +37,7 @@
                                 <div class ="form-group">
                                         <div class="col-md-2">
                                                 <div class="alert alert-success">
-                                                        &emsp;  นาที    <strong id="showTimeDisc" data-minutes-left="3"></strong>
+                                                        &emsp;  นาที    <strong id="showTimeDisc" data-minutes-left="5"></strong>
                                       </div> 
                                     </div>  
                                     <div class="col-md-4

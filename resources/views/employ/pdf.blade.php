@@ -41,10 +41,14 @@
     </style>
 </head>
 <body>
-<center><h3>ข้อมูลประวัติ</h3></center>
+<center><h3>ข้อมูลประวัติ</h3>
+<img src="{{$personal->photo}}" alt="" width="55" height="55" ></center>
+<br>
     <table class="table table-bordered">
         <tbody>
+            
           <tr>
+          
             <td colspan="2">ชื่อ: {{$personal->name}} {{$personal->lastname}} </td>
             <td>ชื่อเล่น: {{$personal->nikname}}</td>
             <td>เพศ: {{$personal->gender}}</td>
@@ -241,7 +245,6 @@
                     <td colspan="3">อาชีพ: {{$personal->occupationm}}</td>
                     <td colspan="2">สถานะ:{{$personal->alivem}} </td>
                 </tr>
-                <tr><td colspan="8"></td></tr>
                 <tr>
                     <th colspan="8" align=center>ประวัติการศึกษา</th>
                 </tr>
@@ -293,16 +296,18 @@
                     <td>{{$personal->degree4}}</td>
                 </tr>
                 <tr>
-                    <td>ปริญญาตรี</td>
-                    <td colspan="2">{{$personal->bachelor}}</td>
-                    <td>{{$personal->year9}}</td>
-                    <td>{{$personal->year10}}</td>
-                    <td>{{$personal->gpab}}</td>
-                    <td>{{$personal->majorb}}</td>
-                    <td>{{$personal->degree5}}</td>
-                </tr>
+                        <td>ปริญญาตรี</td>
+                        <td colspan="2">{{$personal->bachelor }}</td>
+                        <td>{{ $personal->year9 }}</td>
+                        <td>{{ $personal->year10 }}</td>
+                        <td>{{$personal->gpab }}</td>
+                        <td>{{$personal->majorb }}</td>
+                        <td>{{$personal->degree5 }}</td>
+                    
+    
+                    </tr>
                 <tr>
-                    <td>ปริญญษโท</td>
+                    <td>ปริญญาโท</td>
                     <td colspan="2">{{$personal->master}}</td>
                     <td>{{$personal->year11}}</td>
                     <td>{{$personal->year12}}</td>
@@ -319,17 +324,19 @@
                     <td>{{$personal->majoro}}</td>
                     <td>{{$personal->degree7}}</td>
                 </tr>
+
+                
                 <tr>
                     <th colspan="8" align=center>ภาษา</th>
                 </tr>
-                <thead>
+               
                     <tr>
                         <th colspan="2">ประเภทภาษา</th>
                         <th colspan="2">การพูด</th>
                         <th colspan="2">การเข้าใจ</th>
                         <th colspan="2">การเขียน</th>
                     </tr>
-                </thead>
+               
                 <tr>
                     <th colspan="2">ไทย</th>
                     <td colspan="2">{{$personal->thais}}</td>
@@ -350,13 +357,13 @@
                 </tr>
         </tbody>
       </table>
-      <hr><hr>
+    
       <table>
           <tbody>
                 <tr>
                     <th colspan="8" align=center>ประวัติการทำงาน</th>
                 </tr>
-                <thead>
+              
                     <tr>
                         <th>ชื่อสถานประกอบการ</th>
                         <th>ลักษณธงานที่รับผิดชอบ</th>
@@ -367,36 +374,234 @@
                         <th>สาเหตุที่ออก</th>
                         <th>เงินเดือนครั้งสุดท้าย</th>
                     </tr>
-                </thead>
+              
                 <tr>
-                    <td>{{$personal->list_of_employed1}}</td>
-                    <td>{{$personal->job_description1}}</td>
-                    <td>{{$personal->call1}}</td>
-                    <td>{{$personal->start_job_duration1}}</td>
-                    <td>{{$personal->end_job_duration2}}</td>
-                    <td>{{$personal->position1}}</td>
-                    <td>{{$personal->reasonLeaving1}}</td>
-                    <td>{{$personal->lastsalary1}}</td>
+                    <td>
+                        
+                            @if($personal->list_of_employed1 =='')
+                            ว่าง
+                        @else
+                            {{$personal->list_of_employed1}}
+                        @endif
+                        
+                    </td>
+                    <td>
+                    @if($personal->job_description1 =='')
+                           -
+                        @else
+                        {{$personal->job_description1}}
+
+                        @endif
+                    </td>
+                    <td>
+                    
+                            @if($personal->call1 =='')
+                            -
+                         @else
+                         {{$personal->call1}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                        @if($personal->start_job_duration1 =='')
+                            -
+                         @else
+
+                         {{$personal->start_job_duration1}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                    
+                        @if($personal->end_job_duration2 =='')
+                            -
+                         @else
+                         
+                         {{$personal->end_job_duration2}}
+ 
+                         @endif
+
+                    </td>
+                    <td>
+                            @if($personal->position1 =='')
+                            -
+                         @else
+                         
+                         {{$personal->position1}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                            @if($personal->reasonLeaving1 =='')
+                            -
+                         @else
+                         
+                         {{$personal->reasonLeaving1}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                            @if($personal->lastsalary1 =='')
+                            -
+                         @else
+                         
+                         {{$personal->lastsalary1}}
+ 
+                         @endif
+                    </td>
                 </tr>
                 <tr>
-                    <td>{{$personal->list_of_employed2}}</td>
-                    <td>{{$personal->job_description2}}</td>
-                    <td>{{$personal->call2}}</td>
-                    <td>{{$personal->start_job_duration3}}</td>
-                    <td>{{$personal->end_job_duration4}}</td>
-                    <td>{{$personal->position2}}</td>
-                    <td>{{$personal->reasonLeaving2}}</td>
-                    <td>{{$personal->lastsalary2}}</td>
+                    <td>
+                        @if($personal->list_of_employed2 =='')
+                            -
+                         @else
+                         
+                         {{$personal->list_of_employed2}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                            @if($personal->job_description2 =='')
+                            -
+                         @else
+                         
+                         {{$personal->job_description2}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                            @if($personal->call2 =='')
+                            -
+                         @else
+                         
+                         {{$personal->call2}}
+ 
+                         @endif
+                    
+                    </td>
+                    <td>
+                      @if($personal->start_job_duration3 =='')
+                            -
+                      @else
+                         
+                         {{$personal->start_job_duration3}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                    @if($personal->end_job_duration4 =='')
+                            -
+                      @else
+                         
+                         {{$personal->end_job_duration4}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                         @if($personal->position2 =='')
+                            -
+                         @else
+                         
+                         {{$personal->position2}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                    
+                         @if($personal->reasonLeaving2 =='')
+                            -
+                         @else
+                         
+                         {{$personal->reasonLeaving2}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                       @if($personal->lastsalary2 =='')
+                            -
+                         @else
+                         
+                         {{$personal->lastsalary2}}
+ 
+                         @endif
+                    </td>
                 </tr>
                 <tr>
-                    <td>{{$personal->list_of_employed3}}</td>
-                    <td>{{$personal->job_description3}}</td>
-                    <td>{{$personal->call3}}</td>
-                    <td>{{$personal->start_job_duration5}}</td>
-                    <td>{{$personal->end_job_duration6}}</td>
-                    <td>{{$personal->position3}}</td>
-                    <td>{{$personal->reasonLeaving3}}</td>
-                    <td>{{$personal->lastsalary3}}</td>
+                    <td>
+                        @if($personal->list_of_employed3 =='')
+                            -
+                         @else
+                         
+                         {{$personal->list_of_employed3}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                    
+                         @if($personal->job_description3 =='')
+                            -
+                         @else
+                         
+                         {{$personal->job_description3}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                    
+                            @if($personal->call3 =='')
+                            -
+                         @else
+                         
+                         {{$personal->call3}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                        @if($personal->start_job_duration5 =='')
+                            -
+                         @else
+                         
+                         {{$personal->start_job_duration5}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                            @if($personal->end_job_duration6 =='')
+                            -
+                         @else
+                         
+                         {{$personal->end_job_duration6}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                    
+                      @if($personal->position3 =='')
+                            -
+                         @else
+                         
+                         {{$personal->position3}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                            @if($personal->reasonLeaving3 =='')
+                            -
+                         @else
+                         
+                         {{$personal->reasonLeaving3}}
+ 
+                         @endif
+                    </td>
+                    <td>
+                            @if($personal->lastsalary3 =='')
+                            -
+                         @else
+                         
+                         {{$personal->lastsalary3}}
+ 
+                         @endif  
+                    </td>
                 </tr>
                 <tr>
                     <th colspan="8" align=center>อื่นๆ</th>
@@ -438,7 +643,16 @@
                     <td colspan="3">ทะเบียน : {{$personal->license}}</td>
                 </tr>
                 <tr>
-                    <td colspan="8">ท่านเคยให้ถูกออกจากงานหรือไม่ : {{$personal->exitwork}} &emsp;&emsp;&emsp;&emsp;&emsp;เพราะ {{$personal->because}}</td>
+                    <td colspan="8">ท่านเคยให้ถูกออกจากงานหรือไม่ : 
+                        
+                     @if($personal->exitwork =='ไม่เคย')
+                            {{$personal->exitwork}}  
+                         @else
+                         {{$personal->exitwork}}   เพราะ
+                         {{$personal->lastsalary3}}
+ 
+                         @endif  
+                        </td>
                 </tr>
                 <tr>
                     <td colspan="4">ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่? : {{$personal->serious_ill}}</td>

@@ -212,7 +212,9 @@ class CreatePersonalTable extends Migration
             $table->text('portfolio1')->nullable();
             $table->text('portfolio2')->nullable();
             $table->text('portfolio3')->nullable();
-           
+
+            $table->text('fronname')->nullable();
+
             $table->tinyInteger('enable')->default('1');
             $table->timestamps();
         });

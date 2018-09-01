@@ -234,7 +234,7 @@
                                         <div class="col-md-3">
                                                         <div class="form-group {{ $errors->has('province_crad') ? 'has-error' : '' }}" >
                                                           <label >จังหวัด</label>
-                                                            {{ Form::select('province_crad', [$personal->province_crad=>$personal->province_crad,'กรุณาเลือกจังหวัด' =>$items],null, ['class' => 'form-control']) }}
+                                                            {{ Form::text('province_crad',$personal->province_crad, ['class' => 'form-control']) }}
                                                              <span class="text-danger">{{ $errors->first('province_crad') }}</span>
                                                         </div>
                                             </div>

@@ -193,7 +193,14 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
                                                         <label>สัญชาติ<small class="text-danger">*</small></label>  
-                                                        {{ Form::select('nationality', ['ไทย' => 'ไทย','คริสต์' => 'คริสต์','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
+                                                        {{ Form::select('nationality', ['ไทย' => 'ไทย'
+                                                        
+                                                        ,'คริสต์' => 'คริสต์'
+                                                        ,'อิสลาม' => 'อิสลาม'
+                                                        ,'อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
+
+
+
                                                         <span class="text-danger">{{ $errors->first('nationality') }}</span>
                                                         </div>
                                                 </div>

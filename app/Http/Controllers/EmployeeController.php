@@ -226,7 +226,14 @@ class EmployeeController extends Controller
         $personal->degree5 = $request->degree5;
         $personal->degree6 = $request->degree6;
         $personal->degree7 = $request->degree7;
-       
+
+        
+        $personal->talent = $request->talent;
+        $personal->portfolio1 = $request->portfolio1;
+        $personal->portfolio2 = $request->degree2;
+        $personal->portfolio3= $request->degree3;
+        $personal->fronname = $request->fronname;
+        
         $personal->save();
         return redirect('/');
     }
@@ -258,17 +265,12 @@ class EmployeeController extends Controller
 
         if($id !== '') {
             $personal = Personal::find($id);
-            $items = array();
-            $provinces = Province::all();
-            foreach ($provinces as $province){
-                
-                $items[$province->name] = $province->name;
-            }
+           
     
             $data = array(
                 'personal' => $personal
             );
-            return view('employ/formeditemployee',$data, compact('items',$items));
+            return view('employ/formeditemployee',$data);
         }
 
     }
@@ -539,7 +541,7 @@ class EmployeeController extends Controller
         $personal->portfolio1 = $request->portfolio1;
         $personal->portfolio2 = $request->degree2;
         $personal->portfolio3= $request->degree3;
-
+        $personal->fronname = $request->fronname;
         $personal->save();
        
 
