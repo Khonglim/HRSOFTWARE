@@ -94,7 +94,7 @@ class TestmbtiController extends Controller
         $testmbti->answer31 = $request->question31;
         $testmbti->answer32 = $request->question32;
         $testmbti->save();
-        return redirect('mbti'); 
+        return redirect('savembti'); 
     }
 
     /**

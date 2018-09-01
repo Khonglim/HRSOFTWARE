@@ -1,68 +1,49 @@
-@extends('layouts.main')
+@extends('layouts.test')
 @section('content')
-
-  <div class="content-wrapper">
-    <div class="content container-fluid">
-<div class="row">
-    <div class="col-md-3">
-      </div>
-        <div class="col-md-6">
-        <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">แบบประเมินบุคลิกภาพ</h3>
-            </div>
-          
-          
-              <div class="box-body">
-                 
-                  <div class="col-md-7">
-                <div class="form-group">
+<div class="container">
+  <br>
+  
+      <center>
+          <div class="panel panel-success" style="width:100%">
+              <div class="panel-heading">การทดสอบบุคลิกภาพ</div>
+              <div class="panel-body">
                   {{Form::open(['url'=>'start','method'=>'POST'])}}
-                    {{Form::label('ชื่อ')}}   
-                    {{Form::text('name','',['class'=>'form-control','required'])}}   
-                    {{Form::label('นามสกุล')}}   
-                    {{Form::text('lastname','',['class'=>'form-control','required'])}}   
+                <div class="row">
+                  <div class="col-xs-12">
+                      <div align="right">
+                          <label class="col-xs-3">ชื่อ :</label>
+                      </div>
+                      <div class="col-xs-3">
+                          {{Form::text('name','',['class'=>'form-control','required','placeholder'=>"กรุณาระบุชื่อ"])}}   
+                         
+                      </div>
+                      <div class="col-xs-3">
+                          {{Form::text('lastname','',['class'=>'form-control','required','placeholder'=>"กรุณาระบุนามสกุล"])}}   
                    
+                      </div>
                   </div>
-                  
-                </div>
-                <div class="col-md-12">
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="col-xs-6 col-xs-offset-3">
+                          <div align="left">
+                              <center>         {{ Form::submit('เริ่มทำข้อสอบ',['class'=> 'btn btn-primary'])}} </center>
+                              {{Form::close()}}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <br>
+              <div class="col-md-12">
                   <label>หมายเหตุ:ในแต่ละข้อให้เลือกเพียงตัวเลือก "ก" หรือ "ข" เพียงตัวเลือกเดียวที่สอดคล้องกับตัวท่านมากที่สุด  <br>(แม้จะชอบทั้งคู่ก็ต้องเลือกเพียงตัวเลือกเดียวเท่านั้น)
-                  <br> <br><center>(จับเวลา 3 นาที)  </center>
+                  <br> <br><center>(จับเวลา 5 นาที)  </center>
                 
                 </label>
               </div>
               </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-             
-              <center>  {{ Form::submit('เริ่มทำข้อสอบ',['class'=> 'btn btn-primary'])}} </center>
-              </div>
-              <!-- /.box-footer -->
-              {{Form::close()}}
-            
           </div>
-        </div>
-     
-      </div>
+      </center>
 
-
-
-
-
-
-
-
-
-
-      
-       
-        
-        
-
-    
-        
-</div>
-  </div>
- 
+</div> 
   @endsection

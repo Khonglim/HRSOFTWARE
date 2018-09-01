@@ -7,4 +7,6 @@
        <p>   <a href="{{url('/interview') }}" class="btn btn-info" >กลับสู่หน้าแรก</a></p>
       </div>
     </center>
+
+  </div>
 @endsection

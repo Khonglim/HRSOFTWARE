@@ -12,8 +12,8 @@
                 <p class="h4 font-weight-normal text-light"> Cien Sesto NGGTP TAI Xian  UW  Other</p>
               </div>
               <p>  <a href="{{url('employee/create') }}" class="btn btn-success" >สมัครงาน</a></p>
-                <p>   <a href="{{url('/summbti') }}" class="btn btn-primary" >ทำแบบทดสอบประเมิน MBTI</a></p>
-                  <p>   <a href="{{url('/sumdisc') }}" class="btn btn-info" >ทำแบบทดสอบประเมิน DISC</a></p>
+                <p>   <a href="{{url('/testto') }}" class="btn btn-primary" >ทำแบบทดสอบประเมิน MBTI</a></p>
+                  <p>   <a href="{{url('/testtoo') }}" class="btn btn-info" >ทำแบบทดสอบประเมิน DISC</a></p>
              <p> <a href="{{url('/interview') }}" class="btn btn-warning" >ประเมินผู้ถูกสัมภาษณ์</a> </p>
 
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

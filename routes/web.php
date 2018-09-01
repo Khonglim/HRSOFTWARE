@@ -103,3 +103,9 @@ Route::get('interview', function () { return view("rate/index");});
 
 
 Route::get('save', function () { return view("rate/save");});
+
+Route::get('testto', function () { return view("testmbti/index");});
+
+Route::get('testtoo', function () { return view("testdisc/index");});
+
+Route::get('savembti', function () { return view("testmbti/save");});
