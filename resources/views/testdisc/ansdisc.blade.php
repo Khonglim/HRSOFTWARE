@@ -288,7 +288,7 @@ body {
               @endif 
   
               @if ( ($d >=30)  && ($i >=30) && ($s<30) && ($c < 30 ) )
-              @if ( ($d=$i)  )
+              @if ( ($d==$i)  )
               D=I
               PERSUADER: Influencer/Implement/Inspires
               High energy, optimistic, aggressive, confident; goal-minded, harnesses people to accomplish goals; 

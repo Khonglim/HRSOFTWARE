@@ -276,7 +276,14 @@
 
 
 									</div>
+									<div class ="form-group">
+											<ul class="list-group">
+											สรุปผลการคิด คือ  <br>	{{$testmbti->meaningtwo}}   <br>
+											
+											
 
+
+								</div>
 
 
 
@@ -284,8 +291,9 @@
 						<!-- /.box-body -->
 						<div class="box-footer">
 							<center>
-									<a href="{{url('pdftestmbti/'.$testmbti->id)}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+									<a href="{{url('pdftestmbti/'.$testmbti->id)}}" class="btn btn-success  " ><i class="glyphicon glyphicon-download-alt"></i></a>
 							</center>
+							<br>
 						</div>		
 					</div>
 
