@@ -230,8 +230,8 @@ class EmployeeController extends Controller
         
         $personal->talent = $request->talent;
         $personal->portfolio1 = $request->portfolio1;
-        $personal->portfolio2 = $request->degree2;
-        $personal->portfolio3= $request->degree3;
+        $personal->portfolio2 = $request->portfolio2;
+        $personal->portfolio3= $request->portfolio3;
         $personal->fronname = $request->fronname;
         
         $personal->save();

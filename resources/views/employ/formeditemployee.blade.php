@@ -17,8 +17,27 @@
                       </div>
                     </div>
                     <div class="box-body">
+                    <div class="row">
+                                <div class="col-md-5"></div>  
+                                <div class="col-md-6">
+                                                <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}" >
+                                              <label >รูปภาพ || {{$personal->photo}}||</label>
+                                                {{Form::file('image')}}
+                                                <span class="text-danger">{{ $errors->first('image') }}</span>
+                                            
+                                        </div>  
+                              </div>
+                    </div>
                                   
-                        <div class="row">      
+                        <div class="row">  
+                                        <div class="col-md-1 ">
+                                                        <div class="input-group">
+                                                         <div class="form-group label-floating">
+                                                             <label class="control-label">คำนำ<small class="text-danger">*</small></label>
+                                                         {{ Form::select('fronname', [ $personal->fronname =>$personal->fronname, 'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control','required']) }} 
+                                                        </div>
+                                                     </div>
+                                                 </div>
                                 <div class="col-md-2">
                                         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                                     <label for="name">ชื่อ</label> 
@@ -57,13 +76,7 @@
                                        
                                 </div> 
     
-                                <div class="col-md-2">
-                                                <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}" >
-                                                <label >รูปภาพ || {{$personal->photo}}||</label>
-                                                {{Form::file('image')}}
-                                                <span class="text-danger">{{ $errors->first('image') }}</span>
-                                        </div>  
-                              </div>
+                           
                               <div class="col-md-2">
                                         <div class="form-group {{ $errors->has('birthday') ? 'has-error' : '' }}">
                                         <label >วันเกิด</label>
@@ -79,7 +92,7 @@
                                         <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
                                          <label >สัญชาติ</label>
                                          {{ Form::select('nationality', [
-                                                 $personal->nationality = $personal->nationality,
+                                                 $personal->nationality => $personal->nationality,
                                                 'ไทย' => 'ไทย', 
                                                 'คริสต์' => 'คริสต์',
                                                 'อิสลาม' => 'อิสลาม',
@@ -93,7 +106,7 @@
                                             <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
                                             <label >เชื้อชาติ</label>
                                             {{ Form::select('race', [
-                                                $personal->race = $personal->race,
+                                                $personal->race => $personal->race,
                                                 'ไทย' => 'ไทย', 
                                                 'คริสต์' => 'คริสต์',
                                                 'อิสลาม' => 'อิสลาม',
@@ -108,7 +121,7 @@
                                             <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
                                             <label >ศาสนา</label>
                                             {{ Form::select('religion', [
-                                                  $personal->religion = $personal->religion,  
+                                                  $personal->religion => $personal->religion,  
                                                   'พุทธ' => 'พุทธ',
                                                   'คริสต์' => 'คริสต์', 
                                                 
@@ -881,7 +894,57 @@
                     
                       </table>
                     </div>
-                       <div class="row">      
+
+                    <div class="row"> 
+                                <div class="col-md-2">  </div>
+                                <div class="form-group" >
+                                <div class="col-md-6"> 
+                                                <label >ความสามารถพิเศษ</label><br>
+                        <textarea name="talent"  style="width:100%" > {{$personal->talent}}</textarea>
+                </div>
+                                </div>
+                   </div>
+
+
+
+
+
+
+
+                    <div class="row">    
+                                <div class="col-md-3"> </div>
+                                <div class="col-md-2">
+                                                <div class="form-group" >
+                                              <label >ผลงาน 1 || {{$personal->portfolio1}}||</label>
+                                                {{Form::file('image')}}
+                                                
+                                            
+                                        </div>  
+                              </div>
+
+                              <div class="col-md-2">
+                                        <div class="form-group" >
+                                      <label >ผลงาน 2 ||{{$personal->portfolio2}}||</label>
+                                        {{Form::file('image')}}
+                                        
+                                    
+                                </div>  
+                      </div>
+
+                      <div class="col-md-2">
+                                <div class="form-group" >
+                              <label >ผลงาน 3  || {{$personal->portfolio3}}||</label>
+                                {{Form::file('image')}}
+                             
+                            
+                        </div>  
+              </div>
+                        </div>
+
+
+
+
+         <div class="row">      
                     <div class="col-md-5">
                             <div class="form-group">
                         <label for="name">ความรู้พิเศษ</label> 

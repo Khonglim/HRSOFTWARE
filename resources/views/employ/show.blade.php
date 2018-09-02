@@ -4,7 +4,7 @@
                
         <div class="content container-fluid">  
 
-                <h2 class="page-header">ข้อมูลของ {{$personal->name}}  {{$personal->lastname}} </h2>
+          
           
                
                   {{-- <div class="col-md-10"> --}}
@@ -28,15 +28,15 @@
                                             </div>  
                                      </div> 
                             
-                                {{Form::label('ชื่อ:')}} {{$personal->name}} {{$personal->lastname}}&emsp;{{Form::label('ชื่อเล่น:')}} {{$personal->nikname}}           
-                                &emsp;{{Form::label('เพศ:')}}  {{$personal->gender}}&emsp;{{Form::label('วันเกิด')}} {{$personal->birthday}}&emsp;  
-                                {{Form::label('สัญชาติ:')}} {{$personal->nationality}}&emsp; {{Form::label('เชื้อชาติ:')}} {{$personal->race}}                  
-                                &emsp;{{Form::label('ศาสนา:')}} {{$personal->religion}}&emsp;{{Form::label('อายุ:')}} {{$personal->age}}     
-                                &emsp;{{Form::label('ส่วนสูง:')}} {{$personal->height}}
+                              <label>ชื่อ:</label> {{$personal->name}} {{$personal->lastname}}&emsp;  <label>ชื่อเล่น:  </label> {{$personal->nikname}}           
+                                &emsp;  <label>เพศ:  </label>  {{$personal->gender}}&emsp;  <label>วันเกิด  </label> {{$personal->birthday}}&emsp;  
+                                <label>สัญชาติ:  </label> {{$personal->nationality}}&emsp;   <label>เชื้อชาติ:  </label> {{$personal->race}}                  
+                                &emsp;  <label>ศาสนา:</label> {{$personal->religion}}&emsp;  <label>อายุ:  </label> {{$personal->age}}     
+                                &emsp;  <label>ส่วนสูง:</label> {{$personal->height}}
                                 
                                 <br><br>
-                                {{Form::label('น้ำหนัก:')}} {{$personal->weight}} 
-                                &emsp;{{Form::label('พี่น้องกี่คน:')}} 
+                                <label>  น้ำหนัก:  </label>{{$personal->weight}} 
+                                &emsp;  <label>พี่น้องกี่คน:</label>
 
                                 @if($personal->brothers == '')
                                 ::ว่าง::
@@ -44,14 +44,14 @@
                                 {{$personal->brothers}}
                                 @endif
                                 &emsp; 
-                                {{Form::label('เป็นคนที่:')}}  
+                                <label>เป็นคนที่:</label>
                                 @if($personal->number == '')
                                 ว่าง
                                 @else
                                 {{$personal->number}}
                                 @endif
                                 &emsp; 
-                                {{Form::label('โทรศัพท์บ้าน:')}} {{$personal->home}} &emsp;  {{Form::label('โทรศัพท์มือถือ:')}} {{$personal->moblie}}              
+                              <label>โทรศัพท์บ้าน:</label> {{$personal->home}} &emsp;  <label>โทรศัพท์มือถือ:</label> {{$personal->moblie}}              
                                 &emsp; {{Form::label('โทรศัพท์สำนักงาน:')}}           
                                 @if($personal->office == '')
                                 ::ว่าง::
@@ -60,48 +60,48 @@
                                 @endif 
                                 <br><br> 
                                
-                                {{Form::label('อีเมล:')}}  {{$personal->email}} 
+                                <label>อีเมล:</label>    {{$personal->email}} 
                                 &emsp;  
-                                {{Form::label("ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก:")}} {{$personal->address1}}           
+                                <label>ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก:</label>    {{$personal->address1}}           
                                 <br><br>  
-                                {{Form::label("ที่อยู่ตามบัตรประชาชน:")}} {{$personal->address2}}      
+                                <label>ที่อยู่ตามบัตรประชาชน:</label>    {{$personal->address2}}      
                                 &emsp; 
-                                {{Form::label("เลขบัตรประชาชน:")}} {{$personal->idcard}}           
+                                <label>เลขบัตรประชาชน:</label>     {{$personal->idcard}}           
                                 &emsp;        
-                                {{Form::label("ออกให้ ณ อำเภอ/เขต:")}} {{$personal->issued}}         
+                                <label>ออกให้ ณ อำเภอ/เขต:</label>    {{$personal->issued}}         
                                 &emsp;
-                                {{Form::label("จังหวัด:")}} {{$personal->province_crad}}  
+                                <label>จังหวัด:</label>   {{$personal->province_crad}}  
                                 <br><br> 
-                                {{Form::label("วันออกบัตร:")}} {{$personal->issueddate}}         
+                                <label>วันออกบัตร:</label>    {{$personal->issueddate}}         
                                 &emsp;
-                                {{Form::label("บัตรหมดอายุ:")}} {{$personal->expid}}              
+                                <label>บัตรหมดอายุ:</label>   {{$personal->expid}}              
                                 &emsp;  
-                                {{Form::label("บัตรประจำตัวผู้เสียภาษี:")}} 
+                                <label>บัตรประจำตัวผู้เสียภาษี:</label>  
                                 @if($personal->texid =='')
                                 ว่าง
                                 @else
                                {{$personal->texid}}
                                 @endif 
                                 &emsp;         
-                                {{Form::label("สถานะความเป็นอยู่:")}} {{$personal->living_status}}           
+                                <label>สถานะความเป็นอยู่:</label>   {{$personal->living_status}}           
                                 &emsp;   
-                                {{Form::label("สถานะครอบครัว:")}} {{$personal->marital_status}}   
+                                <label>สถานะครอบครัว:</label>       {{$personal->marital_status}}   
                                 &emsp;   
-                                {{Form::label("กรณีแต่งงาน:")}} 
+                                <label>กรณีแต่งงาน:</label>     
                                 @if($personal->if_marricd =='')
                                 ว่าง
                                 @else
                                {{$personal->if_marricd}}
                                 @endif 
                                 <br><br> 
-                                {{Form::label("คู่มสมรส:")}} 
+                                <label>คู่มสมรส::</label>     
                                 @if($personal->spouse =='')
                                 ว่าง
                                 @else
                                {{$personal->spouse}}
                                 @endif 
                                 &emsp;
-                                {{Form::label("ชื่อสมรส:")}}
+                                <label>ชื่อสมรส:</label>     
                                 @if($personal->name_spouse =='')
                                 ว่าง
                                 @else
@@ -109,7 +109,7 @@
                                 @endif 
 
                                 &emsp;
-                                {{Form::label("อาชีพคู่สมรส:")}}
+                                <label>อาชีพคู่สมรส:</label>     
                                 @if($personal->spouse_occupation =='')
                                 ว่าง
                                 @else
@@ -118,7 +118,7 @@
 
                                 &emsp;
 
-                                {{Form::label("สถานที่ทำงาน:")}}
+                                <label>สถานที่ทำงาน:</label>       
                                 @if($personal->firm_address =='')
                                 ว่าง
                                 @else
@@ -127,7 +127,7 @@
 
                                 &emsp;
                                 
-                                {{Form::label("โทรศัพท์:")}}
+                                <label>โทรศัพท์:</label>    
                                 @if($personal->spouse_tel =='')
                                 ว่าง
                                 @else
@@ -136,7 +136,7 @@
 
                                 &emsp;
 
-                                {{Form::label("จำนวนบุตรทั้งหมด:")}}
+                                <label>จำนวนบุตรทั้งหมด:</label>   
                                 @if($personal->children =='')
                                 ว่าง
                                 @else
@@ -145,7 +145,7 @@
 
                                 &emsp;
 
-                                {{Form::label("หญิง:")}}
+                                <label>หญิง:</label>   
                                 @if($personal->girls =='')
                                 ว่าง
                                 @else
@@ -153,7 +153,7 @@
                                 @endif
                                 &emsp;
 
-                                {{Form::label("ชาย:")}}
+                                <label>ชาย:</label>     
                                 @if($personal->boy =='')
                                 ว่าง
                                 @else
@@ -161,7 +161,7 @@
                                 @endif
                                 <br><br> 
 
-                                {{Form::label("จำนวนบุตรกำลังศึกษา:")}}
+                                <label>จำนวนบุตรกำลังศึกษา:</label>  
                                 @if($personal->school =='')
                                 ว่าง
                                 @else
@@ -170,7 +170,7 @@
 
                                 &emsp;
 
-                                {{Form::label("จำนวนบุตรที่อายุเกิน21ปี:")}}
+                                <label>จำนวนบุตรที่อายุเกิน21ปี:</label>    
                                 @if($personal->over21 =='')
                                 ว่าง
                                 @else
@@ -179,7 +179,7 @@
 
                                 &emsp;
 
-                                {{Form::label("สถานะทางทหาร:")}}
+                                <label>สถานะทางทหาร:</label>     
                                 @if($personal->military_service =='')
                                 ว่าง
                                 @else
@@ -188,7 +188,7 @@
 
                                 &emsp;
 
-                                {{Form::label("สถานะทางทหาร:")}}
+                                <label>สถานะทางทหาร:</label>   
                                 @if($personal->military_service =='')
                                 ว่าง
                                 @else
@@ -196,35 +196,37 @@
                                 @endif
                                 <br><br> 
 
-                                {{Form::label("ชื่อบิดา:")}}
+                                <label>ชื่อบิดา:</label>   
                                 {{$personal->namefather}}  
                                 &emsp;
-                                {{Form::label("นามสกุล:")}}
+                                <label>นามสกุล:</label>            
                                 {{$personal->lastfather}}  
                                 &emsp;
-                                {{Form::label("อาชีพ:")}}
+                                <label>อาชีพ:</label>          
                                 {{$personal->occupation_father}} 
                                 &emsp;
-                                {{Form::label("สถานะ")}}
+                                <label>สถานะ</label>          
                                 {{$personal->alivef}}       
 
                                 <br><br> 
 
-                                {{Form::label("ชื่อมารดา:")}}
+                                <label>ชื่อมารดา:</label>             
                                 {{$personal->namemother}}
                                 &emsp;
-                                {{Form::label("นามสกุล:")}}
+
+                                <label>นามสกุล:</label>           
                                 {{$personal->lasrmother}}  
                                 &emsp;
-                                {{Form::label("อาชีพ:")}}
+
+                                <label>อาชีพ:</label>           
                                 {{$personal->occupationm}} 
                                 &emsp;
-                                {{Form::label("สถานะ:")}}
+
+                                <label>สถานะ:</label>         
                                 {{$personal->alivem}}     
 
                                        
                               </div>
-                       
                         <!-- /.tab-pane -->
                         <div class="tab-pane" id="tab_2">
                                 <div class="box-body table-responsive no-padding">
@@ -1071,7 +1073,7 @@
                        <div class="row">      
                     <div class="col-md-5">
                             <div class="form-group">
-                        <label for="name">ความรู้พิเศษ</label> 
+                        <label >ความรู้พิเศษ</label> 
                         คอมพิวเตอร์   ระบุ:   @if($personal->computer == '')
                         -
                        @else
@@ -1085,7 +1087,7 @@
                     <div class="col-md-5">
                             <div class="form-group">
                                                           
-                                        {{Form::label('เครื่องโทรสาร:')}}   {{$personal->dot}} 
+                              <label >เครื่องโทรสาร:</label>     {{$personal->dot}} 
 
         @if($personal->fax == '')
                         -
@@ -1094,7 +1096,7 @@
 
                       @endif 
                       
-                      {{Form::label('เครื่องพิมพ์ดีดไทย :')}}    
+                      <label >เครื่องพิมพ์ดีดไทย</label>     
 
         @if($personal->typewriter == '')
                         -
@@ -1102,7 +1104,7 @@
                       {{$personal->typewriter}}
 
                       @endif 
-                      {{Form::label('  คำ/นาที ')}} 
+                      <label >คำ/นาที</label>    
                       
 
                         </div>
@@ -1117,7 +1119,7 @@
                                         {{$personal->crash1}}   
                                    
                                         ชื่อ:  {{$personal->compd}} 
-                                        สถานที่ทำงาน:  {{$personal->compd}} 
+                                        สถานที่ทำงาน:  {{$personal->compa}} 
                                 </div>              
                             
                         </div>   
@@ -1189,7 +1191,7 @@
                                         <div class="row">      
                                                 <div class="col-md-6">
                                                                 <div class="form-group ">
-                                                                <label>ท่านพร้อมงานวันที่: <label>  {{$personal->dateworkk}} 
+                                                                <label>ท่านพร้อมงานวันที่: </label>  {{$personal->dateworkk}} 
                                                                
                                                                         </div>   
                                                 </div>   
