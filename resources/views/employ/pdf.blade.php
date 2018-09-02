@@ -44,7 +44,7 @@
 <center><h3>ข้อมูลประวัติ</h3>
 <img src="{{$personal->photo}}" alt="" width="55" height="55" ></center>
 <br>
-    <table class="table table-bordered">
+    <table>
         <tbody>
             
           <tr>
@@ -368,19 +368,6 @@
         </tbody>
     </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
       <table>
           <tbody>
                 <tr>
@@ -686,6 +673,33 @@
                 </tr>
           </tbody>
       </table>
+
+
+
+      <table>
+        <thead>
+          <tr>
+            <th align=center>ผลงานชิ้นที่1</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align=center><img src="{{$personal->portfolio1}}" alt="" width="280" height="280" ></td>
+          </tr>
+          <tr>
+            <td align=center><img src="{{$personal->portfolio2}}" alt="" width="280" height="380" ></td>
+          </tr>
+          <tr>
+            <td align=center><img src="{{$personal->portfolio3}}" alt="" width="280" height="280" ></td>            
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+
     
 </body>
 </html>

@@ -229,9 +229,27 @@ class EmployeeController extends Controller
 
         
         $personal->talent = $request->talent;
-        $personal->portfolio1 = $request->portfolio1;
-        $personal->portfolio2 = $request->portfolio2;
-        $personal->portfolio3= $request->portfolio3;
+        if(Input::hasFile('portfolio1')){
+            $file=Input::file('portfolio1');
+            $personal->portfolio1 = $file->getClientOriginalName();
+            $file->move(public_path(). '/', $file->getClientOriginalName());
+        }
+
+
+        if(Input::hasFile('portfolio2')){
+            $file=Input::file('portfolio2');
+            $personal->portfolio2 = $file->getClientOriginalName();
+            $file->move(public_path(). '/', $file->getClientOriginalName());
+        }
+
+
+
+        if(Input::hasFile('portfolio3')){
+            $file=Input::file('portfolio3');
+            $personal->portfolio3 = $file->getClientOriginalName();
+            $file->move(public_path(). '/', $file->getClientOriginalName());
+        }
+
         $personal->fronname = $request->fronname;
         
         $personal->save();
@@ -538,9 +556,31 @@ class EmployeeController extends Controller
         $personal->degree7 = $request->degree7;
        
         $personal->talent = $request->talent;
-        $personal->portfolio1 = $request->portfolio1;
-        $personal->portfolio2 = $request->degree2;
-        $personal->portfolio3= $request->degree3;
+
+        if(Input::hasFile('portfolio1')){
+            $file=Input::file('portfolio1');
+            $personal->portfolio1 = $file->getClientOriginalName();
+            $file->move(public_path(). '/', $file->getClientOriginalName());
+        }
+
+
+        if(Input::hasFile('portfolio2')){
+            $file=Input::file('portfolio2');
+            $personal->portfolio2 = $file->getClientOriginalName();
+            $file->move(public_path(). '/', $file->getClientOriginalName());
+        }
+
+
+
+        if(Input::hasFile('portfolio3')){
+            $file=Input::file('portfolio3');
+            $personal->portfolio3 = $file->getClientOriginalName();
+            $file->move(public_path(). '/', $file->getClientOriginalName());
+        }
+
+
+
+
         $personal->fronname = $request->fronname;
         $personal->save();
        
