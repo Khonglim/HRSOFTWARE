@@ -916,7 +916,7 @@
                                 <div class="col-md-2">
                                                 <div class="form-group" >
                                               <label >ผลงาน 1 || {{$personal->portfolio1}}||</label>
-                                                {{Form::file('image')}}
+                                                {{Form::file('portfolio1')}}
                                                 
                                             
                                         </div>  
@@ -925,7 +925,7 @@
                               <div class="col-md-2">
                                         <div class="form-group" >
                                       <label >ผลงาน 2 ||{{$personal->portfolio2}}||</label>
-                                        {{Form::file('image')}}
+                                        {{Form::file('portfolio2')}}
                                         
                                     
                                 </div>  
@@ -934,7 +934,7 @@
                       <div class="col-md-2">
                                 <div class="form-group" >
                               <label >ผลงาน 3  || {{$personal->portfolio3}}||</label>
-                                {{Form::file('image')}}
+                                {{Form::file('portfolio3')}}
                              
                             
                         </div>  
