@@ -1142,7 +1142,7 @@
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
                                                                             <label class="control-label">ความสัมพันธ์*</label>
-                                                                            {{Form::text('namecm','',['class'=>'form-control','required'])}}        
+                                                                            {{Form::text('lastnamecm','',['class'=>'form-control','required'])}}        
                                                                        </div>
                                                                     </div> 
                                                          
@@ -1153,7 +1153,7 @@
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
                                                                             <label class="control-label">โทรศัพท์*</label>
-                                                                            {{Form::text('namecm','',['class'=>'form-control','required'])}}        
+                                                                            {{Form::text('telecm','',['class'=>'form-control','required'])}}        
                                                                        </div>
                                                                 </div>        
                                                             </div>

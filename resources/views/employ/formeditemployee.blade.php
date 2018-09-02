@@ -907,12 +907,12 @@
                                         {{ Form::radio('crash1','ขัดข้อง',true) }} ขัดข้อง
                                         {{ Form::radio('crash1','ไม่ขัดข้อง') }} ไม่ขัดข้อง
                                         ชื่อ:  {{Form::text('compd',$personal->compd)}} 
-                                        สถานที่ทำงาน:  {{Form::text('compa',$personal->compd)}} 
+                                        สถานที่ทำงาน:  {{Form::text('compa',$personal->compa)}} 
                                         @else
                                         {{ Form::radio('crash1','ขัดข้อง') }} ขัดข้อง
                                         {{ Form::radio('crash1','ไม่ขัดข้อง',true) }} ไม่ขัดข้อง
                                         ชื่อ:  {{Form::text('compd',$personal->compd)}} 
-                                        สถานที่ทำงาน:  {{Form::text('compa',$personal->compd)}} 
+                                        สถานที่ทำงาน:  {{Form::text('compa',$personal->compa)}} 
                                         @endif
 
                                         <br>
