@@ -73,6 +73,10 @@ Route::get('/pdfemployee/{id}','PDFController@pdfemployee' );
 
 Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' );
 Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' );
+Route::get('/pdfcon_all/{id}','PDFController@pdfconall' );
+
+
+
 
 Route::get('summbti', function () {
     

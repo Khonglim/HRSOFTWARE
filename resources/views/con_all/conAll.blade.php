@@ -28,10 +28,10 @@
                              <td>  
                                   <a href="{{'con_all/'.$l['id']}}" class="btn btn-primary btn-xs" ><i class="fa fa-search"></i></a>
                                  
-                                  <a href="{{url('pdfemployee/'.$l['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
-                                 
+                                	<a href="{{url('pdfcon_all/'.$l['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+                                  
                  
-                </td>
+                   </td>
                 </tr>
                 @endif
                  @empty
