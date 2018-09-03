@@ -9,13 +9,23 @@
 
 </style>
    <?php  $i=1;     $r=1; 
-                  $l=45;  
+                 $l=45;  
           $y=1;   $w=30; 
           $h=1;    $t=15; 
           $q=1; 
    
    
-   $a=0; $b=15; $c=30; $d=45;  $r=0; $j=0; $k=0; $p=0; $k=0; ?>
+   $aa=0;     
+   $tt=0;
+   $ww=0;
+   $ll=0;
+   
+   $a=0;   $b=15; $c=30; $d=45;  
+
+  
+   
+   
+   $r=0; $j=0; $k=0; $p=0; $k=0; ?>
 
 
 
@@ -37,7 +47,8 @@
                                 <div class ="form-group">
                                         <div class="col-md-2">
                                                 <div class="alert alert-success">
-                                                        &emsp;  นาที    <strong id="showTimeDisc" data-minutes-left="5"></strong>
+                                                       <p>  <strong id="showTimeDisc" data-minutes-left="5"></strong></p>
+                                                       <p>   <strong id="showTimeDisc" data-minutes-left="0.5"></strong></p>
                                       </div> 
                                     </div>  
                                     <div class="col-md-4
@@ -74,7 +85,7 @@
                       
                                       <td >
                                       
-                                        <select name="chioe{{$a++}}"  class="uniqueSelection{{$i++}}">
+                                      <select name="chioe{{$a++}}" id="chioe{{$aa++}}" class="uniqueSelection{{$i++}}">
                                                 <option value=0>เลือก</option>
                                                 <option value= 1>1</option>
                                                 <option value=2>2</option>
@@ -85,7 +96,7 @@
                                        <td>
                            
                                              
-                                    <select name="chioe{{$t++}}" class="uniqueSelection{{$y++}}">
+                                    <select name="chioe{{$t++}}"  id="chioe{{$tt++}}"  class="uniqueSelection{{$y++}}">
                                             <option value=0>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
@@ -95,7 +106,7 @@
                                           
                                        </td>
                                        <td>
-                                        <select name="chioe{{$w++}}"  class="uniqueSelection{{$h++}}">
+                                        <select name="chioe{{$w++}}"  id="chioe{{$ww++}}"  class="uniqueSelection{{$h++}}">
                                             <option value=0>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
@@ -105,7 +116,7 @@
                                        </td>
                                        <td>
                                           
-                                        <select name="chioe{{$l++}}"  class="uniqueSelection{{$q++}}">
+                                        <select name="chioe{{$l++}}" id="chioe{{$ll++}}"   class="uniqueSelection{{$q++}}">
                                             <option value=0>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
@@ -123,10 +134,7 @@
     
                                
                                        {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
-                                       {{Form::close()}}
-                                     
-                                         
-                                            
+                                       {{Form::close()}}           
                               </div>
                       
                         @endif

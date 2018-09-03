@@ -424,7 +424,27 @@ body {
        @endif 
   
   
-  
+       @if (($s < 30) && (($i <30)) && (($c <30)) && (($d <30)) )
+       All scores around 30
+       (None clearly higher than others)
+           Transition/Stress pattern
+       Lack of goal clarity; insufficient action planning, confusion, 
+       uncertainty, anxiety about expectations; behavior 
+       alternates between furious activity to slow, 
+       methodical action; can be brought on by periods of change---new job, 
+       new home, bad health, etc. Person will make quick decisions and then try to gain approval from others.
+       
+ 
+       <input type="text" name="meaning" value=" 
+       All scores around 30
+       (None clearly higher than others)
+          Transition/Stress pattern
+       Lack of goal clarity; insufficient action planning, confusion, uncertainty, 
+       anxiety about expectations; behavior alternates between furious activity to slow, 
+       methodical action; can be brought on by periods of change---new job, new home, bad 
+       health, etc. Person will make quick decisions and then try to gain approval from others.
+       " hidden/>
+      @endif 
   
   
                       </li> 
