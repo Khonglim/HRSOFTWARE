@@ -14,6 +14,11 @@ use App\Employeetotest;
 use App\Ngg_evaluate_result;
 use App\Ngg_evaresult_comment;
 use Illuminate\Support\Facades\Input;
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\ServiceProvider;
+
+use App\Http\Controllers\Controller;
 
 class EvatestingController extends Controller
 {
@@ -24,8 +29,14 @@ class EvatestingController extends Controller
      */
     public function index()
     {
-       
-         return view("testeva/filltertodo");
+        $ngg_evaluate_results = Ngg_evaluate_result::all();
+        $employeetotest = Employeetotest::all();
+$ngg_employee = Ngg_employee::all();
+
+         $data = array(
+                'ngg_employee' => $ngg_employee,'ngg_evaluate_results' => $ngg_evaluate_results,'employeetotest' => $employeetotest
+            );
+         return view("testeva/filltertodo",$data);
     }
 
 
@@ -304,8 +315,10 @@ class EvatestingController extends Controller
        }
         
        
-
-        return redirect("home");
+   
+    Session::flash('flash_message','สำเร็จ!! ขอบคุณสําหรับการประเมิน');
+    return redirect()->route("home");
+       
     }
 
     /**

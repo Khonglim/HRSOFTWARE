@@ -15,7 +15,7 @@
              <div class="col-md-4">
                 <div class="form-group">
                  
-                   <?php    $i=Auth::user()->name; ?>
+                   <?php    $i=Auth::user()->name; $j=0;?>
                  
                    {{Form::open(['url'=>'istestertotest','method'=>'POST'])}}
 
@@ -29,11 +29,17 @@
                 </div>
                 
          </div>
+
           <div class="box-footer">
-             
-                {{ Form::submit('เริ่มทำแบบประเมิน',['class'=> 'btn btn-primary'])}}
+           
+
+            {{ Form::submit('เริ่มทำแบบประเมิน',['class'=> 'btn btn-primary'])}}
+
+      
+               
               </div>
               <!-- /.box-footer -->
+
         </div>
       </div>
       
