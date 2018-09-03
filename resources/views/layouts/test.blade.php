@@ -148,12 +148,78 @@ body {
      $("#showTime").startTimer({
       
        onComplete:function(){
+
          alert("หมดเวลาทำแบบทดสอบแล้วค่ะ.")
-
-
+         if(document.getElementById('radio1').checked  == true &&
+         document.getElementById('radio2').checked  == true &&
+         document.getElementById('radio3').checked  == true &&
+         document.getElementById('radio4').checked  == true &&
+         document.getElementById('radio5').checked  == true &&
+         document.getElementById('radio6').checked  == true &&
+         document.getElementById('radio7').checked  == true &&
+         document.getElementById('radio8').checked  == true &&
+         document.getElementById('radio9').checked  == true &&
+         document.getElementById('radio10').checked  == true &&
+         document.getElementById('radio11').checked  == true &&
+         document.getElementById('radio12').checked  == true &&
+         document.getElementById('radio13').checked  == true &&
+         document.getElementById('radio14').checked  == true &&
+         document.getElementById('radio15').checked  == true &&
+         document.getElementById('radio16').checked  == true &&
+         document.getElementById('radio17').checked  == true &&
+         document.getElementById('radio18').checked  == true &&
+         document.getElementById('radio19').checked  == true &&
+         document.getElementById('radio20').checked  == true 
+         ){
          $("#test1").submit();
+        }
+         if(document.getElementById('radio1').checked  == false||
+         document.getElementById('radio2').checked  == false||
+         document.getElementById('radio3').checked  == false||
+         document.getElementById('radio4').checked  == false||
+         document.getElementById('radio5').checked  == false||
+         document.getElementById('radio6').checked  == false||
+         document.getElementById('radio7').checked  == false||
+         document.getElementById('radio8').checked  == false||
+         document.getElementById('radio9').checked  == false||
+         document.getElementById('radio10').checked  == false||
+         document.getElementById('radio11').checked  == false||
+         document.getElementById('radio12').checked  == false||
+         document.getElementById('radio13').checked  == false||
+         document.getElementById('radio14').checked  == false||
+         document.getElementById('radio15').checked  == false||
+         document.getElementById('radio16').checked  == false||
+         document.getElementById('radio17').checked  == false||
+         document.getElementById('radio18').checked  == false||
+         document.getElementById('radio19').checked  == false||
+         document.getElementById('radio20').checked  == false
+          )
+      {
+          alert('คุณตอบคำถามไม่ครบ!!!! เราจะเพิ่มเวลาให้คุณ 30 ');
+          $("#showTime2").startTimer({
+
+  onComplete:function(){
+    $("#test1").submit();
+   
+  }
+
+           
+})
+
+
+        
+      } 
+       
+          
+      
+
+
+
        }
+
+       
      })
+
 
 
 $("#showTimeDisc").startTimer({

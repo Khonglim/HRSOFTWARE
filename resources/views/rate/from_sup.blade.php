@@ -51,7 +51,7 @@
                             @endforeach
                         </select>
 
-                        <td  style="text-align:center">
+                        <td  style="text-align:center" >
                              ตำแหน่งผู้สมัคร (Position)    {{ Form::text('ngg_position', '', ['id'=>'ngg_position']) }}  </td>
                             <input type= "hidden" name="chioce101" value="101"  />
                         </td>

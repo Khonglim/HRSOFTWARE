@@ -1,30 +1,30 @@
 @extends('layouts.interview')
 @section('content')
 <style>
-        #customers {
-            font-family: 'Prompt', sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            
-        }
+    #customers {
+        font-family: 'Prompt', sans-serif;
+        border-collapse: collapse;
+        width: 100%;
         
-        #customers td, #customers th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        
-        #customers tr:nth-child(even){background-color: #f2f2f2;}
-        
-        #customers tr:hover {background-color: #FFCCCC;}
-        
-        #customers th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #FF3333;
-            color:  black;
-        }
-        </style>
+    }
+    
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #FFCCCC;}
+    
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #FF3333;
+        color:  black;
+    }
+    </style>
            <div class="container">
           {{Form::open(['url'=>'rate'])}}
          
@@ -51,7 +51,7 @@
                             <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
                             @endforeach
                       
-                        <td style="text-align:center"colspan="1">
+                        <td style="text-align:center">
                             ตำแหน่งผู้สมัคร (Position)  <br>
                         <input type="text" name="ngg_position" required>
                         
@@ -75,7 +75,7 @@
                      <?php $s++ ?>
                      <tr>
                             <input type="hidden" name="chioce{{$s}}"  value="{{$s}}"  >
-                            <td  style="width:20% " >{{ $i->choice}}
+                            <td  style="width:40% " >{{ $i->choice}}
                                 
                             <td  colspan="1" style="text-align:center " >
                                     @foreach ($scoreinterviewp as $item)
@@ -102,7 +102,7 @@
                      <input type="hidden" name="chioce{{$s}}" value="{{$s}}"  />
                      <tr>
                     
-                            <td  style="width:40% " >{{ $i->choice   }}
+                            <td  style="width:20% " >{{ $i->choice   }}
                             <td  style="text-align:center" >
 
                                     @foreach ($scoreinterviewp as $item)
@@ -129,7 +129,7 @@
                                 <?php $s++ ?>
                                 <input type="hidden" name="chioce{{$s}}" value="{{$s}}"  >
                                 <tr>
-                                       <td  style="width:40% " >{{ $i->choice}}
+                                       <td  style="width:20% " >{{ $i->choice}}
                                        <td  style="text-align:center " >
                                                @foreach ($scoreinterviewp as $item)
                                    
@@ -156,7 +156,7 @@
                                     <?php $s++ ?>
                                     <input type="hidden" name="chioce{{$s}}" value="{{$s}}"  />
                                     <tr>
-                                           <td  style="width:40% " >{{ $i->choice}}
+                                           <td  style="width:20% " >{{ $i->choice}}
                                            <td  colspan="1" style="text-align:center " >
                                                    @foreach ($scoreinterviewp as $item)
                                                      <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}" required> {{$item->score_interview}}&ensp; 
@@ -181,7 +181,7 @@
                                     <?php $s++ ?>
                                     <input type="hidden" name="chioce{{$s}}" value="{{$s}}"  />
                                     <tr>
-                                           <td  style="width:40% " >{{ $i->choice}}
+                                           <td  style="width:20% " >{{ $i->choice}}
                                            <td  colspan="1" style="text-align:center " >
                                                    @foreach ($scoreinterviewp as $item)
                                                      <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}" required > {{$item->score_interview}}&ensp; 
