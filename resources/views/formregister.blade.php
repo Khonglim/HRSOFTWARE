@@ -52,10 +52,10 @@
 		                    	</div>  -->
 								<div class="wizard-navigation">
 									<ul>
-                                  <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>    
-                                  <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>   
-                                  <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>  
-                                  <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>  
+                               <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>    
+                                 <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>  
+                                  <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>    
+                               <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>   
 			                      <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
                                   <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li> 
                                  <li><a href="#work" data-toggle="tab">การทำงาน</a></li> 
@@ -302,7 +302,7 @@
                                             
                                             </div>
 
-                                            </div> 
+                                           
 
 <div class="row" >
         <div class="col-md-1"></div>
@@ -358,9 +358,6 @@
 
                                                                     </div>
 
-
-
-
                                                                     <div class="row">
                                                                             <div class="col-md-1"></div>
                                                                           
@@ -384,12 +381,12 @@
                                         </div>
                          
         
-        
+                                    </div> 
         <div class="tab-pane" id="about3">
 
                 <div class="row">
                         <div class="col-md-1"></div>
-                        <div class="col-md-3">
+                        <div class="col-md-3  col-xs-3" >
                             <div class="form-group label-floating">
                                 <label class="control-label" >สถานะความเป็นอยู่<small class="text-danger">*</small></label>  
                                     {{ Form::select('living_status', ['' => '', 
@@ -402,7 +399,7 @@
                                 </div>
                         </div>
                         <div class="col-md-3"></div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-xs-3">
                             <div class="form-group label-floating">
                                 <label class="control-label" >สถานะครอบครัว<small class="text-danger">*</small></label>  
                                     {{ Form::select('marital_status', [
@@ -419,14 +416,14 @@
                         </div>
                         <div class="row">
                                 <div class="col-md-1"></div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-xs-3">
                                     <div class="form-group label-floating">
                                         <label class="control-label" >กรณีแต่งงาน</label>
                                             {{ Form::select('if_marricd', ['' =>'','จดทะเบียนสมรส' => 'จดทะเบียนสมรส','ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'],null, ['class' => 'form-control']) }}
                                         </div>
                                 </div>
                                 <div class="col-md-3"></div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-xs-3">
                                     <div class="form-group label-floating">
                                         <label class="control-label" >คู่มสมรส</label>
                                             {{ Form::select('spouse', ['' =>'','มี' => 'มี','ไม่มี' => 'ไม่มี'],null, ['class' => 'form-control']) }}
@@ -436,7 +433,7 @@
                              
                                     <div class="row">
                                         <div class="col-md-1"></div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-xs-3">
                                                 <div class="form-group label-floating">
                                                         <label class="control-label">ชื่อคู่สมรส</label>
                                                         {{Form::text('name_spouse','',['class'=>'form-control'])}}     
@@ -444,7 +441,7 @@
                                          
                                         </div>
                                         <div class="col-md-2"></div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4  col-xs-3">
                                                 <div class="form-group label-floating">
                                                         <label class="control-label">อาชีพคู่สมรส</label>
                                                         {{Form::text('spouse_occupation','',['class'=>'form-control'])}}    
@@ -454,7 +451,7 @@
                                         </div>
                                     <div class="row">
                                         <div class="col-md-1"></div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-xs-3">
                                                 <div class="form-group label-floating">
                                                         <label class="control-label">สถานที่ทำงาน</label>
                                                         {{Form::text('firm_address','',['class'=>'form-control'])}}     
@@ -462,7 +459,7 @@
                     
                                         </div>
                                         <div class="col-md-2"></div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-xs-3">
                                                 <div class="form-group label-floating">
                                                         <label class="control-label">โทรศัพท์</label>
                                                         {{Form::text('spouse_tel','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}      
@@ -471,7 +468,7 @@
                                         </div>
                                     <div class="row">
                                         <div class="col-md-1"></div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-xs-3">
                                                 <div class="form-group label-floating">
                                                         <label class="control-label">จำนวนบุตรทั้งหมด/คน</label>
                                                         {{Form::text('children','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
@@ -479,14 +476,14 @@
                                            
                                         </div>
                                         <div class="col-md-2"></div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-2 col-xs-3">
                                                 <div class="form-group label-floating">
                                                         <label class="control-label">หญิง/คน</label>
                                                         {{Form::text('girls','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}   
                                                </div>
                                                
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-xs-4">
                                                     <div class="form-group label-floating">
                                                             <label class="control-label">ชาย/คน </label>
                                                                     {{Form::text('boy','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}     
@@ -497,7 +494,7 @@
                                         </div>
                                         <div class="row">
                                         <div class="col-md-1"></div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-xs-4">
                                                 <div class="form-group label-floating">
                                                         <label class="control-label"> จำนวนบุตรกำลังศึกษา/คน </label>
                                                         {{Form::text('school','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}       
@@ -505,7 +502,7 @@
                     
                                         </div>        
                                         <div class="col-md-2"></div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-xs-4">
                                                 <div class="form-group label-floating">
                                                         <label class="control-label"> จำนวนบุตรที่อายุเกิน21ปี/คน </label>
                                                         {{Form::text('over21','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}       
@@ -595,31 +592,6 @@
                       </div>
                   </div>
                   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
 
