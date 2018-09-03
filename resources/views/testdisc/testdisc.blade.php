@@ -16,9 +16,9 @@
    
    
    $aa=0;     
-   $tt=0;
-   $ww=0;
-   $ll=0;
+   $tt=15;
+   $ww=30;
+   $ll=45;
    
    $a=0;   $b=15; $c=30; $d=45;  
 
@@ -48,7 +48,7 @@
                                         <div class="col-md-2">
                                                 <div class="alert alert-success">
                                                        <p>  <strong id="showTimeDisc" data-minutes-left="5"></strong></p>
-                                                       <p>   <strong id="showTimeDisc" data-minutes-left="0.5"></strong></p>
+                                                       <p>   <strong id="showTimeDisc2" data-minutes-left="0.5"></strong></p>
                                       </div> 
                                     </div>  
                                     <div class="col-md-4
