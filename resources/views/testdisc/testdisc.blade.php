@@ -85,8 +85,8 @@
                       
                                       <td >
                                       
-                                      <select name="chioe{{$a++}}" id="chioe{{$aa++}}" class="uniqueSelection{{$i++}}">
-                                                <option value=0>เลือก</option>
+                                      <select name="chioe{{$a++}}" id="chioe{{$aa++}}" class="uniqueSelection{{$i++}}"  required>
+                                                <option value=''>เลือก</option>
                                                 <option value= 1>1</option>
                                                 <option value=2>2</option>
                                                 <option value=3>3</option>
@@ -96,8 +96,8 @@
                                        <td>
                            
                                              
-                                    <select name="chioe{{$t++}}"  id="chioe{{$tt++}}"  class="uniqueSelection{{$y++}}">
-                                            <option value=0>เลือก</option>
+                                    <select name="chioe{{$t++}}"  id="chioe{{$tt++}}"  class="uniqueSelection{{$y++}}" required>
+                                            <option value=''>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>
@@ -106,8 +106,8 @@
                                           
                                        </td>
                                        <td>
-                                        <select name="chioe{{$w++}}"  id="chioe{{$ww++}}"  class="uniqueSelection{{$h++}}">
-                                            <option value=0>เลือก</option>
+                                        <select name="chioe{{$w++}}"  id="chioe{{$ww++}}"  class="uniqueSelection{{$h++}}" required>
+                                            <option value=''>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>
@@ -116,8 +116,8 @@
                                        </td>
                                        <td>
                                           
-                                        <select name="chioe{{$l++}}" id="chioe{{$ll++}}"   class="uniqueSelection{{$q++}}">
-                                            <option value=0>เลือก</option>
+                                        <select name="chioe{{$l++}}" id="chioe{{$ll++}}"   class="uniqueSelection{{$q++}}" required>
+                                            <option value=''>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>

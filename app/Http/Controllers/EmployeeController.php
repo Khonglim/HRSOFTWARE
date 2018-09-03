@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Personal;
+use App\Provinces;
 
 
 use Illuminate\Support\Facades\Input;
@@ -33,8 +34,13 @@ class EmployeeController extends Controller
     public function create()
     {
        
-        
-        return view('formregister');
+        $provinces = Provinces::all();
+        foreach ($provinces as $province){
+            
+            $items[$province->name] = $province->name;
+        }
+        $data = array('items' => $items  );
+        return view('formregister',$data);
     }
 
     /**

@@ -195,7 +195,7 @@ body {
          document.getElementById('radio20').checked  == false
           )
       {
-          alert('คุณตอบคำถามไม่ครบ!!!! เราจะเพิ่มเวลาให้คุณ 30 ');
+          alert('คุณตอบคำถามไม่ครบ!!!! เราจะเพิ่มเวลาให้คุณ 30 วินาที');
           $("#showTime2").startTimer({
 
   onComplete:function(){
@@ -273,7 +273,7 @@ $("#testdisc").submit();
 }
 else
 {
- alert('คุณตอบคำถามไม่ครบ!!!! เราจะเพิ่มเวลาให้คุณ 30 ');
+ alert('คุณตอบคำถามไม่ครบ!!!! เราจะเพิ่มเวลาให้คุณ 30 วินาที ');
  $("#showTimeDisc2").startTimer({
 
 onComplete:function(){

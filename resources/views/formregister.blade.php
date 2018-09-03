@@ -72,10 +72,11 @@
 		                                    	<div class="picture-container">
                                              
 		                                        	<div class="picture">
-                                        				<img src="{{URL::asset('img/default-avatar.png')}}" class="picture-src" id="wizardPicturePreview" title=""/>
-		                                            	<input type="file" id="wizard-picture">
+                                        				<img src="{{URL::asset('img/default-avatar.png')}}" class="picture-src" id="wizardPicturePreview" title="" />
+		                                            	<input type="file" id="wizard-picture" data-validation-allowing="jpg, png"
+                                                        data-validation-max-size="512kb"  required>
 		                                        	</div>
-		                                        	<h6>อัพโหลดรูปภาพ</h6>
+		                                        	<h6>อัพโหลดรูปภาพ<small class="text-danger">*ขนาดไม่เกิน 512 kb</small></h6>
                                                 </div>
                                                 
                                                 <div class="row">
@@ -285,7 +286,7 @@
                                             <div class="input-group">
                                                     <div class="form-group label-floating">
                                                             <label class="control-label">จังหวัด<small class="text-danger">*</small></label>
-                                                            {{ Form::text('province_crad','', ['class' => 'form-control','id'=>'province_crad','required']) }}     
+                                                            {{ Form::select('province_crad', [ '' => '','กรุณาเลือกจังหวัด' =>$items],null, ['class' => 'form-control','id'=>'province_crad']) }}     
                                                    </div>
                                                 </div>
                                     </div>
