@@ -31,7 +31,7 @@ class PartofTableSeeder extends Seeder
         ]);
            DB::table('partof')->insert([
            	
-            'part' => 'ด้านที่ 3 การประเมินด้านทักษะในการทำงาน (Skill)',
+            'part' => 'ด้านที่ 3 การประเมินด้านทักษะในการทำงาน (Skills)',
             'id_form' => '1',
             'id_part' => '3',
             'subpart' => '0',
@@ -82,7 +82,7 @@ class PartofTableSeeder extends Seeder
         ]);
           DB::table('partof')->insert([
             
-            'part' => 'ด้านที่ 2 การประเมินด้านทักษะในการทำงาน (Skill)',
+            'part' => 'ด้านที่ 2 การประเมินด้านทักษะในการทำงาน (Skills)',
             'id_form' => '3',
             'id_part' => '2',
             'subpart' => '0',
@@ -132,7 +132,7 @@ class PartofTableSeeder extends Seeder
         ]);
           DB::table('partof')->insert([
             
-            'part' => 'ด้านที่ 2 การประเมินด้านทักษะในการทำงาน (Skill)',
+            'part' => 'ด้านที่ 2 การประเมินด้านทักษะในการทำงาน (Skills)',
             'id_form' => '2',
             'id_part' => '2',
             'subpart' => '0',

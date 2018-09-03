@@ -213,23 +213,23 @@ function myFunction() {
                                   <?php $commentcount++;  $commenttemp = $ngg_comment->nec_comment; ?>
                           @switch($commentcount)
                                       @case($commentcount==1)
-                                      <?php array_push($comment1, $change2,$commenttemp); ?>
+                                      <?php array_push($comment1, $change,$commenttemp); ?>
                                      
                                           @break
                                       @case($commentcount==2)  
-                                      <?php array_push($comment2, $change2,$commenttemp); ?>
+                                      <?php array_push($comment2, $change,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==3)
-                                      <?php array_push($comment3, $change2,$commenttemp); ?>
+                                      <?php array_push($comment3, $change,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==4)
-                                      <?php array_push($comment4, $change2,$commenttemp); ?>
+                                      <?php array_push($comment4, $change,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==5)
-                                      <?php array_push($comment5, $change2,$commenttemp); 
+                                      <?php array_push($comment5, $change,$commenttemp); 
                                       $commentcount =0;
                                       ?>
 
@@ -635,7 +635,7 @@ function myFunction() {
                               <?php
                             for ($x=1; $x <count($comment1) ; $x+=2) { 
                               
-                                echo  $comment1[$x-1].".)&nbsp;&nbsp;".$comment1[$x]."<br><br>";
+                                echo  $comment1[$x-1]."&nbsp;:&nbsp;".$comment1[$x]."<br><br>";
                             }
                              
                               ?>
@@ -691,7 +691,7 @@ function myFunction() {
                               <?php
                             for ($x=1; $x <count($comment2) ; $x+=2) { 
                               
-                                echo  $comment2[$x-1].".)&nbsp;&nbsp;".$comment2[$x]."<br><br>";
+                                echo  $comment2[$x-1]."&nbsp;:&nbsp;".$comment2[$x]."<br><br>";
                             }
                              
                               ?>
@@ -747,7 +747,7 @@ function myFunction() {
                               <?php
                             for ($x=1; $x <count($comment3) ; $x+=2) { 
                               
-                                echo  $comment3[$x-1].".)&nbsp;&nbsp;".$comment3[$x]."<br><br>";
+                                echo  $comment3[$x-1]."&nbsp;:&nbsp;".$comment3[$x]."<br><br>";
                             }
                              
                               ?>
@@ -801,7 +801,7 @@ function myFunction() {
                               <?php
                             for ($x=1; $x <count($comment4) ; $x+=2) { 
                               
-                                echo  $comment4[$x-1].".)&nbsp;&nbsp;".$comment4[$x]."<br><br>";
+                                echo  $comment4[$x-1]."&nbsp;:&nbsp;".$comment4[$x]."<br><br>";
                             }
                              
                               ?>
@@ -855,7 +855,7 @@ function myFunction() {
              <h5>
                             <?php
                             for ($x=1; $x <count($comment5) ; $x+=2) { 
-                              echo  $comment5[$x-1].".)&nbsp;&nbsp;".$comment5[$x]."<br><br>"; 
+                              echo  $comment5[$x-1]."&nbsp;:&nbsp;".$comment5[$x]."<br><br>"; 
                             }?>
              </h5>   
                      
