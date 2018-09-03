@@ -75,14 +75,15 @@
                                         				<img src="{{URL::asset('img/default-avatar.png')}}" class="picture-src" id="wizardPicturePreview" title="" />
 		                                            	<input type="file" id="wizard-picture" data-validation-allowing="jpg, png"
                                                         data-validation-max-size="512kb"  required>
-		                                        	</div>
+                                                    </div>
+                                                    <div class="form-group label-floating">
 		                                        	<h6>อัพโหลดรูปภาพ<small class="text-danger">*ขนาดไม่เกิน 512 kb</small></h6>
                                                 </div>
                                                 
                                                 <div class="row">
                                                         <div class="col-md-1"></div>
                                                       
-                                                    <div class="col-md-2 ">
+                                                    <div class="col-md-2  col-xs-4  ">
                                                        <div class="input-group">
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">คำนำ<small class="text-danger">*</small></label>
@@ -91,7 +92,7 @@
                                                     </div>
                                                 </div>
                                                
-                                                <div class="col-md-3 ">
+                                                <div class="col-md-3 col-xs-4 ">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
                                                              <label class="control-label">ชื่อ<small class="text-danger">*</small></label>
@@ -100,7 +101,7 @@
                                                      </div>
                                                  </div>
 
-                                                 <div class="col-md-3 ">
+                                                 <div class="col-md-3 col-xs-4 ">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
                                                              <label class="control-label">นามสกุล<small class="text-danger">*</small></label>
@@ -109,7 +110,7 @@
                                                      </div>
                                                  </div>
 
-                                                 <div class="col-md-3 ">
+                                                 <div class="col-md-3 col-xs-6 ">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
                                                              <label class="control-label">ชื่อเล่น<small class="text-danger">*</small></label>
@@ -121,7 +122,7 @@
 
                                            <div class="row">
                                                 <div class="col-md-1"></div>
-                                                 <div class="col-md-3">
+                                                 <div class="col-md-3 col-xs-4 ">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
                                                                 <label >วันเกิด<small class="text-danger">*</small></label>
@@ -130,7 +131,7 @@
                                                      </div>
                                                  </div>
 
-                                                 <div class="col-md-3"><br>
+                                                 <div class="col-md-3 col-xs-4 "><br>
                                                  <div class="input-group">
                                                         <div class="form-group label-floating">
                                                                <label class="control-label">อายุ<small class="text-danger">*</small></label>
@@ -158,10 +159,10 @@
                                                 </div>
 
                                         </div>
-                                        
+                                    </div>
                                         <div class="row">
                                               <div class="col-md-1"></div>
-                                              <div class="col-md-4">
+                                              <div class="col-md-2 col-xs-2">
 
                                                     <div class="input-group">
                                                             <div class="form-group label-floating">
@@ -172,7 +173,7 @@
                                                      
                                               </div>
 
-                                              <div class="col-md-4">
+                                              <div class="col-md-2 col-xs-2">
                                                     <div class="input-group">
                                                             <div class="form-group label-floating">
                                                                    <label class="control-label">ส่วนสูง/ซม.<small class="text-danger">*</small></label>
@@ -188,38 +189,32 @@
                                         <div class="row">
 
                                                 <div class="col-md-1"></div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group {{ $errors->has('nationality') ? 'has-error' : '' }}">
+                                                <div class="col-md-2 col-xs-2" >
+                                                    <div class="form-group">
                                                         <label>สัญชาติ<small class="text-danger">*</small></label>  
                                                         {{ Form::select('nationality', ['ไทย' => 'ไทย'
 
                                                         ,'คริสต์' => 'คริสต์'
                                                         ,'อิสลาม' => 'อิสลาม'
                                                         ,'อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
-
-
-
-                                                        <span class="text-danger">{{ $errors->first('nationality') }}</span>
                                                         </div>
                                                 </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group {{ $errors->has('race') ? 'has-error' : '' }}" >
+                                               
+                                                <div class="col-md-2 col-xs-2 ">
+                                                    <div class="form-group" >
                                                         <label>เชื้อชาติ<small class="text-danger">*</small></label>  
                                                         {{ Form::select('race', ['ไทย' => 'ไทย','คริสต์' => 'คริสต์','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
                                                         <span class="text-danger">{{ $errors->first('race') }}</span>
                                                         </div>
                                                 </div>
-                                        </div>
-
-                                        <div class="row">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group {{ $errors->has('religion') ? 'has-error' : '' }}" >
+                                              
+                                                <div class="col-md-2 col-xs-2">
+                                                    <div class="form-group" >
                                                         <label>ศาสนา<small class="text-danger">*</small></label>  
                                                         {{ Form::select('religion', ['พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
-                                                        <span class="text-danger">{{ $errors->first('religion') }}</span>
-                                                        </div>
+                                        
+                                            </div>
+
                                                 </div>
 
                                                 
@@ -228,7 +223,7 @@
 
                                     <div class="row">
                                             <div class="col-md-1"></div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 col-xs-2">
                         
                                                     <div class="input-group">
                                                             <div class="form-group label-floating">
@@ -238,8 +233,8 @@
                                                         </div>
                                                
                                             </div>
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-4">
+                                          
+                                            <div class="col-md-4 col-xs-2">
                                                     <div class="input-group">
                                                             <div class="form-group label-floating">
                                                                     <label class="control-label">เป็นคนที่</label>
@@ -249,26 +244,21 @@
                                                         
                                             </div>
                                             </div>
-                                               
-                                                                                                                       
-                                                                                                                      
-                                                                                                                                             
-    
        </div>
        <div class="tab-pane" id="about2">                        
          <div class="row">
                             <div class="col-md-1"></div>
-                            <div class="col-md-4">
-                                    <div class="input-group">
+                            <div class="col-md-3  col-xs-3">
+                                    
                                             <div class="form-group label-floating">
-                                                    <label class="control-label">เลขบัตรประชาชน<small class="text-danger">*</small></label>
+                                                    <label class="control-label"><small class="text-danger">*</small>เลขบัตรประชาชน/บัตรประจำตัวผู้เสียภาษี </label>
                                                     {{Form::text('idcard','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"13"])}}   
                                            </div>
-                                        </div>
+                                       
                               
                             </div>
-                            <div class="col-md-2"></div>
-                            <div class="col-md-3">
+                          
+                            <div class="col-md-3 col-xs-3">
                                     <div class="input-group">
                                             <div class="form-group label-floating">
                                                     <label class="control-label">ออกให้ ณ อำเภอ/เขต<small class="text-danger">*</small></label>
@@ -277,115 +267,95 @@
                                         </div>
                                 
                                </div>
+                              
+                               <div class="col-md-3 col-xs-3">
+                                    <div class="input-group">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">สถานะทางทหาร<small class="text-danger">*</small></label> 
+                                    {{ Form::select('military_service', ['' =>'','-' =>'ไม่มี','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control','required']) }}
+                               
+                                </div>
                             </div>
+                        </div>
 
-
-                            <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-3">
-                                            <div class="input-group">
-                                                    <div class="form-group label-floating">
-                                                            <label class="control-label">จังหวัด<small class="text-danger">*</small></label>
-                                                            {{ Form::select('province_crad', [ '' => '','กรุณาเลือกจังหวัด' =>$items],null, ['class' => 'form-control','id'=>'province_crad']) }}     
-                                                   </div>
-                                                </div>
-                                    </div>
-                                    </div>
-
-                                  <hr>
+                            </div>
                                            <div class="row">
                                             <div class="col-md-1"></div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2 col-xs-3 ">
                                                 <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
                                                         <label class="control-label"><h4>วันนออกบัตร<small class="text-danger">*</small></h4></label>
                                                     {{Form::date('issueddate','',['class'=>'form-control','required'])}}   
                                                     <span class="text-danger">{{ $errors->first('issueddate') }}</span>
                                                     </div>
                                             </div>
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-3">
+                                           
+                                            <div class="col-md-2 col-xs-3">
                                                 <div class="form-group {{ $errors->has('expid') ? 'has-error' : '' }}" >
                                                         <label class="control-label"><h4>บัตรหมดอายุ<small class="text-danger">*</small></h4></label>
                                                     {{Form::date('expid','',['class'=>'form-control','required'])}}   
                                                     <span class="text-danger">{{ $errors->first('expid') }}</span>
                                                     </div>
                                             </div>
+
+                                      
+
+                                            
+                                            </div>
+
                                             </div> 
 
+<div class="row" >
+        <div class="col-md-1"></div>
+        <div class="col-md-4  col-xs-5">
+                                                  
+                <div class="form-group label-floating">
+                        <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้<small class="text-danger">*</small></label>
+                        <textarea name="address1"  class="form-control"  rows="3"  required>{{ old('address1') }}</textarea>     
+               </div>
+            
+         </div>
 
 
+ <div class="col-md-4 col-xs-5">
+         <div class="form-group label-floating">
+                 <label class="control-label">ที่อยู่ตามบัตรประชาชน<small class="text-danger">*</small></label>
+                 <textarea name="address2" class="form-control"  rows="3" required >{{ old('address2') }}</textarea> 
+         </div>
+</div>
 
-                                            <div class="row">
-                                                    <div class="col-md-1"></div>
-                                                    <div class="col-md-3">
-                                                    
-
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                            <label class="control-label">บัตรประจำตัวผู้เสียภาษี<small class="text-danger">*</small></label>
-                                                                            {{Form::text('texid','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"13"])}}      
-                                                                   </div>
-                                                                </div>
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-3">
-                                                            <div class="form-group label-floating">
-                                                                <label class="control-label">สถานะทางทหาร<small class="text-danger">*</small></label> 
-                                                                {{ Form::select('military_service', ['' =>'','-' =>'ไม่มี','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control','required']) }}
-                                                            <span class="text-danger">{{ $errors->first('military_service') }}</span>
-                                                            </div>
-                                                    </div>
-                                                    </div>
-
-
-
-                                                    <div class="row">
-                                                            <div class="col-md-1"></div>
-                                                            <div class="col-md-3 ">
-                                                                
-
-
-                                                             <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                            <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้<small class="text-danger">*</small></label>
-                                                                            <textarea name="address1"  class="form-control"  rows="3"  required>{{ old('address1') }}</textarea>     
-                                                                   </div>
-                                                                </div>
+</div>
 
 
 
 
-
-                                                            </div>
-                                                            <div class="col-md-2"></div>
-                                                            <div class="col-md-3">
-                                                                    <div class="form-group label-floating">
-                                                                            <label class="control-label">ที่อยู่ตามบัตรประชาชน<small class="text-danger">*</small></label>
-                                                                            <textarea name="address2" class="form-control"  rows="3" required >{{ old('address2') }}</textarea> 
-                                                                   </div>
-
-                                                            
-                                                            </div>
-                                                            </div>
-
-
-                                                            <div class="row">
+                                                         <div class="row">
                                                                     <div class="col-md-1"></div>
-                                                                    <div class="col-md-3">
+                                                                    <div class="col-md-3 col-xs-3">
                                                                             <div class="form-group label-floating">
                                                                                     <label class="control-label">โทรศัพท์ที่ติดต่อ<small class="text-danger">*</small></label>
                                                                                     {{Form::text('tel','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}   
                                                                            </div>
                                                                         
                                                                     </div>
-                                                                    <div class="col-md-2"></div>
-                                                                         <div class="col-md-3">
+                                                                   
+                                                                         <div class="col-md-3 col-xs-3">
                                                                             <div class="form-group label-floating">
                                                                                     <label class="control-label">โทรศัพท์บ้าน</label>
                                                                                     {{Form::text('home','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}   
                                                                            </div>
                                                                       
                                                                         </div>
+
+                                                                        <div class="col-md-3 col-xs-3">
+                                                                                <div class="form-group label-floating">
+                                                                                        <label class="control-label">โทรศัพท์มือถือ<small class="text-danger">*</small></label>
+                                                                                        {{Form::text('moblie','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}    
+                                                                               </div>
+                                                                          
+                                                                        </div>
+                                                                       
+                                                                       
+
                                                                     </div>
 
 
@@ -393,25 +363,17 @@
 
                                                                     <div class="row">
                                                                             <div class="col-md-1"></div>
-                                                                            <div class="col-md-3">
-                                                                                    <div class="form-group label-floating">
-                                                                                            <label class="control-label">โทรศัพท์มือถือ<small class="text-danger">*</small></label>
-                                                                                            {{Form::text('moblie','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}    
-                                                                                   </div>
-                                                                              
-                                                                            </div>
-                                                                            <div class="col-md-2"></div>
-                                                                            <div class="col-md-3">
+                                                                          
+                                                                           
+                                                                            <div class="col-md-3 col-xs-3">
                                                                                     <div class="form-group label-floating">
                                                                                             <label class="control-label">โทรศัพท์สำนักงาน</label>
                                                                                             {{Form::text('office','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}    
                                                                                    </div>
                                                                                    
                                                                             </div>
-                                                                            </div>
-                                                                            <div class="row">
-                                                                                    <div class="col-md-1"></div>
-                                                                                    <div class="col-md-3">
+                                                                                  
+                                                                                    <div class="col-md-3 col-xs-5">
                                                                                             <div class="form-group label-floating">
                                                                                                     <label class="control-label">อีเมล<small class="text-danger">*</small></label>
                                                                                                     {{Form::email('email','',['class'=>'form-control','required'])}}   
@@ -420,7 +382,7 @@
                                                                                      
                                                          </div>
                                         </div>
-        </div>                          
+                         
         
         
         <div class="tab-pane" id="about3">
