@@ -684,13 +684,13 @@
         </thead>
         <tbody>
           <tr>
-            <td align=center><img src="{{$personal->portfolio1}}" alt="" width="280" height="280" ></td>
+            <td align=center><img src="{{$personal->portfolio1}}" alt="" width="280" height="280" >ผลงาน1</td>
           </tr>
           <tr>
-            <td align=center><img src="{{$personal->portfolio2}}" alt="" width="280" height="380" ></td>
+            <td align=center><img src="{{$personal->portfolio2}}" alt="" width="280" height="380" >ผลงาน2</td>
           </tr>
           <tr>
-            <td align=center><img src="{{$personal->portfolio3}}" alt="" width="280" height="280" ></td>            
+            <td align=center><img src="{{$personal->portfolio3}}" alt="" width="280" height="280" >ผลงาน3</td>            
           </tr>
         </tbody>
       </table>
