@@ -41,7 +41,41 @@
     </style>
 </head>
 <body>
+
+  <b>ผลสรุปของคุณ </b> {{$personal->name}} {{$personal->lastname}}<br>
+               
+                @foreach ($testmbti as  $testmbtis )
+                @if ($testmbtis->id_personal == $personal->id)
+         
         
+        
+                <b>ผลสรุปการทดสอบ MBTI  </b><br>
+               
+                <b>  ผลสรุป  </b> {{ $testmbtis->conclude }} 
+                   {{  $testmbtis->meaning }} <br>
+                  
+                <b> ผลสรุป ด้านการคิด </b><br>
+                 
+                   {{  $testmbtis->meaningtwo  }} <br>
+        
+        
+        
+        
+ 
+            @endif
+            @endforeach
+
+    @foreach ($testdisc as $testdis )
+    @if (	$testdis->id_personal == $personal->id)
+    
+
+            <b>ผลสรุปการทดสอบ DISC</b><br>
+            {{ $testdis->meaning }} <br>
+
+   
+
+    @endif
+    @endforeach  
 
     <table >
         <thead>
@@ -103,16 +137,7 @@
         </tbody>
         @endforelse
       </table>
-
-
-
-
-
-      <br>
-
-
-
-
+     
     <table>
         <thead>
           <tr>
@@ -156,19 +181,10 @@
       @if($conm->chioce == '200')
    
      วันที่ {{ $conm->comment_interview }} 
-
        @endif
-
-
-
        @if($conm->chioce == '320')
-   
       ชื่อผู้ประเมิน {{ $conm->comment_interview }} 
-
         @endif
-
-
-
 </td>
 </tr>
 @endif
@@ -180,31 +196,24 @@
         </tbody>
       </table>
 
-<br>
-
-     
+<br><br>
         <table>
                 <thead>
                   <tr>
                     <th>คะแนนประเมิน ระดับปฎิบัติการ (Operational Level)</th>
-                     
                   </tr>
                 </thead>
                 <tbody>
                       
                      @forelse($con_interview as $coni )
                             @if (	$coni->id_personal == $personal->id &&  $coni->chioce > '20' )
-                      
                   <tr>
                     <td>
-                          
                             @if($coni->chioce == '105')
                             
                            ผลรวมจากการเลือก 5 ได้ {{ $coni->score }} คะแนน
                              @endif
                             
-                      
-                             
                              @if($coni->chioce == '106')
                              
                             ผลรวมจากการเลือก 4 ได้ {{ $coni->score }} คะแนน

@@ -52,13 +52,13 @@
 		                    	</div>  -->
 								<div class="wizard-navigation">
 									<ul>
-                                       <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>  
-                                       <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>  
-                                      <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li> 
-                                         <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li> 
-			                            <li><a href="#account" data-toggle="tab">การศึกษา</a></li>
-                                       <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li>
-                                        <li><a href="#work" data-toggle="tab">การทำงาน</a></li>
+                                  <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>    
+                                  <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>   
+                                  <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>  
+                                  <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>  
+			                      <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
+                                  <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li> 
+                                 <li><a href="#work" data-toggle="tab">การทำงาน</a></li> 
                                         <li><a href="#another" data-toggle="tab">อื่นๆ</a></li>
 			                        </ul>
 								</div>
@@ -120,9 +120,6 @@
 
                                            <div class="row">
                                                 <div class="col-md-1"></div>
-                                                
-
-
                                                  <div class="col-md-3">
                                                         <div class="input-group">
                                                          <div class="form-group label-floating">
@@ -1131,7 +1128,7 @@
                                                         <div class="col-md-5">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
-                                                                            <label class="control-label">ชื่อ-นามสกุล*</label>
+                                                                            <label class="control-label">ชื่อ-นามสกุล<small class="text-danger">*</small></label>
                                                                             {{Form::text('namecm','',['class'=>'form-control','required'])}}        
                                                                        </div>
                                                                     </div> 
@@ -1141,7 +1138,7 @@
                                                         <div class="col-md-5">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
-                                                                            <label class="control-label">ความสัมพันธ์*</label>
+                                                                            <label class="control-label">ความสัมพันธ์<small class="text-danger">*</small></label>
                                                                             {{Form::text('lastnamecm','',['class'=>'form-control','required'])}}        
                                                                        </div>
                                                                     </div> 
@@ -1152,7 +1149,7 @@
                                                         <div class="col-md-3 col-md-offset-1">   
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
-                                                                            <label class="control-label">โทรศัพท์*</label>
+                                                                            <label class="control-label">โทรศัพท์<small class="text-danger">*</small></label>
                                                                             {{Form::text('telecm','',['class'=>'form-control','required'])}}        
                                                                        </div>
                                                                 </div>        
@@ -1161,7 +1158,7 @@
                                                             <div class="col-md-3">
                                                                     <div class="input-group">
                                                                             <div class="form-group label-floating">
-                                                                                <label class="control-label">สถานที่ทำงาน/ที่อยู่ *่</label>
+                                                                                <label class="control-label">สถานที่ทำงาน/ที่อยู่<small class="text-danger">*</small></label>
                                                                                 {{Form::text('firm','',['class'=>'form-control','required'])}}   
                                                                            </div>
                                                                     </div>
@@ -1170,7 +1167,7 @@
                                                             <div class="col-md-3">   
                                                                     <div class="input-group">
                                                                             <div class="form-group label-floating">
-                                                                                <label class="control-label">ตำแหน่ง*</label>
+                                                                                <label class="control-label">ตำแหน่ง<small class="text-danger">*</small></label>
                                                                                 {{Form::text('positioncm','',['class'=>'form-control','required'])}}
                                                                            </div>
                                                                     </div>                   
@@ -1181,7 +1178,7 @@
                                                    <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label >ความสามารถพิเศษ*  </label><textarea  name="talent" type="text"  style="text-align:center" class ='form-control' required></textarea>
+                                                                <label >ความสามารถพิเศษ<small class="text-danger">*</small></label><textarea  name="talent" type="text"  style="text-align:center" class ='form-control' required></textarea>
                                                              
                                                             </div>
                                                         </div>
@@ -1220,7 +1217,7 @@
                                                                 <div class="col-md-1"></div>
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
-                                                                            <label class="control-label">ความรู้พิเศษ คอมพิวเตอร์ระบุ:*</label>
+                                                                            <label class="control-label">ความรู้พิเศษ คอมพิวเตอร์ระบุ:<small class="text-danger">*</small></label>
                                                                             {{Form::text('computer','',['class'=>'form-control','required'])}}      
                                                                        </div>
                                                                 </div> 
@@ -1237,63 +1234,63 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group {{ $errors->has('crash1') ? 'has-error' : '' }}">
-                                                                <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ) : *</label> &emsp;&emsp;
-                                                                    {{ Form::radio('crash1','ขัดข้อง','required') }} ขัดข้อง
-                                                                    {{ Form::radio('crash1','ไม่ขัดข้อง','required') }} ไม่ขัดข้อง                                    
+                                                                <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)<small class="text-danger">*</small></label> &emsp;&emsp;
+                                                                <input type="radio" name="crash1" value="ขัดข้อง"  required > ขัดข้อง
+                                                                <input type="radio" name="crash1" value="ไม่ขัดข้อง"  required > ไม่ขัดข้อง                                    
                                                                 </div>
                                                         </div>
                                                         </div>
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                ชื่อ:  {{Form::text('compd','',['class'=>'form-control' ,'required'])}} 
+                                                                ชื่อ:<small class="text-danger">*</small>  {{Form::text('compd','',['class'=>'form-control' ,'required'])}} 
                                                               
                                                             </div>
                                                         </div>
                                                         <div class="col-md-1"></div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                สถานที่ทำงาน:  {{Form::text('compa','',['class'=>'form-control','required'])}} 
+                                                                สถานที่ทำงาน:<small class="text-danger">*</small>  {{Form::text('compa','',['class'=>'form-control','required'])}} 
                                                              
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <div class="form-group {{ $errors->has('crash2') ? 'has-error' : '' }}">
-                                                                <label>ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป : *</label> &emsp;&emsp;&ensp;
-                                                                    {{ Form::radio('crash2','ขัดข้อง','required') }}ขัดข้อง    &emsp;&emsp;&emsp;&emsp;
-                                                                    {{ Form::radio('crash2','ไม่ขัดข้อง','required') }}ไม่ขัดข้อง
-                                                                    <span class="text-danger">{{ $errors->first('crash2') }}</span>  
+                                                            <div class="form-group ">
+                                                                <label>ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป<small class="text-danger">*</small></label> &emsp;&emsp;&ensp;
+                                                                <input type="radio" name="crash2" value="ขัดข้อง"  required >ขัดข้อง    &emsp;&emsp;&emsp;&emsp;
+                                                                <input type="radio" name="crash2" value="ไม่ขัดข้อง"  required > ไม่ขัดข้อง
+                                                                  
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <div class="form-group {{ $errors->has('crash3') ? 'has-error' : '' }}">
-                                                                <label>ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม : *</label>&emsp;&emsp;
-                                                                    {{ Form::radio('crash3','ขัดข้อง','required') }}  ขัดข้อง  &emsp;&emsp;&emsp;&emsp;
-                                                                    {{ Form::radio('crash3','ไม่ขัดข้อง','required') }}ไม่ขัดข้อง                                
-                                                                    <span class="text-danger">{{ $errors->first('crash3') }}</span>                        
+                                                            <div class="form-group">
+                                                                <label>ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม<small class="text-danger">*</small></label>&emsp;&emsp;
+                                                                <input type="radio" name="crash3" value="ขัดข้อง"  required > ขัดข้อง  &emsp;&emsp;&emsp;&emsp;
+                                                                <input type="radio" name="crash3" value="ไม่ขัดข้อง"  required >ไม่ขัดข้อง                                
+                                                                                
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <div class="form-group {{ $errors->has('yes') ? 'has-error' : '' }}">
-                                                                <label>ท่านสามารถขับรถยนต์ได้หรือไม่ : *</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
-                                                                    {{ Form::radio('yes', 'ได้','required') }}ได้  &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
-                                                                    {{ Form::radio('yes', 'ไม่ได้','required') }}ไม่ได้
-                                                                <span class="text-danger">{{ $errors->first('yes') }}</span>  
+                                                            <div class="form-group">
+                                                                <label>ท่านสามารถขับรถยนต์ได้หรือไม่ <small class="text-danger">*</small> </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
+                                                                <input type="radio" name="yes" value="ได้"  required > ได้  &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
+                                                                <input type="radio" name="yes" value="ไม่ได้"  required > ไม่ได้
+                                                                
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group {{ $errors->has('owncar') ? 'has-error' : '' }}">
-                                                                <label>ท่านมีรถยนต์ส่วนตัวหรือไม่ : *</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
-                                                                    {{ Form::radio('owncar','มี','required') }} มี &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-                                                                    {{ Form::radio('owncar','ไม่มี','required') }}ไม่มี
+                                                                <label>ท่านมีรถยนต์ส่วนตัวหรือไม่</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
+                                                                <input type="radio" name="owncar" value="มี"  required >มี &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+                                                                <input type="radio" name="owncar" value="ไม่มี"  required >ไม่มี
                                                                     <span class="text-danger">{{ $errors->first('owncar') }}</span> 
                                                                 </div>
                                                         </div>
@@ -1301,13 +1298,13 @@
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label>บุคคลในบริษัทที่ท่านรู้จักคุ้นเคย ชื่อ:</label> {{Form::text('workk','',['class'=>'form-control'])}} 
+                                                                <label>บุคคลในบริษัทที่ท่านรู้จักคุ้นเคยชื่อ:</label> {{Form::text('workk','',['class'=>'form-control'])}} 
                                                                 </div>
                                                         </div>
                                                         <div class="col-md-3"></div>
                                                         <div class="col-md-3">
                                                                 <div class="form-group {{ $errors->has('dateworkk') ? 'has-error' : '' }}">
-                                                                        <label>ท่านพร้อมงานวันที่ : *</label>  
+                                                                        <label>ท่านพร้อมงานวันที่<small class="text-danger">*</small></label>  
                                                                         {{Form::date('dateworkk','',['class' => 'form-control','required'])}} 
                                                                         <span class="text-danger">{{ $errors->first('dateworkk') }}</span>  
                                                                 </div>
@@ -1328,9 +1325,9 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group {{ $errors->has('exitwork') ? 'has-error' : '' }}">
-                                                                <label>ท่านเคยให้ถูกออกจากงานหรือไม่ : *</label> &emsp;&emsp;                                                                  
-                                                                    {{ Form::radio('exitwork','เคย','required') }} เคย เพราะ &emsp; {{Form::text('because','')}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     
-                                                                    {{ Form::radio('exitwork','ไม่เคย','required') }}ไม่เคย 
+                                                                <label>ท่านเคยให้ถูกออกจากงานหรือไม่:<small class="text-danger">*</small></label> &emsp;&emsp;                                                                  
+                                                                <input type="radio" name="exitwork" value="เคย"  required >เคย เพราะ &emsp; {{Form::text('because','')}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     
+                                                                <input type="radio" name="exitwork" value="ไม่เคย"  required >ไม่เคย 
                                                                     <span class="text-danger">{{ $errors->first('exitwork') }}</span>  
                                                                 </div>
                                                         </div>
@@ -1338,9 +1335,9 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group {{ $errors->has('serious_ill') ? 'has-error' : '' }}">
-                                                                <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่? : *</label>&emsp;&emsp;
-                                                                {{ Form::radio('serious_ill','เคย','required') }}เคย &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                {{ Form::radio('serious_ill','ไม่เคย','required') }}ไม่เคย
+                                                                <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;
+                                                                <input type="radio" name="serious_ill" value="เคย"  required > เคย &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                <input type="radio" name="serious_ill" value="ไม่เคย"  required >ไม่เคย
                                                                 <span class="text-danger">{{ $errors->first('serious_ill') }}</span>  
                                                                 </div>
                                                         </div>
@@ -1348,9 +1345,9 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group  {{ $errors->has('offense') ? 'has-error' : '' }}">
-                                                                <label>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่? : *</label>&emsp;&emsp;&emsp;&ensp;
-                                                                {{ Form::radio('offense','เคย','required') }}เคย   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                {{ Form::radio('offense','ไม่เคย','required') }}ไม่เคย
+                                                                <label>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;&emsp;&ensp;
+                                                                <input type="radio" name="offense" value="เคย"  required >เคย   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                <input type="radio" name="offense" value="ไม่เคย"  required >ไม่เคย
                                                                 <span class="text-danger">{{ $errors->first('offense') }}</span>  
                                                                 </div>
                                                         </div>
@@ -1358,27 +1355,14 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group {{ $errors->has('pregnant') ? 'has-error' : '' }}">
-                                                                <label>ขณะนี้คุณตั้งครรภ์หรือไม่? : *</label>&emsp;&emsp;
-                                                                {{ Form::radio('pregnant','ใช่','required') }}ใช่ &emsp;&emsp;&emsp;
-                                                                {{ Form::radio('pregnant','ไม่ใช่','required') }} ไม่ใช่
+                                                                <label>ขณะนี้คุณตั้งครรภ์หรือไม่?<small class="text-danger">*</small> </label>&emsp;&emsp;
+                                                                <input type="radio" name="pregnant" value="ใช่"  required >ใช่ &emsp;&emsp;&emsp;
+                                                                <input type="radio" name="pregnant" value="ไม่ใช่"  required > ไม่ใช่
                                                                 <span class="text-danger">{{ $errors->first('pregnant') }}</span>  
                                                                 </div>
                                                         </div>
                                                         </div>
                                             </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
 
 		                        </div>
 		                        <div class="wizard-footer">
