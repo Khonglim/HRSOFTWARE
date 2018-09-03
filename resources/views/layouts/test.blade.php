@@ -201,34 +201,102 @@ body {
   onComplete:function(){
     $("#test1").submit();
    
-  }
-
-           
-})
-
-
-        
-      } 
-       
-          
-      
-
-
-
-       }
-
-       
+  }           
+}) 
+  } 
+   }  
      })
 
 
 
 $("#showTimeDisc").startTimer({
-      
-      onComplete:function(){
-        alert("หมดเวลาทำแบบทดสอบแล้วค่ะ.")
-        $("#testdisc").submit();
-      }
-    })
+  onComplete:function(){
+
+alert("หมดเวลาทำแบบทดสอบแล้วค่ะ.")
+if(document.getElementById("chioe0").value != "0"  &&
+document.getElementById("chioe1").value != "0" &&
+document.getElementById("chioe2").value != "0" &&
+document.getElementById("chioe3").value != "0" &&
+document.getElementById("chioe4").value != "0" &&
+document.getElementById("chioe5").value != "0" &&
+document.getElementById("chioe6").value != "0" &&
+document.getElementById("chioe7").value != "0" &&
+document.getElementById("chioe8").value != "0" &&
+document.getElementById("chioe9").value != "0" &&
+document.getElementById("chioe10").value != "0" &&
+document.getElementById("chioe11").value != "0" &&
+
+
+document.getElementById("chioe15").value != "0" &&
+document.getElementById("chioe16").value != "0" &&
+document.getElementById("chioe17").value != "0" &&
+document.getElementById("chioe18").value != "0" &&
+document.getElementById("chioe19").value != "0" &&
+document.getElementById("chioe20").value != "0" &&
+document.getElementById("chioe21").value != "0" &&
+document.getElementById("chioe22").value != "0" &&
+document.getElementById("chioe23").value != "0" &&
+document.getElementById("chioe24").value != "0" &&
+document.getElementById("chioe25").value != "0" &&
+document.getElementById("chioe26").value != "0" &&
+
+document.getElementById("chioe30").value != "0" &&
+document.getElementById("chioe31").value != "0" &&
+document.getElementById("chioe32").value != "0" &&
+document.getElementById("chioe33").value != "0" &&
+document.getElementById("chioe34").value != "0" &&
+document.getElementById("chioe36").value != "0" &&
+document.getElementById("chioe37").value != "0" &&
+document.getElementById("chioe38").value != "0" &&
+document.getElementById("chioe39").value != "0" &&
+document.getElementById("chioe40").value != "0" &&
+document.getElementById("chioe41").value != "0" &&
+document.getElementById("chioe42").value != "0" &&
+
+
+
+document.getElementById("chioe45").value != "0" &&
+document.getElementById("chioe46").value != "0" &&
+document.getElementById("chioe47").value != "0" &&
+document.getElementById("chioe48").value != "0" &&
+document.getElementById("chioe49").value != "0" &&
+document.getElementById("chioe50").value != "0" &&
+document.getElementById("chioe51").value != "0" &&
+document.getElementById("chioe52").value != "0" &&
+document.getElementById("chioe53").value != "0" &&
+document.getElementById("chioe54").value != "0" &&
+document.getElementById("chioe55").value != "0" &&
+document.getElementById("chioe56").value != "0" 
+
+){
+$("#testdisc").submit();
+}
+else
+{
+ alert('คุณตอบคำถามไม่ครบ!!!! เราจะเพิ่มเวลาให้คุณ 30 ');
+ $("#showTimeDisc2").startTimer({
+
+onComplete:function(){
+$("#testdisc").submit();
+
+}           
+}) 
+} 
+}  
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  });
 
