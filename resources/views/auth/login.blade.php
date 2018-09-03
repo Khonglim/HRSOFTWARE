@@ -1,87 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
- 
-  <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+@extends('layouts.logingin')
+@section('content')
 
-  <!-- Ionicons -->
-  <link href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}" rel="stylesheet">
- 
-  <!-- Theme style -->
-  <link href="{{ asset('dist/css/AdminLTE.min.css') }}" rel="stylesheet">
- 
-  <!-- iCheck -->
-  <link href="{{ asset('plugins/iCheck/square/blue.css') }}" rel="stylesheet">
-  
+ <div class="limiter">
+    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+        <div class="container-login100" style="background-image: url('{{URL::asset('img/bg-01.jpg')}}')">
+             @csrf
+            <div class="wrap-login100">
+                <form class="login100-form validate-form">
+                    <span class="login100-form-logo">
+                        <i class="zmdi zmdi-landscape"></i>
+                    </span>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+                    <span class="login100-form-title p-b-34 p-t-27">
+                        Log in
+                    </span>
 
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a ><b>NGG</b>LTE</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
-          <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-            @csrf
-            <div class="form-group has-feedback">
-          <input id="identity" type="identity" class="form-control" name="identity"  placeholder="USERNAME"
+                    <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                      
+
+                         <input id="identity" type="identity" class="input100" name="identity"  placeholder="USERNAME"
     value="{{ old('identity') }}" autofocus/>
-</div>
-    @if ($errors->has('identity'))
+
+                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        @if ($errors->has('identity'))
     <span class="help-block"><strong>{{ $errors->first('identity') }}</strong></span>
     @endif
-    <div class="form-group has-feedback">
-    <input id="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required   placeholder="PASSWORD" />
-</div>
-    @if ($errors->has('password'))
+ <input id="password" type="password" class="input100 {{ $errors->has('password') ? ' is-invalid' : '' }} " name="password" required   placeholder="PASSWORD" />
+ @if ($errors->has('password'))
         <span class="invalid-feedback" role="alert">
             <strong>{{ $errors->first('password') }}</strong>
         </span>
     @endif
-             
-      
-                    <div class="clearfix"></div>
-                 <center>   <input type="submit" value="Sign In" name="login"> </center>
-            </form>
-          
+                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                    </div>
+
+                  
+
+                    <div class="container-login100-form-btn">
+                        <input type="submit" value="Sign In" name="login">
+                    </div>
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="dropDownSelect1"></div>
+@endsection
+    
+     
            
-                </div>
-                <!-- /.login-box-body -->
-              </div>
-              <!-- /.login-box -->
-              
-              <!-- jQuery 3 -->
-              <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-              <!-- Bootstrap 3.3.7 -->
-              <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-              <!-- iCheck -->
-              <script src="/plugins/iCheck/icheck.min.js"></script>
-              <script>
-                $(function () {
-                  $('input').iCheck({
-                    checkboxClass: 'icheckbox_square-blue',
-                    radioClass: 'iradio_square-blue',
-                    increaseArea: '20%' /* optional */
-                  });
-                });
-              </script>
-              </body>
+           
+         
+ 
+    
