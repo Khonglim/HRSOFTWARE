@@ -14,11 +14,11 @@ use App\Testdisc;
 |
 */
 
-Route::resource('company','CompanyController');
 
-Route::resource('department','DepartmentController');
 
-Route::resource('position','PositionController');
+
+
+
 
 Route::resource('employee','EmployeeController');
 
@@ -39,8 +39,6 @@ Route::resource('disc','TestdiscController');
 Route::post('/testdisc','AnswerController@startdisc');
 Route::post('/ansdisc','AnswerController@answerdisc');
 
-Route::get('/orgchartcompany','JorgchartController@company');
-
 Route::resource('evatesting','EvatestingController');
 Route::post('istestertotest','Evatesting2Controller@test');
 Route::post('starttest','Evatesting2Controller@test2');
@@ -56,13 +54,15 @@ Route::get('/', function ()
 
 });
 
-Route::resource('home','HomeController');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('iframe', function () {
-    
-    return view('iframe');
+Route::get('/userlogin', function () 
+{
+    return view('auth.userlogin');
 
 });
+
+
+Route::resource('home','HomeController');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/dynamicdependent','DynamicDependent@index');

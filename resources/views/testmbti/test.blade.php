@@ -51,7 +51,7 @@ $g=0;
            
               <div class="box-footer">
             
-                {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}
+            <center>    {{ Form::submit('ส่งคำตอบ',['class'=> 'btn btn-primary'])}}     </center>
                 {{Form::close()}}
        
    

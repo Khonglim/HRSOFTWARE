@@ -4,12 +4,33 @@
 	<title>ngg</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<link href="new/css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link href="new/css/style.css" rel='stylesheet' type='text/css' />
-	<link href="new/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="new/css/owl.carousel.css" type="text/css" media="all">
-	<link rel="stylesheet" href="new/css/owl.theme.css" type="text/css" media="all">
-	<link href="new/css/fontawesome-all.css" rel="stylesheet">
+	
+	<link href="{{ asset('new/css/bootstrap.css') }}"   rel='stylesheet' type='text/css' />
+
+
+	
+	<link href="{{ asset('new/css/style.css') }}"   rel='stylesheet' type='text/css' />
+
+	
+	<link href="{{ asset('new/css/prettyPhoto.css') }}"   rel='stylesheet' type='text/css' />
+
+
+	<link href="{{ asset('new/css/owl.carousel.css') }}"   rel='stylesheet' type='text/css'  media="all" />
+
+
+
+	<link href="{{ asset('new/css/owl.theme.css') }}"   rel='stylesheet' type='text/css' media="all" />
+
+
+	<link href="{{ asset('new/css/fontawesome-all.css') }}"   rel='stylesheet' />
+	
+
+
+
+
+
+
+
 	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Prata" rel="stylesheet">
   <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
@@ -49,9 +70,12 @@
 					<i class="far fa-gem"></i>NGG</a>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
-						<li class="nav-item active">
+							<li class="nav-item active">
+									<a class="nav-link cool" href="{{url('/testto') }}">หน้าแรก</a>
+								</li>
+						<li class="nav-item ">
 							<a class="nav-link cool" href="{{url('employee/create') }}">สมัครงาน
-								<span class="sr-only">(current)</span>
+							
 							</a>
 						</li>
 						<li class="nav-item">
@@ -61,7 +85,9 @@
 							<a class="nav-link cool" href="{{url('/testtoo') }}">ทำแบบทดสอบ DICSC</a>
 						</li>
 			
-					
+						<li class="nav-item">
+								<a class="nav-link cool" href="{{url('/userlogin') }}">ทำแบบประเมิน360</a>
+							</li>
 					</ul>
 
 				</div>
@@ -70,7 +96,9 @@
 
 		</div>
 	</header>
- 
+	<main>
+		@yield('content')
+	</main>
 
 	
 	<script src="new/js/jquery-2.2.3.min.js"></script>

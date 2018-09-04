@@ -1,4 +1,4 @@
-@extends('layouts.test')
+@extends('layouts.home')
 @section('content')
 <div class="content-wrapper">
 	<div class="content container-fluid">

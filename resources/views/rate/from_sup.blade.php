@@ -25,7 +25,8 @@
             color:  black;
         }
         </style>
-        <div class="container">
+         <div class="content-wrapper">
+                <div class="content container-fluid">
           {{Form::open(['url'=>'rate_sup'])}}
           <div class="box-body table-responsive no-padding">
             <table  id="customers">

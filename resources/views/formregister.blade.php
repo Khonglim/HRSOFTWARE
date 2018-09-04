@@ -52,13 +52,13 @@
 		                    	</div> 
 								<div class="wizard-navigation">
 									<ul>
-                               <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>    
-                                 <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>  
-                                  <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>    
+                              <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>  
+                             <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li> 
+                                 <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>   
                                <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>   
-			                      <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
-                                  <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li> 
-                                 <li><a href="#work" data-toggle="tab">การทำงาน</a></li> 
+			                    <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
+                                    <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li> 
+                                  <li><a href="#work" data-toggle="tab">การทำงาน</a></li> 
                                         <li><a href="#another" data-toggle="tab">อื่นๆ</a></li>
 			                        </ul>
 								</div>
@@ -811,8 +811,8 @@
                                     </div>
                                     <div class="tab-pane" id="work">
                                             <div class="row">
-                                                    <div class="col-md-1"></div>
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-1 col-xs-1"></div>
+                                                    <div class="col-md-3  col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label">1.ชื่อสถานที่ประกอบการ</label>
@@ -822,46 +822,17 @@
                                                           
                                                     </div>
                                                    
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-3 col-xs-3">
 
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label">ลักษณะงานที่รับผิดชอบ</label>
                                                                         {{Form::text('job_description1','',['class'=>'form-control'])}}
                                                                    </div>
-                                                                </div> 
+                                                                </div>
+                                                    </div>
 
-                                                       
-                                                    </div>
-                                                    </div>
-                                                <div class="row">
-                                                    <div class="col-md-1"></div>
-                                                    <div class="col-md-3">
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label>ระยะงานเริ่ม</label>
-                                                                        {{Form::date('start_job_duration1','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                                </div> 
-                                                    
-                                                    </div>
-                                                    
-
-                                                    <div class="col-md-3">
-                                                        
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label>ระยะงานสิ้นสุด</label>
-                                                                        {{Form::date('end_job_duration2','',['class'=>'form-control'])}} 
-                                                                   </div>
-                                                                </div> 
-                                                        
-                                                        
-                                                    
-                                                    
-                                        
-                                                    </div>
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-3 col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label">ตำแหน่ง</label>
@@ -870,10 +841,12 @@
                                                                 </div> 
                                                       
                                                     </div>
+                                                    
+                                                  
                                                     </div>
                                                 <div class="row">
-                                                        <div class="col-md-1"></div>
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-1 col-xs-1"></div>
+                                                    <div class="col-md-3 col-xs-3">
                                                             
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
@@ -883,23 +856,50 @@
                                                                 </div>   
                                                         </div>
 
-                                                       
-                                                    <div class="col-md-1"></div>    
-                                                    <div class="col-md-5">
+                                                        <div class="col-md-3 col-xs-3">
 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
-                                                                        {{Form::text('lastsalary1','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                                </div> 
-                                                    
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
+                                                                            {{Form::text('lastsalary1','',['class'=>'form-control'])}}
+                                                                       </div>
+                                                                    </div> 
+                                                        
+                                                        </div>
+
                                                     </div>
-                                                    </div>
-                                               <hr>
+                                                
+                                                   
                                                 <div class="row">
-                                                        <div class="col-md-1"></div>
-                                                    <div class="col-md-3">
+                                                        <div class="col-md-1 col-xs-1"></div>
+                                                    
+                                                        <div class="col-md-3 col-xs-3">
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label>ระยะงานเริ่ม</label>
+                                                                            {{Form::date('start_job_duration1','',['class'=>'form-control'])}}
+                                                                       </div>
+                                                                    </div> 
+                                                        
+                                                        </div>
+                                                        
+    
+                                                        <div class="col-md-3 col-xs-3">
+                                                            
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label>ระยะงานสิ้นสุด</label>
+                                                                            {{Form::date('end_job_duration2','',['class'=>'form-control'])}} 
+                                                                       </div>
+                                                                    </div> 
+                                                            
+
+                                                                </div> 
+                                                
+                                                            </div> 
+                                                <div class="row">
+                                                        <div class="col-md-1 col-xs-1"></div>
+                                                    <div class="col-md-3 col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label">2.ชื่อสถานที่ประกอบการ</label>
@@ -909,7 +909,7 @@
                                                        
                                                     </div>
                                                    
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-3 col-xs-3">
                                                              <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label" >ลักษณะงานที่รับผิดชอบ </label>
@@ -919,29 +919,7 @@
                                                        
                                                        
                                                     </div>
-                                                    </div>
-                                                <div class="row">
-                                                        <div class="col-md-1"></div>
-                                                    <div class="col-md-3">
 
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label>ระยะงานเริ่ม</label>
-                                                                        {{Form::text('start_job_duration3','',['class'=>'form-control'])}}
-                                                                   </div>
-                                                                </div> 
-                                                    
-                                                    </div>
-                                                    <div class="col-md-3">
-            
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label  >ระยะงานสิ้นสุด</label>
-                                                                        {{Form::date('end_job_duration4','',['class'=>'form-control'])}} 
-                                                                   </div>
-                                                                </div> 
-                                        
-                                                    </div>
                                                     <div class="col-md-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
@@ -951,10 +929,37 @@
                                                                 </div> 
                                                        
                                                     </div>
+
+
+
                                                     </div>
                                                 <div class="row">
-                                                        <div class="col-md-1"></div>
-                                                    <div class="col-md-5">
+                                                        <div class="col-md-1 col-xs-1"></div>
+                                                    <div class="col-md-3 col-xs-3">
+
+                                                            <div class="input-group">
+                                                                    <div class="form-group label-floating">
+                                                                        <label>ระยะงานเริ่ม</label>
+                                                                        {{Form::date('start_job_duration3','',['class'=>'form-control'])}}
+                                                                   </div>
+                                                                </div> 
+                                                    
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-3 ">
+            
+                                                            <div class="input-group">
+                                                                    <div class="form-group label-floating">
+                                                                        <label  >ระยะงานสิ้นสุด</label>
+                                                                        {{Form::date('end_job_duration4','',['class'=>'form-control'])}} 
+                                                                   </div>
+                                                                </div> 
+                                        
+                                                    </div>
+                                                    
+                                                    </div>
+                                                <div class="row">
+                                                        <div class="col-md-1  col-xs-1"></div>
+                                                    <div class="col-md-3 col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label" >สาเหตุที่ออก</label>
@@ -976,8 +981,8 @@
                                                     </div>
                                                     <hr>
                                                 <div class="row">
-                                                        <div class="col-md-1"></div>
-                                                    <div class="col-md-3">
+                                                        <div class="col-md-1 col-xs-1"></div>
+                                                    <div class="col-md-3 col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label" >3.ชื่อสถานที่ประกอบการ</label>
@@ -987,7 +992,7 @@
                                                          
                                                     </div>
                                                    
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-3 col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label" >ลักษณะงานที่รับผิดชอบ</label>
@@ -996,10 +1001,19 @@
                                                                 </div> 
                                                       
                                                     </div>
+                                                    <div class="col-md-3 col-xs-3">
+                                                            <div class="input-group">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label" > ตำแหน่ง</label>
+                                                                        {{Form::text('position3','',['class'=>'form-control'])}} 
+                                                                   </div>
+                                                        </div> 
+
                                                     </div>
+                                                </div>
                                                 <div class="row">
-                                                        <div class="col-md-1"></div>
-                                                    <div class="col-md-3">
+                                                        <div class="col-md-1 col-xs-1"></div>
+                                                    <div class="col-md-3 col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label >ระยะงานเริ่ม</label>
@@ -1008,7 +1022,7 @@
                                                                 </div> 
                                                      
                                                     </div>
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-3 col-xs-3 ">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label>ระยะงานสิ้นสุด</label>
@@ -1016,19 +1030,13 @@
                                                                    </div>
                                                         </div> 
                                                     </div>
-                                                    <div class="col-md-3">
-                                                            <div class="input-group">
-                                                                    <div class="form-group label-floating">
-                                                                        <label class="control-label" > ตำแหน่ง</label>
-                                                                        {{Form::text('position3','',['class'=>'form-control'])}} 
-                                                                   </div>
-                                                        </div> 
+                                                    
                                                       
                                                     </div>
-                                                    </div>
+                                                   
                                                 <div class="row">
-                                                        <div class="col-md-1"></div>
-                                                    <div class="col-md-5">
+                                                        <div class="col-md-1 col-xs-1"></div>
+                                                    <div class="col-md-3 col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label" >สาเหตุที่ออก</label>
@@ -1037,8 +1045,8 @@
                                                         </div> 
                                                        
                                                     </div>
-                                                    <div class="col-md-1"></div>    
-                                                    <div class="col-md-5">
+                              
+                                                    <div class="col-md-3 col-xs-3">
                                                             <div class="input-group">
                                                                     <div class="form-group label-floating">
                                                                         <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
@@ -1048,8 +1056,9 @@
                                                        
                                                     </div>
                                                 </div>
-                                        </div>
-
+                                            </div>
+                                          
+                              
                                         <div class="tab-pane" id="another">
                                                 <div class="row">
                                                         <div class="col-md-12">
@@ -1060,7 +1069,7 @@
                                                         </div>
                                                     <div class="row">
                                                             <div class="col-md-1"></div>
-                                                        <div class="col-md-5">
+                                                        <div class="col-md-3 col-xs-4">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
                                                                             <label class="control-label">ชื่อ-นามสกุล<small class="text-danger">*</small></label>
@@ -1070,7 +1079,7 @@
                                                           
                                                         </div>
                                                         
-                                                        <div class="col-md-5">
+                                                        <div class="col-md-3 col-xs-3">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
                                                                             <label class="control-label">ความสัมพันธ์<small class="text-danger">*</small></label>
@@ -1081,7 +1090,7 @@
 
                                                         </div>
                                                        
-                                                        <div class="col-md-3 col-md-offset-1">   
+                                                        <div class="col-md-3 col-xs-3">   
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
                                                                             <label class="control-label">โทรศัพท์<small class="text-danger">*</small></label>
@@ -1090,74 +1099,95 @@
                                                                 </div>        
                                                             </div>
 
-                                                            <div class="col-md-3">
-                                                                    <div class="input-group">
-                                                                            <div class="form-group label-floating">
-                                                                                <label class="control-label">สถานที่ทำงาน/ที่อยู่<small class="text-danger">*</small></label>
-                                                                                {{Form::text('firm','',['class'=>'form-control','required'])}}   
-                                                                           </div>
-                                                                    </div>
-                                                            </div>
+                                                          
 
-                                                            <div class="col-md-3">   
-                                                                    <div class="input-group">
-                                                                            <div class="form-group label-floating">
-                                                                                <label class="control-label">ตำแหน่ง<small class="text-danger">*</small></label>
-                                                                                {{Form::text('positioncm','',['class'=>'form-control','required'])}}
-                                                                           </div>
-                                                                    </div>                   
-                                                            </div>      
+                                                           
+                                                        </div>
+
+                                                        <div class="row">
+                                                                <div class="col-md-1"></div>
+                                                                <div class="col-md-3 col-xs-3">   
+                                                                        <div class="input-group">
+                                                                                <div class="form-group label-floating">
+                                                                                    <label class="control-label">ตำแหน่ง<small class="text-danger">*</small></label>
+                                                                                    {{Form::text('positioncm','',['class'=>'form-control','required'])}}
+                                                                               </div>
+                                                                        </div>                   
+                                                                </div>      
+                                                        </div>
+
+                                                        <div class="row">
+                                                                <div class="col-md-1"></div>
+                                                                <div class="col-md-5">
+                                                                        <div class="input-group">
+                                                                                <div class="form-group label-floating">
+                                                                                    <label class="control-label">สถานที่ทำงาน/ที่อยู่<small class="text-danger">*</small></label>
+                                                                                    
+
+                                                                                    <textarea  name="firm" type="text"  style="text-align:center" class ='form-control' required></textarea>
+                                                                               </div>
+                                                                        </div>
+                                                                </div>
                                                         </div>
                                                    <hr>
 
                                                    <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label >ความสามารถพิเศษ<small class="text-danger">*</small></label><textarea  name="talent" type="text"  style="text-align:center" class ='form-control' required></textarea>
+                                                                <label >ความสามารถพิเศษ<small class="text-danger">*</small></label>
+                                                                
+                                                                
+                                                                <textarea  name="talent" type="text"  style="text-align:center" class ='form-control' required></textarea>
                                                              
                                                             </div>
                                                         </div>
                                                     
                                                            
                                                     </div>
-
+                                                    <div class="col-md-5"></div>  <label> ผลงาน/หรือ link </label>
                                                     <div class="row" >
 
                                                         
-                                                                   
+                                                                  
                                                                     <div class="col-md-3">
                                                                             <div class="picture-container">
-                                                                               
-                                                                                <input type="file" name="portfolio1" >                                                                    "
+                                                                                    <div class="picture">
+                                                                                <input type="file" name="portfolio1"  class="form-control">                                                                  
                                                                             </div>
+                                                                        </div>
                                                                         </div>
                                                                         <div class="col-md-3">
                                                                                 <div class="picture-container">
-                                                                                   
-                                                                                    <input type="file" name="portfolio2" >                                                                    "
+                                                                                        <div class="picture">
+                                                                                    <input type="file" name="portfolio2"  class="form-control">   
+                                                                                </div>                                                              
                                                                                 </div>
                                                                             </div>
                                                                     
                                                                             <div class="col-md-3">
                                                                                     <div class="picture-container">
-                                                                                       
-                                                                                        <input type="file" name="portfolio3" >                                                                    "
+                                                                                            <div class="input-group">
+                                                                                                    <div class="form-group label-floating">
+                                                                                                        <label class="control-label">link</label>
+                                                                                      <input type="url" name="portfolio3"  class="form-control"  >                                              
                                                                                     </div>
                                                                                 </div>
-
+                                                                            </div>
+                                                                        </div>
                                                     </div> 
                                                    <hr>
                                                     <div class="row">
-                                                        <div class="col-md-4">
-                                                                <div class="col-md-1"></div>
+                                                       
+                                                                <div class="col-md-1 "></div>
+                                                                <div class="col-md-3">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
-                                                                            <label class="control-label">ความรู้พิเศษ คอมพิวเตอร์ระบุ:<small class="text-danger">*</small></label>
+                                                                            <label class="control-label">ความรู้พิเศษ: คอมพิวเตอร์<small class="text-danger">*</small></label>
                                                                             {{Form::text('computer','',['class'=>'form-control','required'])}}      
                                                                        </div>
+                                                                    </div>
                                                                 </div> 
-                                                          </div>
-                                                        <div class="col-md-2"></div>
+                                                        
                                                         <div class="col-md-5">
                                                             <div class="form-group"> <br><br>
                                                                 <input type="checkbox" class="form-check-input" id="fax" name="fax" value="เครื่องโทรสาร" > เครื่องโทรสาร &emsp;&emsp;
@@ -1176,17 +1206,24 @@
                                                         </div>
                                                         </div>
                                                     <div class="row">
+                                                            <div class="col-md-1"> </div>
                                                         <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                ชื่อ:<small class="text-danger">*</small>  {{Form::text('compd','',['class'=>'form-control' ,'required'])}} 
-                                                              
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                            <label class="control-label">ชื่อ-นามสกุล<small class="text-danger">*</small></label>
+                                                                {{Form::text('compd','',['class'=>'form-control' ,'required'])}} 
+                                                            </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-1"></div>
+                                                      
                                                         <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                สถานที่ทำงาน:<small class="text-danger">*</small>  {{Form::text('compa','',['class'=>'form-control','required'])}} 
-                                                             
+                                                                <div class="input-group">
+                                                                        <div class="form-group label-floating">
+                                                                                <label class="control-label"> สถานที่ทำงาน:<small class="text-danger">*</small>  </label>
+                                                                
+                                                                
+                                                                {{Form::text('compa','',['class'=>'form-control','required'])}} 
+                                                            </div>
                                                                 </div>
                                                         </div>
                                                         </div> <br>

@@ -1,7 +1,8 @@
-@extends('layouts.interview')
+@extends('layouts.main')
 @section('content')
 
-<div class="container">
+<div class="content-wrapper">
+  <div class="content container-fluid">
        
        <center> <h2>บันทึกเรียบร้อย!!</h2>  
        <p>   <a href="{{url('/interview') }}" class="btn btn-info" >กลับสู่หน้าแรก</a></p>
@@ -9,4 +10,5 @@
     </center>
 
   </div>
+</div>
 @endsection

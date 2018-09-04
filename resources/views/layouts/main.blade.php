@@ -125,17 +125,8 @@ body {
                 @if(auth()->user()->isAdmin == 1)
                 <li class="active"  ><a href="{{url('/home') }}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
                 <li class="active"  ><a href="{{url('/employee')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-angle-double-right"></i><span>แบบประเมินผลสัมภาษณ์</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                      </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="{{url('rate/create') }}"><i class="fa fa-book"></i> <span>ระดับปฎิบัติการ</span></a></li>
-                    <li><a href="{{url('rate_sup/create') }}"><i class="fa fa-book"></i> <span>ระดับบังคับบัญชาขึ้นไป</span></a></li>
-                 </ul>
-                </li>
+                <li class="active"  ><a href="{{url('/interview') }}"><i class="glyphicon glyphicon-user"></i> <span>แบบประเมินผลสัมภาษณ์</span></a></li>
+           
                 <li class="treeview">
                   <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
                     <span class="pull-right-container">
