@@ -3,7 +3,7 @@
 
  <div class="limiter">
     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-        <div class="container-login100" style="background-image: url('{{URL::asset('img/bg-01.jpg')}}')">
+        <div class="container-login100" style="background-image: url('{{URL::asset('img/NGG.jpg')}}')">
              @csrf
             <div class="wrap-login100">
                 <form class="login100-form validate-form">
