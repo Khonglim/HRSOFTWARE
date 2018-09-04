@@ -277,8 +277,23 @@
                                 </div>
                             </div>
                         </div>
-
+                       
                             </div>
+
+                            <div class="row">
+                                    <div class="col-md-1 col-xs-1"> </div>
+                                    <div class="col-md-3 col-xs-3">
+                                            <div class="input-group">
+                                                    <div class="form-group label-floating">
+                                                            <label class="control-label">จังหวัด<small class="text-danger">*</small></label>
+                                                            {{ Form::select('province_crad', [ '' => '','กรุณาเลือกจังหวัด' =>$items],null, ['class' => 'form-control','id'=>'province_crad']) }}     
+                                                   </div>
+                                                </div>
+                                            </div>
+                                </div>
+
+
+
                                            <div class="row">
                                             <div class="col-md-1"></div>
                                             <div class="col-md-2 col-xs-3 ">

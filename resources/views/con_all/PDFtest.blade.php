@@ -38,10 +38,22 @@
         td,th{
            
         }
-    </style>
+        body { width: 100%; height: 100%; }
+
+
+.page-break {
+    page-break-after: always;
+}
+</style>
+
+
+
+
+    
 </head>
 <body>
-
+    <div class="page-break"> 
+   
   <b>ผลสรุปของคุณ </b> {{$personal->name}} {{$personal->lastname}}<br>
                
                 @foreach ($testmbti as  $testmbtis )
@@ -57,11 +69,6 @@
                 <b> ผลสรุป ด้านการคิด </b><br>
                  
                    {{  $testmbtis->meaningtwo  }} <br>
-        
-        
-        
-        
- 
             @endif
             @endforeach
 
@@ -76,6 +83,9 @@
 
     @endif
     @endforeach  
+ 
+
+  </div>
 
     <table >
         <thead>
@@ -137,7 +147,7 @@
         </tbody>
         @endforelse
       </table>
-     
+      
     <table>
         <thead>
           <tr>
@@ -251,7 +261,7 @@
                     @endforelse
                 </tbody>
               </table>
-              <br>
+            </div>
               <table>
                 <thead>
                   <tr>
@@ -321,10 +331,7 @@
 
 
 
-
-
-
-
+              
 
 
     

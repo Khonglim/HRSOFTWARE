@@ -37,10 +37,17 @@
         }
         td,th{
             border:1px solid;
+
+
         }
+
+        .page-break {
+    page-break-after: always;
+}
     </style>
 </head>
 <body>
+        <div class="page-break">   
 <center><h3>ข้อมูลประวัติ</h3>
 <img src="{{$personal->photo}}" alt="" width="55" height="55" ></center>
 <br>
@@ -368,6 +375,8 @@
         </tbody>
     </table>
 
+</div>
+    <div class="page-break"> 
       <table>
           <tbody>
                 <tr>
@@ -613,6 +622,7 @@
                          @endif  
                     </td>
                 </tr>
+              
                 <tr>
                     <th colspan="8" align=center>อื่นๆ</th>
                 </tr>
@@ -674,28 +684,28 @@
           </tbody>
       </table>
 
-
+    
 
       <table>
         <thead>
           <tr>
-            <th align=center>ผลงานชิ้นที่1</th>
+            <th align=center>ผลงาน</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td align=center><img src="{{$personal->portfolio1}}" alt="" width="280" height="280" >ผลงาน1</td>
+            <td align=center><img src="{{$personal->portfolio1}}" alt="" width="480" height="280" ><br>ผลงาน1</td>
           </tr>
           <tr>
-            <td align=center><img src="{{$personal->portfolio2}}" alt="" width="280" height="380" >ผลงาน2</td>
+            <td align=center><img src="{{$personal->portfolio2}}" alt="" width="480" height="280" ><br>ผลงาน2</td>
           </tr>
           <tr>
-            <td align=center><img src="{{$personal->portfolio3}}" alt="" width="280" height="280" >ผลงาน3</td>            
+            <td align=center><img src="{{$personal->portfolio3}}" alt="" width="480" height="280" ><br>ผลงาน3</td>            
           </tr>
         </tbody>
       </table>
 
-
+    </div>
 
 
 

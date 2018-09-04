@@ -344,7 +344,7 @@ class Interview_supController extends Controller
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
-        $inter_sup->score =  $request->rs3; 
+        $inter_sup->score =  $request->rs4; 
         $inter_sup->chioce =  $request->chioce103; 
         $inter_sup->id_personal = $request->employee;
        

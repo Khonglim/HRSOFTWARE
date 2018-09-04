@@ -16,7 +16,7 @@ class PDFController extends Controller
     {
         $personal = Personal::find($id);
         $pdf = PDF::loadView('employ.pdf',['personal' => $personal ]);
-       
+        $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
 
@@ -24,7 +24,7 @@ class PDFController extends Controller
     {
         $testmbti = Testmbti::find($id);
         $pdf = PDF::loadView('testmbti.pdf_mbti',['testmbti' =>  $testmbti ]);
-       
+        $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
 
@@ -33,7 +33,7 @@ class PDFController extends Controller
     {
         $testdisc = Testdisc::find($id);
         $pdf = PDF::loadView('testdisc.pdf_disc',['testdisc' =>  $testdisc]);
-       
+        $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
 
@@ -58,7 +58,8 @@ class PDFController extends Controller
             'inter_sup' =>  $inter_sup ,
             'comment_sup' =>   $comment_sup,
         ]);
-       
+        $pdf->setPaper('A4', 'portrait');
+        
         return $pdf->stream();
     }
 
