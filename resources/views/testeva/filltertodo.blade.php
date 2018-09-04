@@ -31,12 +31,9 @@
          </div>
 
           <div class="box-footer">
-           
 
-            {{ Form::submit('เริ่มทำแบบประเมิน',['class'=> 'btn btn-primary'])}}
-
-      
-               
+                  {{ Form::submit('เริ่มทำแบบประเมิน',['class'=> 'btn btn-primary'])}}
+                                  
               </div>
               <!-- /.box-footer -->
 

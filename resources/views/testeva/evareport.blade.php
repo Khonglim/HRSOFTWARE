@@ -71,61 +71,10 @@ function myFunction() {
                           <div id="swapname"> <a href="{{'evareportblindname'}}" class="btn btn-primary btn-lg" ><i class="fa fa-eye-slash fa-6" aria-hidden="true"></i></a></div>
         
                           <button  type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button>
-                          
-                          <div id="chart_div"></div>
-                             <script>
-            function myFunction2() {
-        var ele11 = document.getElementById("toggleText11");
-        var ele12 = document.getElementById("toggleText12");
-        var ele21 = document.getElementById("toggleText21");
-        var ele22 = document.getElementById("toggleText22");
-        var ele31 = document.getElementById("toggleText31");
-        var ele32 = document.getElementById("toggleText32");
-        var ele41 = document.getElementById("toggleText41");
-        var ele42 = document.getElementById("toggleText42");
-        var ele51 = document.getElementById("toggleText51");
-        var ele52 = document.getElementById("toggleText52");
-        var text = document.getElementById("myButton1");
-
-         if(ele11.style.display == "none" && ele12.style.display == "block") {
-
-            ele11.style.display = "block";
-            ele12.style.display = "none";
-            ele21.style.display = "block";
-            ele22.style.display = "none";
-            ele31.style.display = "block";
-            ele32.style.display = "none";
-            ele41.style.display = "block";
-            ele42.style.display = "none";
-            ele51.style.display = "block";
-            ele52.style.display = "none";
-            text.value = "ไม่แสดงชื่อ";
-             
-        }
-        else{
-            ele11.style.display = "none";
-            ele12.style.display = "block";
-            ele21.style.display = "none";
-            ele22.style.display = "block";
-            ele31.style.display = "none";
-            ele32.style.display = "block";
-            ele41.style.display = "none";
-            ele42.style.display = "block";
-            ele51.style.display = "none";
-            ele52.style.display = "block";
-            
-
-            text.value = "แสดงชื่อ";
-
-        }
-                  
-            }
-               
-            </script>
-
-                   
 
                         <div id="myDIV" style="display: none;">
+                           <div class=" row">
+                            <div  class="table-responsive">
                             <table  class="table table-bordered table-striped">
                         <thead>
                           <tr >
@@ -281,7 +230,8 @@ function myFunction() {
                         </tbody>
 
                       </table>
-
+                      </div> 
+                      </div> 
                         </div>            
                    @if($p1final!=0)  
                    <?php  

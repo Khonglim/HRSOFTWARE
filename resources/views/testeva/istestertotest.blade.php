@@ -74,7 +74,7 @@
  
                 @if($emp->nee_by_employee == $emp2->nem_id && $ngg_employees->nem_id == $emp->nee_is_employee && $forms->id==$emp->nee_id_form  )
                  
- {{Form::open(['url'=>'starttest','method'=>'POST'])}}
+                {{Form::open(['url'=>'starttest','method'=>'POST'])}}
                  <tr>
                     <td colspan="5" style="text-align: center;width: 50%;height: 70px;">
                       {{Form::label('คุณ','คุณ')}}
@@ -91,10 +91,12 @@
                     </td>
                     
                     <td th colspan="5" style="text-align: center;width: 50%;height: 70px;">
-                    
-                      
-                  {{ Form::submit('เริ่มทำแบบประเมิน',['class'=> 'btn btn-primary'])}}
-                     
+                    @if($emp->nee_recheck == true)
+                    {{ Form::submit('เริ่มทำแบบประเมิน',['class'=> 'btn btn-primary'])}}
+                    @else
+                    <span><i class="fa fa-check fa-lg" aria-hidden="true" style="color: #35ff16"></i></span>
+                    @endif
+                  
                     </td>
                    
                   </tr> 

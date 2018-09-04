@@ -18,6 +18,7 @@ class CreateEmployeetotestTable extends Migration
             $table->string('nee_is_employee');
             $table->string('nee_by_employee');
             $table->string('nee_id_form');
+            $table->boolean('nee_recheck')->default(true);
             $table->tinyInteger('nee_enable')->default('1');
 
 
