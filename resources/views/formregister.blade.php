@@ -39,17 +39,17 @@
 		        <div class="col-md-12 ">
 		            <!--      Wizard container        -->
 		            <div class="wizard-container">
-		                <div class="card wizard-card" data-color="orange" id="wizardProfile">
+		                <div class="card wizard-card" data-color="green" id="wizardProfile">
 		                   
                                     {{Form::open(['url'=>'employee','files' => true,'enctype'=>'multipart/form-data','role'=>'form','data-toggle'=>'validator'])}}
 		                <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
 
-		                      <!--	<div class="wizard-header">
+		                     	<div class="wizard-header">
 		                        	<h3 class="wizard-title">
                                         NGG GROUP.
-		                        	</h3>
-									<h5>Cien Sesto NGGTP TAI Xian UW Other</h5>
-		                    	</div>  -->
+                                    </h3>
+                                    {{ Html::link('/','กลับสู่หน้าหลัก',array('class ' => 'btn btn-primary')) }}
+		                    	</div> 
 								<div class="wizard-navigation">
 									<ul>
                                <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>    

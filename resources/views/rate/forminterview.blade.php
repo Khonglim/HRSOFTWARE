@@ -1,4 +1,4 @@
-@extends('layouts.interview')
+@extends('layouts.main')
 @section('content')
 <style>
     #customers {
@@ -25,7 +25,8 @@
         color:  black;
     }
     </style>
-           <div class="container">
+            <div class="content-wrapper">
+                <div class="content container-fluid">
           {{Form::open(['url'=>'rate'])}}
          
           <div class="box-body table-responsive no-padding">

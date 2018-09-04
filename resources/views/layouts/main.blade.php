@@ -13,12 +13,9 @@
   <link href="{{ asset('plugins/pace/pace.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/skins/_all-skins.min.css') }}" rel="stylesheet">
   <link href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
   <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Prompt">
 <style>
@@ -35,7 +32,6 @@ body {
         
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini">
-   
     <div id="main">
             <div class="wrapper">
         <header class="main-header">
@@ -70,8 +66,8 @@ body {
                       
                         <img src="{{URL::asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
                         <p>
-                          {{ Auth::user()->name }} - Web Developer
-                          <small>Member since Nov. 2012</small>
+                          {{ Auth::user()->name }} - HR Software
+                          <small>2018</small>
                         </p>
                       </li>
                       <!-- Menu Body -->
@@ -128,13 +124,7 @@ body {
                 <!-- Optionally, you can add icons to the links -->
                 @if(auth()->user()->isAdmin == 1)
                 <li class="active"  ><a href="{{url('/home') }}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
-                <li class="active"  ><a href="{{url('/company')}}" ><i class="glyphicon glyphicon-lock"></i> <span>รายชื่อบริษัท</span></a></li>
-                <li class="active" ><a href="{{url('/department')}}"><i class="glyphicon glyphicon-equalizer"></i> <span>ชื่อแผนก</span></a></li>
-                <li class="active" ><a href="{{url('/position')}}"><i class="glyphicon glyphicon-blackboard"></i> <span>ชื่อตำแหน่ง</span></a></li>
                 <li class="active"  ><a href="{{url('/employee')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
-                <li class="active"  ><a href="{{url('/mbti') }}"><i class="fa fa-book"></i> <span>ทดสอบ MBTI</span></a></li>
-                <li class="active"  ><a href="{{url('/disc') }}"><i class="fa fa-book"></i> <span>ทดสอบ DISC</span></a></li>
-
                 <li class="treeview">
                   <a href="#"><i class="fa fa-angle-double-right"></i><span>แบบประเมินผลสัมภาษณ์</span>
                     <span class="pull-right-container">
@@ -144,17 +134,6 @@ body {
                   <ul class="treeview-menu">
                     <li><a href="{{url('rate/create') }}"><i class="fa fa-book"></i> <span>ระดับปฎิบัติการ</span></a></li>
                     <li><a href="{{url('rate_sup/create') }}"><i class="fa fa-book"></i> <span>ระดับบังคับบัญชาขึ้นไป</span></a></li>
-                 </ul>
-                </li>
-
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-angle-double-right"></i><span>ดูแผนผัง HR บริษัท</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                      </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="{{url('/iframe') }}">แผนผังบริษัท</a></li>
                  </ul>
                 </li>
                 <li class="treeview">

@@ -47,7 +47,7 @@
                                 <div class ="form-group">
                                         <div class="col-md-2">
                                                 <div class="alert alert-success">
-                                                       <p>  <strong id="showTimeDisc" data-minutes-left="5"></strong></p>
+                                                       <p>  <strong id="showTimeDisc" data-minutes-left="0.3"></strong></p>
                                                        <p>   <strong id="showTimeDisc2" data-minutes-left="0.5"></strong></p>
                                       </div> 
                                     </div>  

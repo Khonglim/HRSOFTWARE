@@ -1,4 +1,4 @@
-@extends('layouts.interview')
+@extends('layouts.main')
 @section('content')
 <style>
         #customers {
