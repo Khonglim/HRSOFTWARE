@@ -132,8 +132,8 @@
 
                     <td style="display: none;"><input name='c_{{$questiontest->id_part}}{{$questiontest->q_id}}' type="text" value={{$questiontest->id}}></td>
 
-                    <td colspan="5" style="width: 60%;height: 70px;">
-                      <textarea class="form-control" name={{$questiontest->id_part}}{{$questiontest->q_subpart}}></textarea>
+                    <td colspan="5" style="width: 60%;height: 80px;">
+                      <textarea class="form-control" style="width: 100%; height: 100%; resize: none;" name={{$questiontest->id_part}}{{$questiontest->q_subpart}}></textarea>
                     </td>
                     
                    
