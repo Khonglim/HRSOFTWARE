@@ -71,12 +71,14 @@ function myFunction() {
                                  @endforeach 
                           <div id="swapname"><a href="{{'report'}}" class="btn btn-primary btn-lg" ><i class="fa fa-eye fa-6" aria-hidden="true"></i></a></div>
         
-                          <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button>
+                          <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button><br><br>
                           
                    
 
                         <div id="myDIV" style="display: none;">
-                            <table  class="table table-bordered table-striped">
+                          <div class=" row">
+                            <div  class="table-responsive">
+                              <table  class="table table-bordered table-striped">
                         <thead>
                           <tr >
                             <th style="text-align: center;width: 10%;height: 70px;" >
@@ -112,6 +114,7 @@ function myFunction() {
                 @foreach($ngg_employee as $ngg_emp)
                   @if($ngg_emp->nem_id == $idtest)
                    <?php  $istest=$ngg_emp->nem_nickname; ?>
+                   
                   @endif
                    
                      
@@ -190,13 +193,13 @@ function myFunction() {
 
                 @endforeach
 
-                            <td>{{Form::label('คุณ','คุณ')}}{{Form::label('nee_id1',$change)}}</td>
+                            <td style="width: 10%;height: 40px;">{{Form::label('nee_id1',$change2)}}</td>
                             
-                            <td>{{$p1}}<?php  $p1final+=$p1;?></td>
-                            <td>{{$p2}}<?php  $p2final+=$p2;?></td>
-                            <td>{{$p3}}<?php  $p3final+=$p3;?></td>
-                            <td>{{$p4}}<?php  $p4final+=$p4;?></td>
-                            <td>{{$p5}}<?php  $p5final+=$p5;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p1}}<?php  $p1final+=$p1;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p2}}<?php  $p2final+=$p2;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p3}}<?php  $p3final+=$p3;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p4}}<?php  $p4final+=$p4;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p5}}<?php  $p5final+=$p5;?></td>
 
                                              
                             <?php $i=0;$count++;
@@ -232,6 +235,10 @@ function myFunction() {
 
                       </table>
 
+                            </div>
+
+                          </div>
+                            
                         </div>            
                    @if($p1final!=0)  
                    <?php  

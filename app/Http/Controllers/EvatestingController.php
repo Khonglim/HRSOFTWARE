@@ -29,14 +29,8 @@ class EvatestingController extends Controller
      */
     public function index()
     {
-        $ngg_evaluate_results = Ngg_evaluate_result::all();
-        $employeetotest = Employeetotest::all();
-$ngg_employee = Ngg_employee::all();
-
-         $data = array(
-                'ngg_employee' => $ngg_employee,'ngg_evaluate_results' => $ngg_evaluate_results,'employeetotest' => $employeetotest
-            );
-         return view("testeva/filltertodo",$data);
+       
+         return view("testeva/filltertodo");
     }
 
 
@@ -302,7 +296,11 @@ $ngg_employee = Ngg_employee::all();
         $result->nec_evaluate_employee_id= Input::get('nee_id2');
         $result->save();
         
-
+        $check = Input::get('nee_id2');
+        DB::table('employeetotest')
+            ->where('nee_id', $check)
+            ->update(['nee_recheck' => 0]);
+        
        }
         elseif (Input::get('forms1_id')=='2') {
             echo "no data";

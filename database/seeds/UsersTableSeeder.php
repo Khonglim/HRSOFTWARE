@@ -248,7 +248,15 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('1100200241017'),
         ]);
         DB::table('users')->insert([
+            'name' => '21003',
+            'password' => bcrypt('3101202984936'),
+        ]);
+        DB::table('users')->insert([
             'name' => '94001',
+            'password' => bcrypt('3120300039194'),
+        ]);
+        DB::table('users')->insert([
+            'name' => '94011',
             'isAdmin'=>'1',
             'password' => bcrypt('1431000083009'),
         ]);
