@@ -32,13 +32,15 @@
             font-size: 20px;
         }
         table{
-           
+          border-collapse: collapse;
             width: 100%;
         }
         td,th{
-           
+          border:1px solid;
+         
+            width: 100%;
         }
-        body { width: 100%; height: 100%; }
+        
 
 
 .page-break {
@@ -52,92 +54,178 @@
     
 </head>
 <body>
-    <div class="page-break"> 
-   
-  <b>ผลสรุปของคุณ </b> {{$personal->name}} {{$personal->lastname}}<br>
-               
-                @foreach ($testmbti as  $testmbtis )
-                @if ($testmbtis->id_personal == $personal->id)
-         
-        
-        
-                <b>ผลสรุปการทดสอบ MBTI  </b><br>
-               
-                <b>  ผลสรุป  </b> {{ $testmbtis->conclude }} 
-                   {{  $testmbtis->meaning }} <br>
-                  
-                <b> ผลสรุป ด้านการคิด </b><br>
-                 
-                   {{  $testmbtis->meaningtwo  }} <br>
-            @endif
-            @endforeach
-
-    @foreach ($testdisc as $testdis )
-    @if (	$testdis->id_personal == $personal->id)
     
+    
+        <?php $resultArray=array();  ?>
+        <?php $d=0;  ?>
+      <?php $i=0; ?>
+        @foreach ($inter_sup as $inter )
+        @if (	$inter->id_personal == $personal->id &&  $inter->chioce <= '20' )
+        
+            <?php array_push($resultArray,$inter->score);?> 
+        @endif
+        @endforeach
 
-            <b>ผลสรุปการทดสอบ DISC</b><br>
-            {{ $testdis->meaning }} <br>
+      
+     
+     
+        
+
+     
+    
+    <div class="page-break"> 
+
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th colspan="3" style="text-align:center">สรุปผลการประเมินพนักงาน</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>ชื่อ:</b> {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}}</td>
+                <td><b>ตำแหน่ง:</b>
+
+
+                </td>
+                <td><b>บริษัท: </b>..................................................</td>
+              </tr>
+              <tr>
+                <td colspan="3"><b>วันที่สมัคร:</b> {{$personal->created_at}} น.</td>
+               
+              </tr>
+              <tr>
+                <td colspan="3" style="text-align:center"><b>ผลสรุปการทดสอบ MBTI </b></td>
+               
+              </tr>
+
+              <tr>
+                  <td colspan="3">     @foreach ($testmbti as  $testmbtis )
+                      @if ($testmbtis->id_personal == $personal->id)
+                      <b>ผลสรุปการทดสอบ MBTI  </b><br>
+                     
+                      <b>  ผลสรุป  </b> {{ $testmbtis->conclude }} 
+                         {{  $testmbtis->meaning }} <br>
+                        
+                      <b> ผลสรุป ด้านการคิด </b><br>
+                       
+                         {{  $testmbtis->meaningtwo  }} <br>
+                  @endif
+                  @endforeach      </td>
+              </tr>
+
+              <tr>
+                  <td colspan="3" style="text-align:center"><b>ผลสรุปการทดสอบ DISC</b></td>
+                 
+                </tr>
+
+                <tr>
+                    <td colspan="3"> 
+                        @foreach ($testdisc as $testdis )
+                        @if (	$testdis->id_personal == $personal->id)
+                        
+                    
+                                <b>ผลสรุปการทดสอบ DISC</b><br>
+                                {{ $testdis->meaning }} <br>
+                    
+                       
+                    
+                        @endif
+                        @endforeach  
+                      </td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    
-
-    @endif
-    @endforeach  
  
+               
+              
+
+    
 
   </div>
 
     <table >
         <thead>
           <tr>
-            <th>คะแนนประเมิน ระดับบังคับบัญชาขึ้นไป (Supervisory Level)</th>
+            <th colspan="6" style="text-align:center">คะแนนประเมิน ระดับบังคับบัญชาขึ้นไป (Supervisory Level)</th>
           </tr>
         </thead>
+        <tbody> 
+        <?php  $col=6; $u=0;?>   
         @forelse($inter_sup as $inter )
         @if (	$inter->id_personal == $personal->id &&  $inter->chioce > '20' )
-        <tbody>
-              
-          
-              
-          <tr>
-            <td>
-                  
-                    @if($inter->chioce == '102')
-                    
-                   ผลรวมจากการเลือก 5 ได้ {{ $inter->score }} คะแนน
-                     @endif
-                    
-              
-                     
-                     @if($inter->chioce == '103')
-                     
-                    ผลรวมจากการเลือก 4 ได้ {{ $inter->score }} คะแนน
-                      @endif
-                    
-                     
-                      @if($inter->chioce == '104')
+          @if($u==0) 
+        <?php echo "<tr align=center>"; ?>
+            @endif
+            <?php $u++; ?>
+                        @if($u <=  $col) 
                       
-                     ผลรวมจากการเลือก 3 ได้ {{ $inter->score }} คะแนน
+                                <td>
+                                
+                                
+                                    @if($inter->chioce == '102')
+                    
+                                    ผลรวมจากการเลือก 5 ได้ {{ $inter->score }} คะแนน
+                                      @endif
+                                     
+                               
+                                      
+                                      @if($inter->chioce == '103')
+                                      
+                                     ผลรวมจากการเลือก 4 ได้ {{ $inter->score }} คะแนน
+                                       @endif
+                                     
+                                      
+                                       @if($inter->chioce == '104')
+                                       
+                                      ผลรวมจากการเลือก 3 ได้ {{ $inter->score }} คะแนน
+                                        @endif
+                                      
+                                       
+                                        @if($inter->chioce == '105')
+                                        
+                                       ผลรวมจากการเลือก 2 ได้ {{ $inter->score }} คะแนน
+                                         @endif
+                                        
+                                         
+                                         @if($inter->chioce == '106')
+                                         
+                                        ผลรวมจากการเลือก 1 ได้ {{ $inter->score }} คะแนน
+                                          @endif
+                                         
+                                          @if($inter->chioce == '107')
+                                         
+                                          ผลรวม  {{ $inter->score }} คะแนน
+                                            @endif
+                                
+                                </td>   
                        @endif
-                     
-                      
-                       @if($inter->chioce == '105')
-                       
-                      ผลรวมจากการเลือก 2 ได้ {{ $inter->score }} คะแนน
-                        @endif
-                       
-                        
-                        @if($inter->chioce == '106')
-                        
-                       ผลรวมจากการเลือก 1 ได้ {{ $inter->score }} คะแนน
-                         @endif
-                        
-                         @if($inter->chioce == '107')
-                        
-                         ผลรวม  {{ $inter->score }} คะแนน
-                           @endif
-            </td>
-          </tr>
+                              @if($u==$col)
+                                     <?php $u=0; ?>
+                     <?php echo "</tr>"; ?>
+                    @endif
+         
           @endif
           @empty
           <tr>
@@ -151,7 +239,7 @@
     <table>
         <thead>
           <tr>
-            <th>ความคิดเห็น ระดับบังคับบัญชาขึ้นไป (Supervisory Level) </th>
+            <th  colspan="6" style="text-align:center">ความคิดเห็น ระดับบังคับบัญชาขึ้นไป (Supervisory Level) </th>
           </tr>
         </thead>
         <tbody>
@@ -210,7 +298,7 @@
         <table>
                 <thead>
                   <tr>
-                    <th>คะแนนประเมิน ระดับปฎิบัติการ (Operational Level)</th>
+                    <th colspan="6">คะแนนประเมิน ระดับปฎิบัติการ (Operational Level)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -265,7 +353,7 @@
               <table>
                 <thead>
                   <tr>
-                    <th>ความคิดเห็น ระดับปฎิบัติการ (Operational Level)</th>
+                    <th colspan="6">ความคิดเห็น ระดับปฎิบัติการ (Operational Level)</th>
                   </tr>
                 </thead>
                 <tbody>
