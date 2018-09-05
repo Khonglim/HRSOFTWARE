@@ -34,7 +34,6 @@ body {
 
 <div class="container">
     <br>
-    
         <center>
             <div class="panel panel-success" style="width:100%">
                 <div class="panel-heading">การทดสอบบุคลิกภาพ</div>
@@ -469,54 +468,6 @@ body {
              
          
         </center>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 @endsection

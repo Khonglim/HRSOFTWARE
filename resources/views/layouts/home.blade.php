@@ -82,7 +82,7 @@
 							<a class="nav-link cool" href="{{url('/testto') }}">ทำแบบทดสอบ MBTI</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link cool" href="{{url('/testtoo') }}">ทำแบบทดสอบ DICSC</a>
+							<a class="nav-link cool" href="{{url('/testtoo') }}">ทำแบบทดสอบ DICS</a>
 						</li>
 			
 						<li class="nav-item">

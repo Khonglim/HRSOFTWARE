@@ -224,7 +224,7 @@
                             @endif
                             <b>  คน </b>
                     </td>
-                    <td colspan="3">
+                    <td colspan="2">
                             <b>  จำนวนบุตรที่อายุเกิน21ปี : </b>
                             @if($personal->over21 =='')
                             ว่าง
@@ -233,7 +233,7 @@
                             @endif
                             <b>  คน</b>
                     </td>
-                    <td colspan="2">
+                    <td colspan="3">
                             <b>   สถานะทางทหาร:  </b>
                                 @if($personal->military_service =='')
                                     ว่าง
@@ -687,20 +687,8 @@
     
 
       <table>
-        <thead>
-          <tr>
-            <th align=center>ผลงาน</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td align=center><img src="{{$personal->portfolio1}}" alt="" width="480" height="280" ><br>ผลงาน1</td>
-          </tr>
-          <tr>
-            <td align=center><img src="{{$personal->portfolio2}}" alt="" width="480" height="280" ><br>ผลงาน2</td>
-          </tr>
-          <tr>
-            <td align=center><img src="{{$personal->portfolio3}}" alt="" width="480" height="280" ><br>ผลงาน3</td>            
+         <tr>
+            <td> Link ผลงาน {{$personal->portfolio3}}</td>            
           </tr>
         </tbody>
       </table>

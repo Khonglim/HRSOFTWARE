@@ -1240,9 +1240,33 @@
                                                                                 
                                                                             </div>
                                                                     </div>   
-                                                                </div>                                               
-                                                           </div>    
-                                  
+                                                                </div> 
+                                                                
+                                                                
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                    <label>ผลงาน</label>
+                                                                    
+                                                                     <img  src="{{$personal->portfolio1}}" >  <br>
+
+                                                                     <img  src="{{$personal->portfolio2}}" >
+                                                                        </div>
+                                                                    </div>
+                                                                   </div>
+                                          
+
+
+
+
+
+
+
+
+
+                                                           </div>   
+                                                           
+                                                         
         
                         <!-- /.tab-pane -->
                       </div>

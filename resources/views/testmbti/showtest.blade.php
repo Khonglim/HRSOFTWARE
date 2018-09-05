@@ -1,14 +1,9 @@
-@extends('layouts.home')
+@extends('layouts.test')
 @section('content')
-<div class="content-wrapper">
-	<div class="content container-fluid">
-			<div class="col-md-11">
-			<div class="box box-info">
-					<div class="box-header with-border">
-						<h3 class="box-title">สรุปผลการทดสอบ (MBTI)</h3>
-					</div>
-			
-						<div class="box-body">
+<div class="container">
+	<div class="panel panel-success" style="width:100%">
+		<div class="panel-heading">การทดสอบบุคลิกภาพ</div>
+		  <div class="panel-body">
 								<div class ="form-group">
 										<div class="row"> 
 												<div class="col-md-2">

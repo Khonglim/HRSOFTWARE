@@ -1,15 +1,11 @@
 @extends('layouts.test')
 @section('content')
-<div class="content-wrapper">
-	<div class="content container-fluid">
-			<div class="col-md-11">
-			<div class="box box-info">
-					<div class="box-header with-border">
-						<h3 class="box-title">สรุปผลการทดสอบ (MBTI)</h3>
-					</div>
-			
-						<div class="box-body">
-								<div class ="form-group">
+<div class="container">
+		
+				<div class="panel panel-success" style="width:100%">
+					<div class="panel-heading">สรุปผลการทดสอบ DISC</div>
+					<div class="panel-body">
+								
 										<div class="row"> 
 												<div class="col-md-2">
 														<div class="form-group">  
@@ -266,19 +262,19 @@
 
 												</li>
 											</ul>
-									</div>
+									
 
 
 
 
-						</div>
+						
 						<!-- /.box-body -->
 						<div class="box-footer">
 							<center>
-									<a href="{{url('pdftestdisc/'.$testdisc->id)}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+									<a href="{{url('pdftestdisc/'.$testdisc->id)}}" class="btn btn-success  " ><i class="glyphicon glyphicon-download-alt"></i></a>
 							</center>
 						</div>		
-					</div>
+					
 
 				
 
@@ -286,7 +282,7 @@
 
 
 
-
+				</div>
 
 	</div>
 </div>
