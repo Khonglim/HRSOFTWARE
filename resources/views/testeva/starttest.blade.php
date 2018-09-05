@@ -6,11 +6,11 @@
 			font-size: 18px;
 			background-color: #83b8fc;
     		color: black;
-        resize: none;
+        
 		}
 		td{
 			font-size: 18px;
-      resize: none;
+
 		}
 		p{
 			color: red;
@@ -36,6 +36,7 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+            <div class="table-responsive">
             <table class="table table-bordered table-striped">
                {{Form::open(['url'=>'evatesting'])}}
                <div style="display: none;" >
@@ -157,6 +158,7 @@
              </tfoot>
             {{Form::close()}}
             </table>
+            </div>
             <br><br>
            
             <br><br>

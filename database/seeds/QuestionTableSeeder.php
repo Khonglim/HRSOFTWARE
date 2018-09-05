@@ -104,7 +104,7 @@ class QuestionTableSeeder extends Seeder
         ]);
                       DB::table('question')->insert([
         	'q_id'=>'10',
-            'ask' => '10. การมีความคิดสร้างสรรค์ ( Creativity )',
+            'ask' => '10. การมีความคิดสร้างสรรค์ที่มีประโยชน์ต่อส่วนรวมและงานที่ทำเพื่อพัฒนาต่อยอดงาน(Creativity for innovation of work.)',
             'id_part' => '1',
             'id_form' => '1',
             'q_subpart' =>'0',
@@ -155,7 +155,7 @@ class QuestionTableSeeder extends Seeder
         ]);
                       DB::table('question')->insert([
         	'q_id'=>'4',
-            'ask' => '4. ความสามารถในการแก้ไขปัญหากับทีมงานได้อย่างรวดเร็วและแม่นยำ	(Ability to solve problem with team with fast and accurate decision)',
+            'ask' => '4. ความสามารถในการแก้ไขปัญหากับทีมงานได้อย่างรวดเร็วและแม่นยำ (Ability to solve problem with team with fast and accurate decision)',
             'id_part' => '2',
             'id_form' => '1',
             'q_subpart' =>'0',
@@ -165,7 +165,7 @@ class QuestionTableSeeder extends Seeder
         ]);
                       DB::table('question')->insert([
         	'q_id'=>'5',
-            'ask' => '5. ความคิดสร้างสรรที่เป็นประโยชน์ในงานเพื่อต่อยอดพัฒนางาน 	(Ability to initiative in order to develop and add value)',
+            'ask' => '5. การรักษาความลับข้อมูลในส่วนของพนักงานเอง และส่วนงานที่พนักงานดูแล และ ส่วนรวมของบริษัท (Ability to keep confidential information for personal, work, company.)',
             'id_part' => '2',
             'id_form' => '1',
             'q_subpart' =>'0',
@@ -582,7 +582,7 @@ class QuestionTableSeeder extends Seeder
         ]);
                       DB::table('question')->insert([
             'q_id'=>'10',
-            'ask' => '10. การมีความคิดสร้างสรรค์ ( Creativity )',
+            'ask' => '10. การมีความคิดสร้างสรรค์ที่มีประโยชน์ต่อส่วนรวมและงานที่ทำเพื่อพัฒนาต่อยอดงาน(Creativity for innovation of work.)',
             'id_part' => '1',
             'id_form' => '3',
             'q_subpart' =>'0',
@@ -710,7 +710,7 @@ class QuestionTableSeeder extends Seeder
         ]);
                       DB::table('question')->insert([
             'q_id'=>'5',
-            'ask' => '5. ความคิดสร้างสรรที่เป็นประโยชน์ในงานเพื่อต่อยอดพัฒนางาน (Creativity and initiatives to deliver new ideas for work)',
+            'ask' => '5. การรักษาความลับข้อมูลในส่วนของพนักงานเอง และส่วนงานที่พนักงานดูแล และ ส่วนรวมของบริษัท (Ability to keep confidential information for personal, work, company)',
             'id_part' => '3',
             'id_form' => '3',
             'q_subpart' =>'0',
@@ -925,7 +925,7 @@ class QuestionTableSeeder extends Seeder
         ]);
                       DB::table('question')->insert([
             'q_id'=>'10',
-            'ask' => '10. การมีความคิดสร้างสรรค์ ( Creativity )',
+            'ask' => '10. การมีความคิดสร้างสรรค์ที่มีประโยชน์ต่อส่วนรวมและงานที่ทำเพื่อพัฒนาต่อยอดงาน(Creativity for innovation of work.)',
             'id_part' => '1',
             'id_form' => '2',
             'q_subpart' =>'0',
@@ -1047,7 +1047,7 @@ class QuestionTableSeeder extends Seeder
         ]);
                           DB::table('question')->insert([
             'q_id'=>'5',
-            'ask' => '5. ความคิดสร้างสรรที่เป็นประโยชน์ในงานเพื่อต่อยอดพัฒนางาน',
+            'ask' => '5. การรักษาความลับข้อมูลในส่วนของพนักงานเอง และส่วนงานที่พนักงานดูแล และ ส่วนรวมของบริษัท (Ability to keep confidential information for personal, work, company)',
             'id_part' => '3',
             'id_form' => '2',
             'q_subpart' =>'0',
