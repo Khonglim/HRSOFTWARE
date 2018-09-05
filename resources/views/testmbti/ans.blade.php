@@ -115,11 +115,8 @@ table{
          @endif
          
 
-
-         <div class="panel panel-success" style="width:100%">
-             <div class="panel-heading">การทดสอบบุคลิกภาพ</div>
-               <div class="panel-body">
-          
+         <div class="container">
+        
                     <div class="panel panel-success" style="width:100%">
                         <div class="panel-heading">สรุปผลการให้คะแนน: นับ 1 คะแนน สำหรับแต่ละคำตอบของท่านในแบบเฉลยต่อไปนี้</div>
                         <div class="panel-body">
@@ -890,6 +887,5 @@ table{
                                 </center>
                         </div>
                     </div>
-              </div>
-            </div> 
+                  </div> 
 @endsection

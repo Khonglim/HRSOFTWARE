@@ -1246,11 +1246,10 @@
                                                                 <div class="row">
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
-                                                                    <label>ผลงาน</label>
-                                                                    
-                                                                     <img  src="{{$personal->portfolio1}}" >  <br>
-
-                                                                     <img  src="{{$personal->portfolio2}}" >
+                                                                    <label>ผลงาน</label><br>
+                                                                    <img src="{{URL::asset($personal->portfolio2)}}" height="250" width="350" >
+                                                                    <br> <br> <br>
+                                                                    <img src="{{URL::asset($personal->portfolio1)}}" height="250" width="350" >
                                                                         </div>
                                                                     </div>
                                                                    </div>
