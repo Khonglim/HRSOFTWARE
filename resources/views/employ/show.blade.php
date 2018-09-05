@@ -1,5 +1,4 @@
 @extends('layouts.main')
-@yield('title',' Report')
 @section('content')
   <div class="content-wrapper">
                

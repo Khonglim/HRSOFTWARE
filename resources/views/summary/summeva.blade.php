@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','| ผลการประเมิน')
+
 @section('content')
 <div class="content-wrapper">
 

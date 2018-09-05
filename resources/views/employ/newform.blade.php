@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@yield('title',' Application Form')
+
 @section('content')
   <div class="content-wrapper">
     <div class="content container-fluid">

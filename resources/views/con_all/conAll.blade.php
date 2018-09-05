@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@yield('title',' สรุปผล')
+
 
 @section('content')
   <div class="content-wrapper">

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','| MBTI')
+
 @section('content')
 <div class="content-wrapper">
         <div class="content container-fluid">
