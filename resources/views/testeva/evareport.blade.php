@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('title','| ผลการประเมิน')
 @section('content')
-<title>NGG|ผลการประเมิน</title>
  <style>
 #myDIV {
 }
