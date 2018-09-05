@@ -44,7 +44,7 @@
     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
         @if(session()->has('login_error'))
-          <div class="alert alert-success">
+          <div class="alert alert-warning">
             {{ session()->get('login_error') }}
           </div>
         @endif
