@@ -6,9 +6,11 @@
 			font-size: 18px;
 			background-color: #83b8fc;
     		color: black;
+        resize: none;
 		}
 		td{
 			font-size: 18px;
+      resize: none;
 		}
 		p{
 			color: red;
