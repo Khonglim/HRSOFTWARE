@@ -6,9 +6,11 @@
 			font-size: 18px;
 			background-color: #83b8fc;
     		color: black;
+        resize: none;
 		}
 		td{
 			font-size: 18px;
+      resize: none;
 		}
 		p{
 			color: red;
@@ -133,7 +135,7 @@
                     <td style="display: none;"><input name='c_{{$questiontest->id_part}}{{$questiontest->q_id}}' type="text" value={{$questiontest->id}}></td>
 
                     <td colspan="5" style="width: 60%;height: 80px;">
-                      <textarea class="form-control" style="width: 100%; height: 100%; resize: none;" name={{$questiontest->id_part}}{{$questiontest->q_subpart}}></textarea>
+                      <textarea class="form-control"resize: none;" name={{$questiontest->id_part}}{{$questiontest->q_subpart}}></textarea>
                     </td>
                     
                    
