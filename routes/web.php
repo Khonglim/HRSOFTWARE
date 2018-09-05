@@ -62,6 +62,7 @@ Route::get('/userlogin', function ()
 
 
 Route::resource('home','HomeController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 

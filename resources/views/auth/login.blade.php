@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>HR | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -36,22 +36,22 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a ><b>NGG</b>LTE</a>
+    <a ><b>HR</b>NGG</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">เข้าระบบ</p>
           <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
             @csrf
             <div class="form-group has-feedback">
-          <input id="identity" type="identity" class="form-control" name="identity"  placeholder="USERNAME"
+          <input id="identity" type="identity" class="form-control" name="identity"  placeholder="ชื่อผู้ใช้"
     value="{{ old('identity') }}" autofocus/>
 </div>
     @if ($errors->has('identity'))
     <span class="help-block"><strong>{{ $errors->first('identity') }}</strong></span>
     @endif
     <div class="form-group has-feedback">
-    <input id="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required   placeholder="PASSWORD" />
+    <input id="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required   placeholder="รหัสผ่าน" />
 </div>
     @if ($errors->has('password'))
         <span class="invalid-feedback" role="alert">
@@ -61,7 +61,7 @@
              
       
                     <div class="clearfix"></div>
-                 <center>   <input type="submit" value="Sign In" name="login"> </center>
+                 <center>   <input type="submit" value="เข้าระบบ" name="login"> </center>
             </form>
           
            

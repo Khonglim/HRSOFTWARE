@@ -25,7 +25,7 @@ class Con_allController extends Controller
 
         $data = array('personal' =>  $personal  );
       
-        return view("con_all/ConAll",$data);
+        return view("con_all/conAll",$data);
     }
 
     /**

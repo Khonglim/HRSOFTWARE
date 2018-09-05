@@ -67,7 +67,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<a class="navbar-brand" href="{{url('/') }}">
-					<i class="far fa-gem"></i>NGG</a>
+					<img src="{{URL::asset('img/NGGlogo.jpg')}}"  width="80px" height="80px"> </a>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
 							<li class="nav-item active">

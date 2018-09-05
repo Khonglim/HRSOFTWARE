@@ -73,7 +73,7 @@
 
      
     
-    <div class="page-break"> 
+  <div class="page-break"> 
 
 
         <table class="table table-bordered">
@@ -87,7 +87,22 @@
                 <td><b>ชื่อ:</b> {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}}</td>
                 <td><b>ตำแหน่ง:</b>
 
+                 <?php $s=0;  ?>
+                  @foreach ($comment_sup as $conm )
+                
+                  @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20' )  
+                  @if($conm->chioce == '101')
+                  <?php $s++;  ?>
+                  @if($s == '1')
+                 {{ $conm->comment_interview }} 
+                 @endif
+                  @endif
 
+                @endif
+
+
+           
+                   @endforeach
                 </td>
                 <td><b>บริษัท: </b>..................................................</td>
               </tr>
@@ -138,108 +153,66 @@
 
             </tbody>
           </table>
+  </div> 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
- 
-               
-              
-
-    
-
-  </div>
-
-    <table >
+  <!--    <table >
         <thead>
           <tr>
             <th colspan="6" style="text-align:center">คะแนนประเมิน ระดับบังคับบัญชาขึ้นไป (Supervisory Level)</th>
           </tr>
         </thead>
         <tbody> 
-        <?php  $col=6; $u=0;?>   
-        @forelse($inter_sup as $inter )
-        @if (	$inter->id_personal == $personal->id &&  $inter->chioce > '20' )
-          @if($u==0) 
-        <?php echo "<tr align=center>"; ?>
-            @endif
-            <?php $u++; ?>
-                        @if($u <=  $col) 
-                      
-                                <td>
-                                
-                                
-                                    @if($inter->chioce == '102')
-                    
-                                    ผลรวมจากการเลือก 5 ได้ {{ $inter->score }} คะแนน
-                                      @endif
-                                     
-                               
-                                      
-                                      @if($inter->chioce == '103')
-                                      
-                                     ผลรวมจากการเลือก 4 ได้ {{ $inter->score }} คะแนน
-                                       @endif
-                                     
-                                      
-                                       @if($inter->chioce == '104')
-                                       
-                                      ผลรวมจากการเลือก 3 ได้ {{ $inter->score }} คะแนน
-                                        @endif
-                                      
-                                       
-                                        @if($inter->chioce == '105')
-                                        
-                                       ผลรวมจากการเลือก 2 ได้ {{ $inter->score }} คะแนน
-                                         @endif
-                                        
-                                         
-                                         @if($inter->chioce == '106')
-                                         
-                                        ผลรวมจากการเลือก 1 ได้ {{ $inter->score }} คะแนน
-                                          @endif
-                                         
-                                          @if($inter->chioce == '107')
-                                         
-                                          ผลรวม  {{ $inter->score }} คะแนน
-                                            @endif
-                                
-                                </td>   
-                       @endif
-                              @if($u==$col)
-                                     <?php $u=0; ?>
-                     <?php echo "</tr>"; ?>
-                    @endif
-         
-          @endif
-          @empty
-          <tr>
-          <td colspan="6" >ไม่มีข้อมูลในส่วนนี้!</td>
-          </tr>
-          
-        </tbody>
-        @endforelse
-      </table>
+       
+           <tr>
+
+            <td>
+
+              ด้านบุคลิกลักษณะ
+
+            </td>
+
+
+            <td>
+
+                ด้านคุณสมบัติ
+  
+              </td>
+
+              <td>
+
+                  ด้านสมรรถนะความสามารถ
+    
+                </td>
+
+
+                <td>
+
+                    ด้านบุคลิกลักษณะ
       
+                  </td>
+                  
+            <td>
+
+                ด้านความรู้เกี่ยวบริษัทและตำแหน่งงาน
+  
+              </td>
+
+              
+            <td>
+
+                ด้านความเหมาะสมกับวัฒนธรรมองค์กร
+  
+              </td>
+
+           </tr>
+        </tbody>
+      </table>
+      <br>
     <table>
         <thead>
           <tr>
-            <th  colspan="6" style="text-align:center">ความคิดเห็น ระดับบังคับบัญชาขึ้นไป (Supervisory Level) </th>
+            <th  colspan="5" style="text-align:center">ความคิดเห็น ระดับบังคับบัญชาขึ้นไป (Supervisory Level) </th>
           </tr>
         </thead>
         <tbody>
@@ -417,7 +390,7 @@
                 </tbody>
               </table>
 
-
+            -->
 
               
 
