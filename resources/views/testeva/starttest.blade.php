@@ -1,5 +1,4 @@
 @extends('layouts.main')
-@section('title','| แบบประเมิน')
 @section('content')
 <div class="content-wrapper">
 	<style type="text/css">

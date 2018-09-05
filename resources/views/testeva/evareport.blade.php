@@ -1,5 +1,4 @@
 @extends('layouts.main')
-@section('title','| ผลการประเมิน')
 @section('content')
  <style>
 #myDIV {
