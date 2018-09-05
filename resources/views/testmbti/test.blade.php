@@ -18,7 +18,7 @@ $g=0;
             <div class="panel panel-success" style="width:100%">
                 <div class="panel-heading">แบบประเมินบุคลิกภาพตามตัวบ่งชี้ของมายเออร์-บริกส์(MBTI) </div>
                 <div class="panel-body">
-                    @foreach ($testemp as $c)
+                        @forelse ($testemp as $c)
                     <?php  $r++; ?>
                     @if(($c->name ==  $name =  $_POST["name"]) && ($c->lastname ==  $lastname =  $_POST["lastname"]))
                     <?php  $j++; ?>
@@ -59,11 +59,19 @@ $g=0;
        </div>
                 
             @endif
-            @endforeach
+            @empty
+                        
+            <div class="alert alert-warning">
+                    <strong>หมายเหตุ!</strong> ในระบบไม่มีรายชื่อนี้กรุณาติดต่อเจ้าหน้าที่
+                  </div>
+                  {{ Html::link('disc','ยกเลิก',array('class ' => 'btn btn-danger')) }}
+            @endforelse
 
 
             @if($j =='0' && $r >'0')
-            <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
+            <div class="alert alert-warning">
+                    <strong>หมายเหตุ!</strong> ในระบบไม่มีรายชื่อนี้กรุณาติดต่อเจ้าหน้าที่
+                  </div>
             <div class="box-footer">
                 
           
