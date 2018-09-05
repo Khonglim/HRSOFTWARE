@@ -1,4 +1,5 @@
 @extends('layouts.logingin')
+@yield('title',' User Login')
 @section('content')
 
  <div class="limiter">

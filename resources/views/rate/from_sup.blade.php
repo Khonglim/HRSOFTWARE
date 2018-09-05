@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title','| Supervisory Level')
 @section('content')
 <style>
         #customers {

@@ -1,5 +1,6 @@
 
    @extends('layouts.test')
+   @yield('title',' การทดสอบบุคลิกภาพ')
    @section('content')
    <style>
    body {

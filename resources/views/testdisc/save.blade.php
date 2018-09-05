@@ -1,4 +1,5 @@
 @extends('layouts.test')
+@yield('title',' Save')
 @section('content')
 
 

@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@yield('title',' employee')
 @section('content')
 <div class="content-wrapper">
   <section class="content">

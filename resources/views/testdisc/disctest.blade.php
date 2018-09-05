@@ -1,4 +1,5 @@
-@extends('layouts.test')
+ @extends('layouts.test')
+@yield('title',' การทดสอบบุคลิกภาพ')
 @section('content')
 
 <div class="container">

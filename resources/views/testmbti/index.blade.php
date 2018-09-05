@@ -1,4 +1,5 @@
 @extends('layouts.test')
+@section('title','| แบบทดสอบ MBTI')
 @section('content')
 
 <div class="container">

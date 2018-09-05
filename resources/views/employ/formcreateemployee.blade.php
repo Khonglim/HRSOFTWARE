@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@yield('title',' Create Form')
 @section('content')
   <div class="content-wrapper">
                
