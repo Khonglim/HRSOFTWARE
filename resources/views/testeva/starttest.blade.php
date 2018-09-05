@@ -41,34 +41,20 @@
           <!-- /.box-header -->
           <div class="box-body">
             <div class="table-responsive">
-            <table class="table table-bordered table-striped">
                {{Form::open(['url'=>'evatesting'])}}
-               <div style="display: none;" >
+                <div style="display: none;" >
                      {{Form::text('nee_id2',$_POST["nee_id2"])}}
                      {{Form::text('nee_id1',$_POST["nee_id1"])}} <br>
                      {{Form::text('id_employee',$_POST["id_employee"])}}<br>
                      {{Form::text('nee_id',$_POST["nee_id"])}}
                      {{Form::text('forms1_id',$_POST["forms_id"])}}
                     </div>
-                 
-                <div class="container">
-                  
-                @if(count($errors)>0)
-
-                    <div class="alert alert-danger">
-                      <strong>Whoops!</strong> There were some problems with your input.
-                      <br/>
-                      <ul>
-                        @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                      </ul>
-                    </div>
-                  @endif
-                 
-                </div>     
+               
+           
+              
             	 @foreach($partof as $partoftest)
                @if($partoftest->id_form == $_POST["forms_id"])
+                <table class="table table-bordered table-striped">
               <thead>
                 
               	 <tr>
@@ -153,19 +139,18 @@
              
        @endif 
              @endforeach
+              </tbody>
+            
+            
+            </table>
+
 @endif
              @endforeach
-           </tbody>
-             <tfoot>
-             	<tr>
-                <td colspan="10">{{ Form::submit('ส่งแบบประเมิน',['class'=> 'btn btn-primary'])}}</td>
-              </tr>
-             </tfoot>
-            {{Form::close()}}
-            </table>
+         
             </div>
             <br><br>
-           
+           {{ Form::submit('ส่งแบบประเมิน',['class'=> 'btn btn-primary'])}}
+{{Form::close()}}
             <br><br>
          </div>
         </div>
