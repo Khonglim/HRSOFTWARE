@@ -50,10 +50,10 @@
                     </div>
                
            
-              
+                <table class="table table-bordered table-striped">
             	 @foreach($partof as $partoftest)
                @if($partoftest->id_form == $_POST["forms_id"])
-                <table class="table table-bordered table-striped">
+              
               <thead>
                 
               	 <tr>
@@ -141,11 +141,11 @@
               </tbody>
             
             
-            </table>
+           
 
 @endif
              @endforeach
-         
+          </table>
             </div>
             <br><br>
            {{ Form::submit('ส่งแบบประเมิน',['class'=> 'btn btn-primary'])}}
