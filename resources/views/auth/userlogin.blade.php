@@ -16,30 +16,47 @@
                         Log in
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    {{ csrf_field() }}
+        @if(session()->has('login_error'))
+          <div class="alert alert-warning">
+            {{ session()->get('login_error') }}
+          </div>
+        @endif
+        <center>
+                            <div class="form-group{{ $errors->has('identity') ? ' has-error' : '' }}">
+                                    <label for="identity" class="col-md-4 control-label">ผู้ใช้</label>
+                                   
+                                    <div class="col-md-9">
+                                      <input id="identity" type="identity" class="form-control" name="identity"
+                                             value="{{ old('identity') }}" autofocus   placeholder="ชื่อผู้ใช้">
+                          
+                                      @if ($errors->has('identity'))
+                                        <span class="help-block">
+                                                            <strong class="text-danger">{{ $errors->first('identity') }}</strong>
+                                                        </span>
+                                      @endif
+                                    </div>
+                                  </div>
+                     
+                   
+
+
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-3 control-label">รหัสผ่าน</label>
+                                <div class="col-md-3"> </div>
+                                <div class="col-md-9">
+                                  <input id="password" type="password" class="form-control" name="password">
                       
-
-                         <input id="identity" type="identity" class="input100" name="identity"  placeholder="USERNAME"
-    value="{{ old('identity') }}" autofocus/>
-
-                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        @if ($errors->has('identity'))
-    <span class="help-block"><strong>{{ $errors->first('identity') }}</strong></span>
-    @endif
- <input id="password" type="password" class="input100 {{ $errors->has('password') ? ' is-invalid' : '' }} " name="password" required   placeholder="PASSWORD" />
- @if ($errors->has('password'))
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $errors->first('password') }}</strong>
-        </span>
-    @endif
-                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                    </div>
-
+                                  @if ($errors->has('password'))
+                                    <span class="help-block">
+                                                        <strong class="text-danger">{{ $errors->first('password') }}</strong>
+                                                    </span>
+                                  @endif
+                                </div>
+                              </div>
                   
-
+                            </center>
                     <div class="container-login100-form-btn">
                         <input class="login100-form-btn" type="submit" value="Sign In" name="login">
                     </div>

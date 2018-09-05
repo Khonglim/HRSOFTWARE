@@ -73,13 +73,13 @@
                                              
 		                                        	<div class="picture">
                                         				<img src="{{URL::asset('img/default-avatar.png')}}" class="picture-src" id="wizardPicturePreview" title="" />
-		                                            	<input type="file" id="wizard-picture" data-validation-allowing="jpg, png"
+		                                            	<input type="file" id="wizard-picture"     name="image" data-validation-allowing="jpg, png"
                                                         data-validation-max-size="512kb"  required>
                                                     </div>
                                                     <div class="form-group label-floating">
 		                                        	<h6>อัพโหลดรูปภาพ<small class="text-danger">*ขนาดไม่เกิน 512 kb</small></h6>
                                                 </div>
-                                                
+                                            </div>
                                                 <div class="row">
                                                         <div class="col-md-1"></div>
                                                       
@@ -131,7 +131,7 @@
                                                      </div>
                                                  </div>
 
-                                                 <div class="col-md-3 col-xs-4 "><br>
+                                                 <div class="col-md-3 col-xs-4"><br>
                                                  <div class="input-group">
                                                         <div class="form-group label-floating">
                                                                <label class="control-label">อายุ<small class="text-danger">*</small></label>
@@ -159,14 +159,14 @@
                                                 </div>
 
                                         </div>
-                                    </div>
+                                 
                                         <div class="row">
                                               <div class="col-md-1"></div>
                                               <div class="col-md-2 col-xs-2">
 
                                                     <div class="input-group">
                                                             <div class="form-group label-floating">
-                                                                   <label class="control-label">นำหนัก<small class="text-danger">*</small></label>
+                                                                   <label class="control-label">น้ำหนัก<small class="text-danger">*</small></label>
                                                                    {{Form::text('weight','',['class'=>'form-control','required','pattern'=>"^[0-9]{1,}$"])}}   
                                                            </div>
                                                         </div>

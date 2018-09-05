@@ -40,9 +40,12 @@
 
                             {{Form::open(['url'=>'ansdisc','method'=>'POST','id'=>'testdisc'])}}
                             {{ csrf_field() }}
-                            @foreach ($testemp as $c)
+                           
+
+
+                            @forelse ($testemp as $c)
                             <?php  $r++; ?>
-                            @if((($c->name ==  $name =  $_POST["name"]) && ($c->lastname ==  $lastname =  $_POST["lastname"])))
+                            @if((($c->name ==  $name =  $_POST["name"]) && ($c->lastname ==  $lastname =  $_POST["lastname"] )))
                             <?php  $j++; ?>
                             <div  class="row">
                                 <div class ="form-group">
@@ -140,10 +143,18 @@
                       
                         @endif
     
-             @endforeach
+                        @empty
+
+                        <div class="alert alert-warning">
+                                <strong>หมายเหตุ!</strong> ในระบบไม่มีรายชื่อนี้กรุณาติดต่อเจ้าหน้าที่
+                              </div>
+                              {{ Html::link('disc','ยกเลิก',array('class ' => 'btn btn-danger')) }}
+                        @endforelse
                        
              @if($j =='0' && $r >'0')
-             <h3> คุณไม่สามารถทำแบบทดสอบได้กรุณาตรวจสอบรายชื่อ-นามสกุล! </h3>
+               <div class="alert alert-warning">
+                    <strong>หมายเหตุ!</strong> ในระบบไม่มีรายชื่อนี้กรุณาติดต่อเจ้าหน้าที่
+                  </div>
              <?php  $r--;   $j--; ?>
              <div class="box-footer">
     
