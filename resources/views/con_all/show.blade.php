@@ -1,5 +1,6 @@
 
 @extends('layouts.main')
+@yield('title',' ผลสรุปการทดสอบ MBTI')
 @section('content')
 
 <div class="content-wrapper">

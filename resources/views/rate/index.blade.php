@@ -1,4 +1,5 @@
-@extends('layouts.main')
+ @extends('layouts.main')
+@section('title','| แบบประเมินการสัมภาษณ์')
 @section('content')
 <div class="content-wrapper">
   <div class="content container-fluid">

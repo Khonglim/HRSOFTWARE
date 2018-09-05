@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title','| Human Resources Dept')
 @section('content')
 <style>
     #customers {

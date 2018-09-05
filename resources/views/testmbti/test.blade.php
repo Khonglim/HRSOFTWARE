@@ -1,4 +1,5 @@
 @extends('layouts.test')
+@section('title','| การทดสอบบุคลิกภาพ MBTI')
 @section('content')
 
 <?php

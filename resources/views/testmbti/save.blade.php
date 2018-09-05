@@ -1,4 +1,5 @@
 @extends('layouts.test')
+@section('title','| บันทึกเรียบร้อย')
 @section('content')
 
 

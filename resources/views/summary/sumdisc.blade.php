@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title','| DISC')
 @section('content')
 <div class="content-wrapper">
         <div class="content container-fluid">

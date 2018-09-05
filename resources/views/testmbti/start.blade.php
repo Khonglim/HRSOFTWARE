@@ -1,4 +1,5 @@
 @extends('layouts.test')
+@section('title','| การทดสอบบุคลิกภาพ')
 @section('content')
 <div class="container">
   <br>

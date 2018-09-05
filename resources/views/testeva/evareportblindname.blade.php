@@ -1,6 +1,9 @@
 @extends('layouts.main')
+@section('title','| ผลการประเมิน')
 @section('content')
- <style>
+
+
+  <style>
 #myDIV {
 }
 #swapname {
@@ -29,7 +32,7 @@ function myFunction() {
 
 </script>
  <script src='https://www.google.com/jsapi'></script>
-  
+
 <div class="content-wrapper">
   <section class="content" >
     <div class="row">
@@ -901,6 +904,10 @@ function myFunction() {
     </div>
   </section>
 </div>
+
+ 
+  
+
     
    
   @endsection
