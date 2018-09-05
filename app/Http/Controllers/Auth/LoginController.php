@@ -1,10 +1,13 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+/**
+ * Class LoginController
+ * @package App\Http\Controllers\Auth
+ */
 class LoginController extends Controller
 {
     /*
@@ -17,26 +20,21 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
-
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
     protected $redirectTo = '/home';
-
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
-/**
+    /**
      * Check either username or email.
      * @return string
      */
@@ -60,8 +58,8 @@ class LoginController extends Controller
                 'password' => 'required|string',
             ],
             [
-                'identity.required' => 'Username or email is required',
-                'password.required' => 'Password is required',
+                'identity.required' => 'กรุณาตรวจสอบชื่อผู้ใช้',
+                'password.required' => 'กรุณาตรวจสอบรหัสผ่าน',
             ]
         );
     }
@@ -79,4 +77,3 @@ class LoginController extends Controller
         );
     }
 }
-
