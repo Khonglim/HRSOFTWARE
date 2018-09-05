@@ -3,6 +3,9 @@
 @section('content')
 <div class="content-wrapper">
 	<style type="text/css">
+  table{
+    width: 100%;
+  }
 		th{
 			font-size: 18px;
 			background-color: #83b8fc;
@@ -98,10 +101,10 @@
              
 
              </thead>
-             
+             <tbody>
 @foreach($question as $questiontest)
  @if($questiontest->id_form ==  $_POST["forms_id"])
-             <tbody>
+             
              	
                
                   @if($questiontest['id_part']==$partoftest['id_part']&&$questiontest['q_subpart']==$partoftest['subpart']&&$questiontest['point']=='0')
@@ -147,11 +150,12 @@
 
                    
 
-             </tbody>
+             
        @endif 
              @endforeach
 @endif
              @endforeach
+           </tbody>
              <tfoot>
              	<tr>
                 <td colspan="10">{{ Form::submit('ส่งแบบประเมิน',['class'=> 'btn btn-primary'])}}</td>
