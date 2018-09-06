@@ -46,7 +46,7 @@
                     <tbody>
                       <tr>
                         <td style="text-align:center" colspan="2" >ชื่อผู้สมัคร (Applicant’s Name)
-                            <select id="country" name="employee" >
+                            <select id="country" name="employee" required >
                             <option value="">--เลือกชื่อผู้สมัคร--</option>
                             @foreach ($employee  as $e)
                             <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
@@ -54,7 +54,7 @@
                         </select>
 
                         <td  style="text-align:center" >
-                             ตำแหน่งผู้สมัคร (Position)    {{ Form::text('ngg_position', '', ['id'=>'ngg_position']) }}  </td>
+                             ตำแหน่งผู้สมัคร (Position)    {{ Form::text('ngg_position', '', ['id'=>'ngg_position',' required']) }}  </td>
                             <input type= "hidden" name="chioce101" value="101"  />
                         </td>
                       </tr>
@@ -78,7 +78,7 @@
                             <td  style="width:40% " >{{ $i->choice}}
                             <td  colspan="1" style="text-align:center " >
                                     @foreach ($scoreinterviewp as $item)
-                                      <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
+                                      <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}" required/> {{$item->score_interview}}&ensp;
                                     @endforeach
                                    
 
@@ -105,7 +105,7 @@
                             <td  style="text-align:center" >
 
                                     @foreach ($scoreinterviewp as $item)
-                                    <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
+                                    <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}" required/> {{$item->score_interview}}&ensp;
                                   @endforeach
 
 
@@ -130,7 +130,7 @@
                                        <td  style="width:20% " >{{ $i->choice}}
                                        <td  style="text-align:center " >
                                                @foreach ($scoreinterviewp as $item)
-                                                 <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
+                                                 <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}" required/> {{$item->score_interview}}&ensp;
                                                @endforeach
                                               
            
@@ -156,7 +156,7 @@
                                            <td  style="width:20% " >{{ $i->choice}}
                                            <td  colspan="1" style="text-align:center " >
                                                    @foreach ($scoreinterviewp as $item)
-                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
+                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}" required/> {{$item->score_interview}}&ensp;
                                                    @endforeach
                                                   
                
@@ -181,7 +181,7 @@
                                            <td  style="width:20% " >{{ $i->choice}}
                                            <td  colspan="1" style="text-align:center " >
                                                    @foreach ($scoreinterviewp as $item)
-                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}"/> {{$item->score_interview}}&ensp;
+                                                     <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}" required/> {{$item->score_interview}}&ensp;
                                                    @endforeach
                                                   
                
@@ -228,7 +228,7 @@
 <div class="row">
         <div class="col-md-4">ชิ่อผู้ประเมิน: 
         
-        <input type="text" name="nametest"   class="form-control" >
+        <input type="text" name="nametest"   class="form-control" required>
         <input type="hidden"  name="chioce320"  value="320" >
         </div>
         </div>
@@ -298,12 +298,12 @@
             {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}}
         </div>
 
- 
 
     </div>
         <script type='text/javascript'>
    
         var add_value = [];
+        var  vb  = 0;
         var xCnt5 = 0 ;
         var xCnt4 = 0 ;
         var xCnt3 = 0 ;
@@ -364,9 +364,16 @@
 
        $('#ch1').val(xCnt1);
        $('#rs1').val(xScore1 );
+
        pont =  xCnt1+ xCnt2 +xCnt3 + xCnt4+ xCnt5;
+
        xconclude = xScore5 + xScore4 + xScore3 + xScore2 + xScore1;
        $('#total').val(xconclude);
+      
+            
+       
+
+
        if( xconclude >= 70 &&   pont == 20){
         $('#conclude').val("ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)");
         alert(' แนะนำ ว่าจ้าง (Hire) (70 คะแนน ขึ้นไป)');

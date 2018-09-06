@@ -407,20 +407,25 @@ body {
   
         @if (($s >=30) && (($i <30)) && (($c <30)) && (($d <30)) )
   
-        C ANALYZER: Logical Thinker/Analytical/Objective
-        Practical, proper, discrete, accurate; self-evaluating, 
-        critical of self and others; enjoys detail and logic; makes 
-        decisions slowly from logic rather than emotion; can over-analyze, 
-        be hurt easily; goal is to develop control, correctness; fears criticism, 
-        ridicule.
+        S SUPPORTER: Technician/specialist/Steady
+        Patient, loyal, consistent, helpful to friends; steady, 
+        calculating, reserved; not bored by routine; 
+        needs clear guidelines and rules; avoids 
+        confrontation, internalizes feelings; goal is 
+        maintaining status quo and an environment with 
+        few changes; fears loss of security, unplanned 
+        change
+        
   
         <input type="text" name="meaning" value=" 
-        C ANALYZER: Logical Thinker/Analytical/Objective
-        Practical, proper, discrete, accurate; self-evaluating, 
-        critical of self and others; enjoys detail and logic; makes 
-        decisions slowly from logic rather than emotion; can over-analyze, 
-        be hurt easily; goal is to develop control, correctness; fears criticism, 
-        ridicule." hidden/>
+        S SUPPORTER: Technician/specialist/Steady
+        Patient, loyal, consistent, helpful to friends; steady, 
+        calculating, reserved; not bored by routine; 
+        needs clear guidelines and rules; avoids 
+        confrontation, internalizes feelings; goal is 
+        maintaining status quo and an environment with 
+        few changes; fears loss of security, unplanned 
+        change" hidden/>
        @endif 
   
   

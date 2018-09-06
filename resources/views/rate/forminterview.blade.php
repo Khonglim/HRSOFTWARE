@@ -48,7 +48,7 @@
                       <tr>
                         <td style="text-align:center" colspan="2">ชื่อผู้สมัคร (Applicant’s Name)
                             <select id="country" name="employee" required >
-                            <option value="">--เลือกชื่อผู้สมัคร--</option>
+                            <option value=""  >--เลือกชื่อผู้สมัคร--</option>
                             @foreach ($employee  as $e)
                             <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
                             @endforeach
@@ -233,7 +233,7 @@
 <div class="row">
 <div class="col-md-4">ชิ่อผู้ประเมิน: 
 
-<input type="text" name="nametest"   class="form-control" >
+<input type="text" name="nametest"   class="form-control" required >
 <input type="hidden"  name="chioce320"  value="320" >
 </div>
 </div>

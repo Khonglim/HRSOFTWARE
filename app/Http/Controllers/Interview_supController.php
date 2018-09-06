@@ -214,12 +214,14 @@ class Interview_supController extends Controller
         $inter_sup->score =  $request->score_1; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce1;
+        $inter_sup->group= 1;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_2; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce2;
+        $inter_sup->group= 2;
         $inter_sup->save();
 
        
@@ -228,6 +230,7 @@ class Interview_supController extends Controller
         $inter_sup->score =  $request->score_3; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce3;
+        $inter_sup->group= 2;
         $inter_sup->save();
 
        
@@ -235,6 +238,7 @@ class Interview_supController extends Controller
         $inter_sup->score =  $request->score_4; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce4;
+        $inter_sup->group= 2;
         $inter_sup->save();
 
        
@@ -242,6 +246,7 @@ class Interview_supController extends Controller
         $inter_sup->score =  $request->score_5; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce5;
+        $inter_sup->group= 2;
         $inter_sup->save();
 
        
@@ -250,90 +255,105 @@ class Interview_supController extends Controller
         $inter_sup->score =  $request->score_6; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce6;
+        $inter_sup->group= 3;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_7; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce7;
+        $inter_sup->group= 3;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_8; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce8;
+        $inter_sup->group= 3;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_9; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce9;
+        $inter_sup->group= 3;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_10; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce10;
+        $inter_sup->group= 3;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_11; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce11;
+        $inter_sup->group= 4;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_12; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce12;
+        $inter_sup->group = 4;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_13; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce13;
+        $inter_sup->group =5;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_14; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce14;
+        $inter_sup->group =5;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_15; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce15;
+        $inter_sup->group =5;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_16; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce16;
+        $inter_sup->group  =5;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_17; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce17;
+        $inter_sup->group  =5;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_18; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce18;
+        $inter_sup->group =5;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_19; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce19;
+        $inter_sup->group =5;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_20; 
         $inter_sup->id_personal = $request->employee;
         $inter_sup->chioce = $request->chioce20;
+        $inter_sup->group =5;
         $inter_sup->save();
 
         $inter_sup = new Inter_sup;

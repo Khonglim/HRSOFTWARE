@@ -17,6 +17,7 @@ class CreateInterviewTable extends Migration
             $table->increments('id');
             $table->mediumText('choice');
             $table->integer('id_head');
+          
         });
     }
 

@@ -38,9 +38,10 @@
         td,th{
           border:1px solid;
          
-            width: 100%;
+           
         }
-        
+
+         body { width: 100%; height: 100%; }  
 
 
 .page-break {
@@ -66,16 +67,8 @@
         @endif
         @endforeach
 
-      
-     
-     
-        
-
-     
     
   <div class="page-break"> 
-
-
         <table class="table table-bordered">
             <thead>
               <tr>
@@ -117,7 +110,7 @@
 
               <tr>
                   <td colspan="3">  
-                    @foreach ($testmbti as  $testmbtis )
+                    @forelse ($testmbti as  $testmbtis )
                       @if ($testmbtis->id_personal == $personal->id )
                       <b>ผลสรุปการทดสอบ MBTI  </b><br>
                      
@@ -130,14 +123,16 @@
                         
                          
                   @endif
-                  @endforeach      
+                  @empty
+                 
+                  ไม่มีข้อมูลในส่วนนี้!
+                 
+                    @endforelse  
                  
                 
-                
-                
+          
                 </td>
               </tr>
-
               <tr>
                   <td colspan="3" style="text-align:center"><b>ผลสรุปการทดสอบ DISC</b></td>
                  
@@ -145,7 +140,7 @@
 
                 <tr>
                     <td colspan="3"> 
-                        @foreach ($testdisc as $testdis )
+                      @forelse ($testdisc as $testdis )
                             @if (	$testdis->id_personal == $personal->id)
                         
                     
@@ -155,7 +150,11 @@
                              
                     
                         @endif
-                        @endforeach  
+                        @empty
+                 
+                        ไม่มีข้อมูลในส่วนนี้!
+                       
+                          @endforelse 
                       </td>
                 </tr>
 
@@ -164,114 +163,105 @@
   </div> 
 
 
-  <!--    <table >
-        <thead>
-          <tr>
-            <th colspan="6" style="text-align:center">คะแนนประเมิน ระดับบังคับบัญชาขึ้นไป (Supervisory Level)</th>
-          </tr>
-        </thead>
-        <tbody> 
-       
-           <tr>
-
-            <td>
-
-              ด้านบุคลิกลักษณะ
-
-            </td>
-
-
-            <td>
-
-                ด้านคุณสมบัติ
-  
-              </td>
-
-              <td>
-
-                  ด้านสมรรถนะความสามารถ
-    
-                </td>
-
-
-                <td>
-
-                    ด้านบุคลิกลักษณะ
-      
-                  </td>
+  <table >
+    <thead>
+      <tr>
+        <th colspan="5" style="text-align:center">คะแนนประเมิน ระดับบังคับบัญชาขึ้นไป (Supervisory Level)</th>
+      </tr>
+    </thead>
+    <tbody> 
+    <?php  $col=5; $u=0; $v=0;  ?>   
+    @forelse($inter_sup as $inter )
+    @if (	$inter->id_personal == $personal->id &&  $inter->chioce <= '20' )
+      @if($u==0) 
+    <?php echo "<tr align=center>"; ?>
+        @endif
+        <?php $u++; ?>
+                    @if($u <=  $col) 
                   
-            <td>
-
-                ด้านความรู้เกี่ยวบริษัทและตำแหน่งงาน
-  
-              </td>
-
-              
-            <td>
-
-                ด้านความเหมาะสมกับวัฒนธรรมองค์กร
-  
-              </td>
-
-           </tr>
-        </tbody>
-      </table>
+                            <td>
+                            @if(  $inter->group == '2' )
+                         
+                               
+                            {{ $inter->score  }}
+                           
+                            
+                            @endif
+                            </td>   
+                   @endif
+                   @if($u==$col)
+                                 <?php $u=0; ?>
+                 <?php echo "</tr>"; ?>
+                @endif
+     
+      @endif
+      @empty
+      <tr>
+      <td colspan="6" >ไม่มีข้อมูลในส่วนนี้!</td>
+      </tr>
+      
+    </tbody>
+    @endforelse
+  </table>
       <br>
     <table>
         <thead>
           <tr>
-            <th  colspan="5" style="text-align:center">ความคิดเห็น ระดับบังคับบัญชาขึ้นไป (Supervisory Level) </th>
+            <th  colspan="5" style="text-align:center">ความคิดเห็นจากผู้ประเมินระดับบังคับบัญชาขึ้นไป (Supervisory Level) </th>
           </tr>
         </thead>
         <tbody>
-              
-                @forelse ($comment_sup as $conm )
-                @if (	$conm->id_posinal == $personal->id && $conm->comment_interview != '' &&  $conm->chioce != '100'  &&  $conm->chioce != '101'  &&  $conm->chioce != '199'   &&  $conm->chioce != '200'  &&  $conm->chioce != '320' )
-          <tr>
-            <td>
-                    ข้อ {{ $conm->chioce }} จากการประเมิน
-                    มีความคิดเห็น  {{ $conm->comment_interview }}
-            </td>
-          </tr>
+          
+        <?php  $col3=5; $p=0;?>   
+        @forelse ($comment_sup as $conm )
+           @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20' )  
+           @if($p==0) 
+           <?php echo "<tr align=center>"; ?>
+               @endif
+               <?php $p++; ?>
+               @if($p <=  $col3) 
+                         <td>
+                               @if($conm->chioce == '100')
+   
+                                 คำแนะนำ  {{ $conm->comment_interview }} 
+             
+                              @endif
+                  
+                 @if($conm->chioce == '101')
+                
+                 ตำแหน่ง  {{ $conm->comment_interview }} 
+             
+                  @endif
+             
+                  @if($conm->chioce == '199')
+                
+                  ความคิดเห็น  {{ $conm->comment_interview }} 
+             
+                   @endif
+             
+                   @if($conm->chioce == '200')
+                
+                  วันที่ {{ $conm->comment_interview }} 
+                    @endif
+
+                    @if($conm->chioce == '320')
+                   ชื่อผู้ประเมิน {{ $conm->comment_interview }} 
+                     @endif
+               </td>
+               @endif
+                        @if($p==$col3)
+                               <?php $p=0; ?>
+                               <?php echo "</tr>"; ?>
+                              @endif
+
           @endif
-@endforeach
-@foreach ($comment_sup as $conm )
-@if (	$conm->id_posinal == $personal->id && $conm->chioce > '20' )   
-<tr>
-<td>
-    @if($conm->chioce == '100')
-   
-   คำแนะนำ  {{ $conm->comment_interview }} 
 
-    @endif
 
-    @if($conm->chioce == '101')
-   
-    ตำแหน่ง  {{ $conm->comment_interview }} 
-
-     @endif
-
-     @if($conm->chioce == '199')
-   
-     ความคิดเห็น  {{ $conm->comment_interview }} 
-
-      @endif
-
-      @if($conm->chioce == '200')
-   
-     วันที่ {{ $conm->comment_interview }} 
-       @endif
-       @if($conm->chioce == '320')
-      ชื่อผู้ประเมิน {{ $conm->comment_interview }} 
-        @endif
-</td>
-</tr>
-@endif
-@empty
-<tr>
-<td colspan="6" >ไม่มีข้อมูลในส่วนนี้!</td>
-</tr>
-@endforelse
+          @empty
+          <tr>
+            <td colspan="6" >ไม่มีข้อมูลในส่วนนี้!</td>
+            </tr>
+        @endforelse
         </tbody>
       </table>
 
@@ -398,7 +388,7 @@
                 </tbody>
               </table>
 
-            -->
+            
 
               
 
