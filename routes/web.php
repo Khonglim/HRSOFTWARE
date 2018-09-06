@@ -116,3 +116,11 @@ Route::get('testtoo', function () { return view("testdisc/index");});
 Route::get('savembti', function () { return view("testmbti/save");});
 
 Route::get('savedisc', function () { return view("testdisc/save");});
+
+
+//Clear Cache facade value:
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    return '<h1>Cache facade value cleared</h1>';
+});
+

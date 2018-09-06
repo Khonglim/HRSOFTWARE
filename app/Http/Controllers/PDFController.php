@@ -17,7 +17,7 @@ class PDFController extends Controller
         $personal = Personal::find($id);
         $pdf = PDF::loadView('employ.pdf',['personal' => $personal ]);
         $pdf->setPaper('A4', 'portrait');
-        return @$pdf->stream('employ.pdf');
+        return $pdf->stream('employ.pdf');
     }
 
     public function pdftestmbti($id)

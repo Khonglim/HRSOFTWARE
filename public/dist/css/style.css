@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "THSarabunNew-Bold";
+  src: url("./fonts/THSarabunNewBold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/THSarabunNewBold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/THSarabunNewBold.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/THSarabunNewBold.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/THSarabunNewBold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/THSarabunNewBold.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/THSarabunNewBold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
