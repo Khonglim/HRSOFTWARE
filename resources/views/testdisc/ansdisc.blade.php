@@ -452,15 +452,6 @@ body {
                     {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}}
                     {{Form::close()}}
                   </div>
-                   
-                    
-                   
-  
-  
-   
-  
-  
-                    
                 <div class="box-footer">
                    
                 </div>

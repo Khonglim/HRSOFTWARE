@@ -116,8 +116,9 @@
               </tr>
 
               <tr>
-                  <td colspan="3">     @foreach ($testmbti as  $testmbtis )
-                      @if ($testmbtis->id_personal == $personal->id)
+                  <td colspan="3">  
+                    @foreach ($testmbti as  $testmbtis )
+                      @if ($testmbtis->id_personal == $personal->id )
                       <b>ผลสรุปการทดสอบ MBTI  </b><br>
                      
                       <b>  ผลสรุป  </b> {{ $testmbtis->conclude }} 
@@ -126,8 +127,15 @@
                       <b> ผลสรุป ด้านการคิด </b><br>
                        
                          {{  $testmbtis->meaningtwo  }} <br>
+                        
+                         
                   @endif
-                  @endforeach      </td>
+                  @endforeach      
+                 
+                
+                
+                
+                </td>
               </tr>
 
               <tr>
@@ -138,13 +146,13 @@
                 <tr>
                     <td colspan="3"> 
                         @foreach ($testdisc as $testdis )
-                        @if (	$testdis->id_personal == $personal->id)
+                            @if (	$testdis->id_personal == $personal->id)
                         
                     
                                 <b>ผลสรุปการทดสอบ DISC</b><br>
                                 {{ $testdis->meaning }} <br>
                     
-                       
+                             
                     
                         @endif
                         @endforeach  

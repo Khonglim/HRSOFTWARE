@@ -1,7 +1,5 @@
 @extends('layouts.logingin')
-
 @section('content')
-
  <div class="limiter">
     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
         <div class="container-login100" style="background-image: url('{{URL::asset('img/NGG.jpg')}}')">
