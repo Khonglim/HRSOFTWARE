@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','| แบบประเมิน')
+
 @section('content')
 <?php
 header("Cache-Control: no-store, no-cache, must-revalidate"); // HTTP/1.1
