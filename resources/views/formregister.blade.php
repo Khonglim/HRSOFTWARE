@@ -52,10 +52,10 @@
 		                    	</div> 
 								<div class="wizard-navigation">
 									<ul>
-                              <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>  
-                             <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li> 
-                                 <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>   
-                               <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>   
+                               <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>  
+                              <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>
+                                  <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>   
+                             <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>  
 			                    <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
                                     <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li> 
                                   <li><a href="#work" data-toggle="tab">การทำงาน</a></li> 
@@ -1165,30 +1165,36 @@
                                                         
                                                                   
                                                                     <div class="col-md-3">
-                                                                            <div class="picture-container">
-                                                                                    <div class="picture">
-                                                                                <input type="file" name="portfolio1"  class="form-control">                                                                  
+                                                                            <div class="form-group label-floating">
+                                                                        <label class="control-label">link</label>
+                                                                                   
+                                                                                <input type="text" name="portfolio1"  class="form-control">                                                                  
                                                                             </div>
                                                                         </div>
-                                                                        </div>
+                                                                     
                                                                         <div class="col-md-3">
-                                                                                <div class="picture-container">
-                                                                                        <div class="picture">
-                                                                                    <input type="file" name="portfolio2"  class="form-control">   
-                                                                                </div>                                                              
+                                                                                <div class="form-group label-floating">
+                                                                            <label class="control-label">link</label>
+                                                                                    <input type="text" name="portfolio2"  class="form-control">   
+                                                                                                                                         
                                                                                 </div>
                                                                             </div>
-                                                                    
-                                                                            <div class="col-md-3">
-                                                                                    <div class="picture-container">
-                                                                                            <div class="input-group">
-                                                                                                    <div class="form-group label-floating">
-                                                                                                        <label class="control-label">link</label>
-                                                                                      <input type="url" name="portfolio3"  class="form-control"  >                                              
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+
+                                                                            
+                                                                                <div class="col-md-3">
+                                                                                 
+                                                                                
+                                                                                            <div class="form-group label-floating">
+                                                                                                <label class="control-label">link</label>
+                                                                              <input type="text" name="portfolio3"  class="form-control"  >                                              
+                                                                           
                                                                         </div>
+                                                                  
+                                                                </div>
+
+                                                                            
+                                                                    
+                                                                          
                                                     </div> 
                                                    <hr>
                                                     <div class="row">
