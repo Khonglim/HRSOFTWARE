@@ -1,5 +1,5 @@
 @extends('layouts.test')
-@section('title','| การทดสอบบุคลิกภาพ')
+
 @section('content')
 <div class="container">
 	<div class="panel panel-success" style="width:100%">

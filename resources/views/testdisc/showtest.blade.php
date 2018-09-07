@@ -1,5 +1,5 @@
 @extends('layouts.test')
-@yield('title',' สรุปผลการทดสอบ DISC')
+
 @section('content')
 <div class="container">
 		

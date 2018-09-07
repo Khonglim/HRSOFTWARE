@@ -1,5 +1,4 @@
 @extends('layouts.test')
-@yield('title',' แบบประเมินบุคลิกภาพ DISC.')
 @section('content')
 
 

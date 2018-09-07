@@ -1,5 +1,5 @@
 @extends('layouts.test')
-@section('title','| การทดสอบบุคลิกภาพ')
+
 @section('content')
 
 <style>

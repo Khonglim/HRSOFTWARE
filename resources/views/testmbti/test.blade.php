@@ -1,5 +1,4 @@
 @extends('layouts.test')
-@section('title','| การทดสอบบุคลิกภาพ MBTI')
 @section('content')
 
 <?php
@@ -14,8 +13,6 @@ $g=0;
 
 <div class="container">
     <br>
-    
-        
             <div class="panel panel-success" style="width:100%">
                 <div class="panel-heading">แบบประเมินบุคลิกภาพตามตัวบ่งชี้ของมายเออร์-บริกส์(MBTI) </div>
                 <div class="panel-body">
