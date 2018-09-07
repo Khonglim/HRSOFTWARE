@@ -172,6 +172,9 @@ class Interview_supController extends Controller
 
 
 
+
+
+
        $comment_sup = new Comment_sup;
        $comment_sup->id_posinal = $request->employee;
        $comment_sup->chioce = $request->chioce20;
@@ -209,6 +212,17 @@ class Interview_supController extends Controller
        $comment_sup->comment_interview  = $request->nametest;
        $comment_sup->save();
 
+
+
+
+
+
+
+
+
+
+
+       
 
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->score_1; 
@@ -391,12 +405,65 @@ class Interview_supController extends Controller
     
         $inter_sup->save();
 
+
+
+        $inter_sup = new Inter_sup;
+        $inter_sup->score =  $request->group1; 
+        $inter_sup->chioce =  $request->chioce232; 
+        $inter_sup->id_personal = $request->employee;
+        $inter_sup->save();
+
+        $inter_sup = new Inter_sup;
+        $inter_sup->score =  $request->group2; 
+        $inter_sup->chioce =  $request->chioce233; 
+        $inter_sup->id_personal = $request->employee;
+        $inter_sup->save();
+
+
+        $inter_sup = new Inter_sup;
+        $inter_sup->score =  $request->group3; 
+        $inter_sup->chioce =  $request->chioce234; 
+        $inter_sup->id_personal = $request->employee;
+        $inter_sup->save();
+
+
+        $inter_sup = new Inter_sup;
+        $inter_sup->score =  $request->group4; 
+        $inter_sup->chioce =  $request->chioce235; 
+        $inter_sup->id_personal = $request->employee;
+        $inter_sup->save();
+
+
+
+        $inter_sup = new Inter_sup;
+        $inter_sup->score =  $request->group5; 
+        $inter_sup->chioce =  $request->chioce236; 
+        $inter_sup->id_personal = $request->employee;
+        $inter_sup->save();
+
+
+
+
+
+
+
+
+
+
+
         $inter_sup = new Inter_sup;
         $inter_sup->score =  $request->total; 
         $inter_sup->chioce =  $request->chioce107; 
         $inter_sup->id_personal = $request->employee;
      
         $inter_sup->save();
+
+
+
+
+
+
+
 
        
 

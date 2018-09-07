@@ -125,7 +125,7 @@
                   @endif
                   @empty
                  
-                  ไม่มีข้อมูลในส่วนนี้!
+                  <center>        ไม่มีข้อมูลในส่วนนี้!    </center>  
                  
                     @endforelse  
                  
@@ -151,9 +151,9 @@
                     
                         @endif
                         @empty
-                 
-                        ไม่มีข้อมูลในส่วนนี้!
-                       
+                  
+                <center>        ไม่มีข้อมูลในส่วนนี้!    </center>  
+                        
                           @endforelse 
                       </td>
                 </tr>
@@ -166,28 +166,63 @@
   <table >
     <thead>
       <tr>
-        <th colspan="5" style="text-align:center">คะแนนประเมิน ระดับบังคับบัญชาขึ้นไป (Supervisory Level)</th>
+        <th colspan="6" style="text-align:center">คะแนนประเมิน ระดับบังคับบัญชาขึ้นไป (Supervisory Level)</th>
       </tr>
     </thead>
     <tbody> 
-    <?php  $col=5; $u=0; $v=0;  ?>   
+    <?php  $col=6; $u=0; $v=0;  ?>   
     @forelse($inter_sup as $inter )
-    @if (	$inter->id_personal == $personal->id &&  $inter->chioce <= '20' )
+    @if (	$inter->id_personal == $personal->id &&  $inter->chioce > '20' &&  $inter->chioce != '102'
+    
+    &&  $inter->chioce != '103'
+    &&  $inter->chioce != '104'
+    &&  $inter->chioce != '105'
+    &&  $inter->chioce != '106'
+    )
       @if($u==0) 
     <?php echo "<tr align=center>"; ?>
         @endif
         <?php $u++; ?>
                     @if($u <=  $col) 
                   
-                            <td>
-                            @if(  $inter->group == '2' )
-                         
-                               
-                            {{ $inter->score  }}
-                           
+                    <td>
                             
+                            
+                        @if($inter->chioce == '232')
+                        
+                     บุคลิกลักษณะได้<br> {{ $inter->score }} คะแนน
+                         @endif
+                       
+                        
+                         @if($inter->chioce == '233')
+                         
+                       คุณสมบัติได้ {{ $inter->score }} คะแนน
+                          @endif
+                        
+                         
+                          @if($inter->chioce == '234')
+                          
+                        สมรรถณะความสามารถได้ <br>{{ $inter->score }} คะแนน
+                           @endif
+                          
+                           
+                           @if($inter->chioce == '235')
+                           
+                         คามรู้เกี่ยวกับบริษัท และตำแหน่งงานได้ <br>{{ $inter->score }} คะแนน
                             @endif
-                            </td>   
+                           
+                            @if($inter->chioce == '236')
+                           
+                          ความเหมาะสมกับ<br>วัฒนธรรมองค์กร <br>{{ $inter->score }} คะแนน
+
+                              @endif
+
+                              @if($inter->chioce == '107')
+                       
+                      รวมทั้งหมด {{ $inter->score }} คะแนน
+                        @endif
+         
+               </td>
                    @endif
                    @if($u==$col)
                                  <?php $u=0; ?>
@@ -197,7 +232,7 @@
       @endif
       @empty
       <tr>
-      <td colspan="6" >ไม่มีข้อมูลในส่วนนี้!</td>
+      <td colspan="6" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
       </tr>
       
     </tbody>
@@ -259,7 +294,7 @@
 
           @empty
           <tr>
-            <td colspan="6" >ไม่มีข้อมูลในส่วนนี้!</td>
+            <td colspan="5" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
             </tr>
         @endforelse
         </tbody>
@@ -269,80 +304,98 @@
         <table>
                 <thead>
                   <tr>
-                    <th colspan="6">คะแนนประเมิน ระดับปฎิบัติการ (Operational Level)</th>
+                    <th colspan="6" style="text-align:center">คะแนนประเมิน ระดับปฎิบัติการ (Operational Level)</th>
                   </tr>
                 </thead>
                 <tbody>
-                      
+                    <?php  $col4=6; $e=0;?>      
                      @forelse($con_interview as $coni )
-                            @if (	$coni->id_personal == $personal->id &&  $coni->chioce > '20' )
-                  <tr>
+                            @if (	$coni->id_personal == $personal->id &&  $coni->chioce > '20'  && $coni->chioce != '105'  && $coni->chioce != '106' 
+                            
+                            && $coni->chioce != '107'  && $coni->chioce != '108'  && $coni->chioce != '109'
+                            
+                            )
+                             @if($e==0) 
+                             <?php echo "<tr align=center>"; ?>
+                                 @endif
+                                 <?php $e++; ?>
+                                 @if($e <=  $col4) 
                     <td>
-                            @if($coni->chioce == '105')
                             
-                           ผลรวมจากการเลือก 5 ได้ {{ $coni->score }} คะแนน
-                             @endif
                             
-                             @if($coni->chioce == '106')
+                             @if($coni->chioce == '232')
                              
-                            ผลรวมจากการเลือก 4 ได้ {{ $coni->score }} คะแนน
+                          บุคลิกลักษณะได้<br> {{ $coni->score }} คะแนน
                               @endif
                             
                              
-                              @if($coni->chioce == '107')
+                              @if($coni->chioce == '233')
                               
-                             ผลรวมจากการเลือก 3 ได้ {{ $coni->score }} คะแนน
+                            คุณสมบัติได้ {{ $coni->score }} คะแนน
                                @endif
                              
                               
-                               @if($coni->chioce == '108')
+                               @if($coni->chioce == '234')
                                
-                              ผลรวมจากการเลือก 2 ได้ {{ $coni->score }} คะแนน
+                             สมรรถณะความสามารถได้ <br>{{ $coni->score }} คะแนน
                                 @endif
                                
                                 
-                                @if($coni->chioce == '109')
+                                @if($coni->chioce == '235')
                                 
-                               ผลรวมจากการเลือก 1 ได้ {{ $coni->score }} คะแนน
+                              คามรู้เกี่ยวกับบริษัท และตำแหน่งงานได้ <br>{{ $coni->score }} คะแนน
                                  @endif
                                 
-                                 @if($coni->chioce == '102')
+                                 @if($coni->chioce == '236')
                                 
-                                 ผลรวม  {{ $coni->score }} คะแนน
+                               ความเหมาะสมกับ<br>วัฒนธรรมองค์กร <br>{{ $coni->score }} คะแนน
+
                                    @endif
+
+                                   @if($coni->chioce == '102')
+                            
+                           รวมทั้งหมด {{ $coni->score }} คะแนน
+                             @endif
+              
                     </td>
-                  </tr>
+                    @endif
+                    @if($e==$col4)
+                           <?php $e=0; ?>
+                           <?php echo "</tr>"; ?>
+                          @endif
                   @endif
+
+
+
+
                   @empty
                   <tr>
-                  <td colspan="6" >ไม่มีข้อมูลในส่วนนี้!</td>
+                  <td colspan="6" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
                   </tr>
                     @endforelse
                 </tbody>
               </table>
-            </div>
+         <br> <br>
+
+
+
               <table>
                 <thead>
                   <tr>
-                    <th colspan="6">ความคิดเห็น ระดับปฎิบัติการ (Operational Level)</th>
+                    <th colspan="5" style="text-align:center">ความคิดเห็น ระดับปฎิบัติการ (Operational Level)</th>
                   </tr>
                 </thead>
                 <tbody>
-                      
-                        @forelse ($comment_interview as $conm )
-                        @if (	$conm->id_posinal == $personal->id && $conm->comment_interview != '' &&  $conm->chioce != '103'  &&  $conm->chioce != '101'  &&  $conm->chioce != '123'   &&  $conm->chioce != '169'  &&  $conm->chioce != '320' )
-                  <tr>
-                    <td>
-                            ข้อ {{ $conm->chioce }} จากการประเมิน
-                            มีความคิดเห็น  {{ $conm->comment_interview }}
-                    </td>
-                  </tr>
-                  @endif
-        @endforeach
-        @foreach ($comment_interview as $conm  )
+                    <?php  $col5=5; $q=0;?>       
+                     
+                    @forelse ($comment_interview as $conm  )
         @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20' )   
-  <tr>
-    <td>
+        @if($q==0) 
+        <?php echo "<tr align=center>"; ?>
+            @endif
+            <?php $q++; ?>
+            @if($q <=  $col5) 
+<td>
             @if($conm->chioce == '103')
            
            คำแนะนำ  {{ $conm->comment_interview }} 
@@ -378,11 +431,19 @@
 
 
     </td>
-  </tr>
-  @endif
+    @endif
+    @if($q==$col5)
+    <?php $q=0; ?>
+    <?php echo "</tr>"; ?>
+   @endif
+   @endif
+
+
+
+  
   @empty
   <tr>
-  <td colspan="6" >ไม่มีข้อมูลในส่วนนี้!</td>
+  <td colspan="5"  style="text-align:center">ไม่มีข้อมูลในส่วนนี้!</td>
   </tr>
     @endforelse
                 </tbody>

@@ -234,6 +234,7 @@
         </div>
 <br><br>
 <center>
+      
         <table border="2" bordercolor="black"  >
                 <tr>
                         <th style="text-align:center" >หัวข้อ</th>
@@ -241,24 +242,36 @@
                     </tr>
                 <tr>
                         <td style="text-align:center" >บุคลิกลักษณะ</td>
-                        <td style="text-align:center" >  <input type="text" name="group1"  id="group1" style="text-align:center"  readonly ></td>
+                        <td style="text-align:center" >  <input type="text" name="group1"  id="group1" style="text-align:center"  readonly >     
+                            <input type="hidden" name="chioce232" value="232"  />
+                        
+                        </td>
                 </tr>
                 <tr>
                         <td style="text-align:center" >คุณสมบัติ</td>
-                        <td style="text-align:center" >  <input type="text" name="group2"  id="group2" style="text-align:center"   readonly ></td>
+                        <td style="text-align:center" >  <input type="text" name="group2"  id="group2" style="text-align:center"   readonly >
+                            <input type="hidden" name="chioce233" value="233"  />
+                        </td>
                 </tr>
         
                 <tr>
                         <td style="text-align:center" >สมรรถนะความสามารถ</td>
-                        <td style="text-align:center" > <input type="text" name="group3"  id="group3" style="text-align:center"  readonly > </td>
+                        <td style="text-align:center" > <input type="text" name="group3"  id="group3" style="text-align:center"  readonly > 
+                        
+                            <input type="hidden" name="chioce234" value="234"  />
+                        </td>
                 </tr>
                 <tr>
                         <td style="text-align:center" >ความรู้เกี่ยวบริษัท</td>
-                        <td style="text-align:center" > <input type="text" name="group4"  id="group4" style="text-align:center" readonly > </td>
+                        <td style="text-align:center" > <input type="text" name="group4"  id="group4" style="text-align:center" readonly > 
+                            <input type="hidden" name="chioce235" value="235"  />
+                        </td>
                 </tr>
                 <tr>
                         <td style="text-align:center" >ความเหมาะสมกับวัฒนธรรมองค์กร</td>
-                        <td style="text-align:center" > <input type="text" name="group5"  id="group5" style="text-align:center"  readonly ></td>
+                        <td style="text-align:center" > <input type="text" name="group5"  id="group5" style="text-align:center"  readonly >
+                            <input type="hidden" name="chioce236" value="236"  />
+                        </td>
                 </tr>
                  
             </table>

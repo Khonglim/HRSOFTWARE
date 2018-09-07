@@ -219,6 +219,10 @@ class InterviewController extends Controller
         $comment_interview->comment_interview  = $request->nametest;
         $comment_interview->save();
 
+       
+
+
+
 
 
 
@@ -407,6 +411,51 @@ class InterviewController extends Controller
     
         $con_interview->save();
 
+      
+
+       
+        $con_interview = new Con_interview;
+        $con_interview->id_personal = $request->employee;
+        $con_interview->chioce = $request->chioce232;
+        $con_interview->score  = $request->group1;
+        $con_interview->save();
+
+
+        $con_interview = new Con_interview;
+        $con_interview->id_personal = $request->employee;
+        $con_interview->chioce = $request->chioce233;
+        $con_interview->score = $request->group2;
+        $con_interview->save();
+
+
+
+        $con_interview = new Con_interview;
+        $con_interview->id_personal = $request->employee;
+        $con_interview->chioce = $request->chioce234;
+        $con_interview->score  = $request->group3;
+        $con_interview->save();
+
+
+
+        $con_interview = new Con_interview;
+        $con_interview->id_personal = $request->employee;
+        $con_interview->chioce = $request->chioce235;
+        $con_interview->score  = $request->group4;
+        $con_interview->save();
+
+
+
+
+
+        $con_interview = new Con_interview;
+        $con_interview->id_personal = $request->employee;
+        $con_interview->chioce = $request->chioce236;
+        $con_interview->score  = $request->group5;
+        $con_interview->save();
+
+
+
+
         $con_interview = new Con_interview;
         $con_interview->score =  $request->total; 
         $con_interview->chioce = $request->chioce102;
@@ -414,7 +463,7 @@ class InterviewController extends Controller
      
         $con_interview->save();
 
-       
+
 
 
         return redirect('save');
