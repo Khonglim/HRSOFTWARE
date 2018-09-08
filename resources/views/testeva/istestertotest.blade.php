@@ -79,14 +79,14 @@
                  <tr>
                     <td colspan="5" style="text-align: center;width: 50%;height: 70px;">
                       {{Form::label('คุณ','คุณ')}}
-                   {{Form::label('id_employee1',$emp2->nem_nickname)}}
+                   {{Form::label('id_employee1',$emp2->nem_thai_firstname)}}
                    
                     </td>
                     <td style="display: none;">
                       
                    {{Form::text('nee_id2',$emp->nee_id),['class'=>'form-control','required']}}
                    {{Form::text('nee_id1',$emp2->nem_id),['class'=>'form-control','required']}}
-                   {{Form::text('id_employee',$ngg_employees->nem_nickname,['class'=>'form-control','required'])}}
+                   {{Form::text('id_employee',$ngg_employees->nem_thai_firstname,['class'=>'form-control','required'])}}
                    {{Form::text('nee_id',$ngg_employees->nem_id,['class'=>'form-control','required'])}}
                    {{Form::text('forms_id',$forms->id,['class'=>'form-control','required'])}}
                     </td>

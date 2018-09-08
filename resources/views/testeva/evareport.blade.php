@@ -110,7 +110,7 @@ function myFunction() {
                   @if( $ngg_eva->nes_evaluate_employee_id == $emp->nee_id )
                 @foreach($ngg_employee as $ngg_emp)
                   @if($ngg_emp->nem_id == $idtest)
-                   <?php  $istest=$ngg_emp->nem_nickname; ?>
+                   <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
                   @endif
                    
                      
@@ -154,7 +154,7 @@ function myFunction() {
                             @if($i==35)
 
 
-                            <?php  $change = $ngg_emp->nem_nickname; $change2++;?>
+                            <?php  $change = $ngg_emp->nem_thai_firstname; $change2++;?>
 
                               @foreach($ngg_evaresult_comment as $ngg_comment )
 
