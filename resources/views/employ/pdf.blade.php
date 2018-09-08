@@ -47,9 +47,9 @@
     </style>
 </head>
 <body>
-        <div class="page-break">   
+     <div class="page-break">   
 <center><h3>ข้อมูลประวัติ</h3>
-<img src="{{$personal->photo}}" alt="" width="55" height="55" ></center>
+<img src="{{$personal->photo}}" alt="" width="50" height="50" ></center>
 <br>
     <table>
         <tbody>
@@ -376,7 +376,7 @@
     </table>
 
 </div>
-    <div class="page-break"> 
+    
       <table>
           <tbody>
                 <tr>
@@ -693,7 +693,7 @@
         </tbody>
       </table>
 
-    </div>
+  
 
 
 

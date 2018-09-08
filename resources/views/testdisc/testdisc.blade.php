@@ -37,11 +37,8 @@
                     <div class="panel-heading">การทดสอบบุคลิกภาพ</div>
                     <div class="panel-body">
 
-                            {{Form::open(['url'=>'ansdisc','method'=>'POST','id'=>'testdisc'])}}
+                            {{Form::open(['url'=>'ansdisc','method'=>'POST','id'=>'testdisc' , 'onSubmit'=>'JavaScript:return fncSubmit();'])}}
                             {{ csrf_field() }}
-                           
-
-
                             @forelse ($testemp as $c)
                             <?php  $r++; ?>
                             @if((($c->name ==  $name =  $_POST["name"]) && ($c->lastname ==  $lastname =  $_POST["lastname"] )))
@@ -89,8 +86,8 @@
                                       <td >
                                       
                                       <select name="chioe{{$a++}}" id="chioe{{$aa++}}" class="uniqueSelection{{$i++}}"  required>
-                                                <option value=''>เลือก</option>
-                                                <option value= 1>1</option>
+                                                <option value=0>เลือก</option>
+                                                <option value=1>1</option>
                                                 <option value=2>2</option>
                                                 <option value=3>3</option>
                                                 <option value=4>4</option>
@@ -100,7 +97,7 @@
                            
                                              
                                     <select name="chioe{{$t++}}"  id="chioe{{$tt++}}"  class="uniqueSelection{{$y++}}" required>
-                                            <option value=''>เลือก</option>
+                                            <option value=0>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>
@@ -110,7 +107,7 @@
                                        </td>
                                        <td>
                                         <select name="chioe{{$w++}}"  id="chioe{{$ww++}}"  class="uniqueSelection{{$h++}}" required>
-                                            <option value=''>เลือก</option>
+                                            <option value=0>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>
@@ -120,7 +117,7 @@
                                        <td>
                                           
                                         <select name="chioe{{$l++}}" id="chioe{{$ll++}}"   class="uniqueSelection{{$q++}}" required>
-                                            <option value=''>เลือก</option>
+                                            <option value=0>เลือก</option>
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>

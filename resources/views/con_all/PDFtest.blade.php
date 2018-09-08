@@ -77,8 +77,8 @@
             </thead>
             <tbody>
               <tr>
-                <td><b>ชื่อ:</b> {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}}</td>
-                <td><b>ตำแหน่ง:</b>
+                <td style="text-align:center"><b>ชื่อ:</b> {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}}</td>
+                <td style="text-align:center"><b>ตำแหน่ง:</b>
 
                  <?php $s=0;  ?>
                   @foreach ($comment_sup as $conm )
@@ -92,12 +92,24 @@
                   @endif
 
                 @endif
-
-
-           
                    @endforeach
+
+             @foreach ($comment_interview as $conm )
+                
+                  @if (	$conm->id_posonal == $personal->id && $conm->chioce > '20' )  
+                  @if($conm->chioce == '101')
+                  <?php $s++;  ?>
+                  @if($s == '1')
+                 {{ $conm->comment_interview }} 
+                 @endif
+                  @endif
+
+                @endif
+                   @endforeach
+
+                  
                 </td>
-                <td><b>บริษัท: </b>..................................................</td>
+                <td style="text-align:center"><b>บริษัท: </b>..................................................</td>
               </tr>
               <tr>
                 <td colspan="3"><b>วันที่สมัคร:</b> {{$personal->created_at}} น.</td>
@@ -242,14 +254,14 @@
     <table>
         <thead>
           <tr>
-            <th  colspan="5" style="text-align:center">ความคิดเห็นจากผู้ประเมินระดับบังคับบัญชาขึ้นไป (Supervisory Level) </th>
+            <th  colspan="4" style="text-align:center">ความคิดเห็นจากผู้ประเมินระดับบังคับบัญชาขึ้นไป (Supervisory Level) </th>
           </tr>
         </thead>
         <tbody>
           
         <?php  $col3=5; $p=0;?>   
         @forelse ($comment_sup as $conm )
-           @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20' )  
+           @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20'  &&  $conm->chioce != '101' )  
            @if($p==0) 
            <?php echo "<tr align=center>"; ?>
                @endif
@@ -262,11 +274,7 @@
              
                               @endif
                   
-                 @if($conm->chioce == '101')
-                
-                 ตำแหน่ง  {{ $conm->comment_interview }} 
-             
-                  @endif
+            
              
                   @if($conm->chioce == '199')
                 
@@ -294,7 +302,7 @@
 
           @empty
           <tr>
-            <td colspan="5" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
+            <td colspan="4" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
             </tr>
         @endforelse
         </tbody>

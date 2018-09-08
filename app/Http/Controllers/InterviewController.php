@@ -234,14 +234,14 @@ class InterviewController extends Controller
         $con_interview->score =  $request->score_1; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce1;
-        $con_interview->group= 1;
+     
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_2; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce2;
-        $con_interview->group= 2;
+      
         $con_interview->save();
 
        
@@ -250,7 +250,7 @@ class InterviewController extends Controller
         $con_interview->score =  $request->score_3; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce3;
-        $con_interview->group= 2;
+      
         $con_interview->save();
 
        
@@ -258,7 +258,7 @@ class InterviewController extends Controller
         $con_interview->score =  $request->score_4; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce4;
-        $con_interview->group= 2;
+    
         $con_interview->save();
 
        
@@ -266,7 +266,7 @@ class InterviewController extends Controller
         $con_interview->score =  $request->score_5; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce5;
-        $con_interview->group= 2;
+  
         $con_interview->save();
 
        
@@ -275,105 +275,105 @@ class InterviewController extends Controller
         $con_interview->score =  $request->score_6; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce6;
-        $con_interview->group= 3;
+      
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_7; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce7;
-        $con_interview->group= 3;
+      
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_8; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce8;
-        $con_interview->group= 3;
+    
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_9; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce9;
-        $con_interview->group= 3;
+   
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_10; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce10;
-        $con_interview->group= 3;
+     
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_11; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce11;
-        $con_interview->group= 4;
+  
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_12; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce12;
-        $con_interview->group= 4;
+
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_13; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce13;
-        $con_interview->group= 5;
+      
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_14; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce14;
-        $con_interview->group= 5;
+       
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_15; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce15;
-        $con_interview->group= 5;
+
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_16; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce16;
-        $con_interview->group= 5;
+   
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_17; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce17;
-        $con_interview->group= 5;
+      
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_18; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce18;
-        $con_interview->group= 5;
+     
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_19; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce19;
-        $con_interview->group= 5;
+      
         $con_interview->save();
 
         $con_interview = new Con_interview;
         $con_interview->score =  $request->score_20; 
         $con_interview->id_personal = $request->employee;
         $con_interview->chioce = $request->chioce20;
-        $con_interview->group= 5;
+      
         $con_interview->save();
 
         $con_interview = new Con_interview;

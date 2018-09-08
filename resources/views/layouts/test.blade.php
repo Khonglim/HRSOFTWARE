@@ -213,60 +213,60 @@ $("#showTimeDisc").startTimer({
   onComplete:function(){
 
 alert("หมดเวลาทำแบบทดสอบแล้วค่ะ.")
-if(document.getElementById("chioe0").value != ''  &&
-document.getElementById("chioe1").value != '' &&
-document.getElementById("chioe2").value != '' &&
-document.getElementById("chioe3").value != '' &&
-document.getElementById("chioe4").value != '' &&
-document.getElementById("chioe5").value != '' &&
-document.getElementById("chioe6").value != '' &&
-document.getElementById("chioe7").value != '' &&
-document.getElementById("chioe8").value != '' &&
-document.getElementById("chioe9").value != '' &&
-document.getElementById("chioe10").value != '' &&
-document.getElementById("chioe11").value != '' &&
+if(document.getElementById("chioe0").value != '0'  &&
+document.getElementById("chioe1").value != '0' &&
+document.getElementById("chioe2").value != '0' &&
+document.getElementById("chioe3").value != '0' &&
+document.getElementById("chioe4").value != '0' &&
+document.getElementById("chioe5").value != '0' &&
+document.getElementById("chioe6").value != '0' &&
+document.getElementById("chioe7").value != '0' &&
+document.getElementById("chioe8").value != '0' &&
+document.getElementById("chioe9").value != '0' &&
+document.getElementById("chioe10").value != '0' &&
+document.getElementById("chioe11").value != '0' &&
 
 
-document.getElementById("chioe15").value != '' &&
-document.getElementById("chioe16").value != '' &&
-document.getElementById("chioe17").value != '' &&
-document.getElementById("chioe18").value != '' &&
-document.getElementById("chioe19").value != '' &&
-document.getElementById("chioe20").value != '' &&
-document.getElementById("chioe21").value != '' &&
-document.getElementById("chioe22").value != '' &&
-document.getElementById("chioe23").value != '' &&
-document.getElementById("chioe24").value != '' &&
-document.getElementById("chioe25").value != '' &&
-document.getElementById("chioe26").value != '' &&
+document.getElementById("chioe15").value != '0' &&
+document.getElementById("chioe16").value != '0' &&
+document.getElementById("chioe17").value != '0' &&
+document.getElementById("chioe18").value != '0' &&
+document.getElementById("chioe19").value != '0' &&
+document.getElementById("chioe20").value != '0' &&
+document.getElementById("chioe21").value != '0' &&
+document.getElementById("chioe22").value != '0' &&
+document.getElementById("chioe23").value != '0' &&
+document.getElementById("chioe24").value != '0' &&
+document.getElementById("chioe25").value != '0' &&
+document.getElementById("chioe26").value != '0' &&
 
-document.getElementById("chioe30").value != '' &&
-document.getElementById("chioe31").value != '' &&
-document.getElementById("chioe32").value != '' &&
-document.getElementById("chioe33").value != '' &&
-document.getElementById("chioe34").value != '' &&
-document.getElementById("chioe36").value != '' &&
-document.getElementById("chioe37").value != '' &&
-document.getElementById("chioe38").value != '' &&
-document.getElementById("chioe39").value != '' &&
-document.getElementById("chioe40").value != '' &&
-document.getElementById("chioe41").value != '' &&
-document.getElementById("chioe42").value != '' &&
+document.getElementById("chioe30").value != '0' &&
+document.getElementById("chioe31").value != '0' &&
+document.getElementById("chioe32").value != '0' &&
+document.getElementById("chioe33").value != '0' &&
+document.getElementById("chioe34").value != '0' &&
+document.getElementById("chioe36").value != '0' &&
+document.getElementById("chioe37").value != '0' &&
+document.getElementById("chioe38").value != '0' &&
+document.getElementById("chioe39").value != '0' &&
+document.getElementById("chioe40").value != '0' &&
+document.getElementById("chioe41").value != '0' &&
+document.getElementById("chioe42").value != '0' &&
 
 
 
-document.getElementById("chioe45").value != '' &&
-document.getElementById("chioe46").value != '' &&
-document.getElementById("chioe47").value != '' &&
-document.getElementById("chioe48").value != '' &&
-document.getElementById("chioe49").value != '' &&
-document.getElementById("chioe50").value != '' &&
-document.getElementById("chioe51").value != '' &&
-document.getElementById("chioe52").value != '' &&
-document.getElementById("chioe53").value != '' &&
-document.getElementById("chioe54").value != '' &&
-document.getElementById("chioe55").value != '' &&
-document.getElementById("chioe56").value != '' 
+document.getElementById("chioe45").value != '0' &&
+document.getElementById("chioe46").value != '0' &&
+document.getElementById("chioe47").value != '0' &&
+document.getElementById("chioe48").value != '0' &&
+document.getElementById("chioe49").value != '0' &&
+document.getElementById("chioe50").value != '0' &&
+document.getElementById("chioe51").value != '0' &&
+document.getElementById("chioe52").value != '0' &&
+document.getElementById("chioe53").value != '0' &&
+document.getElementById("chioe54").value != '0' &&
+document.getElementById("chioe55").value != '0' &&
+document.getElementById("chioe56").value != '0' 
 
 ){
 $("#testdisc").submit();
@@ -301,5 +301,354 @@ $("#testdisc").submit();
  });
 
 </script>
+
+
+<script type="text/javascript">
+  function fncSubmit()
+  {
+      if(document.getElementById('chioe0').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "น่าเกรงขาม"');
+          return false;
+      }
+
+   if(document.getElementById('chioe1').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ทำงานเชิงรุก"');
+          return false;
+      }
+
+if(document.getElementById('chioe2').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "พูดตรงไปตรงมา"');
+          return false;
+      }
+
+if(document.getElementById('chioe3').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ไม่ยอมแพ้"');
+          return false;
+      }
+
+if(document.getElementById('chioe4').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "โลดโผน"');
+          return false;
+      }
+      if(document.getElementById('chioe5').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ชอบแข่งขัน"');
+          return false;
+      }
+
+if(document.getElementById('chioe6').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "กล้าเสี่ยง"');
+          return false;
+      }
+
+if(document.getElementById('chioe7').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ชอบโต้แย้ง"');
+          return false;
+      }
+
+if(document.getElementById('chioe8').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "กล้าหาญ"');
+          return false;
+      }
+
+if(document.getElementById('chioe9').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ชอบควบคุม"');
+          return false;
+      }
+
+
+if(document.getElementById('chioe10').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "เปิดเผิย"');
+
+          return false;
+      }
+
+
+
+
+
+if(document.getElementById('chioe15').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "มีชีวิตชีวา"');
+          return false;
+      }
+
+if(document.getElementById('chioe16').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "อ่อนไหว"');
+          return false;
+      }
+
+if(document.getElementById('chioe17').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ร่าเริง"');
+          return false;
+      }
+
+if(document.getElementById('chioe18').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ชอบเข้าสังคม"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe19').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ตัดสินใจด้วยอารมณ์"');
+          return false;
+      }
+
+
+
+
+if(document.getElementById('chioe20').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ชอบแสดงออก');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe21').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ชอบพูดคุย"');
+          return false;
+      }
+
+
+if(document.getElementById('chioe22').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "สนุกสนาน"');
+          return false;
+      }
+
+
+if(document.getElementById('chioe23').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ใช้สัญชาตญาณ"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe24').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "มองโลกในเเง่ดี"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe25').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "สดใส"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe26').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "กระตือรือร้น"');
+          return false;
+      }
+
+
+
+
+if(document.getElementById('chioe30').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ถ่อมตน"');
+          return false;
+      }
+
+if(document.getElementById('chioe31').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "โอนอ่อนผ่อน"');
+          return false;
+      }
+
+if(document.getElementById('chioe32').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ให้ความร่วมมือ"');
+          return false;
+      }
+
+if(document.getElementById('chioe33').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "อ่อนโยน"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe34').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ใจดี"');
+          return false;
+      }
+
+
+
+
+if(document.getElementById('chioe35').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ชอบช่วยเหลือ"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe36').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "คิดถึงจิตใจคนอื่น"');
+          return false;
+      }
+
+
+if(document.getElementById('chioe37').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "อดทน"');
+          return false;
+      }
+
+
+if(document.getElementById('chioe38').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ไม่ชอบความเปลี่ยนแปลง"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe39').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "รักสงบ"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe40').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "จงรักภัคดี"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe41').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "เป็นผู้ฟังที่ดี"');
+          return false;
+      }
+
+
+
+
+if(document.getElementById('chioe45').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "มีไหวพริบดี"');
+          return false;
+      }
+
+if(document.getElementById('chioe46').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "คงเส้นคงวา"');
+          return false;
+      }
+
+if(document.getElementById('chioe47').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ถูกต้องแม่นยำ"');
+          return false;
+      }
+
+if(document.getElementById('chioe48').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "ชอบความสมบูรณ์แบบ"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe49').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "รอบคอบ"');
+          return false;
+      }
+
+
+
+
+if(document.getElementById('chioe50').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ " ชอบดูรายละเอียด"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe51').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "มองข้อเท็จจริง"');
+          return false;
+      }
+
+
+if(document.getElementById('chioe52').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "มีเหตุมีผล"');
+          return false;
+      }
+
+
+if(document.getElementById('chioe53').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "มีระเบียบ"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe54').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "มีสติ"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe55').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "จริงจัง"');
+          return false;
+      }
+
+
+
+if(document.getElementById('chioe56').value  == "0"  )
+      {
+          alert('คุณยังไม่ระบุคะแนนของ "มาตรฐานสูง"');
+          return false;
+      }
+
+
+
+
+
+  }
+  </script>
  </body>
 </html>
