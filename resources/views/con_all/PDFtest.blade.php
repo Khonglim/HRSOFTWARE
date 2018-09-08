@@ -445,10 +445,6 @@
     <?php echo "</tr>"; ?>
    @endif
    @endif
-
-
-
-  
   @empty
   <tr>
   <td colspan="5"  style="text-align:center">ไม่มีข้อมูลในส่วนนี้!</td>

@@ -58,25 +58,27 @@ $g=0;
                 
             @endif
             @empty
-                        
+               <center>         
             <div class="alert alert-warning">
                     <strong>หมายเหตุ!</strong> ในระบบไม่มีรายชื่อนี้กรุณาติดต่อเจ้าหน้าที่
                   </div>
                   {{ Html::link('disc','ยกเลิก',array('class ' => 'btn btn-danger')) }}
+               </center>
             @endforelse
 
 
             @if($j =='0' && $r >'0')
+            <center>  
             <div class="alert alert-warning">
                     <strong>หมายเหตุ!</strong> ในระบบไม่มีรายชื่อนี้กรุณาติดต่อเจ้าหน้าที่
                   </div>
             <div class="box-footer">
-                
+             
           
            
           {{ Html::link('mbti','ย้อนกลับ',array('class ' => 'btn btn-danger')) }}
  
-      
+        </center>
      </div>
             @endif
                 </div>
