@@ -47,15 +47,15 @@
     </style>
 </head>
 <body>
-     <div class="page-break">   
+
 <center><h3>ข้อมูลประวัติ</h3>
-<img src="{{$personal->photo}}" alt="" width="50" height="50" ></center>
-<br>
+</center>
+
     <table>
         <tbody>
-            
+               
           <tr>
-          
+          <td  align="center" ROWSPAN="2"> <img src="{{$personal->photo}}" alt="" width="100px" height="125px" > </td>
             <td colspan="2"><b>ชื่อ: </b>  {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}} </td>
             <td><b>ชื่อเล่น:</b> {{$personal->nikname}}</td>
             <td><b>เพศ: </b>{{$personal->gender}}</td>
@@ -80,7 +80,7 @@
                         {{$personal->brothers}}
                         @endif
                     </td>
-            <td>
+            <td colspan="2">
                     <b> เป็นคนที่:  </b> 
                 @if($personal->number == '')
                 ว่าง
@@ -88,24 +88,24 @@
                 {{$personal->number}}
                 @endif
             </td>
-            <td colspan="3"><b>โทรศัพท์สำนักงาน: </b>          
+            <td colspan="2"><b>โทรศัพท์สำนักงาน: </b>          
                 @if($personal->office == '')
                 ::ว่าง::
                 @else
                 {{$personal->office}}
                 @endif</td>
-            <td colspan="3"><b>โทรศัพท์บ้าน:</b> {{$personal->home}}   </td>
+            <td colspan="4"><b>โทรศัพท์บ้าน:</b> {{$personal->home}}   </td>
           </tr>
 
           <tr>
             <td colspan="3"><b>โทรศัพท์มือถือ:</b> {{$personal->moblie}}  </td>
-                <td colspan="5">อีเมล: {{$personal->email}}</td>
+                <td colspan="6"><b>อีเมล:</b> {{$personal->email}}</td>
           </tr>
           <tr>
                 <td rowspan="2" colspan="4">
                         <b> ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก: </b>{{$personal->address1}}
                 </td>
-                <td rowspan="2" colspan="4">
+                <td rowspan="2" colspan="5">
                         <b>  ที่อยู่ตามบัตรประชาชน:</b> {{$personal->address2}}  
                 </td>
           </tr>
@@ -117,17 +117,17 @@
                 <td colspan="3">
                         <b>  ออกให้ ณ อำเภอ/เขต: </b> {{$personal->issued}}   
                 </td>
-                <td colspan="2"></td>
+                <td colspan="3"></td>
             </tr>
             <tr>
                 <td colspan="2" > <b>วันออกบัตร: </b> {{$personal->issueddate}}</td>     
                 <td colspan="2"> <b>บัตรหมดอายุ:</b> {{$personal->expid}}</td>
-                <td colspan="4">
+                <td colspan="5">
                         <b>บัตรประจำตัวผู้เสียภาษี: </b>
-                            @if($personal->texid =='')
+                            @if($personal->idcard =='')
                                 ว่าง
                             @else
-                                {{$personal->texid}}
+                                {{$personal->idcard}}
                             @endif 
                 </td>
                 </tr>
@@ -142,7 +142,7 @@
                                 {{$personal->if_marricd}}
                             @endif                                                                      
                     </td>
-                    <td colspan="2">
+                    <td colspan="3">
                             <b> คู่มสมรส:  </b>
                             @if($personal->spouse =='')
                                 ว่าง
@@ -168,7 +168,7 @@
                                 {{$personal->spouse_occupation}}
                             @endif
                     </td>
-                    <td colspan="4">
+                    <td colspan="5">
                             <b>  สถานที่ทำงาน: </b>
                             @if($personal->firm_address =='')
                             ว่าง
@@ -204,7 +204,7 @@
                             @endif
                             <b>  คน </b>
                     </td>
-                    <td colspan="2">
+                    <td colspan="3">
                             <b>   ชาย:  </b>
                             @if($personal->boy =='')
                             ว่าง
@@ -233,7 +233,7 @@
                             @endif
                             <b>  คน</b>
                     </td>
-                    <td colspan="3">
+                    <td colspan="4">
                             <b>   สถานะทางทหาร:  </b>
                                 @if($personal->military_service =='')
                                     ว่าง
@@ -245,20 +245,20 @@
                 <tr>
                     <td colspan="3"><b> ชื่อบิดา:</b> {{$personal->namefather}} {{$personal->lastfather}}</td>
                     <td colspan="3"><b> อาชีพ:</b> {{$personal->occupation_father}}</td>
-                    <td colspan="2"><b> สถานะ:</b> {{$personal->alivef}}</td>
+                    <td colspan="3"><b> สถานะ:</b> {{$personal->alivef}}</td>
                 </tr>
                 <tr>
                     <td colspan="3"><b> ชื่อมารดา:</b> {{$personal->namemother}} {{$personal->lasrmother}}</td>
                     <td colspan="3"><b> อาชีพ:</b> {{$personal->occupationm}}</td>
-                    <td colspan="2"><b> สถานะ:</b>{{$personal->alivem}} </td>
+                    <td colspan="3"><b> สถานะ:</b>{{$personal->alivem}} </td>
                 </tr>
                 <tr>
-                    <th colspan="8" align=center>ประวัติการศึกษา</th>
+                    <th colspan="9" align=center>ประวัติการศึกษา</th>
                 </tr>
                 <thead>
                     <tr>
                         <th>ระดับการศึกษา</th>
-                        <th colspan="2">ชื่อสถาบัน</th>
+                        <th colspan="3">ชื่อสถาบัน</th>
                         <th>เริ่มปีการศึกษา</th>
                         <th>จบปีการศึกษา</th>
                         <th>เกรดเฉลี่ย</th>
@@ -268,7 +268,7 @@
                 </thead>
                 <tr>
                     <td>ประถมศึกษา</td>
-                    <td colspan="2">{{$personal->primary}}</td>
+                    <td colspan="3">{{$personal->primary}}</td>
                     <td>{{$personal->year1}}</td>
                     <td>{{$personal->year2}}</td>
                     <td>{{$personal->gpa}}</td>
@@ -277,7 +277,7 @@
                 </tr>
                 <tr>
                     <td>มัธยมศึกษา</td>
-                    <td colspan="2">{{$personal->secondary}}</td>
+                    <td colspan="3">{{$personal->secondary}}</td>
                     <td>{{$personal->year3}}</td>
                     <td>{{$personal->year4}}</td>
                     <td>{{$personal->gpas}}</td>
@@ -286,7 +286,7 @@
                 </tr>
                 <tr>
                     <td>อาชีวะศึกษา</td>
-                    <td colspan="2">{{$personal->vocation}}</td>
+                    <td colspan="3">{{$personal->vocation}}</td>
                     <td>{{$personal->year5}}</td>
                     <td>{{$personal->year6}}</td>
                     <td>{{$personal->gpav}}</td>
@@ -295,7 +295,7 @@
                 </tr>
                 <tr>
                     <td>อนุปริญญา</td>
-                    <td colspan="2">{{$personal->diploma}}</td>
+                    <td colspan="3">{{$personal->diploma}}</td>
                     <td>{{$personal->year7}}</td>
                     <td>{{$personal->year8}}</td>
                     <td>{{$personal->gpad}}</td>
@@ -304,7 +304,7 @@
                 </tr>
                 <tr>
                         <td>ปริญญาตรี</td>
-                        <td colspan="2">{{$personal->bachelor }}</td>
+                        <td colspan="3">{{$personal->bachelor }}</td>
                         <td>{{ $personal->year9 }}</td>
                         <td>{{ $personal->year10 }}</td>
                         <td>{{$personal->gpab }}</td>
@@ -315,7 +315,7 @@
                     </tr>
                 <tr>
                     <td>ปริญญาโท</td>
-                    <td colspan="2">{{$personal->master}}</td>
+                    <td colspan="3">{{$personal->master}}</td>
                     <td>{{$personal->year11}}</td>
                     <td>{{$personal->year12}}</td>
                     <td>{{$personal->gpam}}</td>
@@ -324,7 +324,7 @@
                 </tr>
                 <tr>
                     <td>อื่นๆ</td>
-                    <td colspan="2">{{$personal->otherE}}</td>
+                    <td colspan="3">{{$personal->otherE}}</td>
                     <td>{{$personal->year13}}</td>
                     <td>{{$personal->year14}}</td>
                     <td>{{$personal->gpao}}</td>
@@ -375,12 +375,11 @@
         </tbody>
     </table>
 
-</div>
     
       <table>
           <tbody>
                 <tr>
-                    <th colspan="8" align=center>ประวัติการทำงาน</th>
+                    <th colspan="8" align="center">ประวัติการทำงาน</th>
                 </tr>
               
                     <tr>
