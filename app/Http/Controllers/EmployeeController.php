@@ -235,11 +235,10 @@ class EmployeeController extends Controller
 
         
         $personal->talent = $request->talent;
-        if(Input::hasFile('portfolio1')){
-            $file=Input::file('portfolio1');
-            $personal->portfolio1 = $file->getClientOriginalName();
-            $file->move(public_path(). '/', $file->getClientOriginalName());
-        }
+        $personal->portfolio1 = $request->portfolio1;
+
+
+        
 
 
         if(Input::hasFile('portfolio2')){
@@ -563,11 +562,7 @@ class EmployeeController extends Controller
        
         $personal->talent = $request->talent;
 
-        if(Input::hasFile('portfolio1')){
-            $file=Input::file('portfolio1');
-            $personal->portfolio1 = $file->getClientOriginalName();
-            $file->move(public_path(). '/', $file->getClientOriginalName());
-        }
+        $personal->portfolio1 = $request->portfolio1;
 
 
         if(Input::hasFile('portfolio2')){

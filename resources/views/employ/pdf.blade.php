@@ -688,7 +688,7 @@
 
       <table>
          <tr>
-            <td> Link ผลงาน {{$personal->portfolio3}}</td>            
+            <td> <b>Linkผลงาน</b>  {{$personal->portfolio1}}</td>            
           </tr>
         </tbody>
       </table>

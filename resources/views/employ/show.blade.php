@@ -1070,6 +1070,32 @@
                     
                       </table>
                     </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                      <label>link ผลงาน</label><br>
+                    
+
+                      @if($personal->portfolio1 == '')
+                      ไม่มี
+               @else
+
+               {{$personal->portfolio1}}
+
+                    @endif 
+      
+
+                          </div>
+                      </div>
+                     </div>
+
+
+
+
+
+
+
                        <div class="row">      
                     <div class="col-md-5">
                             <div class="form-group">
@@ -1243,14 +1269,7 @@
                                                                 </div> 
                                                                 
                                                                 
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                    <label>ผลงาน</label><br>
-                                                                    
-                                                                        </div>
-                                                                    </div>
-                                                                   </div>
+                                                               
                                           
 
 

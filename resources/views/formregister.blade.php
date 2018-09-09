@@ -52,13 +52,13 @@
 		                    	</div> 
 								<div class="wizard-navigation">
 									<ul>
-                               <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>  
-                              <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li>
-                                  <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>   
-                             <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>  
-			                    <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
-                                    <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li> 
-                                  <li><a href="#work" data-toggle="tab">การทำงาน</a></li> 
+                                 <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>   
+                                <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li> 
+                                      <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>   
+                              <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>  
+			                     <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
+                                      <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li>  
+                                   <li><a href="#work" data-toggle="tab">การทำงาน</a></li>  
                                         <li><a href="#another" data-toggle="tab">อื่นๆ</a></li>
 			                        </ul>
 								</div>
@@ -1159,7 +1159,7 @@
                                                     
                                                            
                                                     </div>
-                                                    <div class="col-md-5"></div>  <label> ผลงาน/หรือ link </label>
+                                                    <div class="col-md-5"></div>  <label>  link ผลงาน </label>
                                                     <div class="row" >
 
                                                         
@@ -1172,23 +1172,7 @@
                                                                             </div>
                                                                         </div>
                                                                      
-                                                                        <div class="col-md-3">
-                                                                                <div class="form-group label-floating">
-                                                                            <label class="control-label">link</label>
-                                                                                    <input type="text" name="portfolio2"  class="form-control">   
-                                                                                                                                         
-                                                                                </div>
-                                                                            </div>
-
-                                                                            
-                                                                                <div class="col-md-3">
-                                                                                 
-                                                                                
-                                                                                            <div class="form-group label-floating">
-                                                                                                <label class="control-label">link</label>
-                                                                              <input type="text" name="portfolio3"  class="form-control"  >                                              
-                                                                           
-                                                                        </div>
+                                             
                                                                   
                                                                 </div>
 
