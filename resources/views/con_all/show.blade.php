@@ -80,7 +80,7 @@
                    <tbody>
                          
                         @forelse($inter_sup as $inter )
-                               @if (	$inter->id_personal == $personal->id &&  $inter->chioce > '20' )
+                               @if (	$inter->id_personal == $personal->id &&  $inter->chioce > '20'&& $inter->chioce <'200' )
                          
                      <tr>
                        <td>
@@ -162,7 +162,7 @@
                                   @endif
                         @endforeach
                         @foreach ($comment_sup as $conm )
-                        @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20' )   
+                        @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20'   )   
                   <tr>
                     <td>
                             @if($conm->chioce == '100')
@@ -234,7 +234,7 @@
                                    <tbody>
                                          
                                         @forelse($con_interview as $coni )
-                                               @if (	$coni->id_personal == $personal->id &&  $coni->chioce > '20' )
+                                               @if (	$coni->id_personal == $personal->id &&  $coni->chioce > '20' && $coni->chioce <'200' )
                                          
                                      <tr>
                                        <td>

@@ -52,13 +52,13 @@
 		                    	</div> 
 								<div class="wizard-navigation">
 									<ul>
-                                 <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>   
-                                <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li> 
-                                      <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>   
-                              <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>  
-			                     <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
-                                      <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li>  
-                                   <li><a href="#work" data-toggle="tab">การทำงาน</a></li>  
+                              <li><a href="#about1" data-toggle="tab">ประวัติส่วนตัว(1)</a></li>   
+                               <li><a href="#about2" data-toggle="tab">ประวัติส่วนตัว(2)</a></li> 
+                                    <li><a href="#about3" data-toggle="tab">ประวัติส่วนตัว(3)</a></li>   
+                         <li><a href="#about4" data-toggle="tab">ประวัติส่วนตัว(4)</a></li>  
+			                   <li><a href="#account" data-toggle="tab">การศึกษา</a></li>  
+                                  <li><a href="#language" data-toggle="tab">ด้านภาษา</a></li>  
+                                <li><a href="#work" data-toggle="tab">การทำงาน</a></li>  
                                         <li><a href="#another" data-toggle="tab">อื่นๆ</a></li>
 			                        </ul>
 								</div>
@@ -1179,7 +1179,7 @@
                                                                             
                                                                     
                                                                           
-                                                    </div> 
+                                                
                                                    <hr>
                                                     <div class="row">
                                                        
@@ -1203,10 +1203,10 @@
                                                         </div>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <div class="form-group {{ $errors->has('crash1') ? 'has-error' : '' }}">
+                                                            <div class="form-group ">
                                                                 <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)<small class="text-danger">*</small></label> &emsp;&emsp;
-                                                                <input type="radio" name="crash1" value="ขัดข้อง"  required > ขัดข้อง
-                                                                <input type="radio" name="crash1" value="ไม่ขัดข้อง"  required > ไม่ขัดข้อง                                    
+                                                                <input type="radio" name="crash1" value="ขัดข้อง"  id="crash1" required > ขัดข้อง
+                                                                <input type="radio" name="crash1" value="ไม่ขัดข้อง" id="crash1" required > ไม่ขัดข้อง                                    
                                                                 </div>
                                                         </div>
                                                         </div>
@@ -1216,7 +1216,7 @@
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
                                                                             <label class="control-label">ชื่อ-นามสกุล<small class="text-danger">*</small></label>
-                                                                {{Form::text('compd','',['class'=>'form-control' ,'required'])}} 
+                                                                {{Form::text('compd','',['class'=>'form-control' ,'required','id'=>'compd'])}} 
                                                             </div>
                                                             </div>
                                                         </div>
@@ -1227,7 +1227,7 @@
                                                                                 <label class="control-label"> สถานที่ทำงาน:<small class="text-danger">*</small>  </label>
                                                                 
                                                                 
-                                                                {{Form::text('compa','',['class'=>'form-control','required'])}} 
+                                                                {{Form::text('compa','',['class'=>'form-control','required','id'=>'compa'])}} 
                                                             </div>
                                                                 </div>
                                                         </div>
@@ -1303,9 +1303,9 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group {{ $errors->has('exitwork') ? 'has-error' : '' }}">
                                                                 <label>ท่านเคยให้ถูกออกจากงานหรือไม่:<small class="text-danger">*</small></label> &emsp;&emsp;                                                                  
-                                                                <input type="radio" name="exitwork" value="เคย"  required >เคย เพราะ &emsp; {{Form::text('because','')}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     
-                                                                <input type="radio" name="exitwork" value="ไม่เคย"  required >ไม่เคย 
-                                                                    <span class="text-danger">{{ $errors->first('exitwork') }}</span>  
+                                                                <input type="radio" name="exitwork" value="เคย" id="exitwork" required >เคย เพราะ &emsp; {{Form::text('because','',['id'=>'because'])}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     
+                                                                <input type="radio" name="exitwork" value="ไม่เคย" id="exitwork"  required >ไม่เคย 
+                                                       
                                                                 </div>
                                                         </div>
                                                         </div> <br>
@@ -1315,7 +1315,7 @@
                                                                 <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;
                                                                 <input type="radio" name="serious_ill" value="เคย"  required > เคย &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                                 <input type="radio" name="serious_ill" value="ไม่เคย"  required >ไม่เคย
-                                                                <span class="text-danger">{{ $errors->first('serious_ill') }}</span>  
+                                                              
                                                                 </div>
                                                         </div>
                                                         </div> <br>
@@ -1325,7 +1325,7 @@
                                                                 <label>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;&emsp;&ensp;
                                                                 <input type="radio" name="offense" value="เคย"  required >เคย   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                                 <input type="radio" name="offense" value="ไม่เคย"  required >ไม่เคย
-                                                                <span class="text-danger">{{ $errors->first('offense') }}</span>  
+                                                               
                                                                 </div>
                                                         </div>
                                                         </div> <br>
@@ -1335,7 +1335,7 @@
                                                                 <label>ขณะนี้คุณตั้งครรภ์หรือไม่?<small class="text-danger">*</small> </label>&emsp;&emsp;
                                                                 <input type="radio" name="pregnant" value="ใช่"  required >ใช่ &emsp;&emsp;&emsp;
                                                                 <input type="radio" name="pregnant" value="ไม่ใช่"  required > ไม่ใช่
-                                                                <span class="text-danger">{{ $errors->first('pregnant') }}</span>  
+                                                               
                                                                 </div>
                                                         </div>
                                                         </div>
@@ -1355,11 +1355,12 @@
 		                        </div>
                                 {{ Form::close()}}
                          
-		                </div>
+                        </div>
+                    </div>
 		            </div> <!-- wizard container -->
 		        </div>
-              
-	    </div> <!--  big container -->
+    
+	 
 
 	    <br> <br> <br>
 	</div>
@@ -1660,6 +1661,52 @@
 
 
         </script>
+
+        <script>
+ $('input[name=crash1]').change(function() {
+
+if( crash1[0].checked ){
+                  
+    $("#compd").attr("disabled", "disabled"); 
+    $("#compa").attr("disabled", "disabled"); 
+                }
+                if( crash1[1].checked ){
+
+  $("#compd").removeAttr("disabled"); 
+  $("#compa").removeAttr("disabled"); 
+                }
+               
+
+
+      });
+
+
+ $('input[name=exitwork]').change(function() {
+
+if( exitwork[0].checked ){
+  $("#because").removeAttr("disabled"); 
+                  
+   
+    
+                }
+                if( exitwork[1].checked ){
+                    $("#because").attr("disabled", "disabled"); 
+                }
+               
+
+
+      });
+
+
+
+
+
+
+
+
+
+
+               </script>
 	<!--  Plugin for the Wizard -->
 	
 
