@@ -67,7 +67,7 @@
                             <td style="text-align:center">LOW<---------->HIGH</td>
                       </tr>
                       <tr>
-                            <th colspan="3">บุคลิคลักษณะ (Appearance) </th>
+                            <th colspan="3">บุคลิกลักษณะ (Appearance) </th>
                      </tr>
                      <?php  $s=0;  ?>
                      @foreach ($interview as $i)

@@ -53,6 +53,11 @@ class EmployeeController extends Controller
     {
 
         
+        $this->validate($request,[
+         
+            'email' => 'required|string|email|max:255|unique:personal'
+            
+        ]);
         $personal = new Personal;
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
