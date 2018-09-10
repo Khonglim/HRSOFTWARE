@@ -4,7 +4,7 @@
 
  <section class="content">
   <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="box">
           <div class="box-header" >
             <h3 class="box-title" >แบบฟอร์มประเมินผลการปฏิบัติงาน ประจำปี 2561</h3>
@@ -12,7 +12,7 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body" style="display: none;">
-             <div class="col-md-6">
+             <div class="col-md-3">
                 <div class="form-group">
                  
                    <?php    $i=Auth::user()->name; $j=0;?>
@@ -23,7 +23,7 @@
                     {{Form::text('id_employee',$i,['class'=>'form-control','required'])}}   
                    
                   </div>
-                 <div class="col-md-6">
+                 <div class="col-md-3">
                   <p> หมายเหตุ:โปรดอ่านข้อความอย่างระเอียดก่อนลงมือทำ </p>
                 </div>
                 </div>
