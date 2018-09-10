@@ -3,7 +3,7 @@
 <div class="content-wrapper">
 
  <section class="content">
-<div class="col-xs-7">
+<div class="col-md-6">
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">ผลการประเมิน</h3>
