@@ -181,6 +181,22 @@
                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">เงินเดือนที่ต้องการ<small class="text-danger">*</small></label>
+                                                            {{ Form::text('salaryngg','', ['class' => 'form-control']) }}
+                                            
+                                                           </div>
+    
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">ตำแหน่งที่จะสมัคร<small class="text-danger">*</small></label>
+                                                            {{ Form::text('positionngg','', ['class' => 'form-control']) }}
+                                            
+                                                           </div>
+    
+                                                    </div>
                                         </div>
 
                                         <hr>
@@ -216,7 +232,8 @@
                                             </div>
 
                                                 </div>
-
+   
+                                             
                                                 
                                     </div>
                                                 

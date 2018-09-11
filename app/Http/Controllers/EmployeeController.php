@@ -384,6 +384,8 @@ class EmployeeController extends Controller
             'pregnant' => 'required'
         ]);
         $personal =  Personal::find($id);
+        $personal->salaryngg = $request->salaryngg;
+        $personal->positionngg = $request->positionngg;
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
         $personal->nikname = $request->nikname;
