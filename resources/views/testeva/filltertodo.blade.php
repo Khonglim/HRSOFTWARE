@@ -1,5 +1,16 @@
 @extends('layouts.main')
 @section('content')
+<script>
+function myFunction() {
+    var checkBox = document.getElementById("myCheck");
+    var text = document.getElementById("mySubmit");
+    if (checkBox.checked == true){
+        text.disabled = false;
+    } else {
+      text.disabled = true;
+    }
+}
+</script>
 <div class="content-wrapper">
 
  <section class="content">
@@ -31,9 +42,9 @@
          </div>
 
           <div class="box-footer">
-
-                  {{ Form::submit('เริ่มทำแบบประเมิน',['class'=> 'btn btn-primary'])}}
-                                  
+            <h4>การประเมินประจำปี เป็นแนวทางปฏิบัติตามระเบียบ ในการประเมินของบริษัทในเครือ เอ็น จี จี กรุ๊ป  ซึ่งข้อมูลทุกอย่าง เป็นความลับ ห้ามพนักงานทำการเผยแพร่กับบุคคลอื่นโดยเด็ดขาด หากฝ่ายทรัพยากรบุคคลตรวจสอบพบการเผยแพร่จะลงโทษสถานหนักตามระเบียบข้อบังคับหมวดที่9  ข้อที่  2 ความผิดทางวินัยขั้นร้ายแรง</h4>
+                <input type="checkbox" id="myCheck"  onclick="myFunction()"><p style="color: red;"> ข้าพเจ้าตกลงยอมรับและเข้าใจในระเบียบแนวทางปฏิบัติดังกล่าว</p>
+                <input type="submit" value="เริ่มทำแบบประเมิน" id="mySubmit" class="btn btn-primary" disabled="true">
               </div>
               <!-- /.box-footer -->
 
