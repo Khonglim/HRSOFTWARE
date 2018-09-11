@@ -109,7 +109,7 @@
 
                                     @foreach ($scoreinterviewp as $item)
                                     
-                                    <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value={{$item->score_interview}}  required onclick="func();"> {{$item->score_interview}}&ensp; 
+                                    <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value={{$item->score_interview}}  required onclick="func();" data-errormessage-value-missing="Please input something"> {{$item->score_interview}}&ensp; 
                                   
 
                                     @endforeach
