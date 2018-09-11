@@ -108,24 +108,19 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                     <td style="display: none;"><input name='t_{{$questiontest->id_part}}{{$questiontest->q_id}}' type="text" value={{$questiontest->id}}></td>
 
                     <td style="text-align: center;width: 8%;height: 70px;">
-                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='1' required="true" oninvalid="this.setCustomValidity('กรุณาเลือกให้ครบ')"
-    oninput="this.setCustomValidity('')" ></td>
+                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='1' required="true" ></td>
                     
                     <td style="text-align: center;width: 8%;height: 70px;">
-                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='2' required="true" oninvalid="this.setCustomValidity('กรุณาเลือกให้ครบ')"
-    oninput="this.setCustomValidity('')" ></td> 
+                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='2' required="true" ></td> 
                    
                     <td style="text-align: center;width: 8%;height: 70px;">
-                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='3' required="true" oninvalid="this.setCustomValidity('กรุณาเลือกให้ครบ')"
-    oninput="this.setCustomValidity('')" ></td>
+                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='3' required="true"></td>
                     
                     <td style="text-align: center;width: 8%;height: 70px;">
-                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='4'required="true" oninvalid="this.setCustomValidity('กรุณาเลือกให้ครบ')"
-    oninput="this.setCustomValidity('')" ></td>
+                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='4'required="true"  ></td>
                     
                     <td style="text-align: center;width: 8%;height: 70px;">
-                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='5' required="true" oninvalid="this.setCustomValidity('กรุณาเลือกให้ครบ')"
-    oninput="this.setCustomValidity('')" ></td>
+                    <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='5' required="true" ></td>
                     
                   </tr>
                   @elseif($questiontest['id_part']==$partoftest['id_part']&&$questiontest['q_subpart']==$partoftest['subpart']&&$questiontest['point']=='-')
