@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Ngg_evaluate_employeeTableSeeder::class);
         $this->call(Ngg_levelTableSeeder::class);
         $this->call(Ngg_sectorTableSeeder::class);
+        $this->call(ScoreOperateTableSeeder::class);
        
     }
 }
