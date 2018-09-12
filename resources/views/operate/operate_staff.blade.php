@@ -28,6 +28,9 @@
 <body>
     <div class="container">
             <br>
+            <div class="panel panel-success" style="width:100%">
+                    <div class="panel-heading">แบบประเมินผลการปฏิบัติงานระดับพนักงานปฏิบัติการ</div>
+                    <div class="panel-body">
             <div class="form-group">
 
                 <center> <b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b><br>
@@ -287,13 +290,13 @@
                     <tr>
                             <td  style="width:43%"  > {{  $managers->manager  }} </td>
                             <td style="text-align:center">
-                                   <input type="text"   >
+                                   <input type="text"   style="width:50px" >
                             </td>
                             <td style="text-align:center">
-                                    <input type="text"   >
+                                    <input type="text"   style="width:50px" >
                                 </td>
                                 <td style="text-align:center">
-                                        <input type="text"   >
+                                        <input type="text"   style="width:50px" >
                                     </td>
                     </tr>
 
@@ -349,7 +352,7 @@
                             </div>
                 
                             <div class="col-md-6">
-                                    ชื่อผู้ถูกประเมิน: <input type="text"  name="nametest" id="nametest2" >
+                                    ชื่อผู้จัดการฝ่าย: <input type="text"  name="nametest" id="nametest2" >
                             </div>
                       
                 
@@ -430,11 +433,211 @@
                             </tr>
                           
                           </table>
+                      <br>
+                         
+
+
+
+                           
+                                 
+                                 
+                                                                       
+                                </div>
+
+
+
+
+
+                        </div>
+
+                        <div class="panel panel-success" style="width:100%">
+                                <div class="panel-heading">เฉพาะฝ่ายทรัพยากรบุคคล</div>
+                                <div class="panel-body">
+                     
+                        
+                        
+                                <div class="form-group"> 
+                                      
+                                          <div class="row">
+                                              
+                                                <div class="checkbox col-md-12">
+                                                        <label><input type="checkbox" value="ให้บรรจุเป็นพนักงานประจำ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
+                                                        <label><input type="checkbox" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:  </label><input type="text" >
+                                                        <label><input type="checkbox" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:  </label><input type="text">
+                                                        
+                                                      </div>
+                                                    
+                                                      
+                                                            </div>
+                                         
+                                       
+                                               
+                                        </div>
+                                   
+                                            <div class="form-group">
+                                                    <div class="row">
+                                                    <div class="checkbox col-md-12">
+                                                            <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ให้ปรับตำแหน่งเป็น </label><input type="text">
+                                                          </div>
+                                                      
+                                                        <div class="form-group">
+                                                                <div class="checkbox col-md-12">
+                                                                        <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่  </label><input type="text">
+                                                                      </div>
+                                                                    </div>
+                                                        <div class="form-group">
+                                                                <div class="checkbox col-md-3">
+                                                                        <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">อื่น ๆ </label><textarea class="form-control" rows="3" name="auu"></textarea>
+                                                                      </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                    
+
+
+
+
+
+
+                                                                    <div class="form-group">
+                                                                            <div class="row">
+                                                                            
+                                                                                <div class="col-md-6">
+                                                                                      
+                                                                                </div>
+                                                                    
+                                                                                <div class="col-md-6">
+                                                                                        ลงนาม: <input type="text"  >ผู้จัดการฝ่ายทรัพยากรบุคคล
+                                                                                </div>
+                                                                          
+                                                                    
+                                                                           
+                                                                        </div>
+                                                                    </div>
+
+
+
+
+
+
+
+
+                             </div>
+
+                             
+                        </div>
+                 </div>   
+                 
+                 
+
+
+
+
+                 <div class="panel panel-success" style="width:100%">
+                        <div class="panel-heading">เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</div>
+                        <div class="panel-body">
+             
+                
+                
+                        <div class="form-group"> 
+                              
+                                  <div class="row">
+                                      
+                                        <div class="checkbox col-md-12">
+                                                <label><input type="checkbox" value="ให้บรรจุเป็นพนักงานประจำ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
+                                                <label><input type="checkbox" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:  </label><input type="text" >
+                                                <label><input type="checkbox" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:  </label><input type="text">
+                                                
+                                              </div>
+                                            
+                                              
+                                                    </div>
+                                 
+                               
+                                       
+                                </div>
+                           
+                                    <div class="form-group">
+                                            <div class="row">
+                                            <div class="checkbox col-md-12">
+                                                    <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ให้ปรับตำแหน่งเป็น </label><input type="text">
+                                                  </div>
+                                              
+                                                <div class="form-group">
+                                                        <div class="checkbox col-md-12">
+                                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่  </label><input type="text">
+                                                              </div>
+                                                            </div>
+                                                <div class="form-group">
+                                                        <div class="checkbox col-md-3">
+                                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">อื่น ๆ </label><textarea class="form-control" rows="3" name="auu"></textarea>
+                                                              </div>
+                                                            </div>
+
+                                                        </div>
+                                                            
+
+
+
+
+
+
+                                                            <div class="form-group">
+                                                                    <div class="row">
+                                                                    
+                                                                        <div class="col-md-6">
+                                                                              
+                                                                        </div>
+                                                            
+                                                                        <div class="col-md-6">
+                                                                                ลงนาม: <input type="text"  >ผู้จัดการฝ่ายทรัพยากรบุคคล
+                                                                        </div>
+                                                                  
+                                                            
+                                                                   
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+
+
+
+                     </div>
+
+                     
+                </div>
+         </div>
+
+
+
+
+
 
 
 
 
     </div>
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
     <br><br><br><br>
 </body>
 </html>

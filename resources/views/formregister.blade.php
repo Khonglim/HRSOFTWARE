@@ -140,7 +140,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-3"><br>
+                                                <div class="col-md-3">
 
                                                        
                                                         <div class="input-group">

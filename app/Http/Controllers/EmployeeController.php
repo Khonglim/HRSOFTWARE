@@ -40,7 +40,7 @@ class EmployeeController extends Controller
             $items[$province->name] = $province->name;
         }
         $data = array('items' => $items  );
-        return view('formregister',$data);
+        return view('employ/formcreateemployee',$data);
     }
 
     /**

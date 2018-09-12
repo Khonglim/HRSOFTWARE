@@ -3,7 +3,6 @@
 <head>
 	<title>Ngg</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -75,8 +74,7 @@
 	</main>
 
 
-	<script src="{{ asset('new/js/jquery-2.2.3.min.js') }}"defer></script>
-	<script src="{{ asset('new/css/fontawesome-all.css') }}"defer></script>
+	
 	<script type="text/javascript">
 
 		$(function(){
@@ -142,7 +140,71 @@
 		}
 		
 		</script>
-		
+		<script type="text/javascript">
+
+			$(function(){
+			
+				var startDateTextBox = $('#dateStart2');
+				var endDateTextBox = $('#dateEnd2');
+			
+				startDateTextBox.datepicker({ 
+					dateFormat: 'dd/M/yy',
+					
+					onClose: function(dateText, inst) {
+						if (endDateTextBox.val() != '') {
+							var testStartDate = startDateTextBox.datetimepicker('getDate');
+							var testEndDate = endDateTextBox.datetimepicker('getDate');
+							if (testStartDate > testEndDate)
+								endDateTextBox.datetimepicker('setDate', testStartDate);
+						}
+						else {
+							endDateTextBox.val(dateText);
+						}
+						displayDateDiff();
+					},
+					onSelect: function (selectedDateTime){
+						endDateTextBox.datetimepicker('option', 'minDate', startDateTextBox.datetimepicker('getDate') );
+					}
+				});
+				endDateTextBox.datepicker({ 
+					dateFormat: 'dd-M-yy',
+					onClose: function(dateText, inst) {
+						if (startDateTextBox.val() != '') {
+							var testStartDate = startDateTextBox.datetimepicker('getDate');
+							var testEndDate = endDateTextBox.datetimepicker('getDate');
+							if (testStartDate > testEndDate)
+								startDateTextBox.datetimepicker('setDate', testEndDate);
+						}
+						else {
+							startDateTextBox.val(dateText);
+						}
+						displayDateDiff();
+					},
+					onSelect: function (selectedDateTime){
+						startDateTextBox.datetimepicker('option', 'maxDate', endDateTextBox.datetimepicker('getDate') );
+					}
+				});
+			
+			});
+			
+			function displayDateDiff()
+			{
+				if($('#dateStart2').val() != "" && $('#dateEnd2').val() != "")
+				{
+							var dateStart = new Date($("#dateStart2").val());
+							var dateEnd =  new Date($("#dateEnd2").val())
+							var timeDiff = Math.abs(dateEnd.getTime() - dateStart.getTime());
+							
+							var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+							diffDays = diffDays + 1;
+							
+	
+	
+							$("#totolDay").val(diffDays);
+				}
+			}
+			
+			</script>
 </body>
 
 </html>
