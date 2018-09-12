@@ -91,6 +91,14 @@
               </div>
 
 
+              คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน<br>
+              1.  ระดับในการประเมินผล <br>
+              …….	ดีมาก		=	ผลการปฏิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
+…….	ดี		=	ผลการปฏิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br>
+…….	พอใช้		=	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br>
+…….	ต้องปรับปรุง	=     	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
+
+2.	ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป  จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน  
      
 <table id="customers">
   <tr>
@@ -174,7 +182,7 @@
 
         <td  COLSPAN="4" >
  
-                รวมคะแนนทั้งสิ้น  ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly > คะแนน
+                รวมคะแนนทั้งสิ้น  ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly > คะแนน <br><br>
                               ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly> คะแนน
               </td>
 
@@ -193,10 +201,127 @@
 
 
 </table>
+<br>
+<div class="form-group">
+        <div class="row">
+        
+            <div class="col-md-4">
+                    ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน) <textarea class="form-control" rows="3" name="assessor"></textarea>
+            </div>
 
+            <div class="col-md-4">
+                    จุดเด่นของพนักงาน: <textarea class="form-control" rows="3" name="featured" required></textarea>
+            </div>
+      
+
+        <div class="col-md-4">
+                จุดด้อยของพนักงาน:<textarea class="form-control" rows="3" name="weakness" required></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+<div class="checkbox">
+        <label><input type="checkbox" value="ไม่ผ่านทดลองงาน">ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่ </label><input type="text"  name="clsdate"  id="clsdate" >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="checkbox">
+        <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ">อนุมัติให้บรรจุเป็นพนักงานประจำ</label> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto" > ตำแหน่ง:<input type="text"  id="t2" value=""readonly="readonly" />
+      </div>
     </div>
 
+
+    <div class="form-group">
+            <div class="checkbox">
+              <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง</label> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto" > เป็นตำแหน่ง:<input type="text"  id="t2" value=""readonly="readonly" />
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+                <div class="checkbox">
+                  <label><input type="checkbox" value="อื่นๆ">อื่นๆ</label>  <textarea class="form-control" rows="3" name="etc"></textarea>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                    <div class="row">
+                    
+                        <div class="col-md-6">
+                                ชื่อผู้ประเมิน: <input type="text" name="namerate" id="namerate" required>
+                        </div>
+            
+                        <div class="col-md-6">
+                                ชื่อผู้ถูกประเมิน: <input type="text"  name="nametest" id="nametest" readonly>
+                        </div>
+                  
+            
+                   
+                </div>
+            </div>
+
+
+
+
+
+
+            
+
+
+    
+
     <br><br>
+    <table id="customers">
+            <tr>
+              <th COLSPAN="4" style="text-align:center">เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน(100 คะแนน )</th>
+            </tr>
+            <tr>
+              <td style="text-align:center">หัวข้อการประเมิน</td>
+              <td style="text-align:center">10-8
+                    ดี
+                    </td>
+              <td style="text-align:center">7-5
+                    พอใช้
+                    </td>
+              <td style="text-align:center">4-1
+                    ปรับปรุง
+                    </td>
+              
+            </tr>
+        @foreach ($manager as $managers)
+            
+            <tr>
+                    <td  style="width:43%"  > {{  $managers->manager  }} </td>
+                    <td style="text-align:center">
+                           <input type="text"   >
+                    </td>
+                    <td style="text-align:center">
+                            <input type="text"   >
+                        </td>
+                        <td style="text-align:center">
+                                <input type="text"   >
+                            </td>
+            </tr>
+
+
+
+
+        @endforeach
+<tr>
+
+    <td COLSPAN="4" >
+    </td>
+</tr>
+
+          </table>
+       
+
+        </div>
+        <br><br><br>
 </body>
 </html>
 @endsection

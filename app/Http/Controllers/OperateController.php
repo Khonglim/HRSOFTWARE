@@ -26,11 +26,13 @@ class OperateController extends Controller
      */
     public function create()
     {
+        $manager = DB::table('__manager')->get();
         $operate_Chioce  = Operate_Chioce::all();
         $operate_qSeff  = Operate_qSeff::all();
         $data = array(
             'operate_Chioce' =>  $operate_Chioce,
-            'operate_qSeff' =>   $operate_qSeff
+            'operate_qSeff' =>   $operate_qSeff,
+            'manager' =>   $manager,
         );
         return view("operate/operate_staff",$data);
     }

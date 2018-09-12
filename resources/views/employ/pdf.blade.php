@@ -69,7 +69,7 @@
             <td><b>ศาสนา:</b> {{$personal->religion}}</td>
             <td><b>เพศ:</b> {{$personal->gender}}</td>
             <td><b>ส่วนสูง:</b> {{$personal->height}}</td>
-            <td colspan="3"><b>น้ำหนัก: </b>{{$personal->height}} </td>
+            <td colspan="3"><b>น้ำหนัก: </b>{{$personal->weight}} </td>
           </tr>
           <tr>
                 <td>
@@ -263,7 +263,7 @@
                         <th>จบปีการศึกษา</th>
                         <th>เกรดเฉลี่ย</th>
                         <th>สาขา</th>
-                        <th>วุฒที่ได้รับ</th>
+                        <th>วุฒิที่ได้รับ</th>
                     </tr>
                 </thead>
                 <tr>

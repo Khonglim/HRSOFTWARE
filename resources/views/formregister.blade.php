@@ -184,7 +184,7 @@
                                                     <div class="col-md-2 col-xs-2">
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">เงินเดือนที่ต้องการ<small class="text-danger">*</small></label>
-                                                            {{ Form::text('salaryngg','', ['class' => 'form-control']) }}
+                                                            {{ Form::text('salaryngg','', ['class' => 'form-control','required']) }}
                                             
                                                            </div>
     
@@ -192,7 +192,7 @@
                                                     <div class="col-md-2 col-xs-2">
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">ตำแหน่งที่จะสมัคร<small class="text-danger">*</small></label>
-                                                            {{ Form::text('positionngg','', ['class' => 'form-control']) }}
+                                                            {{ Form::text('positionngg','', ['class' => 'form-control','required']) }}
                                             
                                                            </div>
     
@@ -210,8 +210,6 @@
                                                         <label>สัญชาติ<small class="text-danger">*</small></label>  
                                                         {{ Form::select('nationality', ['ไทย' => 'ไทย'
 
-                                                        ,'คริสต์' => 'คริสต์'
-                                                        ,'อิสลาม' => 'อิสลาม'
                                                         ,'อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
                                                         </div>
                                                 </div>
@@ -219,7 +217,7 @@
                                                 <div class="col-md-2 col-xs-2 ">
                                                     <div class="form-group" >
                                                         <label>เชื้อชาติ<small class="text-danger">*</small></label>  
-                                                        {{ Form::select('race', ['ไทย' => 'ไทย','คริสต์' => 'คริสต์','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
+                                                        {{ Form::select('race', ['ไทย' => 'ไทย','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
                                                         <span class="text-danger">{{ $errors->first('race') }}</span>
                                                         </div>
                                                 </div>
@@ -315,7 +313,7 @@
                                             <div class="col-md-1"></div>
                                             <div class="col-md-2 col-xs-3 ">
                                                 <div class="form-group {{ $errors->has('issueddate') ? 'has-error' : '' }}" >
-                                                        <label class="control-label"><h4>วันนออกบัตร<small class="text-danger">*</small></h4></label>
+                                                        <label class="control-label"><h4>วันออกบัตร<small class="text-danger">*</small></h4></label>
                                                     {{Form::date('issueddate','',['class'=>'form-control','required'])}}   
                                                     <span class="text-danger">{{ $errors->first('issueddate') }}</span>
                                                     </div>
@@ -339,20 +337,18 @@
 <div class="row" >
         <div class="col-md-1"></div>
         <div class="col-md-4  col-xs-5">
-                                                  
+                   
                 <div class="form-group label-floating">
-                        <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้<small class="text-danger">*</small></label>
-                        <textarea name="address1"  class="form-control"  rows="3"  required>{{ old('address1') }}</textarea>     
-               </div>
-            
+                        <label class="control-label">ที่อยู่ตามบัตรประชาชน<small class="text-danger">*</small></label>
+                        <textarea name="address2" class="form-control"  rows="3" required >{{ old('address2') }}</textarea> 
+                </div>
          </div>
-
 
  <div class="col-md-4 col-xs-5">
-         <div class="form-group label-floating">
-                 <label class="control-label">ที่อยู่ตามบัตรประชาชน<small class="text-danger">*</small></label>
-                 <textarea name="address2" class="form-control"  rows="3" required >{{ old('address2') }}</textarea> 
-         </div>
+        <div class="form-group label-floating">
+                <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้<small class="text-danger">*</small></label>
+                <textarea name="address1"  class="form-control"  rows="3"  required>{{ old('address1') }}</textarea>     
+       </div>
 </div>
 
 </div>

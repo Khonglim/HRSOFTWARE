@@ -31,5 +31,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ScoreOperateTableSeeder::class);
         $this->call(OperateStaffTableSeeder::class);
         $this->call(OperateSupTableSeeder::class);
+        $this->call(ManagerTableSeeder::class);
+       
+
     }
 }

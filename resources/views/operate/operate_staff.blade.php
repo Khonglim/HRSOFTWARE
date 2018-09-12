@@ -264,8 +264,45 @@
             </div>
 
 
+<br><br>
+            <table id="customers">
+                    <tr>
+                      <th COLSPAN="4" style="text-align:center">เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน(100 คะแนน )</th>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">หัวข้อการประเมิน</td>
+                      <td style="text-align:center">10-8
+                            ดี
+                            </td>
+                      <td style="text-align:center">7-5
+                            พอใช้
+                            </td>
+                      <td style="text-align:center">4-1
+                            ปรับปรุง
+                            </td>
+                      
+                    </tr>
+                @foreach ($manager as $managers)
+                    
+                    <tr>
+                            <td  style="width:43%"  > {{  $managers->manager  }} </td>
+                            <td style="text-align:center">
+                                   <input type="text"   >
+                            </td>
+                            <td style="text-align:center">
+                                    <input type="text"   >
+                                </td>
+                                <td style="text-align:center">
+                                        <input type="text"   >
+                                    </td>
+                    </tr>
 
 
+
+
+                @endforeach
+
+                  </table>
 
 
 
