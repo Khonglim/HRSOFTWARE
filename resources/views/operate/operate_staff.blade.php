@@ -302,30 +302,134 @@
 
                 @endforeach
 
+                <tr>
+
+                        <td style="text-align:center" >
+            รวมคะแนน
+            
+                        </td>
+                        <td  COLSPAN="3">
+            
+            
+                            </td>
+                           
+                 </tr>
+
                   </table>
 
+     
+                  <div class="form-group">
+                        <div class="row">     
+                                    ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน) <textarea class="form-control" rows="3" name="assessor"></textarea>
+                    </div>
+                    <div class="row">
+                            <div class="form-group">
+                                    <div class="checkbox">
+                                            <label><input type="checkbox" value="อนุมัติตามผู้บังคับบัญชาเสนอ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
+                                          </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                                <div class="checkbox">
+                                                        <label><input type="checkbox" value="อื่นๆ">อื่นๆ</label><textarea class="form-control" rows="3" name="auu"></textarea>
+                                                      </div>
+                                                    </div>
+                        </div>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+                        <div class="row">
+                        
+                            <div class="col-md-6">
+                                  
+                            </div>
+                
+                            <div class="col-md-6">
+                                    ชื่อผู้ถูกประเมิน: <input type="text"  name="nametest" id="nametest2" >
+                            </div>
+                      
+                
+                       
+                    </div>
+                </div>
+
+
+                <br><br>
 
 
 
 
 
+                <table id="customers">
+                        <tr>
+                          <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th>
+                        </tr>
+                        <tr>
+                          <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                          <td style="text-align:center">ลาป่วย(วัน )</td>
+                          <td style="text-align:center">ลากิจ (วัน )</td>
+                          <td style="text-align:center">ขาดงาน (วัน )</td>
+                          <td style="text-align:center">พักร้อน (วัน )</td>
+                          <td style="text-align:center">สาย (ครั้ง)</td>
+                          <td style="text-align:center">สาย (นาที)</td>
+                       
+                        </tr>
+                        <tr>
+                          <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate" id="startrate" readonly > <br><br>
+                            ถึงวันที่    <input type="text" name="endrate" id="endrate" readonly>
+                        
+                        
+                        </td>
+                          <td style="text-align:center"> <input type="text" name="sick"   id="sick"     style="width:50px" > </td>
+                          <td style="text-align:center"><input type="text" name="errand"    id="errand"   style="width:50px" ></td>
+                          <td style="text-align:center"><input type="text" name="absence"     id="absence"    style="width:50px" ></td>
+                          <td style="text-align:center"><input type="text"   name="vacation"   id="vacation"   style="width:50px"></td>
+                          <td style="text-align:center"><input type="text"  name="line"    id="line"   style="width:50px"></td>
+                          <td style="text-align:center"><input type="text"  name="min"    id="min"  style="width:50px"></td>
+                        
+                        </tr>
+                       
+                      
+                    
+                     
+                     
+                      
+                      </table>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+                      <table id="customers">
+                            <tr>
+                              <th COLSPAN="3" style="text-align:center">สรุปผลการประเมิน</th>
+                              
+                            </tr>
+                            <tr>
+                              <td style="text-align:center">ประเภทการประเมิน</td>
+                              <td style="text-align:center">คะแนนเต็ม</td>
+                              <td style="text-align:center">คะแนนที่ได้</td>
+                            </tr>
+                            <tr>
+                              <td style="width:35%" >1. การประเมินผลการปฏิบัติงาน 
+                                    โดย <b> ผู้บังคับบัญชา </b>
+                                 </td>
+                              <td style="text-align:center">100
+                                </td>
+                              <td style="text-align:center"> <input type="text"  name="scoresp"    id="scoresp"  style="width:50px"></td>
+                            </tr>
+                            <tr>
+                              <td>2. การประเมินผลการปฏิบัติงาน
+                                    โดย <b> ผู้จัดการฝ่าย </b></td>
+                              <td style="text-align:center">100</td>
+                              <td style="text-align:center"><input type="text"  name="scoremp"    id="scoremp"  style="width:50px"></td>
+                            </tr>
+                          
+                          </table>
 
 
 
