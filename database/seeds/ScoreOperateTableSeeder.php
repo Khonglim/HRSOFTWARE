@@ -11,26 +11,26 @@ class ScoreOperateTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('score_operate_')->insert([
+        DB::table('_score_operate_')->insert([
             
-            'score_operate_' => '1',
+            'score_operate' => '1',
             
         ]);
         
-        DB::table('score_operate_')->insert([
+        DB::table('_score_operate_')->insert([
            
-            'score_operate_' => '2',
+            'score_operate' => '2',
           
         ]);
 
-        DB::table('score_operate_')->insert([
-            'score_operate_' => '3',
+        DB::table('_score_operate_')->insert([
+            'score_operate' => '3',
            
         ]);
 
-        DB::table('score_operate_')->insert([
+        DB::table('_score_operate_')->insert([
             
-            'score_operate_' => '4',
+            'score_operate' => '4',
         ]);
     }
 }

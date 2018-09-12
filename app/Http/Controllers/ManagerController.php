@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Operate_Chioce;
-use App\Operate_qSeff;
-use DB;
-class OperateController extends Controller
+
+class ManagerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,13 +24,7 @@ class OperateController extends Controller
      */
     public function create()
     {
-        $operate_Chioce  = Operate_Chioce::all();
-        $operate_qSeff  = Operate_qSeff::all();
-        $data = array(
-            'operate_Chioce' =>  $operate_Chioce,
-            'operate_qSeff' =>   $operate_qSeff
-        );
-        return view("operate/operate_staff",$data);
+        //
     }
 
     /**

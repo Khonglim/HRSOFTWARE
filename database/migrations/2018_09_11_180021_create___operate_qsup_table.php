@@ -15,7 +15,8 @@ class CreateOperateQsupTable extends Migration
     {
         Schema::create('__operate_qsup', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->mediumText('operate_qsup');
+         
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOperateQstaffTable extends Migration
+class CreateManagerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateOperateQstaffTable extends Migration
      */
     public function up()
     {
-        Schema::create('__operate_qstaff', function (Blueprint $table) {
+        Schema::create('__manager', function (Blueprint $table) {
             $table->increments('id');
-            $table->mediumText('operate_qstaff');
-           
+            $table->mediumText('manager');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateOperateQstaffTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('__operate_qstaff');
+        Schema::dropIfExists('__manager');
     }
 }

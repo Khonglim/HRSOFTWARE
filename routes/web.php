@@ -14,12 +14,6 @@ use App\Testdisc;
 |
 */
 
-
-
-
-
-
-
 Route::resource('employee','EmployeeController');
 
 Route::resource('rate','InterviewController');
@@ -29,6 +23,10 @@ Route::resource('rate_sup','Interview_supController');
 Route::resource('disctest','DisctestController');
 
 Route::resource('con_all', 'Con_allController');
+
+Route::resource('Operate', 'OperateController');
+
+Route::resource('Operate_sup', 'Operate_supController');
 
 Route::resource('mbti','TestmbtiController');
 Route::post('/start','AnswerController@start');
@@ -118,9 +116,5 @@ Route::get('savembti', function () { return view("testmbti/save");});
 Route::get('savedisc', function () { return view("testdisc/save");});
 
 
-//Clear Cache facade value:
-Route::get('/clear-cache', function() {
-    $exitCode = Artisan::call('cache:clear');
-    return '<h1>Cache facade value cleared</h1>';
-});
+
 
