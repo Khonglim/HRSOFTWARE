@@ -772,18 +772,18 @@
                    
                 }
 
- if(score60_1[0].checked ){
-        group_60_1 =  score60_1[0].value 
+ if(score60_9[0].checked ){
+        group_60_9 =  score60_9[0].value 
                 }
-                if( score60_1[1].checked ){
-                    group_60_1 =  score60_1[1].value 
+                if( score60_9[1].checked ){
+                    group_60_9 =  score60_9[1].value 
                 }
-                if( score60_1[2].checked ){
-                    group_60_1 =  score60_1[2].value
+                if( score60_9[2].checked ){
+                    group_60_9 =  score60_9[2].value
                    
                 } 
-                 if( score60_1[3].checked ){
-                    group_60_1 =  score60_1[3].value
+                 if( score60_9[3].checked ){
+                    group_60_9 =  score60_9[3].value
                    
                 }
 
