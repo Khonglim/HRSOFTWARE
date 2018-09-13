@@ -77,7 +77,7 @@
     <div class="form-group">
   <div class="row">
 
-    ครบทดลองงาน:<input type="text" name="totolDay" id="totolDay" value=""  readonly/> วัน
+    ครบทดลองงาน:<input type="text" name="totolDay" id="totolDay2" value=""  readonly/> วัน
 </div>    
     
     </div>

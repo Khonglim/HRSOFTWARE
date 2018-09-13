@@ -954,10 +954,6 @@ if( score_19[0].checked ){
  }
 
 
-
-
-
-
 if( score_20[0].checked ){
    group5_8 =  score_20[0].value 
  }
@@ -979,21 +975,7 @@ if( score_20[0].checked ){
 
 group5 = parseInt(group5_1)+parseInt(group5_2)+parseInt(group5_3)+parseInt(group5_4)+parseInt(group5_5)+parseInt(group5_6)+parseInt(group5_7)+parseInt(group5_8); 
  $('#group5').val( group5);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        });
+ });
        
         
         

@@ -167,7 +167,7 @@
 					}
 				});
 				endDateTextBox.datepicker({ 
-					dateFormat: 'dd-M-yy',
+					dateFormat: 'dd/M/yy',
 					onClose: function(dateText, inst) {
 						if (startDateTextBox.val() != '') {
 							var testStartDate = startDateTextBox.datetimepicker('getDate');

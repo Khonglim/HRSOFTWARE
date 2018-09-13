@@ -170,13 +170,13 @@
      
         <td style="text-align:center">
      
-     <input type="text" name="total_60" id="total_60" readonly>
+     <input type="text" name="total_60" id="total_60" style="text-align:center" readonly>
      
          </td>
      
          <td  style="text-align:center">
      
-                 <input type="text" name="total_60" id="total_60" readonly>
+                 <input type="text" name="total_90" id="total_90"  style="text-align:center"   readonly>
      
              </td>
 
@@ -191,9 +191,9 @@
 
             <td  COLSPAN="4" >
      
-                    รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly > คะแนน  <br><br>
-                                  ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly> คะแนน<br><br>  
-                                  (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly> คะแนน  
+                    รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center"  > คะแนน  <br><br>
+                                  ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center"> คะแนน<br><br>  
+                                  (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center"> คะแนน  
                   </td>
 
 
@@ -290,13 +290,13 @@
                     <tr>
                             <td  style="width:43%"  > {{  $managers->manager  }} </td>
                             <td style="text-align:center">
-                                   <input type="text"   style="width:50px" >
+                                   <input type="text" id="staaff_one"  style="width:50px"  style="text-align:center" >
                             </td>
                             <td style="text-align:center">
-                                    <input type="text"   style="width:50px" >
+                                    <input type="text"   id="staaff_one" style="width:50px"  style="text-align:center">
                                 </td>
                                 <td style="text-align:center">
-                                        <input type="text"   style="width:50px" >
+                                        <input type="text"  id="staaff_one"  style="width:50px" style="text-align:center" >
                                     </td>
                     </tr>
 
@@ -573,19 +573,12 @@
                                                                 <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">อื่น ๆ </label><textarea class="form-control" rows="3" name="auu2"></textarea>
                                                               </div>
                                                             </div>
-
                                                         </div>
-                                                            
 
-
-
-
-
-
-                                                            <div class="form-group">
-                                                                    <div class="row">
+                                                 <div class="form-group">
+                                                            <div class="row">
                                                                     
-                                                                        <div class="col-md-6">
+                                                            <div class="col-md-6">
                                                                               
                                                                         </div>
                                                             
@@ -645,6 +638,30 @@
      var group_60_13=0;
      var group_60_14=0;
      var group_60_15=0;
+     var group_total =0;
+
+
+     var group_90_1=0;
+     var group_90_2=0;
+     var group_90_3=0;
+     var group_90_4=0;
+     var group_90_5=0;
+     var group_90_6=0;
+     var group_90_7=0;
+     var group_90_8=0;
+     var group_90_9=0;
+     var group_90_10=0;
+     var group_90_11=0;
+     var group_90_12=0;
+     var group_90_13=0;
+     var group_90_14=0;
+     var group_90_15=0;
+     var group_90_total =0;
+
+    var group_all_total =0;
+
+
+
 
     if(score60_1[0].checked ){
         group_60_1 =  score60_1[0].value 
@@ -788,6 +805,352 @@
                 }
 
 
+if(score60_10[0].checked ){
+        group_60_10 =  score60_10[0].value 
+                }
+                if( score60_10[1].checked ){
+                    group_60_10 =  score60_10[1].value 
+                }
+                if( score60_10[2].checked ){
+                    group_60_10 =  score60_10[2].value
+                   
+                } 
+                 if( score60_10[3].checked ){
+                    group_60_10 =  score60_10[3].value
+                   
+                }
+
+if(score60_11[0].checked ){
+        group_60_11 =  score60_11[0].value 
+                }
+                if( score60_11[1].checked ){
+                    group_60_11 =  score60_11[1].value 
+                }
+                if( score60_11[2].checked ){
+                    group_60_11 =  score60_11[2].value
+                   
+                } 
+                 if( score60_11[3].checked ){
+                    group_60_11 =  score60_11[3].value
+                   
+                }
+
+if(score60_12[0].checked ){
+        group_60_12 =  score60_12[0].value 
+                }
+                if( score60_12[1].checked ){
+                    group_60_12 =  score60_12[1].value 
+                }
+                if( score60_12[2].checked ){
+                    group_60_12 =  score60_12[2].value
+                   
+                } 
+                 if( score60_12[3].checked ){
+                    group_60_12 =  score60_12[3].value
+                   
+                }
+
+if(score60_13[0].checked ){
+        group_60_13 =  score60_13[0].value 
+                }
+                if( score60_13[1].checked ){
+                    group_60_13 =  score60_13[1].value 
+                }
+                if( score60_13[2].checked ){
+                    group_60_13=  score60_13[2].value
+                   
+                } 
+                 if( score60_13[3].checked ){
+                    group_60_13 =  score60_13[3].value
+                   
+                }
+
+if(score60_14[0].checked ){
+        group_60_14 =  score60_14[0].value 
+                }
+                if( score60_14[1].checked ){
+                    group_60_14 =  score60_14[1].value 
+                }
+                if( score60_14[2].checked ){
+                    group_60_14=  score60_14[2].value
+                   
+                } 
+                 if( score60_14[3].checked ){
+                    group_60_14 =  score60_14[3].value
+                   
+                }
+
+if(score60_15[0].checked ){
+        group_60_15 =  score60_15[0].value 
+                }
+                if( score60_15[1].checked ){
+                    group_60_15=  score60_15[1].value 
+                }
+                if( score60_15[2].checked ){
+                    group_60_15=  score60_15[2].value
+                   
+                } 
+                 if( score60_15[3].checked ){
+                    group_60_15 =  score60_15[3].value
+                   
+                }
+
+
+group_total =(parseInt(group_60_1)+parseInt(group_60_2)+parseInt(group_60_3)+parseInt(group_60_4)+parseInt(group_60_5)+parseInt(group_60_6)+parseInt(group_60_7)+parseInt(group_60_8)+parseInt(group_60_9)+parseInt(group_60_10)+parseInt(group_60_11)+parseInt(group_60_12)+parseInt(group_60_13)+parseInt(group_60_14)+parseInt(group_60_15))*100/60;
+
+
+                $('#total_60').val(group_total.toFixed( 2 ));      
+                $('#rate_60').val(group_total.toFixed( 2 ));      
+
+
+
+
+
+
+
+if(score90_1[0].checked ){
+        group_90_1 =  score90_1[0].value 
+                }
+                if( score90_1[1].checked ){
+                    group_90_1 =  score90_1[1].value 
+                }
+                if( score90_1[2].checked ){
+                    group_90_1 =  score90_1[2].value
+                   
+                } 
+                 if( score90_1[3].checked ){
+                    group_90_1 =  score90_1[3].value
+                   
+                }
+
+
+ if(score90_2[0].checked ){
+        group_90_2 =  score90_2[0].value 
+                }
+                if( score90_2[1].checked ){
+                    group_90_2 =  score90_2[1].value 
+                }
+                if( score90_2[2].checked ){
+                    group_90_2 =  score90_2[2].value
+                   
+                } 
+                 if( score90_2[3].checked ){
+                    group_90_2 =  score90_2[3].value
+                   
+                }
+
+ if(score90_3[0].checked ){
+        group_90_3 =  score90_3[0].value 
+                }
+                if( score90_3[1].checked ){
+                    group_90_3 =  score90_3[1].value 
+                }
+                if( score90_3[2].checked ){
+                    group_90_3 =  score90_3[2].value
+                   
+                } 
+                 if( score90_3[3].checked ){
+                    group_90_3 =  score90_3[3].value
+                   
+                }
+
+
+ if(score60_4[0].checked ){
+        group_90_4 =  score90_4[0].value 
+                }
+                if( score90_4[1].checked ){
+                    group_90_4 =  score90_4[1].value 
+                }
+                if( score90_4[2].checked ){
+                    group_90_4 =  score90_4[2].value
+                   
+                } 
+                 if( score90_4[3].checked ){
+                    group_90_4 =  score90_4[3].value
+                   
+                }
+
+ if(score90_5[0].checked ){
+        group_90_5 =  score90_5[0].value 
+                }
+                if( score90_5[1].checked ){
+                    group_90_5 =  score90_5[1].value 
+                }
+                if( score90_5[2].checked ){
+                    group_90_5 =  score90_5[2].value
+                   
+                } 
+                 if( score90_5[3].checked ){
+                    group_90_5 =  score90_5[3].value
+                   
+                }
+
+
+
+ if(score90_6[0].checked ){
+        group_90_6 =  score90_6[0].value 
+                }
+                if( score90_6[1].checked ){
+                    group_90_6 =  score90_6[1].value 
+                }
+                if( score90_6[2].checked ){
+                    group_90_6 =  score90_6[2].value
+                   
+                } 
+                 if( score90_6[3].checked ){
+                    group_90_6 =  score90_6[3].value
+                   
+                }
+
+
+ if(score90_7[0].checked ){
+        group_90_7 =  score90_7[0].value 
+                }
+                if( score90_7[1].checked ){
+                    group_90_7 =  score90_7[1].value 
+                }
+                if( score90_7[2].checked ){
+                    group_90_7 =  score90_7[2].value
+                   
+                } 
+                 if( score90_7[3].checked ){
+                    group_90_7 =  score90_7[3].value
+                   
+                }
+
+
+ if(score90_8[0].checked ){
+        group_60_8 =  score90_8[0].value 
+                }
+                if( score90_8[1].checked ){
+                    group_90_8 =  score90_8[1].value 
+                }
+                if( score90_8[2].checked ){
+                    group_90_8 =  score90_8[2].value
+                   
+                } 
+                 if( score90_8[3].checked ){
+                    group_90_8 =  score90_8[3].value
+                   
+                }
+
+ if(score90_9[0].checked ){
+        group_90_9 =  score90_9[0].value 
+                }
+                if( score90_9[1].checked ){
+                    group_90_9 =  score90_9[1].value 
+                }
+                if( score90_9[2].checked ){
+                    group_90_9 =  score90_9[2].value
+                   
+                } 
+                 if( score90_9[3].checked ){
+                    group_90_9 =  score90_9[3].value
+                   
+                }
+
+
+if(score90_10[0].checked ){
+        group_90_10 =  score90_10[0].value 
+                }
+                if( score90_10[1].checked ){
+                    group_90_10 =  score90_10[1].value 
+                }
+                if( score90_10[2].checked ){
+                    group_90_10 =  score90_10[2].value
+                   
+                } 
+                 if( score90_10[3].checked ){
+                    group_90_10 =  score90_10[3].value
+                   
+                }
+
+if(score90_11[0].checked ){
+        group_90_11 =  score90_11[0].value 
+                }
+                if( score90_11[1].checked ){
+                    group_90_11 =  score90_11[1].value 
+                }
+                if( score90_11[2].checked ){
+                    group_90_11 =  score90_11[2].value
+                   
+                } 
+                 if( score90_11[3].checked ){
+                    group_90_11 =  score90_11[3].value
+                   
+                }
+
+if(score90_12[0].checked ){
+        group_90_12 =  score90_12[0].value 
+                }
+                if( score90_12[1].checked ){
+                    group_90_12 =  score90_12[1].value 
+                }
+                if( score60_12[2].checked ){
+                    group_90_12 =  score90_12[2].value
+                   
+                } 
+                 if( score90_12[3].checked ){
+                    group_90_12 =  score90_12[3].value
+                   
+                }
+
+if(score90_13[0].checked ){
+        group_90_13 =  score90_13[0].value 
+                }
+                if( score90_13[1].checked ){
+                    group_90_13 =  score90_13[1].value 
+                }
+                if( score90_13[2].checked ){
+                    group_90_13=  score90_13[2].value
+                   
+                } 
+                 if( score90_13[3].checked ){
+                    group_90_13 =  score90_13[3].value
+                   
+                }
+
+if(score90_14[0].checked ){
+        group_90_14 =  score90_14[0].value 
+                }
+                if( score90_14[1].checked ){
+                    group_90_14 =  score90_14[1].value 
+                }
+                if( score60_14[2].checked ){
+                    group_90_14=  score90_14[2].value
+                   
+                } 
+                 if( score90_14[3].checked ){
+                    group_90_14 =  score90_14[3].value
+                   
+                }
+
+if(score90_15[0].checked ){
+        group_90_15 =  score90_15[0].value 
+                }
+                if( score90_15[1].checked ){
+                    group_90_15=  score90_15[1].value 
+                }
+                if( score90_15[2].checked ){
+                    group_90_15=  score90_15[2].value
+                   
+                } 
+                 if( score90_15[3].checked ){
+                    group_90_15 =  score90_15[3].value
+                   
+                }
+
+            group_90_total =(parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15))*100/60;
+
+               
+               
+               
+                $('#total_90').val(group_90_total.toFixed( 2 ));      
+                $('#rate_90').val(group_90_total.toFixed( 2 ));    
+
+
+
+          $('#rate_all').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt(group_total.toFixed( 2 )))/2);   
 
 
 
@@ -802,7 +1165,35 @@
 
 
 
-                $('#total_60').val(group_60);      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
 </script>
