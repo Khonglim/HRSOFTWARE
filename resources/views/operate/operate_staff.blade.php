@@ -137,7 +137,7 @@
                     @foreach ($operate_Chioce as $item)
                         
                      
-                    <input type="radio" id="score60_{{$operate_qSef->id}}" name="score60_{{$operate_qSef->id}}" value={{$item->score_operate}} required > {{$item->score_operate}}&ensp;
+                    <input type="radio" id="score60_{{$operate_qSef->id}}" name="score60_{{$operate_qSef->id}}" value={{$item->score_operate}}  > {{$item->score_operate}}&ensp;
 
 
                     @endforeach
@@ -148,7 +148,7 @@
                 @foreach ($operate_Chioce as $item2)
                         
                      
-                <input type="radio" id="score90_{{$operate_qSef->id}}" name="score90_{{$operate_qSef->id}}" value={{$item2->score_operate}} required > {{$item2->score_operate}}&ensp;
+                <input type="radio" id="score90_{{$operate_qSef->id}}" name="score90_{{$operate_qSef->id}}" value={{$item2->score_operate}}  > {{$item2->score_operate}}&ensp;
 
 
                 @endforeach
@@ -328,13 +328,13 @@
                     <div class="row">
                             <div class="form-group">
                                     <div class="checkbox">
-                                            <label><input type="checkbox" value="อนุมัติตามผู้บังคับบัญชาเสนอ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
+                                            <label><input type="checkbox"  name="ok"   value="อนุมัติตามผู้บังคับบัญชาเสนอ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
                                           </div>
                                         </div>
 
                                         <div class="form-group">
                                                 <div class="checkbox">
-                                                        <label><input type="checkbox" value="อื่นๆ">อื่นๆ</label><textarea class="form-control" rows="3" name="auu"></textarea>
+                                                        <label><input type="checkbox" name="other1" value="อื่นๆ">อื่นๆ</label><textarea class="form-control" rows="3" name="auu"></textarea>
                                                       </div>
                                                     </div>
                         </div>
@@ -461,9 +461,9 @@
                                           <div class="row">
                                               
                                                 <div class="checkbox col-md-12">
-                                                        <label><input type="checkbox" value="ให้บรรจุเป็นพนักงานประจำ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
-                                                        <label><input type="checkbox" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:  </label><input type="text" >
-                                                        <label><input type="checkbox" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:  </label><input type="text">
+                                                        <label><input type="checkbox" name="ok2" value="ให้บรรจุเป็นพนักงานประจำ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
+                                                        <label><input type="checkbox" name="resara_1" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:  </label><input type="text" name="is_one">
+                                                        <label><input type="checkbox" name="resara_2" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:  </label><input type="text" name="is_two">
                                                         
                                                       </div>
                                                     
@@ -477,12 +477,12 @@
                                             <div class="form-group">
                                                     <div class="row">
                                                     <div class="checkbox col-md-12">
-                                                            <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ให้ปรับตำแหน่งเป็น </label><input type="text">
+                                                            <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ให้ปรับตำแหน่งเป็น </label><input type="text"  name="is_posi">
                                                           </div>
                                                       
                                                         <div class="form-group">
                                                                 <div class="checkbox col-md-12">
-                                                                        <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่  </label><input type="text">
+                                                                        <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่  </label><input type="date"  name="date_close">
                                                                       </div>
                                                                     </div>
                                                         <div class="form-group">
@@ -507,7 +507,7 @@
                                                                                 </div>
                                                                     
                                                                                 <div class="col-md-6">
-                                                                                        ลงนาม: <input type="text"  >ผู้จัดการฝ่ายทรัพยากรบุคคล
+                                                                                        ลงนาม: <input type="text" name="is_name" >ผู้จัดการฝ่ายทรัพยากรบุคคล
                                                                                 </div>
                                                                           
                                                                     
@@ -545,8 +545,8 @@
                                       
                                         <div class="checkbox col-md-12">
                                                 <label><input type="checkbox" value="ให้บรรจุเป็นพนักงานประจำ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
-                                                <label><input type="checkbox" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:  </label><input type="text" >
-                                                <label><input type="checkbox" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:  </label><input type="text">
+                                                <label><input type="checkbox" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:  </label><input type="text"  name="is_sara">
+                                                <label><input type="checkbox" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:  </label><input type="text" name="is_stsara">
                                                 
                                               </div>
                                             
@@ -560,17 +560,17 @@
                                     <div class="form-group">
                                             <div class="row">
                                             <div class="checkbox col-md-12">
-                                                    <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ให้ปรับตำแหน่งเป็น </label><input type="text">
+                                                    <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ให้ปรับตำแหน่งเป็น </label><input type="text" name="is_po">
                                                   </div>
                                               
                                                 <div class="form-group">
                                                         <div class="checkbox col-md-12">
-                                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่  </label><input type="text">
+                                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่  </label><input type="date" name="is_poyi">
                                                               </div>
                                                             </div>
                                                 <div class="form-group">
                                                         <div class="checkbox col-md-3">
-                                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">อื่น ๆ </label><textarea class="form-control" rows="3" name="auu"></textarea>
+                                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น ">อื่น ๆ </label><textarea class="form-control" rows="3" name="auu2"></textarea>
                                                               </div>
                                                             </div>
 
@@ -590,7 +590,7 @@
                                                                         </div>
                                                             
                                                                         <div class="col-md-6">
-                                                                                ลงนาม: <input type="text"  >ผู้จัดการฝ่ายทรัพยากรบุคคล
+                                                                                ลงนาม: <input type="text" name="is_for" >ผู้จัดการฝ่ายทรัพยากรบุคคล
                                                                         </div>
                                                                   
                                                             
@@ -627,6 +627,165 @@
 
 <br>
 
+<script>
+
+ $('input[type=radio]').change(function(){
+     var group_60_1=0;
+     var group_60_2=0;
+     var group_60_3=0;
+     var group_60_4=0;
+     var group_60_5=0;
+     var group_60_6=0;
+     var group_60_7=0;
+     var group_60_8=0;
+     var group_60_9=0;
+     var group_60_10=0;
+     var group_60_11=0;
+     var group_60_12=0;
+     var group_60_13=0;
+     var group_60_14=0;
+     var group_60_15=0;
+
+    if(score60_1[0].checked ){
+        group_60_1 =  score60_1[0].value 
+                }
+                if( score60_1[1].checked ){
+                    group_60_1 =  score60_1[1].value 
+                }
+                if( score60_1[2].checked ){
+                    group_60_1 =  score60_1[2].value
+                   
+                } 
+                 if( score60_1[3].checked ){
+                    group_60_1 =  score60_1[3].value
+                   
+                }
+
+
+ if(score60_2[0].checked ){
+        group_60_2 =  score60_2[0].value 
+                }
+                if( score60_2[1].checked ){
+                    group_60_2 =  score60_2[1].value 
+                }
+                if( score60_2[2].checked ){
+                    group_60_2 =  score60_2[2].value
+                   
+                } 
+                 if( score60_2[3].checked ){
+                    group_60_2 =  score60_2[3].value
+                   
+                }
+
+ if(score60_3[0].checked ){
+        group_60_3 =  score60_3[0].value 
+                }
+                if( score60_3[1].checked ){
+                    group_60_3 =  score60_3[1].value 
+                }
+                if( score60_3[2].checked ){
+                    group_60_3 =  score60_3[2].value
+                   
+                } 
+                 if( score60_3[3].checked ){
+                    group_60_3 =  score60_3[3].value
+                   
+                }
+
+
+ if(score60_4[0].checked ){
+        group_60_4 =  score60_4[0].value 
+                }
+                if( score60_4[1].checked ){
+                    group_60_4 =  score60_4[1].value 
+                }
+                if( score60_4[2].checked ){
+                    group_60_4 =  score60_4[2].value
+                   
+                } 
+                 if( score60_4[3].checked ){
+                    group_60_4 =  score60_4[3].value
+                   
+                }
+
+ if(score60_5[0].checked ){
+        group_60_5 =  score60_5[0].value 
+                }
+                if( score60_5[1].checked ){
+                    group_60_5 =  score60_5[1].value 
+                }
+                if( score60_5[2].checked ){
+                    group_60_5 =  score60_5[2].value
+                   
+                } 
+                 if( score60_5[3].checked ){
+                    group_60_5 =  score60_5[3].value
+                   
+                }
+
+
+
+ if(score60_6[0].checked ){
+        group_60_6 =  score60_6[0].value 
+                }
+                if( score60_6[1].checked ){
+                    group_60_6 =  score60_6[1].value 
+                }
+                if( score60_6[2].checked ){
+                    group_60_6 =  score60_6[2].value
+                   
+                } 
+                 if( score60_6[3].checked ){
+                    group_60_6 =  score60_6[3].value
+                   
+                }
+
+
+ if(score60_7[0].checked ){
+        group_60_7 =  score60_7[0].value 
+                }
+                if( score60_7[1].checked ){
+                    group_60_7 =  score60_7[1].value 
+                }
+                if( score60_7[2].checked ){
+                    group_60_7 =  score60_7[2].value
+                   
+                } 
+                 if( score60_7[3].checked ){
+                    group_60_7 =  score60_7[3].value
+                   
+                }
+
+
+ if(score60_8[0].checked ){
+        group_60_8 =  score60_8[0].value 
+                }
+                if( score60_8[1].checked ){
+                    group_60_8 =  score60_8[1].value 
+                }
+                if( score60_8[2].checked ){
+                    group_60_8 =  score60_8[2].value
+                   
+                } 
+                 if( score60_8[3].checked ){
+                    group_60_8 =  score60_8[3].value
+                   
+                }
+
+ if(score60_1[0].checked ){
+        group_60_1 =  score60_1[0].value 
+                }
+                if( score60_1[1].checked ){
+                    group_60_1 =  score60_1[1].value 
+                }
+                if( score60_1[2].checked ){
+                    group_60_1 =  score60_1[2].value
+                   
+                } 
+                 if( score60_1[3].checked ){
+                    group_60_1 =  score60_1[3].value
+                   
+                }
 
 
 
@@ -638,6 +797,15 @@
 
 
 
+
+
+
+
+
+                $('#total_60').val(group_60);      
+
+});
+</script>
     <br><br><br><br>
 </body>
 </html>
