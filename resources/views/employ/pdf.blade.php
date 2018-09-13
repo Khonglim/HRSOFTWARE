@@ -340,7 +340,7 @@
             </tbody>
           </table>
         </div>
-           
+
     <table>
           <tr>
                 <th colspan="8" align=center>ภาษา</th>
@@ -636,7 +636,13 @@
                     <td colspan="4"><b>อื่นๆ :</b> {{$personal->fax}} {{$personal->typewriter}} {{$personal->dot}} คำ/นาที</td>
                 </tr>
                 <tr>
-                    <td colspan="8"><b>ในตำแหน่งที่ต้องการต้องมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ) : </b>{{$personal->crash1}} ชื่อ : {{$personal->compd}}</td>
+                    <td colspan="8"><b>ในตำแหน่งที่ต้องการต้องมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ) : </b> 
+                       @if ($personal->crash1 =='ขัดข้อง')
+                        {{$personal->crash1}}
+                       @else
+                       {{$personal->crash1}}<b> ชื่อ: </b>{{$personal->compd}}    
+                       @endif 
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="3"><b>สถานที่ทำงาน :</b> {{$personal->compa}}</td>
@@ -680,13 +686,5 @@
           </tbody>
       </table>
 
-    
-
-      <table>
-         <tr>
-            <td> <b>Linkผลงาน</b>  {{$personal->portfolio1}}</td>            
-          </tr>
-        </tbody>
-      </table>
 </body>
 </html>
