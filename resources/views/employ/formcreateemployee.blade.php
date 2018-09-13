@@ -1162,7 +1162,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group ">
-                                <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)<small class="text-danger">*</small></label> &emsp;&emsp;
+                                <label>ในตำแหน่งที่ต้องการต้องมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)<small class="text-danger">*</small></label> &emsp;&emsp;
                                 <input type="radio" name="crash1" value="ขัดข้อง"  id="crash1" required > ขัดข้อง
                                 <input type="radio" name="crash1" value="ไม่ขัดข้อง" id="crash1" required > ไม่ขัดข้อง                                    
                                 </div>
