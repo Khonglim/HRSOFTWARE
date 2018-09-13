@@ -37,10 +37,7 @@
         }
         td,th{
             border:1px solid;
-
-
         }
-
         .page-break {
     page-break-after: always;
 }
@@ -50,29 +47,29 @@
 
 <center><h3>ข้อมูลประวัติ</h3>
 </center>
-
+<div class="page-break">
     <table>
         <tbody>
                
           <tr>
-          <td  align="center" ROWSPAN="2"> <img src="{{$personal->photo}}" alt="" width="100px" height="125px" > </td>
-            <td colspan="2"><b>ชื่อ: </b>  {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}} </td>
+          <td  align="center" ROWSPAN="3"> <img src="{{$personal->photo}}" alt="" width="100px" height="125px" > </td>
+            <td colspan="3"><b>ชื่อ: </b>  {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}} </td>
             <td><b>ชื่อเล่น:</b> {{$personal->nikname}}</td>
             <td><b>เพศ: </b>{{$personal->gender}}</td>
             <td colspan="2"> <b>วันเกิด:</b> {{$personal->birthday}} </td>
-            <td colspan="2"><b>อายุ:</b> {{$personal->age}}</td>
+            <td colspan="1"><b>อายุ:</b> {{$personal->age}}</td>
             
           </tr>
           <tr>
-            <td><b>เชื้อชาติ:</b> {{$personal->race}} </td>
+            <td colspan="2"><b>เชื้อชาติ:</b> {{$personal->race}} </td>
             <td><b>สัญชาติ:</b> {{$personal->nationality}}</td>
             <td><b>ศาสนา:</b> {{$personal->religion}}</td>
             <td><b>เพศ:</b> {{$personal->gender}}</td>
             <td><b>ส่วนสูง:</b> {{$personal->height}}</td>
-            <td colspan="3"><b>น้ำหนัก: </b>{{$personal->weight}} </td>
+            <td colspan="2"><b>น้ำหนัก: </b>{{$personal->weight}} </td>
           </tr>
           <tr>
-                <td>
+                <td colspan="2">
                         <b>  พี่น้องกี่คน:</b> 
                         @if($personal->brothers == '')
                         ::ว่าง::
@@ -94,12 +91,16 @@
                 @else
                 {{$personal->office}}
                 @endif</td>
-            <td colspan="4"><b>โทรศัพท์บ้าน:</b> {{$personal->home}}   </td>
+            <td colspan="2"><b>โทรศัพท์บ้าน:</b> {{$personal->home}}   </td>
           </tr>
 
           <tr>
             <td colspan="3"><b>โทรศัพท์มือถือ:</b> {{$personal->moblie}}  </td>
-                <td colspan="6"><b>อีเมล:</b> {{$personal->email}}</td>
+            <td colspan="6"><b>อีเมล์:</b> {{$personal->email}}</td>
+          </tr>
+          <tr>
+                <td colspan="4"><b>ตำแหน่งที่สมัคร :</b>{{$personal->positionngg}}</td>
+                <td colspan="5"><b>เงินเดือนที่ต้องการ :</b>{{$personal->salaryngg}}</td>
           </tr>
           <tr>
                 <td colspan="9">
@@ -119,7 +120,7 @@
                 <td colspan="3">
                         <b>  ออกให้ ณ อำเภอ/เขต: </b> {{$personal->issued}}   
                 </td>
-                <td colspan="3"></td>
+                <td colspan="3"><b>จังหวัด: </b>{{$personal->province_crad}}</td>
             </tr>
             <tr>
                 <td colspan="2" > <b>วันออกบัตร: </b> {{$personal->issueddate}}</td>     
@@ -338,8 +339,8 @@
                
             </tbody>
           </table>
-   
-     
+        </div>
+           
     <table>
           <tr>
                 <th colspan="8" align=center>ภาษา</th>
@@ -370,14 +371,8 @@
                 <td colspan="2">{{$personal->othel}}</td>
                 <td colspan="2">{{$personal->other}}</td>
             </tr>
-
-
-
-
         </tbody>
     </table>
-
-    
       <table>
           <tbody>
                 <tr>
@@ -386,7 +381,7 @@
               
                     <tr>
                         <th>ชื่อสถานประกอบการ</th>
-                        <th>ลักษณธงานที่รับผิดชอบ</th>
+                        <th>ลักษณะงานที่รับผิดชอบ</th>
                         <th>โทร</th>
                         <th>ระยะงานเริ่ม</th>
                         <th>ระยะงานสิ้นสุด</th>
@@ -644,8 +639,8 @@
                     <td colspan="8"><b>ในตำแหน่งที่ต้องการต้องมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ) : </b>{{$personal->crash1}} ชื่อ : {{$personal->compd}}</td>
                 </tr>
                 <tr>
-                    <td colspan="4"><b>สถานที่ทำงาน :</b> {{$personal->compa}}</td>
-                    <td colspan="4"><b>ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป :</b> {{$personal->crash2}}</td>
+                    <td colspan="3"><b>สถานที่ทำงาน :</b> {{$personal->compa}}</td>
+                    <td colspan="5"><b>ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป :</b> {{$personal->crash2}}</td>
                     
                 </tr>
                 <tr>
@@ -676,8 +671,8 @@
                         </td>
                 </tr>
                 <tr>
-                    <td colspan="4"><b>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่? : </b>{{$personal->serious_ill}}</td>
-                    <td colspan="4"><b>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่? :</b> {{$personal->offense}}</td>
+                    <td colspan="3"><b>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่? : </b>{{$personal->serious_ill}}</td>
+                    <td colspan="5"><b>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่? :</b> {{$personal->offense}}</td>
                 </tr>
                 <tr>
                     <td colspan="8"><b>ขณะนี้คุณตั้งครรภ์หรือไม่? :</b>{{$personal->pregnant}}</td>
@@ -693,12 +688,5 @@
           </tr>
         </tbody>
       </table>
-
-  
-
-
-
-
-    
 </body>
 </html>
