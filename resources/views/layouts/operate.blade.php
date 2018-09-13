@@ -200,7 +200,7 @@
 							
 	
 	
-							$("#totolDay").val(diffDays);
+							$("#totolDay2").val(diffDays);
 				}
 			}
 			

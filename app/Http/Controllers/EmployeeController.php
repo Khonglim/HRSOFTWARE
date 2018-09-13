@@ -243,25 +243,8 @@ class EmployeeController extends Controller
         
         $personal->talent = $request->talent;
         $personal->portfolio1 = $request->portfolio1;
-
-
-        
-
-
-        if(Input::hasFile('portfolio2')){
-            $file=Input::file('portfolio2');
-            $personal->portfolio2 = $file->getClientOriginalName();
-            $file->move(public_path(). '/', $file->getClientOriginalName());
-        }
-
-
-
-        if(Input::hasFile('portfolio3')){
-            $file=Input::file('portfolio3');
-            $personal->portfolio3 = $file->getClientOriginalName();
-            $file->move(public_path(). '/', $file->getClientOriginalName());
-        }
-
+        $personal->portfolio2 = $request->portfolio2;
+        $personal->portfolio3 = $request->portfolio3;
         $personal->fronname = $request->fronname;
         
         $personal->save();
@@ -572,22 +555,9 @@ class EmployeeController extends Controller
         $personal->talent = $request->talent;
 
         $personal->portfolio1 = $request->portfolio1;
-
-
-        if(Input::hasFile('portfolio2')){
-            $file=Input::file('portfolio2');
-            $personal->portfolio2 = $file->getClientOriginalName();
-            $file->move(public_path(). '/', $file->getClientOriginalName());
-        }
-
-
-
-        if(Input::hasFile('portfolio3')){
-            $file=Input::file('portfolio3');
-            $personal->portfolio3 = $file->getClientOriginalName();
-            $file->move(public_path(). '/', $file->getClientOriginalName());
-        }
-
+        $personal->portfolio2 = $request->portfolio2;
+        $personal->portfolio3 = $request->portfolio3;
+       
 
 
 

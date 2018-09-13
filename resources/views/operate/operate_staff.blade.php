@@ -58,23 +58,23 @@
                 <div class="row">
                 
                     <div class="col-md-4">
-                        แผนก/ฝ่าย :    <input type="text" name="name" required>
+                        แผนก/ฝ่าย :    <input type="text" name="name2" required>
                     </div>
         
                     <div class="col-md-4">
-                        วันที่เริ่มงาน: <input type="text" name="dateStart" id="dateStart" value="" /> 
+                        วันที่เริ่มงาน: <input type="text" name="dateStart2" id="dateStart2" value="" /> 
                     </div>
               
         
                 <div class="col-md-4">
-                    วันสิ้นสุด:<input type="text" name="dateEnd" id="dateEnd" value="" /> 
+                    วันสิ้นสุด:<input type="text" name="dateEnd2" id="dateEnd2" value="" /> 
                 </div>
             </div>
         </div>
             <div class="form-group">
           <div class="row">
                 <div class="col-md-4">
-            ครบทดลองงาน:<input type="text" name="totolDay" id="totolDay" value=""  readonly/> วัน
+            ครบทดลองงาน:<input type="text" name="totolDay2" id="totolDay2" value=""  readonly/> วัน
 
            
         </div>  

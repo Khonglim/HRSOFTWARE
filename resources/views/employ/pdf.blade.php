@@ -102,14 +102,18 @@
                 <td colspan="6"><b>อีเมล:</b> {{$personal->email}}</td>
           </tr>
           <tr>
-                <td rowspan="2" colspan="4">
+                <td rowspan="2" colspan="5">
                         <b> ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก: </b>{{$personal->address1}}
                 </td>
-                <td rowspan="2" colspan="5">
+                <td rowspan="2" colspan="4">
                         <b>  ที่อยู่ตามบัตรประชาชน:</b> {{$personal->address2}}  
                 </td>
           </tr>
-          <tr></tr>
+          <tr>
+
+
+            
+          </tr>
           <tr>
                 <td colspan="3">
                         <b>  เลขบัตรประชาชน:</b>  {{$personal->idcard}}    
