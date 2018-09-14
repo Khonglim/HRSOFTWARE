@@ -32,6 +32,8 @@ class DatabaseSeeder extends Seeder
         $this->call(OperateStaffTableSeeder::class);
         $this->call(OperateSupTableSeeder::class);
         $this->call(ManagerTableSeeder::class);
+
+        $this->call(NationalityTableSeeder::class);
        
 
     }

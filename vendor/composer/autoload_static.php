@@ -2190,6 +2190,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+        'NationalityTableSeeder' => __DIR__ . '/../..' . '/database/seeds/NationalityTableSeeder.php',
         'Ngg_employeeTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Ngg_employeeTableSeeder.php',
         'Ngg_evaluate_employeeTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Ngg_evaluate_employeeTableSeeder.php',
         'Ngg_levelTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Ngg_levelTableSeeder.php',
