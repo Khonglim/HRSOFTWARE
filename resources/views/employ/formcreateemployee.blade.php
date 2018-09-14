@@ -1,6 +1,21 @@
 @extends('layouts.new')
 @section('content')
-   
+<div class="banner-inner">
+        <br> 
+      <center> <h1 class="text-light"> สมัครงานออนไลน์ <br>
+
+        NGG | Jewellery
+
+
+
+
+      </h1>
+    
+    
+    
+    </center>
+      </div>   
+   <br>   <br>   <br>
 <div class="container">           
 <div class="stepwizard">
     <div class="stepwizard-row setup-panel">
@@ -42,6 +57,29 @@
         
                 <h3>ประวัติส่วนตัว</h3>
                 <div class="form-group">
+<div class="row">
+        <div class="col-md-3 "></div>
+        <div class="col-md-2 ">
+                <div class="form-group label-floating">
+                    <label class="control-label">เงินเดือนที่ต้องการ<small class="text-danger">*</small></label>
+                    {{ Form::text('salaryngg','', ['class' => 'form-control','required']) }}
+    
+                   </div>
+
+            </div>
+            <div class="col-md-2">
+                <div class="form-group label-floating">
+                    <label class="control-label">ตำแหน่งที่จะสมัคร<small class="text-danger">*</small></label>
+                    {{ Form::text('positionngg','', ['class' => 'form-control','required']) }}
+    
+                   </div>
+
+            </div>
+       
+</div>
+
+<hr>
+
                <div class="row">    
                            
                    <div class="col-md-3"> 
@@ -127,22 +165,7 @@
                                                              </div>
                                                           </div>
                                                       </div>
-                                                      <div class="col-md-2 ">
-                                                          <div class="form-group label-floating">
-                                                              <label class="control-label">เงินเดือนที่ต้องการ<small class="text-danger">*</small></label>
-                                                              {{ Form::text('salaryngg','', ['class' => 'form-control','required']) }}
-                                              
-                                                             </div>
-      
-                                                      </div>
-                                                      <div class="col-md-2">
-                                                          <div class="form-group label-floating">
-                                                              <label class="control-label">ตำแหน่งที่จะสมัคร<small class="text-danger">*</small></label>
-                                                              {{ Form::text('positionngg','', ['class' => 'form-control','required']) }}
-                                              
-                                                             </div>
-      
-                                                      </div>
+                                                    
                                           </div>
 
                 </div>
@@ -368,10 +391,7 @@
 
 
 
-
-
-
- <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >ถัดไป</button>
+ <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">ถัดไป</button>
 
     </div>
 
@@ -388,7 +408,7 @@
                                                                         'อาศัยกับบิดามารดา'=> 'อาศัยกับบิดามารดา',
                                                                         'อาศัยกับผู้อื่น'=>'อาศัยกับผู้อื่น'
                                                             ],null, ['class' => 'form-control','required']) }}
-                                                    <span class="text-danger">{{ $errors->first('living_status') }}</span>
+                                                    
                                         </div>
                                 </div>
                                 <div class="col-md-3"></div>
@@ -1222,7 +1242,7 @@
                         </div> <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group {{ $errors->has('owncar') ? 'has-error' : '' }}">
+                            <div class="form-group">
                                 <label>ท่านมีรถยนต์ส่วนตัวหรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
                                 <input type="radio" name="owncar" value="มี"  required >มี &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                                 <input type="radio" name="owncar" value="ไม่มี"  required >ไม่มี
@@ -1259,7 +1279,7 @@
                         </div> <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group {{ $errors->has('exitwork') ? 'has-error' : '' }}">
+                            <div class="form-group">
                                 <label>ท่านเคยถูกให้ออกจากงานหรือไม่?<small class="text-danger">*</small></label> &emsp;&emsp;                                                                  
                                 <input type="radio" name="exitwork" value="เคย" id="exitwork" required >เคย เพราะ &emsp; {{Form::text('because','',['id'=>'because'])}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     
                                 <input type="radio" name="exitwork" value="ไม่เคย" id="exitwork"  required >ไม่เคย 
@@ -1269,7 +1289,7 @@
                         </div> <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group {{ $errors->has('serious_ill') ? 'has-error' : '' }}">
+                            <div class="form-group ">
                                 <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;
                                 <input type="radio" name="serious_ill" value="เคย"  required > เคย &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                 <input type="radio" name="serious_ill" value="ไม่เคย"  required >ไม่เคย
@@ -1279,7 +1299,7 @@
                         </div> <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group  {{ $errors->has('offense') ? 'has-error' : '' }}">
+                            <div class="form-group">
                                 <label>ท่านเคยไดรั้บโทษทาง อาญา หรือ จำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;&emsp;&ensp;
                                 <input type="radio" name="offense" value="เคย"  required >เคย   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                 <input type="radio" name="offense" value="ไม่เคย"  required >ไม่เคย
@@ -1289,7 +1309,7 @@
                         </div> <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group {{ $errors->has('pregnant') ? 'has-error' : '' }}">
+                            <div class="form-group">
                                 <label>ขณะนี้คุณตั้งครรภ์หรือไม่?<small class="text-danger">*</small> </label>&emsp;&emsp;
                                 <input type="radio" name="pregnant" value="ใช่"  required >ใช่ &emsp;&emsp;&emsp;
                                 <input type="radio" name="pregnant" value="ไม่ใช่"  required > ไม่ใช่

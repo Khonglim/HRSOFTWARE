@@ -116,5 +116,5 @@ Route::get('savembti', function () { return view("testmbti/save");});
 Route::get('savedisc', function () { return view("testdisc/save");});
 
 
-
+Route::get('save_employ', function () { return view("employ/save");});
 

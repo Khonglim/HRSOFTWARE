@@ -248,7 +248,7 @@ class EmployeeController extends Controller
         $personal->fronname = $request->fronname;
         
         $personal->save();
-        return redirect('/');
+        return redirect('save_employ');
     }
 
     /**

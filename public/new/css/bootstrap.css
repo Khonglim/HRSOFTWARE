@@ -294,6 +294,7 @@ template {
   }
   h2,
   h3 {
+    
     page-break-after: avoid;
   }
   .navbar {
@@ -6177,6 +6178,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 }
 
 .rounded-0 {
+  
   border-radius: 0;
 }
 

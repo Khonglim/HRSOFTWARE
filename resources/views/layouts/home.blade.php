@@ -6,22 +6,10 @@
 	<meta charset="utf-8">
 	
 	<link href="{{ asset('new/css/bootstrap.css') }}"   rel='stylesheet' type='text/css' />
-
-
-	
 	<link href="{{ asset('new/css/style.css') }}"   rel='stylesheet' type='text/css' />
-
-	
 	<link href="{{ asset('new/css/prettyPhoto.css') }}"   rel='stylesheet' type='text/css' />
-
-
 	<link href="{{ asset('new/css/owl.carousel.css') }}"   rel='stylesheet' type='text/css'  media="all" />
-
-
-
 	<link href="{{ asset('new/css/owl.theme.css') }}"   rel='stylesheet' type='text/css' media="all" />
-
-
 	<link href="{{ asset('new/css/fontawesome-all.css') }}"   rel='stylesheet' />
 	
 
@@ -31,8 +19,6 @@
 
 
 
-	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Prata" rel="stylesheet">
   <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
   <style>
   body {
@@ -49,7 +35,7 @@
 
 	<header>
 		<div class="top-bar_sub_w3layouts_agile">
-		
+	
 			<div class="log">
 		
 				<h5>
@@ -88,7 +74,7 @@
 						<li class="nav-item">
 								<a class="nav-link cool" href="{{url('/userlogin') }}">ทำแบบประเมิน360</a>
 							</li>
-							<li class="nav-item dropdown">
+						<!--	<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 									aria-expanded="false">
 									แบบประเมินผลการปฏิบัติงาน
@@ -100,7 +86,7 @@
 									<a class="dropdown-item" href="{{url('Operate_sup/create') }}">ระดับผู้บังคับบัญชา </a>
 	
 								</div>
-							</li>
+							</li> -->
 					</ul>
 
 				</div>
@@ -113,7 +99,19 @@
 		@yield('content')
 	</main>
 
-	
+
+<br><br><br>
+<div class="modal-footer">
+
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3">© 2018 NGG:
+			  <a href="#"> version1.0</a>
+			 
+			  <p class="text-danger">ทางบริษัทกำลังพัฒนา(ขออภัยในความไม่สะดวกหากเกิดผิดพลาดของเว็บค่ะ)</p>
+			</div>
+			<!-- Copyright -->
+		
+		  </footer>
 	<script src="new/js/jquery-2.2.3.min.js"></script>
 	<script src="new/js/bootstrap.js"></script>
 	
