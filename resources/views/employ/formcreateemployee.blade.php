@@ -191,7 +191,7 @@
                                                 <div class="col-md-2">
                                                    
                                                         <label class="control-label">ศาสนา<small class="text-danger">*</small></label>  
-                                                        {{ Form::select('religion', ['พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
+                                                        {{ Form::select('religion', ['พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','คริส'=> 'คริส','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
                                         
                                             </div>
 
