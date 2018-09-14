@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Personal;
 use App\Provinces;
+use App\Nationality;
 
 
 use Illuminate\Support\Facades\Input;
@@ -39,7 +40,19 @@ class EmployeeController extends Controller
             
             $items[$province->name] = $province->name;
         }
-        $data = array('items' => $items  );
+
+        $nationality = Nationality::all();
+        foreach ($nationality as $nation){ 
+            $items2[$nation->name] = $nation->name;
+        }
+        $data = array('items' => $items ,'items2' => $items2 );
+        return view('employ/formcreateemployee',$data);
+
+        $nationality = Nationality::all();
+        foreach ($nationality as $nation){ 
+            $items2[$nation->name] = $nation->name;
+        }
+        $data = array('items2' => $items2 );
         return view('employ/formcreateemployee',$data);
     }
 

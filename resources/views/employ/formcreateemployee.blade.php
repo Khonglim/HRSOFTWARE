@@ -175,17 +175,15 @@
 
                                                 <div class="col-md-2" >
                                                   
-                                                        <label class="control-label">สัญชาติ<small class="text-danger">*</small></label>  
-                                                        {{ Form::select('nationality', ['ไทย' => 'ไทย'
-
-                                                        ,'อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
-                                                      
+                                                        <label class="control-label">สัญชาติ<small class="text-danger">*</small></label>
+                                                        {{ Form::select('nationality', [ '' => 'ไทย','โปรดระบุ' =>$items2],null, ['class' => 'form-control','id'=>'nationality']) }}    
                                                 </div>
                                                
                                                 <div class="col-md-2">
                                                    
-                                                        <label class="control-label">เชื้อชาติ<small class="text-danger">*</small></label>  
-                                                        {{ Form::select('race', ['ไทย' => 'ไทย','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','required']) }}
+                                                        <label class="control-label">เชื้อชาติ<small class="text-danger">*</small></label>
+                                                        {{ Form::select('race', [ '' => 'ไทย','โปรดระบุ' =>$items2],null, ['class' => 'form-control','id'=>'race']) }}
+
                                                         <span class="text-danger">{{ $errors->first('race') }}</span>
                                                         </div>
                                              
