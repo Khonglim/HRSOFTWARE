@@ -3,10 +3,6 @@
   <div class="content-wrapper">
                
         <div class="content container-fluid">  
-
-          
-          
-               
                   {{-- <div class="col-md-10"> --}}
                     <!-- Custom Tabs -->
                     <div class="nav-tabs-custom">
@@ -27,7 +23,7 @@
                                                 <img src="{{URL::asset($personal->photo)}}" height="85" width="85" >
                                             </div>  
                                      </div> 
-                            
+                                     <label>เงินเดือนที่ต้องการ:</label> {{$personal->salaryngg}}  &emsp;   <label>ตำแหน่งที่จะสมัคร:</label> {{$personal->positionngg}}<br><br>
                               <label>ชื่อ:</label> {{$personal->name}} {{$personal->lastname}}&emsp;  <label>ชื่อเล่น:  </label> {{$personal->nikname}}           
                                 &emsp;  <label>เพศ:  </label>  {{$personal->gender}}&emsp;  <label>วันเกิด  </label> {{$personal->birthday}}&emsp;  
                                 <label>สัญชาติ:  </label> {{$personal->nationality}}&emsp;   <label>เชื้อชาติ:  </label> {{$personal->race}}                  

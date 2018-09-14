@@ -18,6 +18,26 @@
                       </div>
                     </div>
                     <div class="box-body">
+                        <div class="row">
+                                <div class="col-md-4 "></div>
+                                <div class="col-md-2 ">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">เงินเดือนที่ต้องการ<small class="text-danger">*</small></label>
+                                            {{ Form::text('salaryngg',$personal->salaryngg, ['class' => 'form-control','required']) }}
+                            
+                                           </div>
+                        
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">ตำแหน่งที่จะสมัคร<small class="text-danger">*</small></label>
+                                            {{ Form::text('positionngg',$personal->positionngg, ['class' => 'form-control','required']) }}
+                            
+                                           </div>
+                        
+                                    </div>
+                               
+                        </div>
                     <div class="row">
                                 <div class="col-md-5"></div>  
                                 <div class="col-md-6">
