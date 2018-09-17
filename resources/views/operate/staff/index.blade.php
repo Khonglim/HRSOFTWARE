@@ -16,7 +16,12 @@
                           <label for="inputEmail3" class="col-sm-2 control-label">ชื่อ-สกุล</label>
         
                           <div class="col-sm-7">
-                            <input type="text" class="form-control" id="text" >
+                              <select id="country" name="employee" required  class="form-control">
+                                  <option value=""  >--เลือกชื่อพนักงาน--</option>
+                                  @foreach ($employee  as $e)
+                                  <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
+                                  @endforeach
+                                  </select>
                           </div>
                         </div>
                     

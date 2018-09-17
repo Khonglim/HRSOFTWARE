@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Operate_Chioce;
-use App\Operate_qSup;
 use App\Personal;
-class Operate_supController extends Controller
+class Operate_staffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class Operate_supController extends Controller
      */
     public function index()
     {
-       
+        
     }
 
     /**
@@ -26,15 +24,7 @@ class Operate_supController extends Controller
      */
     public function create()
     {
-        $manager = DB::table('__manager')->get();
-        $operate_Chioce  = Operate_Chioce::all();
-        $operate_qSup  =  Operate_qSup::all();
-        $data = array(
-            'operate_Chioce' =>  $operate_Chioce,
-            'operate_qSup' =>   $operate_qSup,
-            'manager' =>   $manager
-        );
-        return view("operate/operate_sup",$data);
+        //
     }
 
     /**

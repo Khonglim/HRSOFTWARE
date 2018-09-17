@@ -137,8 +137,8 @@ body {
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                      <li><a href="{{url('/index_satff') }}">ระดับปฏิบัติการ</a></li>
-                      <li><a href="{{url('/index_sup') }}">ระดับผู้บังคับบัญชา</a></li>
+                      <li><a href="{{url('/operate_employf') }}">ระดับปฏิบัติการ</a></li>
+                      <li><a href="{{url('/operate_employs') }}">ระดับผู้บังคับบัญชา</a></li>
                      
                     </ul>
                   </li>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\PDFController;
 use App\Testmbti;
 use App\Testdisc;
+use App\Personal;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,8 @@ Route::resource('con_all', 'Con_allController');
 Route::resource('Operate', 'OperateController');
 
 Route::resource('Operate_sup', 'Operate_supController');
+
+Route::resource('Operate_staff', 'Operate_staffController');
 
 Route::resource('mbti','TestmbtiController');
 Route::post('/start','AnswerController@start');
@@ -118,20 +121,35 @@ Route::get('savedisc', function () { return view("testdisc/save");});
 
 Route::get('save_employ', function () { return view("employ/save");});
 
-Route::get('index_satff', function () {
+Route::get('operate_employf', function () { 
     
     
-    return view("operate/staff/index");
+    
+    
+    $employee  = Personal::where('enable','=', 1)->get();
+    $data = array(
+        'employee' => $employee 
+    ); 
+    return view("operate/staff/index",$data);
+
+
+
 
 
 
 });
 
-Route::get('index_sup', function () {
+Route::get('operate_employs', function () { 
     
     
-    return view("operate/sup/index");
+    
+    $employee  = Personal::where('enable','=', 1)->get();
+        $data = array(
+            'employee' => $employee 
+        ); 
+        return view("operate/sup/index",$data);
 
 
-    
+
+
 });
