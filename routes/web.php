@@ -153,3 +153,15 @@ Route::get('operate_employs', function () {
 
 
 });
+
+
+Route::post('conduct_employs', function () { 
+    
+    
+   
+        return view("operate/staff/conduct_staff");
+
+
+
+
+});
