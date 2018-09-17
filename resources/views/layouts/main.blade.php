@@ -129,7 +129,22 @@ body {
                     <li><a href="{{url('/summeva') }}">สรุปผลประเมิน</a></li>
                   </ul>
                 </li>
-               
+              
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-angle-double-right"></i> <span>	แบบประเมินผลการปฏิบัติงาน</span>
+                      <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li><a href="{{url('/index_satff') }}">ระดับปฏิบัติการ</a></li>
+                      <li><a href="{{url('/index_sup') }}">ระดับผู้บังคับบัญชา</a></li>
+                     
+                    </ul>
+                  </li>
+
+
+
                 <li class="active"  ><a href="{{url('/con_all') }}"><i class="fa fa-book"></i> <span>สรุปผลรวม</span></a></li>
                 @endif
                 @if(auth()->user()->isAdmin == 0)

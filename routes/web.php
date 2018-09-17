@@ -118,3 +118,20 @@ Route::get('savedisc', function () { return view("testdisc/save");});
 
 Route::get('save_employ', function () { return view("employ/save");});
 
+Route::get('index_satff', function () {
+    
+    
+    return view("operate/staff/index");
+
+
+
+});
+
+Route::get('index_sup', function () {
+    
+    
+    return view("operate/sup/index");
+
+
+    
+});
