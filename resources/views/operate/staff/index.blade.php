@@ -30,7 +30,7 @@
                             <label for="inputEmail3" class="col-sm-2 control-label">ระดับ</label>
           
                             <div class="col-sm-7">
-                                <select id="country" name="employee" required  class="form-control">
+                                <select id="country" name="degree" required  class="form-control">
                                     <option value=""  >--ระดับ--</option>
                                     <option value= 1  >ระดับปฏิบัติการ</option>
                                     <option value= 0 >ระดับผู้บังคับบัญชา</option>
