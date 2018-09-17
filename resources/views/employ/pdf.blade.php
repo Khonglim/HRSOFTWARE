@@ -48,7 +48,7 @@
         <img src="{{$personal->photo}}" width="100px" height="135px" align="right"> 
         <br><br><br><br><br><br>
         <b>ตำแหน่งที่ต้องการ/Position Applied for : </b>{{$personal->positionngg}} <br> 
-        <b>เงินเดือนที่ต้องการ/Expeccted starting salary : </b>{{$personal->salaryngg}} 
+        <b>เงินเดือนที่ต้องการ/Expeccted starting salary : </b>{{$personal->salaryngg}} บาท
 <div class="page-break">
     <table>
         <tbody>
@@ -628,7 +628,7 @@
                     <td colspan="3"><b>ท่านมีรถยนต์ส่วนตัวหรือไม่ :</b> {{$personal->owncar}} <br>Do you own a car?</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><b>ท่านพร้อมงานวันที่ :</b> {{$personal->dateworkk}} <br>Date available to start work</td>
+                    <td colspan="2"><b>ท่านพร้อมทำปฏิบัติงานวันที่ :</b> {{$personal->dateworkk}} <br>Date available to start work</td>
                     <td colspan="3"><b>ท่านเป็นเจ้าของรถประเภทใด :</b> {{$personal->cardec}} <br>What type of vehicle do oyu own?</td>
                     <td colspan="3"><b>ทะเบียน :</b> {{$personal->license}} <br>License</td>
                 </tr>

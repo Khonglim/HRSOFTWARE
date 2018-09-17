@@ -7,14 +7,20 @@ body {
   font-size: 15px;
 }
 </style>
-<?php $x=0; $h=0;  $d=0;  $i=0;  $s=0;   $c=0; $r=1; $v=1;?>
+<?php $x=0; $h=0;  $d=0;  $i=0;  $s=0;   $c=0; $r=1; $v=1; $ll=0; ?>
 <?php $resultArray = array(); ?>
 @foreach($_POST as $choice => $answer)             
-@if($choice != '_token' && $choice != 'name' && $choice != 'lastname' && $choice != 'id_personal')
+@if($choice != '_token' && $choice != 'name' && $choice != 'lastname' && $choice != 'id_personal' )
+
   <?php array_push($resultArray,$answer); ?>
+  
 @endif 
 
 @endforeach
+
+
+
+
 @for ($j =0 ; $j <=44; $j+=4)
 <?php $d+=$resultArray[$j] ?> 
 @endfor

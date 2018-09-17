@@ -51,10 +51,11 @@
                                                        <p>   <strong id="showTimeDisc2" data-minutes-left="0.5"></strong></p>
                                       </div> 
                                     </div>  
-                                    <div class="col-md-4
+                                    <div class="col-md-6
                                     ">
                                         <div class="alert alert-danger">
-                                                <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr;
+                                                <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr; <br>
+                                                <strong>  เมื่อผู้ทดสอบให้คะแนนครบ 4 ตัวเลือกแล้วจะไม่สามารถเปลี่ยนคะแนนได้  </strong>
                                               </div>
                                             </div> 
                                               <div class="col-md-4">
@@ -86,7 +87,7 @@
                                       <td >
                                       
                                       <select name="chioe{{$a++}}" id="chioe{{$aa++}}" class="uniqueSelection{{$i++}}"  required>
-                                                <option value=0>เลือก</option>
+                                              
                                                 <option value=1>1</option>
                                                 <option value=2>2</option>
                                                 <option value=3>3</option>
@@ -97,7 +98,7 @@
                            
                                              
                                     <select name="chioe{{$t++}}"  id="chioe{{$tt++}}"  class="uniqueSelection{{$y++}}" required>
-                                            <option value=0>เลือก</option>
+                                          
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>
@@ -107,7 +108,7 @@
                                        </td>
                                        <td>
                                         <select name="chioe{{$w++}}"  id="chioe{{$ww++}}"  class="uniqueSelection{{$h++}}" required>
-                                            <option value=0>เลือก</option>
+                                          
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>
@@ -117,7 +118,7 @@
                                        <td>
                                           
                                         <select name="chioe{{$l++}}" id="chioe{{$ll++}}"   class="uniqueSelection{{$q++}}" required>
-                                            <option value=0>เลือก</option>
+                                          
                                             <option value=1>1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>
@@ -169,193 +170,328 @@
           </div>
    <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript">
-	$(document).ready(function() {
-		$(".uniqueSelection1").change(function(){
-			var indx = $(".uniqueSelection1").index(this);
-			var currentVal = $("option:selected",this).val();
-			
-			$(".uniqueSelection1").each(function(index,val){
-				if(indx != index){
-					$(this).find("option[value='"+currentVal+"']").hide();
-				}
-			});
-		});
-        
-	});
+
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection1").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection1").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
+        });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
+
+
+
+
   </script>
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
-	$(document).ready(function() {
-		$(".uniqueSelection2").change(function(){
-			var indx = $(".uniqueSelection2").index(this);
-			var currentVal = $("option:selected",this).val();
-			
-			$(".uniqueSelection2").each(function(index,val){
-				if(indx != index){
-					$(this).find("option[value='"+currentVal+"']").hide();
-				}
-			});
-		});
-	});
+
+
+
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection2").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection2").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
+        });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
+
   </script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		
 
-		$(".uniqueSelection3").change(function(){
-			var indx = $(".uniqueSelection3").index(this);
-			var currentVal = $("option:selected",this).val();
-			
-			$(".uniqueSelection3").each(function(index,val){
-				if(indx != index){
-					$(this).find("option[value='"+currentVal+"']").hide();
-				}
-			});
-		});
-	});
-  </script>
-<script type="text/javascript">
-	$(document).ready(function() {
+
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection3").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection3").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
+        });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
 	
+  </script>
+<script type="text/javascript">
 
-		$(".uniqueSelection4").change(function(){
-			var indx = $(".uniqueSelection4").index(this);
-			var currentVal = $("option:selected",this).val();
-			
-			$(".uniqueSelection4").each(function(index,val){
-				if(indx != index){
-					$(this).find("option[value='"+currentVal+"']").hide();
-				}
-			});
-		});
-	});
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection4").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection4").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
+        });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
+
+
+
   </script>
     <script type="text/javascript">
-        $(document).ready(function() {
-           
-    
-            $(".uniqueSelection5").change(function(){
-                var indx = $(".uniqueSelection5").index(this);
-                var currentVal = $("option:selected",this).val();
-                
-                $(".uniqueSelection5").each(function(index,val){
-                    if(indx != index){
-                        $(this).find("option[value='"+currentVal+"']").hide();
-                    }
-                });
-            });
+ 
+
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection5").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection5").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
         });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
+
+
+
+
+
+
       </script>
     <script type="text/javascript">
-        $(document).ready(function() {
-           
     
-            $(".uniqueSelection6").change(function(){
-                var indx = $(".uniqueSelection6").index(this);
-                var currentVal = $("option:selected",this).val();
-                
-                $(".uniqueSelection6").each(function(index,val){
-                    if(indx != index){
-                        $(this).find("option[value='"+currentVal+"']").hide();
-                    }
-                });
-            });
+
+        
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection6").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection6").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
         });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
       </script>
       <script type="text/javascript">
-        $(document).ready(function() {
-           
-    
-            $(".uniqueSelection7").change(function(){
-                var indx = $(".uniqueSelection7").index(this);
-                var currentVal = $("option:selected",this).val();
-                
-                $(".uniqueSelection7").each(function(index,val){
-                    if(indx != index){
-                        $(this).find("option[value='"+currentVal+"']").hide();
-                    }
-                });
-            });
+  
+        
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection7").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection7").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
         });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
       </script>
       <script type="text/javascript">
-        $(document).ready(function() {
-           
     
-            $(".uniqueSelection8").change(function(){
-                var indx = $(".uniqueSelection8").index(this);
-                var currentVal = $("option:selected",this).val();
-                
-                $(".uniqueSelection8").each(function(index,val){
-                    if(indx != index){
-                        $(this).find("option[value='"+currentVal+"']").hide();
-                    }
-                });
-            });
+
+        
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection8").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection8").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
         });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
       </script>
       <script type="text/javascript">
-        $(document).ready(function() {
-           
-    
-            $(".uniqueSelection9").change(function(){
-                var indx = $(".uniqueSelection9").index(this);
-                var currentVal = $("option:selected",this).val();
-                
-                $(".uniqueSelection9").each(function(index,val){
-                    if(indx != index){
-                        $(this).find("option[value='"+currentVal+"']").hide();
-                    }
-                });
-            });
+   
+        
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection9").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection9").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
         });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
       </script>
       <script type="text/javascript">
-        $(document).ready(function() {
-          
-    
-            $(".uniqueSelection10").change(function(){
-                var indx = $(".uniqueSelection10").index(this);
-                var currentVal = $("option:selected",this).val();
-                
-                $(".uniqueSelection10").each(function(index,val){
-                    if(indx != index){
-                        $(this).find("option[value='"+currentVal+"']").hide();
-                    }
-                });
-            });
+  
+        
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection10").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection10").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
         });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
       </script>
       <script type="text/javascript">
-        $(document).ready(function() {
-           
-    
-            $(".uniqueSelection11").change(function(){
-                var indx = $(".uniqueSelection11").index(this);
-                var currentVal = $("option:selected",this).val();
-                
-                $(".uniqueSelection11").each(function(index,val){
-                    if(indx != index){
-                        $(this).find("option[value='"+currentVal+"']").hide();
-                    }
-                });
-            });
+  
+        
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection11").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection11").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
         });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
       </script>
       <script type="text/javascript">
-        $(document).ready(function() {
-           
-    
-            $(".uniqueSelection12").change(function(){
-                var indx = $(".uniqueSelection12").index(this);
-                var currentVal = $("option:selected",this).val();
-                
-                $(".uniqueSelection12").each(function(index,val){
-                    if(indx != index){
-                        $(this).find("option[value='"+currentVal+"']").hide();
-                    }
-                });
-            });
+     
+jQuery(function($) {
+    var backups = {};
+    $(".uniqueSelection12").change(function() {
+        var v = $(this).val();
+        var f = false;
+        $(".uniqueSelection12").not(this).each(function() {
+            if($(this).val() == v) {
+                f = true;
+                return;                
+            }
         });
+        if(f) {
+            $(this).val(backups[$(this).attr("id")]);
+            alert("คุณไม่สามารถเลือกคะแนนซ้ำได้!!");
+        }
+        else {
+            backups[$(this).attr("id")] = v;
+        }
+    }).val(null);
+});
+
       </script>
    @endsection

@@ -213,60 +213,60 @@ $("#showTimeDisc").startTimer({
   onComplete:function(){
 
 alert("หมดเวลาทำแบบทดสอบแล้วค่ะ.")
-if(document.getElementById("chioe0").value != '0'  &&
-document.getElementById("chioe1").value != '0' &&
-document.getElementById("chioe2").value != '0' &&
-document.getElementById("chioe3").value != '0' &&
-document.getElementById("chioe4").value != '0' &&
-document.getElementById("chioe5").value != '0' &&
-document.getElementById("chioe6").value != '0' &&
-document.getElementById("chioe7").value != '0' &&
-document.getElementById("chioe8").value != '0' &&
-document.getElementById("chioe9").value != '0' &&
-document.getElementById("chioe10").value != '0' &&
-document.getElementById("chioe11").value != '0' &&
+if(document.getElementById("chioe0").value != ''  &&
+document.getElementById("chioe1").value != '' &&
+document.getElementById("chioe2").value != '' &&
+document.getElementById("chioe3").value != '' &&
+document.getElementById("chioe4").value != '' &&
+document.getElementById("chioe5").value != '' &&
+document.getElementById("chioe6").value != '' &&
+document.getElementById("chioe7").value != '' &&
+document.getElementById("chioe8").value != '' &&
+document.getElementById("chioe9").value != '' &&
+document.getElementById("chioe10").value != '' &&
+document.getElementById("chioe11").value != '' &&
 
 
-document.getElementById("chioe15").value != '0' &&
-document.getElementById("chioe16").value != '0' &&
-document.getElementById("chioe17").value != '0' &&
-document.getElementById("chioe18").value != '0' &&
-document.getElementById("chioe19").value != '0' &&
-document.getElementById("chioe20").value != '0' &&
-document.getElementById("chioe21").value != '0' &&
-document.getElementById("chioe22").value != '0' &&
-document.getElementById("chioe23").value != '0' &&
-document.getElementById("chioe24").value != '0' &&
-document.getElementById("chioe25").value != '0' &&
-document.getElementById("chioe26").value != '0' &&
+document.getElementById("chioe15").value != '' &&
+document.getElementById("chioe16").value != '' &&
+document.getElementById("chioe17").value != '' &&
+document.getElementById("chioe18").value != '' &&
+document.getElementById("chioe19").value != '' &&
+document.getElementById("chioe20").value != '' &&
+document.getElementById("chioe21").value != '' &&
+document.getElementById("chioe22").value != '' &&
+document.getElementById("chioe23").value != '' &&
+document.getElementById("chioe24").value != '' &&
+document.getElementById("chioe25").value != '' &&
+document.getElementById("chioe26").value != '' &&
 
-document.getElementById("chioe30").value != '0' &&
-document.getElementById("chioe31").value != '0' &&
-document.getElementById("chioe32").value != '0' &&
-document.getElementById("chioe33").value != '0' &&
-document.getElementById("chioe34").value != '0' &&
-document.getElementById("chioe36").value != '0' &&
-document.getElementById("chioe37").value != '0' &&
-document.getElementById("chioe38").value != '0' &&
-document.getElementById("chioe39").value != '0' &&
-document.getElementById("chioe40").value != '0' &&
-document.getElementById("chioe41").value != '0' &&
-document.getElementById("chioe42").value != '0' &&
+document.getElementById("chioe30").value != '' &&
+document.getElementById("chioe31").value != '' &&
+document.getElementById("chioe32").value != '' &&
+document.getElementById("chioe33").value != '' &&
+document.getElementById("chioe34").value != '' &&
+document.getElementById("chioe36").value != '' &&
+document.getElementById("chioe37").value != '' &&
+document.getElementById("chioe38").value != '' &&
+document.getElementById("chioe39").value != '' &&
+document.getElementById("chioe40").value != '' &&
+document.getElementById("chioe41").value != '' &&
+document.getElementById("chioe42").value != '' &&
 
 
 
-document.getElementById("chioe45").value != '0' &&
-document.getElementById("chioe46").value != '0' &&
-document.getElementById("chioe47").value != '0' &&
-document.getElementById("chioe48").value != '0' &&
-document.getElementById("chioe49").value != '0' &&
-document.getElementById("chioe50").value != '0' &&
-document.getElementById("chioe51").value != '0' &&
-document.getElementById("chioe52").value != '0' &&
-document.getElementById("chioe53").value != '0' &&
-document.getElementById("chioe54").value != '0' &&
-document.getElementById("chioe55").value != '0' &&
-document.getElementById("chioe56").value != '0' 
+document.getElementById("chioe45").value != '' &&
+document.getElementById("chioe46").value != '' &&
+document.getElementById("chioe47").value != '' &&
+document.getElementById("chioe48").value != '' &&
+document.getElementById("chioe49").value != '' &&
+document.getElementById("chioe50").value != '' &&
+document.getElementById("chioe51").value != '' &&
+document.getElementById("chioe52").value != '' &&
+document.getElementById("chioe53").value != '' &&
+document.getElementById("chioe54").value != '' &&
+document.getElementById("chioe55").value != '' &&
+document.getElementById("chioe56").value != '' 
 
 ){
 $("#testdisc").submit();
@@ -277,7 +277,7 @@ else
  $("#showTimeDisc2").startTimer({
 
 onComplete:function(){
-$("#testdisc").submit();
+    alert('หมดเวลาทำข้อสอบกรุณากดส่งคำตอบ');
 
 }           
 }) 
@@ -306,67 +306,67 @@ $("#testdisc").submit();
 <script type="text/javascript">
   function fncSubmit()
   {
-      if(document.getElementById('chioe0').value  == "0"  )
+      if(document.getElementById('chioe0').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "น่าเกรงขาม"');
           return false;
       }
 
-   if(document.getElementById('chioe1').value  == "0"  )
+   if(document.getElementById('chioe1').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "ทำงานเชิงรุก"');
           return false;
       }
 
-if(document.getElementById('chioe2').value  == "0"  )
+if(document.getElementById('chioe2').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "พูดตรงไปตรงมา"');
           return false;
       }
 
-if(document.getElementById('chioe3').value  == "0"  )
+if(document.getElementById('chioe3').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "ไม่ยอมแพ้"');
           return false;
       }
 
-if(document.getElementById('chioe4').value  == "0"  )
+if(document.getElementById('chioe4').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "โลดโผน"');
           return false;
       }
-      if(document.getElementById('chioe5').value  == "0"  )
+      if(document.getElementById('chioe5').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "ชอบแข่งขัน"');
           return false;
       }
 
-if(document.getElementById('chioe6').value  == "0"  )
+if(document.getElementById('chioe6').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "กล้าเสี่ยง"');
           return false;
       }
 
-if(document.getElementById('chioe7').value  == "0"  )
+if(document.getElementById('chioe7').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "ชอบโต้แย้ง"');
           return false;
       }
 
-if(document.getElementById('chioe8').value  == "0"  )
+if(document.getElementById('chioe8').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "กล้าหาญ"');
           return false;
       }
 
-if(document.getElementById('chioe9').value  == "0"  )
+if(document.getElementById('chioe9').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "ชอบควบคุม"');
           return false;
       }
 
 
-if(document.getElementById('chioe10').value  == "0"  )
+if(document.getElementById('chioe10').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "เปิดเผิย"');
 
@@ -377,19 +377,19 @@ if(document.getElementById('chioe10').value  == "0"  )
 
 
 
-if(document.getElementById('chioe15').value  == "0"  )
+if(document.getElementById('chioe15').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "มีชีวิตชีวา"');
           return false;
       }
 
-if(document.getElementById('chioe16').value  == "0"  )
+if(document.getElementById('chioe16').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "อ่อนไหว"');
           return false;
       }
 
-if(document.getElementById('chioe17').value  == "0"  )
+if(document.getElementById('chioe17').value  == " "  )
       {
           alert('คุณยังไม่ระบุคะแนนของ "ร่าเริง"');
           return false;

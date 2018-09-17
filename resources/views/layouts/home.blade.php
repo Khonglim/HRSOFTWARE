@@ -74,7 +74,7 @@
 						<li class="nav-item">
 								<a class="nav-link cool" href="{{url('/userlogin') }}">ทำแบบประเมิน360</a>
 							</li>
-						<!--	<li class="nav-item dropdown">
+							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 									aria-expanded="false">
 									แบบประเมินผลการปฏิบัติงาน
@@ -86,7 +86,7 @@
 									<a class="dropdown-item" href="{{url('Operate_sup/create') }}">ระดับผู้บังคับบัญชา </a>
 	
 								</div>
-							</li> -->
+							</li> 
 					</ul>
 
 				</div>
