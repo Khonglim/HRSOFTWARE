@@ -17,56 +17,53 @@ class CreateAnsOperateStaffTable extends Migration
             $table->increments('id');
             $table->interger('id_employ');
 
-            $table->char('position', 100);
-            $table->char('department', 100);
-            $table->char('starttime', 100);
-            $table->char('endtime', 100);
-            $table->char('number', 100);
-            $table->char('date_60', 100);
-            $table->char('date_90', 100);
-            $table->interger('chioce1');
-            $table->interger('chioce2');
-            $table->interger('chioce3');
-            $table->interger('chioce4');
-            $table->interger('chioce5');
-            $table->interger('chioce6');
-            $table->interger('chioce7');
-            $table->interger('chioce8');
-            $table->interger('chioce9');
-            $table->interger('chioce10');
-            $table->interger('chioce11');
-            $table->interger('chioce12');
-            $table->interger('chioce13');
-            $table->interger('chioce14');
-            $table->interger('chioce15');
-            $table->interger('subtotal_60');
-            $table->interger('subtotal_90');
-            $table->interger('subtotal_final');
+            $table->char('position', 100)->nullable();
+            $table->char('department', 100)->nullable();
+            $table->char('starttime', 100)->nullable();
+            $table->char('endtime', 100)->nullable();
+            $table->char('number', 100)->nullable();
+            $table->char('date_60', 100)->nullable();
+            $table->char('date_90', 100)->nullable();
+            $table->interger('chioce1')->nullable();
+            $table->interger('chioce2')->nullable();
+            $table->interger('chioce3')->nullable();
+            $table->interger('chioce4')->nullable();
+            $table->interger('chioce5')->nullable();
+            $table->interger('chioce6')->nullable();
+            $table->interger('chioce7')->nullable();
+            $table->interger('chioce8')->nullable();
+            $table->interger('chioce9')->nullable();
+            $table->interger('chioce10')->nullable();
+            $table->interger('chioce11')->nullable();
+            $table->interger('chioce12')->nullable();
+            $table->interger('chioce13')->nullable();
+            $table->interger('chioce14')->nullable();
+            $table->interger('chioce15')->nullable();
+            $table->interger('subtotal_60')->nullable();
+            $table->interger('subtotal_90')->nullable();
+            $table->interger('subtotal_final')->nullable();
 
 
-            $table->char('startwork_60');
-            $table->char('endwork_60');
+            $table->char('startwork_60')->nullable();
+            $table->char('endwork_60')->nullable();
 
-            $table->interger('sick_leave_60');
-            $table->interger('errand_leave_60');
-            $table->interger('absence_60');
-            $table->interger('vacation_60');
-            $table->interger('line_terms_60');
-            $table->interger('line_min_60');
+            $table->interger('sick_leave_60')->nullable();
+            $table->interger('errand_leave_60')->nullable();
+            $table->interger('absence_60')->nullable();
+            $table->interger('vacation_60')->nullable();
+            $table->interger('line_terms_60')->nullable();
+            $table->interger('line_min_60')->nullable();
 
-            $table->char('startwork_90', 100);
-            $table->char('endtwork_90', 100);
-
-
-            $table->interger('sick_leave_90');
-            $table->interger('errand_leave_90');
-            $table->interger('absence_90');
-            $table->interger('vacation_90');
-            $table->interger('line_terms_90');
-            $table->interger('line_min_90');
+            $table->char('startwork_90', 100)->nullable();
+            $table->char('endtwork_90', 100)->nullable();
 
 
-
+            $table->interger('sick_leave_90')->nullable();
+            $table->interger('errand_leave_90')->nullable();
+            $table->interger('absence_90')->nullable();
+            $table->interger('vacation_90')->nullable();
+            $table->interger('line_terms_90')->nullable();
+            $table->interger('line_min_90')->nullable();
 
 
 
@@ -76,7 +73,10 @@ class CreateAnsOperateStaffTable extends Migration
 
 
 
-            
+
+
+
+
             $table->char('name_rate', 100);
             $table->timestamps();
         });
