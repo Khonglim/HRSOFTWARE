@@ -31,68 +31,76 @@
                         <div class="box-header with-border">
                           การทดลองงานระดับปฏิบัติการ
                         </div>
+                        {{Form::open(['url'=>'Operate_staff','method'=>'POST' ])}}
                         <div class="form-horizontal">
                           <div class="box-body">
-                                {{Form::open(['url'=>'Operate_staff','method'=>'POST' ])}}
-
-                                <div class="form-group">
-                
-                                    <div class="row">
-                                       
-                                            <div class="col-md-3">
-                                                ชื่อ-สกุล: <input type="text" name="name" id="name" required onchange="document.getElementById('nametest').value=document.getElementById('name').value">
-                                            </div>
-                                            <div class="col-md-4">
-                                                รหัสพนักงาน: <input type="text" name="idemploy" required>
-                                            </div>
-                            
-                                            <div class="col-md-4">
-                                                ตำแหน่ง: <input type="text" name="positionemploy"  id="positionemploy" required onchange="document.getElementById('t2').value=document.getElementById('positionemploy').value"> 
-                                            </div> 
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                    
-                                        <div class="col-md-4">
-                                            แผนก/ฝ่าย :    <input type="text" name="name2" required>
-                                        </div>
-                            
-                                        <div class="col-md-4">
-                                            วันที่เริ่มงาน: <input type="text" name="dateStart2" id="dateStart2" value="" /> 
-                                        </div>
-                                  
-                            
-                                    <div class="col-md-4">
-                                        วันสิ้นสุด:<input type="text" name="dateEnd2" id="dateEnd2" value="" /> 
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="form-group">
-                              <div class="row">
-                                    <div class="col-md-4">
-                                ครบทดลองงาน:<input type="text" name="totolDay2" id="totolDay2" value=""  readonly/> วัน
-                    
                                
-                            </div>  
-                            </div>    
-                                
-                                </div>
-                            
                                 <div class="form-group">
-                                        <div class="row">
-                                                <div class="col-md-5">
-                                                ประเมินครั้งที่ 1 : 60วัน วันที่ <input type="text" name="totolDay_60" id="totolDay_60" value=""  />
-                                            </div>  
-                            
-                                            <div class="col-md-5">
-                                                    ประเมินครั้งที่ 2 : 90วัน วันที่ <input type="text" name="totolDay_90" id="totolDay_90" value=""  /> 
-                                                </div>
-                                      </div>    
-                                          
-                                          </div>
-                            
-                            
+                                        <label  class="col-sm-2 control-label">ชื่อ-สกุล:</label>
+                      
+                                        <div class="col-sm-4">
+                                          <input type="email" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $name =  $_POST["lastname"]}}"  readonly>
+                                        </div>
+                                        <label  class="col-sm-2 control-label">รหัสพนักงาน:</label>
+                                        <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="id_employ" required>
+                                              </div>
+                                              
+
+                                      </div>
+
+                                      <div class="form-group">
+
+                                            <label  class="col-sm-2 control-label">ตำแหน่ง:</label>
+                                            <div class="col-sm-4">
+                                                    <input type="text" class="form-control" name="id_employ" required>
+                                                  </div> 
+                                                  
+                                                  <label  class="col-sm-2 control-label">แผนก/ฝ่าย:</label>
+                                                  <div class="col-sm-4">
+                                                          <input type="text" class="form-control" name="id_employ" required>
+                                                        </div>     
+                                      </div>
+                               
+                                      <div class="form-group">
+
+                                            <label  class="col-sm-2 control-label">วันเริ่มงาน:</label>
+                                            <div class="col-sm-4">
+                                                    <input type="text" name="dateStart2" id="dateStart2" value="" class="form-control" required onchange="document.getElementById('startrate').value=document.getElementById('dateStart2').value"/> 
+                                                  </div> 
+                                                  
+                                                  <label  class="col-sm-2 control-label">ครบการทดลองงาน:</label>
+                                                  <div class="col-sm-4">
+                                                        <input type="text" name="dateEnd2" id="dateEnd2" value="" class="form-control" required/> 
+                                                        </div>     
+                                      </div>
+
+                                      <div class="form-group">
+
+                                            <label  class="col-sm-2 control-label">จำนวนวัน:</label>
+                                            <div class="col-sm-4">
+                                                    <input type="text" name="totolDay2" id="totolDay2" value=""  readonly class="form-control" required/>
+                                                  </div> 
+                                                  
+                                                  <label  class="col-sm-2 control-label">ระดับ:</label>
+                                                  <div class="col-sm-4">
+                                                        <input type="text" name="dateEnd2" id="dateEnd2" value="" class="form-control" required/> 
+                                                        </div>     
+                                      </div>
+
+                                      <div class="form-group">
+
+                                            <label  class="col-sm-2 control-label">ประเมินครั้งที่ 1 : 60 วัน วันที่ :</label>
+                                            <div class="col-sm-4">
+                                                    <input type="text" name="totolDay_60" id="totolDay_60" value=""  class="form-control"/>
+                                                  </div> 
+                                                  
+                                                  <label  class="col-sm-2 control-label">  ประเมินครั้งที่ 2 : 90 วัน วันที่:</label>
+                                                  <div class="col-sm-4">
+                                                        <input type="text" name="totolDay_90" id="totolDay_90" value="" class="form-control" /> 
+                                                        </div>     
+                                      </div>
+
                                           คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน<br>
                                           1.  ระดับในการประเมินผล <br>
                                           …….	ดีมาก		=	ผลการปฏิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
@@ -101,6 +109,8 @@
                         …….	ต้องปรับปรุง	=     	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
                     
                            2.	ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป  จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน  
+                           <div class="form-group">
+                                <div class="col-sm-12">
                     <table id="customers">
                      
                       <tr>
@@ -183,35 +193,50 @@
                          </tr>
                     
                     </table>
-                  
-                  
-                    
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                    <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
+                    <div class="col-sm-4">
+                            <textarea class="form-control" rows="3" name="assessor"></textarea>
+                          </div> 
+                        </div> 
+            <div class="form-group">
+
+                    <label  class="col-sm-2 control-label">จุดเด่นพนักงาน:</label>
+                    <div class="col-sm-4">
+                            <textarea class="form-control" rows="3" name="featured" required></textarea>
+                          </div> 
+                          
+                          <label  class="col-sm-2 control-label">จุดด้อยพนักงาน:</label>
+                    <div class="col-sm-4">
+                            <textarea class="form-control" rows="3" name="weakness" required></textarea>
+                          </div> 
+                                
+              </div>
+              <div class="form-group">
+
+                    <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
+                    <div class="col-sm-4">
+                            <input type="text" name="namerate" id="namerate" required class="form-control">
+                          </div> 
+                         </div>   
+                               
+            
                    
                     
                     
                     
-                                  <div class="form-group">
-                                        <div class="row">
-                                        
-                                            <div class="col-md-6">
-                                                    ชื่อผู้ประเมิน: <input type="text" name="namerate" id="namerate" required>
-                                            </div>
-                                
-                                            <div class="col-md-6">
-                                                    ชื่อผู้ถูกประเมิน: <input type="text"  name="nametest" id="nametest" readonly>
-                                            </div>
-                                      
-                                
-                                       
-                                    </div>
-                                </div>
+                             
                     
                     
                  
                     
                     
                     
-                    
+                 
                                     <table id="customers">
                                             <tr>
                                               <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th>
@@ -227,17 +252,17 @@
                                            
                                             </tr>
                                             <tr>
-                                              <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate" id="startrate" readonly > <br><br>
-                                                ถึงวันที่    <input type="text" name="endrate" id="endrate" readonly>
+                                              <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate_60" id="startrate_60"  > <br><br>
+                                                ถึงวันที่    <input type="text" name="endrate_60" id="endrate_60" >
                                             
                                             
                                             </td>
-                                              <td style="text-align:center"> <input type="text" name="sick"   id="sick"     style="width:50px" > </td>
-                                              <td style="text-align:center"><input type="text" name="errand"    id="errand"   style="width:50px" ></td>
-                                              <td style="text-align:center"><input type="text" name="absence"     id="absence"    style="width:50px" ></td>
-                                              <td style="text-align:center"><input type="text"   name="vacation"   id="vacation"   style="width:50px"></td>
-                                              <td style="text-align:center"><input type="text"  name="line"    id="line"   style="width:50px"></td>
-                                              <td style="text-align:center"><input type="text"  name="min"    id="min"  style="width:50px"></td>
+                                              <td style="text-align:center"> <input type="text" name="sick"   id="sick"     style="width:50px" required> </td>
+                                              <td style="text-align:center"><input type="text" name="errand"    id="errand"   style="width:50px" required ></td>
+                                              <td style="text-align:center"><input type="text" name="absence"     id="absence"    style="width:50px" required></td>
+                                              <td style="text-align:center"><input type="text"   name="vacation"   id="vacation"   style="width:50px"  required></td>
+                                              <td style="text-align:center"><input type="text"  name="line"    id="line"   style="width:50px"  required></td>
+                                              <td style="text-align:center"><input type="text"  name="min"    id="min"  style="width:50px"  required></td>
                                             
                                             </tr>
                                            
@@ -248,38 +273,13 @@
                                           
                                           </table>
                     
-                    
+                                       
                     
                     
                     
                                          
                                              
                     
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                           </div>
                           <!-- /.box-body -->
@@ -295,7 +295,7 @@
                       </div>
                     </div>
 
-
+                </div>
 
 
 
@@ -838,164 +838,13 @@
                        });
                        </script>
 
-<script type="text/javascript">
 
-  $(function(){
-    $("#totolDay_60").datepicker({
-      dateFormat: 'dd/M/yy'
-    });
-  });
-  
-  </script>
 
-<script type="text/javascript">
 
-  $(function(){
-    $("#totolDay_90").datepicker({
-      dateFormat: 'dd/M/yy'
-    });
-  });
-  
-  </script>
+
+
 
   
-  <script type="text/javascript">
-
-    $(function(){
-    
-      var startDateTextBox = $('#dateStart');
-      var endDateTextBox = $('#dateEnd');
-    
-      startDateTextBox.datepicker({ 
-        dateFormat: 'dd/M/yy',
-        
-        onClose: function(dateText, inst) {
-          if (endDateTextBox.val() != '') {
-            var testStartDate = startDateTextBox.datetimepicker('getDate');
-            var testEndDate = endDateTextBox.datetimepicker('getDate');
-            if (testStartDate > testEndDate)
-              endDateTextBox.datetimepicker('setDate', testStartDate);
-          }
-          else {
-            endDateTextBox.val(dateText);
-          }
-          displayDateDiff();
-        },
-        onSelect: function (selectedDateTime){
-          endDateTextBox.datetimepicker('option', 'minDate', startDateTextBox.datetimepicker('getDate') );
-        }
-      });
-      endDateTextBox.datepicker({ 
-        dateFormat: 'dd-M-yy',
-        onClose: function(dateText, inst) {
-          if (startDateTextBox.val() != '') {
-            var testStartDate = startDateTextBox.datetimepicker('getDate');
-            var testEndDate = endDateTextBox.datetimepicker('getDate');
-            if (testStartDate > testEndDate)
-              startDateTextBox.datetimepicker('setDate', testEndDate);
-          }
-          else {
-            startDateTextBox.val(dateText);
-          }
-          displayDateDiff();
-        },
-        onSelect: function (selectedDateTime){
-          startDateTextBox.datetimepicker('option', 'maxDate', endDateTextBox.datetimepicker('getDate') );
-        }
-      });
-    
-    });
-    
-    function displayDateDiff()
-    {
-      if($('#dateStart').val() != "" && $('#dateEnd').val() != "")
-      {
-            var dateStart = new Date($("#dateStart").val());
-            var dateEnd =  new Date($("#dateEnd").val())
-            var timeDiff = Math.abs(dateEnd.getTime() - dateStart.getTime());
-            
-            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-            diffDays = diffDays + 1;
-                        
-
-
-            $("#totolDay").val(diffDays);
-      }
-    }
-    
-    </script>
-    <script type="text/javascript">
-
-      $(function(){
-      
-        var startDateTextBox = $('#dateStart2');
-        var endDateTextBox = $('#dateEnd2');
-      
-        startDateTextBox.datepicker({ 
-          dateFormat: 'dd/M/yy',
-          
-          onClose: function(dateText, inst) {
-            if (endDateTextBox.val() != '') {
-              var testStartDate = startDateTextBox.datetimepicker('getDate');
-              var testEndDate = endDateTextBox.datetimepicker('getDate');
-              if (testStartDate > testEndDate)
-                endDateTextBox.datetimepicker('setDate', testStartDate);
-            }
-            else {
-              endDateTextBox.val(dateText);
-            }
-            displayDateDiff();
-          },
-          onSelect: function (selectedDateTime){
-            endDateTextBox.datetimepicker('option', 'minDate', startDateTextBox.datetimepicker('getDate') );
-          }
-        });
-        endDateTextBox.datepicker({ 
-          dateFormat: 'dd/M/yy',
-          onClose: function(dateText, inst) {
-            if (startDateTextBox.val() != '') {
-              var testStartDate = startDateTextBox.datetimepicker('getDate');
-              var testEndDate = endDateTextBox.datetimepicker('getDate');
-              if (testStartDate > testEndDate)
-                startDateTextBox.datetimepicker('setDate', testEndDate);
-            }
-            else {
-              startDateTextBox.val(dateText);
-            }
-            displayDateDiff();
-          },
-          onSelect: function (selectedDateTime){
-            startDateTextBox.datetimepicker('option', 'maxDate', endDateTextBox.datetimepicker('getDate') );
-          }
-        });
-      
-      });
-      
-      function displayDateDiff()
-      {
-        if($('#dateStart2').val() != "" && $('#dateEnd2').val() != "")
-        {
-              var dateStart = new Date($("#dateStart2").val());
-              var dateEnd =  new Date($("#dateEnd2").val())
-              var timeDiff = Math.abs(dateEnd.getTime() - dateStart.getTime());
-              
-              var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-              diffDays = diffDays + 1;
-              
-  
-  
-              $("#totolDay2").val(diffDays);
-        }
-      }
-      
-      </script>
-
-
-
-
-
-
-  </div>
 
 
     @endsection

@@ -45,6 +45,22 @@
         dateFormat: 'dd/M/yy'
       });
     });
+
+
+  $(function(){
+      $("#startrate_60").datepicker({
+        dateFormat: 'dd/M/yy'
+      });
+    });
+
+
+      $(function(){
+      $("#endrate_60").datepicker({
+        dateFormat: 'dd/M/yy'
+      });
+    });
+
+
     
     </script>
   
@@ -288,7 +304,7 @@ body {
                 <li class="active"  ><a href="{{url('/home') }}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
                 <li class="active"  ><a href="{{url('/employee')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
                 <li class="active"  ><a href="{{url('/interview') }}"><i class="glyphicon glyphicon-user"></i> <span>แบบประเมินผลสัมภาษณ์</span></a></li>
-           
+                <li class="active"  ><a href="{{url('/operate_employf')  }}"><i class="fa  fa-pencil"></i> <span>แบบประเมินผลการปฏิบัติงาน</span></a></li>
                 <li class="treeview">
                   <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
                     <span class="pull-right-container">
@@ -302,21 +318,7 @@ body {
                   </ul>
                 </li>
               
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-angle-double-right"></i> <span>	แบบประเมินผลการปฏิบัติงาน</span>
-                      <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                      <li><a href="{{url('/operate_employf') }}">ระดับปฏิบัติการ</a></li>
-                      <li><a href="{{url('/operate_employs') }}">ระดับผู้บังคับบัญชา</a></li>
-                     
-                    </ul>
-                  </li>
-
-
-
+              
                 <li class="active"  ><a href="{{url('/con_all') }}"><i class="fa fa-book"></i> <span>สรุปผลรวม</span></a></li>
                 @endif
                 @if(auth()->user()->isAdmin == 0)

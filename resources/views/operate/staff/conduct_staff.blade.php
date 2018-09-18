@@ -16,6 +16,8 @@
            @foreach ($employee  as $e)
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               {{Form::open(['url'=>'operate_employstaff','method'=>'POST' ])}}
+            <input type="hidden"  value="{{$e->name}}" name="name" >
+            <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
                 <div class="col-sm-7">
@@ -72,6 +74,8 @@
            @foreach ($employee  as $e)
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               {{Form::open(['url'=>'operate_employsup','method'=>'POST' ])}}
+              <input type="hidden"  value="{{$e->name}}" name="name" >
+              <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
                 <div class="col-sm-7">

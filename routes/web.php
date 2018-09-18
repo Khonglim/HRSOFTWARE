@@ -152,7 +152,7 @@ Route::post('operate_employstaff', function () {
     $data = array(
         'operate_Chioce' =>  $operate_Chioce,
         'operate_qSeff' =>   $operate_qSeff,
-        'manager' =>   $manager,
+       
     );
     return view("operate/staff/operate_60",$data);
 

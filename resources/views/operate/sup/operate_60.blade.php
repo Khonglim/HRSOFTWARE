@@ -33,60 +33,72 @@
                         <div class="form-horizontal">
                           <div class="box-body">
 
-                                
-                                        <div class="form-group">
-                                        
-                                        <div class="row">
-                                           
-                                                <div class="col-md-3">
-                                                    ชื่อ-สกุล: <input type="text" name="name" required >
-                                                </div>
-                                                <div class="col-md-4">
-                                                    รหัสพนักงาน: <input type="text" name="name" required>
-                                                </div>
-                                
-                                                <div class="col-md-4">
-                                                    ตำแหน่ง: <input type="text" name="name" required> 
-                                                </div> 
+                                <div class="form-group">
+                                        <label  class="col-sm-2 control-label">ชื่อ-สกุล:</label>
+                      
+                                        <div class="col-sm-4">
+                                          <input type="email" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $name =  $_POST["lastname"]}}"  readonly>
                                         </div>
-                                    </div>
-                                        <div class="form-group">
-                                        <div class="row">
-                                        
-                                            <div class="col-md-4">
-                                                แผนก/ฝ่าย :    <input type="text" name="name" required>
-                                            </div>
-                                
-                                            <div class="col-md-4">
-                                                วันที่เริ่มงาน: <input type="text" name="dateStart" id="dateStart2" value="" /> 
-                                            </div>
-                                      
-                                
-                                        <div class="col-md-4">
-                                            วันสิ้นสุด:<input type="text" name="dateEnd" id="dateEnd2" value="" /> 
-                                        </div>
-                                    </div>
-                                </div>
-                                    <div class="form-group">
-                                  <div class="row">
-                                
-                                    ครบทดลองงาน:<input type="text" name="totolDay" id="totolDay2" value=""  readonly/> วัน
-                                </div>    
-                                    
-                                    </div>
-                                
-                                    <div class="form-group">
-                                            <div class="row">
-                                                    <div class="col-md-5">
-                                                    ประเมินครั้งที่ 1 : 60 วันที่ <input type="text" name="totolDay_60" id="totolDay_60" value=""  />
-                                                </div>  
-                                
-                                                <div class="col-md-5">
-                                                        ประเมินครั้งที่ 2 : 90 วันที่ <input type="text" name="totolDay_90" id="totolDay_90" value=""  /> 
-                                                    </div>
-                                          </div>    
-                                              
+                                        <label  class="col-sm-2 control-label">รหัสพนักงาน:</label>
+                                        <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="id_employ" required>
                                               </div>
+                                              
+
+                                      </div>
+
+                                      <div class="form-group">
+
+                                            <label  class="col-sm-2 control-label">ตำแหน่ง:</label>
+                                            <div class="col-sm-4">
+                                                    <input type="text" class="form-control" name="id_employ" required>
+                                                  </div> 
+                                                  
+                                                  <label  class="col-sm-2 control-label">แผนก/ฝ่าย:</label>
+                                                  <div class="col-sm-4">
+                                                          <input type="text" class="form-control" name="id_employ" required>
+                                                        </div>     
+                                      </div>
+                               
+                                      <div class="form-group">
+
+                                            <label  class="col-sm-2 control-label">วันเริ่มงาน:</label>
+                                            <div class="col-sm-4">
+                                                    <input type="text" name="dateStart2" id="dateStart2" value="" class="form-control" required/> 
+                                                  </div> 
+                                                  
+                                                  <label  class="col-sm-2 control-label">ครบการทดลองงาน:</label>
+                                                  <div class="col-sm-4">
+                                                        <input type="text" name="dateEnd2" id="dateEnd2" value="" class="form-control" required/> 
+                                                        </div>     
+                                      </div>
+
+                                      <div class="form-group">
+
+                                            <label  class="col-sm-2 control-label">จำนวนวัน:</label>
+                                            <div class="col-sm-4">
+                                                    <input type="text" name="totolDay2" id="totolDay2" value=""  readonly class="form-control" required/>
+                                                  </div> 
+                                                  
+                                                  <label  class="col-sm-2 control-label">ระดับ:</label>
+                                                  <div class="col-sm-4">
+                                                        <input type="text" name="dateEnd2" id="dateEnd2" value="" class="form-control" required/> 
+                                                        </div>     
+                                      </div>
+
+                                      <div class="form-group">
+
+                                            <label  class="col-sm-2 control-label">ประเมินครั้งที่ 1 : 60 วัน วันที่ :</label>
+                                            <div class="col-sm-4">
+                                                    <input type="text" name="totolDay_60" id="totolDay_60" value=""  class="form-control"/>
+                                                  </div> 
+                                                  
+                                                  <label  class="col-sm-2 control-label">  ประเมินครั้งที่ 2 : 90 วัน วันที่:</label>
+                                                  <div class="col-sm-4">
+                                                        <input type="text" name="totolDay_90" id="totolDay_90" value="" class="form-control" /> 
+                                                        </div>     
+                                      </div>
+                              
                                 
                                 
                                               คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน<br>
@@ -97,7 +109,8 @@
                                 …….	ต้องปรับปรุง	=     	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
                                 
                                 2.	ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป  จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน  
-                                     
+                                <div class="form-group">   
+                                        <div class="col-sm-12">
                                 <table id="customers">
                                   <tr>
                                     <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
@@ -141,10 +154,8 @@
                                    <td style="text-align:center">
                                    รวมคะแนน
                                    </td>
-                                
                                    <td style="text-align:center">
-                                
-                                <input type="text" name="total_60" id="total_60" readonly>
+                                   <input type="text" name="total_60" id="total_60" readonly>
                                 
                                     </td>
                                 
@@ -176,32 +187,35 @@
                                 
                                 
                                 </table>
-                                <br>
+                            </div>
+                            </div>
                                 <div class="form-group">
-                                        <div class="row">
-                                        
-                                            <div class="col-md-4">
-                                                    ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน) <textarea class="form-control" rows="3" name="assessor"></textarea>
-                                            </div>
-                                
-                                            <div class="col-md-4">
-                                                    จุดเด่นของพนักงาน: <textarea class="form-control" rows="3" name="featured" required></textarea>
-                                            </div>
-                                      
-                                
-                                        <div class="col-md-4">
-                                                จุดด้อยของพนักงาน:<textarea class="form-control" rows="3" name="weakness" required></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                              <div class="form-group">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                                ชื่อผู้ประเมิน: <input type="text" name="namerate" id="namerate" required>
-                                                        </div>
-                                                </div>
-                                            </div>
+
+                                        <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
+                                        <div class="col-sm-4">
+                                                <textarea class="form-control" rows="3" name="assessor"></textarea>
+                                              </div> 
+                                            </div> 
+                                <div class="form-group">
+                    
+                                        <label  class="col-sm-2 control-label">จุดเด่นพนักงาน:</label>
+                                        <div class="col-sm-4">
+                                                <textarea class="form-control" rows="3" name="featured" required></textarea>
+                                              </div> 
+                                              
+                                              <label  class="col-sm-2 control-label">จุดด้อยพนักงาน:</label>
+                                        <div class="col-sm-4">
+                                                <textarea class="form-control" rows="3" name="weakness" required></textarea>
+                                              </div> 
+                                                    
+                                  </div>
+                                  <div class="form-group">
+                    
+                                        <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
+                                        <div class="col-sm-4">
+                                                <input type="text" name="namerate" id="namerate" required class="form-control">
+                                              </div> 
+                                             </div>  
                                         <table id="customers">
                                                 <tr>
                                                   <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th>
@@ -235,5 +249,739 @@
       </div>
     </div>
    </div>
+
+
+
+   <script>
+
+        $('input[type=radio]').change(function(){
+            var group_60_1=0;
+            var group_60_2=0;
+            var group_60_3=0;
+            var group_60_4=0;
+            var group_60_5=0;
+            var group_60_6=0;
+            var group_60_7=0;
+            var group_60_8=0;
+            var group_60_9=0;
+            var group_60_10=0;
+            var group_60_11=0;
+            var group_60_12=0;
+            var group_60_13=0;
+            var group_60_14=0;
+            var group_60_15=0;
+            var group_60_16=0;
+            var group_60_17=0;
+            var group_60_18=0;
+            var group_60_19=0;
+            var group_60_20=0;
+            var group_60_21=0;
+            var group_60_22=0;
+            var group_60_23=0;
+            var group_60_24=0;
+            var group_60_25=0;
+            var group_total =0;
+       
+       
+            var group_90_1=0;
+            var group_90_2=0;
+            var group_90_3=0;
+            var group_90_4=0;
+            var group_90_5=0;
+            var group_90_6=0;
+            var group_90_7=0;
+            var group_90_8=0;
+            var group_90_9=0;
+            var group_90_10=0;
+            var group_90_11=0;
+            var group_90_12=0;
+            var group_90_13=0;
+            var group_90_14=0;
+            var group_90_15=0;
+            var group_90_16=0;
+            var group_90_17=0;
+            var group_90_18=0;
+            var group_90_19=0;
+            var group_90_20=0;
+            var group_90_21=0;
+            var group_90_22=0;
+            var group_90_23=0;
+            var group_90_24=0;
+            var group_90_25=0;
+            var group_90_total =0;
+       
+           var group_all_total =0;
+       
+       
+       
+       
+           if(score60_1[0].checked ){
+               group_60_1 =  score60_1[0].value 
+                       }
+                       if( score60_1[1].checked ){
+                           group_60_1 =  score60_1[1].value 
+                       }
+                       if( score60_1[2].checked ){
+                           group_60_1 =  score60_1[2].value
+                          
+                       } 
+                        if( score60_1[3].checked ){
+                           group_60_1 =  score60_1[3].value
+                          
+                       }
+       
+       
+        if(score60_2[0].checked ){
+               group_60_2 =  score60_2[0].value 
+                       }
+                       if( score60_2[1].checked ){
+                           group_60_2 =  score60_2[1].value 
+                       }
+                       if( score60_2[2].checked ){
+                           group_60_2 =  score60_2[2].value
+                          
+                       } 
+                        if( score60_2[3].checked ){
+                           group_60_2 =  score60_2[3].value
+                          
+                       }
+       
+        if(score60_3[0].checked ){
+               group_60_3 =  score60_3[0].value 
+                       }
+                       if( score60_3[1].checked ){
+                           group_60_3 =  score60_3[1].value 
+                       }
+                       if( score60_3[2].checked ){
+                           group_60_3 =  score60_3[2].value
+                          
+                       } 
+                        if( score60_3[3].checked ){
+                           group_60_3 =  score60_3[3].value
+                          
+                       }
+       
+       
+        if(score60_4[0].checked ){
+               group_60_4 =  score60_4[0].value 
+                       }
+                       if( score60_4[1].checked ){
+                           group_60_4 =  score60_4[1].value 
+                       }
+                       if( score60_4[2].checked ){
+                           group_60_4 =  score60_4[2].value
+                          
+                       } 
+                        if( score60_4[3].checked ){
+                           group_60_4 =  score60_4[3].value
+                          
+                       }
+       
+        if(score60_5[0].checked ){
+               group_60_5 =  score60_5[0].value 
+                       }
+                       if( score60_5[1].checked ){
+                           group_60_5 =  score60_5[1].value 
+                       }
+                       if( score60_5[2].checked ){
+                           group_60_5 =  score60_5[2].value
+                          
+                       } 
+                        if( score60_5[3].checked ){
+                           group_60_5 =  score60_5[3].value
+                          
+                       }
+       
+       
+       
+        if(score60_6[0].checked ){
+               group_60_6 =  score60_6[0].value 
+                       }
+                       if( score60_6[1].checked ){
+                           group_60_6 =  score60_6[1].value 
+                       }
+                       if( score60_6[2].checked ){
+                           group_60_6 =  score60_6[2].value
+                          
+                       } 
+                        if( score60_6[3].checked ){
+                           group_60_6 =  score60_6[3].value
+                          
+                       }
+       
+       
+        if(score60_7[0].checked ){
+               group_60_7 =  score60_7[0].value 
+                       }
+                       if( score60_7[1].checked ){
+                           group_60_7 =  score60_7[1].value 
+                       }
+                       if( score60_7[2].checked ){
+                           group_60_7 =  score60_7[2].value
+                          
+                       } 
+                        if( score60_7[3].checked ){
+                           group_60_7 =  score60_7[3].value
+                          
+                       }
+       
+       
+        if(score60_8[0].checked ){
+               group_60_8 =  score60_8[0].value 
+                       }
+                       if( score60_8[1].checked ){
+                           group_60_8 =  score60_8[1].value 
+                       }
+                       if( score60_8[2].checked ){
+                           group_60_8 =  score60_8[2].value
+                          
+                       } 
+                        if( score60_8[3].checked ){
+                           group_60_8 =  score60_8[3].value
+                          
+                       }
+       
+        if(score60_9[0].checked ){
+               group_60_9 =  score60_9[0].value 
+                       }
+                       if( score60_9[1].checked ){
+                           group_60_9 =  score60_9[1].value 
+                       }
+                       if( score60_9[2].checked ){
+                           group_60_9 =  score60_9[2].value
+                          
+                       } 
+                        if( score60_9[3].checked ){
+                           group_60_9 =  score60_9[3].value
+                          
+                       }
+       
+       
+       if(score60_10[0].checked ){
+               group_60_10 =  score60_10[0].value 
+                       }
+                       if( score60_10[1].checked ){
+                           group_60_10 =  score60_10[1].value 
+                       }
+                       if( score60_10[2].checked ){
+                           group_60_10 =  score60_10[2].value
+                          
+                       } 
+                        if( score60_10[3].checked ){
+                           group_60_10 =  score60_10[3].value
+                          
+                       }
+       
+       if(score60_11[0].checked ){
+               group_60_11 =  score60_11[0].value 
+                       }
+                       if( score60_11[1].checked ){
+                           group_60_11 =  score60_11[1].value 
+                       }
+                       if( score60_11[2].checked ){
+                           group_60_11 =  score60_11[2].value
+                          
+                       } 
+                        if( score60_11[3].checked ){
+                           group_60_11 =  score60_11[3].value
+                          
+                       }
+       
+       if(score60_12[0].checked ){
+               group_60_12 =  score60_12[0].value 
+                       }
+                       if( score60_12[1].checked ){
+                           group_60_12 =  score60_12[1].value 
+                       }
+                       if( score60_12[2].checked ){
+                           group_60_12 =  score60_12[2].value
+                          
+                       } 
+                        if( score60_12[3].checked ){
+                           group_60_12 =  score60_12[3].value
+                          
+                       }
+       
+       if(score60_13[0].checked ){
+               group_60_13 =  score60_13[0].value 
+                       }
+                       if( score60_13[1].checked ){
+                           group_60_13 =  score60_13[1].value 
+                       }
+                       if( score60_13[2].checked ){
+                           group_60_13=  score60_13[2].value
+                          
+                       } 
+                        if( score60_13[3].checked ){
+                           group_60_13 =  score60_13[3].value
+                          
+                       }
+       
+       if(score60_14[0].checked ){
+               group_60_14 =  score60_14[0].value 
+                       }
+                       if( score60_14[1].checked ){
+                           group_60_14 =  score60_14[1].value 
+                       }
+                       if( score60_14[2].checked ){
+                           group_60_14=  score60_14[2].value
+                          
+                       } 
+                        if( score60_14[3].checked ){
+                           group_60_14 =  score60_14[3].value
+                          
+                       }
+       
+       if(score60_15[0].checked ){
+               group_60_15 =  score60_15[0].value 
+                       }
+                       if( score60_15[1].checked ){
+                           group_60_15=  score60_15[1].value 
+                       }
+                       if( score60_15[2].checked ){
+                           group_60_15=  score60_15[2].value
+                          
+                       } 
+                        if( score60_15[3].checked ){
+                           group_60_15 =  score60_15[3].value
+                          
+                       }
+       
+        
+                       if(score60_16[0].checked ){
+               group_60_16 =  score60_16[0].value 
+                       }
+                       if( score60_16[1].checked ){
+                           group_60_16=  score60_16[1].value 
+                       }
+                       if( score60_16[2].checked ){
+                           group_60_16=  score60_16[2].value
+                          
+                       } 
+                        if( score60_16[3].checked ){
+                           group_60_16 =  score60_16[3].value
+                          
+                       }
+        
+                       if(score60_17[0].checked ){
+                                 group_60_17 =  score60_17[0].value 
+                       }
+                       if( score60_17[1].checked ){
+                           group_60_17=  score60_17[1].value 
+                       }
+                       if( score60_17[2].checked ){
+                           group_60_17=  score60_17[2].value
+                          
+                       } 
+                        if( score60_17[3].checked ){
+                           group_60_17 =  score60_17[3].value
+                          
+                       }
+
+
+ 
+ if(score60_18[0].checked ){
+               group_60_18 =  score60_18[0].value 
+                       }
+                       if( score60_18[1].checked ){
+                           group_60_18=  score60_18[1].value 
+                       }
+                       if( score60_18[2].checked ){
+                           group_60_18=  score60_18[2].value
+                          
+                       } 
+                        if( score60_18[3].checked ){
+                           group_60_18 =  score60_18[3].value
+                          
+                       }
+
+
+ 
+ if(score60_19[0].checked ){
+               group_60_19 =  score60_19[0].value 
+                       }
+                       if( score60_19[1].checked ){
+                           group_60_19=  score60_19[1].value 
+                       }
+                       if( score60_19[2].checked ){
+                           group_60_19=  score60_19[2].value
+                          
+                       } 
+                        if( score60_19[3].checked ){
+                           group_60_19 =  score60_19[3].value
+                          
+                       }
+
+
+ 
+ if(score60_20[0].checked ){
+               group_60_20 =  score60_20[0].value 
+                       }
+                       if( score60_20[1].checked ){
+                           group_60_20=  score60_20[1].value 
+                       }
+                       if( score60_20[2].checked ){
+                           group_60_20=  score60_20[2].value
+                          
+                       } 
+                        if( score60_20[3].checked ){
+                           group_60_20 =  score60_20[3].value
+                          
+                       }
+
+ 
+ if(score60_21[0].checked ){
+               group_60_21 =  score60_21[0].value 
+                       }
+                       if( score60_21[1].checked ){
+                           group_60_21=  score60_21[1].value 
+                       }
+                       if( score60_21[2].checked ){
+                           group_60_21=  score60_21[2].value
+                          
+                       } 
+                        if( score60_21[3].checked ){
+                           group_60_21 =  score60_21[3].value
+                          
+                       }
+
+ 
+ if(score60_22[0].checked ){
+               group_60_22 =  score60_22[0].value 
+                       }
+                       if( score60_22[1].checked ){
+                           group_60_22=  score60_22[1].value 
+                       }
+                       if( score60_22[2].checked ){
+                           group_60_22=  score60_22[2].value
+                          
+                       } 
+                        if( score60_22[3].checked ){
+                           group_60_22 =  score60_22[3].value
+                          
+                       }
+
+
+
+ 
+ if(score60_23[0].checked ){
+               group_60_23 =  score60_23[0].value 
+                       }
+                       if( score60_23[1].checked ){
+                           group_60_23=  score60_23[1].value 
+                       }
+                       if( score60_23[2].checked ){
+                           group_60_23=  score60_23[2].value
+                          
+                       } 
+                        if( score60_23[3].checked ){
+                           group_60_23 =  score60_23[3].value
+                          
+                       }
+
+                        
+       if(score60_24[0].checked ){
+               group_60_24 =  score60_24[0].value 
+                       }
+                       if( score60_24[1].checked ){
+                           group_60_24=  score60_24[1].value 
+                       }
+                       if( score60_24[2].checked ){
+                           group_60_24=  score60_24[2].value
+                          
+                       } 
+                        if( score60_24[3].checked ){
+                           group_60_24 =  score60_24[3].value
+                          
+                       }
+
+                        
+       if(score60_25[0].checked ){
+               group_60_25 =  score60_25[0].value 
+                       }
+                       if( score60_25[1].checked ){
+                           group_60_25=  score60_25[1].value 
+                       }
+                       if( score60_25[2].checked ){
+                           group_60_25=  score60_25[2].value
+                          
+                       } 
+                        if( score60_25[3].checked ){
+                           group_60_25 =  score60_25[3].value
+                          
+                       }
+
+       group_total =(parseInt(group_60_1)+parseInt(group_60_2)+parseInt(group_60_3)+parseInt(group_60_4)+parseInt(group_60_5)+parseInt(group_60_6)+parseInt(group_60_7)+parseInt(group_60_8)+parseInt(group_60_9)+parseInt(group_60_10)+parseInt(group_60_11)+parseInt(group_60_12)+parseInt(group_60_13)+parseInt(group_60_14)+parseInt(group_60_15)
+       +parseInt(group_60_16)+parseInt(group_60_17)+parseInt(group_60_18)+parseInt(group_60_19)+parseInt(group_60_20)+parseInt(group_60_21) +parseInt(group_60_22)+parseInt(group_60_23)+parseInt(group_60_24)+parseInt(group_60_25)                )*100/60;
+       
+       
+                       $('#total_60').val(group_total.toFixed( 2 ));      
+                       $('#rate_60').val(group_total.toFixed( 2 ));      
+       
+       
+       
+       
+       
+       
+       
+       if(score90_1[0].checked ){
+               group_90_1 =  score90_1[0].value 
+                       }
+                       if( score90_1[1].checked ){
+                           group_90_1 =  score90_1[1].value 
+                       }
+                       if( score90_1[2].checked ){
+                           group_90_1 =  score90_1[2].value
+                          
+                       } 
+                        if( score90_1[3].checked ){
+                           group_90_1 =  score90_1[3].value
+                          
+                       }
+       
+       
+        if(score90_2[0].checked ){
+               group_90_2 =  score90_2[0].value 
+                       }
+                       if( score90_2[1].checked ){
+                           group_90_2 =  score90_2[1].value 
+                       }
+                       if( score90_2[2].checked ){
+                           group_90_2 =  score90_2[2].value
+                          
+                       } 
+                        if( score90_2[3].checked ){
+                           group_90_2 =  score90_2[3].value
+                          
+                       }
+       
+        if(score90_3[0].checked ){
+               group_90_3 =  score90_3[0].value 
+                       }
+                       if( score90_3[1].checked ){
+                           group_90_3 =  score90_3[1].value 
+                       }
+                       if( score90_3[2].checked ){
+                           group_90_3 =  score90_3[2].value
+                          
+                       } 
+                        if( score90_3[3].checked ){
+                           group_90_3 =  score90_3[3].value
+                          
+                       }
+       
+       
+        if(score60_4[0].checked ){
+               group_90_4 =  score90_4[0].value 
+                       }
+                       if( score90_4[1].checked ){
+                           group_90_4 =  score90_4[1].value 
+                       }
+                       if( score90_4[2].checked ){
+                           group_90_4 =  score90_4[2].value
+                          
+                       } 
+                        if( score90_4[3].checked ){
+                           group_90_4 =  score90_4[3].value
+                          
+                       }
+       
+        if(score90_5[0].checked ){
+               group_90_5 =  score90_5[0].value 
+                       }
+                       if( score90_5[1].checked ){
+                           group_90_5 =  score90_5[1].value 
+                       }
+                       if( score90_5[2].checked ){
+                           group_90_5 =  score90_5[2].value
+                          
+                       } 
+                        if( score90_5[3].checked ){
+                           group_90_5 =  score90_5[3].value
+                          
+                       }
+       
+       
+       
+        if(score90_6[0].checked ){
+               group_90_6 =  score90_6[0].value 
+                       }
+                       if( score90_6[1].checked ){
+                           group_90_6 =  score90_6[1].value 
+                       }
+                       if( score90_6[2].checked ){
+                           group_90_6 =  score90_6[2].value
+                          
+                       } 
+                        if( score90_6[3].checked ){
+                           group_90_6 =  score90_6[3].value
+                          
+                       }
+       
+       
+        if(score90_7[0].checked ){
+               group_90_7 =  score90_7[0].value 
+                       }
+                       if( score90_7[1].checked ){
+                           group_90_7 =  score90_7[1].value 
+                       }
+                       if( score90_7[2].checked ){
+                           group_90_7 =  score90_7[2].value
+                          
+                       } 
+                        if( score90_7[3].checked ){
+                           group_90_7 =  score90_7[3].value
+                          
+                       }
+       
+       
+        if(score90_8[0].checked ){
+               group_60_8 =  score90_8[0].value 
+                       }
+                       if( score90_8[1].checked ){
+                           group_90_8 =  score90_8[1].value 
+                       }
+                       if( score90_8[2].checked ){
+                           group_90_8 =  score90_8[2].value
+                          
+                       } 
+                        if( score90_8[3].checked ){
+                           group_90_8 =  score90_8[3].value
+                          
+                       }
+       
+        if(score90_9[0].checked ){
+               group_90_9 =  score90_9[0].value 
+                       }
+                       if( score90_9[1].checked ){
+                           group_90_9 =  score90_9[1].value 
+                       }
+                       if( score90_9[2].checked ){
+                           group_90_9 =  score90_9[2].value
+                          
+                       } 
+                        if( score90_9[3].checked ){
+                           group_90_9 =  score90_9[3].value
+                          
+                       }
+       
+       
+       if(score90_10[0].checked ){
+               group_90_10 =  score90_10[0].value 
+                       }
+                       if( score90_10[1].checked ){
+                           group_90_10 =  score90_10[1].value 
+                       }
+                       if( score90_10[2].checked ){
+                           group_90_10 =  score90_10[2].value
+                          
+                       } 
+                        if( score90_10[3].checked ){
+                           group_90_10 =  score90_10[3].value
+                          
+                       }
+       
+       if(score90_11[0].checked ){
+               group_90_11 =  score90_11[0].value 
+                       }
+                       if( score90_11[1].checked ){
+                           group_90_11 =  score90_11[1].value 
+                       }
+                       if( score90_11[2].checked ){
+                           group_90_11 =  score90_11[2].value
+                          
+                       } 
+                        if( score90_11[3].checked ){
+                           group_90_11 =  score90_11[3].value
+                          
+                       }
+       
+       if(score90_12[0].checked ){
+               group_90_12 =  score90_12[0].value 
+                       }
+                       if( score90_12[1].checked ){
+                           group_90_12 =  score90_12[1].value 
+                       }
+                       if( score60_12[2].checked ){
+                           group_90_12 =  score90_12[2].value
+                          
+                       } 
+                        if( score90_12[3].checked ){
+                           group_90_12 =  score90_12[3].value
+                          
+                       }
+       
+       if(score90_13[0].checked ){
+               group_90_13 =  score90_13[0].value 
+                       }
+                       if( score90_13[1].checked ){
+                           group_90_13 =  score90_13[1].value 
+                       }
+                       if( score90_13[2].checked ){
+                           group_90_13=  score90_13[2].value
+                          
+                       } 
+                        if( score90_13[3].checked ){
+                           group_90_13 =  score90_13[3].value
+                          
+                       }
+       
+       if(score90_14[0].checked ){
+               group_90_14 =  score90_14[0].value 
+                       }
+                       if( score90_14[1].checked ){
+                           group_90_14 =  score90_14[1].value 
+                       }
+                       if( score60_14[2].checked ){
+                           group_90_14=  score90_14[2].value
+                          
+                       } 
+                        if( score90_14[3].checked ){
+                           group_90_14 =  score90_14[3].value
+                          
+                       }
+       
+       if(score90_15[0].checked ){
+               group_90_15 =  score90_15[0].value 
+                       }
+                       if( score90_15[1].checked ){
+                           group_90_15=  score90_15[1].value 
+                       }
+                       if( score90_15[2].checked ){
+                           group_90_15=  score90_15[2].value
+                          
+                       } 
+                        if( score90_15[3].checked ){
+                           group_90_15 =  score90_15[3].value
+                          
+                       }
+       
+                   group_90_total =(parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15))*100/60;
+       
+                      
+                      
+                      
+                       $('#total_90').val(group_90_total.toFixed( 2 ));      
+                       $('#rate_90').val(group_90_total.toFixed( 2 ));    
+       
+       
+       
+                 $('#rate_all').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt(group_total.toFixed( 2 )))/2);   
+       
+
+
+       });
+       </script>
+
+
+
+
+
+
+
+
+
+
+
 </div>
 @endsection

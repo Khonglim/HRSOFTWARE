@@ -13,6 +13,7 @@
                     {{Form::open(['url'=>'conduct_employs','method'=>'POST'])}}
                     <div class="form-horizontal">
                       <div class="box-body">
+
                         <div class="form-group">
                           <label for="inputEmail3" class="col-sm-2 control-label">ชื่อ-สกุล</label>
         
