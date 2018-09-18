@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Operate_Chioce;
 use App\Operate_qSup;
 use App\Personal;
+use DB;
 class Operate_supController extends Controller
 {
     /**
@@ -26,15 +27,7 @@ class Operate_supController extends Controller
      */
     public function create()
     {
-        $manager = DB::table('__manager')->get();
-        $operate_Chioce  = Operate_Chioce::all();
-        $operate_qSup  =  Operate_qSup::all();
-        $data = array(
-            'operate_Chioce' =>  $operate_Chioce,
-            'operate_qSup' =>   $operate_qSup,
-            'manager' =>   $manager
-        );
-        return view("operate/operate_sup",$data);
+      
     }
 
     /**

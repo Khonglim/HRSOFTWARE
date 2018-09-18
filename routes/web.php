@@ -4,6 +4,10 @@ use App\Http\Controllers\PDFController;
 use App\Testmbti;
 use App\Testdisc;
 use App\Personal;
+use App\Operate_Chioce;
+use App\Operate_qSeff;
+use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -121,45 +125,47 @@ Route::get('savedisc', function () { return view("testdisc/save");});
 
 Route::get('save_employ', function () { return view("employ/save");});
 
+
+
+
+
+
 Route::get('operate_employf', function () { 
-    
-    
-    
     
     $employee  = Personal::where('enable','=', 1)->get();
     $data = array(
         'employee' => $employee 
     ); 
     return view("operate/staff/index",$data);
-
-
-
-
-
+    
+  
 
 });
 
-Route::get('operate_employs', function () { 
-    
-    
-    
-    $employee  = Personal::where('enable','=', 1)->get();
-        $data = array(
-            'employee' => $employee 
-        ); 
-        return view("operate/sup/index",$data);
 
-
-
+Route::post('operate_employstaff', function () { 
+    
+    $manager = DB::table('__manager')->get();
+    $operate_Chioce  = Operate_Chioce::all();
+    $operate_qSeff  = Operate_qSeff::all();
+    $data = array(
+        'operate_Chioce' =>  $operate_Chioce,
+        'operate_qSeff' =>   $operate_qSeff,
+        'manager' =>   $manager,
+    );
+    return view("operate/staff/operate_60",$data);
 
 });
 
 
 Route::post('conduct_employs', function () { 
     
-    
+    $employee  = Personal::where('enable','=', 1)->get();
+        $data = array(
+            'employee' => $employee 
+        ); 
    
-        return view("operate/staff/conduct_staff");
+        return view("operate/staff/conduct_staff",$data);
 
 
 

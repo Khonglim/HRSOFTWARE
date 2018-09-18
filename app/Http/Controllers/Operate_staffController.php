@@ -24,7 +24,7 @@ class Operate_staffController extends Controller
      */
     public function create()
     {
-        //
+        return view('operate/staff/operate_60');
     }
 
     /**
@@ -35,7 +35,7 @@ class Operate_staffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

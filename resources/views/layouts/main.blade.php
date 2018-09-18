@@ -13,11 +13,183 @@
   <link href="{{ asset('plugins/pace/pace.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/skins/_all-skins.min.css') }}" rel="stylesheet">
   <link href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src=" {{ asset('all/jquery-1.10.2.min.js') }}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Prompt">
+
+
+  <link rel="stylesheet"  type="text/css" href="{{ asset('all/jquery-ui.css') }}" />
+  <link rel="stylesheet" media="all" type="text/css" href="{{ asset('all/jquery-ui-timepicker-addon.css') }}" />
+  <script type="text/javascript" src="{{ asset('all/jquery-ui.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('all/jquery-ui-timepicker-addon.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('all/jquery-ui-sliderAccess.js') }}"></script>
+
+
+
+  <script type="text/javascript">
+
+    $(function(){
+      $("#totolDay_60").datepicker({
+        dateFormat: 'dd/M/yy'
+      });
+    });
+    
+    </script>
+  
+  <script type="text/javascript">
+  
+    $(function(){
+      $("#totolDay_90").datepicker({
+        dateFormat: 'dd/M/yy'
+      });
+    });
+    
+    </script>
+  
+  
+  
+  
+    
+    <script type="text/javascript">
+  
+      $(function(){
+      
+        var startDateTextBox = $('#dateStart');
+        var endDateTextBox = $('#dateEnd');
+      
+        startDateTextBox.datepicker({ 
+          dateFormat: 'dd/M/yy',
+          
+          onClose: function(dateText, inst) {
+            if (endDateTextBox.val() != '') {
+              var testStartDate = startDateTextBox.datetimepicker('getDate');
+              var testEndDate = endDateTextBox.datetimepicker('getDate');
+              if (testStartDate > testEndDate)
+                endDateTextBox.datetimepicker('setDate', testStartDate);
+            }
+            else {
+              endDateTextBox.val(dateText);
+            }
+            displayDateDiff();
+          },
+          onSelect: function (selectedDateTime){
+            endDateTextBox.datetimepicker('option', 'minDate', startDateTextBox.datetimepicker('getDate') );
+          }
+        });
+        endDateTextBox.datepicker({ 
+          dateFormat: 'dd-M-yy',
+          onClose: function(dateText, inst) {
+            if (startDateTextBox.val() != '') {
+              var testStartDate = startDateTextBox.datetimepicker('getDate');
+              var testEndDate = endDateTextBox.datetimepicker('getDate');
+              if (testStartDate > testEndDate)
+                startDateTextBox.datetimepicker('setDate', testEndDate);
+            }
+            else {
+              startDateTextBox.val(dateText);
+            }
+            displayDateDiff();
+          },
+          onSelect: function (selectedDateTime){
+            startDateTextBox.datetimepicker('option', 'maxDate', endDateTextBox.datetimepicker('getDate') );
+          }
+        });
+      
+      });
+      
+      function displayDateDiff()
+      {
+        if($('#dateStart').val() != "" && $('#dateEnd').val() != "")
+        {
+              var dateStart = new Date($("#dateStart").val());
+              var dateEnd =  new Date($("#dateEnd").val())
+              var timeDiff = Math.abs(dateEnd.getTime() - dateStart.getTime());
+              
+              var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+              diffDays = diffDays + 1;
+                          
+  
+  
+              $("#totolDay").val(diffDays);
+        }
+      }
+      
+      </script>
+      <script type="text/javascript">
+  
+        $(function(){
+        
+          var startDateTextBox = $('#dateStart2');
+          var endDateTextBox = $('#dateEnd2');
+        
+          startDateTextBox.datepicker({ 
+            dateFormat: 'dd/M/yy',
+            
+            onClose: function(dateText, inst) {
+              if (endDateTextBox.val() != '') {
+                var testStartDate = startDateTextBox.datetimepicker('getDate');
+                var testEndDate = endDateTextBox.datetimepicker('getDate');
+                if (testStartDate > testEndDate)
+                  endDateTextBox.datetimepicker('setDate', testStartDate);
+              }
+              else {
+                endDateTextBox.val(dateText);
+              }
+              displayDateDiff();
+            },
+            onSelect: function (selectedDateTime){
+              endDateTextBox.datetimepicker('option', 'minDate', startDateTextBox.datetimepicker('getDate') );
+            }
+          });
+          endDateTextBox.datepicker({ 
+            dateFormat: 'dd/M/yy',
+            onClose: function(dateText, inst) {
+              if (startDateTextBox.val() != '') {
+                var testStartDate = startDateTextBox.datetimepicker('getDate');
+                var testEndDate = endDateTextBox.datetimepicker('getDate');
+                if (testStartDate > testEndDate)
+                  startDateTextBox.datetimepicker('setDate', testEndDate);
+              }
+              else {
+                startDateTextBox.val(dateText);
+              }
+              displayDateDiff();
+            },
+            onSelect: function (selectedDateTime){
+              startDateTextBox.datetimepicker('option', 'maxDate', endDateTextBox.datetimepicker('getDate') );
+            }
+          });
+        
+        });
+        
+        function displayDateDiff()
+        {
+          if($('#dateStart2').val() != "" && $('#dateEnd2').val() != "")
+          {
+                var dateStart = new Date($("#dateStart2").val());
+                var dateEnd =  new Date($("#dateEnd2").val())
+                var timeDiff = Math.abs(dateEnd.getTime() - dateStart.getTime());
+                
+                var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+                diffDays = diffDays + 1;
+                
+    
+    
+                $("#totolDay2").val(diffDays);
+          }
+        }
+        
+        </script>
+
+
+
+
+
+
+
+
 <style>
 body {
   font-family: 'Prompt', sans-serif;
@@ -356,7 +528,7 @@ body {
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 
-  <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
+ 
   <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}" defer></script>
   <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}" defer></script>
   <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}" defer></script>

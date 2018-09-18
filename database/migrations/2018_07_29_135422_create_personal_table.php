@@ -220,7 +220,7 @@ class CreatePersonalTable extends Migration
             $table->tinyInteger('enable')->default('1');
             $table->boolean('recheck_conduct')->default(true); 
             $table->boolean('recheck_Oper')->default(true);
-
+            $table->boolean('recheck_Oper_90')->default(true);
             $table->timestamps();
         });
     }

@@ -45,7 +45,7 @@ body {
             <div class="panel panel-success" style="width:100%">
                 <div class="panel-heading">การทดสอบบุคลิกภาพ</div>
                 <div class="panel-body">
-                    {{Form::open(['url'=>'disc',])}}
+                    {{Form::open(['url'=>'disc'])}}
                     {{ csrf_field() }}
                     @isset($_POST['id_personal'])
                    
