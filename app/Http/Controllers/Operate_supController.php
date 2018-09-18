@@ -27,7 +27,7 @@ class Operate_supController extends Controller
      */
     public function create()
     {
-      
+        return view('operate/sup/operate_60');
     }
 
     /**
@@ -60,7 +60,7 @@ class Operate_supController extends Controller
      */
     public function edit($id)
     {
-        //
+       return 'ok++++';
     }
 
     /**

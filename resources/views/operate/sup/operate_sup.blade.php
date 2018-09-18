@@ -31,7 +31,7 @@
         <div class="panel panel-success" style="width:100%">
                 <div class="panel-heading">แบบประเมินผลการปฏิบัติงานระดับพนักงานปฏิบัติการ</div>
                 <div class="panel-body">
-        <div class="form-group">
+      
 
     <div class="form-group">
 
@@ -452,7 +452,7 @@
                          
                          
                                                                
-                        </div>
+                       
 
 
 

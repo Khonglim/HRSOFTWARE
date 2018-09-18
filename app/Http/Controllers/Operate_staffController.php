@@ -57,7 +57,7 @@ class Operate_staffController extends Controller
      */
     public function edit($id)
     {
-        //
+    
     }
 
     /**

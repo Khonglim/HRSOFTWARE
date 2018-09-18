@@ -6,6 +6,7 @@ use App\Testdisc;
 use App\Personal;
 use App\Operate_Chioce;
 use App\Operate_qSeff;
+use App\Operate_qSup;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -145,7 +146,7 @@ Route::get('operate_employf', function () {
 
 Route::post('operate_employstaff', function () { 
     
-    $manager = DB::table('__manager')->get();
+   
     $operate_Chioce  = Operate_Chioce::all();
     $operate_qSeff  = Operate_qSeff::all();
     $data = array(
@@ -156,6 +157,37 @@ Route::post('operate_employstaff', function () {
     return view("operate/staff/operate_60",$data);
 
 });
+
+
+
+Route::post('operate_employsup', function () { 
+    
+    $manager = DB::table('__manager')->get();
+    $operate_Chioce  = Operate_Chioce::all();
+    $operate_qSup  = operate_qSup::all();
+    $data = array(
+        'operate_Chioce' =>  $operate_Chioce,
+        'operate_qSup' =>   $operate_qSup,
+        'manager' =>   $manager,
+    );
+    return view("operate/sup/operate_60",$data);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Route::post('conduct_employs', function () { 

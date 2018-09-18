@@ -3,7 +3,7 @@
   <div class="content-wrapper">
         <div class="col-md-5">
     <div class="content container-fluid">
-     
+    
             <div class="box box-info">
                     <div class="box-header with-border">
                       การทดลองงานระดับปฏิบัติการ
