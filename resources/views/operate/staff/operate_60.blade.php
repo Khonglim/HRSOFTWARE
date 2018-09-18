@@ -39,7 +39,7 @@
                                         <label  class="col-sm-2 control-label">ชื่อ-สกุล:</label>
                       
                                         <div class="col-sm-4">
-                                          <input type="email" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $name =  $_POST["lastname"]}}"  readonly>
+                                          <input type="text" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $name =  $_POST["lastname"]}}"  readonly>
                                         </div>
                                         <label  class="col-sm-2 control-label">รหัสพนักงาน:</label>
                                         <div class="col-sm-4">
