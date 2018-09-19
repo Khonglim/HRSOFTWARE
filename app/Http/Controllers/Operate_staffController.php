@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use App\Personal;
+use App\Operate_staff;
+
 class Operate_staffController extends Controller
 {
     /**
@@ -33,9 +36,16 @@ class Operate_staffController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request  )
     {
+        $personal = Personal::find(Input::get('id_posinal'));
+        $personal->recheck_Oper =0;
+        $personal->recheck_conduct=1;
+        $personal->save();
+
+       
         
+
     }
 
     /**

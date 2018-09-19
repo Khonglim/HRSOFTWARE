@@ -18,6 +18,7 @@
               {{Form::open(['url'=>'operate_employstaff','method'=>'POST' ])}}
             <input type="hidden"  value="{{$e->name}}" name="name" >
             <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
+            <input type="hidden"  value="{{$e->id}}" name="id_2" >
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
                 <div class="col-sm-7">
@@ -36,14 +37,14 @@
                 </div>
 
               @endif
-            @endforeach
+            @endforeach       
               @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
+              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
               @if($e->recheck_Oper_90 == '1')
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                   <div class="col-sm-7">
-                  <a href="{{'Operate_staff/'.$e['id'].'/edit'}}" class="btn btn-success" ><i class="fa fa-pencil">คลิก</i></a>
+                  <a href="{{'Operate_staff/'.$e['id'].'/edit'}}" class="btn btn-success" ><i class="fa fa-pencil"></i> คลิก</a>
                   </div>
                 </div>
                

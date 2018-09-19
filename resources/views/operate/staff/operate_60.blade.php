@@ -25,8 +25,9 @@
     }
     </style>
   <div class="content-wrapper">
+
         <div class="content container-fluid">
-     
+        {{  $id =  $_POST["id_2"] }}
                 <div class="box box-info">
                         <div class="box-header with-border">
                           การทดลองงานระดับปฏิบัติการ
@@ -39,6 +40,9 @@
                                         <label  class="col-sm-2 control-label">ชื่อ-สกุล:</label>
                       
                                         <div class="col-sm-4">
+                                             
+                                         
+                                              <input type="hidden"  name="id_posinal" value="{{  $id =  $_POST["id_2"] }}">
                                           <input type="text" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $name =  $_POST["lastname"]}}"  readonly>
                                         </div>
                                         <label  class="col-sm-2 control-label">รหัสพนักงาน:</label>
