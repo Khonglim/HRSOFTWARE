@@ -40,6 +40,7 @@ return array(
     'App\\Http\\Controllers\\JorgchartController' => $baseDir . '/app/Http/Controllers/JorgchartController.php',
     'App\\Http\\Controllers\\ManagerController' => $baseDir . '/app/Http/Controllers/ManagerController.php',
     'App\\Http\\Controllers\\OperateController' => $baseDir . '/app/Http/Controllers/OperateController.php',
+    'App\\Http\\Controllers\\Operate_staffController' => $baseDir . '/app/Http/Controllers/Operate_staffController.php',
     'App\\Http\\Controllers\\Operate_supController' => $baseDir . '/app/Http/Controllers/Operate_supController.php',
     'App\\Http\\Controllers\\PDFController' => $baseDir . '/app/Http/Controllers/PDFController.php',
     'App\\Http\\Controllers\\PositionController' => $baseDir . '/app/Http/Controllers/PositionController.php',

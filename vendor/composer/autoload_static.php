@@ -388,6 +388,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Http\\Controllers\\JorgchartController' => __DIR__ . '/../..' . '/app/Http/Controllers/JorgchartController.php',
         'App\\Http\\Controllers\\ManagerController' => __DIR__ . '/../..' . '/app/Http/Controllers/ManagerController.php',
         'App\\Http\\Controllers\\OperateController' => __DIR__ . '/../..' . '/app/Http/Controllers/OperateController.php',
+        'App\\Http\\Controllers\\Operate_staffController' => __DIR__ . '/../..' . '/app/Http/Controllers/Operate_staffController.php',
         'App\\Http\\Controllers\\Operate_supController' => __DIR__ . '/../..' . '/app/Http/Controllers/Operate_supController.php',
         'App\\Http\\Controllers\\PDFController' => __DIR__ . '/../..' . '/app/Http/Controllers/PDFController.php',
         'App\\Http\\Controllers\\PositionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PositionController.php',

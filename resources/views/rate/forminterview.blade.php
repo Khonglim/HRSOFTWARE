@@ -52,7 +52,7 @@
                             @foreach ($employee  as $e)
                             <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
                             @endforeach
-                      
+                            </select>
                         <td style="text-align:center">
                             ตำแหน่งผู้สมัคร (Position)  <br>
                         <input type="text" name="ngg_position" required>

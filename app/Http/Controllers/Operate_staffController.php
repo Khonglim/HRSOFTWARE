@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-use App\Operate_Chioce;
-use App\Operate_qSup;
 use App\Personal;
-use DB;
-class Operate_supController extends Controller
+use App\Operate_staff;
+
+class Operate_staffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class Operate_supController extends Controller
      */
     public function index()
     {
-       
+        
     }
 
     /**
@@ -27,7 +27,7 @@ class Operate_supController extends Controller
      */
     public function create()
     {
-        return view('operate/sup/operate_60');
+        return view('operate/staff/operate_60');
     }
 
     /**
@@ -36,9 +36,16 @@ class Operate_supController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request  )
     {
-        //
+        $personal = Personal::find(Input::get('id_posinal'));
+        $personal->recheck_Oper =0;
+        $personal->recheck_conduct=1;
+        $personal->save();
+
+       
+        
+
     }
 
     /**
@@ -60,7 +67,7 @@ class Operate_supController extends Controller
      */
     public function edit($id)
     {
-       return 'ok++++';
+    
     }
 
     /**

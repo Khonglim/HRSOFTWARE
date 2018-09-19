@@ -19,9 +19,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-
         $personal = Personal::where('enable','=', 1)->get();
-
         $data = array('personal' =>  $personal  );
         return view('employ/employee',$data);
         

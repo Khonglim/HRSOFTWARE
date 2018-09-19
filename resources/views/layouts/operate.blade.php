@@ -19,11 +19,7 @@
 
         <link rel="stylesheet"  type="text/css" href="{{ asset('all/jquery-ui.css') }}" />
 		<link rel="stylesheet" media="all" type="text/css" href="{{ asset('all/jquery-ui-timepicker-addon.css') }}" />
-
-
-		<script type="text/javascript" src=" {{ asset('all/jquery-1.10.2.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('all/jquery-ui.min.js') }}"></script>
-
 		<script type="text/javascript" src="{{ asset('all/jquery-ui-timepicker-addon.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('all/jquery-ui-sliderAccess.js') }}"></script>
 
@@ -57,21 +53,8 @@
 	});
 	
 	</script>
-</head>
 
-<body>
-	<!--Header-->
-	<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-			  <div class="navbar-header">
-				<a class="navbar-brand" href="{{url('/') }}">กลับหน้าแรก</a>
-			  </div>
-		
-			</div>
-		  </nav>
-	<main>
-		@yield('content')
-	</main>
+
 
 
 	

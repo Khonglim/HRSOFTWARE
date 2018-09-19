@@ -3,6 +3,12 @@
 use App\Http\Controllers\PDFController;
 use App\Testmbti;
 use App\Testdisc;
+use App\Personal;
+use App\Operate_Chioce;
+use App\Operate_qSeff;
+use App\Operate_qSup;
+use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +33,8 @@ Route::resource('con_all', 'Con_allController');
 Route::resource('Operate', 'OperateController');
 
 Route::resource('Operate_sup', 'Operate_supController');
+
+Route::resource('Operate_staff', 'Operate_staffController');
 
 Route::resource('mbti','TestmbtiController');
 Route::post('/start','AnswerController@start');
@@ -127,3 +135,80 @@ Route::get('savedisc', function () { return view("testdisc/save");});
 
 Route::get('save_employ', function () { return view("employ/save");});
 
+
+
+
+
+
+Route::get('operate_employf', function () { 
+    
+    $employee  = Personal::where('enable','=', 1)->get();
+    $data = array(
+        'employee' => $employee 
+    ); 
+    return view("operate/staff/index",$data);
+    
+  
+
+});
+
+
+Route::post('operate_employstaff', function () { 
+    
+   
+    $operate_Chioce  = Operate_Chioce::all();
+    $operate_qSeff  = Operate_qSeff::all();
+    $data = array(
+        'operate_Chioce' =>  $operate_Chioce,
+        'operate_qSeff' =>   $operate_qSeff,
+       
+    );
+    return view("operate/staff/operate_60",$data);
+
+});
+
+
+
+Route::post('operate_employsup', function () { 
+    
+    $manager = DB::table('__manager')->get();
+    $operate_Chioce  = Operate_Chioce::all();
+    $operate_qSup  = operate_qSup::all();
+    $data = array(
+        'operate_Chioce' =>  $operate_Chioce,
+        'operate_qSup' =>   $operate_qSup,
+        'manager' =>   $manager,
+    );
+    return view("operate/sup/operate_60",$data);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::post('conduct_employs', function () { 
+    
+    $employee  = Personal::where('enable','=', 1)->get();
+        $data = array(
+            'employee' => $employee 
+        ); 
+   
+        return view("operate/staff/conduct_staff",$data);
+
+
+
+
+});
