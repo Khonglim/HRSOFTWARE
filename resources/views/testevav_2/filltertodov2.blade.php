@@ -28,7 +28,7 @@ function myFunction() {
                  
                    <?php    $i=Auth::user()->name; $j=0;?>
                  
-                   {{Form::open(['url'=>'istestertotest','method'=>'POST'])}}
+                   {{Form::open(['url'=>'istestertotestv2','method'=>'POST'])}}
 
                     {{Form::label('id_employee','รหัส พนักงาน')}}   
                     {{Form::text('id_employee',$i,['class'=>'form-control','required'])}}   
