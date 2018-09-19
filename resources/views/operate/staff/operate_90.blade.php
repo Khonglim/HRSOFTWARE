@@ -323,17 +323,78 @@
     
                               </div>
 
+                              <div class="form-group">
+                                   
+                                          
+                                            <div class="col-sm-4">
+                                            <div class="checkbox">
+                                                    <label><input type="checkbox" value="ไม่ผ่านทดลองงาน">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   <input type="text"  name="clsdate"  id="clsdate" class="form-control">
+                                                  </div>
+                                                </div>
+
+
+                                       
+                                    </div>  
+           
+                                    
+                                    <div class="form-group">
+                                   
+                                          
+                                            <div class="col-sm-4">
+                                                    <div class="checkbox">
+                                                            <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ">อนุมัติให้บรรจุเป็นพนักงานประจำ</label><br> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto" class="form-control" > ตำแหน่ง:<input type="text"  id="t2"  class="form-control"/>
+                                                          </div>
+                                                </div>
+
+
+                                       
+                                    </div> 
+
+
+                                    <div class="form-group">
+                                   
+                                          
+                                            <div class="col-sm-4">
+                                                    <div class="checkbox">
+                                                            <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง</label> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto"  class="form-control"> เป็นตำแหน่ง:<input type="text"  id="t2"   class="form-control"/>
+                                                          </div>
+                                                </div>
+
+
+                                       
+                                    </div> 
 
 
 
 
 
+                                    <div class="form-group">
+                                   
+                                          
+                                            <div class="col-sm-4">
+                                                    <div class="checkbox">
+                                                            <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง</label> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto"  class="form-control"> เป็นตำแหน่ง:<input type="text"  id="t2"   class="form-control"/>
+                                                          </div>
+                                                </div>
 
 
+                                       
+                                    </div> 
 
 
+                                    <div class="form-group">
+                                   
+                                          
+                                            <div class="col-sm-4">
+                                                    
+                                    <div class="checkbox">
+                                            <label><input type="checkbox" value="อื่นๆ">อื่นๆ</label>  <textarea class="form-control" rows="3" name="etc"></textarea>
+                                          </div>
+                                                </div>
 
 
+                                       
+                                    </div> 
 
 
 
