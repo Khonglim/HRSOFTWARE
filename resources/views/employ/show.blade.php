@@ -588,10 +588,10 @@
                                                                        @endif          
                                                         </td>
                                                         <td align="center">
-                                                                        @if($personal->year1 =='')
+                                                                        @if($personal->year14 =='')
                                                                        -
                                                                         @else
-                                                                       {{$personal->year1}}
+                                                                       {{$personal->year14}}
                                                                        @endif     
                                                                        
                                                         </td>
@@ -1137,7 +1137,7 @@
                 <div class="row">      
                         <div class="col-md-12">
                                         <div class="form-group ">
-                                        <label>ในตำแหน่งที่ต้องการต้งมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)</label> &emsp;&emsp;
+                                        <label>ในตำแหน่งที่ต้องการต้องมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)</label> &emsp;&emsp;
                                         {{$personal->crash1}}   
                                    
                                         ชื่อ:  {{$personal->compd}} 
@@ -1246,7 +1246,7 @@
                                                         <div class="row">      
                                                                 <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                                <label>ท่านเคยไดรั้บโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                                <label>ท่านเคยได้รับโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;
                                                                                 {{$personal->offense}}
                                                                                 
                                                                         </div>
