@@ -29,8 +29,7 @@
                 <tr>
                   <td style="text-align: center;width: 6.5%;height: 40px;">{{$ngg_emp->nem_code}}</td>
                   <td style="text-align: center;width: 6.5%;height: 40px;">{{Form::label('คุณ','คุณ')}} {{$ngg_emp->nem_thai_firstname}}</td>
-                   <td style="text-align: center;width: 6.5%;height: 40px;"> <a href="{{'evareport/'.$ngg_emp->nem_id.'/evareportblindname'}}" class="btn btn-primary btn-xs" ><i class="fa fa-eye"></i></a></td> 
-                 
+                   <td style="text-align: center;width: 6.5%;height: 40px;"> <a href="{{'evareportv2/'.$ngg_emp->nem_id.'/evareportblindnamev2'}}" class="btn btn-primary btn-xs" ><i class="fa fa-eye"></i></a></td>
                 </tr>
                 @endif 
                    @endforeach
