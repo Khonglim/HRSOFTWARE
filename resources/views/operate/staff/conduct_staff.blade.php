@@ -14,7 +14,7 @@
                <?php  $degree =  $_POST["degree"] ?>
            @if($degree == '0')
            @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
+              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
               {{Form::open(['url'=>'operate_employstaff','method'=>'POST' ])}}
             <input type="hidden"  value="{{$e->name}}" name="name" >
             <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
@@ -22,7 +22,7 @@
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
                 <div class="col-sm-7">
-                    <button type="submit" class="btn btn btn-success"><i class="fa  fa-pencil"></i> คลิก</button>
+                    <button type="submit" class="btn btn btn-info"><i class="fa  fa-pencil"></i> คลิก</button>
                 </div>
               </div>
               {{Form::close()}}
@@ -39,14 +39,18 @@
               @endif
             @endforeach       
               @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
+              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
               @if($e->recheck_Oper_90 == '1')
+
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                   <div class="col-sm-7">
-                  <a href="{{'Operate_staff/'.$e['id'].'/edit'}}" class="btn btn-success" ><i class="fa fa-pencil"></i> คลิก</a>
+                      <div class="alert alert-danger">
+                              <i class="fa fa-close"></i> ยังไม่สามารถประเมิน 90 วันได้
+                      </div>
                   </div>
                 </div>
+             
                
                 @else
                 <div class="form-group">
@@ -62,9 +66,10 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
-                        <div class="alert alert-danger">
-                                <i class="fa fa-close"></i> ยังไม่สามารถประเมิน 90 วันได้
-                        </div>
+                      @foreach ($operate_staff as $operate_staffs)
+                      <a href="{{'Operate_staff/'.$operate_staffs['id'].'/edit'}}" class="btn btn-info" ><i class="fa fa-pencil"></i> คลิก</a>
+                      @endforeach
+                  
                     </div>
                   </div>
                    @endif
@@ -79,13 +84,11 @@
               <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
-                <div class="col-sm-7">
-                  
+                <div class="col-sm-7"> 
                     <button type="submit" class="btn btn btn-warning"><i class="fa  fa-pencil"></i> คลิก</button>
                 </div>
               </div>
               {{Form::close()}}
-
               @else 
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา</label>
@@ -95,16 +98,17 @@
                   </div>
                   </div>
                 </div>
-
               @endif
             @endforeach
               @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
+              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
               @if($e->recheck_Oper_90 == '1')
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                   <div class="col-sm-7">
-                      <a href="{{'Operate_sup/'.$e['id'].'/edit'}}" class="btn btn-warning" ><i class="fa fa-pencil"> คลิก</i></a>
+                      <div class="alert alert-danger">
+                              <i class="fa fa-close"></i> ยังไม่สามารถประเมิน 90 วันได้
+                      </div>
                   </div>
                 </div>
                 @else
@@ -121,9 +125,7 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
-                        <div class="alert alert-danger">
-                                <i class="fa fa-close"></i> ยังไม่สามารถประเมิน 90 วันได้
-                        </div>
+                        <a href="{{'Operate_sup/'.$e['id'].'/edit'}}" class="btn btn-warning" ><i class="fa fa-pencil"> คลิก</i></a>
                     </div>
                   </div>
                 @endif

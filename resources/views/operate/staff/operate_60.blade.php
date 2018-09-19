@@ -47,7 +47,7 @@
                                         </div>
                                         <label  class="col-sm-2 control-label">รหัสพนักงาน:</label>
                                         <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="id_employ" required>
+                                                <input type="text" class="form-control" name="id_employ"  required>
                                               </div>
                                               
 
@@ -57,12 +57,12 @@
 
                                             <label  class="col-sm-2 control-label">ตำแหน่ง:</label>
                                             <div class="col-sm-4">
-                                                    <input type="text" class="form-control" name="id_employ" required>
+                                                    <input type="text" class="form-control" name="position" required>
                                                   </div> 
                                                   
                                                   <label  class="col-sm-2 control-label">แผนก/ฝ่าย:</label>
                                                   <div class="col-sm-4">
-                                                          <input type="text" class="form-control" name="id_employ" required>
+                                                          <input type="text" class="form-control" name="department" required>
                                                         </div>     
                                       </div>
                                
@@ -88,7 +88,7 @@
                                                   
                                                   <label  class="col-sm-2 control-label">ระดับ:</label>
                                                   <div class="col-sm-4">
-                                                        <input type="text" name="dateEnd2" id="dateEnd2" value="" class="form-control" required/> 
+                                                        <input type="text" name="degree"  class="form-control" required/> 
                                                         </div>     
                                       </div>
 
@@ -204,7 +204,7 @@
 
                     <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
                     <div class="col-sm-4">
-                            <textarea class="form-control" rows="3" name="assessor"></textarea>
+                            <textarea class="form-control" rows="3" name="assessor" required></textarea>
                           </div> 
                         </div> 
             <div class="form-group">
@@ -256,8 +256,8 @@
                                            
                                             </tr>
                                             <tr>
-                                              <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate_60" id="startrate_60"  > <br><br>
-                                                ถึงวันที่    <input type="text" name="endrate_60" id="endrate_60" >
+                                              <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate_60" id="startrate_60" required > <br><br>
+                                                ถึงวันที่    <input type="text" name="endrate_60" id="endrate_60" required >
                                             
                                             
                                             </td>

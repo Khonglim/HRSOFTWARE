@@ -7,6 +7,7 @@ use App\Personal;
 use App\Operate_Chioce;
 use App\Operate_qSeff;
 use App\Operate_qSup;
+use App\Operate_staff;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -193,8 +194,11 @@ Route::post('operate_employsup', function () {
 Route::post('conduct_employs', function () { 
     
     $employee  = Personal::where('enable','=', 1)->get();
+    $operate_staff   =       Operate_staff::all();
+
         $data = array(
-            'employee' => $employee 
+            'employee' => $employee ,
+            'operate_staff' =>  $operate_staff
         ); 
    
         return view("operate/staff/conduct_staff",$data);

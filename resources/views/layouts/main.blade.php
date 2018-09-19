@@ -13,7 +13,7 @@
   <link href="{{ asset('plugins/pace/pace.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/skins/_all-skins.min.css') }}" rel="stylesheet">
   <link href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
-  <script type="text/javascript" src=" {{ asset('all/jquery-1.10.2.min.js') }}"></script>
+  <script type="text/javascript" src=" {{ asset('all/jquery-1.10.2.min.js') }}" ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet"
@@ -61,7 +61,19 @@
     });
 
 
-    
+    $(function(){
+      $("#startrate_90").datepicker({
+        dateFormat: 'dd/M/yy'
+      });
+    });
+
+
+      $(function(){
+      $("#endrate_90").datepicker({
+        dateFormat: 'dd/M/yy'
+      });
+    });
+
     </script>
   
   

@@ -41,10 +41,16 @@ class CreateAnsOperateStaffTable extends Migration
             $table->integer('chioce14_60')->nullable();
             $table->integer('chioce15_60')->nullable();
             $table->integer('subtotal_60')->nullable();
+            $table->integer('rate_60')->nullable();
+            $table->integer('rate_90')->nullable();
+            $table->integer('rate_all')->nullable();
             $table->string('comments_60',500);
             $table->string('comments_featured',500);
             $table->string('comments_weakness',500);
-           
+
+            
+            $table->char('name_rate_60', 100)->nullable(); 
+
             $table->integer('chioce1_90')->nullable();
             $table->integer('chioce2_90')->nullable();
             $table->integer('chioce3_90')->nullable();
