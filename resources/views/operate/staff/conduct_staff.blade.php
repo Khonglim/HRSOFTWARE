@@ -26,7 +26,8 @@
                 </div>
               </div>
               {{Form::close()}}
-              @else 
+              @endif
+              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
                   <div class="col-sm-7">
@@ -35,12 +36,14 @@
                   </div>
                   </div>
                 </div>
-
               @endif
+             
+
+             
             @endforeach       
               @foreach ($employee  as $e)
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
-              @if($e->recheck_Oper_90 == '1')
+                        @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
 
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
@@ -51,8 +54,8 @@
                   </div>
                 </div>
              
-               
-                @else
+               @endif
+               @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '1')
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
@@ -62,7 +65,10 @@
                     </div>
                   </div>
                 @endif
-                @else
+                @endif
+
+                
+                @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
