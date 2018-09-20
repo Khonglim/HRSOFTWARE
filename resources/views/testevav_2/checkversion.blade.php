@@ -35,8 +35,12 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body" style="text-align: center;">
-            {{ Html::link('evatesting','แบบประเมินv1.1',array('class ' => 'btn btn-primary')) }}
-            {{ Html::link('evatestingv2','แบบประเมินv1.2',array('class ' => 'btn btn-primary')) }}  
+            {{ Html::link('evatestingv2','แบบประเมิน',array('class ' => 'btn btn-primary')) }}
+            <div style="display: none;">
+              {{ Html::link('evatesting','แบบประเมินv1.1',array('class ' => 'btn btn-primary')) }}
+            </div>
+            
+              
          </div>
         </div>
       </div>
