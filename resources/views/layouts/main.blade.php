@@ -61,6 +61,23 @@
     });
 
 
+
+
+  $(function(){
+      $("#startrate_60_2").datepicker({
+        dateFormat: 'dd/M/yy'
+      });
+    });
+
+
+      $(function(){
+      $("#endrate_60_2").datepicker({
+        dateFormat: 'dd/M/yy'
+      });
+    });
+
+
+
     $(function(){
       $("#startrate_90").datepicker({
         dateFormat: 'dd/M/yy'
@@ -317,6 +334,9 @@ body {
                 <li class="active"  ><a href="{{url('/employee')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
                 <li class="active"  ><a href="{{url('/interview') }}"><i class="glyphicon glyphicon-user"></i> <span>แบบประเมินผลสัมภาษณ์</span></a></li>
                 <li class="active"  ><a href="{{url('/operate_employf')  }}"><i class="fa  fa-pencil"></i> <span>แบบประเมินผลการปฏิบัติงาน</span></a></li>
+                <li class="active"  ><a href="{{url('/operate_report*')  }}"><i class="fa   fa-eyedropper"></i> <span>รายงานทดลองงานปฏิบัติการ</span></a></li>
+                <li class="active"  ><a href="{{url('/operate_report**')  }}"><i class="fa   fa-eyedropper"></i> <span>รายงานทดลองงานบังคับบัญชา</span></a></li>
+
                 <li class="treeview">
                   <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
                     <span class="pull-right-container">

@@ -12,6 +12,7 @@
           <div class="form-horizontal">
             <div class="box-body">
                <?php  $degree =  $_POST["degree"] ?>
+               
            @if($degree == '0')
         
            @foreach ($employee  as $e)
@@ -78,7 +79,7 @@
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
                       @foreach ($operate_staff as $operate_staffs)
-                      @if($operate_staffs->id ==  $id =  $_POST["id"])
+                      @if($operate_staffs->id_posinal ==  $id =  $_POST["id"])
                       <a href="{{'Operate_staff/'.$operate_staffs['id'].'/edit'}}" class="btn btn-info" ><i class="fa fa-pencil"></i> คลิก</a>
                       @endif
                       @endforeach
@@ -147,7 +148,7 @@
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
                         @foreach ($operate_sup as $operate_sup)
-                        @if($operate_staffs->id ==  $id =  $_POST["id"])
+                        @if($operate_sup->id_posinal ==  $id =  $_POST["id"])
                         <a href="{{'Operate_sup/'.$operate_sup['id'].'/edit'}}" class="btn btn-warning" ><i class="fa fa-pencil"> คลิก</i></a>
                         @endif
                         @endforeach
