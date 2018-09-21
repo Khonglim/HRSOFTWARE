@@ -28,7 +28,23 @@
                                  <td>  
                                       <a href="{{'con_all/'.$l['id']}}" class="btn btn-primary btn-xs" ><i class="fa fa-search"></i></a>
                                      
-                                        <a href="{{url('pdfcon_all/'.$l['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+
+
+                                      @foreach ($operate_sup as $operatesup)
+                                      @if($operatesup->id_posinal ==  $l->id)
+                                     
+                                      <a href="{{url('pdfcon_sup/'.$operatesup['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+                                      @endif
+                                      @endforeach
+
+
+
+
+
+
+
+
+                                    
                                       
                      
                        </td>

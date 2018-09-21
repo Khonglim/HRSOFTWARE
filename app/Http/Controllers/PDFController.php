@@ -8,6 +8,8 @@ use App\Con_interview;
 use App\Comment_interview;
 use App\Comment_sup;
 use App\Inter_sup;
+use App\Operate_staff;
+use App\Operate_sup;
 use PDF;
 
 class PDFController extends Controller
@@ -66,16 +68,30 @@ class PDFController extends Controller
 
     public function pdfoper_staff($id)
     {
-        $testdisc = Testdisc::find($id);
-        $pdf = PDF::loadView('testdisc.pdf_disc',['testdisc' =>  $testdisc]);
+        $personal = Personal::where('enable','=', 1)->get();
+
+
+        $operate_staff = Operate_staff::find($id);
+        
+        $pdf = PDF::loadView('operate.staff.pdfStaff',['operate_staff' =>   $operate_staff,
+        
+        'personal' =>    $personal
+        
+        
+        ]);
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
 
     public function pdfoper_sup($id)
     {
-        $testdisc = Testdisc::find($id);
-        $pdf = PDF::loadView('testdisc.pdf_disc',['testdisc' =>  $testdisc]);
+        $personal = Personal::where('enable','=', 1)->get();
+        $operate_sup = Operate_sup::find($id);
+        $pdf = PDF::loadView('operate.sup.pdfSup',['personal' =>  $personal,
+        
+        'operate_sup' =>   $operate_sup
+        
+        ]);
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
