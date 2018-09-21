@@ -36,6 +36,7 @@
                                 <div class="form-group">
                                         <label  class="col-sm-2 control-label">ชื่อ-สกุล:</label>
                       
+                                        <input type="hidden"  name="id_posinal" value="{{  $id =  $_POST["id_2"] }}">
                                         <div class="col-sm-4">
                                           <input type="text" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $name =  $_POST["lastname"]}}"  readonly>
                                         </div>
@@ -246,6 +247,12 @@
                                                 </tr>
                                               </table>
             </div>
+            <div class="box-footer">
+                          
+                    <button type="submit" class="btn btn-info pull-right">ตกลง</button>
+                    {{Form::close()}}
+                   
+                  </div>
       </div>
     </div>
    </div>

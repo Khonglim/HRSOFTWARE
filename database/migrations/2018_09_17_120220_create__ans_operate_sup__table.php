@@ -25,6 +25,7 @@ class CreateAnsOperateSupTable extends Migration
             $table->char('number', 100)->nullable();
             $table->char('date_60', 100)->nullable();
             $table->char('date_90', 100)->nullable();
+
             $table->integer('chioce1_60')->nullable();
             $table->integer('chioce2_60')->nullable();
             $table->integer('chioce3_60')->nullable();
@@ -50,14 +51,19 @@ class CreateAnsOperateSupTable extends Migration
             $table->integer('chioce23_60')->nullable();
             $table->integer('chioce24_60')->nullable();
             $table->integer('chioce25_60')->nullable();
-      
 
 
             $table->integer('subtotal_60')->nullable();
+            $table->integer('rate_60')->nullable();
+            $table->integer('rate_90')->nullable();
+            $table->integer('rate_all')->nullable();
             $table->string('comments_60',500);
             $table->string('comments_featured',500);
             $table->string('comments_weakness',500);
-           
+
+            
+            $table->char('name_rate_60', 100)->nullable(); 
+
             $table->integer('chioce1_90')->nullable();
             $table->integer('chioce2_90')->nullable();
             $table->integer('chioce3_90')->nullable();
@@ -117,6 +123,31 @@ class CreateAnsOperateSupTable extends Migration
             $table->integer('chioce_suitability8')->nullable(); 
             $table->integer('chioce_suitability9')->nullable(); 
             $table->integer('chioce_suitability10')->nullable(); 
+
+            $table->integer('chioce_suitability11')->nullable(); 
+            $table->integer('chioce_suitability12')->nullable(); 
+            $table->integer('chioce_suitability13')->nullable(); 
+            $table->integer('chioce_suitability14')->nullable(); 
+            $table->integer('chioce_suitability15')->nullable(); 
+            $table->integer('chioce_suitability16')->nullable(); 
+            $table->integer('chioce_suitability17')->nullable(); 
+            $table->integer('chioce_suitability18')->nullable(); 
+            $table->integer('chioce_suitability19')->nullable(); 
+            $table->integer('chioce_suitability20')->nullable(); 
+
+
+            $table->integer('chioce_suitability21')->nullable(); 
+            $table->integer('chioce_suitability22')->nullable(); 
+            $table->integer('chioce_suitability23')->nullable(); 
+            $table->integer('chioce_suitability24')->nullable(); 
+            $table->integer('chioce_suitability25')->nullable(); 
+            $table->integer('chioce_suitability26')->nullable(); 
+            $table->integer('chioce_suitability27')->nullable(); 
+            $table->integer('chioce_suitability28')->nullable(); 
+            $table->integer('chioce_suitability29')->nullable(); 
+            $table->integer('chioce_suitability30')->nullable(); 
+
+
             $table->integer('sum_chioce_suitability10')->nullable(); 
 
             $table->string('comment_suitability10',500)->nullable(); 
@@ -194,8 +225,9 @@ class CreateAnsOperateSupTable extends Migration
             $table->integer('vacation_90')->nullable();
             $table->integer('line_terms_90')->nullable();
             $table->integer('line_min_90')->nullable();
-    $table->tinyInteger('ngg_enable')->default('1');
+            $table->tinyInteger('ngg_enable')->default('1');
             $table->timestamps();
+        
         
         });
     }
