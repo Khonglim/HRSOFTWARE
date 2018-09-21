@@ -36,6 +36,7 @@
                                 <div class="form-group">
                                         <label  class="col-sm-2 control-label">ชื่อ-สกุล:</label>
                       
+                                        <input type="hidden"  name="id_posinal" value="{{  $id =  $_POST["id_2"] }}">
                                         <div class="col-sm-4">
                                           <input type="text" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $name =  $_POST["lastname"]}}"  readonly>
                                         </div>
@@ -51,12 +52,12 @@
 
                                             <label  class="col-sm-2 control-label">ตำแหน่ง:</label>
                                             <div class="col-sm-4">
-                                                    <input type="text" class="form-control" name="id_employ" required>
+                                                    <input type="text" class="form-control" name="position" required>
                                                   </div> 
                                                   
                                                   <label  class="col-sm-2 control-label">แผนก/ฝ่าย:</label>
                                                   <div class="col-sm-4">
-                                                          <input type="text" class="form-control" name="id_employ" required>
+                                                          <input type="text" class="form-control" name="department" required>
                                                         </div>     
                                       </div>
                                
@@ -82,7 +83,7 @@
                                                   
                                                   <label  class="col-sm-2 control-label">ระดับ:</label>
                                                   <div class="col-sm-4">
-                                                        <input type="text" name="dateEnd2" id="dateEnd2" value="" class="form-control" required/> 
+                                                        <input type="text" name="degree" id="degree" value="" class="form-control" required/> 
                                                         </div>     
                                       </div>
 
@@ -109,6 +110,43 @@
                                 …….	ต้องปรับปรุง	=     	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
                                 
                                 2.	ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป  จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน  
+
+                                <div class="form-group">
+                                        <div class="col-sm-12">
+                            <table id="customers">
+                                    <tr>
+                                      <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th>
+                                    </tr>
+                                    <tr>
+                                      <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                                      <td style="text-align:center">ลาป่วย(วัน )</td>
+                                      <td style="text-align:center">ลากิจ (วัน )</td>
+                                      <td style="text-align:center">ขาดงาน (วัน )</td>
+                                      <td style="text-align:center">พักร้อน (วัน )</td>
+                                      <td style="text-align:center">สาย (ครั้ง)</td>
+                                      <td style="text-align:center">สาย (นาที)</td>
+                                   
+                                    </tr>
+                                    <tr>
+                                      <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate" id="startrate_60_2"  > <br><br>
+                                        ถึงวันที่    <input type="text" name="endrate" id="endrate_60_2" >
+                                    
+                                    
+                                    </td>
+                                      <td style="text-align:center"> <input type="text" name="sick"   id="sick"     style="width:50px" > </td>
+                                      <td style="text-align:center"><input type="text" name="errand"    id="errand"   style="width:50px" ></td>
+                                      <td style="text-align:center"><input type="text" name="absence"     id="absence"    style="width:50px" ></td>
+                                      <td style="text-align:center"><input type="text"   name="vacation"   id="vacation"   style="width:50px"></td>
+                                      <td style="text-align:center"><input type="text"  name="line"    id="line"   style="width:50px"></td>
+                                      <td style="text-align:center"><input type="text"  name="min"    id="min"  style="width:50px"></td>
+                                    
+                                    </tr>
+                                  </table>
+
+                                        </div>
+                                 </div>
+
+
                                 <div class="form-group">   
                                         <div class="col-sm-12">
                                 <table id="customers">
@@ -216,36 +254,15 @@
                                                 <input type="text" name="namerate" id="namerate" required class="form-control">
                                               </div> 
                                              </div>  
-                                        <table id="customers">
-                                                <tr>
-                                                  <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th>
-                                                </tr>
-                                                <tr>
-                                                  <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
-                                                  <td style="text-align:center">ลาป่วย(วัน )</td>
-                                                  <td style="text-align:center">ลากิจ (วัน )</td>
-                                                  <td style="text-align:center">ขาดงาน (วัน )</td>
-                                                  <td style="text-align:center">พักร้อน (วัน )</td>
-                                                  <td style="text-align:center">สาย (ครั้ง)</td>
-                                                  <td style="text-align:center">สาย (นาที)</td>
-                                               
-                                                </tr>
-                                                <tr>
-                                                  <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate" id="startrate" readonly > <br><br>
-                                                    ถึงวันที่    <input type="text" name="endrate" id="endrate" readonly>
-                                                
-                                                
-                                                </td>
-                                                  <td style="text-align:center"> <input type="text" name="sick"   id="sick"     style="width:50px" > </td>
-                                                  <td style="text-align:center"><input type="text" name="errand"    id="errand"   style="width:50px" ></td>
-                                                  <td style="text-align:center"><input type="text" name="absence"     id="absence"    style="width:50px" ></td>
-                                                  <td style="text-align:center"><input type="text"   name="vacation"   id="vacation"   style="width:50px"></td>
-                                                  <td style="text-align:center"><input type="text"  name="line"    id="line"   style="width:50px"></td>
-                                                  <td style="text-align:center"><input type="text"  name="min"    id="min"  style="width:50px"></td>
-                                                
-                                                </tr>
-                                              </table>
+
+                                            
             </div>
+            <div class="box-footer">
+                          
+                    <button type="submit" class="btn btn-info pull-right">ตกลง</button>
+                    {{Form::close()}}
+                   
+                  </div>
       </div>
     </div>
    </div>
@@ -712,7 +729,7 @@
                        }
 
        group_total =(parseInt(group_60_1)+parseInt(group_60_2)+parseInt(group_60_3)+parseInt(group_60_4)+parseInt(group_60_5)+parseInt(group_60_6)+parseInt(group_60_7)+parseInt(group_60_8)+parseInt(group_60_9)+parseInt(group_60_10)+parseInt(group_60_11)+parseInt(group_60_12)+parseInt(group_60_13)+parseInt(group_60_14)+parseInt(group_60_15)
-       +parseInt(group_60_16)+parseInt(group_60_17)+parseInt(group_60_18)+parseInt(group_60_19)+parseInt(group_60_20)+parseInt(group_60_21) +parseInt(group_60_22)+parseInt(group_60_23)+parseInt(group_60_24)+parseInt(group_60_25)                )*100/60;
+       +parseInt(group_60_16)+parseInt(group_60_17)+parseInt(group_60_18)+parseInt(group_60_19)+parseInt(group_60_20)+parseInt(group_60_21) +parseInt(group_60_22)+parseInt(group_60_23)+parseInt(group_60_24)+parseInt(group_60_25)                );
        
        
                        $('#total_60').val(group_total.toFixed( 2 ));      

@@ -12,6 +12,7 @@
           <div class="form-horizontal">
             <div class="box-body">
                <?php  $degree =  $_POST["degree"] ?>
+               
            @if($degree == '0')
         
            @foreach ($employee  as $e)
@@ -48,7 +49,7 @@
               @foreach ($employee  as $e)
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
                         @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
-
+                      
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                   <div class="col-sm-7">
@@ -78,7 +79,7 @@
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
                       @foreach ($operate_staff as $operate_staffs)
-                      @if($operate_staffs->id ==  $id =  $_POST["id"])
+                      @if($operate_staffs->id_posinal ==  $id =  $_POST["id"])
                       <a href="{{'Operate_staff/'.$operate_staffs['id'].'/edit'}}" class="btn btn-info" ><i class="fa fa-pencil"></i> คลิก</a>
                       @endif
                       @endforeach
@@ -94,10 +95,12 @@
 
       @if($degree == '1')
            @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
+              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
+           
               {{Form::open(['url'=>'operate_employsup','method'=>'POST' ])}}
               <input type="hidden"  value="{{$e->name}}" name="name" >
               <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
+              <input type="hidden"  value="{{$e->id}}" name="id_2" >
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
                 <div class="col-sm-7"> 
@@ -105,9 +108,10 @@
                 </div>
               </div>
               {{Form::close()}}
-              @else 
+              @endif
+              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา</label>
+                  <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
                   <div class="col-sm-7">
                       <div class="alert alert-success">
                           <i class="fa fa-check"></i> ประเมินแล้ว
@@ -117,8 +121,8 @@
               @endif
             @endforeach
               @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
-              @if($e->recheck_Oper_90 == '1')
+              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
+              @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                   <div class="col-sm-7">
@@ -127,9 +131,10 @@
                       </div>
                   </div>
                 </div>
-                @else
+                @endif
+                @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '1')
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
                         <div class="alert alert-success">
                             <i class="fa fa-check"></i> ประเมินแล้ว
@@ -137,11 +142,19 @@
                     </div>
                   </div>
                 @endif
-                @else
+                @endif
+                @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
-                        <a href="{{'Operate_sup/'.$e['id'].'/edit'}}" class="btn btn-warning" ><i class="fa fa-pencil"> คลิก</i></a>
+                        @foreach ($operate_sup as $operate_sup)
+                        @if($operate_sup->id_posinal ==  $id =  $_POST["id"])
+                        <a href="{{'Operate_sup/'.$operate_sup['id'].'/edit'}}" class="btn btn-warning" ><i class="fa fa-pencil"> คลิก</i></a>
+                        @endif
+                        @endforeach
+                       
+
+
                     </div>
                   </div>
                 @endif

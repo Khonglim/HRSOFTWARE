@@ -64,7 +64,21 @@ class PDFController extends Controller
     }
 
 
+    public function pdfoper_staff($id)
+    {
+        $testdisc = Testdisc::find($id);
+        $pdf = PDF::loadView('testdisc.pdf_disc',['testdisc' =>  $testdisc]);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream();
+    }
 
+    public function pdfoper_sup($id)
+    {
+        $testdisc = Testdisc::find($id);
+        $pdf = PDF::loadView('testdisc.pdf_disc',['testdisc' =>  $testdisc]);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream();
+    }
 
 
 }

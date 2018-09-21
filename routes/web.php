@@ -8,6 +8,7 @@ use App\Operate_Chioce;
 use App\Operate_qSeff;
 use App\Operate_qSup;
 use App\Operate_staff;
+use App\Operate_sup;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -92,6 +93,9 @@ Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' );
 Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' );
 Route::get('/pdfcon_all/{id}','PDFController@pdfconall' );
 
+
+Route::get('/pdfcon_staf/{id}','PDFController@pdfoper_staff' );
+Route::get('/pdfcon_sup/{id}','PDFController@pdfoper_sup' );
 
 
 
@@ -186,11 +190,28 @@ Route::post('operate_employsup', function () {
 
 
 
+Route::get('operate_report*', function () { 
+    $employee  = Personal::where('enable','=', 1)->get();
+    $data = array(
+        'employee' => $employee 
+    ); 
+    return view("operate/staff/show",$data);
+
+});
 
 
 
 
 
+Route::get('operate_report**', function () { 
+    $employee  = Personal::where('enable','=', 1)->get();
+    $data = array(
+        'employee' => $employee 
+    ); 
+
+    return view("operate/sup/show",$data);
+
+});
 
 
 
@@ -204,10 +225,11 @@ Route::post('conduct_employs', function () {
     
     $employee  = Personal::where('enable','=', 1)->get();
     $operate_staff   =       Operate_staff::all();
-
+    $operate_sup   =       Operate_sup::all();
         $data = array(
             'employee' => $employee ,
-            'operate_staff' =>  $operate_staff
+            'operate_staff' =>  $operate_staff,
+            'operate_sup' =>  $operate_sup
         ); 
    
         return view("operate/staff/conduct_staff",$data);
