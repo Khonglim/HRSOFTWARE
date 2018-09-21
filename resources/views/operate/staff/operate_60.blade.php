@@ -27,7 +27,6 @@
   <div class="content-wrapper">
 
         <div class="content container-fluid">
-        {{  $id =  $_POST["id_2"] }}
                 <div class="box box-info">
                         <div class="box-header with-border">
                           การทดลองงานระดับปฏิบัติการ

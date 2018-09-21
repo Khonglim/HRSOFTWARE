@@ -386,18 +386,50 @@
                                                         </td>
                                                   
                                                 </tr>
+                                                <?php $a = 1;
+                                                $b = 50;
+                                                $c = 100;
+                                                ?>
                                             @foreach ($manager as $managers)
                                                 
                                                 <tr>
                                                         <td  style="width:43%"  > {{  $managers->manager  }} </td>
-                                                        <td style="text-align:center">{{$managers->id}}
-                                                        <input type="text"   name="staaff_one{{$managers->id}}"   id="staaff_one1{{$managers->id}}"  style="width:50px"  style="text-align:center" >
-                                                        </td>
                                                         <td style="text-align:center">
-                                                        <input type="text"   name="staaff_one{{$managers->id}}"    id="staaff_one2{{$managers->id}}" style="width:50px"  style="text-align:center">
+                                                           
+                                                        <select name="staaff_one{{$a++}}"      style="text-align:center">
+                                                           
+                                                                <option value="0" >เลือก</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
+                                                                        <option value="10">10</option>
+                                                                       
+                                                                      </select>
+                                                       
+                                                          
+                                                        </td>
+                                                        <td style="text-align:center" >
+                                                           
+                                                        <select name="staaff_one{{$b++}}"   style="text-align:center">
+                                                         
+                                                                <option value="0" >เลือก</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                       
+                                                                      </select>
+                                                     
                                                             </td>
                                                             <td style="text-align:center">
-                                                            <input type="text"  name="staaff_one{{$managers->id}}"  id="staaff_one3{{$managers->id}}"  style="width:50px" style="text-align:center" >
+                                                             
+                                                            <select    name="staaff_one{{$c++}}"     style="text-align:center" >
+                                                             
+                                                                            <option value="0">เลือก</option>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                          </select>
+                                                           
                                                                 </td>
                                                 </tr>
                             
@@ -414,7 +446,7 @@
                                                     </td>
                                                     <td  COLSPAN="3" style="text-align:center">
                                         
-                                                        <input type="text" name="sum_chioce_suitability10"   style="width:50px" style="text-align:center" >
+                                                        <input type="text" name="sum_chioce_suitability10"  id="sum_chioce_suitability10" style="width:50px" style="text-align:center" >
                                                         </td>
                                                        
                                              </tr>
@@ -991,15 +1023,27 @@
     
     
                            });
+
+
                            </script>
     
     
-    
-    
-    
-    
-    
+     <script type='text/javascript'>
+      var add_value = [];
+      var pont = 0 ;
+        $('select').change(function(){
+          
+            add_value[this.name] = this.value;
+            var pont = 0 ;
+
+
+            for(var key in add_value){
+               pont=parseInt(pont)+parseInt(add_value[key]);
+
+
+            }
+            $('#sum_chioce_suitability10').val(pont);
       
-    
-    
+        });
+    </script>
         @endsection

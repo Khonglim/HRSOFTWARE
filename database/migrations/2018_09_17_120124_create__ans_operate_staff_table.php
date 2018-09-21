@@ -100,6 +100,31 @@ class CreateAnsOperateStaffTable extends Migration
             $table->integer('chioce_suitability8')->nullable(); 
             $table->integer('chioce_suitability9')->nullable(); 
             $table->integer('chioce_suitability10')->nullable(); 
+
+            $table->integer('chioce_suitability11')->nullable(); 
+            $table->integer('chioce_suitability12')->nullable(); 
+            $table->integer('chioce_suitability13')->nullable(); 
+            $table->integer('chioce_suitability14')->nullable(); 
+            $table->integer('chioce_suitability15')->nullable(); 
+            $table->integer('chioce_suitability16')->nullable(); 
+            $table->integer('chioce_suitability17')->nullable(); 
+            $table->integer('chioce_suitability18')->nullable(); 
+            $table->integer('chioce_suitability19')->nullable(); 
+            $table->integer('chioce_suitability20')->nullable(); 
+
+
+            $table->integer('chioce_suitability21')->nullable(); 
+            $table->integer('chioce_suitability22')->nullable(); 
+            $table->integer('chioce_suitability23')->nullable(); 
+            $table->integer('chioce_suitability24')->nullable(); 
+            $table->integer('chioce_suitability25')->nullable(); 
+            $table->integer('chioce_suitability26')->nullable(); 
+            $table->integer('chioce_suitability27')->nullable(); 
+            $table->integer('chioce_suitability28')->nullable(); 
+            $table->integer('chioce_suitability29')->nullable(); 
+            $table->integer('chioce_suitability30')->nullable(); 
+
+
             $table->integer('sum_chioce_suitability10')->nullable(); 
 
             $table->string('comment_suitability10',500)->nullable(); 

@@ -205,6 +205,32 @@ class Operate_staffController extends Controller
     $operateSataff->chioce_suitability8= Input::get('staaff_one8');
     $operateSataff->chioce_suitability9 = Input::get('staaff_one9');
     $operateSataff->chioce_suitability10= Input::get('staaff_one10');
+
+
+    $operateSataff->chioce_suitability11= Input::get('staaff_one50') ;
+    $operateSataff->chioce_suitability12 = Input::get('staaff_one51');
+    $operateSataff->chioce_suitability13 = Input::get('staaff_one52');
+    $operateSataff->chioce_suitability14= Input::get('staaff_one53') ;
+    $operateSataff->chioce_suitability15 = Input::get('staaff_one54');
+    $operateSataff->chioce_suitability16 = Input::get('staaff_one55');
+    $operateSataff->chioce_suitability17= Input::get('staaff_one56');
+    $operateSataff->chioce_suitability18= Input::get('staaff_one57');
+    $operateSataff->chioce_suitability19 = Input::get('staaff_one58');
+    $operateSataff->chioce_suitability20= Input::get('staaff_one59');
+
+
+    $operateSataff->chioce_suitability21= Input::get('staaff_one100') ;
+    $operateSataff->chioce_suitability22 = Input::get('staaff_one101');
+    $operateSataff->chioce_suitability23 = Input::get('staaff_one102');
+    $operateSataff->chioce_suitability24= Input::get('staaff_one103') ;
+    $operateSataff->chioce_suitability25 = Input::get('staaff_one104');
+    $operateSataff->chioce_suitability26 = Input::get('staaff_one105');
+    $operateSataff->chioce_suitability27= Input::get('staaff_one106');
+    $operateSataff->chioce_suitability28= Input::get('staaff_one107');
+    $operateSataff->chioce_suitability29 = Input::get('staaff_one108');
+    $operateSataff->chioce_suitability30= Input::get('staaff_one109');
+
+
     $operateSataff->sum_chioce_suitability10 = Input::get('sum_chioce_suitability10');
     $operateSataff->comment_suitability10 = Input::get('comment_suitability10');
     $operateSataff->ok_suitability = Input::get('ok_suitability');
@@ -233,32 +259,32 @@ class Operate_staffController extends Controller
         $operateSataff->human_resource_adjust= Input::get('human_resource_adjust') ;
         $operateSataff->human_resource_posi = Input::get('human_resource_posi');
 
-        $operateSataff->human_resource_fail = Input::get('nee_id2');
-        $operateSataff->human_resource_date = Input::get('nee_id2');
+        $operateSataff->human_resource_fail = Input::get('human_resource_fail');
+        $operateSataff->human_resource_date = Input::get('human_resource_date');
 
-        $operateSataff->human_resource_other= Input::get('nee_id2');
-      $operateSataff->human_resource_othercom = Input::get('nee_id2');
+        $operateSataff->human_resource_other= Input::get('human_resource_other');
+      $operateSataff->human_resource_othercom = Input::get('human_resource_othercom');
 
        $operateSataff->human_resource_nre = Input::get('human_resource_nre');
 
 
 
-       $operateSataff->manager_resource_ok = Input::get('nee_id2');
+       $operateSataff->manager_resource_ok = Input::get('manager_resource_ok');
 
-       $operateSataff->manager_resource_modi = Input::get('nee_id2');
-       $operateSataff->manager_resource_comdi = Input::get('nee_id2');
+       $operateSataff->manager_resource_modi = Input::get('manager_resource_modi');
+       $operateSataff->manager_resource_comdi = Input::get('manager_resource_comdi');
 
-       $operateSataff->manager_resource_nodi = Input::get('nee_id2');
-       $operateSataff->manager_resource_comno	= Input::get('nee_id2') ;
+       $operateSataff->manager_resource_nodi = Input::get('manager_resource_nodi');
+       $operateSataff->manager_resource_comno	= Input::get('manager_resource_comno') ;
 
-        $operateSataff->manager_resource_adjust = Input::get('nee_id2');
-        $operateSataff->manager_resource_posi = Input::get('nee_id2');
+        $operateSataff->manager_resource_adjust = Input::get('manager_resource_adjust');
+        $operateSataff->manager_resource_posi = Input::get('manager_resource_posi');
 
-       $operateSataff->manager_resource_fail= Input::get('nee_id2') ;
-        $operateSataff->manager_resource_date = Input::get('nee_id2');
+       $operateSataff->manager_resource_fail= Input::get('manager_resource_fail') ;
+        $operateSataff->manager_resource_date = Input::get('manager_resource_date');
 
-        $operateSataff->manager_resource_other = Input::get('nee_id2');
-        $operateSataff->manager_resource_othercom = Input::get('nee_id2');
+        $operateSataff->manager_resource_other = Input::get('manager_resource_other');
+        $operateSataff->manager_resource_othercom = Input::get('manager_resource_othercom');
 
 
         $operateSataff->manager_resource_nre = Input::get('manager_resource_nre');

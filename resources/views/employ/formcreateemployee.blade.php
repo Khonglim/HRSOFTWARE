@@ -1,6 +1,7 @@
 @extends('layouts.new')
 @section('content')
 <div class="banner-inner">
+
         <br> 
       <center> <h1 class="text-light"> สมัครงานออนไลน์ <br>
 
@@ -16,7 +17,16 @@
     </center>
       </div>   
    <br>   <br>   <br>
-<div class="container">           
+<div class="container">  
+        @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 <div class="stepwizard">
     <div class="stepwizard-row setup-panel">
         <div class="stepwizard-step">

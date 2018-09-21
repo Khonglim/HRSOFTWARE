@@ -13,6 +13,7 @@
             <div class="box-body">
                <?php  $degree =  $_POST["degree"] ?>
            @if($degree == '0')
+        
            @foreach ($employee  as $e)
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
               {{Form::open(['url'=>'operate_employstaff','method'=>'POST' ])}}
@@ -27,6 +28,8 @@
               </div>
               {{Form::close()}}
               @endif
+            
+            
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
@@ -41,6 +44,7 @@
 
              
             @endforeach       
+
               @foreach ($employee  as $e)
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
                         @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
@@ -69,18 +73,24 @@
 
                 
                 @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
+                   
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
                     <div class="col-sm-7">
                       @foreach ($operate_staff as $operate_staffs)
+                      @if($operate_staffs->id ==  $id =  $_POST["id"])
                       <a href="{{'Operate_staff/'.$operate_staffs['id'].'/edit'}}" class="btn btn-info" ><i class="fa fa-pencil"></i> คลิก</a>
+                      @endif
                       @endforeach
                   
                     </div>
                   </div>
                    @endif
                 @endforeach
-           @endif
+          
+          
+          
+                @endif
 
       @if($degree == '1')
            @foreach ($employee  as $e)
