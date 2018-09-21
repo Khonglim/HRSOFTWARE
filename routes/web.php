@@ -94,6 +94,9 @@ Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' );
 Route::get('/pdfcon_all/{id}','PDFController@pdfconall' );
 
 
+Route::get('/pdfcon_staf/{id}','PDFController@pdfoper_staff' );
+Route::get('/pdfcon_sup/{id}','PDFController@pdfoper_sup' );
+
 
 
 Route::get('summbti', function () {
