@@ -160,11 +160,12 @@ class Operate_supController extends Controller
         $personal = Personal::find(Input::get('idemploy'));
         $personal->recheck_Oper_90=1;
         $personal->recheck_conduct=0;
+        $personal->degree=1;
         $personal->save();
         $operate_sup =  Operate_sup::find($id);
 
-    $operate_sup->chioce1_90= Input::get('score90_1');  
-    $operate_sup->chioce2_90= Input::get('score90_2');  
+        $operate_sup->chioce1_90= Input::get('score90_1');  
+         $operate_sup->chioce2_90= Input::get('score90_2');  
     $operate_sup->chioce3_90 = Input::get('score90_3'); 
     $operate_sup->chioce4_90= Input::get('score90_4');  
     $operate_sup->chioce5_90 = Input::get('score90_5'); 

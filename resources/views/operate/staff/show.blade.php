@@ -26,10 +26,10 @@
                                  <td> {{$l['lastname']}} </td>
                                 
                                  <td>  
-                                      <a href="{{'con_all/'.$l['id']}}" class="btn btn-primary btn-xs" ><i class="fa fa-search"></i></a>
-                                      @foreach ($operate_staff as $operate_staffs)
-                      @if($operate_staffs->id_posinal ==  $l->$id)
-                      <a href="{{url('pdfcon_staff/'.$operate_staffs['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+                                
+                      @foreach ($operate_staff as $operate_staffs)
+                      @if($operate_staffs->id_posinal ==  $l->id)
+                      <a href="{{url('pdfcon_staf/'.$operate_staffs['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
                       @endif
                       @endforeach
                                       

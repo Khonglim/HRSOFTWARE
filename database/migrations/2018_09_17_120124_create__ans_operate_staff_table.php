@@ -44,9 +44,9 @@ class CreateAnsOperateStaffTable extends Migration
             $table->integer('rate_60')->nullable();
             $table->integer('rate_90')->nullable();
             $table->integer('rate_all')->nullable();
-            $table->string('comments_60',500);
-            $table->string('comments_featured',500);
-            $table->string('comments_weakness',500);
+            $table->string('comments_60',500)->nullable();
+            $table->string('comments_featured',500)->nullable();
+            $table->string('comments_weakness',500)->nullable();
 
             
             $table->char('name_rate_60', 100)->nullable(); 
@@ -70,7 +70,7 @@ class CreateAnsOperateStaffTable extends Migration
             $table->integer('subtotal_90')->nullable();
             $table->integer('subtotal_final')->nullable();
 
-            $table->string('comments_90',500);
+            $table->string('comments_90',500)->nullable();
 
             $table->char('experimental',100)->nullable();
             $table->char('experimental_date',100)->nullable(); 
@@ -128,7 +128,7 @@ class CreateAnsOperateStaffTable extends Migration
             $table->integer('sum_chioce_suitability10')->nullable(); 
 
             $table->string('comment_suitability10',500)->nullable(); 
-            $table->string('ok_suitability',20)->nullable(); 
+            $table->string('ok_suitability',30)->nullable(); 
             $table->string('other_suitability',20)->nullable(); 
             $table->string('other_com_suitability',500)->nullable();
            
