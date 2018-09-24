@@ -221,6 +221,9 @@ class CreatePersonalTable extends Migration
             $table->tinyInteger('recheck_conduct')->default('0'); 
             $table->tinyInteger('recheck_Oper')->default('0');
             $table->tinyInteger('recheck_Oper_90')->default('0');
+            $table->tinyInteger('degree')->default('0');
+
+
             $table->timestamps();
         });
     }

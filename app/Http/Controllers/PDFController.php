@@ -12,6 +12,8 @@ use App\Operate_staff;
 use App\Operate_sup;
 use PDF;
 
+use Illuminate\Support\Facades\DB;
+
 class PDFController extends Controller
 {
     public function pdfemployee($id)
@@ -68,10 +70,13 @@ class PDFController extends Controller
 
     public function pdfoper_staff($id)
     {
-        $personal = Personal::where('enable','=', 1)->get();
-
+       
 
         $operate_staff = Operate_staff::find($id);
+        $personal  =   DB::find('personal')
+        ->where('enable', '=', 1)
+        ->where('degree', '=', 0)
+       ->get();
         
         $pdf = PDF::loadView('operate.staff.pdfStaff',['operate_staff' =>   $operate_staff,
         
@@ -85,7 +90,10 @@ class PDFController extends Controller
 
     public function pdfoper_sup($id)
     {
-        $personal = Personal::where('enable','=', 1)->get();
+        $personal =   DB::table('personal')
+        ->where('enable', '=', 1)
+        ->where('degree', '=', 1)
+    ->get();
         $operate_sup = Operate_sup::find($id);
         $pdf = PDF::loadView('operate.sup.pdfSup',['personal' =>  $personal,
         

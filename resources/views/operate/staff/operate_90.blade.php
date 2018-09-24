@@ -1020,7 +1020,7 @@
                            
                                     $('#rate_all').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt("{{$operate_staff->rate_60}}"))/2);   
                            
-    
+                                    $('#scoresp').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt("{{$operate_staff->rate_60}}"))/2);   
     
                            });
 
@@ -1043,7 +1043,7 @@
 
             }
             $('#sum_chioce_suitability10').val(pont);
-      
+            $('#scoremp').val(pont);
         });
     </script>
         @endsection

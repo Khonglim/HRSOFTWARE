@@ -20,13 +20,13 @@
                             </thead>
                             <tbody>
                                     @forelse($employee as $l)
-                                    @if($l['enable']==1)
+                                    @if($l->enable==1)
                                    <tr>
-                                 <td> {{$l['name']}} </td>
-                                 <td> {{$l['lastname']}} </td>
+                                 <td> {{$l->name}} </td>
+                                 <td> {{$l->lastname}} </td>
                                 
                                  <td>  
-                                      <a href="{{'con_all/'.$l['id']}}" class="btn btn-primary btn-xs" ><i class="fa fa-search"></i></a>
+                                     
                                      
 
 

@@ -191,7 +191,12 @@ Route::post('operate_employsup', function () {
 
 
 Route::get('operate_report*', function () { 
-    $employee  = Personal::where('enable','=', 1)->get();
+
+
+    $employee  =   DB::table('personal')
+                    ->where('enable', '=', 1)
+                    ->where('degree', '=', 0)
+  ->get();
     $operate_staff   =       Operate_staff::all();
     $data = array(
         'employee' => $employee ,
@@ -206,7 +211,10 @@ Route::get('operate_report*', function () {
 
 
 Route::get('operate_report**', function () { 
-    $employee  = Personal::where('enable','=', 1)->get();
+    $employee  =   DB::table('personal')
+    ->where('enable', '=', 1)
+    ->where('degree', '=', 1)
+->get();
     $operate_sup   =       Operate_sup::all();
 
 
@@ -229,7 +237,7 @@ Route::get('operate_report**', function () {
 
 Route::post('conduct_employs', function () { 
     
-    $employee  = Personal::where('enable','=', 1)->get();
+    $employee  = Personal::where('enable','=', 1  )->get();
     $operate_staff   =       Operate_staff::all();
     $operate_sup   =       Operate_sup::all();
         $data = array(
