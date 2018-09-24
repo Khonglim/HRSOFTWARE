@@ -94,7 +94,9 @@
                 @endif
 
       @if($degree == '1')
+
            @foreach ($employee  as $e)
+              
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
            
               {{Form::open(['url'=>'operate_employsup','method'=>'POST' ])}}
@@ -158,7 +160,8 @@
                     </div>
                   </div>
                 @endif
-                @endforeach
+   
+            
             
                 @endif
             
