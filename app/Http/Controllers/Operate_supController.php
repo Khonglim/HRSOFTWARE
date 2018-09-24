@@ -44,6 +44,7 @@ class Operate_supController extends Controller
         $personal->recheck_Oper =1;
         $personal->recheck_conduct=1;
         $personal->recheck_Oper_90=1;
+        $personal->degree=1;
         $personal->save();
 
         $operatesup = new Operate_sup;
@@ -109,6 +110,7 @@ class Operate_supController extends Controller
         $operatesup->line_terms_60 = Input::get('line');
         $operatesup->line_min_60 = Input::get('min');
         $operatesup->save();
+        return redirect('home');
     }
 
     /**
@@ -160,7 +162,7 @@ class Operate_supController extends Controller
         $personal = Personal::find(Input::get('idemploy'));
         $personal->recheck_Oper_90=1;
         $personal->recheck_conduct=0;
-        $personal->degree=1;
+
         $personal->save();
         $operate_sup =  Operate_sup::find($id);
 

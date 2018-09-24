@@ -213,7 +213,7 @@ Route::get('operate_report*', function () {
 Route::get('operate_report**', function () { 
     $employee  =   DB::table('personal')
     ->where('enable', '=', 1)
-    ->where('degree', '=', 0)
+    ->where('degree', '=', 1)
 ->get();
     $operate_sup   =       Operate_sup::all();
 

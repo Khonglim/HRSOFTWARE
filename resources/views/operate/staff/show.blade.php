@@ -20,10 +20,10 @@
                             </thead>
                             <tbody>
                                     @forelse($employee as $l)
-                                    @if($l['enable']==1)
+                                    @if($l->enable==1)
                                    <tr>
-                                 <td> {{$l['name']}} </td>
-                                 <td> {{$l['lastname']}} </td>
+                                 <td> {{$l->name}} </td>
+                                 <td> {{$l->lastname}} </td>
                                 
                                  <td>  
                                 
