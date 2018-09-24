@@ -462,6 +462,16 @@ class EmployeetotestTableSeeder extends Seeder
             'nee_by_employee'=>'6',
             'nee_id_form'=>'1',
         ]);
+         DB::table('employeetotest')->insert([
+            'nee_is_employee'=>'22',
+            'nee_by_employee'=>'12',
+            'nee_id_form'=>'2',
+        ]);
+         DB::table('employeetotest')->insert([
+            'nee_is_employee'=>'22',
+            'nee_by_employee'=>'12',
+            'nee_id_form'=>'3',
+        ]);
 
 
 

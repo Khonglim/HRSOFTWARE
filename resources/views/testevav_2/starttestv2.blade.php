@@ -147,10 +147,6 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                 <tr> 
                  
                   <th colspan="5" rowspan="2" style="text-align: center;width: 60%;height: 70px;" >{{$partoftest->title}}
-                    @if($partoftest['subpart']!='0')
-                    <br>
-                    <p>**ผู้ประเมินโปรดเลือก ข้อ A หรือ B อย่างใดอย่างหนึ่ง ในการประเมินเท่านั้น(Please select only Subject A or B for evaluation and score will be calculated only one subject) **</p>
-                    @endif
 
                   </th>
                   
@@ -214,7 +210,12 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                     
                    
                   </tr>
-                   
+                   @elseif($questiontest['id_part']==$partoftest['id_part']&&$questiontest['q_subpart']==$partoftest['subpart']&&$questiontest['point']=='0') 
+                   <tr>
+                     <td>
+                       try
+                     </td>
+                   </tr>
                   @endif
 
                    
