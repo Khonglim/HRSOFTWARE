@@ -38,6 +38,8 @@ Route::resource('Operate_sup', 'Operate_supController');
 
 Route::resource('Operate_staff', 'Operate_staffController');
 
+Route::resource('reset', 'ResetController');
+
 Route::resource('mbti','TestmbtiController');
 Route::post('/start','AnswerController@start');
 Route::post('/endtest','AnswerController@answer');
@@ -250,5 +252,19 @@ Route::post('conduct_employs', function () {
 
 
 
+
+});
+
+
+
+
+Route::get('setting', function () { 
+    $employee  = Personal::where('enable','=', 1  )->get();
+   
+    $data = array(
+        'employee' => $employee ,
+       
+    ); 
+    return view("setting/reset",$data);
 
 });

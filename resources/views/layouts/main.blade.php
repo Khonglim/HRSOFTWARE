@@ -337,6 +337,7 @@ body {
                 <li class="active"  ><a href="{{url('/operate_report*')  }}"><i class="fa   fa-eyedropper"></i> <span>รายงานทดลองงานปฏิบัติการ</span></a></li>
                 <li class="active"  ><a href="{{url('/operate_report**')  }}"><i class="fa   fa-eyedropper"></i> <span>รายงานทดลองงานบังคับบัญชา</span></a></li>
 
+
                 <li class="treeview">
                   <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
                     <span class="pull-right-container">
@@ -353,6 +354,7 @@ body {
               
               
                 <li class="active"  ><a href="{{url('/con_all') }}"><i class="fa fa-book"></i> <span>สรุปผลรวม</span></a></li>
+                <li class="active"  ><a href="{{url('/setting')  }}"><i class="fa  fa-wrench"></i> <span>การตั้งค่า</span></a></li>
                 @endif
                 @if(auth()->user()->isAdmin == 0)
                 <li class="active"  ><a href="{{url('/evatestversion') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
