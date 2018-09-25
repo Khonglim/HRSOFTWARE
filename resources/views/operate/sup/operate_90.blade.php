@@ -549,7 +549,7 @@
                                 <label  class="col-sm-2 control-label"></label>
                                 <div class="col-sm-4 ">
                                     
-                                        <input type="checkbox" name="human_resource_ok" value="อนุมัติตามผู้บังคับบัญชาเสนอ"> อนุมัติตามผู้บังคับบัญชาเสนอ
+                                        <input type="checkbox" name="human_resource_ok" value="บรรจุเป็นพนักงานประจำ">บรรจุเป็นพนักงานประจำ
                                      
                                     </div> 
                                     

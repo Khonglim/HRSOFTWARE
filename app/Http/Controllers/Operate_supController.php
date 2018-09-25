@@ -120,6 +120,7 @@ class Operate_supController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    
     {
         //
     }
@@ -181,17 +182,16 @@ class Operate_supController extends Controller
     $operate_sup->chioce13_90 = Input::get('score90_13');
     $operate_sup->chioce14_90= Input::get('score90_14');  
     $operate_sup->chioce15_90 = Input::get('score90_15'); 
-
-    $operate_sup->chioce15_90 = Input::get('score90_16'); 
-    $operate_sup->chioce15_90 = Input::get('score90_17'); 
-    $operate_sup->chioce15_90 = Input::get('score90_18'); 
-    $operate_sup->chioce15_90 = Input::get('score90_19'); 
-    $operate_sup->chioce15_90 = Input::get('score90_20'); 
-    $operate_sup->chioce15_90 = Input::get('score90_21'); 
-    $operate_sup->chioce15_90 = Input::get('score90_22'); 
-    $operate_sup->chioce15_90 = Input::get('score90_23'); 
-    $operate_sup->chioce15_90 = Input::get('score90_24'); 
-    $operate_sup->chioce15_90 = Input::get('score90_25'); 
+    $operate_sup->chioce16_90 = Input::get('score90_16'); 
+    $operate_sup->chioce17_90 = Input::get('score90_17'); 
+    $operate_sup->chioce18_90 = Input::get('score90_18'); 
+    $operate_sup->chioce19_90 = Input::get('score90_19'); 
+    $operate_sup->chioce20_90 = Input::get('score90_20'); 
+    $operate_sup->chioce21_90 = Input::get('score90_21'); 
+    $operate_sup->chioce22_90 = Input::get('score90_22'); 
+    $operate_sup->chioce23_90 = Input::get('score90_23'); 
+    $operate_sup->chioce24_90 = Input::get('score90_24'); 
+    $operate_sup->chioce25_90 = Input::get('score90_25'); 
 
 
 
