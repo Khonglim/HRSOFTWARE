@@ -102,7 +102,7 @@ class Partofv2TableSeeder extends Seeder
             'part' => 'ด้านที่ 5 การประเมินด้านเวลาการมาปฏิบัติงาน และวันลา (Attendant & Leave ',
             'id_form' => '2',
             'id_part' => '5',
-            'subpart' => '0',
+            'subpart' => '1',
             'title' => 'หัวข้อ',
             
         ]);
@@ -160,7 +160,7 @@ class Partofv2TableSeeder extends Seeder
             'part' => 'ด้านที่ 6 ATTENDANT & LEAVE การประเมินด้านเวลาการมาปฏิบัติงาน และวันลา',
             'id_form' => '3',
             'id_part' => '6',
-            'subpart' => '0',
+            'subpart' => '1',
             'title' => 'หัวข้อ',
             
         ]);
