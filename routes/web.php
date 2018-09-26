@@ -65,6 +65,7 @@ Route::get('evareportv2/{id}/evareportblindnamev2','Evatesting2v2Controller@test
 
 Route::get('evatestversion','Evatesting2v2Controller@index');
 
+Route::resource('management','EvamanagementController');
 
 Auth::routes();
 Route::get('/', function () 
