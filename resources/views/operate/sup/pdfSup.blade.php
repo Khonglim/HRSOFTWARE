@@ -48,6 +48,7 @@
 </head>
 <body>
 <div class="page-break">
+        <p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
     <center><h3>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</h3></center>
     <b>1. ระดับในการประเมินผล</b><br>
     ดีมาก           =   ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
@@ -248,12 +249,9 @@
     <table>
         <tbody>
             <tr>
-                <td align="center">ผู้ประเมิน : {{$operate_sup->name_rate_60}} <br> ( คุณ{{$operate_sup->name_rate_60}} ) <br>ผู้บังคับบัญชาต้นสังกัด</td>
-                <td align="center">ผู้ถูกประเมิน : @foreach ( $personal as $item)
-                        @if(  $item->id == $operate_sup->id_posinal )
-                            {{$item->name}} {{$item->lastname}}
-                        @endif
-                    @endforeach <br> ( คุณ@foreach ( $personal as $item)
+                <td align="center">ผู้ประเมิน : ........................................... <br> ( คุณ{{$operate_sup->name_rate_60}} ) <br>ผู้บังคับบัญชาต้นสังกัด</td>
+                <td align="center">ผู้ถูกประเมิน : ........................................... <br> 
+                    ( คุณ@foreach ( $personal as $item)
                     @if(  $item->id == $operate_sup->id_posinal )
                         {{$item->name}} {{$item->lastname}}
                     @endif
@@ -467,7 +465,7 @@
         <input type="checkbox" checked>{{$operate_sup->other_suitability}} : {{$operate_sup->other_com_suitability}} <br>
     @endif 
     @if($operate_sup->namerate_suitability != '')
-    <p align = "right">ลงนาม {{$operate_sup->namerate_suitability}} ผู้จัดการฝ่าย <br>( คุณ{{$operate_sup->namerate_suitability}} ) </p>
+    <p align = "right">ลงนาม ........................................... ผู้จัดการฝ่าย <br>( คุณ{{$operate_sup->namerate_suitability}} ) </p>
     @endif
 </td></tr></table>
 </div>
@@ -563,7 +561,7 @@
                         <input type="checkbox" checked>อื่นๆ {{$operate_sup->human_resource_othercom}}
                     <br>@endif 
                     @if($operate_sup->human_resource_nre != '')
-                        <p align = "right">ลงนาม {{$operate_sup->human_resource_nre}} ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->human_resource_nre}} ) </p>
+                        <p align = "right">ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->human_resource_nre}} ) </p>
                     @endif
                 </td>
             </tr>
@@ -574,7 +572,7 @@
             <tr><td align="center"><b>เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</b></td></tr>
             <tr>
                 <td>
-                    @if($operate_sup->manager_resource_ok == 'บรรจุเป็นพนักงานประจำ')
+                    @if($operate_sup->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
                         <input type="checkbox" checked>ให้บรรจุเป็นพนักงานประจำ
                     @endif
                     @if($operate_sup->manager_resource_modi == 'ปรับอัตราเงินเดือน')
@@ -593,7 +591,7 @@
                         <input type="checkbox" checked>อื่นๆ {{$operate_sup->manager_resource_othercom}}
                     <br>@endif 
                     @if($operate_sup->manager_resource_nre != '')
-                        <p align = "right">ลงนาม {{$operate_sup->manager_resource_nre}} ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->manager_resource_nre}} ) </p>
+                        <p align = "right">ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->manager_resource_nre}} ) </p>
                     @endif
                     </td>
                 </tr>
