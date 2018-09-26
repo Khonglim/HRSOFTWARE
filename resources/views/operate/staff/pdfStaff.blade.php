@@ -48,6 +48,7 @@
 </head>
 <body>
 <div class="page-break">
+        <p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
     <center><h3>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</h3></center>
     <b>1. ระดับในการประเมินผล</b><br>
     ดีมาก           =   ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
