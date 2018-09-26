@@ -160,10 +160,12 @@
                 <td align="center">{{$operate_staff->chioce15_90}}</td>
             </tr>
             <tr>
-                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน {{$operate_staff->subtotal_60}} คะแนน ประเมินครั้งที่ 2 : 90 วัน {{$operate_staff->subtotal_90}}คะแนน <b>(รวมกันหาร2) = {{$operate_staff->subtotal_final}}</b></td>
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <font color="red">{{$operate_staff->subtotal_60}}</font> คะแนน ประเมินครั้งที่ 2 : 90 วัน <font color="red">{{$operate_staff->subtotal_90}} </font>คะแนน <b>(รวมกันหาร2) = <font color="red">{{$operate_staff->subtotal_final}}</font></b></td>
             </tr>
         </tbody>
-    </table> <br><br>
+    </table> 
+</div>    
+<div class="page-break"> 
     <b>ความคิดเห็นเพิ่มเติม</b><br>
         (สำหรับผู้ประเมิน)
         <table>
@@ -208,11 +210,8 @@
                         </tr>  
                     </tbody>
                 </table>
-                </div>
             </tbody>
-        </table><br>
-    </div>    
-    <div class="page-break">
+        </table><br><br><br>
             <table>
                 <tbody>
                     <tr><td align="center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></td></tr>
@@ -406,7 +405,7 @@
                             {{$operate_staff->chioce_suitability30}}        
                 @endif</td>
             </tr>
-            <tr><td colspan="4"><b>รวมคะแนน :</b>{{$operate_staff->sum_chioce_suitability10}}</td></tr>
+            <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate_staff->sum_chioce_suitability10}}</font> คะแนน</td></tr>
         </tbody>    
     </table> <br>
     <table><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate_staff->comment_suitability10}} <br>
@@ -419,8 +418,7 @@
         @if($operate_staff->namerate_suitability != '')
             <p align = "right">ลงนาม...........................................ผู้จัดการฝ่าย <br>( คุณ{{$operate_staff->namerate_suitability}} ) </p>
         @endif
-    </td></tr></table>
-</div>
+    </td></tr></table> <br><br>
 <table>
     <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (จาก 60 วัน)</th></tr>
     <tr>
@@ -487,19 +485,19 @@
             <td align="center"></td>
         </tr>
     </tbody>
-</table> <br>
+</table> <br> </div>
 <table>
     <tbody>
         <tr><td align="center"><b>เฉพาะฝ่ายทรัพยากรบุคคล</b></td></tr>
         <tr>
             <td>
-                @if($operate_staff->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
+                @if($operate_staff->human_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
                     <input type="checkbox" checked>ให้บรรจุเป็นพนักงานประจำ
                 @endif
                 @if($operate_staff->human_resource_modi == 'ปรับอัตราเงินเดือน')
                     <input type="checkbox" checked>ปรับอัตราเงินเดือน {{$operate_staff->human_resource_commo}}
                 <br>@endif
-                @if($operate_staff->human_resource_nodi == 'ยังไม่ปรับอัตราเงินเดือน')
+                @if($operate_staff->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
                     <input type="checkbox" checked>ยังไม่ปรับอัตราเงินเดือน {{$operate_staff->human_resource_comno}}
                 <br>@endif
                 @if($operate_staff->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
@@ -529,13 +527,13 @@
                 @if($operate_staff->manager_resource_modi == 'ปรับอัตราเงินเดือน')
                     <input type="checkbox" checked>ปรับอัตราเงินเดือน {{$operate_staff->manager_resource_comdi}}
                 <br>@endif
-                @if($operate_staff->manager_resource_nodi == 'ยังไม่ปรับอัตราเงินเดือน')
+                @if($operate_staff->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
                     <input type="checkbox" checked>ยังไม่ปรับอัตราเงินเดือน {{$operate_staff->manager_resource_comno}}
                 <br>@endif
                  @if($operate_staff->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
                     <input type="checkbox" checked>ให้ปรับตำแหน่งเป็น {{$operate_staff->manager_resource_posi}} และปรับเงินเดือน
                 <br>@endif 
-                @if($operate_staff->manager_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
+                @if($operate_staff->manager_resource_fail == 'ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่')
                     <input type="checkbox" checked>ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate_staff->manager_resource_date}}
                 <br>@endif 
                 @if($operate_staff->manager_resource_other == 'อื่นๆ')

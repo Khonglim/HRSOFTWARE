@@ -210,7 +210,7 @@
                 <td align="center">{{$operate_sup->chioce25_90}}</td>
             </tr>
             <tr>
-                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน {{$operate_sup->subtotal_60}} คะแนน ประเมินครั้งที่ 2 : 90 วัน {{$operate_sup->subtotal_90}}คะแนน <b>(รวมกันหาร2) = {{$operate_sup->subtotal_final}}</b></td>
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <font color="red">{{$operate_sup->subtotal_60}}</font> คะแนน ประเมินครั้งที่ 2 : 90 วัน <font color="red">{{$operate_sup->subtotal_90}} </font>คะแนน <b>(รวมกันหาร2) = <font color="red">{{$operate_sup->subtotal_final}}</font> </b></td>
             </tr>
         </tbody>
     </table> <br><br>
@@ -454,7 +454,7 @@
                     {{$operate_sup->chioce_suitability30}}        
                 @endif</td>
             </tr>
-            <tr><td colspan="4"><b>รวมคะแนน :</b>{{$operate_sup->sum_chioce_suitability10}}</td></tr>
+            <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate_sup->sum_chioce_suitability10}}</font> คะแนน</td></tr>
         </tbody>    
     </table> <br>
     <table><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate_sup->comment_suitability10}} <br>
@@ -468,7 +468,7 @@
     <p align = "right">ลงนาม ........................................... ผู้จัดการฝ่าย <br>( คุณ{{$operate_sup->namerate_suitability}} ) </p>
     @endif
 </td></tr></table>
-</div>
+</div><div class="page-break">
     <table>
         <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (จาก 60 วัน)</th></tr>
         <tr>
@@ -489,7 +489,7 @@
             <td style="text-align:center">{{$operate_sup->line_terms_60}}</td>
             <td style="text-align:center">{{$operate_sup->line_min_60}}</td>
         </tr>
-    </table>
+    </table> <br><br>
     <table>
         <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th></tr>
         <tr>
@@ -510,8 +510,7 @@
             <td style="text-align:center">{{$operate_sup->line_terms_90}}</td>
             <td style="text-align:center">{{$operate_sup->line_min_90}}</td>
         </tr>
-    </table> 
-
+    </table><br><br>
     <table>
         <tbody>
             <tr><td colspan="3" align="center"><b>สรุปผลการประเมิน</b></td></tr>
@@ -536,7 +535,8 @@
                 <td align="center"></td>
             </tr>
         </tbody>
-    </table> <br>
+    </table>
+</div>
     <table>
         <tbody>
             <tr><td align="center"><b>เฉพาะฝ่ายทรัพยากรบุคคล</b></td></tr>
@@ -548,12 +548,12 @@
                     @if($operate_sup->human_resource_modi == 'ปรับอัตราเงินเดือน')
                         <input type="checkbox" checked>ปรับอัตราเงินเดือน {{$operate_sup->human_resource_commo}}
                     <br>@endif
-                    @if($operate_sup->human_resource_nodi == 'ยังไม่ปรับอัตราเงินเดือน')
+                    @if($operate_sup->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
                         <input type="checkbox" checked>ยังไม่ปรับอัตราเงินเดือน {{$operate_sup->human_resource_comno}}
                     <br>@endif
                     @if($operate_sup->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                        <input type="checkbox" checked>ให้ปรับตำแหน่งเป็น {{$operate_sup->human_resource_posi}} และปรับเงินเดือน
-                    <br>@endif 
+                    <input type="checkbox" checked>ให้ปรับตำแหน่งเป็น {{$operate_sup->human_resource_posi}} และปรับเงินเดือน
+                    <br>@endif
                     @if($operate_sup->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
                         <input type="checkbox" checked>ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate_sup->human_resource_date}}
                     <br>@endif 
@@ -578,13 +578,13 @@
                     @if($operate_sup->manager_resource_modi == 'ปรับอัตราเงินเดือน')
                         <input type="checkbox" checked>ปรับอัตราเงินเดือน {{$operate_sup->manager_resource_comdi}}
                     <br>@endif
-                    @if($operate_sup->manager_resource_nodi == 'ยังไม่ปรับอัตราเงินเดือน')
+                    @if($operate_sup->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
                         <input type="checkbox" checked>ยังไม่ปรับอัตราเงินเดือน {{$operate_sup->manager_resource_comno}}
                     <br>@endif
                      @if($operate_sup->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
                         <input type="checkbox" checked>ให้ปรับตำแหน่งเป็น {{$operate_sup->manager_resource_posi}} และปรับเงินเดือน
                     <br>@endif 
-                    @if($operate_sup->manager_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
+                    @if($operate_sup->manager_resource_fail == 'ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่')
                         <input type="checkbox" checked>ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate_sup->manager_resource_date}}
                     <br>@endif 
                     @if($operate_sup->manager_resource_other == 'อื่นๆ')
@@ -597,6 +597,5 @@
                 </tr>
         </tbody>
         </table> 
-    
 </body>
 </html>
