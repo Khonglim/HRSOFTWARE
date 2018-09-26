@@ -2,7 +2,6 @@
 @section('content')
 <div class="content-wrapper">
         <div class="content container-fluid">
-     
                 <div class="box"  >
                         <div class="box-header">
                           <h3 class="box-title">สรุปผลการทดลองงาน ระดับปฏิบัติการ</h3>
@@ -32,9 +31,6 @@
                       <a href="{{url('pdfcon_staf/'.$operate_staffs['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
                       @endif
                       @endforeach
-                                      
-                                      
-                     
                        </td>
                     </tr>
                     @endif
@@ -55,17 +51,8 @@
                           </table>
                         </div>
                       </div>
-    
-    
-    
-    
-    
-    
     </div>
       </div>
-
-
-
   </div>
 
   @endsection
