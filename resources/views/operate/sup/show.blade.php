@@ -33,7 +33,7 @@
                                       @foreach ($operate_sup as $operatesup)
                                       @if($operatesup->id_posinal ==  $l->id)
                                      
-                                      <a href="{{url('pdfcon_staf/'.$operatesup['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+                                      <a href="{{url('pdfcon_sup/'.$operatesup['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
                                       @endif
                                       @endforeach
 
