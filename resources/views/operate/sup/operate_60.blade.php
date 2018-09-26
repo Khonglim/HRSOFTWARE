@@ -128,8 +128,8 @@
                                    
                                     </tr>
                                     <tr>
-                                      <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate" id="startrate_60_2"  > <br><br>
-                                        ถึงวันที่    <input type="text" name="endrate" id="endrate_60_2" >
+                                      <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate_60_2" id="startrate_60_2"  > <br><br>
+                                        ถึงวันที่    <input type="text" name="endrate_60_2" id="endrate_60_2" >
                                     
                                     
                                     </td>

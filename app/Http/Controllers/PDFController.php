@@ -72,12 +72,12 @@ class PDFController extends Controller
     {
        
 
-        $operate_staff = Operate_staff::find($id);
-        $personal  =   DB::find('personal')
+      
+        $personal  =   DB::table('personal')
         ->where('enable', '=', 1)
         ->where('degree', '=', 0)
        ->get();
-        
+       $operate_staff = Operate_staff::find($id);
         $pdf = PDF::loadView('operate.staff.pdfStaff',['operate_staff' =>   $operate_staff,
         
         'personal' =>    $personal

@@ -101,8 +101,8 @@ class Operate_supController extends Controller
      
 
 
-        $operatesup->startwork_60= Input::get('startrate_60') ;
-        $operatesup->endwork_60 = Input::get('endrate_60');
+        $operatesup->startwork_60= Input::get('startrate_60_2') ;
+        $operatesup->endwork_60 = Input::get('endrate_60_2');
         $operatesup->sick_leave_60 = Input::get('sick');
         $operatesup->errand_leave_60 = Input::get('errand');
         $operatesup->absence_60 = Input::get('absence');

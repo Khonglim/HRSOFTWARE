@@ -4,22 +4,13 @@
 	<title>Ngg</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	
 	<link href="{{ asset('new/css/bootstrap.css') }}"   rel='stylesheet' type='text/css' />
 	<link href="{{ asset('new/css/style.css') }}"   rel='stylesheet' type='text/css' />
 	<link href="{{ asset('new/css/prettyPhoto.css') }}"   rel='stylesheet' type='text/css' />
 	<link href="{{ asset('new/css/owl.carousel.css') }}"   rel='stylesheet' type='text/css'  media="all" />
 	<link href="{{ asset('new/css/owl.theme.css') }}"   rel='stylesheet' type='text/css' media="all" />
 	<link href="{{ asset('new/css/fontawesome-all.css') }}"   rel='stylesheet' />
-	
-
-
-
-
-
-
-
-  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
   <style>
   body {
     font-family: 'Prompt', sans-serif;
