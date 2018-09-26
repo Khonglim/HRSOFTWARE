@@ -1212,8 +1212,8 @@
                            
                            
                            
-                                    $('#rate_all').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt("{{$operate_sup->rate_60}}"))/2);   
-                           
+                                    $('#scoresp').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt("{{$operate_sup->rate_60}}"))/2);   
+                                    $('#scoremp').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt("{{$operate_sup->rate_60}}"))/2);  
     
     
                            });
