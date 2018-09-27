@@ -175,9 +175,17 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                   <tr>
                     <?php  $i=$questiontest->id_part; $j++;?>
                       @foreach($descrip as $des) 
-                        @if($des->dq_q_id == $questiontest->q_id )
+                        @if($des->dq_q_id == $questiontest->id )
+
+                    
+                       @if($des->dq_discription == '')
+                    <td colspan="5" style="width: 60%;height: 70px;" >{{$questiontest->ask}} 
+                    </td>
+                       @else
                     <td colspan="5" style="width: 60%;height: 70px;" data-tooltip="{{$des->dq_discription}}">{{$questiontest->ask}} 
                     </td>
+                       @endif
+                       
                         @endif
                       @endforeach
                     <td style="display: none;"><input name='t_{{$questiontest->id_part}}{{$questiontest->q_id}}' type="text" value={{$questiontest->id}}></td>
