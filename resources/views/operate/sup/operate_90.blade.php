@@ -1211,9 +1211,9 @@
                                            $('#rate_90').val(group_90_total.toFixed( 2 ));    
                            
                            
-                           
+                                           $('#rate_all').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt("{{$operate_sup->rate_60}}"))/2);  
                                     $('#scoresp').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt("{{$operate_sup->rate_60}}"))/2);   
-                                    $('#scoremp').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt("{{$operate_sup->rate_60}}"))/2);  
+                                    
     
     
                            });
@@ -1237,6 +1237,7 @@
 
             }
             $('#sum_chioce_suitability10').val(pont);
+            $('#scoremp').val(pont);
       
         });
     </script>
