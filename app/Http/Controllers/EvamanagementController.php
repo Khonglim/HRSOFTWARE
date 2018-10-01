@@ -20,12 +20,15 @@ class EvamanagementController extends Controller
     public function index()
     {
             $formfor = Formfor::all();
-
+            $ngg_employee = Ngg_employee::all();
+            $employeetotest = Employeetotest::all();
             $data = array(
-                'formfor' =>  $formfor  
+                'formfor' => $formfor,
+                'employeetotest' => $employeetotest,
+                'ngg_employee' => $ngg_employee
             );
 
-        return view('testeva/evamanage',$data);
+        return view('testevamanage/manageindex',$data);
     }
 
     /**
@@ -34,8 +37,14 @@ class EvamanagementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        $formfor = Formfor::all();
+        $ngg_employee = Ngg_employee::all();
+        $data = array(
+                'formfor' => $formfor,
+                'ngg_employee' => $ngg_employee
+            );
+        return view('testevamanage/managecreate',$data);
     }
 
     /**
@@ -46,7 +55,8 @@ class EvamanagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        return redirect('home');
     }
 
     /**
@@ -57,7 +67,7 @@ class EvamanagementController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +78,19 @@ class EvamanagementController extends Controller
      */
     public function edit($id)
     {
-        //
+        if($id !== '') {
+          $employee= DB::table('employeetotest')->where('nee_id', '=', $id)->get();
+          $idd = $id;
+          $formfor = Formfor::all();
+          $ngg_employee = Ngg_employee::all();
+            $data = array(
+                'formfor' => $formfor,
+                'ngg_employee' => $ngg_employee,
+                'employee' => $employee,
+                'idd'=>$idd
+            );
+            return view('testevamanage/manageedit',$data);
+        }
     }
 
     /**
@@ -91,6 +113,8 @@ class EvamanagementController extends Controller
      */
     public function destroy($id)
     {
-        //
+         if($id !== '') {
+          
+            }
     }
 }
