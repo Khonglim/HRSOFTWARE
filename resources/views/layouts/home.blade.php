@@ -76,7 +76,7 @@
 
 
 <br><br><br>
-<div class="modal-footer">
+
 
 			<!-- Copyright -->
 			<div class="footer-copyright text-center py-3">© 2018 NGG:
@@ -89,7 +89,7 @@
 		  </footer>
 	<script src="new/js/jquery-2.2.3.min.js"></script>
 	<script src="new/js/bootstrap.js"></script>
-	
+		
 </body>
 
 </html>

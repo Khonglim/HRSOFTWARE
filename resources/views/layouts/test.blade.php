@@ -648,5 +648,13 @@ if(document.getElementById('chioe56').value  == "0"  )
 
   }
   </script>
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 NGG:
+        <a href="#"> version1.0</a>
+       
+        <p class="text-danger">ทางบริษัทกำลังพัฒนา(ขออภัยในความไม่สะดวกหากเกิดผิดพลาดของเว็บค่ะ)</p>
+      </div>
+      <!-- Copyright -->
  </body>
 </html>
