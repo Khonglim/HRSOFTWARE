@@ -46,7 +46,8 @@
     </style>
 </head>
 <body>
-                <div class="page-break"> 
+<div class="page-break">
+<p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
     คุณ: {{$testmbti->name}} {{$testmbti->lastname}}
                            
         <h3>คำตอบที่คุณเลือก:</h3>

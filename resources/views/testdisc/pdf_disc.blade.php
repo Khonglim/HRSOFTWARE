@@ -41,6 +41,7 @@
     </style>
 </head>
 <body>
+<p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
     คุณ: {{$testdisc->name}} {{$testdisc->lastname}}
               <h3 class="box-title">รายงานผลการทดสอบ</div>
                 <table class="table table-striped">
