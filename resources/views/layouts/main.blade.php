@@ -347,8 +347,19 @@ body {
                   <ul class="treeview-menu">
                     <li><a href="{{url('/summbti') }}">รวม MBTI บุคคล</a></li>
                     <li><a href="{{url('/sumdisc') }}">รวม DISC บุคคล</a></li>
+                  </ul>
+                </li>
+
+                <li class="treeview">
+                  <a href="#"><i class="fa fa-list-ul"></i> <span>การจัดการแบบประเมิน</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                  </a>
+                  <ul class="treeview-menu">
                     <li><a href="{{url('/summeva') }}">สรุปผลประเมินv1</a></li>
                     <li><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
+                    <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
                   </ul>
                 </li>
               

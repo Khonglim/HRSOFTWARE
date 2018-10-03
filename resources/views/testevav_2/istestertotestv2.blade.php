@@ -24,7 +24,7 @@
   </style>
 
   
-
+<?php    $i=0; $j=0; $k=0;?>
  <section class="content">
   <div class="row">
       <div class="col-xs-10">
@@ -76,9 +76,28 @@
                 @if($emp->nee_by_employee == $emp2->nem_id && $ngg_employees->nem_id == $emp->nee_is_employee && $forms->id==$emp->nee_id_form  )
                  
                 {{Form::open(['url'=>'starttestv2','method'=>'POST'])}}
-                <tr>
-                   <th colspan="5" style="text-align: center;width: 50%;height: 70px; background-color: #b7eeff;">{{Form::label('forms_name',$forms->form)}}</th>
+
+                @if($forms->form == 'leader' && $i==0)
+                 <tr>
+                   <th colspan="5" style="text-align: center;width: 50%;height: 70px; background-color: #b7eeff;">{{Form::label('forms_name',$forms->form)}}
+                   </th>
                 </tr>
+               <?php    $i++;?>
+                @elseif($forms->form == 'officer' && $j==0)
+                <tr>
+                   <th colspan="5" style="text-align: center;width: 50%;height: 70px; background-color: #b7eeff;">{{Form::label('forms_name',$forms->form)}}
+                   </th>
+                </tr>
+               <?php    $j++;?>
+                @elseif($forms->form == 'manager' && $k==0)
+                <tr>
+                   <th colspan="5" style="text-align: center;width: 50%;height: 70px; background-color: #b7eeff;">{{Form::label('forms_name',$forms->form)}}
+                   </th>
+                </tr>
+                <?php    $k++;?>
+                @endif
+               
+
                  <tr>
 
                     <td colspan="5" style="text-align: center;width: 50%;height: 70px;">
@@ -119,6 +138,7 @@
             @endforeach
              <tfoot>
             
+
              </tfoot>
 
             </table>
