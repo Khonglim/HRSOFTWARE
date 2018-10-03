@@ -33,6 +33,10 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'Unicodeveloper\\Session\\' => 23,
+        ),
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
@@ -79,6 +83,10 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+        ),
+        'J' => 
+        array (
+            'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
         'I' => 
         array (
@@ -136,6 +144,10 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Unicodeveloper\\Session\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/unicodeveloper/laravel-sessiontimeout/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -241,6 +253,10 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'JakubOnderka\\PhpConsoleColor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -339,10 +355,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
             array (
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
             ),
-            'JakubOnderka\\PhpConsoleColor' => 
-            array (
-                0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
-            ),
         ),
         'D' => 
         array (
@@ -392,6 +404,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Http\\Controllers\\Operate_supController' => __DIR__ . '/../..' . '/app/Http/Controllers/Operate_supController.php',
         'App\\Http\\Controllers\\PDFController' => __DIR__ . '/../..' . '/app/Http/Controllers/PDFController.php',
         'App\\Http\\Controllers\\PositionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PositionController.php',
+        'App\\Http\\Controllers\\ResetController' => __DIR__ . '/../..' . '/app/Http/Controllers/ResetController.php',
         'App\\Http\\Controllers\\TestdiscController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestdiscController.php',
         'App\\Http\\Controllers\\TestmbtiController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestmbtiController.php',
         'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
@@ -410,12 +423,15 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Ngg_evaluate_result' => __DIR__ . '/../..' . '/app/Ngg_evaluate_result.php',
         'App\\Ngg_evaluate_resultv2' => __DIR__ . '/../..' . '/app/Ngg_evaluate_resultv2.php',
         'App\\Ngg_evaresult_comment' => __DIR__ . '/../..' . '/app/Ngg_evaresult_comment.php',
+        'App\\Ngg_evaresult_commentv2' => __DIR__ . '/../..' . '/app/Ngg_evaresult_commentv2.php',
         'App\\Ngg_level' => __DIR__ . '/../..' . '/app/Ngg_level.php',
         'App\\Ngg_position' => __DIR__ . '/../..' . '/app/Ngg_position.php',
         'App\\Ngg_sector' => __DIR__ . '/../..' . '/app/Ngg_sector.php',
         'App\\Operate_Chioce' => __DIR__ . '/../..' . '/app/Operate_Chioce.php',
         'App\\Operate_qSeff' => __DIR__ . '/../..' . '/app/Operate_qSeff.php',
         'App\\Operate_qSup' => __DIR__ . '/../..' . '/app/Operate_qSup.php',
+        'App\\Operate_staff' => __DIR__ . '/../..' . '/app/Operate_staff.php',
+        'App\\Operate_sup' => __DIR__ . '/../..' . '/app/Operate_sup.php',
         'App\\Partof' => __DIR__ . '/../..' . '/app/Partof.php',
         'App\\Partofv2' => __DIR__ . '/../..' . '/app/Partofv2.php',
         'App\\Personal' => __DIR__ . '/../..' . '/app/Personal.php',
@@ -1978,8 +1994,8 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
         'Inter_supTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Inter_supTableSeeder.php',
         'InterviewTableSeeder' => __DIR__ . '/../..' . '/database/seeds/InterviewTableSeeder.php',
-        'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
-        'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
+        'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
+        'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
@@ -2033,9 +2049,14 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'League\\Flysystem\\Util\\StreamHasher' => __DIR__ . '/..' . '/league/flysystem/src/Util/StreamHasher.php',
         'ManagerTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ManagerTableSeeder.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
+        'Mockery\\Adapter\\Phpunit\\Legacy\\TestListenerForV5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV5.php',
+        'Mockery\\Adapter\\Phpunit\\Legacy\\TestListenerForV6' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV6.php',
+        'Mockery\\Adapter\\Phpunit\\Legacy\\TestListenerForV7' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV7.php',
+        'Mockery\\Adapter\\Phpunit\\Legacy\\TestListenerTrait' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerTrait.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
         'Mockery\\Adapter\\Phpunit\\TestListener' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php',
+        'Mockery\\ClosureWrapper' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/ClosureWrapper.php',
         'Mockery\\CompositeExpectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/CompositeExpectation.php',
         'Mockery\\Configuration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Configuration.php',
         'Mockery\\Container' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Container.php',
@@ -2668,6 +2689,8 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'PhpParser\\Builder\\Namespace_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Namespace_.php',
         'PhpParser\\Builder\\Param' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Param.php',
         'PhpParser\\Builder\\Property' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Property.php',
+        'PhpParser\\Builder\\TraitUse' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/TraitUse.php',
+        'PhpParser\\Builder\\TraitUseAdaptation' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/TraitUseAdaptation.php',
         'PhpParser\\Builder\\Trait_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Trait_.php',
         'PhpParser\\Builder\\Use_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Use_.php',
         'PhpParser\\Comment' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Comment.php',
@@ -3913,6 +3936,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Unicodeveloper\\Session\\Middleware\\SessionTimeout' => __DIR__ . '/..' . '/unicodeveloper/laravel-sessiontimeout/src/Middleware/SessionTimeout.php',
         'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',

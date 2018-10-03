@@ -44,7 +44,9 @@
     </style>
 </head>
 <body>
-<center><h3>ข้อมูลประวัติ</h3></center>
+        <center> <img src="{{URL::asset('img/logo61.jpg')}}" width="100px" height="100px" > 
+<h3>ข้อมูลประวัติ</h3>
+</center>
         <img src="{{$personal->photo}}" width="100px" height="135px" align="right"> 
         <br><br><br><br><br><br>
         <b>ตำแหน่งที่ต้องการ/Position Applied for : </b>{{$personal->positionngg}} <br> 

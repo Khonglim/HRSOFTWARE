@@ -34,7 +34,7 @@
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 NGG:
           <a href="#"> version1.0</a>
-          <p class="text-danger"> ทางบริษัทกำลังพัฒนา(ขออภัยในความไม่สะดวกหากเกิดผิดพลาดของเว็บค่ะ) </p>
+          <p class="text-danger">ปรับปรุงระบบทุก เวลา 23.00-00.00น.</p>
         </div>
         <!-- Copyright -->
       
