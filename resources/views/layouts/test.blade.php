@@ -24,8 +24,6 @@ body {
                   </div>
                   <ul class="nav navbar-nav">
                     <li class="active"><a href="#">แบบทดสอบ</a></li>
-                  
-                    
                   </ul>
                 </div>
               </nav>

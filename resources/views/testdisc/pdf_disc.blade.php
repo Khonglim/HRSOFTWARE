@@ -46,10 +46,10 @@
                 <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="text-align:center">M</th>
-                                <th style="text-align:center">B</th>
-                                <th style="text-align:center">T</th>
+                                <th style="text-align:center">D</th>
                                 <th style="text-align:center">I</th>
+                                <th style="text-align:center">S</th>
+                                <th style="text-align:center">C</th>
                             </tr>
                         </thead>
                         <tbody>

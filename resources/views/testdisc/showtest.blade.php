@@ -1,7 +1,7 @@
-@extends('layouts.test')
+@extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="content-wrapper">
 		
 				<div class="panel panel-success" style="width:100%">
 					<div class="panel-heading">สรุปผลการทดสอบ DISC</div>

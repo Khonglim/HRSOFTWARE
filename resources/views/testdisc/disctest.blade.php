@@ -46,7 +46,7 @@
                           </div>
                         <div class="col-md-8">
                             <div class="alert alert-danger">
-                                <center>   <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr; หรือคลิกดูตัวอย่าง </center>
+                                <center>   <strong>หมายเหตุ!</strong> ทำข้อสอบทางด้านซ้ายไปขวา &rarr;  </center>
                               </div>
                             </div>
                          

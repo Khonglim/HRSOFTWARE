@@ -56,28 +56,12 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link cool" href="{{url('/testto') }}">ทำแบบทดสอบ MBTI</a>
+							<a class="nav-link cool" href="{{url('/testto') }}">ทำแบบทดสอบ MBTI และ DISC</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link cool" href="{{url('/testtoo') }}">ทำแบบทดสอบ DISC</a>
-						</li>
-			
 						<li class="nav-item">
 								<a class="nav-link cool" href="{{url('/userlogin') }}">ทำแบบประเมิน360</a>
 							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">
-									แบบประเมินผลการปฏิบัติงาน
-									<i class="fas fa-angle-down"></i>
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-									<a class="dropdown-item" href="{{url('Operate/create') }}">ระดับปฏิบัติการ </a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{url('Operate_sup/create') }}">ระดับผู้บังคับบัญชา </a>
-	
-								</div>
-							</li> 
+						 
 					</ul>
 
 				</div>
