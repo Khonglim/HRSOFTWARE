@@ -219,7 +219,7 @@
                                                         <div class="input-group">
                                                                 <div class="form-group label-floating">
                                                                         <label class="control-label">พี่น้องกี่คน</label>
-                                                                        {{Form::text('brothers','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
+                                                                        {{Form::text('brothers','',['class'=>'form-control',"maxlength"=>"2"])}}  
                                                                </div>
                                                             </div>
                                                    
@@ -229,7 +229,7 @@
                                                         <div class="input-group">
                                                                 <div class="form-group label-floating">
                                                                         <label class="control-label">เป็นคนที่</label>
-                                                                        {{Form::text('number','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
+                                                                        {{Form::text('number','',['class'=>'form-control',"maxlength"=>"2"])}}  
                                                                </div>
                                                             </div>
                                                             

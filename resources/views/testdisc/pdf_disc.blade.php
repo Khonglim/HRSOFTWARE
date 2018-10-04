@@ -41,15 +41,16 @@
     </style>
 </head>
 <body>
+<p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
     คุณ: {{$testdisc->name}} {{$testdisc->lastname}}
               <h3 class="box-title">รายงานผลการทดสอบ</div>
                 <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="text-align:center">M</th>
-                                <th style="text-align:center">B</th>
-                                <th style="text-align:center">T</th>
+                                <th style="text-align:center">D</th>
                                 <th style="text-align:center">I</th>
+                                <th style="text-align:center">S</th>
+                                <th style="text-align:center">C</th>
                             </tr>
                         </thead>
                         <tbody>

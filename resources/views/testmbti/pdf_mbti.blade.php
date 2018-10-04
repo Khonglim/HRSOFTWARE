@@ -46,7 +46,14 @@
     </style>
 </head>
 <body>
-                <div class="page-break"> 
+
+               
+              
+                             
+
+<div class="page-break">
+
+
     คุณ: {{$testmbti->name}} {{$testmbti->lastname}}
                            
         <h3>คำตอบที่คุณเลือก:</h3>

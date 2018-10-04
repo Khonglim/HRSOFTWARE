@@ -56,28 +56,12 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link cool" href="{{url('/testto') }}">ทำแบบทดสอบ MBTI</a>
+							<a class="nav-link cool" href="{{url('/testto') }}">ทำแบบทดสอบ MBTI และ DISC</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link cool" href="{{url('/testtoo') }}">ทำแบบทดสอบ DISC</a>
-						</li>
-			
 						<li class="nav-item">
 								<a class="nav-link cool" href="{{url('/userlogin') }}">ทำแบบประเมิน360</a>
 							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">
-									แบบประเมินผลการปฏิบัติงาน
-									<i class="fas fa-angle-down"></i>
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-									<a class="dropdown-item" href="{{url('Operate/create') }}">ระดับปฏิบัติการ </a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{url('Operate_sup/create') }}">ระดับผู้บังคับบัญชา </a>
-	
-								</div>
-							</li> 
+						 
 					</ul>
 
 				</div>
@@ -92,20 +76,20 @@
 
 
 <br><br><br>
-<div class="modal-footer">
+
 
 			<!-- Copyright -->
 			<div class="footer-copyright text-center py-3">© 2018 NGG:
 			  <a href="#"> version1.0</a>
 			 
-			  <p class="text-danger">ทางบริษัทกำลังพัฒนา(ขออภัยในความไม่สะดวกหากเกิดผิดพลาดของเว็บค่ะ)</p>
+			  <p class="text-danger">ปรับปรุงระบบทุก เวลา 23.00-00.00น.</p>
 			</div>
 			<!-- Copyright -->
 		
 		  </footer>
 	<script src="new/js/jquery-2.2.3.min.js"></script>
 	<script src="new/js/bootstrap.js"></script>
-	
+		
 </body>
 
 </html>

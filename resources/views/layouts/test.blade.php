@@ -24,8 +24,6 @@ body {
                   </div>
                   <ul class="nav navbar-nav">
                     <li class="active"><a href="#">แบบทดสอบ</a></li>
-                  
-                    
                   </ul>
                 </div>
               </nav>
@@ -650,5 +648,13 @@ if(document.getElementById('chioe56').value  == "0"  )
 
   }
   </script>
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 NGG:
+        <a href="#"> version1.0</a>
+       
+        <p class="text-danger">ปรับปรุงระบบทุก เวลา 23.00-00.00น.</p>
+      </div>
+      <!-- Copyright -->
  </body>
 </html>
