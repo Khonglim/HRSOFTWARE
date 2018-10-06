@@ -11,6 +11,9 @@
 <link href="{{ asset('new/css/style2.css') }}"   rel='stylesheet' type='text/css' />
 <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
 <link href="{{ asset('new/css/fontawesome-all.css') }}"   rel='stylesheet' />
+<script type="text/javascript" src="{{ asset('dist/js/validator.js') }}" ></script>
+
+<script type="text/javascript" src="{{ asset('dist/js/validator.min.js') }}" ></script>
 </head>
 <body>
   

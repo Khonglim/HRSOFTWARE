@@ -19,6 +19,7 @@ use App\Http\Controllers\Controller;
 
 class Evatestingv2Controller extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *

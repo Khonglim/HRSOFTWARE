@@ -86,7 +86,7 @@ Route::resource('home','HomeController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::post('/saveep', 'EmployeeController@index')->name('saveep');
 Route::get('/dynamicdependent','DynamicDependent@index');
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
@@ -270,3 +270,15 @@ Route::get('setting', function () {
     return view("setting/reset",$data);
 
 });
+
+Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
+Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
+Route::get('session', ['as' => 'session', 'uses' => 'ErrorController@session']);
+
+
+
+
+
+
+Route::get('online', 'PersonalController@index')->name('online');
+Route::post('online/postdata', 'PersonalController@postdata')->name('online.postdata');

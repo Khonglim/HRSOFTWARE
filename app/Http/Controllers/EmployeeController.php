@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Validation\Rule;
 class EmployeeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -46,12 +52,9 @@ class EmployeeController extends Controller
         $data = array('items' => $items ,'items2' => $items2 );
         return view('employ/formcreateemployee',$data);
 
-        $nationality = Nationality::all();
-        foreach ($nationality as $nation){ 
-            $items2[$nation->name] = $nation->name;
-        }
-        $data = array('items2' => $items2 );
-        return view('employ/formcreateemployee',$data);
+        
+       
+        
     }
 
     /**
@@ -62,8 +65,6 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-
-        
         $this->validate($request,[
          
             'email' => 'required|string|email|max:255|unique:personal'

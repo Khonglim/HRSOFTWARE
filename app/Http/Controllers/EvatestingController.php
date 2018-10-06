@@ -19,6 +19,7 @@ use App\Http\Controllers\Controller;
 
 class EvatestingController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -26,6 +27,7 @@ class EvatestingController extends Controller
      */
     public function index()
     {
+
        
          return view("testeva/filltertodo");
     }

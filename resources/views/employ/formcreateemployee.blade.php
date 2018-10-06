@@ -66,14 +66,14 @@
     <div class="row setup-content" id="step-1">
         
                 <h3>ประวัติส่วนตัว</h3>
-                <div class="form-group">
+    <div class="form-group">
 <div class="row">
         <div class="col-md-3 "></div>
         <div class="col-md-2 ">
                 <div class="form-group label-floating">
                     <label class="control-label">เงินเดือนที่ต้องการ<small class="text-danger">*</small></label>
                     {{ Form::text('salaryngg','', ['class' => 'form-control','required']) }}
-    
+                    <div class="help-block with-errors"></div>
                    </div>
 
             </div>
@@ -81,7 +81,7 @@
                 <div class="form-group label-floating">
                     <label class="control-label">ตำแหน่งที่จะสมัคร<small class="text-danger">*</small></label>
                     {{ Form::text('positionngg','', ['class' => 'form-control','required']) }}
-    
+                    <div class="help-block with-errors"></div>
                    </div>
 
             </div>
@@ -121,6 +121,10 @@
                </div>
         </div>
 </div>	
+
+
+
+
         <div class="form-group">     
         <div class="row">    
                       <div class="col-md-3 ">
@@ -1329,7 +1333,7 @@
                
                
                
-                <button class="btn btn-success btn-lg pull-right" type="submit">บันทึก</button>
+             
     </div>
     {{ Form::close()}}
 </div>
