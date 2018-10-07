@@ -7,6 +7,7 @@
     <title>HRNGG|สมัครงาน</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
+    <link href="{{ asset('new/css/style2.css') }}"   rel='stylesheet' type='text/css' />
     <style>
     body {
       font-family: 'Prompt', sans-serif;
@@ -38,6 +39,12 @@
         </style>
 </head>
 <body class="bg-dark">
+        <div class="banner-inner ">
+              <br> 
+              <center>
+                <img src="{{URL::asset('img/NGGlogo.jpg')}}"  width="80px" height="80px"> 
+              </center>
+        </div> 
  <div class="container">
         
    
@@ -76,16 +83,16 @@
                                     <div class="col-md-3 ">
                                             <div class="form-group ">
                                                 <label class="control-label">เงินเดือนที่ต้องการ<small class="text-danger">*</small></label>
-                                                {{ Form::text('salaryngg','', ['class' => 'form-control',]) }}
-                                                <div class="help-block with-errors"></div>
+                                                {{ Form::text('salaryngg','', ['class' => 'form-control','id'=>'salaryngg']) }}
+                                                <b  class="text-danger" id="salarynggError"></b>
                                                </div>
                             
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group ">
                                                 <label class="control-label">ตำแหน่งที่จะสมัคร<small class="text-danger">*</small></label>
-                                                {{ Form::text('positionngg','', ['class' => 'form-control',]) }}
-                                                <div class="help-block with-errors"></div>
+                                                {{ Form::text('positionngg','', ['class' => 'form-control','id'=>'positionngg']) }}
+                                                <b  class="text-danger" id="positionnggError"></b>
                                                </div>
                             
                                         </div>
@@ -99,19 +106,22 @@
                                                <div class="col-md-3"> 
                                                             <div class="form-group ">
                                                             <label class="control-label">คำนำ<small class="text-danger">*</small></label>
-                                                                                     {{ Form::select('fronname', [''=>'เลือก'  ,'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control',]) }}
-                                                    </div>  
+                                                                                     {{ Form::select('fronname', [''=>'เลือก'  ,'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control','id'=>'fronname']) }}
+                                                                                     <b  class="text-danger" id="fronnameError"></b>
+                                                                                    </div>  
                                             </div>  
                                                     <div class="col-md-3"> 
                                                                     <div class="form-group ">
                                                         <label class="control-label">ชื่อ<small class="text-danger">*</small></label>
-                                                        {{Form::text('name','',['class'=>'form-control',])}}
+                                                        {{Form::text('name','',['class'=>'form-control','id'=>'name'])}}
+                                                        <b  class="text-danger" id="nameError"></b>
                                                     </div>  
                                             </div>  
                                                      <div class="col-md-3"> 
                                                                     <div class="form-group ">
                                                      <label class="control-label">นามสกุล<small class="text-danger">*</small></label>
-                                                {{Form::text('lastname','',['class'=>'form-control',])}} 
+                                                {{Form::text('lastname','',['class'=>'form-control','id'=>'lastname'])}} 
+                                                <b  class="text-danger" id="lastnameError"></b>
                                                     </div> 
                                             </div>   
                             
@@ -119,9 +129,9 @@
                                                                     <div class="form-group ">
                                                                     <label class="control-label">รูปภาพ<small class="text-danger">*ขนาดไม่เกิน 512kb</small></label>
                                                                     <input type="file"    name="image" data-validation-allowing="jpg, png"
-                                                                    data-validation-max-size="512kb"  >
+                                                                    data-validation-max-size="512kb" id='image'  >
                                                                   </div>   
-                                                                        
+                                                                  <b  class="text-danger" id="imageError"></b>           
                                            </div>
                                     </div>
                             </div>
@@ -132,32 +142,37 @@
                                                   <div class="col-md-3 ">
                                                             <div class="form-group ">
                                                      <label class="control-label">ชื่อเล่น<small class="text-danger">*</small></label>
-                                                     {{Form::text('nikname','',['class'=>'form-control',])}}  
+                                                     {{Form::text('nikname','',['class'=>'form-control','id'=>'nikname'])}}  
+                                                     <b  class="text-danger" id="niknameError"></b>        
                                                     </div>
                                             </div>
                                                     <div class="col-md-3 ">
                                              <div class="form-group ">
                                                             <label class="control-label">วันเกิด<small class="text-danger">*</small></label>
-                                                    {{Form::date('birthday','',['class'=>'form-control',])}}   
+                                                    {{Form::date('birthday','',['class'=>'form-control','id'=>'birthday'])}}  
+                                                      <b  class="text-danger" id="birthdayError"></b>         
                                                      </div>
                                                     </div>
                                                      <div class="col-md-3">
                                                                     <div class="form-group ">
                                                           <label class="control-label">อายุ<small class="text-danger">*</small></label>
-                                                        {{Form::text('age','',['class'=>'form-control',])}}   
+                                                        {{Form::text('age','',['class'=>'form-control','id'=>'age'])}}   
+                                                        <b  class="text-danger" id="ageError"></b>    
                                                     </div>
                                             </div>
                                                     <div class="col-md-3">
                                                                     <div class="form-group ">
-                                                    <label class="control-label">เพศ<small class="text-danger">*</small></label> 
-                            
-                            
-                                            {{ Form::select('gender', [ '' => 'เลือก', 'ชาย' => 'ชาย','หญิง' => 'หญิง'],null, ['class' => 'form-control',]) }} 
-                                                                                   
-                                                    </div>
+                                                  
+                                           
+                                                       <label class="control-label">เพศ<small class="text-danger">*</small></label>
+                                                       {{ Form::select('', [''=>'เลือก'  ,'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control','id'=>'gender']) }}
+                                                       <b  class="text-danger" id="genderError"></b>
+                                                      </div>  
+                                        </div>                           
+                                        </div>
                                             </div>
                                                 </div>
-                                            </div>
+                                            
 
                                             <div class="form-group">  
 
@@ -168,7 +183,8 @@
                                                                          
                                                                                   <div class="form-group ">
                                                                                          <label class="control-label">น้ำหนัก<small class="text-danger">*</small></label>
-                                                                                         {{Form::text('weight','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$"])}}   
+                                                                                         {{Form::text('weight','',['class'=>'form-control','id'=>'weight'])}}   
+                                                                                         <b  class="text-danger" id="weightError"></b>    
                                                                                  </div>
                                                                               
                                                                            
@@ -178,7 +194,8 @@
                                                                          
                                                                                   <div class="form-group ">
                                                                                          <label class="control-label">ส่วนสูง/ซม.<small class="text-danger">*</small></label>
-                                                                                         {{Form::text('height','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"3"])}}
+                                                                                         {{Form::text('height','',['class'=>'form-control','id'=>'height'])}}
+                                                                                         <b  class="text-danger" id="heightError"></b>    
                                                                                  </div>
                                                                             
                                                                           </div>
@@ -194,22 +211,23 @@
                                                               
                                                                     <label class="control-label">สัญชาติ<small class="text-danger">*</small></label>
                                                                     {{ Form::select('nationality', [ 'ไทย' => 'ไทย','โปรดระบุ' =>$items2],null, ['class' => 'form-control','id'=>'nationality']) }}    
-                                                            </div>
+                                                                    <b  class="text-danger" id="nationalityError"></b>   
+                                                                </div>
                                                            
                                                             <div class="col-md-3">
                                                                
                                                                     <label class="control-label">เชื้อชาติ<small class="text-danger">*</small></label>
                                                                     {{ Form::select('race', [ 'ไทย' => 'ไทย','โปรดระบุ' =>$items2],null, ['class' => 'form-control','id'=>'race']) }}
             
-                                                                   
+                                                                    <b  class="text-danger" id="raceError"></b>   
                                                                     </div>
                                                          
                                                           
                                                             <div class="col-md-3">
                                                                
                                                                     <label class="control-label">ศาสนา<small class="text-danger">*</small></label>  
-                                                                    {{ Form::select('religion', ['พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','คริสต์'=> 'คริสต์','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control']) }}
-                                                    
+                                                                    {{ Form::select('religion', ['พุทธ' => 'พุทธ','อิสลาม' => 'อิสลาม','คริสต์'=> 'คริสต์','อื่นๆ'=> 'อื่นๆ'],null, ['class' => 'form-control','id'=>'religion']) }}
+                                                                    <b  class="text-danger" id="religionError"></b>  
                                                         </div>
             
                                                         
@@ -232,7 +250,8 @@
                                
                                         <div class="form-group ">
                                                 <label class="control-label">พี่น้องกี่คน</label>
-                                                {{Form::text('brothers','',['class'=>'form-control',"maxlength"=>"2"])}}  
+                                                {{Form::text('brothers','',['class'=>'form-control','id'=>'brothers'])}}  
+                                                <b  class="text-danger" id="brothersError"></b>  
                                        </div>
                                     </div>
                            
@@ -242,7 +261,8 @@
                                 
                                         <div class="form-group ">
                                                 <label class="control-label">เป็นคนที่</label>
-                                                {{Form::text('number','',['class'=>'form-control',"maxlength"=>"2"])}}  
+                                                {{Form::text('number','',['class'=>'form-control','id'=>'number'])}}  
+                                                <b  class="text-danger" id="numberError"></b> 
                                        </div>
                       </div>
 
@@ -251,7 +271,8 @@
                                         
                             <div class="form-group ">
                                     <label class="control-label">เลขบัตรประชาชน/บัตรประจำตัวผู้เสียภาษี<small class="text-danger">*</small> </label>
-                                    {{Form::text('idcard','',['class'=>'form-control','id'=>'idcard'])}}   
+                                    {{Form::text('idcard','',['class'=>'form-control','id'=>'idcard'])}}
+                                    <b  class="text-danger" id="idcardError"></b>    
                            </div>
                        
               
@@ -261,7 +282,8 @@
                                       
                     <div class="form-group ">
                             <label class="control-label">ออกให้ ณ อำเภอ/เขต<small class="text-danger">*</small></label>
-                         {{ Form::text('issued','' , ['class' => 'form-control','id'=>'issued',]) }}    
+                         {{ Form::text('issued','' , ['class' => 'form-control','id'=>'issued',]) }}
+                         <b  class="text-danger" id="issuedError"></b>    
                    </div>
             
         
@@ -272,16 +294,18 @@
        <div class="col-md-3">
             <div class="form-group" >
                     <label class="control-label">วันออกบัตร<small class="text-danger">*</small></label>
-                {{Form::date('issueddate','',['class'=>'form-control',])}}   
-                <span class="text-danger">{{ $errors->first('issueddate') }}</span>
+                {{Form::date('issueddate','',['class'=>'form-control','id'=>'issueddate'])}}   
+                <b  class="text-danger" id="issueddateError"></b>  
+               
                 </div>
         </div>
        
         <div class="col-md-3">
             <div class="form-group" >
                     <label class="control-label">บัตรหมดอายุ<small class="text-danger">*</small></label>
-                {{Form::date('expid','',['class'=>'form-control',])}}   
-                <span class="text-danger">{{ $errors->first('expid') }}</span>
+                {{Form::date('expid','',['class'=>'form-control','id'=>'expid'])}} 
+                <b  class="text-danger" id="expidError"></b>    
+               
                 </div>
         </div>                  
     </div>
@@ -295,13 +319,15 @@
                        
                 <div class="form-group ">
                         <label class="control-label ">ที่อยู่ตามบัตรประชาชน<small class="text-danger">*</small></label>
-                        <textarea name="address2"  id="address2"  class="form-control"  rows="3"  >{{ old('address2') }}</textarea> 
+                        <textarea name="address2"  id="address2"  class="form-control"  rows="3" id="address2" >{{ old('address2') }}</textarea> 
+                        <b  class="text-danger" id="address2Error"></b>    
                 </div>
          </div>
          <div class="col-md-5">
                 <div class="form-group ">
                     <input type="checkbox" onchange="document.getElementById('address1').value=document.getElementById('address2').value" > <label class="control-label text-danger">ที่อยู่เดียวกันกับบัตรประชาชน</label>           <label class="control-label">ที่อยู่ปัจจุบันที่ติดต่อได้<small class="text-danger">*</small></label> 
-                        <textarea name="address1" id="address1" class="form-control"  rows="3"  >{{ old('address1') }}</textarea>     
+                        <textarea name="address1" id="address1" class="form-control"  rows="3" id="address1" >{{ old('address1') }}</textarea> 
+                        <b  class="text-danger" id="address1Error"></b>       
                </div>
         </div>
    </div>
@@ -309,8 +335,9 @@
 </div>
 <hr>
     <div class="form-group">
-                               
-                              <center>  <a href="#" class="btn btn-danger" id="next-1">ถัดไป</a></center>
+            <br>
+                              <center>  <a href="#" class="btn btn-danger" id="next-1">ถัดไป</a>
+                                <br><br><br>  <b class="text-danger"  id="allError"></b></center>
                              </div>
                
                             </div>
@@ -320,7 +347,8 @@
                                 <div class="col-md-4 ">
                                         <div class="form-group ">
                                                 <label class="control-label">โทรศัพท์ที่ติดต่อ<small class="text-danger">*</small></label>
-                                                {{Form::text('tel','',['class'=>'form-control'])}}   
+                                                {{Form::text('tel','',['class'=>'form-control','id'=>'tel'])}}  
+                                                <b  class="text-danger" id="telError"></b>       
                                        </div>
                                     
                                 </div>
@@ -328,7 +356,8 @@
                                      <div class="col-md-4 ">
                                         <div class="form-group ">
                                                 <label class="control-label">โทรศัพท์บ้าน</label>
-                                                {{Form::text('home','',['class'=>'form-control'])}}   
+                                                {{Form::text('home','',['class'=>'form-control','id'=>'home'])}}
+                                                <b  class="text-danger" id="homeError"></b>       
                                        </div>
                                   
                                     </div>
@@ -336,7 +365,8 @@
                                     <div class="col-md-4 ">
                                             <div class="form-group ">
                                                     <label class="control-label">โทรศัพท์มือถือ<small class="text-danger">*</small></label>
-                                                    {{Form::text('moblie','',['class'=>'form-control'])}}    
+                                                    {{Form::text('moblie','',['class'=>'form-control','id'=>'moblie'])}}  
+                                                    <b  class="text-danger" id="moblieError"></b>    
                                            </div>
                                       
                                     </div>
@@ -351,7 +381,8 @@
                                         <div class="col-md-4 ">
                                                 <div class="form-group ">
                                                         <label class="control-label">โทรศัพท์สำนักงาน</label>
-                                                        {{Form::text('office','',['class'=>'form-control'])}}    
+                                                        {{Form::text('office','',['class'=>'form-control','id'=>'office'])}}
+                                                        <b  class="text-danger" id="officeError"></b>        
                                                </div>
                                                
                                         </div>
@@ -359,7 +390,8 @@
                                                 <div class="col-md-4">
                                                         <div class="form-group ">
                                                                 <label class="control-label">อีเมล<small class="text-danger">*</small></label>
-                                                                {{Form::email('email','',['class'=>'form-control',])}}   
+                                                                {{Form::email('email','',['class'=>'form-control','id'=>'email'])}}  
+                                                                <b  class="text-danger" id="emailError"></b>      
                                                        </div>
                                                        
                                                  
@@ -375,8 +407,8 @@
                                                                                             'บ้านเช่า' => 'บ้านเช่า',
                                                                                             'อาศัยกับบิดามารดา'=> 'อาศัยกับบิดามารดา',
                                                                                             'อาศัยกับผู้อื่น'=>'อาศัยกับผู้อื่น'
-                                                                                ],null, ['class' => 'form-control',]) }}
-                                                                        
+                                                                                ],null, ['class' => 'form-control','id'=>'living_status']) }}
+                                                                         <b  class="text-danger" id="living_statusError"></b>      
                                                             </div>
                                                     </div>
                                                     
@@ -390,7 +422,8 @@
                                                                                             'หย่า'=> 'หย่า',
                                                                                             'หม้าย'=>'หม้าย',
                                                                                             'แยกกันอยู่'=>'แยกกันอยู่'
-                                                                                ],null, ['class' => 'form-control',]) }}
+                                                                                ],null, ['class' => 'form-control','id'=>'marital_status']) }}
+                                                                                 <b  class="text-danger" id="marital_statusError"></b>      
                                                                               
                                                                 </div>
                                                     </div>
@@ -404,20 +437,23 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group ">
                                                             <label class="control-label" >กรณีแต่งงาน</label>
-                                                                {{ Form::select('if_marricd', ['' =>'เลือก','จดทะเบียนสมรส' => 'จดทะเบียนสมรส','ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'],null, ['class' => 'form-control']) }}
+                                                                {{ Form::select('if_marricd', ['' =>'เลือก','จดทะเบียนสมรส' => 'จดทะเบียนสมรส','ไม่ได้จดทะเบียนสมรส' => 'ไม่ได้จดทะเบียนสมรส'],null, ['class' => 'form-control','id'=>'if_marricd']) }}
+                                                                <b  class="text-danger" id="if_marricdError"></b> 
                                                             </div>
                                                     </div>
                                                   
                                                     <div class="col-md-4">
                                                         <div class="form-group ">
                                                             <label class="control-label" >คู่มสมรส</label>
-                                                                {{ Form::select('spouse', ['' =>'','มี' => 'มี','ไม่มี' => 'ไม่มี'],null, ['class' => 'form-control']) }}
+                                                                {{ Form::select('spouse', ['' =>'','มี' => 'มี','ไม่มี' => 'ไม่มี'],null, ['class' => 'form-control','id'=>'spouse']) }}
+                                                                <b  class="text-danger" id="spouseError"></b> 
                                                             </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                             <div class="form-group ">
                                                                     <label class="control-label">ชื่อคู่สมรส</label>
-                                                                    {{Form::text('name_spouse','',['class'=>'form-control'])}}     
+                                                                    {{Form::text('name_spouse','',['class'=>'form-control','id'=>'name_spouse'])}}  
+                                                                    <b  class="text-danger" id="name_spouseError"></b>    
                                                            </div>
                                                      
                                                     </div>
@@ -432,28 +468,32 @@
                                                             <div class="col-md-4">
                                                                     <div class="form-group ">
                                                                             <label class="control-label">อาชีพคู่สมรส</label>
-                                                                            {{Form::text('spouse_occupation','',['class'=>'form-control'])}}    
+                                                                            {{Form::text('spouse_occupation','',['class'=>'form-control','id'=>'spouse_occupation'])}}  
+                                                                            <b  class="text-danger" id="spouse_occupationError"></b>      
                                                                    </div>
                                                               
                                                             </div>
                                                             <div class="col-md-4">
                                                                     <div class="form-group ">
                                                                             <label class="control-label">สถานที่ทำงาน</label>
-                                                                            {{Form::text('firm_address','',['class'=>'form-control'])}}     
+                                                                            {{Form::text('firm_address','',['class'=>'form-control','id'=>'firm_address'])}} 
+                                                                            <b  class="text-danger" id="firm_addressError"></b>         
                                                                    </div>
                                         
                                                             </div>
                                                             <div class="col-md-4">
                                                                     <div class="form-group ">
                                                                             <label class="control-label">โทรศัพท์</label>
-                                                                            {{Form::text('spouse_tel','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"10"])}}      
+                                                                            {{Form::text('spouse_tel','',['class'=>'form-control','id'=>'spouse_tel'])}}   
+                                                                            <b  class="text-danger" id="spouse_telError"></b>    
                                                                    </div>
                                                             </div>
 
                                                             <div class="col-md-4">
                                                                     <div class="form-group ">
                                                                             <label class="control-label">จำนวนบุตรทั้งหมด/คน</label>
-                                                                            {{Form::text('children','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}  
+                                                                            {{Form::text('children','',['class'=>'form-control','id'=>'children'])}}  
+                                                                            <b  class="text-danger" id="childrenError"></b>  
                                                                    </div>
                                                                
                                                             </div>
@@ -461,14 +501,16 @@
                                                             <div class="col-md-4">
                                                                     <div class="form-group ">
                                                                             <label class="control-label">หญิง/คน</label>
-                                                                            {{Form::text('girls','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}   
+                                                                            {{Form::text('girls','',['class'=>'form-control','id'=>'girls'])}}  
+                                                                            <b  class="text-danger" id="girlsError"></b>   
                                                                    </div>
                                                                    
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                         <div class="form-group ">
                                                                                 <label class="control-label">ชาย/คน </label>
-                                                                                        {{Form::text('boy','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}     
+                                                                                        {{Form::text('boy','',['class'=>'form-control','id'=>'boy'])}}  
+                                                                                        <b  class="text-danger" id="boyError"></b>      
                                                                        </div>
                                                                    
                                                                 </div>
@@ -478,7 +520,8 @@
                                                                         <div class="col-md-4">
                                                                                             <div class="form-group ">
                                                                                                     <label class="control-label"> จำนวนบุตรกำลังศึกษา/คน </label>
-                                                                                                    {{Form::text('school','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}       
+                                                                                                    {{Form::text('school','',['class'=>'form-control','id'=>'school'])}}  
+                                                                                                    <b  class="text-danger" id="schoolError"></b>       
                                                                                            </div>
                                                                 
                                                                                     </div>        
@@ -486,7 +529,8 @@
                                                                                     <div class="col-md-4">
                                                                                             <div class="form-group ">
                                                                                                     <label class="control-label"> จำนวนบุตรที่อายุเกิน21ปี/คน </label>
-                                                                                                    {{Form::text('over21','',['class'=>'form-control','pattern'=>"^[0-9]{1,}$","maxlength"=>"2"])}}       
+                                                                                                    {{Form::text('over21','',['class'=>'form-control','id'=>'over21'])}}  
+                                                                                                    <b  class="text-danger" id="over21Error"></b>          
                                                                                            </div>
                                                                                   
                                                                     </div>
@@ -497,7 +541,8 @@
                                                                        <div class="col-md-4">
                                                                         <div class="form-group ">
                                                                      <label class="control-label">  ชื่อบิดา<small class="text-danger">*</small></label>
-                                                                      {{Form::text('namefather','',['class'=>'form-control'])}}   
+                                                                      {{Form::text('namefather','',['class'=>'form-control','id'=>'namefather'])}} 
+                                                                      <b  class="text-danger" id="namefather"></b>     
                                                                             </div>
                                                                                                                                                                                                                   
                                                                                     </div>
@@ -505,14 +550,16 @@
                                                                                                <div class="col-md-4">
                                                                                                 <div class="form-group ">
                                                                         <label class="control-label"> นามสกุล<small class="text-danger">*</small></label>
-                                                                                         {{Form::text('lastfather','',['class'=>'form-control'])}}   
+                                                                                         {{Form::text('lastfather','',['class'=>'form-control','id'=>'lastfather'])}}
+                                                                                         <b  class="text-danger" id="lastfatherError"></b>      
                                                                                    </div>
                                                                                                                                                                                                                      
                                                                       </div>
                                                                       <div class="col-md-4">
                                                                             <div class="form-group ">
                                                                            <label class="control-label"> อาชีพ<small class="text-danger">*</small></label>
-                                                                             {{Form::text('occupation_father','',['class'=>'form-control'])}}   
+                                                                             {{Form::text('occupation_father','',['class'=>'form-control','id'=>'occupation_father'])}}  
+                                                                             <b  class="text-danger" id="occupation_fatherError"></b>  
                                                                                         </div>
                                                                            </div>
                                                                     </div>
@@ -525,9 +572,9 @@
                                                                                  <div class="form-group "> 
                                                                              <label class="control-label">สถานะ<small class="text-danger">*</small></label>
                                                                 
-                                                                           {{ Form::select('alivef', [ ''=>'เลือก', 'ยังมีชีวิตอยู่' => 'ยังมีชีวิตอยู่','ถึงแก่กรรม' => 'ถึงแก่กรรม'],null, ['class' => 'form-control']) }} 
+                                                                           {{ Form::select('alivef', [ ''=>'เลือก', 'ยังมีชีวิตอยู่' => 'ยังมีชีวิตอยู่','ถึงแก่กรรม' => 'ถึงแก่กรรม'],null, ['class' => 'form-control','id'=>'alivef']) }} 
                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                       
+                                                                           <b  class="text-danger" id="alivefError"></b>                                                                                                                                         
                                                                                        </div>
                                                                             </div>
                                                                 </div>
@@ -537,7 +584,8 @@
                                                                                  <div class="col-md-4">
                                                                             <div class="form-group ">
                                                                         <label class="control-label">ชื่อมารดา<small class="text-danger">*</small></label>
-                                                                     {{Form::text('namemother','',['class'=>'form-control'])}}
+                                                                     {{Form::text('namemother','',['class'=>'form-control','id'=>'namemother'])}}
+                                                                     <b  class="text-danger" id="namemotherError"></b>                      
                                                                                                                </div>
                                                                                                                                                                                                                   
                                                                                                            </div>
@@ -545,7 +593,8 @@
                                                                                             <div class="col-md-4">
                                                                                                                              <div class="form-group ">
                                                                                                  <label class="control-label">นามสกุล<small class="text-danger">*</small></label>
-                                                                                           {{Form::text('lasrmother','',['class'=>'form-control'])}}  
+                                                                                           {{Form::text('lasrmother','',['class'=>'form-control','id'=>'lasrmother'])}}
+                                                                                           <b  class="text-danger" id="nlasrmotherError"></b>       
                                                                                              </div>
                                                                                                                                                                                                                  
                                                                                                 </div>
@@ -555,7 +604,8 @@
                                                                                                 <div class="col-md-4">
                                                                                                         <div class="form-group ">
                                                                                                              <label class="control-label">อาชีพ<small class="text-danger">*</small></label>
-                                                                                                      {{Form::text('occupationm','',['class'=>'form-control'])}} 
+                                                                                                      {{Form::text('occupationm','',['class'=>'form-control','id'=>'occupationm'])}} 
+                                                                                                      <b  class="text-danger" id="occupationmError"></b>      
                                                                                                 </div>
                                                                                                                                                                                                                       
                                                                                              </div>
@@ -576,8 +626,8 @@
                                                                            <div class="form-group "> 
                                                                                      <label class="control-label">สถานะ<small class="text-danger">*</small></label>
                                                           
-                                                               {{ Form::select('alivem', [ ''=>'เลือก', 'ยังมีชีวิตอยู่' => 'ยังมีชีวิตอยู่','ถึงแก่กรรม' => 'ถึงแก่กรรม'],null, ['class' => 'form-control']) }} 
-                                                                                                                                                                                                               
+                                                               {{ Form::select('alivem', [ ''=>'เลือก', 'ยังมีชีวิตอยู่' => 'ยังมีชีวิตอยู่','ถึงแก่กรรม' => 'ถึงแก่กรรม'],null, ['class' => 'form-control','id'=>'alivem']) }} 
+                                                               <b  class="text-danger" id="oalivemError"></b>                                                                                                                                                  
                                                                                                                                                                                                                  
                                                                 </div>
                                                             </div>
@@ -720,73 +770,75 @@
                                           <tr>
                                             <td style="text-align:center">ไทย<small class="text-danger">*</small></td>
                                             <td>
-                                                    <div class="form-group {{ $errors->has('thais') ? 'has-error' : '' }}">
+                                                    <div class="form-group ">
                                                         {{ Form::select('thais', [
                                                                 '' =>'::เลือก::', 
                                                                 'ดี' => 'ดี',
                                                                 'พอใช้' => 'พอใช้',
                                                                 'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control']) }}
-                                                    <span class="text-danger">{{ $errors->first('thais') }}</span>
+                                                           ],null, ['class' => 'form-control','id'=>'thais']) }}
+                                                             <b  class="text-danger" id="othaisError"></b>  
+                                                  
                                                 </div>
                                                 </td>
                                             <td>
-                                                <div class="form-group {{ $errors->has('thail') ? 'has-error' : '' }}">
+                                                <div class="form-group ">
                                                         {{ Form::select('thail', [
                                                                 '' =>'::เลือก::', 
                                                                 'ดี' => 'ดี',
                                                                 'พอใช้' => 'พอใช้',
                                                                 'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control']) }}
-                                                    <span class="text-danger">{{ $errors->first('thail') }}</span>
+                                                           ],null, ['class' => 'form-control','id'=>'thail']) }}
+                                                  <b  class="text-danger" id="thailError"></b>  
                                                 </div>
                                                 </td>
                                             <td>
-                                                <div class="form-group {{ $errors->has('thair') ? 'has-error' : '' }}">
+                                                <div class="form-group">
                                                         {{ Form::select('thair', [
                                                         '' =>'::เลือก::', 
                                                         'ดี' => 'ดี',
                                                         'พอใช้' => 'พอใช้',
                                                         'ไม่ดี' => 'ไม่ดี'
-                                                   ],null, ['class' => 'form-control']) }}
-                                                    <span class="text-danger">{{ $errors->first('thair') }}</span>
+                                                   ],null, ['class' => 'form-control','id'=>'thair']) }}
+                                                    <b  class="text-danger" id="thairError"></b> 
+                                                 
             
                                                 </td>
                                           </tr>
                                           <tr>
                                             <td style="text-align:center"> อังกฤษ<small class="text-danger">*</small></td>
                                             <td>
-                                                <div class="form-group {{ $errors->has('engliss') ? 'has-error' : '' }}">
+                                                <div class="form-group">
                                                         {{ Form::select('engliss', [
                                                                 '' =>'::เลือก::', 
                                                                 'ดี' => 'ดี',
                                                                 'พอใช้' => 'พอใช้',
                                                                 'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control']) }}
-                                                    <span class="text-danger">{{ $errors->first('engliss') }}</span>
+                                                           ],null, ['class' => 'form-control','id'=>'engliss']) }}
+                                                      <b  class="text-danger" id="englissError"></b> 
             
                                                 </td>
                                             <td>
-                                                <div class="form-group {{ $errors->has('englisl') ? 'has-error' : '' }}">
+                                                <div class="form-group">
                                                         {{ Form::select('englisl', [
                                                                 '' =>'::เลือก::', 
                                                                 'ดี' => 'ดี',
                                                                 'พอใช้' => 'พอใช้',
                                                                 'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control']) }}
-                                                    <span class="text-danger">{{ $errors->first('englisl') }}</span>
+                                                           ],null, ['class' => 'form-control','id'=>'englisl']) }}
+                                                    <b  class="text-danger" id="englislError"></b> 
             
                                                 </td>
                                             <td>
-                                                <div class="form-group {{ $errors->has('englisr') ? 'has-error' : '' }}">
+                                                <div class="form-group ">
                                                         {{ Form::select('englisr', [
                                                                 '' =>'::เลือก::', 
                                                                 'ดี' => 'ดี',
                                                                 'พอใช้' => 'พอใช้',
                                                                 'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control']) }}
+                                                           ],null, ['class' => 'form-control','id'=>'englisp']) }}
                 
-                                                    <span class="text-danger">{{ $errors->first('englisr') }}</span>
+                                                         <b  class="text-danger" id="englispError"></b> 
                                                     
             
                                                 </td>
@@ -799,7 +851,8 @@
                                                         'ดี' => 'ดี',
                                                         'พอใช้' => 'พอใช้',
                                                         'ไม่ดี' => 'ไม่ดี'
-                                                   ],null, ['class' => 'form-control']) }}
+                                                   ],null, ['class' => 'form-control','id'=>'othes']) }}
+                                                    <b  class="text-danger" id="othesError"></b> 
                                                 </td>
                                             <td>
                                                 {{ Form::select('othel', [
@@ -807,7 +860,8 @@
                                                         'ดี' => 'ดี',
                                                         'พอใช้' => 'พอใช้',
                                                         'ไม่ดี' => 'ไม่ดี'
-                                                   ],null, ['class' => 'form-control']) }}
+                                                   ],null, ['class' => 'form-control','id'=>'othel']) }}
+                                                      <b  class="text-danger" id="othelError"></b> 
                                                 </td>
                                             <td>
                                                 {{ Form::select('other', [
@@ -815,7 +869,8 @@
                                                         'ดี' => 'ดี',
                                                         'พอใช้' => 'พอใช้',
                                                         'ไม่ดี' => 'ไม่ดี'
-                                                   ],null, ['class' => 'form-control']) }}
+                                                   ],null, ['class' => 'form-control','id'=>'other']) }}
+                                                   <b  class="text-danger" id="otherError"></b> 
                                                 </td>
                                           </tr>
                                         </tbody>
@@ -829,7 +884,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label">1.ชื่อสถานที่ประกอบการ</label>
-                                                                  {{Form::text('list_of_employed1','',['class'=>'form-control'])}}
+                                                                  {{Form::text('list_of_employed1','',['class'=>'form-control','id'=>'list_of_employed1'])}}
+                                                                  <b  class="text-danger" id="list_of_employed1Error"></b> 
                                                              </div>
                                                           </div> 
                                                     
@@ -840,7 +896,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label">ลักษณะงานที่รับผิดชอบ</label>
-                                                                  {{Form::text('job_description1','',['class'=>'form-control'])}}
+                                                                  {{Form::text('job_description1','',['class'=>'form-control','id'=>'job_description1'])}}
+                                                                  <b  class="text-danger" id="job_description1Error"></b> 
                                                              </div>
                                                           </div>
                                               </div>
@@ -849,7 +906,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label">ตำแหน่ง</label>
-                                                                  {{Form::text('position1','',['class'=>'form-control'])}} 
+                                                                  {{Form::text('position1','',['class'=>'form-control','id'=>'position1'])}} 
+                                                                  <b  class="text-danger" id="position1Error"></b> 
                                                              </div>
                                                           </div> 
                                                 
@@ -864,7 +922,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >สาเหตุที่ออก</label>
-                                                                  {{Form::text('reasonLeaving1','',['class'=>'form-control'])}}
+                                                                  {{Form::text('reasonLeaving1','',['class'=>'form-control','id'=>'reasonLeaving1'])}}
+                                                                  <b  class="text-danger" id="preasonLeaving1Error"></b> 
                                                              </div>
                                                           </div>   
                                                   </div>
@@ -874,7 +933,8 @@
                                                           <div class="input-group">
                                                                   <div class="form-group ">
                                                                       <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
-                                                                      {{Form::text('lastsalary1','',['class'=>'form-control'])}}
+                                                                      {{Form::text('lastsalary1','',['class'=>'form-control','id'=>'lastsalary1'])}}
+                                                                      <b  class="text-danger" id="lastsalary1Error"></b> 
                                                                  </div>
                                                               </div> 
                                                   
@@ -890,7 +950,8 @@
                                                           <div class="input-group">
                                                                   <div class="form-group ">
                                                                       <label>ระยะงานเริ่ม</label>
-                                                                      {{Form::date('start_job_duration1','',['class'=>'form-control'])}}
+                                                                      {{Form::date('start_job_duration1','',['class'=>'form-control','id'=>'start_job_duration1'])}}
+                                                                      <b  class="text-danger" id="start_job_duration1Error"></b> 
                                                                  </div>
                                                               </div> 
                                                   
@@ -902,7 +963,8 @@
                                                           <div class="input-group">
                                                                   <div class="form-group ">
                                                                       <label>ระยะงานสิ้นสุด</label>
-                                                                      {{Form::date('end_job_duration2','',['class'=>'form-control'])}} 
+                                                                      {{Form::date('end_job_duration2','',['class'=>'form-control','id'=>'end_job_duration2'])}} 
+                                                                      <b  class="text-danger" id="start_job_duration1Error"></b> 
                                                                  </div>
                                                               </div> 
                                                       
@@ -917,7 +979,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label">2.ชื่อสถานที่ประกอบการ</label>
-                                                                  {{Form::text('list_of_employed2','',['class'=>'form-control'])}}
+                                                                  {{Form::text('list_of_employed2','',['class'=>'form-control','id'=>'list_of_employed2'])}}
+                                                                  <b  class="text-danger" id="list_of_employed2Error"></b> 
                                                              </div>
                                                           </div> 
                                                  
@@ -927,7 +990,8 @@
                                                        <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >ลักษณะงานที่รับผิดชอบ </label>
-                                                                  {{Form::text('job_description2','',['class'=>'form-control'])}}
+                                                                  {{Form::text('job_description2','',['class'=>'form-control','id'=>'job_description2'])}}
+                                                                  <b  class="text-danger" id="job_description2Error"></b> 
                                                              </div>
                                                           </div> 
                                                  
@@ -938,7 +1002,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >ตำแหน่ง</label>
-                                                                  {{Form::text('position2','',['class'=>'form-control'])}}
+                                                                  {{Form::text('position2','',['class'=>'form-control','id'=>'position2'])}}
+                                                                  <b  class="text-danger" id="position2Error"></b> 
                                                              </div>
                                                           </div> 
                                                  
@@ -954,7 +1019,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label>ระยะงานเริ่ม</label>
-                                                                  {{Form::date('start_job_duration3','',['class'=>'form-control'])}}
+                                                                  {{Form::date('start_job_duration3','',['class'=>'form-control','id'=>'start_job_duration3'])}}
+                                                                  <b  class="text-danger" id="start_job_duration3Error"></b> 
                                                              </div>
                                                           </div> 
                                               
@@ -964,7 +1030,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label  >ระยะงานสิ้นสุด</label>
-                                                                  {{Form::date('end_job_duration4','',['class'=>'form-control'])}} 
+                                                                  {{Form::date('end_job_duration4','',['class'=>'form-control','id'=>'end_job_duration4'])}} 
+                                                                  <b  class="text-danger" id="end_job_duration4Error"></b> 
                                                              </div>
                                                           </div> 
                                   
@@ -977,7 +1044,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >สาเหตุที่ออก</label>
-                                                                  {{Form::text('reasonLeaving2','',['class'=>'form-control'])}}
+                                                                  {{Form::text('reasonLeaving2','',['class'=>'form-control','id'=>'reasonLeaving2'])}}
+                                                                  <b  class="text-danger" id="reasonLeaving2Error"></b> 
                                                              </div>
                                                           </div> 
                                                    
@@ -987,7 +1055,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
-                                                                  {{Form::text('lastsalary2','',['class'=>'form-control'])}}
+                                                                  {{Form::text('lastsalary2','',['class'=>'form-control','id'=>'lastsalary2'])}}
+                                                                  <b  class="text-danger" id="lastsalary2Error"></b> 
                                                              </div>
                                                           </div> 
                                                
@@ -1000,7 +1069,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >3.ชื่อสถานที่ประกอบการ</label>
-                                                                  {{Form::text('list_of_employed3','',['class'=>'form-control'])}}
+                                                                  {{Form::text('list_of_employed3','',['class'=>'form-control','id'=>'list_of_employed3'])}}
+                                                                  <b  class="text-danger" id="list_of_employed3Error"></b> 
                                                              </div>
                                                           </div> 
                                                    
@@ -1010,7 +1080,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >ลักษณะงานที่รับผิดชอบ</label>
-                                                                  {{Form::text('job_description3','',['class'=>'form-control'])}}
+                                                                  {{Form::text('job_description3','',['class'=>'form-control','id'=>'job_description3'])}}
+                                                                  <b  class="text-danger" id="job_description3Error"></b> 
                                                              </div>
                                                           </div> 
                                                 
@@ -1019,7 +1090,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" > ตำแหน่ง</label>
-                                                                  {{Form::text('position3','',['class'=>'form-control'])}} 
+                                                                  {{Form::text('position3','',['class'=>'form-control','id'=>'position3'])}} 
+                                                                  <b  class="text-danger" id="position3Error"></b> 
                                                              </div>
                                                   </div> 
 
@@ -1031,7 +1103,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label >ระยะงานเริ่ม</label>
-                                                                  {{Form::date('start_job_duration5','',['class'=>'form-control'])}}
+                                                                  {{Form::date('start_job_duration5','',['class'=>'form-control','id'=>'start_job_duration5'])}}
+                                                                  <b  class="text-danger" id="start_job_duration5Error"></b> 
                                                              </div>
                                                           </div> 
                                                
@@ -1040,7 +1113,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label>ระยะงานสิ้นสุด</label>
-                                                                  {{Form::date('end_job_duration6','',['class'=>'form-control'])}} 
+                                                                  {{Form::date('end_job_duration6','',['class'=>'form-control','id'=>'end_job_duration6'])}} 
+                                                                  <b  class="text-danger" id="end_job_duration6Error"></b> 
                                                              </div>
                                                   </div> 
                                               </div>
@@ -1054,7 +1128,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >สาเหตุที่ออก</label>
-                                                                  {{Form::text('reasonLeaving3','',['class'=>'form-control'])}} 
+                                                                  {{Form::text('reasonLeaving3','',['class'=>'form-control','id'=>'reasonLeaving3'])}} 
+                                                                  <b  class="text-danger" id="reasonLeaving3Error"></b> 
                                                              </div>
                                                   </div> 
                                                  
@@ -1064,7 +1139,8 @@
                                                       <div class="input-group">
                                                               <div class="form-group ">
                                                                   <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
-                                                                  {{Form::text('lastsalary3','',['class'=>'form-control'])}} 
+                                                                  {{Form::text('lastsalary3','',['class'=>'form-control','id'=>'end_job_duration6'])}} 
+                                                                  <b  class="text-danger" id="lastsalary3Error"></b> 
                                                              </div>
                                                   </div> 
                                                  
@@ -1390,15 +1466,93 @@ $(document).ready(function(){
      $("#next-1").click(function(e){
             
         e.preventDefault();
-        $('#name').removeClass('btn btn-danger');
+        $('#salaryngg').removeClass('btn btn-danger');
+        $('#positionnggError').removeClass('btn btn-danger');
+
+      
+        $('#allError').html(' ');
+        $('#salarynggError').html(' ');
+        $('#positionnggError').html(' ');
+
+        $('#fronnameError').html(' ');
         $('#nameError').html(' ');
-           if( $("#name").val() == ''){
-            $('#name').addClass('btn btn-danger');
-               $("#nameError").html('*จำเป็นต้องกรอก');
-             
+        $('#lastnameError').html(' ');
+        $('#imageError').html(' ');
+        $('#niknameError').html(' ');
+        $('#birthdayError').html(' ');
+        $('#ageError').html(' ');
+        $('#weightError').html(' ');
+        $('#nationalityError').html(' ');
+        $('#raceError').html(' ');
+        $('#religionError').html(' ');
+        $('#brothersError').html(' ');
+        $('#numberError').html(' ');
+        $('#idcardError').html(' ');
+        $('#issuedError').html(' ');
+        $('#issueddateError').html(' ');
+        $('#expidError').html(' ');
+        $('#address2Error').html(' ');
+        $('#address1Error').html(' ');
+        $('#gender').html(' ');
+
+
+
+           if( $("#salaryngg").val() == ''  ||  $("#positionngg").val() == ''||   $("#fronname").val() == ''||  $("#name").val() == ''||  $("#lastname").val() == ''||  $("#image").val() == ''|| 
+           
+           $("#nikname").val() == ''||   $("#birthday").val() == ''||  $("#age").val() == ''|| $("#gender").val() == ''||   $("#weight").val() == ''|| $("#height").val() == ''|| 
+           
+           $("#nationality").val() == ''||   $("#race").val() == ''||   $("#religion").val() == ''||  $("#brothers").val() == ''|| $("#number").val() == ''||  $("#idcard").val() == ''|| 
+           
+           $("#issued").val() == ''||   $("#issueddate").val() == ''||  $("#expid").val() == ''|| $("#address2").val() == ''|| $("#address1").val() == ''
+           
+           
+            ){
+                $("#salarynggError").html('*จำเป็นต้องระบุ');
+                $("#positionnggError").html('*จำเป็นต้องระบุ');
+                $("#fronnameError").html('*จำเป็นต้องระบุ');
+                $("#positionnggError").html('*จำเป็นต้องระบุ');
+
+
+                  $("#nameError").html('*จำเป็นต้องระบุ');
+                  $("#lastnameError").html('*จำเป็นต้องระบุ');
+                  $("#niknameError").html('*จำเป็นต้องระบุ');
+                  $("#birthdayError").html('*จำเป็นต้องระบุ');
+                  $("#ageError").html('*จำเป็นต้องระบุ');
+                  $("#weightError").html('*จำเป็นต้องระบุ');
+                  $("#heightError").html('*จำเป็นต้องระบุ');
+                  $("#raceError").html('*จำเป็นต้องระบุ');
+                  $("#religionError").html('*จำเป็นต้องระบุ');
+                  $("#numberError").html('*จำเป็นต้องระบุ');
+                  $("#idcardError").html('*จำเป็นต้องระบุ');
+                  $("#issuedError").html('*จำเป็นต้องระบุ');
+                  $("#issueddateError").html('*จำเป็นต้องระบุ');
+                  $("#expidError").html('*จำเป็นต้องระบุ');
+                  $("#address2Error").html('*จำเป็นต้องระบุ');
+                  $("#address1Error").html('*จำเป็นต้องระบุ');
+                  $("#genderError").html('*จำเป็นต้องระบุ');
+                  $("#imageError").html('*จำเป็นต้องอัพโหลด');
+                  $("#nationalityError").html('*จำเป็นต้องระบุ');
+                  $("#brothersError").html('*จำเป็นต้องระบุ');
+
+                 
+
+                
+
+
+
+
+
+
+ 
+ 
+ 
+ $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+
                return false;
            }
 
+           if{}
+        
            else{
 
             $("#second").show();
@@ -1456,7 +1610,7 @@ $("#prev-2").click(function(){
 $("#prev-3").click(function(){
             $("#second").show();
             $('#third').hide();
-            $('#progressBar').css("width","60%");
+            $('#progressBar').css("width","40%");
             $('#progressText').html("Step - 2");
            });
 

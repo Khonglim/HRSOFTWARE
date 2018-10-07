@@ -2,18 +2,7 @@
 @section('content')
 <div class="banner-inner">
         <br> 
-      <center> <h1 class="text-light"> สมัครงานออนไลน์ <br>
-
-        NGG | Jewellery
-
-
-        <a href="/"> version1.0</a>
-
-      </h1>
-    
-    
-    
-    </center>
+    <center> <img src="{{URL::asset('img/NGGlogo.jpg')}}"  width="80px" height="80px"></center>
       </div>   
    <br>   <br>   <br>
 
