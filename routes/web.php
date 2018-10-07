@@ -281,14 +281,11 @@ Route::get('setting', function () {
 
 })->middleware('auth');
 
-Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
-Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
-Route::get('session', ['as' => 'session', 'uses' => 'ErrorController@session']);
 
 
 
 
 
 
-Route::get('online', 'PersonalController@index')->name('online');
-Route::post('online/postdata', 'EmployeeController@store')->name('online.postdata');
+
+
