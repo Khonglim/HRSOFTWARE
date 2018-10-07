@@ -13,11 +13,7 @@ use Illuminate\Validation\Rule;
 class EmployeeController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    
     /**
      * Display a listing of the resource.
      *
@@ -25,6 +21,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
+      
         $personal = Personal::where('enable','=', 1)->get();
         $data = array('personal' =>  $personal  );
         return view('employ/employee',$data);
@@ -50,7 +47,7 @@ class EmployeeController extends Controller
             $items2[$nation->name] = $nation->name;
         }
         $data = array('items' => $items ,'items2' => $items2 );
-        return view('employ/formcreateemployee',$data);
+        return view('employ/formcreatv',$data);
 
         
        

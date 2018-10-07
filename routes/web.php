@@ -24,6 +24,16 @@ use Illuminate\Support\Facades\DB;
 
 Route::resource('employee','EmployeeController');
 
+Route::get('/ngg_work', 'EmployeeController@index')->middleware('auth');
+
+
+
+
+
+
+
+
+
 Route::resource('rate','InterviewController');
 
 Route::resource('rate_sup','Interview_supController');
@@ -111,7 +121,7 @@ Route::get('summbti', function () {
     );
     return view("summary/summbti",$data);
 
-});
+})->middleware('auth');
 Route::get('sumdisc', function () {
     
     $testdisc =  Testdisc::all();
@@ -120,7 +130,7 @@ Route::get('sumdisc', function () {
     );
     return view("summary/sumdisc",$data);
 
-});
+})->middleware('auth');
 
 Route::get('rate', function () {return view("rate/forminterview");});
 
@@ -128,7 +138,7 @@ Route::get('rate', function () {return view("rate/forminterview");});
 Route::get('form', function () {return view("formregister");});
 
 
-Route::get('interview', function () { return view("rate/index");});
+Route::get('interview', function () { return view("rate/index");})->middleware('auth');
 
 
 Route::get('save', function () { return view("rate/save");});
@@ -208,7 +218,7 @@ Route::get('operate_report*', function () {
     ); 
     return view("operate/staff/show",$data);
 
-});
+})->middleware('auth');
 
 
 
@@ -229,7 +239,7 @@ Route::get('operate_report**', function () {
 
     return view("operate/sup/show",$data);
 
-});
+})->middleware('auth');
 
 
 
@@ -269,7 +279,7 @@ Route::get('setting', function () {
     ); 
     return view("setting/reset",$data);
 
-});
+})->middleware('auth');
 
 Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
 Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
@@ -281,4 +291,4 @@ Route::get('session', ['as' => 'session', 'uses' => 'ErrorController@session']);
 
 
 Route::get('online', 'PersonalController@index')->name('online');
-Route::post('online/postdata', 'PersonalController@postdata')->name('online.postdata');
+Route::post('online/postdata', 'EmployeeController@store')->name('online.postdata');
