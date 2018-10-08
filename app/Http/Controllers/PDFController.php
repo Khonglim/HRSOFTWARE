@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 class PDFController extends Controller
 {
+    
     public function pdfemployee($id)
     {
         $personal = Personal::find($id);

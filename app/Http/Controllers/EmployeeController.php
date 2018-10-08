@@ -198,7 +198,7 @@ class EmployeeController extends Controller
         $personal->call2 = $request->call2;
         $personal->start_job_duration3 = $request->start_job_duration3;
         $personal->end_job_duration4 = $request->end_job_duration4;
-        $personal->reasonLeaving2 = $request->reasonleaving2;
+        $personal->reasonLeaving2 = $request->reasonLeaving2;
         $personal->lastsalary2= $request->lastsalary2;
         $personal->position2 = $request->position2;
 
@@ -207,7 +207,7 @@ class EmployeeController extends Controller
         $personal->call3 = $request->call3;
         $personal->start_job_duration5 = $request->start_job_duration5;
         $personal->end_job_duration6 = $request->end_job_duration6;
-        $personal->reasonLeaving3 = $request->reasonleaving3;
+        $personal->reasonLeaving3 = $request->reasonLeaving3;
         $personal->lastsalary3= $request->lastsalary3;
         $personal->position3 = $request->position3;
      

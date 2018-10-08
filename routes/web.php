@@ -101,15 +101,15 @@ Route::get('/dynamicdependent','DynamicDependent@index');
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 
-Route::get('/pdfemployee/{id}','PDFController@pdfemployee' );
+Route::get('/pdfemployee/{id}','PDFController@pdfemployee' )->middleware('auth');;
 
-Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' );
-Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' );
-Route::get('/pdfcon_all/{id}','PDFController@pdfconall' );
+Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' )->middleware('auth');;
+Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' )->middleware('auth');;
+Route::get('/pdfcon_all/{id}','PDFController@pdfconall' )->middleware('auth');;
 
 
-Route::get('/pdfcon_staf/{id}','PDFController@pdfoper_staff' );
-Route::get('/pdfcon_sup/{id}','PDFController@pdfoper_sup' );
+Route::get('/pdfcon_staf/{id}','PDFController@pdfoper_staff' )->middleware('auth');;
+Route::get('/pdfcon_sup/{id}','PDFController@pdfoper_sup' )->middleware('auth');;
 
 
 

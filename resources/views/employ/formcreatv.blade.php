@@ -165,7 +165,7 @@
                                                   
                                            
                                                        <label class="control-label">เพศ<small class="text-danger">*</small></label>
-                                                       {{ Form::select('gender', [''=>'เลือก'  ,'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control','id'=>'gender']) }}
+                                                       {{ Form::select('gender', [ '' => 'เลือก', 'ชาย' => 'ชาย','หญิง' => 'หญิง'],null, ['class' => 'form-control','id'=>'gender']) }} 
                                                        <b  class="text-danger" id="genderError"></b>
                                                       </div>  
                                         </div>                           
@@ -317,7 +317,16 @@
                 <b  class="text-danger" id="expidError"></b>    
                
                 </div>
-        </div>                  
+        </div>  
+        <div class="col-md-3">
+                                            
+                <div class="form-group label-floating">
+                        <label class="control-label">จังหวัด<small class="text-danger">*</small></label>
+                        {{ Form::select('province_crad', [ '' => 'เลือก','จังหวัด' =>$items],null, ['class' => 'form-control','id'=>'province_crad']) }}   
+                        <b  class="text-danger" id="province_cradError"></b>     
+               </div>
+          
+        </div>                
     </div>
 </div>
 
@@ -699,18 +708,17 @@
                             
                         <div class= "col-md-4">
                                 <div class="form-group "> 
-                                        <label class="control-label">วุฒิที่ได้รับ</label>
-
-                                        {{Form::text('degree1','',['class'=>'form-control','id'=>'degree1','readonly'])}}                                                                                                                             
-                                                                                                                                                                      
+                                                                                                                                                               
+                                                <label class="control-label">สาขา</label>
+                                                {{Form::text('major','',['class'=>'form-control','id'=>'major','readonly'])}}                                                                                                                           
                      </div>
                  </div>    
                  
                  <div class= "col-md-4">
                         <div class="form-group "> 
-                                <label class="control-label">สาขา</label>
-
-                                {{Form::text('major','',['class'=>'form-control','id'=>'major','readonly'])}}                                                                                                                                        
+                                        <label class="control-label">วุฒิที่ได้รับ</label>
+                                        {{Form::text('degree1','',['class'=>'form-control','id'=>'degree1','readonly'])}}     
+                                                                                                                                                                      
                                                                                                                                                               
              </div>
          </div>         
@@ -763,18 +771,17 @@
 
 <div class= "col-md-4">
     <div class="form-group "> 
-            <label class="control-label">วุฒิที่ได้รับ</label>
-
-            {{Form::text('degree2','',['class'=>'form-control','id'=>'degree2','readonly'])}}                                                                                                   
+           
+            <label class="control-label">สาขา</label>
+            {{Form::text('majors','',['class'=>'form-control','id'=>'majors','readonly'])}}                                                                          
                                                                                                                                           
 </div>
 </div>    
 
 <div class= "col-md-4">
 <div class="form-group "> 
-    <label class="control-label">สาขา</label>
-
-    {{Form::text('majors','',['class'=>'form-control','id'=>'majors','readonly'])}}                                                                                                           
+                <label class="control-label">วุฒิที่ได้รับ</label>
+                {{Form::text('degree2','',['class'=>'form-control','id'=>'degree2','readonly'])}}                                                                                              
                                                                                                                                   
 </div>
 </div>         
@@ -834,8 +841,9 @@
 
 <div class= "col-md-4">
     <div class="form-group "> 
-            <label class="control-label">วุฒิที่ได้รับ</label>
-            {{Form::text('degree3','',['class'=>'form-control','id'=>'degree3','readonly'])}}
+                <label class="control-label">สาขา</label>
+                {{Form::text('majorv','',['class'=>'form-control','id'=>'majorv','readonly'])}}  
+            
                                                                                                      
                                                                                                                                           
 </div>
@@ -843,9 +851,8 @@
 
 <div class= "col-md-4">
 <div class="form-group "> 
-    <label class="control-label">สาขา</label>
-
-    {{Form::text('majorv','',['class'=>'form-control','id'=>'majorv','readonly'])}}                                                                     
+                <label class="control-label">วุฒิที่ได้รับ</label>
+                {{Form::text('degree3','',['class'=>'form-control','id'=>'degree3','readonly'])}}                                                         
                                                                                                                                   
 </div>
 </div>         
@@ -902,18 +909,17 @@
 
 <div class= "col-md-4">
     <div class="form-group "> 
-            <label class="control-label">วุฒิที่ได้รับ</label>
-            {{Form::text('degree4','',['class'=>'form-control','id'=>'degree4','readonly'])}}
-                                                                                                     
+           
+            <label class="control-label">สาขา</label>
+            {{Form::text('majord','',['class'=>'form-control','id'=>'majord','readonly'])}}                                                                                                  
                                                                                                                                           
 </div>
 </div>    
 
 <div class= "col-md-4">
 <div class="form-group "> 
-    <label class="control-label">สาขา</label>
-
-    {{Form::text('majord','',['class'=>'form-control','id'=>'majord','readonly'])}}                                                                 
+                <label class="control-label">วุฒิที่ได้รับ</label>
+                {{Form::text('degree4','',['class'=>'form-control','id'=>'degree4','readonly'])}}                                            
                                                                                                                                   
 </div>
 </div>         
@@ -965,18 +971,20 @@
 
 <div class= "col-md-4">
     <div class="form-group "> 
-            <label class="control-label">วุฒิที่ได้รับ</label>
-         
-            {{Form::text('degree5','',['class'=>'form-control','required','id'=>'degree5','readonly'])}}                                                          
+                <label class="control-label">สาขา</label>
+          
+                {{Form::text('majorb','',['class'=>'form-control','required','id'=>'majorb','readonly'])}}                                             
                                                                                                                                           
 </div>
 </div>    
 
 <div class= "col-md-4">
 <div class="form-group "> 
-    <label class="control-label">สาขา</label>
-          
-    {{Form::text('majorb','',['class'=>'form-control','required','id'=>'majorb','readonly'])}}           
+                <label class="control-label">วุฒิที่ได้รับ</label>
+         
+                {{Form::text('degree5','',['class'=>'form-control','required','id'=>'degree5','readonly'])}}   
+
+             
                                                                                                                                   
 </div>
 </div>         
@@ -1104,17 +1112,18 @@
 
 <div class= "col-md-4">
     <div class="form-group "> 
-            <label class="control-label">วุฒิที่ได้รับ</label>
-            {{Form::text('majoro','',['class'=>'form-control','id'=>'majoro','readonly'])}}                                           
-                                                                                                                                          
+          
+        <label class="control-label">สาขา</label>       
+            {{Form::text('majoro','',['class'=>'form-control','id'=>'majoro','readonly'])}}                                                                                                                        
 </div>
 </div>    
 
 <div class= "col-md-4">
 <div class="form-group "> 
-    <label class="control-label">สาขา</label>
+    <label class="control-label">วุฒิที่ได้รับ</label>
+    {{Form::text('degree7','',['class'=>'form-control','id'=>'degree7','readonly'])}}   
     
-    {{Form::text('degree7','',['class'=>'form-control','id'=>'degree7','readonly'])}}                                     
+           
                                                                                                                                   
 </div>
 </div>         
@@ -2011,19 +2020,6 @@ $(document).ready(function(){
                 $("#religionError").html('*จำเป็นต้องระบุ');
                 $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
            }
-
-           else if($("#brothers").val() == ''){
-                $("#brothersError").html('*จำเป็นต้องระบุ');
-                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
-
-           }
-          
-           
-           else   if (  $("#number").val() == '' ){
-                $("#numberError").html('*จำเป็นต้องระบุ');
-                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
-           }
-           
            else if ($("#idcard").val() == '' ){
                 $("#idcardError").html('*จำเป็นต้องระบุ');
                 $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
@@ -2045,7 +2041,10 @@ $(document).ready(function(){
                 $("#expidError").html('*จำเป็นต้องระบุ');
                 $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
            }
-
+           else if (    $("#province_crad").val() == ''){
+                $("#province_cradError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
 
 
     else    if (  $("#address2").val() ==  ''){
