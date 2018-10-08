@@ -40,9 +40,9 @@
 </head>
 <body class="bg-dark">
         <div class="banner-inner ">
-              <br> 
+              <br>
               <center>
-                <img src="{{URL::asset('img/NGGlogo.jpg')}}"  width="80px" height="80px"> 
+                <img src="{{URL::asset('img/NGGlogo.jpg')}}"  width="110px" height="110px"> 
               </center>
         </div> 
  <div class="container">
@@ -165,12 +165,12 @@
                                                   
                                            
                                                        <label class="control-label">เพศ<small class="text-danger">*</small></label>
-                                                       {{ Form::select('', [''=>'เลือก'  ,'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control','id'=>'gender']) }}
+                                                       {{ Form::select('gender', [''=>'เลือก'  ,'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control','id'=>'gender']) }}
                                                        <b  class="text-danger" id="genderError"></b>
                                                       </div>  
                                         </div>                           
                                         </div>
-                                            </div>
+                                           
                                                 </div>
                                             
 
@@ -199,6 +199,16 @@
                                                                                  </div>
                                                                             
                                                                           </div>
+
+                                                                          <div class="col-md-3 ">
+                                    
+                                                                                <div class="form-group label-floating">
+                                                                                    <label class="control-label">สถานะทางทหาร<small class="text-danger">*</small></label> 
+                                                                                    {{ Form::select('military_service', [''=>'เลือก','-' =>'ไม่มี','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control','required']) }}
+                                                                               
+                                                                                
+                                                                            </div>
+                                                                        </div>
                                                                         
                                                               </div>
                     
@@ -337,7 +347,7 @@
     <div class="form-group">
             <br>
                               <center>  <a href="#" class="btn btn-danger" id="next-1">ถัดไป</a>
-                                <br><br><br>  <b class="text-danger"  id="allError"></b></center>
+                                <br>  <b class="text-danger"  id="allError"></b></center>
                              </div>
                
                             </div>
@@ -390,7 +400,7 @@
                                                 <div class="col-md-4">
                                                         <div class="form-group ">
                                                                 <label class="control-label">อีเมล<small class="text-danger">*</small></label>
-                                                                {{Form::email('email','',['class'=>'form-control','id'=>'email'])}}  
+                                                                {{Form::text('email','',['class'=>'form-control','id'=>'email'])}}  
                                                                 <b  class="text-danger" id="emailError"></b>      
                                                        </div>
                                                        
@@ -542,7 +552,7 @@
                                                                         <div class="form-group ">
                                                                      <label class="control-label">  ชื่อบิดา<small class="text-danger">*</small></label>
                                                                       {{Form::text('namefather','',['class'=>'form-control','id'=>'namefather'])}} 
-                                                                      <b  class="text-danger" id="namefather"></b>     
+                                                                      <b  class="text-danger" id="namefatherError"></b>     
                                                                             </div>
                                                                                                                                                                                                                   
                                                                                     </div>
@@ -627,7 +637,7 @@
                                                                                      <label class="control-label">สถานะ<small class="text-danger">*</small></label>
                                                           
                                                                {{ Form::select('alivem', [ ''=>'เลือก', 'ยังมีชีวิตอยู่' => 'ยังมีชีวิตอยู่','ถึงแก่กรรม' => 'ถึงแก่กรรม'],null, ['class' => 'form-control','id'=>'alivem']) }} 
-                                                               <b  class="text-danger" id="oalivemError"></b>                                                                                                                                                  
+                                                               <b  class="text-danger" id="alivemError"></b>                                                                                                                                                  
                                                                                                                                                                                                                  
                                                                 </div>
                                                             </div>
@@ -637,109 +647,486 @@
 <hr>
                         <div class="form-group"> <center>
                                <a href="#" class="btn btn-danger" id="prev-2">ย้อนกลับ</a>
-                               <a href="#" class="btn btn-danger" id="next-2">ถัดไป</a> </center>
+                               <a href="#" class="btn btn-danger" id="next-2" >ถัดไป</a> 
+                               <br>  <b class="text-danger"  id="all2Error"></b></center>
                             </div>
                    
                                 </div>
 
                     <div id="third">
-                            <div id="scroll_demo">
                             <h4 class="text-center bg-primary p-1rounded tect-light">ประวัติการศึกษา</h4>
                         
-                            <h4 class="text-danger"> กรุณาคลิกถูกที่ต้องการระบุการศึกษา(หัวข้อระดับการศึกษา)</h4>
-                            <table class="table table-striped" id="foo">
-                                    <thead>
-                                      <tr>
-                                        <th style="text-align:center">ระดับการศึกษา</th>
-                                        <th style="text-align:center">สถาบัน</th>
-                                        <th style="text-align:center">เริ่มปีการศึกษา</th>
-                                        <th style="text-align:center">จบปีการศึกษา</th>
-                                        <th style="text-align:center">เกรดเฉลี่ย</th>
-                                        <th style="text-align:center">วุฒิที่ได้รับ</th>
-                                        <th style="text-align:center">สาขา</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td style="text-align:center"> <input type="checkbox" id="form_setchange1"/><br> ประถมศึกษา  </td>
-                                        <td>
-                                        {{Form::text('primary','',['class'=>'form-control','id'=>'primary','disabled'])}}
-                                        </td>
-                                        <td>{{Form::text('year1','',['class'=>'form-control','id'=>'year1','disabled'])}}</td>
-                                        <td> {{Form::text('year2','',['class'=>'form-control','id'=>'year2','disabled'])}}</td>
-                                        <td> {{Form::text('gpa','',['class'=>'form-control','id'=>'gpa','disabled'])}}</td>
-                                        <td>   {{Form::text('degree1','',['class'=>'form-control','id'=>'degree1','disabled'])}}</td>
-                                        <td> {{Form::text('major','',['class'=>'form-control','id'=>'major','disabled'])}}</td>
-                                      </tr>
-                                      
-                                      <tr>
-                                        <td style="text-align:center"><input type="checkbox" id="form_setchange2" /><br>มัธยมศึกษา</td>
-                                        <td>{{Form::text('secondary','',['class'=>'form-control','id'=>'secondary','disabled'])}}</td>
-                                        <td>{{Form::text('year3','',['class'=>'form-control','id'=>'year3','disabled'])}}</td>
-                                        <td>{{Form::text('year4','',['class'=>'form-control','id'=>'year4','disabled'])}}</td>
-                                        <td>{{Form::text('gpas','',['class'=>'form-control','id'=>'gpas','disabled'])}}</td>
-                                        <td> {{Form::text('degree2','',['class'=>'form-control','id'=>'degree2','disabled'])}}</td>
-                                        <td>{{Form::text('majors','',['class'=>'form-control','id'=>'majors','disabled'])}}</td>
-                                      </tr>
-                                    
-                                      <tr>
-                                        <td style="text-align:center"><input type="checkbox" id="form_setchange3"/><br>อาชีวะศึกษา</td>
-                                        <td>{{Form::text('vocation','',['class'=>'form-control','id'=>'vocation','disabled'])}}</td>
-                                        <td>{{Form::text('year5','',['class'=>'form-control','id'=>'year5','disabled'])}}</td>
-                                        <td>{{Form::text('year6','',['class'=>'form-control','id'=>'year6','disabled'])}}</td>
-                                        <td>{{Form::text('gpav','',['class'=>'form-control','id'=>'gpav','disabled'])}}</td>
-                                        <td> {{Form::text('degree3','',['class'=>'form-control','id'=>'degree3','disabled'])}}</td>
-                                        <td> {{Form::text('majorv','',['class'=>'form-control','id'=>'majorv','disabled'])}}</td>
-                                       
-                                      </tr>
-                                     
-                                      <tr>
-                                            <td style="text-align:center"><input type="checkbox" id="form_setchange4"/><br>อนุปริญญา</td>
-                                            <td>  {{Form::text('diploma','',['class'=>'form-control','id'=>'diploma','disabled'])}}</td>
-                                            <td> {{Form::text('year7','',['class'=>'form-control','id'=>'year7','disabled'])}}</td>
-                                            <td> {{Form::text('year8','',['class'=>'form-control','id'=>'year8','disabled'])}}</td>
-                                            <td>{{Form::text('gpad','',['class'=>'form-control','id'=>'gpad','disabled'])}}</td>
-                                            <td>  {{Form::text('majord','',['class'=>'form-control','id'=>'majord','disabled'])}}</td>
-                                            <td>{{Form::text('degree4','',['class'=>'form-control','id'=>'degree4','disabled'])}}</td>
-                                          </tr>
-            
-                                          <tr>
-                                                <td style="text-align:center"><input type="checkbox" id="form_setchange5"/><br>ปริญญาตรี</td>
-                                                <td> {{Form::text('bachelor','',['class'=>'form-control','id'=>'bachelor','disabled'])}}</td>
-                                                <td>{{Form::text('year9','',['class'=>'form-control','id'=>'year9','disabled'])}}</td>
-                                                <td>{{Form::text('year10','',['class'=>'form-control','id'=>'year10','disabled'])}}</td>
-                                                <td>{{Form::text('gpab','',['class'=>'form-control','id'=>'gpab','disabled'])}}</td>
-                                                <td>{{Form::text('majorb','',['class'=>'form-control','id'=>'majorb','disabled'])}}</td>
-                                                <td>{{Form::text('degree5','',['class'=>'form-control','id'=>'degree5','disabled'])}}</td>
-                                              </tr>
-            
-            
-                                     <tr>
-                                        <td style="text-align:center"><input type="checkbox" id="form_setchange6"/><br>ปริญญาโท</td>
-                                        <td>{{Form::text('master','',['class'=>'form-control','id'=>'master','disabled'])}}</td>
-                                        <td>{{Form::text('year11','',['class'=>'form-control','id'=>'year11','disabled'])}}</td>
-                                        <td>{{Form::text('year12','',['class'=>'form-control','id'=>'year12','disabled'])}}</td>
-                                        <td>{{Form::text('gpam','',['class'=>'form-control','id'=>'gpam','disabled'])}}</td>
-                                        <td>{{Form::text('majorm','',['class'=>'form-control','id'=>'majorm','disabled'])}}</td>
-                                        <td>{{Form::text('degree6','',['class'=>'form-control','id'=>'degree6','disabled'])}}</td>
-            
-                                      </tr>
-            
-                                       <tr>
-                                            <td style="text-align:center"><input type="checkbox" id="form_setchange7"/><br>อื่นๆ</td>
-                                            <td>{{Form::text('otherE','',['class'=>'form-control','id'=>'otherE','disabled'])}}</td>
-                                            <td>{{Form::text('year13','',['class'=>'form-control','id'=>'year13','disabled'])}}</td>
-                                            <td>{{Form::text('year14','',['class'=>'form-control','id'=>'year14','disabled'])}}</td>
-                                            <td>{{Form::text('gpao','',['class'=>'form-control','id'=>'gpao','disabled'])}}</td>
-                                            <td>{{Form::text('majoro','',['class'=>'form-control','id'=>'majoro','disabled'])}}</td>
-                                            <td>{{Form::text('degree7','',['class'=>'form-control','id'=>'degree7','disabled'])}}</td>
-                                          </tr>
-            
-                                    </tbody>
-            
-                                </table> 
+                            <h4 class="text-danger"> กรุณาคลิกถูกที่ต้องการระบุการศึกษา</h4>
+                            <div class="row">
+                                    <label>  <input type="checkbox" id="form_setchange1"/> ระดับประถมศึกษา</label>
+                                    <div class= "col-md-4">
+                                            <div class="form-group "> 
+                                                      <label class="control-label">สถาบัน</label>
+                           
+                                                      {{Form::text('primary','',['class'=>'form-control','id'=>'primary','readonly'])}}                                                                                                                                            
+                                                                                                                                                                                  
+                                 </div>
+                             </div>
+                             
+                             <div class= "col-md-4">
+                                    <div class="form-group "> 
+                                            <label class="control-label">เริ่มปีการศึกษา</label>
 
-                            </div>
+                                            {{Form::text('year1','',['class'=>'form-control','id'=>'year1','readonly'])}}                                                                                                                                         
+                                                                                                                                                                          
+                         </div>
+                     </div>
+                                                                     
+                     <div class= "col-md-4">
+                            <div class="form-group "> 
+                                    <label class="control-label">จบปีการศึกษา</label>
+
+                                    {{Form::text('year2','',['class'=>'form-control','id'=>'year2','readonly'])}}                                                                                                                                      
+                                                                                                                                                                  
+                 </div>
+             </div>
+
+
+                        <div class= "col-md-4">
+                                    <div class="form-group "> 
+                                            <label class="control-label">เกรดเฉลี่ย</label>
+
+                                            {{Form::text('gpa','',['class'=>'form-control','id'=>'gpa','readonly'])}}                                                                                                                                         
+                                                                                                                                                                          
+                         </div>
+                     </div>
+                              
+                            
+                        <div class= "col-md-4">
+                                <div class="form-group "> 
+                                        <label class="control-label">วุฒิที่ได้รับ</label>
+
+                                        {{Form::text('degree1','',['class'=>'form-control','id'=>'degree1','readonly'])}}                                                                                                                             
+                                                                                                                                                                      
+                     </div>
+                 </div>    
+                 
+                 <div class= "col-md-4">
+                        <div class="form-group "> 
+                                <label class="control-label">สาขา</label>
+
+                                {{Form::text('major','',['class'=>'form-control','id'=>'major','readonly'])}}                                                                                                                                        
+                                                                                                                                                              
+             </div>
+         </div>         
+                    </div>
+                  
+
+<hr>
+
+
+
+<div class="row">
+        <label>  <input type="checkbox" id="form_setchange2" /> ระดับมัธยมศึกษา</label>
+        <div class= "col-md-4">
+                <div class="form-group "> 
+                          <label class="control-label">สถาบัน</label>
+
+                          {{Form::text('secondary','',['class'=>'form-control','id'=>'secondary','readonly'])}}                                                                                                                                       
+                                                                                                                                                      
+     </div>
+ </div>
+ 
+ <div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เริ่มปีการศึกษา</label>
+
+                {{Form::text('year3','',['class'=>'form-control','id'=>'year3','readonly'])}}                                                                                                                                       
+                                                                                                                                              
+</div>
+</div>
+                                         
+<div class= "col-md-4">
+<div class="form-group "> 
+        <label class="control-label">จบปีการศึกษา</label>
+
+        {{Form::text('year4','',['class'=>'form-control','id'=>'year4','readonly'])}}                                                                                                                                 
+                                                                                                                                      
+</div>
+</div>
+
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เกรดเฉลี่ย</label>
+
+                {{Form::text('gpas','',['class'=>'form-control','id'=>'gpas','readonly'])}}                                                                                                                         
+                                                                                                                                              
+</div>
+</div>
+  
+
+<div class= "col-md-4">
+    <div class="form-group "> 
+            <label class="control-label">วุฒิที่ได้รับ</label>
+
+            {{Form::text('degree2','',['class'=>'form-control','id'=>'degree2','readonly'])}}                                                                                                   
+                                                                                                                                          
+</div>
+</div>    
+
+<div class= "col-md-4">
+<div class="form-group "> 
+    <label class="control-label">สาขา</label>
+
+    {{Form::text('majors','',['class'=>'form-control','id'=>'majors','readonly'])}}                                                                                                           
+                                                                                                                                  
+</div>
+</div>         
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+<div class="row">
+        <label>   <input type="checkbox" id="form_setchange3"/>อาชีวะศึกษา</label>
+        <div class= "col-md-4">
+                <div class="form-group "> 
+                          <label class="control-label">สถาบัน</label>
+
+                          {{Form::text('vocation','',['class'=>'form-control','id'=>'vocation','readonly'])}}                                                                                                                             
+                                                                                                                                                      
+     </div>
+ </div>
+ 
+ <div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เริ่มปีการศึกษา</label>
+                {{Form::text('year5','',['class'=>'form-control','id'=>'year5','readonly'])}}
+                                                                                                                                            
+                                                                                                                                              
+</div>
+</div>
+                                         
+<div class= "col-md-4">
+<div class="form-group "> 
+        <label class="control-label">จบปีการศึกษา</label>
+
+        {{Form::text('year6','',['class'=>'form-control','id'=>'year6','readonly'])}}                                                                                           
+                                                                                                                                      
+</div>
+</div>
+
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เกรดเฉลี่ย</label>
+
+                {{Form::text('gpav','',['class'=>'form-control','id'=>'gpav','readonly'])}}                                                                                                 
+                                                                                                                                              
+</div>
+</div>
+  
+
+<div class= "col-md-4">
+    <div class="form-group "> 
+            <label class="control-label">วุฒิที่ได้รับ</label>
+            {{Form::text('degree3','',['class'=>'form-control','id'=>'degree3','readonly'])}}
+                                                                                                     
+                                                                                                                                          
+</div>
+</div>    
+
+<div class= "col-md-4">
+<div class="form-group "> 
+    <label class="control-label">สาขา</label>
+
+    {{Form::text('majorv','',['class'=>'form-control','id'=>'majorv','readonly'])}}                                                                     
+                                                                                                                                  
+</div>
+</div>         
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+<div class="row">
+        <label>  <input type="checkbox" id="form_setchange4"/>อนุปริญญา</label>
+        <div class= "col-md-4">
+                <div class="form-group "> 
+                          <label class="control-label">สถาบัน:</label>
+
+                          {{Form::text('diploma','',['class'=>'form-control','id'=>'diploma','readonly'])}}                                                                                                                         
+                                                                                                                                                      
+     </div>
+ </div>
+ 
+ <div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เริ่มปีการศึกษา</label>
+                {{Form::text('year7','',['class'=>'form-control','id'=>'year7','readonly'])}}
+                                                                                                                                            
+                                                                                                                                              
+</div>
+</div>
+                                         
+<div class= "col-md-4">
+<div class="form-group "> 
+        <label class="control-label">จบปีการศึกษา</label>
+
+        {{Form::text('year8','',['class'=>'form-control','id'=>'year8','readonly'])}}                                                                            
+                                                                                                                                      
+</div>
+</div>
+
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เกรดเฉลี่ย</label>
+
+                {{Form::text('gpad','',['class'=>'form-control','id'=>'gpad','readonly'])}}                                                                                                
+                                                                                                                                              
+</div>
+</div>
+  
+
+<div class= "col-md-4">
+    <div class="form-group "> 
+            <label class="control-label">วุฒิที่ได้รับ</label>
+            {{Form::text('degree4','',['class'=>'form-control','id'=>'degree4','readonly'])}}
+                                                                                                     
+                                                                                                                                          
+</div>
+</div>    
+
+<div class= "col-md-4">
+<div class="form-group "> 
+    <label class="control-label">สาขา</label>
+
+    {{Form::text('majord','',['class'=>'form-control','id'=>'majord','readonly'])}}                                                                 
+                                                                                                                                  
+</div>
+</div>         
+</div>
+
+
+<hr>
+
+
+<div class="row">
+        <label><input type="checkbox" id="form_setchange5"/>ปริญญาตรี</label>
+        <div class= "col-md-4">
+                <div class="form-group "> 
+                          <label class="control-label">สถาบัน:</label>
+                          {{Form::text('bachelor','',['class'=>'form-control','required','id'=>'bachelor','readonly'])}}
+                                                                                                                   
+                                                                                                                                                      
+     </div>
+ </div>
+ 
+ <div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เริ่มปีการศึกษา</label>
+                {{Form::text('year9','',['class'=>'form-control','required','id'=>'year9','readonly'])}}
+                                                                                                                                            
+                                                                                                                                              
+</div>
+</div>
+                                         
+<div class= "col-md-4">
+<div class="form-group "> 
+        <label class="control-label">จบปีการศึกษา</label>
+
+        {{Form::text('year10','',['class'=>'form-control','required','id'=>'year10','readonly'])}}                       
+                                                                                                                                      
+</div>
+</div>
+
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เกรดเฉลี่ย</label>
+
+                {{Form::text('gpab','',['class'=>'form-control','required','id'=>'gpab','readonly'])}}    
+                                                                                                                                              
+</div>
+</div>
+  
+
+<div class= "col-md-4">
+    <div class="form-group "> 
+            <label class="control-label">วุฒิที่ได้รับ</label>
+         
+            {{Form::text('degree5','',['class'=>'form-control','required','id'=>'degree5','readonly'])}}                                                          
+                                                                                                                                          
+</div>
+</div>    
+
+<div class= "col-md-4">
+<div class="form-group "> 
+    <label class="control-label">สาขา</label>
+          
+    {{Form::text('majorb','',['class'=>'form-control','required','id'=>'majorb','readonly'])}}           
+                                                                                                                                  
+</div>
+</div>         
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+<div class="row">
+        <label><input type="checkbox" id="form_setchange6"/>ปริญญาโท</label>
+        <div class= "col-md-4">
+                <div class="form-group "> 
+                          <label class="control-label">สถาบัน:</label>
+                          {{Form::text('master','',['class'=>'form-control','id'=>'master','readonly'])}}
+                                                                                                                   
+                                                                                                                                                      
+     </div>
+ </div>
+ 
+ <div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เริ่มปีการศึกษา</label>
+                {{Form::text('year11','',['class'=>'form-control','id'=>'year11','readonly'])}}
+                                                                                                                                            
+                                                                                                                                              
+</div>
+</div>
+                                         
+<div class= "col-md-4">
+<div class="form-group "> 
+        <label class="control-label">จบปีการศึกษา</label>
+
+        {{Form::text('year12','',['class'=>'form-control','id'=>'year12','readonly'])}}                         
+                                                                                                                                      
+</div>
+</div>
+
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เกรดเฉลี่ย</label>
+
+                {{Form::text('gpam','',['class'=>'form-control','id'=>'gpam','readonly'])}}                                                                                       
+                                                                                                                                              
+</div>
+</div>
+  
+
+<div class= "col-md-4">
+    <div class="form-group "> 
+            <label class="control-label">วุฒิที่ได้รับ</label>
+         
+            {{Form::text('degree6','',['class'=>'form-control','id'=>'degree6','readonly'])}}                                                            
+                                                                                                                                          
+</div>
+</div>    
+
+<div class= "col-md-4">
+<div class="form-group "> 
+    <label class="control-label">สาขา</label>
+          
+    {{Form::text('majorm','',['class'=>'form-control','id'=>'majorm','readonly'])}}              
+                                                                                                                                  
+</div>
+</div>         
+</div>
+<hr>
+
+
+<div class="row">
+        <label><input type="checkbox" id="form_setchange7"/>อื่นๆ</label>
+        <div class= "col-md-4">
+                <div class="form-group "> 
+                          <label class="control-label">สถาบัน</label>
+                          {{Form::text('otherE','',['class'=>'form-control','id'=>'otherE','readonly'])}}
+                                                                                                                   
+                                                                                                                                                      
+     </div>
+ </div>
+ 
+ <div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เริ่มปีการศึกษา</label>
+                {{Form::text('year13','',['class'=>'form-control','id'=>'year13','readonly'])}}
+                                                                                                                                            
+                                                                                                                                              
+</div>
+</div>
+                                         
+<div class= "col-md-4">
+<div class="form-group "> 
+        <label class="control-label">จบปีการศึกษา</label>
+
+        {{Form::text('year14','',['class'=>'form-control','id'=>'year14','readonly'])}}
+                                                                                                                                      
+</div>
+</div>
+
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+                <label class="control-label">เกรดเฉลี่ย</label>
+
+                {{Form::text('gpao','',['class'=>'form-control','id'=>'gpao','readonly'])}}                                                                    
+                                                                                                                                              
+</div>
+</div>
+  
+
+<div class= "col-md-4">
+    <div class="form-group "> 
+            <label class="control-label">วุฒิที่ได้รับ</label>
+            {{Form::text('majoro','',['class'=>'form-control','id'=>'majoro','readonly'])}}                                           
+                                                                                                                                          
+</div>
+</div>    
+
+<div class= "col-md-4">
+<div class="form-group "> 
+    <label class="control-label">สาขา</label>
+    
+    {{Form::text('degree7','',['class'=>'form-control','id'=>'degree7','readonly'])}}                                     
+                                                                                                                                  
+</div>
+</div>         
+</div>
+
+
+
+
+
+
+
+
                             <div class="form-group">
                                     <center>
                                     <a href="#" class="btn btn-danger" id="prev-3">ย้อนกลับ</a>
@@ -756,127 +1143,169 @@
 
 
                         <div id="three">
-                                <div id="scroll_demo2">
-                                <table class="table table-striped">
-                                        <thead>
-                                          <tr>
-                                            <th style="text-align:center">ประเภทภาษา</th>
-                                            <th style="text-align:center">การพูด</th>
-                                            <th style="text-align:center">การเข้าใจ</th>
-                                            <th style="text-align:center">การเขียน</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <td style="text-align:center">ไทย<small class="text-danger">*</small></td>
-                                            <td>
-                                                    <div class="form-group ">
-                                                        {{ Form::select('thais', [
-                                                                '' =>'::เลือก::', 
-                                                                'ดี' => 'ดี',
-                                                                'พอใช้' => 'พอใช้',
-                                                                'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control','id'=>'thais']) }}
-                                                             <b  class="text-danger" id="othaisError"></b>  
-                                                  
-                                                </div>
-                                                </td>
-                                            <td>
-                                                <div class="form-group ">
-                                                        {{ Form::select('thail', [
-                                                                '' =>'::เลือก::', 
-                                                                'ดี' => 'ดี',
-                                                                'พอใช้' => 'พอใช้',
-                                                                'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control','id'=>'thail']) }}
-                                                  <b  class="text-danger" id="thailError"></b>  
-                                                </div>
-                                                </td>
-                                            <td>
-                                                <div class="form-group">
-                                                        {{ Form::select('thair', [
-                                                        '' =>'::เลือก::', 
-                                                        'ดี' => 'ดี',
-                                                        'พอใช้' => 'พอใช้',
-                                                        'ไม่ดี' => 'ไม่ดี'
-                                                   ],null, ['class' => 'form-control','id'=>'thair']) }}
-                                                    <b  class="text-danger" id="thairError"></b> 
-                                                 
-            
-                                                </td>
-                                          </tr>
-                                          <tr>
-                                            <td style="text-align:center"> อังกฤษ<small class="text-danger">*</small></td>
-                                            <td>
-                                                <div class="form-group">
-                                                        {{ Form::select('engliss', [
-                                                                '' =>'::เลือก::', 
-                                                                'ดี' => 'ดี',
-                                                                'พอใช้' => 'พอใช้',
-                                                                'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control','id'=>'engliss']) }}
-                                                      <b  class="text-danger" id="englissError"></b> 
-            
-                                                </td>
-                                            <td>
-                                                <div class="form-group">
-                                                        {{ Form::select('englisl', [
-                                                                '' =>'::เลือก::', 
-                                                                'ดี' => 'ดี',
-                                                                'พอใช้' => 'พอใช้',
-                                                                'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control','id'=>'englisl']) }}
-                                                    <b  class="text-danger" id="englislError"></b> 
-            
-                                                </td>
-                                            <td>
-                                                <div class="form-group ">
-                                                        {{ Form::select('englisr', [
-                                                                '' =>'::เลือก::', 
-                                                                'ดี' => 'ดี',
-                                                                'พอใช้' => 'พอใช้',
-                                                                'ไม่ดี' => 'ไม่ดี'
-                                                           ],null, ['class' => 'form-control','id'=>'englisp']) }}
-                
-                                                         <b  class="text-danger" id="englispError"></b> 
-                                                    
-            
-                                                </td>
-                                          </tr>
-                                          <tr>
-                                            <td style="text-align:center" >อื่นๆ <input type="text" name="otherr"  style="width:100%"  id="otherr"  name="otherr" class="form-control"/> </td>
-                                            <td>
-                                                {{ Form::select('othes', [
-                                                        '' =>'::เลือก::', 
-                                                        'ดี' => 'ดี',
-                                                        'พอใช้' => 'พอใช้',
-                                                        'ไม่ดี' => 'ไม่ดี'
-                                                   ],null, ['class' => 'form-control','id'=>'othes']) }}
-                                                    <b  class="text-danger" id="othesError"></b> 
-                                                </td>
-                                            <td>
-                                                {{ Form::select('othel', [
-                                                        '' =>'::เลือก::', 
-                                                        'ดี' => 'ดี',
-                                                        'พอใช้' => 'พอใช้',
-                                                        'ไม่ดี' => 'ไม่ดี'
-                                                   ],null, ['class' => 'form-control','id'=>'othel']) }}
-                                                      <b  class="text-danger" id="othelError"></b> 
-                                                </td>
-                                            <td>
-                                                {{ Form::select('other', [
-                                                        '' =>'::เลือก::', 
-                                                        'ดี' => 'ดี',
-                                                        'พอใช้' => 'พอใช้',
-                                                        'ไม่ดี' => 'ไม่ดี'
-                                                   ],null, ['class' => 'form-control','id'=>'other']) }}
-                                                   <b  class="text-danger" id="otherError"></b> 
-                                                </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
+                                <h4 > ด้านภาษา</h4>
+<div class="row">
+        <div class= "col-md-4">
+                <div class="form-group "> 
+                       <label>ภาษาไทย การพูด<small class="text-danger">*</small></label>     
+                       {{ Form::select('thais', [
+                        '' =>'::เลือก::', 
+                        'ดี' => 'ดี',
+                        'พอใช้' => 'พอใช้',
+                        'ไม่ดี' => 'ไม่ดี'
+                   ],null, ['class' => 'form-control','id'=>'thais']) }}
+                     <b  class="text-danger" id="thaisError"></b>                                                                                              
+                                                                                                                                                      
+     </div>
+    </div>
+    <div class= "col-md-4">
+            <div class="form-group "> 
+                   <label>ภาษาไทย การฟัง<small class="text-danger">*</small></label>     
+                   {{ Form::select('thail', [
+                    '' =>'::เลือก::', 
+                    'ดี' => 'ดี',
+                    'พอใช้' => 'พอใช้',
+                    'ไม่ดี' => 'ไม่ดี'
+               ],null, ['class' => 'form-control','id'=>'thail']) }}
+      <b  class="text-danger" id="thailError"></b>                                                                                         
+                                                                                                                                                  
+ </div>
+</div>
 
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+               <label>ภาษาไทย การเขียน<small class="text-danger">*</small></label>     
+               {{ Form::select('thair', [
+                '' =>'::เลือก::', 
+                'ดี' => 'ดี',
+                'พอใช้' => 'พอใช้',
+                'ไม่ดี' => 'ไม่ดี'
+           ],null, ['class' => 'form-control','id'=>'thair']) }}
+            <b  class="text-danger" id="thairError"></b> 
+                                                                                           
+                                                                                                                                              
+</div>
+</div>
+<hr>
+<div class= "col-md-4">
+        <div class="form-group "> 
+               <label>ภาษาอังกฤษ การพูด<small class="text-danger">*</small></label>     
+               {{ Form::select('engliss', [
+                '' =>'::เลือก::', 
+                'ดี' => 'ดี',
+                'พอใช้' => 'พอใช้',
+                'ไม่ดี' => 'ไม่ดี'
+           ],null, ['class' => 'form-control','id'=>'engliss']) }}
+      <b  class="text-danger" id="englissError"></b> 
+
+                                                                                           
+                                                                                                                                              
+</div>
+</div>
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+               <label>ภาษาอังกฤษ การฟัง<small class="text-danger">*</small></label>     
+               {{ Form::select('englisl', [
+                '' =>'::เลือก::', 
+                'ดี' => 'ดี',
+                'พอใช้' => 'พอใช้',
+                'ไม่ดี' => 'ไม่ดี'
+           ],null, ['class' => 'form-control','id'=>'englisl']) }}
+      <b  class="text-danger" id="englislError"></b> 
+
+                                                                                           
+                                                                                                                                              
+</div>
+</div>
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+               <label>ภาษาอังกฤษ การเขียน<small class="text-danger">*</small></label>     
+               {{ Form::select('englisr', [
+                                                                '' =>'::เลือก::', 
+                                                                'ดี' => 'ดี',
+                                                                'พอใช้' => 'พอใช้',
+                                                                'ไม่ดี' => 'ไม่ดี'
+                                                           ],null, ['class' => 'form-control','id'=>'englisr']) }}
+                
+                                                         <b  class="text-danger" id="englisrError"></b> 
+                                                    
+
+                                                                                           
+                                                                                                                                              
+</div>
+</div>
+
+
+
+
+
+<div class= "col-md-4">
+        <div class="form-group "> 
+               <label>อื่นๆ<small class="text-danger">*</small></label>     
+               <input type="text" name="otherr"  style="width:100%"  id="otherr"  name="otherr" class="form-control"/>
+     
+    
+                                                                                           
+                                                                                                                                              
+    </div>
+    </div>
+
+<div class= "col-md-4">
+    <div class="form-group "> 
+           <label>อื่นๆ การพูด<small class="text-danger">*</small></label>     
+           {{ Form::select('othes', [
+            '' =>'::เลือก::', 
+            'ดี' => 'ดี',
+            'พอใช้' => 'พอใช้',
+            'ไม่ดี' => 'ไม่ดี'
+       ],null, ['class' => 'form-control','id'=>'othes']) }}
+       
+
+                                                                                       
+                                                                                                                                          
+</div>
+</div>
+
+<div class= "col-md-4">
+    <div class="form-group "> 
+           <label>อื่นๆ การฟัง<small class="text-danger">*</small></label>     
+           {{ Form::select('othel', [
+            '' =>'::เลือก::', 
+            'ดี' => 'ดี',
+            'พอใช้' => 'พอใช้',
+            'ไม่ดี' => 'ไม่ดี'
+       ],null, ['class' => 'form-control','id'=>'othel']) }}
+          <b  class="text-danger" id="othelError"></b> 
+                                                
+
+                                                                                       
+                                                                                                                                          
+</div>
+</div>
+<div class= "col-md-4">
+        <div class="form-group "> 
+               <label>อื่นๆ การเขียน<small class="text-danger">*</small></label>     
+               {{ Form::select('other', [
+                '' =>'::เลือก::', 
+                'ดี' => 'ดี',
+                'พอใช้' => 'พอใช้',
+                'ไม่ดี' => 'ไม่ดี'
+           ],null, ['class' => 'form-control','id'=>'other']) }}
+           <b  class="text-danger" id="otherError"></b> 
+                                                    
+    
+                                                                                           
+                                                                                                                                              
+    </div>
+    </div>
+
+
+
+</div>
+<hr>
                                     <h3>ประวัติการทำงาน</h3>
                                     <div class="row">
                                               <div class="col-md-1"></div>
@@ -1150,7 +1579,7 @@
                                         <center>
                                         <a href="#" class="btn btn-danger" id="prev-4">ย้อนกลับ</a>
                                         <a href="#" class="btn btn-danger" id="next-4">ถัดไป</a>
-                                     
+                                        <br>  <b class="text-danger"  id="all3Error"></b>
                                         </center>
                                      </div>
                         </div>
@@ -1324,8 +1753,8 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label>ท่านสามารถขับรถยนต์ได้หรือไม่ <small class="text-danger">*</small> </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
-                                                                <input type="radio" name="yes" value="ได้"  required > ได้  &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
+                                                                <label>ท่านสามารถขับรถยนต์ได้หรือไม่ <small class="text-danger">*</small> </label>&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
+                                                                <input type="radio" name="yes" value="ได้"  required > ได้  &emsp;&emsp;&emsp;
                                                                 <input type="radio" name="yes" value="ไม่ได้"  required > ไม่ได้
                                                                 
                                                                 </div>
@@ -1381,7 +1810,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group ">
-                                                                <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;
+                                                                <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?<small class="text-danger">*</small></label>&emsp;
                                                                 <input type="radio" name="serious_ill" value="เคย"  required > เคย &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                                 <input type="radio" name="serious_ill" value="ไม่เคย"  required >ไม่เคย
                                                               
@@ -1465,12 +1894,12 @@ $(document).ready(function(){
 
      $("#next-1").click(function(e){
             
-        e.preventDefault();
-        $('#salaryngg').removeClass('btn btn-danger');
-        $('#positionnggError').removeClass('btn btn-danger');
-
       
-        $('#allError').html(' ');
+
+            e.preventDefault();
+       
+      
+       
         $('#salarynggError').html(' ');
         $('#positionnggError').html(' ');
 
@@ -1493,67 +1922,143 @@ $(document).ready(function(){
         $('#expidError').html(' ');
         $('#address2Error').html(' ');
         $('#address1Error').html(' ');
-        $('#gender').html(' ');
+        $('#genderError').html(' ');
+
+ $('#allError').html(' ');
 
 
+           if($("#salaryngg").val() == ''  ){
 
-           if( $("#salaryngg").val() == ''  ||  $("#positionngg").val() == ''||   $("#fronname").val() == ''||  $("#name").val() == ''||  $("#lastname").val() == ''||  $("#image").val() == ''|| 
-           
-           $("#nikname").val() == ''||   $("#birthday").val() == ''||  $("#age").val() == ''|| $("#gender").val() == ''||   $("#weight").val() == ''|| $("#height").val() == ''|| 
-           
-           $("#nationality").val() == ''||   $("#race").val() == ''||   $("#religion").val() == ''||  $("#brothers").val() == ''|| $("#number").val() == ''||  $("#idcard").val() == ''|| 
-           
-           $("#issued").val() == ''||   $("#issueddate").val() == ''||  $("#expid").val() == ''|| $("#address2").val() == ''|| $("#address1").val() == ''
-           
-           
-            ){
-                $("#salarynggError").html('*จำเป็นต้องระบุ');
-                $("#positionnggError").html('*จำเป็นต้องระบุ');
-                $("#fronnameError").html('*จำเป็นต้องระบุ');
-                $("#positionnggError").html('*จำเป็นต้องระบุ');
-
-
-                  $("#nameError").html('*จำเป็นต้องระบุ');
-                  $("#lastnameError").html('*จำเป็นต้องระบุ');
-                  $("#niknameError").html('*จำเป็นต้องระบุ');
-                  $("#birthdayError").html('*จำเป็นต้องระบุ');
-                  $("#ageError").html('*จำเป็นต้องระบุ');
-                  $("#weightError").html('*จำเป็นต้องระบุ');
-                  $("#heightError").html('*จำเป็นต้องระบุ');
-                  $("#raceError").html('*จำเป็นต้องระบุ');
-                  $("#religionError").html('*จำเป็นต้องระบุ');
-                  $("#numberError").html('*จำเป็นต้องระบุ');
-                  $("#idcardError").html('*จำเป็นต้องระบุ');
-                  $("#issuedError").html('*จำเป็นต้องระบุ');
-                  $("#issueddateError").html('*จำเป็นต้องระบุ');
-                  $("#expidError").html('*จำเป็นต้องระบุ');
-                  $("#address2Error").html('*จำเป็นต้องระบุ');
-                  $("#address1Error").html('*จำเป็นต้องระบุ');
-                  $("#genderError").html('*จำเป็นต้องระบุ');
-                  $("#imageError").html('*จำเป็นต้องอัพโหลด');
-                  $("#nationalityError").html('*จำเป็นต้องระบุ');
-                  $("#brothersError").html('*จำเป็นต้องระบุ');
-
-                 
-
-                
-
-
-
-
-
-
- 
- 
- 
- $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
-
-               return false;
+             $("#salarynggError").html('*จำเป็นต้องระบุ');
+            $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+            return false;
            }
 
-           if{}
+        else   if ($("#positionngg").val() == '' ){
+                $("#positionnggError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+                return false;
+           }
+           
+           
+           else if ( $("#fronname").val() == ''){
+                $("#fronnameError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           
+           else  if ( $("#name").val() == ''){
+                $("#nameError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           
+           else  if ($("#lastname").val() == ''){
+                $("#lastnameError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           
+           else if ($("#image").val() == '' ){
+                $("#imageError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           
+           else  if ( $("#nikname").val() == ''){
+                $("#niknameError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           
+           else  if ( $("#birthday").val() == ''){
+                $("#birthdayError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           else if (  $("#age").val() == ''){
+                $("#ageError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+
+           }
+           
+           
+           else if (  $("#gender").val() == ''){
+                $("#genderError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           
+           else   if ( $("#weight").val() == ''){
+                $("#weightError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+
+           }
+           
+           else   if ( $("#height").val() == '' ){
+                $("#heightError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           
+           else if ( $("#race").val() == ''){
+                $("#raceError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           
+           else if ($("#religion").val() == ''){
+                $("#religionError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+
+           else if($("#brothers").val() == ''){
+                $("#brothersError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+
+           }
+          
+           
+           else   if (  $("#number").val() == '' ){
+                $("#numberError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           else if ($("#idcard").val() == '' ){
+                $("#idcardError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+           
+           else  if( $("#issued").val() == ''){
+                $("#issuedError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+
+    else    if (  $("#issueddate").val() == ''){
+                $("#issueddateError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
         
-           else{
+
+
+       else if (    $("#expid").val() == ''){
+                $("#expidError").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+
+
+
+    else    if (  $("#address2").val() ==  ''){
+                $("#address2Error").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+
+
+      else  if (   $("#address1").val() == ''){
+                $("#address1Error").html('*จำเป็นต้องระบุ');
+                $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+           }
+else{
 
             $("#second").show();
             $('#first').hide();
@@ -1565,6 +2070,8 @@ $(document).ready(function(){
 
            
 
+           
+
 
 
 
@@ -1574,22 +2081,214 @@ $(document).ready(function(){
            });
 
 
-     $("#next-2").click(function(){
-            $("#third").show();
+     $("#next-2").click(function(e){
+
+		     e.preventDefault();
+        $('#telError').html(' ');
+      
+        $('#alivefError').html(' ');
+        $('#alivemError').html(' ');
+
+        $('#moblieError').html(' ');
+        $('#marital_statusError').html(' ');
+      
+        $('#emailError').html(' ');
+        $('#living_statusError').html(' ');
+       
+        $('#namefatherError').html(' ');
+        $('#lastfatherError').html(' ');
+        $('#occupation_fatherError').html(' ');
+        $('#namemotherError').html(' ');
+        $('#nlasrmotherError').html(' ');
+        $('#occupationmError').html(' ');
+		    $('#allError').html(' ');
+            $('#marital_statusError').html(' ');
+		   
+		       if($("#tel").val() == ''){
+
+                 $("#telError").html('*จำเป็นต้องระบุ');
+                 $("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+               return false;
+           } else if($("#marital_status").val() == ''){
+
+$("#marital_statusError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+           
+           
+           else if($("#moblie").val() == ''){
+
+$("#moblieError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+else if( $("#email").val() == ''){
+
+$("#emailError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+else if($("#living_status").val() == '' ){
+
+$("#living_statusError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}else if( $("#marital_statusr").val() == '' ){
+
+$("#marital_statusError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+else if(  $("#namefather").val() == ''){
+
+$("#namefatherError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+else if( $("#lastfather").val() == ''){
+
+$("#lastfatherError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+
+}
+else if( $("#occupation_father").val() == ''){
+
+$("#occupation_fatherError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}else if( $("#alivef").val() == ''){
+
+$("#alivefError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+
+else if( $("#namemother").val() == ''){
+
+$("#namemotherError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+else if($("#lasrmother").val() == ''){
+
+$("#nlasrmotherError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+
+}
+else if( $("#occupationm").val() == '' ){
+
+$("#occupationmError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}else if( $("#alivem").val() == '' ){
+
+$("#alivemError").html('*จำเป็นต้องระบุ');
+$("#all2Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+
+else{
+
+      $("#third").show();
             $('#second').hide();
             $('#progressBar').css("width","55%");
             $('#progressText').html("Step - 3");
+
+}
+
+
+
+
+      
            });
 
 
-           $("#next-3").click(function(){
+           $("#next-3").click(function(e){
+           
+
             $("#three").show();
             $('#third').hide();
             $('#progressBar').css("width","80%");
             $('#progressText').html("Step - 4");
            });
 
-            $("#next-4").click(function(){
+
+
+
+
+
+
+
+
+
+            $("#next-4").click(function(e){
+
+ e.preventDefault();
+      $('#thaisError').html(' ');
+      $('#thailError').html(' ');
+      $('#thairError').html(' ');
+
+      $('#englissError').html(' ');
+      $('#englislError').html(' ');
+      $('#englisrError').html(' ');
+
+if( $("#thais").val() == '' ){
+
+$("#thaisError").html('*จำเป็นต้องระบุ');
+$("#all3Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+if( $("#thail").val() == '' ){
+
+$("#thailError").html('*จำเป็นต้องระบุ');
+$("#all3Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+if( $("#thair").val() == '' ){
+
+$("#thairError").html('*จำเป็นต้องระบุ');
+$("#all3Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+if( $("#engliss").val() == '' ){
+
+$("#englissError").html('*จำเป็นต้องระบุ');
+$("#all3Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+if( $("#englisl").val() == '' ){
+
+$("#englislError").html('*จำเป็นต้องระบุ');
+$("#all3Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+
+if( $("#englisr").val() == '' ){
+
+$("#englisrError").html('*จำเป็นต้องระบุ');
+$("#all3Error").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
+return false;
+}
+
+
+
+
+
+
+
+
+
+
+
             $("#for").show();
             $('#three').hide();
             $('#progressBar').css("width","100%");
@@ -1643,35 +2342,35 @@ $("#prev-5").click(function(){
         $('#form_setchange1').change(function() {
           var $check = $(this);
           if ($check.prop('checked')) {
-            $("#primary").removeAttr("disabled"); 
-            $("#year1").removeAttr("disabled"); 
-            $("#year2").removeAttr("disabled"); 
-            $("#gpa").removeAttr("disabled"); 
-            $("#degree1").removeAttr("disabled"); 
-            $("#major").removeAttr("disabled");  
+            $("#primary").removeAttr("readonly"); 
+            $("#year1").removeAttr("readonly"); 
+            $("#year2").removeAttr("readonly"); 
+            $("#gpa").removeAttr("readonly"); 
+            $("#degree1").removeAttr("readonly"); 
+            $("#major").removeAttr("readonly");  
            
 
           } else {
           $("#primary").val('');
-            $("#primary").attr("disabled", "disabled"); 
+            $("#primary").attr("readonly", "readonly"); 
 
              $("#year1").val('');
-            $("#year1").attr("disabled", "disabled"); 
+            $("#year1").attr("readonly", "readonly"); 
 
              $("#year2").val('');
-            $("#year2").attr("disabled", "disabled"); 
+            $("#year2").attr("readonly", "readonly"); 
 
      
              $("#gpa").val('');
-            $("#gpa").attr("disabled", "disabled"); 
+            $("#gpa").attr("readonly", "readonly"); 
 
 
             $("#degree1").val('');
-            $("#degree1").attr("disabled", "disabled"); 
+            $("#degree1").attr("readonly", "readonly"); 
 
 
              $("#major").val('');
-            $("#major").attr("disabled", "disabled");  
+            $("#major").attr("readonly", "readonly");  
           }
        });
        
@@ -1683,35 +2382,35 @@ $("#prev-5").click(function(){
        $('#form_setchange2').change(function() {
           var $check = $(this);
           if ($check.prop('checked')) {
-            $("#secondary").removeAttr("disabled"); 
-            $("#year3").removeAttr("disabled"); 
-            $("#year4").removeAttr("disabled"); 
-            $("#gpas").removeAttr("disabled"); 
-            $("#degree2").removeAttr("disabled"); 
-            $("#majors").removeAttr("disabled");  
+            $("#secondary").removeAttr("readonly"); 
+            $("#year3").removeAttr("readonly"); 
+            $("#year4").removeAttr("readonly"); 
+            $("#gpas").removeAttr("readonly"); 
+            $("#degree2").removeAttr("readonly"); 
+            $("#majors").removeAttr("readonly");  
            
 
           } else {
           $("#secondary").val('');
-            $("#secondary").attr("disabled", "disabled"); 
+            $("#secondary").attr("readonly", "readonly"); 
 
              $("#year3").val('');
-            $("#year3").attr("disabled", "disabled"); 
+            $("#year3").attr("readonly", "readonly"); 
 
              $("#year4").val('');
-            $("#year4").attr("disabled", "disabled"); 
+            $("#year4").attr("readonly", "readonly"); 
 
      
              $("#gpas").val('');
-            $("#gpas").attr("disabled", "disabled"); 
+            $("#gpas").attr("readonly", "readonly"); 
 
 
             $("#degree2").val('');
-            $("#degree2").attr("disabled", "disabled"); 
+            $("#degree2").attr("readonly", "readonly"); 
 
 
              $("#majors").val('');
-            $("#majors").attr("disabled", "disabled");  
+            $("#majors").attr("readonly", "readonly");  
           }
        });
        
@@ -1722,35 +2421,35 @@ $("#prev-5").click(function(){
        $('#form_setchange3').change(function() {
           var $check = $(this);
           if ($check.prop('checked')) {
-            $("#vocation").removeAttr("disabled"); 
-            $("#year5").removeAttr("disabled"); 
-            $("#year6").removeAttr("disabled"); 
-            $("#gpav").removeAttr("disabled"); 
-            $("#degree3").removeAttr("disabled"); 
-            $("#majorv").removeAttr("disabled");  
+            $("#vocation").removeAttr("readonly"); 
+            $("#year5").removeAttr("readonly"); 
+            $("#year6").removeAttr("readonly"); 
+            $("#gpav").removeAttr("readonly"); 
+            $("#degree3").removeAttr("readonly"); 
+            $("#majorv").removeAttr("readonly");  
            
 
           } else {
           $("#vocation").val('');
-            $("#vocation").attr("disabled", "disabled"); 
+            $("#vocation").attr("readonly", "readonly"); 
 
              $("#year5").val('');
-            $("#year5").attr("disabled", "disabled"); 
+            $("#year5").attr("readonly", "readonly"); 
 
              $("#year6").val('');
-            $("#year6").attr("disabled", "disabled"); 
+            $("#year6").attr("readonly", "readonly"); 
 
      
              $("#gpav").val('');
-            $("#gpav").attr("disabled", "disabled"); 
+            $("#gpav").attr("readonly", "readonly"); 
 
 
             $("#degree3").val('');
-            $("#degree3").attr("disabled", "disabled"); 
+            $("#degree3").attr("readonly", "readonly"); 
 
 
              $("#majorv").val('');
-            $("#majorv").attr("disabled", "disabled");  
+            $("#majorv").attr("readonly", "readonly");  
           }
        });
        
@@ -1762,35 +2461,35 @@ $("#prev-5").click(function(){
        $('#form_setchange4').change(function() {
           var $check = $(this);
           if ($check.prop('checked')) {
-            $("#diploma").removeAttr("disabled"); 
-            $("#year7").removeAttr("disabled"); 
-            $("#year8").removeAttr("disabled"); 
-            $("#gpad").removeAttr("disabled"); 
-            $("#degree4").removeAttr("disabled"); 
-            $("#majord").removeAttr("disabled");  
+            $("#diploma").removeAttr("readonly"); 
+            $("#year7").removeAttr("readonly"); 
+            $("#year8").removeAttr("readonly"); 
+            $("#gpad").removeAttr("readonly"); 
+            $("#degree4").removeAttr("readonly"); 
+            $("#majord").removeAttr("readonly");  
            
 
           } else {
           $("#diploma").val('');
-            $("#diploma").attr("disabled", "disabled"); 
+            $("#diploma").attr("readonly", "readonly"); 
 
              $("#year7").val('');
-            $("#year7").attr("disabled", "disabled"); 
+            $("#year7").attr("readonly", "readonly"); 
 
              $("#year8").val('');
-            $("#year8").attr("disabled", "disabled"); 
+            $("#year8").attr("readonly", "readonly"); 
 
      
              $("#gpad").val('');
-            $("#gpad").attr("disabled", "disabled"); 
+            $("#gpad").attr("readonly", "readonly"); 
 
 
             $("#degree4").val('');
-            $("#degree4").attr("disabled", "disabled"); 
+            $("#degree4").attr("readonly", "readonly"); 
 
 
              $("#majord").val('');
-            $("#majord").attr("disabled", "disabled");  
+            $("#majord").attr("readonly", "readonly");  
           }
        });
        
@@ -1800,35 +2499,35 @@ $("#prev-5").click(function(){
        $('#form_setchange5').change(function() {
           var $check = $(this);
           if ($check.prop('checked')) {
-            $("#bachelor").removeAttr("disabled"); 
-            $("#year9").removeAttr("disabled"); 
-            $("#year10").removeAttr("disabled"); 
-            $("#gpab").removeAttr("disabled"); 
-            $("#degree5").removeAttr("disabled"); 
-            $("#majorb").removeAttr("disabled");  
+            $("#bachelor").removeAttr("readonly"); 
+            $("#year9").removeAttr("readonly"); 
+            $("#year10").removeAttr("readonly"); 
+            $("#gpab").removeAttr("readonly"); 
+            $("#degree5").removeAttr("readonly"); 
+            $("#majorb").removeAttr("readonly");  
            
 
           } else {
           $("#bachelor").val('');
-            $("#bachelor").attr("disabled", "disabled"); 
+            $("#bachelor").attr("readonly", "readonly"); 
 
              $("#year9").val('');
-            $("#year9").attr("disabled", "disabled"); 
+            $("#year9").attr("readonly", "readonly"); 
 
              $("#year10").val('');
-            $("#year10").attr("disabled", "disabled"); 
+            $("#year10").attr("readonly", "readonly"); 
 
      
              $("#gpab").val('');
-            $("#gpab").attr("disabled", "disabled"); 
+            $("#gpab").attr("readonly", "readonly"); 
 
 
             $("#degree5").val('');
-            $("#degree5").attr("disabled", "disabled"); 
+            $("#degree5").attr("readonly", "readonly"); 
 
 
              $("#majorb").val('');
-            $("#majorb").attr("disabled", "disabled");  
+            $("#majorb").attr("readonly", "readonly");  
           }
        });
        
@@ -1838,35 +2537,35 @@ $("#prev-5").click(function(){
        $('#form_setchange6').change(function() {
           var $check = $(this);
           if ($check.prop('checked')) {
-            $("#master").removeAttr("disabled"); 
-            $("#year11").removeAttr("disabled"); 
-            $("#year12").removeAttr("disabled"); 
-            $("#gpam").removeAttr("disabled"); 
-            $("#degree6").removeAttr("disabled"); 
-            $("#majorm").removeAttr("disabled");  
+            $("#master").removeAttr("readonly"); 
+            $("#year11").removeAttr("readonly"); 
+            $("#year12").removeAttr("readonly"); 
+            $("#gpam").removeAttr("readonly"); 
+            $("#degree6").removeAttr("readonly"); 
+            $("#majorm").removeAttr("readonly");  
            
 
           } else {
           $("#master").val('');
-            $("#master").attr("disabled", "disabled"); 
+            $("#master").attr("readonly", "readonly"); 
 
              $("#year11").val('');
-            $("#year11").attr("disabled", "disabled"); 
+            $("#year11").attr("readonly", "readonly"); 
 
              $("#year12").val('');
-            $("#year12").attr("disabled", "disabled"); 
+            $("#year12").attr("readonly", "readonly"); 
 
      
              $("#gpam").val('');
-            $("#gpam").attr("disabled", "disabled"); 
+            $("#gpam").attr("readonly", "readonly"); 
 
 
             $("#degree6").val('');
-            $("#degree6").attr("disabled", "disabled"); 
+            $("#degree6").attr("readonly", "readonly"); 
 
 
              $("#majorm").val('');
-            $("#majorm").attr("disabled", "disabled");  
+            $("#majorm").attr("readonly", "readonly");  
           }
        });
        
@@ -1874,35 +2573,35 @@ $("#prev-5").click(function(){
        $('#form_setchange7').change(function() {
           var $check = $(this);
           if ($check.prop('checked')) {
-            $("#otherE").removeAttr("disabled"); 
-            $("#year13").removeAttr("disabled"); 
-            $("#year14").removeAttr("disabled"); 
-            $("#gpao").removeAttr("disabled"); 
-            $("#degree7").removeAttr("disabled"); 
-            $("#majoro").removeAttr("disabled");  
+            $("#otherE").removeAttr("readonly"); 
+            $("#year13").removeAttr("readonly"); 
+            $("#year14").removeAttr("readonly"); 
+            $("#gpao").removeAttr("readonly"); 
+            $("#degree7").removeAttr("readonly"); 
+            $("#majoro").removeAttr("readonly");  
            
 
           } else {
           $("#otherE").val('');
-            $("#otherE").attr("disabled", "disabled"); 
+            $("#otherE").attr("readonly", "readonly"); 
 
              $("#year13").val('');
-            $("#year13").attr("disabled", "disabled"); 
+            $("#year13").attr("readonly", "readonly"); 
 
              $("#year14").val('');
-            $("#year14").attr("disabled", "disabled"); 
+            $("#year14").attr("readonly", "readonly"); 
 
      
              $("#gpao").val('');
-            $("#gpao").attr("disabled", "disabled"); 
+            $("#gpao").attr("readonly", "readonly"); 
 
 
             $("#degree7").val('');
-            $("#degree7").attr("disabled", "disabled"); 
+            $("#degree7").attr("readonly", "readonly"); 
 
 
              $("#majoro").val('');
-            $("#majoro").attr("disabled", "disabled");  
+            $("#majoro").attr("readonly", "readonly");  
           }
        });
        
@@ -1910,10 +2609,10 @@ $("#prev-5").click(function(){
        $('#form_setchange7').change(function() {
           var $check = $(this);
           if ($check.prop('checked')) {
-            $("#otherE").removeAttr("disabled"); 
+            $("#otherE").removeAttr("readonly"); 
           } else {
           $("#otherE").val('');
-            $("#otherE").attr("disabled", "disabled"); 
+            $("#otherE").attr("readonly", "readonly"); 
           }
        });
        
@@ -1932,13 +2631,13 @@ $("#prev-5").click(function(){
 
 if( crash1[0].checked ){
                   
-    $("#compd").attr("disabled", "disabled"); 
-    $("#compa").attr("disabled", "disabled"); 
+    $("#compd").attr("readonly", "readonly"); 
+    $("#compa").attr("readonly", "readonly"); 
                 }
                 if( crash1[1].checked ){
 
-  $("#compd").removeAttr("disabled"); 
-  $("#compa").removeAttr("disabled"); 
+  $("#compd").removeAttr("readonly"); 
+  $("#compa").removeAttr("readonly"); 
                 }
                
 
@@ -1949,13 +2648,13 @@ if( crash1[0].checked ){
  $('input[name=exitwork]').change(function() {
 
 if( exitwork[0].checked ){
-  $("#because").removeAttr("disabled"); 
+  $("#because").removeAttr("readonly"); 
                   
    
     
                 }
                 if( exitwork[1].checked ){
-                    $("#because").attr("disabled", "disabled"); 
+                    $("#because").attr("readonly", "readonly"); 
                 }
                
 
