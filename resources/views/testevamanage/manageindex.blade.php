@@ -14,7 +14,6 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
-
             <table id="employee" class="table table-bordered table-striped">
               <thead>
               <tr>

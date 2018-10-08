@@ -4,7 +4,8 @@
   <section class="content">
     <div class="row">
       <div class="col-md-6">
-          {{Form::open(['route'=>['management.update',''],'method'=>'PUT','files' => true])}}
+          {{Form::open(['route'=>['management.update',$idd],'method'=>'PUT','files' => true])}}
+          
           <br><br>
             @foreach($employee as $emp)
                   <?php  $id=$emp->nee_id;  $is_emp = $emp->nee_is_employee;  $by_emp = $emp->nee_by_employee; 
@@ -42,7 +43,19 @@
                   แบบประเมิน
                  </th>
                  <td>
-                  {{Form::text('formname',$formname,['class'=>'form-control','required'])}}  
+                  
+                  <select name="formname" class="form-control"> 
+                  @foreach($formfor as $form)
+
+                 
+                    @if($formname == $form->form)
+                     <option  value={{$form->id}} selected="true">{{$form->form}}</option>
+                    @else
+                     <option  value={{$form->id}}>{{$form->form}}</option>
+                    @endif
+                  @endforeach
+                  </select>
+
                 </td>
                </tr>
                <tr>
@@ -57,10 +70,29 @@
              <tbody>
              <tr>
                <td style="width: 50% ; height: 70px">
-                {{Form::text('is_emp_new',$is_emp_new,['class'=>'form-control','required'])}}  
+               
+                <select name="is_emp_new" class="form-control"> 
+                  @foreach($ngg_employee as $ngg_emp)
+
+                  
+                    @if($is_emp_new == $ngg_emp->nem_thai_firstname)
+                      <option value={{$ngg_emp->nem_id}} selected="true">{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
+                    @else
+                    <option value={{$ngg_emp->nem_id}}>{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
+                    @endif
+                  @endforeach
+                </select>
                </td>
                <td>
-                {{Form::text('by_emp_new',$by_emp_new,['class'=>'form-control','required'])}}  
+                <select name="by_emp_new" class="form-control"> 
+                  @foreach($ngg_employee as $ngg_emp)
+                    @if($by_emp_new == $ngg_emp->nem_thai_firstname)
+                      <option value={{$ngg_emp->nem_id}} selected="true">{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
+                    @else
+                    <option value={{$ngg_emp->nem_id}}>{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
+                    @endif
+                  @endforeach
+                </select> 
                </td>
              </tr>
              </tbody>
@@ -84,15 +116,5 @@
   </section>
 </div>
     
-
-
-
-    
-<div style="display: none;">
-                  {{Form::text('recheck',$recheck)}}  
-                  {{Form::text('enable',$enable)}}  
-                  {{Form::text('id$enable',$id)}}  
-                </div>
-      </div>
 
 @endsection

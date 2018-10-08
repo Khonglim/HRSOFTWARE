@@ -142,6 +142,103 @@ class DescriptionTableSeeder extends Seeder
             'dq_q_id' => '37',
             'dq_discription' => 'มีความคิดใหม่ๆ นำเสนอนวัฒกรรมใหม่ๆ เพื่อพัฒนางานและเพิ่มมูลค่าของงานให้เป็นประโยชน์ต่อส่วนรวมอยู่เสมอ ',
         ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '38',
+            'dq_discription' => '',
+        ]);
+         DB::table('description_question')->insert([
+            'dq_q_id' => '39',
+            'dq_discription' => '',
+        ]);
+          DB::table('description_question')->insert([
+            'dq_q_id' => '40',
+            'dq_discription' => '',
+        ]);
+           DB::table('description_question')->insert([
+            'dq_q_id' => '41',
+            'dq_discription' => '',
+        ]);
+            DB::table('description_question')->insert([
+            'dq_q_id' => '42',
+            'dq_discription' => '',
+        ]);
+             DB::table('description_question')->insert([
+            'dq_q_id' => '43',
+            'dq_discription' => '',
+        ]);
+              DB::table('description_question')->insert([
+            'dq_q_id' => '44',
+            'dq_discription' => '',
+        ]);
+               DB::table('description_question')->insert([
+            'dq_q_id' => '45',
+            'dq_discription' => '',
+        ]);
+                DB::table('description_question')->insert([
+            'dq_q_id' => '46',
+            'dq_discription' => '',
+        ]);
+
+                 DB::table('description_question')->insert([
+            'dq_q_id' => '47',
+            'dq_discription' => '',
+        ]);
+                  DB::table('description_question')->insert([
+            'dq_q_id' => '48',
+            'dq_discription' => '',
+        ]);
+                   DB::table('description_question')->insert([
+            'dq_q_id' => '49',
+            'dq_discription' => '',
+        ]);
+                    DB::table('description_question')->insert([
+            'dq_q_id' => '50',
+            'dq_discription' => '',
+        ]);
+                     DB::table('description_question')->insert([
+            'dq_q_id' => '51',
+            'dq_discription' => '',
+        ]);
+                      DB::table('description_question')->insert([
+            'dq_q_id' => '52',
+            'dq_discription' => '',
+        ]);
+                       DB::table('description_question')->insert([
+            'dq_q_id' => '53',
+            'dq_discription' => '',
+        ]);
+                        DB::table('description_question')->insert([
+            'dq_q_id' => '54',
+            'dq_discription' => '',
+        ]);
+                         DB::table('description_question')->insert([
+            'dq_q_id' => '55',
+            'dq_discription' => '',
+        ]);
+                          DB::table('description_question')->insert([
+            'dq_q_id' => '56',
+            'dq_discription' => '',
+        ]);
+                           DB::table('description_question')->insert([
+            'dq_q_id' => '57',
+            'dq_discription' => '',
+        ]);
+                            DB::table('description_question')->insert([
+            'dq_q_id' => '58',
+            'dq_discription' => '',
+        ]);
+                             DB::table('description_question')->insert([
+            'dq_q_id' => '59',
+            'dq_discription' => '',
+        ]);
+                              DB::table('description_question')->insert([
+            'dq_q_id' => '60',
+            'dq_discription' => '',
+        ]);
+                               DB::table('description_question')->insert([
+            'dq_q_id' => '61',
+            'dq_discription' => '',
+        ]);
          ////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////
@@ -221,5 +318,38 @@ class DescriptionTableSeeder extends Seeder
             'dq_q_id' => '84',
             'dq_discription' => 'กำหนดมาตรฐานการทำงานของตนและสามารถปฏิบัติได้ แสดงความกระตือรือร้นและพร้อมที่จะเรียนรู้สิ่งใหม่ๆ แสดงความตั้งใจที่จะพัฒนาตนเอง',
         ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '86',
+            'dq_discription' => '',
+        ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '87',
+            'dq_discription' => '',
+        ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '89',
+            'dq_discription' => '',
+        ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '90',
+            'dq_discription' => '',
+        ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '91',
+            'dq_discription' => '',
+        ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '92',
+            'dq_discription' => '',
+        ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '93',
+            'dq_discription' => '',
+        ]);
+        DB::table('description_question')->insert([
+            'dq_q_id' => '94',
+            'dq_discription' => '',
+        ]);
+
     }
 }

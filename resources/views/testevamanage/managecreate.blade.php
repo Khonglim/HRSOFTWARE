@@ -17,18 +17,13 @@
     div.box-header{
       text-align: center;
       font-size:35px;
-
-
     }
-
   </style>
 <div class="content-wrapper">
   <section class="content">
     <div class="row">
       <div class="col-md-10">
-         
-            {{Form::open(['url'=>'management','enctype'=>'multipart/form-data'])}}
-  
+            {{Form::open(['url'=>'management'])}}
           <br><br>
         <div class="box">
           <div class="box-header" style="text-align: center;">
@@ -47,7 +42,7 @@
                  <td>
                    <select name="by_form" class="form-control"> 
                   @foreach($formfor as $form)
-                  <option value={{$form->id}} >{{$form->form}}</option>
+                  <option  value={{$form->id}} >{{$form->form}}</option>
                   @endforeach
                 </select>
                 </td>
@@ -128,22 +123,16 @@
                 </select> 
                </td>
              </tr>
-             
-
-
              </tbody>
-
              </table>
-
               </div>
             </div>
         </div>
       </div>
+       {{ Html::link('management','Back',array('class ' => 'btn btn-primary')) }}
       {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
                                       {{ Form::close()}} 
     </div>
   </section>
 </div>
-       
- 
 @endsection
