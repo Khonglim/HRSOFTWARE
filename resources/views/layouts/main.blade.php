@@ -360,6 +360,8 @@ body {
                     <li><a href="{{url('/summeva') }}">สรุปผลประเมินv1</a></li>
                     <li><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
                     <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
+                    <li><a href="{{url('/nggemployee') }}">จัดการพนักงาน</a></li>
+                    <li><a href="{{url('/timeattendant') }}">จัดการเวลาผู้ประเมิน</a></li>
                   </ul>
                 </li>
               
@@ -372,8 +374,6 @@ body {
                @endif
               
 
-               
-           
               <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->

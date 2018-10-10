@@ -30,9 +30,10 @@ class CreateNggEmployeeTable extends Migration
             $table->tinyInteger('nem_department_id');
             $table->tinyInteger('nem_sector_id');
             $table->tinyInteger('nem_level_id');
-            $table->string('nem_remark');
+            $table->string('nem_remark')->nullable();
             $table->tinyInteger('nem_enable')->default('1');
             
+            $table->timestamps();
         });
     }
 

@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ngg_employee extends Model
+class Ngg_department extends Model
 {
-    protected $table = 'ngg_employee';
+   protected $table = 'ngg_department';
     public $timestamps = true;
 }

@@ -77,6 +77,9 @@ Route::get('evatestversion','Evatesting2v2Controller@index');
 
 Route::resource('management','EvamanagementController');
 
+Route::resource('timeattendant','TimeattendantController');
+
+Route::resource('nggemployee','NggemployeeController');
 
 Auth::routes();
 Route::get('/', function () 

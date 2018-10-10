@@ -35,7 +35,8 @@ class DatabaseSeeder extends Seeder
         $this->call(Partofv2TableSeeder::class);
         $this->call(Questionv2TableSeeder::class);
         $this->call(DescriptionTableSeeder::class);
-       
+        $this->call(Ngg_companyTableSeeder::class);
+        $this->call(Ngg_departmentTableSeeder::class);
 
     }
 }

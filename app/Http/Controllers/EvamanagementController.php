@@ -201,7 +201,7 @@ class EvamanagementController extends Controller
             ->where('nee_id', $id)
             ->update(['nee_by_employee' => Input::get('by_emp_new')]);
             }
-        Session::flash('flash_message','บันทึกสำเร็จ!!');
+        Session::flash('flash_message','บันทึกการแก้ไขเรียบร้อย!!');
         return redirect()->route("home");
     }
 
