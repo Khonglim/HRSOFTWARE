@@ -204,7 +204,7 @@
                                     
                                                                                 <div class="form-group label-floating">
                                                                                     <label class="control-label">สถานะทางทหาร<small class="text-danger">*</small></label> 
-                                                                                    {{ Form::select('military_service', [''=>'เลือก','-' =>'ไม่มี','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control','required']) }}
+                                                                                    {{ Form::select('military_service', [''=>'เลือก','-' =>'ไม่มี','ได้รับการยกเว้น' => 'ได้รับการยกเว้น','ศึกษาวิชาทหาร' => 'ศึกษาวิชาทหาร','ผ่านการเกณฑ์ทหาร' => 'ผ่านการเกณฑ์ทหาร'],null, ['class' => 'form-control']) }}
                                                                                
                                                                                 
                                                                             </div>
@@ -934,7 +934,7 @@
         <div class= "col-md-4">
                 <div class="form-group "> 
                           <label class="control-label">สถาบัน:</label>
-                          {{Form::text('bachelor','',['class'=>'form-control','required','id'=>'bachelor','readonly'])}}
+                          {{Form::text('bachelor','',['class'=>'form-control','id'=>'bachelor','readonly'])}}
                                                                                                                    
                                                                                                                                                       
      </div>
@@ -943,7 +943,7 @@
  <div class= "col-md-4">
         <div class="form-group "> 
                 <label class="control-label">เริ่มปีการศึกษา</label>
-                {{Form::text('year9','',['class'=>'form-control','required','id'=>'year9','readonly'])}}
+                {{Form::text('year9','',['class'=>'form-control','id'=>'year9','readonly'])}}
                                                                                                                                             
                                                                                                                                               
 </div>
@@ -953,7 +953,7 @@
 <div class="form-group "> 
         <label class="control-label">จบปีการศึกษา</label>
 
-        {{Form::text('year10','',['class'=>'form-control','required','id'=>'year10','readonly'])}}                       
+        {{Form::text('year10','',['class'=>'form-control','id'=>'year10','readonly'])}}                       
                                                                                                                                       
 </div>
 </div>
@@ -963,7 +963,7 @@
         <div class="form-group "> 
                 <label class="control-label">เกรดเฉลี่ย</label>
 
-                {{Form::text('gpab','',['class'=>'form-control','required','id'=>'gpab','readonly'])}}    
+                {{Form::text('gpab','',['class'=>'form-control','id'=>'gpab','readonly'])}}    
                                                                                                                                               
 </div>
 </div>
@@ -973,7 +973,7 @@
     <div class="form-group "> 
                 <label class="control-label">สาขา</label>
           
-                {{Form::text('majorb','',['class'=>'form-control','required','id'=>'majorb','readonly'])}}                                             
+                {{Form::text('majorb','',['class'=>'form-control','id'=>'majorb','readonly'])}}                                             
                                                                                                                                           
 </div>
 </div>    
@@ -982,7 +982,7 @@
 <div class="form-group "> 
                 <label class="control-label">วุฒิที่ได้รับ</label>
          
-                {{Form::text('degree5','',['class'=>'form-control','required','id'=>'degree5','readonly'])}}   
+                {{Form::text('degree5','',['class'=>'form-control','id'=>'degree5','readonly'])}}   
 
              
                                                                                                                                   
@@ -1538,22 +1538,22 @@
                                           <div class="row">
                                                   <div class="col-md-1"></div>
                                               <div class="col-md-3">
-                                                      <div class="input-group">
+                                                   
                                                               <div class="form-group ">
                                                                   <label >ระยะงานเริ่ม</label>
                                                                   {{Form::date('start_job_duration5','',['class'=>'form-control','id'=>'start_job_duration5'])}}
-                                                                  <b  class="text-danger" id="start_job_duration5Error"></b> 
+                                                                  <b  class="text-danger" id="start_job_duration5Error" ></b> 
                                                              </div>
-                                                          </div> 
+                                                         
                                                
                                               </div>
                                               <div class="col-md-3">
-                                                      <div class="input-group">
+                                                    
                                                               <div class="form-group ">
                                                                   <label>ระยะงานสิ้นสุด</label>
                                                                   {{Form::date('end_job_duration6','',['class'=>'form-control','id'=>'end_job_duration6'])}} 
                                                                   <b  class="text-danger" id="end_job_duration6Error"></b> 
-                                                             </div>
+                                                            
                                                   </div> 
                                               </div>
                                               
@@ -1563,12 +1563,12 @@
                                           <div class="row">
                                                   <div class="col-md-1"></div>
                                               <div class="col-md-3">
-                                                      <div class="input-group">
+                                                     
                                                               <div class="form-group ">
                                                                   <label class="control-label" >สาเหตุที่ออก</label>
                                                                   {{Form::text('reasonLeaving3','',['class'=>'form-control','id'=>'reasonLeaving3'])}} 
                                                                   <b  class="text-danger" id="reasonLeaving3Error"></b> 
-                                                             </div>
+                                                            
                                                   </div> 
                                                  
                                               </div>
