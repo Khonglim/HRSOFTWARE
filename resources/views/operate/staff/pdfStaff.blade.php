@@ -1,6 +1,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt">
     <style>
         @font-face {
             font-family: 'THSarabunNew';
@@ -49,21 +52,23 @@
 <body>
 <div class="page-break">
         <p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
-    <center><h3>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</h3></center>
+        <center><h2>แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2></center>
+        <p align = "center"><font size = "18"><b>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</b></font></p>
     <b>1. ระดับในการประเมินผล</b><br>
-    ดีมาก           =   ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
-    ดี           =   ผลการปฎิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br>
-    พอใช้           =   ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br>
-    ต้องปรับปรุง      =   ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
+    <dd>4 ดีมาก           =   ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br></dd>
+    <dd>3 ดี           =   ผลการปฎิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br></dd>
+    <dd>2 พอใช้           =   ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br></dd>
+    <dd>1 ต้องปรับปรุง      =   ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br></dd>
     <b>2.การประเมินผลให้แยกประเมินผลตามหัวข้อประเมิน และคิดคะแนนรวมดังนี้</b><br>
-    2.1. ระดับพนักงานทั่วไป         ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60 <br>
-    2.2. ระดับหัวหน้างานขึ้นไป       ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br>
+    <dd>2.1. ระดับพนักงานทั่วไป         ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. <u>ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60</u><br></dd>
+    <dd>2.2. ระดับหัวหน้างานขึ้นไป       ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br></dd>
     <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
-    <b>4. เขียนเครื่องหมาย ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
-    <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</b><br>
+    <b>4. เขียนเครื่องหมาย <input type="checkbox" checked> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
+    <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br>
 </div>
 <div class="page-break"> 
 <center><h3>แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h3></center>       
+    <b>บริษัท : </b>...........................................<br>
     <b>ชื่อ-นามสกุล :</b> 
         @foreach ( $personal as $item2)
             @if( $item2->id == $operate_staff->id_posinal )
@@ -77,11 +82,11 @@
     <table>
         <tbody>
             <tr>
-                <td align="center" rowspan="2">หัวข้อการประเมิน (100 คะแนน)</td>
+                <td align="center" rowspan="2">หัวข้อการประเมิน (100 คะแนน)<br>เงื่อนไขการให้คะแนนจะจัดแบ่งดังนี้<br>4 ดีมาก 3 ดี 2 พอใช้ 1 ต้องปรับปรุง</td>
                 <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
             </tr>
             <tr>
-                <td align="center">ประเมินรอบ 60 วัน</td><td align="center">ประเมินรอบ 90 วัน</td>
+                <td align="center">ประเมินรอบ 60 วัน</td><td align="center">ประเมินรอบ 90 วัน</td> 
             </tr>
             <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
             <tr>
@@ -160,25 +165,24 @@
                 <td align="center">{{$operate_staff->chioce15_90}}</td>
             </tr>
             <tr>
-                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <font color="red">{{$operate_staff->subtotal_60}}</font> คะแนน ประเมินครั้งที่ 2 : 90 วัน <font color="red">{{$operate_staff->subtotal_90}} </font>คะแนน <b>(รวมกันหาร2) = <font color="red">{{$operate_staff->subtotal_final}}</font></b></td>
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <u><font color="red">{{$operate_staff->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate_staff->subtotal_90}} </font></u>คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate_staff->subtotal_final}}</font></u></b></td>
             </tr>
         </tbody>
     </table> 
-</div>    
-<div class="page-break"> 
-    <b>ความคิดเห็นเพิ่มเติม</b><br>
-        (สำหรับผู้ประเมิน)
+    <b>ความคิดเห็นเพิ่มเติม การประเมิน 60 วัน (สำหรับผู้ประเมิน)</b><br>
         <table>
             <tbody>
                 <tr>
-                    <td align="center">ความคิดเห็นจาก 60 วัน</td>
-                    <td align="center">ความคิดเห็นจาก 90 วัน</td>
+                    <td align="center">ความคิดเห็นการประเมิน 60 วัน</td>
+                    <td align="center">ความคิดเห็นการประเมิน 90 วัน</td>
                 </tr>
                 <tr>
                     <td>{{$operate_staff->comments_60}}</td>
                     <td>{{$operate_staff->comments_90}}</td>
                 </tr>
-                <tr>
+            </tbody></table>
+            <table><tbody> 
+            <tr>
                     <td colspan="2">
                             <b>จุดเด่นของพนักงาน :</b> {{$operate_staff->comments_featured}}<br>
                             <b>จุดด้อยของพนักงาน :</b> {{$operate_staff->comments_weakness}} <br>
@@ -196,17 +200,17 @@
                             @endif
                     </td>
                 </tr>
-            </table><br>
+            </tbody></table><br>
                 <table>
                     <tbody>
                         <tr>
-                            <td align="center">ผู้ประเมิน : ...........................................<br> ( คุณ{{$operate_staff->name_rate_60}} ) <br>ผู้บังคับบัญชาต้นสังกัด</td>
+                            <td align="center">ผู้ประเมิน : ...........................................<br> ( คุณ{{$operate_staff->name_rate_60}} ) <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน....../....../......</td>
                             <td align="center">ผู้ถูกประเมิน : ...........................................<br> 
                                 ( คุณ @foreach ( $personal as $item2)
                                 @if( $item2->id == $operate_staff->id_posinal )
                                     {{$item2->name}} {{$item2->lastname}}
                                 @endif
-                            @endforeach) <br>พนักงานผู้ถูกประเมิน</td>
+                            @endforeach) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
                         </tr>  
                     </tbody>
                 </table>
@@ -216,11 +220,10 @@
                 <tbody>
                     <tr><td align="center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></td></tr>
                     <tr>
-                        <td></td>    
+                        <td align="center" rowspan="2"><b>หัวข้อการประเมิน (โปรดระบุคะแนน)</b></td> 
                         <td align="center" colspan="3"><b>ระบุคะแนน</b></td>
                     </tr>    
                     <tr>
-                        <td align="center"><b>หัวข้อการประเมิน</b></td>
                         <td align="center">10-8 ดี</td>
                         <td align="center">7-5 พอใช้</td>
                         <td align="center">4-1 ปรับปรุง</td>
@@ -416,11 +419,11 @@
             <input type="checkbox" checked>{{$operate_staff->other_suitability}} : {{$operate_staff->other_com_suitability}} <br>
         @endif 
         @if($operate_staff->namerate_suitability != '')
-            <p align = "right">ลงนาม...........................................ผู้จัดการฝ่าย <br>( คุณ{{$operate_staff->namerate_suitability}} ) </p>
+            <p align = "right">ลงนาม...........................................ผู้จัดการฝ่าย <br>( คุณ{{$operate_staff->namerate_suitability}} )<br>วันที่การประเมิน....../....../......</p>
         @endif
     </td></tr></table> <br><br>
 <table>
-    <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (จาก 60 วัน)</th></tr>
+    <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (ประเมิน 60 วัน)</th></tr>
     <tr>
         <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
         <td style="text-align:center">ลาป่วย(วัน )</td>
@@ -439,9 +442,9 @@
         <td style="text-align:center">{{$operate_staff->line_terms_60}}</td>
         <td style="text-align:center">{{$operate_staff->line_min_60}}</td>
     </tr>
-</table>
+</table> <br><br>
 <table>
-    <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th></tr>
+    <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (ประเมิน 90 วัน)</th></tr>
     <tr>
         <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
         <td style="text-align:center">ลาป่วย(วัน )</td>
@@ -460,7 +463,7 @@
         <td style="text-align:center">{{$operate_staff->line_terms_90}}</td>
         <td style="text-align:center">{{$operate_staff->line_min_90}}</td>
     </tr>
-</table>
+</table> <br>
 <table>
     <tbody>
         <tr><td colspan="3" align="center"><b>สรุปผลการประเมิน</b></td></tr>
@@ -510,7 +513,7 @@
                     <input type="checkbox" checked>อื่นๆ {{$operate_staff->human_resource_othercom}}
                 <br>@endif 
                 @if($operate_staff->human_resource_nre != '')
-                    <p align = "right">ลงนาม...........................................ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_staff->human_resource_nre}} ) </p>
+                    <p align = "right">ลงนาม...........................................ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_staff->human_resource_nre}} )<br>วันที่การประเมิน....../....../......</p>
                 @endif
             </td>
         </tr>
@@ -540,7 +543,7 @@
                     <input type="checkbox" checked>อื่นๆ {{$operate_staff->manager_resource_othercom}}
                 <br>@endif 
                 @if($operate_staff->manager_resource_nre != '')
-                    <p align = "right">ลงนาม...........................................ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_staff->manager_resource_nre}} ) </p>
+                    <p align = "right">ลงนาม...........................................ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_staff->manager_resource_nre}} )<br>วันที่การประเมิน....../....../......</p>
                 @endif
                 </td>
             </tr>

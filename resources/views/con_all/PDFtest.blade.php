@@ -78,7 +78,7 @@
             <tbody>
               <tr>
                 <td style="text-align:center"><b>ชื่อ:</b> {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}}</td>
-                <td style="text-align:center"><b>ตำแหน่ง:</b>
+                <td style="text-align:center"><b>ตำแหน่ง:</b> {{$personal->positionngg}}
 
                  <?php $s=0;  ?>
                   @foreach ($comment_sup as $conm )
