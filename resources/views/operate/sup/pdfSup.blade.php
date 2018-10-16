@@ -547,19 +547,19 @@
                         <input type="checkbox" checked>ให้บรรจุเป็นพนักงานประจำ
                     @endif
                     @if($operate_sup->human_resource_modi == 'ปรับอัตราเงินเดือน')
-                        <input type="checkbox" checked>ปรับอัตราเงินเดือน {{$operate_sup->human_resource_commo}}
+                        <input type="checkbox" checked>ปรับอัตราเงินเดือน <u>{{$operate_sup->human_resource_commo}}</u>
                     <br>@endif
                     @if($operate_sup->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                        <input type="checkbox" checked>ยังไม่ปรับอัตราเงินเดือน {{$operate_sup->human_resource_comno}}
+                        <input type="checkbox" checked>ยังไม่ปรับอัตราเงินเดือน <u>{{$operate_sup->human_resource_comno}}</u>
                     <br>@endif
                     @if($operate_sup->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                    <input type="checkbox" checked>ให้ปรับตำแหน่งเป็น {{$operate_sup->human_resource_posi}} และปรับเงินเดือน
+                    <input type="checkbox" checked>ให้ปรับตำแหน่งเป็น <u>{{$operate_sup->human_resource_posi}}</u> และปรับเงินเดือน
                     <br>@endif
                     @if($operate_sup->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
-                        <input type="checkbox" checked>ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate_sup->human_resource_date}}
+                        <input type="checkbox" checked>ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate_sup->human_resource_date}}</u>
                     <br>@endif 
                     @if($operate_sup->human_resource_other == 'อื่นๆ')
-                        <input type="checkbox" checked>อื่นๆ {{$operate_sup->human_resource_othercom}}
+                        <input type="checkbox" checked>อื่นๆ <u>{{$operate_sup->human_resource_othercom}}</u>
                     <br>@endif 
                     @if($operate_sup->human_resource_nre != '')
                         <p align = "right">ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->human_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
