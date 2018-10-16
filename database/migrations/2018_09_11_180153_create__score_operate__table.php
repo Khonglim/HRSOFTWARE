@@ -15,6 +15,7 @@ class CreateScoreOperateTable extends Migration
     {
         Schema::create('_score_operate_', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('meaning_operate');
             $table->integer('score_operate');
         });
     }

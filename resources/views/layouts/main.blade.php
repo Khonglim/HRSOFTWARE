@@ -333,10 +333,10 @@ body {
                 <li class="active"  ><a href="{{url('/home') }}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
                 <li class="active"  ><a href="{{url('/ngg_work')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
                 <li class="active"  ><a href="{{url('/interview') }}"><i class="glyphicon glyphicon-user"></i> <span>แบบประเมินผลสัมภาษณ์</span></a></li>
-             <!--    <li class="active"  ><a href="{{url('/operate_employf')  }}"><i class="fa  fa-pencil"></i> <span>แบบประเมินผลการปฏิบัติงาน</span></a></li> 
+               <li class="active"  ><a href="{{url('/operate_employf')  }}"><i class="fa  fa-pencil"></i> <span>แบบประเมินผลการปฏิบัติงาน</span></a></li> 
                  <li class="active"  ><a href="{{url('/operate_report*')  }}"><i class="fa   fa-eyedropper"></i> <span>รายงานทดลองงานปฏิบัติการ</span></a></li> 
                 <li class="active"  ><a href="{{url('/operate_report**')  }}"><i class="fa   fa-eyedropper"></i> <span>รายงานทดลองงานบังคับบัญชา</span></a></li> 
-             -->
+             
 
                 <li class="treeview">
                   <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>

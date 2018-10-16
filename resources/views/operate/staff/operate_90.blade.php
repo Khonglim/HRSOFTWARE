@@ -243,7 +243,7 @@
                                             @foreach ($operate_Chioce as $item)
                                                 
                                              
-                                            <input type="radio" id="score90_{{$operate_qSef->id}}" name="score90_{{$operate_qSef->id}}" value={{$item->score_operate}} required > {{$item->score_operate}}&ensp;
+                                            <input type="radio" id="score90_{{$operate_qSef->id}}" name="score90_{{$operate_qSef->id}}" value={{$item->score_operate}} required > {{$item->score_operate}}  {{$item->meaning_operate}}&ensp;
                         
                         
                                             @endforeach

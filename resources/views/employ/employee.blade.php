@@ -19,8 +19,11 @@
             <table id="employee" class="table table-bordered table-striped">
               <thead>
               <tr>
+                  <th>วันที่สมัคร ปี-เดือน-วัน</th>
                 <th>ชื่อ</th>
                 <th>นามสกุล</th>
+                <th>ตำแหน่ง</th>
+               
                 <th>เพิ่มเติ่ม</th>
               </tr>
               </thead>
@@ -28,9 +31,10 @@
                 @forelse($personal as $l)
                 @if($l['enable']==1)
                <tr>
-             <td> {{$l['name']}} </td>
+                  <td> {{$l['created_at']}} นาที </td> 
+             <td> {{$l['fronname']}} {{$l['name']}} </td>
              <td> {{$l['lastname']}} </td>
-            
+             <td> {{$l['positionngg']}} </td>
              <td>  
                   <a href="{{'employee/'.$l['id']}}" class="btn btn-primary btn-xs" ><i class="fa fa-search"></i></a>
                   <a href="{{'employee/'.$l['id'].'/edit'}}" class="btn btn-warning btn-xs " ><i class="fa fa-pencil"></i></a>
@@ -68,8 +72,10 @@
               </tbody>
               <tfoot>
               <tr>
+                  <th>วันที่สมัคร ปี-เดือน-วัน</th>
                   <th>ชื่อ</th>
                   <th>นามสกุล</th>
+                  <th>ตำแหน่ง</th>
                   <th>เพิ่มเติ่ม</th>
               </tr>
               </tfoot>
