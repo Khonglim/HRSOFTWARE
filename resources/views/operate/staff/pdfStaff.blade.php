@@ -294,15 +294,15 @@
                     @if($operate_staff->human_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
                     <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ @endif @if($operate_staff->human_resource_modi
                     == 'ปรับอัตราเงินเดือน')
-                    <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน <u>{{$operate_staff->human_resource_commo}}</u>
+                    <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน: <u>{{$operate_staff->human_resource_commo}}</u>
                     <br>@endif @if($operate_staff->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                    <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน<u>{{$operate_staff->human_resource_comno}}</u> 
+                    <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน:<u>{{$operate_staff->human_resource_comno}}</u> 
                     <br>@endif @if($operate_staff->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น<u> {{$operate_staff->human_resource_posi}}</u> และปรับเงินเดือน
+                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น:<u> {{$operate_staff->human_resource_posi}}</u> และปรับเงินเดือน
                     <br>@endif @if($operate_staff->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
                     <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u>{{$operate_staff->human_resource_date}}</u>
                     <br>@endif @if($operate_staff->human_resource_other == 'อื่นๆ')
-                    <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate_staff->human_resource_othercom}}</u>
+                    <input type="checkbox" checked="checked">อื่นๆ: <u>{{$operate_staff->human_resource_othercom}}</u>
                     <br>@endif 
                 </td>
             </tr>
@@ -327,16 +327,16 @@
                 <td>
                     @if($operate_staff->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
                     <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ @endif @if($operate_staff->manager_resource_modi == 'ปรับอัตราเงินเดือน')
-                    <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน <u> {{$operate_staff->manager_resource_comdi}} </u>
+                    <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน: <u> {{$operate_staff->manager_resource_comdi}} </u>
                     <br>@endif @if($operate_staff->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                    <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน <u> {{$operate_staff->manager_resource_comno}}</u>
+                    <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน: <u> {{$operate_staff->manager_resource_comno}}</u>
                     <br>@endif @if($operate_staff->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น <u>  {{$operate_staff->manager_resource_posi}}</u>
+                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น: <u>  {{$operate_staff->manager_resource_posi}}</u>
                     และปรับเงินเดือน
                     <br>@endif @if($operate_staff->manager_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่')
                     <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:<u>{{$operate_staff->manager_resource_date}}</u>
                     <br>@endif @if($operate_staff->manager_resource_other == 'อื่นๆ')
-                    <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate_staff->manager_resource_othercom}} </u>
+                    <input type="checkbox" checked="checked">อื่นๆ: <u>{{$operate_staff->manager_resource_othercom}} </u>
                     <br>@endif
 
                 </td>

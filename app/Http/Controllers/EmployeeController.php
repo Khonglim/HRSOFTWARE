@@ -378,6 +378,7 @@ class EmployeeController extends Controller
         $personal =  Personal::find($id);
         $personal->salaryngg = $request->salaryngg;
         $personal->positionngg = $request->positionngg;
+        $personal->talent = $request->talent;
         $personal->name = $request->name;
         $personal->lastname = $request->lastname;
         $personal->nikname = $request->nikname;
@@ -561,7 +562,7 @@ class EmployeeController extends Controller
         $personal->degree6 = $request->degree6;
         $personal->degree7 = $request->degree7;
        
-        $personal->talent = $request->talent;
+       
 
         $personal->portfolio1 = $request->portfolio1;
         $personal->portfolio2 = $request->portfolio2;
