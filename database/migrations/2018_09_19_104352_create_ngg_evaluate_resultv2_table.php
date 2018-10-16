@@ -16,6 +16,7 @@ class CreateNggEvaluateResultv2Table extends Migration
         Schema::create('ngg_evaluate_resultv2', function (Blueprint $table) {
              $table->increments('nes_id');
             $table->integer('nes_q_id');
+            $table->integer('nes_q_form');
             $table->integer('nes_q_point');
             $table->integer('nes_evaluate_employee_id');
             $table->tinyInteger('nes_enable')->default('1');

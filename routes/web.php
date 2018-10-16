@@ -69,9 +69,16 @@ Route::get('evareport/{id}/evareportblindname','Evatesting2Controller@test5');
 Route::resource('evatestingv2','Evatestingv2Controller');
 Route::post('istestertotestv2','Evatesting2v2Controller@test');
 Route::post('starttestv2','Evatesting2v2Controller@test2');
-Route::get('evareportv2/{id}/reportv2','Evatesting2v2Controller@test3');
 Route::get('summevav2','Evatesting2v2Controller@test4');
-Route::get('evareportv2/{id}/evareportblindnamev2','Evatesting2v2Controller@test5');
+
+Route::get('evareportv2/{id}/reportv2_leader','Evatesting2v2Controller@test3leader');
+Route::get('evareportv2/{id}/evareportblindnamev2_leader','Evatesting2v2Controller@test5leader');
+
+Route::get('evareportv2/{id}/reportv2_officer','Evatesting2v2Controller@test3officer');
+Route::get('evareportv2/{id}/evareportblindnamev2_officer','Evatesting2v2Controller@test5officer');
+
+Route::get('evareportv2/{id}/reportv2_manager','Evatesting2v2Controller@test3manager');
+Route::get('evareportv2/{id}/evareportblindnamev2_manager','Evatesting2v2Controller@test5manager');
 
 Route::get('evatestversion','Evatesting2v2Controller@index');
 

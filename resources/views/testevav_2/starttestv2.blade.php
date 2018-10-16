@@ -29,11 +29,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 		div.box-header{
 			text-align: center;
 			font-size:35px;
-
-
 		}
-
-
 .demo,
 .demo p {
   margin: 4em 0;
@@ -124,7 +120,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
           <div class="box-body">
             <div class="table-responsive">
                {{Form::open(['url'=>'evatestingv2'])}}
-                <div style="display: none;" >
+                <div  >
                      {{Form::text('nee_id2',$_POST["nee_id2"])}}
                      {{Form::text('nee_id1',$_POST["nee_id1"])}} <br>
                      {{Form::text('id_employee',$_POST["id_employee"])}}<br>
@@ -133,9 +129,10 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                     </div>
                
             
+                   
               
             	 @foreach($partof as $partoftest)
-               @if($partoftest->id_form == $_POST["forms_id"])
+               @if($partoftest->id_form == $_POST["forms_id"] && $partoftest->subpart == '0')
                <table class="table table-bordered table-striped">
               <thead>
                 
@@ -175,17 +172,15 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                   <tr>
                     <?php  $i=$questiontest->id_part; $j++;?>
                       @foreach($descrip as $des) 
-                        @if($des->dq_q_id == $questiontest->id )
-
-                    
-                       @if($des->dq_discription == '')
-                    <td colspan="5" style="width: 60%;height: 70px;" >{{$questiontest->ask}} 
+                        @if($des->dq_q_id == $questiontest->id)
+                     
+                       @if($des->dq_discription == '' )
+                    <td colspan="5" style="width: 60%;height: 70px;" >{{$questiontest->ask}}
                     </td>
                        @else
                     <td colspan="5" style="width: 60%;height: 70px;" data-tooltip="{{$des->dq_discription}}">{{$questiontest->ask}} 
                     </td>
                        @endif
-                       
                         @endif
                       @endforeach
                     <td style="display: none;"><input name='t_{{$questiontest->id_part}}{{$questiontest->q_id}}' type="text" value={{$questiontest->id}}></td>
@@ -206,6 +201,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                     <input name={{$questiontest->id_part}}{{$questiontest->q_id}} type="radio" value='5' required="true" ></td>
                     
                   </tr>
+                    
                   @elseif($questiontest['id_part']==$partoftest['id_part']&&$questiontest['q_subpart']==$partoftest['subpart']&&$questiontest['point']=='-')
                   <tr>
                      <td colspan="5" style="width: 60%;height: 70px;">{{$questiontest->ask}}</td>
@@ -216,14 +212,8 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                       <textarea class="form-control" style="resize: none;" name={{$questiontest->id_part}}{{$questiontest->q_subpart}}></textarea>
                     </td>
                     
-                   
                   </tr>
-                   @elseif($questiontest['id_part']==$partoftest['id_part']&&$questiontest['q_subpart']==$partoftest['subpart']&&$questiontest['point']=='0') 
-                   <tr>
-                     <td>
-                       try
-                     </td>
-                   </tr>
+                   
                   @endif
 
                    

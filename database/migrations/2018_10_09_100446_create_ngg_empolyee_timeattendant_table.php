@@ -21,6 +21,7 @@ class CreateNggEmpolyeeTimeattendantTable extends Migration
             $table->integer('net_late');
             $table->integer('net_miss_work');
             $table->integer('net_annual_leave');
+            $table->char('net_q_subpart')->default('1');
             $table->tinyInteger('net_enable')->default('1');
             $table->timestamps();
         });

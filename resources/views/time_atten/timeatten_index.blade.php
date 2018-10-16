@@ -3,7 +3,7 @@
 <div class="content-wrapper">
   <section class="content">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-md-6">
          
           <a href="timeattendant/create" class="btn btn-success" ><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
   

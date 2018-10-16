@@ -1,8 +1,6 @@
 @extends('layouts.main')
 @section('content')
-
-
-  <style>
+ <style>
 #myDIV {
 }
 #swapname {
@@ -30,8 +28,7 @@ function myFunction() {
 }
 
 </script>
- <script src='https://www.google.com/jsapi'></script>
-
+   <script src='https://www.google.com/jsapi'></script>
 <div class="content-wrapper">
   <section class="content" >
     <div class="row">
@@ -43,12 +40,11 @@ function myFunction() {
           <!-- /.box-header -->
           <div class="box-body">
 
-            <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ ผู้ประเมิน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();
-            $data2 = array();$data3 = array();$data4 = array();$data5 = array(); $istest=''; $change=''; $change2=0;$data1change = array();
-            $data2change = array();$data3change = array();$data4change = array();$data5change = array(); $comment1 = array();$comment2 = array();$comment3 = array();$comment4 = array();$comment5 = array(); $commentcount=0; $commenttemp=''; ?>
-             
+            <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p6=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $p6final=0; $a='ชื่อ ผู้ประเมิน'; $b='';  $c=''; $d='';  $e=''; $f=''; $g='';$totle=0; $tester='';  $data1 = array();
+            $data2 = array();$data3 = array();$data4 = array();$data5 = array(); $data6 = array();$istest=''; $change=''; $change2=0;$data1change = array();
+            $data2change = array();$data3change = array();$data4change = array();$data5change = array(); $data6change = array();$comment1 = array();$comment2 = array();$comment3 = array();$comment4 = array();$comment5 = array(); $commentcount=0; $commenttemp='';?>
    
-                                @foreach($partof as $part)
+                                 @foreach($partof as $part)
 
                                  @switch($part->id_part)
                                     @case(1)
@@ -66,19 +62,21 @@ function myFunction() {
                                    @case(5)
                                       <?php $f=$part->part;?> 
                                         @break
+                                   @case(6)
+                                      <?php $g=$part->part;?> 
+                                        @break
                                 @endswitch
-
                                 
                         
-                                 @endforeach 
-                          <div id="swapname"><a href="{{'reportv2'}}" class="btn btn-primary btn-lg" ><i class="fa fa-eye fa-6" aria-hidden="true"></i></a></div>
+                                 @endforeach
+                          <div id="swapname"> <a href="{{'evareportblindnamev2_manager'}}" class="btn btn-primary btn-lg" ><i class="fa fa-eye-slash fa-6" aria-hidden="true"></i></a></div>
         
-                          <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button><br><br>
-                          
+                          <button  type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button>
+
                         <div id="myDIV" style="display: none;">
-                          <div class=" row">
+                           <div class=" row">
                             <div  class="table-responsive">
-                              <table  class="table table-bordered table-striped">
+                            <table  class="table table-bordered table-striped">
                         <thead>
                           <tr >
                             <th style="text-align: center;width: 10%;height: 70px;" >
@@ -99,6 +97,9 @@ function myFunction() {
                             <th style="text-align: center;width: 10%;height: 70px;" >
                               {{$f}}
                             </th >
+                            <th style="text-align: center;width: 10%;height: 70px;" >
+                              {{$g}}
+                            </th >
                            
                           </tr>
                         </thead>
@@ -114,11 +115,26 @@ function myFunction() {
                 @foreach($ngg_employee as $ngg_emp)
                   @if($ngg_emp->nem_id == $idtest)
                    <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
+                    @foreach($timeattendant as $timeatten)
+                              @if($timeatten->net_employee_id == $ngg_emp->nem_id)
+
+                                <?php 
+                              $sick_leave =number_format( $timeatten->net_sick_leave*0.2, 2);
+                              $personal_leave = number_format($timeatten->net_personal_leave*0.4, 2);
+                              $late = number_format($timeatten->net_late*0.25, 2);
+                              $miss_work = number_format($timeatten->net_miss_work*3, 2);
+                              $annual_leave = number_format($timeatten->net_annual_leave*0.1, 2);
+                              $totle_atten = $sick_leave+$personal_leave+$late+$miss_work+$annual_leave;
+                              $p6 = number_format($totle_atten, 2);
+                                ?>
+                            
+                                @endif
+                             @endforeach
                    
                   @endif
                    
-                     
-                       @if($ngg_emp->nem_id == $emp->nee_is_employee  )
+                   
+                    @if($ngg_emp->nem_id == $emp->nee_is_employee  )
 
 
                                   <?php  $k=$ngg_emp->nem_id;  $i++; $j+=$ngg_eva->nes_q_point;?>
@@ -128,27 +144,31 @@ function myFunction() {
                                       @case($i==8)
                                       
                                       <?php  $j=($j/40)*10; $p1=number_format($j, 2);  ?>
+                                    
                                       <?php $j=0;?>
                                           @break
                                       @case($i==12)
                                      
-                                      <?php  $j=($j/20)*35;$p2=number_format($j, 2); ?>
-                                          
+                                      <?php  $j=($j/20)*30;$p2=number_format($j, 2); ?>
+                                        
                                       <?php  $j=0;?>
                                           @break
                                       @case($i==16)
                                      
-                                      <?php  $j=($j/35)*35; $p3=number_format($j, 2);?>
+                                      <?php  $j=($j/35)*30; $p3=number_format($j, 2);?>
+                                    
                                       <?php $j=0;?>
                                           @break
                                       @case($i==19)
                                      
                                       <?php  $j=($j/15)*10; $p4=number_format($j, 2);?>
+                                     
                                      <?php $j=0;?>
                                           @break
                                       @case($i==21)
                                      
                                       <?php  $j=($j/10)*10; $p5=number_format($j, 2);?>
+                                     
                                       <?php $j=0;?>
                                           @break
                                   @endswitch
@@ -156,6 +176,7 @@ function myFunction() {
                                   
                            <tr>
                             @if($i==21)
+
 
                             <?php  $change = $ngg_emp->nem_thai_firstname; $change2++;?>
 
@@ -165,23 +186,23 @@ function myFunction() {
                                   <?php $commentcount++;  $commenttemp = $ngg_comment->nec_comment; ?>
                           @switch($commentcount)
                                       @case($commentcount==1)
-                                      <?php array_push($comment1, $change2,$commenttemp); ?>
+                                      <?php array_push($comment1, $change,$commenttemp); ?>
                                      
                                           @break
                                       @case($commentcount==2)  
-                                      <?php array_push($comment2, $change2,$commenttemp); ?>
+                                      <?php array_push($comment2, $change,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==3)
-                                      <?php array_push($comment3, $change2,$commenttemp); ?>
+                                      <?php array_push($comment3, $change,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==4)
-                                      <?php array_push($comment4, $change2,$commenttemp); ?>
+                                      <?php array_push($comment4, $change,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==5)
-                                      <?php array_push($comment5, $change2,$commenttemp); 
+                                      <?php array_push($comment5, $change,$commenttemp); 
                                       $commentcount =0;
                                       ?>
 
@@ -192,12 +213,16 @@ function myFunction() {
 
                 @endforeach
 
-                            <td style="width: 10%;height: 40px;">{{Form::label('nee_id1',$change2)}}</td>
+                           
+                            <td style="width: 10%;height: 40px;">{{Form::label('คุณ','คุณ')}}{{Form::label('nee_id1',$change)}}</td>
                             <td  style="width: 10%;height: 40px;">{{$p1}}<?php  $p1final+=$p1;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p2}}<?php  $p2final+=$p2;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p3}}<?php  $p3final+=$p3;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p4}}<?php  $p4final+=$p4;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p5}}<?php  $p5final+=$p5;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p6}}<?php  $p6final+=$p6;?></td>
+                           
+
 
                                              
                             <?php $i=0;$count++;
@@ -206,13 +231,14 @@ function myFunction() {
                                   array_push($data3, $change,$p3);
                                   array_push($data4, $change,$p4);
                                   array_push($data5, $change,$p5);
+                                  array_push($data6, $change,$p6);
 
                                   array_push($data1change, $change2,$p1);
                                   array_push($data2change, $change2,$p2);
                                   array_push($data3change, $change2,$p3);
                                   array_push($data4change, $change2,$p4);
                                   array_push($data5change, $change2,$p5);
-                                 
+                                  array_push($data6change, $change2,$p6);
 
                             ?>
                         
@@ -232,11 +258,8 @@ function myFunction() {
                         </tbody>
 
                       </table>
-
-                            </div>
-
-                          </div>
-                            
+                      </div> 
+                      </div> 
                         </div>            
                    @if($p1final!=0)  
                    <?php  
@@ -245,7 +268,8 @@ function myFunction() {
                       $p3final=number_format($p3final/$count, 2); 
                       $p4final=number_format($p4final/$count, 2); 
                       $p5final=number_format($p5final/$count, 2); 
-                      $totle= $p1final+$p2final+$p3final+$p4final+$p5final; ?>
+                      $p6final=number_format($p6final/$count, 2);
+                      $totle= $p1final+$p2final+$p3final+$p4final+$p5final+$p6final;?>
 
            
 
@@ -257,7 +281,6 @@ function myFunction() {
 
                    @switch($totle)
                                       @case($totle>90)
-                                        
                                         <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
                                         <h1 style="text-align: center;">เกรด A+ </h1>
                                         <h2 style="text-align: center;">ระดับศักยภาพ: ดีเลิศ</h2>
@@ -318,16 +341,17 @@ function myFunction() {
               </div>
               </div>
                   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                       <script type="text/javascript">
+                      <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
                         google.charts.setOnLoadCallback(drawChart1);
+
                         function drawChart1() {
                           var data = google.visualization.arrayToDataTable([
                             ['{{$b}}', 'คะเเนน'],
                               <?php
-                            for ($x=1; $x <count($data1change) ; $x+=2) { 
+                            for ($x=1; $x <count($data1) ; $x+=2) { 
                               
-                                echo  "['".$data1change[$x-1]."', '".$data1change[$x]."'],";
+                                echo  "['".$data1[$x-1]."', '".$data1[$x]."'],";
                             }
                              
                               ?>
@@ -335,17 +359,20 @@ function myFunction() {
                           ]);
 
                           var options = {
-                             height: 400,
+                            height: 400,
                             chart: {
                               title: '{{$b}}',
+                               
                             }
                           };
 
-                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1_1'));
+                           
+                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1'));
                               chart.draw(data, google.charts.Bar.convertOptions(options));
                         $(window).resize(function(){
                                   drawChart1();
                         });
+
                           
                         }
 
@@ -358,9 +385,9 @@ function myFunction() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$c}}', 'คะเเนน'],
                               <?php
-                            for ($x=1; $x <count($data2change) ; $x+=2) { 
+                            for ($x=1; $x <count($data2) ; $x+=2) { 
                               
-                                echo  "['".$data2change[$x-1]."', '".$data2change[$x]."'],";
+                                echo  "['".$data2[$x-1]."', '".$data2[$x]."'],";
                             }
                              
                               ?>
@@ -374,12 +401,13 @@ function myFunction() {
                              
                             }
                           };
-                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p2_2'));
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p2'));
+
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                        $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart2();
                         });
-                         
                         }
 
                       </script>
@@ -391,9 +419,9 @@ function myFunction() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$d}}', 'คะเเนน'],
                               <?php
-                            for ($x=1; $x <count($data3change) ; $x+=2) { 
+                            for ($x=1; $x <count($data3) ; $x+=2) { 
                               
-                                echo  "['".$data3change[$x-1]."', '".$data3change[$x]."'],";
+                                echo  "['".$data3[$x-1]."', '".$data3[$x]."'],";
                             }
                              
                               ?>
@@ -408,13 +436,10 @@ function myFunction() {
                             }
                           };
 
-                         
-                          
-                            
-                          
-                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p3_3'));
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p3'));
+
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                             $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart3();
                         });
                         }
@@ -428,9 +453,9 @@ function myFunction() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$e}}', 'คะเเนน'],
                               <?php
-                            for ($x=1; $x <count($data4change) ; $x+=2) { 
+                            for ($x=1; $x <count($data4) ; $x+=2) { 
                               
-                                echo  "['".$data4change[$x-1]."', '".$data4change[$x]."'],";
+                                echo  "['".$data4[$x-1]."', '".$data4[$x]."'],";
                             }
                              
                               ?>
@@ -444,13 +469,13 @@ function myFunction() {
                              
                             }
                           };
-                          
-                           var chart = new google.charts.Bar(document.getElementById('columnchart_materialp4_4'));
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_materialp4'));
+
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                         $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart4();
                         });
-                          
                         }
 
                       </script>
@@ -463,9 +488,9 @@ function myFunction() {
 
                            ['{{$f}}', 'คะเเนน'],
                               <?php
-                            for ($x=1; $x <count($data5change) ; $x+=2) { 
+                            for ($x=1; $x <count($data5) ; $x+=2) { 
                               
-                                echo  "['".$data5change[$x-1]."', '".$data5change[$x]."'],";
+                                echo  "['".$data5[$x-1]."', '".$data5[$x]."'],";
                             }
                              
                               ?>
@@ -479,14 +504,48 @@ function myFunction() {
                             
                             }
                           };
-                         
-                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p5_5'));
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p5'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                         $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart5();
                         });
-                          
+                        }
+
+                      </script>
+                  <script type="text/javascript">
+                        google.charts.load('current', {'packages':['bar']});
+                        google.charts.setOnLoadCallback(drawChart5);
+
+                        function drawChart5() {
+                          var data = google.visualization.arrayToDataTable([
+
+                           ['{{$g}}', 'คะเเนน'],
+                              <?php
+                            for ($x=1; $x <count($data6) ; $x+=2) { 
+                              
+                                echo  "['".$data6[$x-1]."', '".$data6[$x]."'],";
+                            }
+                             
+                              ?>
+                            ['คะเเนนเต็ม', 15]
+                          ]);
+
+                          var options = {
+                            height:400,
+                            chart: {
+                              title: '{{$g}}'
+                            
+                            }
+                          };
+
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p6'));
+
+                          chart.draw(data, google.charts.Bar.convertOptions(options));
+                          $(window).resize(function(){
+                                  drawChart5();
+                        });
                         }
 
                       </script>
@@ -504,25 +563,22 @@ function myFunction() {
                                           ['{{$c}}',{{$p2final}} ],
                                           ['{{$d}}',{{$p3final}} ],
                                           ['{{$e}}',{{$p4final}} ],
-                                          ['{{$f}}',{{$p5final}} ]
+                                          ['{{$f}}',{{$p5final}} ],
+                                          ['{{$f}}',{{$p6final}} ]
                                         ]);
 
                                         var options = {
                                           height:400,
                                           title: 'คะเเนนสุทธิ'
                                         };
-                          
-                           
-                         function resize() {
-              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
+                                         function resize() {
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
                           chart.draw(data, options);
                               }
                       window.onload = resize();
                       window.onresize = resize;
-                        }
-                                        
-                                      
+                                      }
                                     </script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
@@ -530,12 +586,13 @@ function myFunction() {
 
                         function drawChart() {
                           var data = google.visualization.arrayToDataTable([
-                            ['ผลสรุปรวม', 'คะเเนนเต็ม', 'คะเเนนประเมิน'],
+                            ['ด้าน', 'คะเเนนเต็ม', 'คะเเนนประเมิน'],
                             ['ด้านที่1', 50, {{$p1final}}],
                             ['ด้านที่2', 40, {{$p2final}}],
                             ['ด้านที่3', 30, {{$p3final}}],
                             ['ด้านที่4', 30, {{$p4final}}],
                             ['ด้านที่5', 25, {{$p5final}}],
+                            ['ด้านที่5', 25, {{$p6final}}],
                             ['คะเนนรวม', 100, {{$totle}}]
                           ]);
 
@@ -547,18 +604,15 @@ function myFunction() {
                             }
                           };
 
-                          
-                          
-                            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                         $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart();
                         });
                         }
 
                       </script>
-                     
-                     
                 <div>
                <div class="row">
           <div class="col-md-6" >
@@ -572,8 +626,9 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-             <div class="box-body" >
-                   <div id="columnchart_material_p1_1" class="chart"></div>     
+            <div class="box-body">
+                  <div id="columnchart_material_p1" class="charts"></div> 
+
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -595,7 +650,7 @@ function myFunction() {
                               <?php
                             for ($x=1; $x <count($comment1) ; $x+=2) { 
                               
-                                echo  $comment1[$x-1].".)&nbsp;&nbsp;".$comment1[$x]."<br><br>";
+                                echo  $comment1[$x-1]."&nbsp;:&nbsp;".$comment1[$x]."<br><br>";
                             }
                              
                               ?>
@@ -629,11 +684,12 @@ function myFunction() {
             </div>
             <!-- /.box-header -->
             <div class="box-body" >
-                    <div id="columnchart_material_p2_2" class="charts"></div>
+                       <div id="columnchart_material_p2" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
-              <div class="col-md-12">
+
+                   <div class="col-md-12">
           <div class="box box-default collapsed-box box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">ข้อคิดเห็นเพิ่มเติม</h3>
@@ -646,15 +702,15 @@ function myFunction() {
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-             <h5>
+               <h5>
                               <?php
                             for ($x=1; $x <count($comment2) ; $x+=2) { 
                               
-                                echo  $comment2[$x-1].".)&nbsp;&nbsp;".$comment2[$x]."<br><br>";
+                                echo  $comment2[$x-1]."&nbsp;:&nbsp;".$comment2[$x]."<br><br>";
                             }
                              
                               ?>
-               </h5>
+               </h5>     
                      
             </div>
             <!-- /.box-body -->
@@ -662,7 +718,7 @@ function myFunction() {
           <!-- /.box -->
         </div>
         <!-- /.col -->
-                   
+            
             </div>
             <!-- /.box-footer -->
           </div>
@@ -684,9 +740,8 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-             <div class="box-body">
-              
-                    <div id="columnchart_material_p3_3" class="charts"></div>
+            <div class="box-body" >
+              <div id="columnchart_material_p3" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -707,11 +762,11 @@ function myFunction() {
                               <?php
                             for ($x=1; $x <count($comment3) ; $x+=2) { 
                               
-                                echo  $comment3[$x-1].".)&nbsp;&nbsp;".$comment3[$x]."<br><br>";
+                                echo  $comment3[$x-1]."&nbsp;:&nbsp;".$comment3[$x]."<br><br>";
                             }
                              
                               ?>
-               </h5>
+               </h5>    
                      
             </div>
             <!-- /.box-body -->
@@ -719,7 +774,7 @@ function myFunction() {
           <!-- /.box -->
         </div>
         <!-- /.col -->
-                
+            
             </div>
             <!-- /.box-footer -->
           </div>
@@ -739,13 +794,12 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-               
-                     <div id="columnchart_materialp4_4" class="charts"></div>
+            <div class="box-body" >
+                        <div id="columnchart_materialp4" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
-              <div class="col-md-12">
+             <div class="col-md-12">
           <div class="box box-default collapsed-box box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">ข้อคิดเห็นเพิ่มเติม</h3>
@@ -758,23 +812,23 @@ function myFunction() {
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-             
-                    <h5>
+              <h5>
                               <?php
                             for ($x=1; $x <count($comment4) ; $x+=2) { 
                               
-                                echo  $comment4[$x-1].".)&nbsp;&nbsp;".$comment4[$x]."<br><br>";
+                                echo  $comment4[$x-1]."&nbsp;:&nbsp;".$comment4[$x]."<br><br>";
                             }
                              
                               ?>
                </h5>    
+                     
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
         <!-- /.col -->
-              
+            
             </div>
             <!-- /.box-footer -->
           </div>
@@ -795,9 +849,8 @@ function myFunction() {
               </div>
             </div>
             <!-- /.box-header -->
-             <div class="box-body" >
-              
-                     <div id="columnchart_material_p5_5" class="charts"></div>
+            <div class="box-body">
+                    <div id="columnchart_material_p5" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -814,12 +867,12 @@ function myFunction() {
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <h5>
+             <h5>
                             <?php
                             for ($x=1; $x <count($comment5) ; $x+=2) { 
-                              echo  $comment5[$x-1].".)&nbsp;&nbsp;".$comment5[$x]."<br><br>"; 
+                              echo  $comment5[$x-1]."&nbsp;:&nbsp;".$comment5[$x]."<br><br>"; 
                             }?>
-             </h5>  
+             </h5>   
                      
             </div>
             <!-- /.box-body -->
@@ -828,6 +881,69 @@ function myFunction() {
         </div>
         <!-- /.col -->
               
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->  
+         <div class="col-md-6">
+                <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info" >
+            <div class="box-header with-border">
+              <h3 class="box-title">{{$g}}</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                    <div id="columnchart_material_p6" class="charts"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <div class="col-md-12">
+          <div class="box box-default collapsed-box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">ข้อคิดเห็นเพิ่มเติม</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+             <div class="col-md-12">
+          <div class="box box-default collapsed-box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">ข้อคิดเห็นเพิ่มเติม</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+           
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col --> 
+                     
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
             </div>
             <!-- /.box-footer -->
           </div>
@@ -851,7 +967,7 @@ function myFunction() {
             <!-- /.box-header -->
             <div class="box-body">
                          
-                           <div id="piechart" class="charts"></div>
+                           <div id="piechart"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
@@ -875,11 +991,12 @@ function myFunction() {
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+                       
                          <div id="columnchart_material" class="charts"></div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
-            
+             
             </div>
             <!-- /.box-footer -->
           </div>
@@ -887,7 +1004,6 @@ function myFunction() {
         </div>
         <!-- /.col -->
         </div>
-      
         </div>
 
               @else
@@ -899,10 +1015,6 @@ function myFunction() {
     </div>
   </section>
 </div>
-
- 
-  
-
     
    
   @endsection
