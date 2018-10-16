@@ -83,4 +83,7 @@
     'italic' => $fontDir . '/b685fe5c740ef6b7b8945c6804dd6f01',
     'bold_italic' => $fontDir . '/c640e3adbab4a0cc1e8b5d68375d8dfc',
   ),
+  'prompt' => array(
+    'normal' => $fontDir . '\714dcd3d1e8e162d5cf533c2074978dd',
+  ),
 ) ?>
