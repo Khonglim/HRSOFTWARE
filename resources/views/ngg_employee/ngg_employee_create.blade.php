@@ -52,7 +52,7 @@
                    <div class="col-md-3"> 
                                 <div class="form-group label-floating">
                                 <label class="control-label">คำนำหน้าชื่อ(ภาษาไทย)</label>
-                                   {{ Form::select('thai_title_tname', [''=>'เลือก'  ,'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว'],null, ['class' => 'form-control','required']) }}
+                                   {{ Form::select('thai_title_tname', [''=>'เลือก'  ,'นาย' => 'นาย','นาง' => 'นาง','นางสาว'=> 'นางสาว','ว่าที่ร้อยตรี'=> 'ว่าที่ร้อยตรี'],null, ['class' => 'form-control','required']) }}
                         </div>  
                 </div>  
                         <div class="col-md-3"> 
@@ -81,7 +81,7 @@
                         <div class="col-md-3"> 
                                 <div class="form-group label-floating">
                                 <label class="control-label">คำนำหน้าชื่อ(ภาษาอังกฤษ)</label>
-                                   {{ Form::select('eng_title_tname', [''=>'เลือก'  ,'Mr.' => 'Mr.','Miss.' => 'Miss.','Mrs.'=> 'Mrs.'],null, ['class' => 'form-control','required']) }}
+                                   {{ Form::select('eng_title_tname', [''=>'เลือก'  ,'Mr.' => 'Mr.','Miss.' => 'Miss.','Mrs.'=> 'Mrs.','Acting Sub Lt.'=> 'Acting Sub Lt.'],null, ['class' => 'form-control','required']) }}
                         </div>  
                 </div>  
                         <div class="col-md-3"> 

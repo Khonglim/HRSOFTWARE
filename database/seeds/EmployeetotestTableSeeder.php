@@ -363,7 +363,7 @@ class EmployeetotestTableSeeder extends Seeder
             'nee_id_form'=>'1',
         ]);
          DB::table('employeetotest')->insert([
-            'nee_is_employee'=>'59',
+            'nee_is_employee'=>'60',
             'nee_by_employee'=>'11',
             'nee_id_form'=>'1',
         ]);
@@ -388,7 +388,7 @@ class EmployeetotestTableSeeder extends Seeder
             'nee_id_form'=>'1',
         ]);
          DB::table('employeetotest')->insert([
-            'nee_is_employee'=>'17',
+            'nee_is_employee'=>'61',
             'nee_by_employee'=>'11',
             'nee_id_form'=>'1',
         ]);
@@ -408,7 +408,7 @@ class EmployeetotestTableSeeder extends Seeder
             'nee_id_form'=>'1',
         ]);
          DB::table('employeetotest')->insert([
-            'nee_is_employee'=>'54',
+            'nee_is_employee'=>'14',
             'nee_by_employee'=>'11',
             'nee_id_form'=>'1',
         ]);
@@ -453,12 +453,12 @@ class EmployeetotestTableSeeder extends Seeder
             'nee_id_form'=>'1',
         ]);
          DB::table('employeetotest')->insert([
-            'nee_is_employee'=>'17',
+            'nee_is_employee'=>'59',
             'nee_by_employee'=>'6',
             'nee_id_form'=>'1',
         ]);
          DB::table('employeetotest')->insert([
-            'nee_is_employee'=>'18',
+            'nee_is_employee'=>'11',
             'nee_by_employee'=>'6',
             'nee_id_form'=>'1',
         ]);

@@ -357,7 +357,7 @@ body {
                       </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="{{url('/summeva') }}">สรุปผลประเมินv1</a></li>
+                    <li style="display: none;"><a href="{{url('/summeva') }}">สรุปผลประเมินv1</a></li>
                     <li><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
                     <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
                     <li><a href="{{url('/nggemployee') }}">จัดการพนักงาน</a></li>
