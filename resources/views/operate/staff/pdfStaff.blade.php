@@ -1,37 +1,29 @@
 <html>
-
 <head>
-
     <style>
         body {
             font-family: 'examplefont', sans-serif;
             font-size: 20px;
         }
-
         .page-break {
             page-break-after: always;
         }
-
         table {
             border-collapse: collapse;
             width: 100%;
         }
-
         td,
         th {
             border: 1px solid;
         }
-
         .font {
             font-size: 25px;
         }
-
         .pop {
             text-align: center;
         }
     </style>
 </head>
-
 <body>
     <div class="page-break">
         <p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
@@ -54,7 +46,7 @@
 
         <b>รหัสพนักงาน :  </b> {{$operate_staff->id_employ}} <br>
         <b>ตำแหน่ง :</b> {{$operate_staff->position}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <b>แผนก/ฝ่าย :</b> {{$operate_staff->department}} <br>
         <b>วันที่เริ่มงาน :</b> {{$operate_staff->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
         <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate_staff->endtime}} <b>ระดับ :</b> {{$operate_staff->degree}} <br>
@@ -74,7 +66,7 @@
                 <td align="center">ประเมินรอบ 90 วัน</td>
             </tr>
             <tr>
-                <td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td>
+                <td colspan="3"><b>ระดับปฏิบัติการ (Supervisory Level)</b></td>
             </tr>
             <tr>
                 <td>1. คุณภาพของงานที่ปฏิบัติ</td>
@@ -170,7 +162,6 @@
                 <td>{{$operate_staff->comments_90}}</td>
             </tr>
         </tbody>
-
     </table>
     <br>
     <table>
@@ -190,12 +181,6 @@
                     @endif
                 </td>
             </tr>
-        </tbody>
-    </table>
-
-
-    <table>
-        <tbody>
             <tr>
                 <td align="center"><br><br>ผู้ประเมิน : ...........................................<br> ( คุณ{{$operate_staff->name_rate_60}}
                     ) <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน....../....../......</td>
@@ -205,8 +190,212 @@
             </tr>
         </tbody>
     </table>
-
-    <br>
+    <table>
+        <tbody>
+            <tr><td align="center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></td></tr>
+            <tr><td></td>    
+                <td align="center" colspan="3"><b>ระบุคะแนน</b></td>
+            </tr>    
+            <tr>
+                <td align="center"><b>หัวข้อการประเมิน</b></td>
+                <td align="center">10-8 ดี</td>
+                <td align="center">7-5 พอใช้</td>
+                <td align="center">4-1 ปรับปรุง</td>
+            </tr>
+            <tr>
+                <td>1.บุคลิกภาพ และการแต่งกาย</td>
+                <td align="center">@if($operate_staff->chioce_suitability1 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability1}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability11 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability11}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability21 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability21}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>2.ความสุภาพ กิริยา มารยาท</td>
+                <td align="center">@if($operate_staff->chioce_suitability2 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability2}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability12 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability12}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability22 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability22}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>3.ความเคร่งครัดต่อระเบียบวินัย</td>
+                <td align="center">@if($operate_staff->chioce_suitability3 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability3}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability13 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability13}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability23 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability23}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>4.ความตรงต่อเวลา</td>
+                <td align="center">@if($operate_staff->chioce_suitability4 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability4}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability14 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability14}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability24 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability24}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>5.การประพฤติต่อผู้บังคับบัญชา</td>
+                <td align="center">@if($operate_staff->chioce_suitability5 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability5}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability15 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability15}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability25 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability25}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>6.ทัศนคติต่องาน / บริษัท</td>
+                <td align="center">@if($operate_staff->chioce_suitability6 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability6}}        
+                    @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability16 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability16}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability26 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability26}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>7.การช่วยเหลือเพื่อนร่วมงาน</td>
+                <td align="center">@if($operate_staff->chioce_suitability7 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability7}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability17 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability17}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability27 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability27}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>8.ลักษณะความเป็นผู้นำ</td>
+                <td align="center">@if($operate_staff->chioce_suitability8 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability8}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability18 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability18}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability28 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability28}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>9.ความคิดริเริ่ม สร้างสรรค์</td>
+                <td align="center">@if($operate_staff->chioce_suitability9 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability9}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability19 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability19}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability29 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability29}}        
+                @endif</td>
+            </tr>
+            <tr>
+                <td>10.ความคิดเห็นโดยทั่วไป</td>
+                <td align="center">@if($operate_staff->chioce_suitability10 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability10}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability20 == 0)
+                    - 
+                @else
+                    {{$operate_staff->chioce_suitability20}}        
+                @endif</td>
+                <td align="center">@if($operate_staff->chioce_suitability30 == 0)
+                    - 
+                    @else
+                    {{$operate_staff->chioce_suitability30}}        
+                @endif</td>
+            </tr>
+            <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate_staff->sum_chioce_suitability10}}</font> คะแนน</td></tr>
+        </tbody>    
+    </table> <br>
+    <table><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate_staff->comment_suitability10}} <br>
+        @if($operate_staff->ok_suitability == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
+            <input type="checkbox" checked="checked"> {{$operate_staff->ok_suitability}} <br>
+        @endif 
+        @if($operate_staff->other_suitability == 'อื่นๆ')
+            <input type="checkbox" checked="checked">{{$operate_staff->other_suitability}} : {{$operate_staff->other_com_suitability}} <br>
+        @endif 
+        @if($operate_staff->namerate_suitability != '')
+        <p align = "right"><br><br> ลงนาม ........................................... ผู้จัดการฝ่าย <br>( คุณ{{$operate_staff->namerate_suitability}} )<br>วันที่การประเมิน..../..../....</p>
+        @endif
+    </td></tr></table> <br>
     <table>
         <tr>
             <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (ประเมิน 60 วัน)</th>

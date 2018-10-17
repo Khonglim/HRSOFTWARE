@@ -1,88 +1,68 @@
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
-        @font-face {
-            font-family: 'THSarabunNew';
-            font-style: normal;
-            font-weight: normal;
-            src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype');
-        }
-        @font-face {
-            font-family: 'THSarabunNew';
-            font-style: normal;
-            font-weight: bold;
-            src: url("{{ public_path('fonts/THSarabunNew Bold.ttf') }}") format('truetype');
-        }
-        @font-face {
-            font-family: 'THSarabunNew';
-            font-style: italic;
-            font-weight: normal;
-            src: url("{{ public_path('fonts/THSarabunNew Italic.ttf') }}") format('truetype');
-        }
-        @font-face {
-            font-family: 'THSarabunNew';
-            font-style: italic;
-            font-weight: bold;
-            src: url("{{ public_path('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype');
-        }
-
         body {
-            font-family: "THSarabunNew";
+            font-family: 'examplefont', sans-serif;
             font-size: 20px;
         }
-        table{
-          border-collapse: collapse;
+        .page-break {
+            page-break-after: always;
+        }
+        table {
+            border-collapse: collapse;
             width: 100%;
         }
-        td,th{
-          border:1px solid; 
+        td,
+        th {
+            border: 1px solid;
         }
-
-         body { width: 100%; height: 100%; }  
-
-.page-break {
-    page-break-after: always;
-}
-</style>    
+        .font {
+            font-size: 25px;
+        }
+        .pop {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class="page-break">
         <p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
-    <center><h2>แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2></center>
-    <center><h3>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</h3></center>
-    <b>1. ระดับในการประเมินผล</b><br>
-    <dd>4 ดีมาก           =   ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br></dd>
-    <dd>3 ดี           =   ผลการปฎิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br></dd>
-    <dd>2 พอใช้           =   ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br></dd>
-    <dd>1 ต้องปรับปรุง      =   ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br></dd>
-    <b>2.การประเมินผลให้แยกประเมินผลตามหัวข้อประเมิน และคิดคะแนนรวมดังนี้</b><br>
-    <dd>2.1. ระดับพนักงานทั่วไป         ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. <u>ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60</u><br></dd>
-    <dd>2.2. ระดับหัวหน้างานขึ้นไป       ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br></dd>
-    <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
-    <b>4. เขียนเครื่องหมาย <input type="checkbox" checked> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
-    <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br>
+        <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
+        <div class="font" style="text-align:center;"><b>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</b></div>
+        <b>1. ระดับในการประเมินผล</b><br>
+        <dd>4 ดีมาก = ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br></dd>
+        <dd>3 ดี = ผลการปฎิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br></dd>
+        <dd>2 พอใช้ = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br></dd>
+        <dd>1 ต้องปรับปรุง = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br></dd>
+        <b>2.การประเมินผลให้แยกประเมินผลตามหัวข้อประเมิน และคิดคะแนนรวมดังนี้</b><br>
+        <dd>2.1. ระดับพนักงานทั่วไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. <u>ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60</u><br></dd>
+        <dd>2.2. ระดับหัวหน้างานขึ้นไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br></dd>
+        <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
+        <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
+        <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป<u></b><br><br><br>
+        <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
+        <b>ชื่อ-นามสกุล :</b> @foreach ( $personal as $item2) @if( $item2->id == $operate_sup->id_posinal ) {{$item2->name}}
+        {{$item2->lastname}} @endif @endforeach &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <b>รหัสพนักงาน :  </b> {{$operate_sup->id_employ}} <br>
+        <b>ตำแหน่ง :</b> {{$operate_sup->position}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>แผนก/ฝ่าย :</b> {{$operate_sup->department}} <br>
+        <b>วันที่เริ่มงาน :</b> {{$operate_sup->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+        <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate_sup->endtime}} <b>ระดับ :</b> {{$operate_sup->degree}} <br>
+        <b>ประเมินครั้งที่1 :</b> {{$operate_sup->date_60}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        <b>ประเมินครั้งที่2 :90 วัน วันที่ :</b> {{$operate_sup->date_90}}
 </div>
 <div class="page-break"> 
-<center><h3>แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h3></center>       
-    <b>ชื่อ-นามสกุล :</b> 
-        @foreach ( $personal as $item)
-            @if(  $item->id == $operate_sup->id_posinal )
-                {{$item->name}} {{$item->lastname}}
-            @endif
-        @endforeach
-    <b>รหัสพนักงาน :</b> {{$operate_sup->id_employ}} <br>
-    <b>ตำแหน่ง :</b> {{$operate_sup->position}} <b>แผนก/ฝ่าย :</b> {{$operate_sup->department}} <br>
-    <b>วันที่เริ่มงาน :</b> {{$operate_sup->starttime}} <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate_sup->endtime}} <b>ระดับ :</b> {{$operate_sup->degree}} <br>
-    <b>ประเมินครั้งที่1 :</b> {{$operate_sup->date_60}} <b>ประเมินครั้งที่2 :90 วัน วันที่ :</b> {{$operate_sup->date_90}}
     <table>
         <tbody>
             <tr>
-                <td align="center" rowspan="2">หัวข้อการประเมิน (100 คะแนน)</td>
+                <td align="center" rowspan="2">หัวข้อการประเมิน (100 คะแนน)<br>เงื่อนไขการให้คะแนนจะจัดแบ่งดังนี้<br>4 ดีมาก 3 ดี 2 พอใช้ 1 ต้องปรับปรุง</td>
                 <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
             </tr>
             <tr>
-                <td align="center">ประเมินรอบ 60 วัน</td><td align="center">ประเมินรอบ 90 วัน</td>
+                <td align="center">ประเมินรอบ 60 วัน</td>
+                <td align="center">ประเมินรอบ 90 วัน</td>
             </tr>
             <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
             <tr>
@@ -211,57 +191,57 @@
                 <td align="center">{{$operate_sup->chioce25_90}}</td>
             </tr>
             <tr>
-                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <font color="red">{{$operate_sup->subtotal_60}}</font> คะแนน ประเมินครั้งที่ 2 : 90 วัน <font color="red">{{$operate_sup->subtotal_90}} </font>คะแนน <b>(รวมกันหาร2) = <font color="red">{{$operate_sup->subtotal_final}}</font> </b></td>
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <u><font color="red">{{$operate_sup->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate_sup->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <font color="red">{{$operate_sup->subtotal_final}}</font> </b></td>
             </tr>
         </tbody>
-    </table> <br><br>
-    <b>ความคิดเห็นเพิ่มเติม</b><br>
-        (สำหรับผู้ประเมิน)
-        <table>
-            <tbody>
-                <tr>
-                    <td align="center">ความคิดเห็นจาก 60 วัน</td>
-                    <td align="center">ความคิดเห็นจาก 90 วัน</td>
-                </tr>
-                <tr>
-                    <td>{{$operate_sup->comments_60}}</td>
-                    <td>{{$operate_sup->comments_90}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                            <b>จุดเด่นของพนักงาน :</b> {{$operate_sup->comments_featured}}<br>
-                            <b>จุดด้อยของพนักงาน :</b> {{$operate_sup->comments_weakness}} <br>
-                            @if($operate_sup->experimental == 'ไม่ผ่านทดลองงาน')
-                                <input type="checkbox" checked>{{$operate_sup->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate_sup->experimental_date}} <br>
-                            @endif 
-                            @if($operate_sup->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                                <input type="checkbox" checked>{{$operate_sup->full_time_worker}} ตั้งแต่วันที่ : {{$operate_sup->full_time_worker_date}} ตำแหน่ง : {{$operate_sup->full_time_worker_position}} <br>
-                            @endif 
-                            @if($operate_sup->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                                <input type="checkbox" checked>{{$operate_sup->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate_sup->modify_position1}} เป็นตำแหน่ง : {{$operate_sup->modify_position2}} ตั้งแต่วันที่ : {{$operate_sup->modify_date}} <br>
-                            @endif 
-                            @if($operate_sup->other_90 == 'อื่นๆ')
-                                <input type="checkbox" checked>{{$operate_sup->other_90}} : {{$operate_sup->other_com_90}}
-                            @endif
-                    </td>
-                </tr>
-            </tbody>
-        </table><br>
+    </table> 
+</div>
+<div class="page-break">
+<b>ความคิดเห็นเพิ่มเติม การประเมิน 60 วัน (สำหรับผู้ประเมิน)</b><br>
     <table>
         <tbody>
             <tr>
-                <td align="center">ผู้ประเมิน : ........................................... <br> ( คุณ{{$operate_sup->name_rate_60}} ) <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน..../..../....</td>
-                <td align="center">ผู้ถูกประเมิน : ........................................... <br> 
-                    ( คุณ@foreach ( $personal as $item)
+                <td align="center">ความคิดเห็นการประเมิน 60 วัน</td>
+                <td>{{$operate_sup->comments_60}}</td>
+            </tr>
+            <tr>
+                <td align="center">ความคิดเห็นการประเมิน 90 วัน</td>
+                <td>{{$operate_sup->comments_90}}</td>
+            </tr>
+        </tbody>
+    </table> <br>
+    <table>
+    <tbody>
+        <tr>
+            <td colspan="2">
+                <b>จุดเด่นของพนักงาน :</b> {{$operate_sup->comments_featured}}<br>
+                <b>จุดด้อยของพนักงาน :</b> {{$operate_sup->comments_weakness}} <br>
+                    @if($operate_sup->experimental == 'ไม่ผ่านทดลองงาน')
+                <input type="checkbox" checked="checked">{{$operate_sup->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate_sup->experimental_date}} <br>
+                @endif 
+                    @if($operate_sup->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                <input type="checkbox" checked="checked">{{$operate_sup->full_time_worker}} ตั้งแต่วันที่ : {{$operate_sup->full_time_worker_date}} ตำแหน่ง : {{$operate_sup->full_time_worker_position}} <br>
+                @endif 
+                    @if($operate_sup->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                <input type="checkbox" checked="checked">{{$operate_sup->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate_sup->modify_position1}} เป็นตำแหน่ง : {{$operate_sup->modify_position2}} ตั้งแต่วันที่ : {{$operate_sup->modify_date}} <br>
+                 @endif 
+                    @if($operate_sup->other_90 == 'อื่นๆ')
+                <input type="checkbox" checked="checked">{{$operate_sup->other_90}} : {{$operate_sup->other_com_90}}
+                @endif
+            </td>
+        </tr>
+        <tr>
+            <td align="center"><br><br> ผู้ประเมิน : ........................................... <br> ( คุณ{{$operate_sup->name_rate_60}} ) <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน....../....../......</td>
+            <td align="center"><br><br> ผู้ถูกประเมิน : ........................................... <br> 
+                ( คุณ@foreach ( $personal as $item)
                     @if(  $item->id == $operate_sup->id_posinal )
                         {{$item->name}} {{$item->lastname}}
                     @endif
-                @endforeach) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน..../..../....</td>
-            </tr>  
-        </tbody>
-    </table>
-    </div>
-    <div class="page-break">
+                @endforeach) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
+        </tr>  
+    </tbody>
+    </table> <br> 
+</div>
     <table>
         <tbody>
             <tr><td align="center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></td></tr>
@@ -457,19 +437,18 @@
             </tr>
             <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate_sup->sum_chioce_suitability10}}</font> คะแนน</td></tr>
         </tbody>    
-    </table> <br>
+    </table> <br> 
     <table><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate_sup->comment_suitability10}} <br>
     @if($operate_sup->ok_suitability == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
-        <input type="checkbox" checked> {{$operate_sup->ok_suitability}} <br>
+        <input type="checkbox" checked="checked"> {{$operate_sup->ok_suitability}} <br>
     @endif 
     @if($operate_sup->other_suitability == 'อื่นๆ')
-        <input type="checkbox" checked>{{$operate_sup->other_suitability}} : {{$operate_sup->other_com_suitability}} <br>
+        <input type="checkbox"  checked="checked">{{$operate_sup->other_suitability}} : {{$operate_sup->other_com_suitability}} <br>
     @endif 
-    @if($operate_sup->namerate_suitability != '')
-    <p align = "right">ลงนาม ........................................... ผู้จัดการฝ่าย <br>( คุณ{{$operate_sup->namerate_suitability}} )<br>วันที่การประเมิน..../..../....</p>
-    @endif
 </td></tr></table>
-</div><div class="page-break">
+    @if($operate_sup->namerate_suitability != '')
+        <p style="text-align:right"><br><br> ลงนาม ........................................... ผู้จัดการฝ่าย <br>( คุณ{{$operate_sup->namerate_suitability}} )<br>วันที่การประเมิน....../....../......</p>
+    @endif <br>
     <table>
         <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 60 วัน)</th></tr>
         <tr>
@@ -490,7 +469,7 @@
             <td style="text-align:center">{{$operate_sup->line_terms_60}}</td>
             <td style="text-align:center">{{$operate_sup->line_min_60}}</td>
         </tr>
-    </table> <br><br>
+    </table> <br>
     <table>
         <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 90 วัน)</th></tr>
         <tr>
@@ -511,7 +490,7 @@
             <td style="text-align:center">{{$operate_sup->line_terms_90}}</td>
             <td style="text-align:center">{{$operate_sup->line_min_90}}</td>
         </tr>
-    </table><br><br>
+    </table> <br> 
     <table>
         <tbody>
             <tr><td colspan="3" align="center"><b>สรุปผลการประเมิน</b></td></tr>
@@ -536,67 +515,67 @@
                 <td align="center"></td>
             </tr>
         </tbody>
-    </table>
-</div>
+    </table> <br>
     <table>
         <tbody>
             <tr><td align="center"><b>เฉพาะฝ่ายทรัพยากรบุคคล</b></td></tr>
             <tr>
                 <td>
-                    @if($operate_sup->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
-                        <input type="checkbox" checked>ให้บรรจุเป็นพนักงานประจำ
-                    @endif
-                    @if($operate_sup->human_resource_modi == 'ปรับอัตราเงินเดือน')
-                        <input type="checkbox" checked>ปรับอัตราเงินเดือน <u>{{$operate_sup->human_resource_commo}}</u>
-                    <br>@endif
-                    @if($operate_sup->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                        <input type="checkbox" checked>ยังไม่ปรับอัตราเงินเดือน <u>{{$operate_sup->human_resource_comno}}</u>
-                    <br>@endif
-                    @if($operate_sup->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                    <input type="checkbox" checked>ให้ปรับตำแหน่งเป็น <u>{{$operate_sup->human_resource_posi}}</u> และปรับเงินเดือน
-                    <br>@endif
-                    @if($operate_sup->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
-                        <input type="checkbox" checked>ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate_sup->human_resource_date}}</u>
-                    <br>@endif 
-                    @if($operate_sup->human_resource_other == 'อื่นๆ')
-                        <input type="checkbox" checked>อื่นๆ <u>{{$operate_sup->human_resource_othercom}}</u>
-                    <br>@endif 
-                    @if($operate_sup->human_resource_nre != '')
-                        <p align = "right">ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->human_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
-                    @endif
+                        @if($operate_sup->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
+                            <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
+                        @endif
+                        @if($operate_sup->human_resource_modi == 'ปรับอัตราเงินเดือน')
+                            <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน <u>{{$operate_sup->human_resource_commo}}</u>
+                        <br>@endif
+                        @if($operate_sup->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
+                            <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน <u>{{$operate_sup->human_resource_comno}}</u>
+                        <br>@endif
+                        @if($operate_sup->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
+                        <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น <u>{{$operate_sup->human_resource_posi}}</u> และปรับเงินเดือน
+                        <br>@endif
+                        @if($operate_sup->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
+                            <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate_sup->human_resource_date}}</u>
+                        <br>@endif 
+                        @if($operate_sup->human_resource_other == 'อื่นๆ')
+                            <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate_sup->human_resource_othercom}}</u>
+                        <br>@endif 
+                        
                 </td>
             </tr>
         </tbody>
-    </table> <br>
+    </table>
+        @if($operate_sup->human_resource_nre != '')
+            <p style="text-align:right"><br><br> ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->human_resource_nre}} )<br>วันที่การประเมิน....../....../......</p>
+        @endif <br>  
     <table>
         <tbody>
             <tr><td align="center"><b>เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</b></td></tr>
             <tr>
                 <td>
                     @if($operate_sup->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
-                        <input type="checkbox" checked>ให้บรรจุเป็นพนักงานประจำ
+                        <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
                     @endif
                     @if($operate_sup->manager_resource_modi == 'ปรับอัตราเงินเดือน')
-                        <input type="checkbox" checked>ปรับอัตราเงินเดือน {{$operate_sup->manager_resource_comdi}}
+                        <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน {{$operate_sup->manager_resource_comdi}}
                     <br>@endif
                     @if($operate_sup->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                        <input type="checkbox" checked>ยังไม่ปรับอัตราเงินเดือน {{$operate_sup->manager_resource_comno}}
+                        <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน {{$operate_sup->manager_resource_comno}}
                     <br>@endif
                      @if($operate_sup->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                        <input type="checkbox" checked>ให้ปรับตำแหน่งเป็น {{$operate_sup->manager_resource_posi}} และปรับเงินเดือน
+                        <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น {{$operate_sup->manager_resource_posi}} และปรับเงินเดือน
                     <br>@endif 
                     @if($operate_sup->manager_resource_fail == 'ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่')
-                        <input type="checkbox" checked>ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate_sup->manager_resource_date}}
+                        <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate_sup->manager_resource_date}}
                     <br>@endif 
                     @if($operate_sup->manager_resource_other == 'อื่นๆ')
-                        <input type="checkbox" checked>อื่นๆ {{$operate_sup->manager_resource_othercom}}
+                        <input type="checkbox" checked="checked">อื่นๆ {{$operate_sup->manager_resource_othercom}}
                     <br>@endif 
-                    @if($operate_sup->manager_resource_nre != '')
-                        <p align = "right">ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
-                    @endif
                     </td>
                 </tr>
         </tbody>
-        </table> 
+    </table>
+    @if($operate_sup->manager_resource_nre != '')
+    <p style="text-align:right"><br><br> ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
+    @endif
 </body>
 </html>
