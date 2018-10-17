@@ -191,7 +191,7 @@
                 <td align="center">{{$operate_sup->chioce25_90}}</td>
             </tr>
             <tr>
-                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <u><font color="red">{{$operate_sup->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate_sup->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <font color="red">{{$operate_sup->subtotal_final}}</font> </b></td>
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <u><font color="red">{{$operate_sup->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate_sup->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate_sup->subtotal_final}}</font></u> </b></td>
             </tr>
         </tbody>
     </table> 
