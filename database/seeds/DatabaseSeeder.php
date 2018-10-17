@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PartofTableSeeder::class);
         $this->call(QuestionTableSeeder::class);
         $this->call(FormforTableSeeder::class);
-        $this->call(Ngg_employeeTableSeeder::class);
+       // $this->call(Ngg_employeeTableSeeder::class);
         $this->call(provinceTableSeeder::class);
         $this->call(Ngg_evaluate_employeeTableSeeder::class);
         $this->call(Ngg_levelTableSeeder::class);

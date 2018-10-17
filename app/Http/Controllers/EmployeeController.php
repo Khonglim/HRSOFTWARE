@@ -240,7 +240,7 @@ class EmployeeController extends Controller
         $personal->pregnant = $request->pregnant;
         $personal->because = $request->because;
 
-
+        $personal->spouse_tel = $request->spouse_tel;
         $personal->degree1 = $request->degree1;
         $personal->degree2 = $request->degree2;
         $personal->degree3 = $request->degree3;
@@ -415,6 +415,7 @@ class EmployeeController extends Controller
         $personal->marital_status = $request->marital_status;
         $personal->if_marricd = $request->if_marricd;
         $personal->spouse = $request->spouse;
+        $personal->spouse_tel = $request->spouse_tel;
         $personal->name_spouse = $request->name_spouse;
         $personal->spouse_occupation = $request->spouse_occupation;
         $personal->firm_address = $request->firm_address;

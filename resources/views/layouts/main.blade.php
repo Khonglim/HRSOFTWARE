@@ -13,7 +13,11 @@
   <link href="{{ asset('plugins/pace/pace.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/skins/_all-skins.min.css') }}" rel="stylesheet">
   <link href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
-  <script type="text/javascript" src=" {{ asset('all/jquery-1.10.2.min.js') }}" ></script>
+  <script
+  src="http://code.jquery.com/jquery-1.10.2.min.js"
+  integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg="
+  crossorigin="anonymous"></script>
+</head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet"
@@ -26,6 +30,15 @@
   <script type="text/javascript" src="{{ asset('all/jquery-ui-timepicker-addon.js') }}"></script>
   <script type="text/javascript" src="{{ asset('all/jquery-ui-sliderAccess.js') }}"></script>
 
+  <link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
+  
+
+ 
+
+  <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
+ 
+  <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
+  
 
 
   <script type="text/javascript">
