@@ -196,7 +196,7 @@ class CreateAnsOperateSupTable extends Migration
             $table->char('manager_resource_other',100)->nullable();
             $table->char('manager_resource_othercom',100)->nullable();
             $table->char('manager_resource_nre',100)->nullable();
-
+            $table->longText('description')->nullable();
 
 
         

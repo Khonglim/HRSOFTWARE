@@ -28,7 +28,7 @@
             <hr>
             <input type="checkbox" >Cien &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="checkbox" >Sesto &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >NGGTP  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >TAI &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >Xian  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" >UW  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >Other<br>
            **กรุณาทำเครื่องหมาย <input type="checkbox" checked="checked"> เพื่อเลือกบริษัทต้นสังกัด ลงในช่องสี่เหลี่ยม**<br>
-            ใบสมัครงาน/Job Application From </h3>
+            ใบสมัครงาน/Job Application Form </h3>
 
 
      <img src="{{$personal->photo}}" style="width:170px;height:170px;margin-left:15px;" >
