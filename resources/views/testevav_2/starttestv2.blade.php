@@ -120,7 +120,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
           <div class="box-body">
             <div class="table-responsive">
                {{Form::open(['url'=>'evatestingv2'])}}
-                <div  >
+                <div  style="display: none;">
                      {{Form::text('nee_id2',$_POST["nee_id2"])}}
                      {{Form::text('nee_id1',$_POST["nee_id1"])}} <br>
                      {{Form::text('id_employee',$_POST["id_employee"])}}<br>
