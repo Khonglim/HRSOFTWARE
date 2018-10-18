@@ -297,8 +297,7 @@
 
 
                             </div> 
-             
-    
+                            
                   <div class="form-group">
     
                         <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
@@ -491,7 +490,23 @@
                                                             
                                             </div>
                                     </div>
-
+                                    <div class="form-group">
+                                            <div class="col-sm-3"></div>
+                                            <div class="col-sm-5">
+                                                    <div class="sigPad">
+                                                            <ul class="sigNav">
+                                                              <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                                                              <li class="clearButton"><a href="#clear">Clear</a></li>
+                                                            </ul>
+                                                            <div class="sig sigWrapper">
+                                                              <div class="typed"></div>
+                                                              <canvas class="pad" width="198" height="55"></canvas>
+                                                              <input type="hidden" name="signa2" class="output">
+                                                      
+                                                            </div>
+                                                          </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                             <label  class="col-sm-2 control-label">ชื่อผู้จัดการฝ่าย:</label>
 
@@ -537,7 +552,7 @@
 
             </div>
     </div>
-
+   
     <div class="panel panel-info" style="width:100%">
             <div class="panel-heading">เฉพาะฝ่ายทรัพยากรบุคคล</div>
             <div class="panel-body">
@@ -603,7 +618,23 @@
 
 
                     </div>
-             
+                    <div class="form-group">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-5">
+                                    <div class="sigPad">
+                                            <ul class="sigNav">
+                                              <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                                              <li class="clearButton"><a href="#clear">Clear</a></li>
+                                            </ul>
+                                            <div class="sig sigWrapper">
+                                              <div class="typed"></div>
+                                              <canvas class="pad" width="198" height="55"></canvas>
+                                              <input type="hidden" name="signa3" class="output">
+                                      
+                                            </div>
+                                          </div>
+                        </div>
+                    </div>
                     <div class="form-group">
                             <label  class="col-sm-3 control-label">ชื่อผู้จัดการฝ่ายทรัพยากรบุคคล:</label>
 
@@ -691,7 +722,23 @@
 
 
                     </div>
-             
+                    <div class="form-group">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-5">
+                                    <div class="sigPad">
+                                            <ul class="sigNav">
+                                              <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                                              <li class="clearButton"><a href="#clear">Clear</a></li>
+                                            </ul>
+                                            <div class="sig sigWrapper">
+                                              <div class="typed"></div>
+                                              <canvas class="pad" width="200" height="150"></canvas>
+                                              <input type="hidden" name="signa4" class="output">
+                                      
+                                            </div>
+                                          </div>
+                        </div>
+                    </div>
                     <div class="form-group">
                             <label  class="col-sm-3 control-label">ชื่อกรรมการผู้จัดการ/ผู้จัดการทั่วไป:</label>
 

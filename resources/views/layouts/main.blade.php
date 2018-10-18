@@ -39,7 +39,12 @@
  
   <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
   
-
+  <script>
+      $(document).ready(function() {
+        $('.sigPad').signaturePad({drawOnly:true});
+               
+      });
+    </script>
 
   <script type="text/javascript">
 

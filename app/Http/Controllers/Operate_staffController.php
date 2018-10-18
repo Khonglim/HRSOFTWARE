@@ -296,10 +296,10 @@ class Operate_staffController extends Controller
 
 
 
+        $operateSataff->signa2 = Input::get('signa2'); 
+        $operateSataff->signa3 = Input::get('signa3'); 
 
-
-
-
+        $operateSataff->signa4 = Input::get('signa4'); 
 
 
 
