@@ -79,7 +79,7 @@
                 <td align="center">ประเมินรอบ 90 วัน</td>
             </tr>
             <tr>
-                <td colspan="3"><b>ระดับปฏิบัติการ (Supervisory Level)</b></td>
+                <td colspan="3"><b>ระดับปฏิบัติการ (Operational Level)</b></td>
             </tr>
             <tr>
                 <td>1. คุณภาพของงานที่ปฏิบัติ</td>
