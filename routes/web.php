@@ -61,31 +61,32 @@ Route::post('/ansdisc','AnswerController@answerdisc');
 
 Route::resource('evatesting','EvatestingController');
 Route::post('istestertotest','Evatesting2Controller@test');
-Route::post('starttest','Evatesting2Controller@test2')->middleware('auth');
-Route::get('evareport/{id}/report','Evatesting2Controller@test3')->middleware('auth');
-Route::get('summeva','Evatesting2Controller@test4')->middleware('auth');
-Route::get('evareport/{id}/evareportblindname','Evatesting2Controller@test5')->middleware('auth');
+Route::post('starttest','Evatesting2Controller@test2');
+Route::get('evareport/{id}/report','Evatesting2Controller@test3');
+Route::get('summeva','Evatesting2Controller@test4');
+Route::get('evareport/{id}/evareportblindname','Evatesting2Controller@test5');
 
-Route::resource('evatestingv2','Evatestingv2Controller')->middleware('auth');
+Route::resource('evatestingv2','Evatestingv2Controller');
 Route::post('istestertotestv2','Evatesting2v2Controller@test');
 Route::post('starttestv2','Evatesting2v2Controller@test2');
-Route::get('summevav2','Evatesting2v2Controller@test4')->middleware('auth');
-Route::get('evareportv2/{id}/reportv2_leader','Evatesting2v2Controller@test3leader')->middleware('auth');
-Route::get('evareportv2/{id}/evareportblindnamev2_leader','Evatesting2v2Controller@test5leader')->middleware('auth');
+Route::get('summevav2','Evatesting2v2Controller@test4');
 
-Route::get('evareportv2/{id}/reportv2_officer','Evatesting2v2Controller@test3officer')->middleware('auth');
-Route::get('evareportv2/{id}/evareportblindnamev2_officer','Evatesting2v2Controller@test5officer')->middleware('auth');
+Route::get('evareportv2/{id}/reportv2_leader','Evatesting2v2Controller@test3leader');
+Route::get('evareportv2/{id}/evareportblindnamev2_leader','Evatesting2v2Controller@test5leader');
 
-Route::get('evareportv2/{id}/reportv2_manager','Evatesting2v2Controller@test3manager')->middleware('auth');
-Route::get('evareportv2/{id}/evareportblindnamev2_manager','Evatesting2v2Controller@test5manager')->middleware('auth');
+Route::get('evareportv2/{id}/reportv2_officer','Evatesting2v2Controller@test3officer');
+Route::get('evareportv2/{id}/evareportblindnamev2_officer','Evatesting2v2Controller@test5officer');
 
-Route::get('evatestversion','Evatesting2v2Controller@index')->middleware('auth');
+Route::get('evareportv2/{id}/reportv2_manager','Evatesting2v2Controller@test3manager');
+Route::get('evareportv2/{id}/evareportblindnamev2_manager','Evatesting2v2Controller@test5manager');
 
-Route::resource('management','EvamanagementController')->middleware('auth');
+Route::get('evatestversion','Evatesting2v2Controller@index');
 
-Route::resource('timeattendant','TimeattendantController')->middleware('auth');
+Route::resource('management','EvamanagementController');
 
-Route::resource('nggemployee','NggemployeeController')->middleware('auth');
+Route::resource('timeattendant','TimeattendantController');
+
+Route::resource('nggemployee','NggemployeeController');
 
 Auth::routes();
 Route::get('/', function () 
