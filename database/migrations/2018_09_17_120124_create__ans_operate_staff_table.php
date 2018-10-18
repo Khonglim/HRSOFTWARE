@@ -198,8 +198,10 @@ class CreateAnsOperateStaffTable extends Migration
             $table->char('endtwork_90', 100)->nullable();
             $table->integer('sick_leave_90')->nullable();
             $table->integer('errand_leave_90')->nullable();
-            $table->longText('description')->nullable();
-
+            $table->longText('signa1')->nullable();
+            $table->longText('signa2')->nullable();
+            $table->longText('signa3')->nullable();
+            $table->longText('signa4')->nullable();
             $table->integer('absence_90')->nullable();
             $table->integer('vacation_90')->nullable();
             $table->integer('line_terms_90')->nullable();

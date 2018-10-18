@@ -4,6 +4,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
+<script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
 <title>css print report table continue</title>
 <style type="text/css">
  body {
@@ -553,12 +558,25 @@
 
 
 
+    <div class="sigPad signed">
+            <div class="sigWrapper">
+              <div class="typed">Sir John A. Macdonald</div>
+              <canvas class="pad" width="198" height="55"></canvas>
+            </div>
+            <p>Sir John A. Macdonald<br>July 1, 1867</p>
+          </div>
 
-
-
-
+        <input type="hidden" value="{{$operate_staff->signa1}}" id="sig1">
+       
 <br>
 <input type="button" value="ปริ้นเฉพาะใน divprint" onclick="javascript:this.style.display='none';window.print();">
 </div>
+<script>
+        $(document).ready(function() {
+            var  sing  = document.getElementById("sig1").value;
+          $('.sigPad').signaturePad({displayOnly:true}).regenerate(sing);
+          
+        });
+      </script>
 </body>
 </html>
