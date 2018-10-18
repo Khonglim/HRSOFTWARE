@@ -14,18 +14,7 @@
 
 
 
-    <div class="sigPad">
-      <ul class="sigNav">
-        <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
-        <li class="clearButton"><a href="#clear">Clear</a></li>
-      </ul>
-      <div class="sig sigWrapper">
-        <div class="typed"></div>
-        <canvas class="pad" width="198" height="55"></canvas>
-        <input type="hidden" name="signa1" class="output">
-
-      </div>
-    </div>
+    
         
     <div class="sigPad">
       <ul class="sigNav">

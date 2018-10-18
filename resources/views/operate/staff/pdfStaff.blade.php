@@ -196,7 +196,13 @@
                 </td>
             </tr>
             <tr>
-                <td align="center"><br><br>ผู้ประเมิน : ...........................................<br> ( คุณ{{$operate_staff->name_rate_60}}
+                <td align="center"><br><br><div class="sigPad signed">
+                        <div class="sigWrapper">
+                        
+                          <canvas class="pad" width="198" height="55"></canvas>
+                        </div>
+                   
+                      </div><br> ( คุณ{{$operate_staff->name_rate_60}}
                     ) <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน....../....../......</td>
                 <td align="center"><br><br>ผู้ถูกประเมิน : ...........................................<br> ( คุณ @foreach ( $personal as $item2)
                     @if( $item2->id == $operate_staff->id_posinal ) {{$item2->name}} {{$item2->lastname}} @endif @endforeach)
@@ -513,9 +519,10 @@
             <tr>
                 <td style="text-align:center;"><br><br>
                         @if($operate_staff->human_resource_nre != '')
-                        <p>ลงนาม...........................................ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_staff->human_resource_nre}}
-                            )<br>วันที่การประเมิน....../....../......</p>
+                      
+                        <p>ลงนาม...........................................ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_staff->human_resource_nre}})<br>วันที่การประเมิน....../....../......</p>
                         @endif
+                        
                 </td>
             </tr>
         </tbody>
@@ -555,16 +562,6 @@
             </tr>
         </tbody>
     </table>
-
-
-
-    <div class="sigPad signed">
-            <div class="sigWrapper">
-              <div class="typed">Sir John A. Macdonald</div>
-              <canvas class="pad" width="198" height="55"></canvas>
-            </div>
-            <p>Sir John A. Macdonald<br>July 1, 1867</p>
-          </div>
 
         <input type="hidden" value="{{$operate_staff->signa1}}" id="sig1">
        

@@ -212,6 +212,7 @@ Route::post('operate_employstaff', function () {
         'operate_qSeff' =>   $operate_qSeff,
        
     );
+    
     return view("operate/staff/operate_60",$data);
 
 });
