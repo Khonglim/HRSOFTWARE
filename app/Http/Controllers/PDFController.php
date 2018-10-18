@@ -104,13 +104,17 @@ class PDFController extends Controller
         ->where('degree', '=', 1)
     ->get();
         $operate_sup = Operate_sup::find($id);
-        $pdf = PDF::loadView('operate.sup.pdfSup',['personal' =>  $personal,
+       // $pdf = PDF::loadView('operate.sup.pdfSup',['personal' =>  $personal,
         
+      //  'operate_sup' =>   $operate_sup
+        
+       // ]);
+       $data = array(
+        'personal' =>  $personal,
         'operate_sup' =>   $operate_sup
-        
-        ]);
+    );
        
-        return $pdf->stream();
+       return view("operate/sup/pdfSup",$data);
     }
 
 
