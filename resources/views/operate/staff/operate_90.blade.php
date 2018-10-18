@@ -366,9 +366,13 @@
 
                                        
                                     </div> 
-
                                     <div class="form-group">
                                         <div class="col-sm-12">
+                                                <div class="col-sm-5">
+                                                <div class="alert alert-danger">
+                                                        <strong>โปรดทราบ!</strong> แต่ละหัวข้อเลือกคะแนนเพียงครั้งเดียวเท่านั้น
+                                                      </div>
+                                                    </div>
                                             <table id="customers">
                                                 <tr>
                                                   <th COLSPAN="4" style="text-align:center">เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน(100 คะแนน )</th>
@@ -1041,6 +1045,9 @@
                pont=parseInt(pont)+parseInt(add_value[key]);
 
 
+            }
+            if(pont >100){
+                alert("คุณกรอกคะแนนเกิน 100 กรุณาตรวจสอบ");
             }
             $('#sum_chioce_suitability10').val(pont);
             $('#scoremp').val(pont);

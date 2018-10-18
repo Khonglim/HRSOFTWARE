@@ -224,13 +224,30 @@
                     <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
                     <div class="col-sm-4">
                             <input type="text" name="namerate" id="namerate" required class="form-control">
-                          </div> 
-                         </div>   
+                          </div>
+                         
                                
-            
-                   
+                          
+                         </div>   
+                         <div class="form-group">
+                                <div class="col-sm-3"></div>
+                            <div class="col-sm-4">
+
+                                <div class="sigPad">
+                                        <ul class="sigNav">
+                                          <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                                          <li class="clearButton"><a href="#clear">Clear</a></li>
+                                        </ul>
+                                        <div class="sig sigWrapper">
+                                          <div class="typed"></div>
+                                          <canvas class="pad" width="198" height="55"></canvas>
+                                          <input type="hidden" name="signa1" class="output">
+                                  
+                                        </div>
+                                      </div>
+                          </div>
                     
-                    
+                        </div>
                     
                              
                     
@@ -843,7 +860,12 @@
 
 
 
-
+<script>
+        $(document).ready(function() {
+          $('.sigPad').signaturePad({drawOnly:true});
+                 
+        });
+      </script>
 
 
 

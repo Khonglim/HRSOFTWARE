@@ -77,20 +77,24 @@ class PDFController extends Controller
     {
        
 
-      
+        $operate_staff = Operate_staff::find($id);
         $personal  =   DB::table('personal')
         ->where('enable', '=', 1)
         ->where('degree', '=', 0)
        ->get();
-       $operate_staff = Operate_staff::find($id);
-        $pdf = PDF::loadView('operate.staff.pdfStaff',['operate_staff' =>   $operate_staff,
-        
-        'personal' =>    $personal,
-        
-        
-        ]);
+       $data = array(
+        'personal' =>  $personal,
+        'operate_staff' =>   $operate_staff
+    );
        
-        return $pdf->stream();
+      //  $pdf = PDF::loadView('operate.staff.pdfStaff',['operate_staff' =>   $operate_staff,
+        
+       // 'personal' =>    $personal,
+        
+        
+       // ]);
+        return view("operate/staff/pdfStaff",$data);
+        
     }
 
     public function pdfoper_sup($id)
@@ -100,13 +104,17 @@ class PDFController extends Controller
         ->where('degree', '=', 1)
     ->get();
         $operate_sup = Operate_sup::find($id);
-        $pdf = PDF::loadView('operate.sup.pdfSup',['personal' =>  $personal,
+       // $pdf = PDF::loadView('operate.sup.pdfSup',['personal' =>  $personal,
         
+      //  'operate_sup' =>   $operate_sup
+        
+       // ]);
+       $data = array(
+        'personal' =>  $personal,
         'operate_sup' =>   $operate_sup
-        
-        ]);
+    );
        
-        return $pdf->stream();
+       return view("operate/sup/pdfSup",$data);
     }
 
 

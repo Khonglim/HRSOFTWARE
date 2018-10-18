@@ -1,61 +1,74 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <style>
-        body {
-            font-family: 'examplefont', sans-serif;
-            font-size: 20px;
-        }
-        .page-break {
-            page-break-after: always;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td,
-        th {
-            border: 1px solid;
-        }
-        .font {
-            font-size: 25px;
-        }
-        .pop {
-            text-align: center;
-        }
-    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
+<script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
+<title>css print report table continue</title>
+<style type="text/css">
+ body {
+           
+           font-size: 14px;
+       }
+       .page-break {
+           page-break-after: always;
+       }
+       table {
+           border-collapse: collapse;
+           width: 100%;
+           font-size: 14px;
+       }
+       td,
+       th {
+           border: 1px solid;
+       }
+       .font {
+           font-size: 25px;
+       }
+       .pop {
+           text-align: center;
+       }
+</style>
 </head>
+ 
 <body>
-    <div class="page-break">
-        <p style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></p>
-        <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
-        <div class="font" style="text-align:center;"><b>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</b></div>
-        <b>1. ระดับในการประเมินผล</b><br>
-        <dd>4 ดีมาก = ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br></dd>
-        <dd>3 ดี = ผลการปฎิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br></dd>
-        <dd>2 พอใช้ = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br></dd>
-        <dd>1 ต้องปรับปรุง = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br></dd>
-        <b>2.การประเมินผลให้แยกประเมินผลตามหัวข้อประเมิน และคิดคะแนนรวมดังนี้</b><br>
-        <dd>2.1. ระดับพนักงานทั่วไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. <u>ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60</u><br></dd>
-        <dd>2.2. ระดับหัวหน้างานขึ้นไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br></dd>
-        <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
-        <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
-        <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป<u></b><br><br><br>
-        <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
-        <b>ชื่อ-นามสกุล :</b> @foreach ( $personal as $item2) @if( $item2->id == $operate_staff->id_posinal ) {{$item2->name}}
-        {{$item2->lastname}} @endif @endforeach &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="container">
+    <br>
 
-        <b>รหัสพนักงาน :  </b> {{$operate_staff->id_employ}} <br>
-        <b>ตำแหน่ง :</b> {{$operate_staff->position}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <b>แผนก/ฝ่าย :</b> {{$operate_staff->department}} <br>
-        <b>วันที่เริ่มงาน :</b> {{$operate_staff->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-        <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate_staff->endtime}} <b>ระดับ :</b> {{$operate_staff->degree}} <br>
-        <b>ประเมินครั้งที่1 :</b> {{$operate_staff->date_60}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-        <b>ประเมินครั้งที่2 :90 วัน วันที่ :</b> {{$operate_staff->date_90}}
 
-    </div>
+<!-- <div class="page-break"></div> -->
+<center> <img src="{{ url('img/NGG-10.png') }}" width="100px" height="100px"></center>
+<h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
+<div class="font" style="text-align:center;"><b>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</b></div>
+<b>1. ระดับในการประเมินผล</b><br>
+&emsp;&emsp;4 ดีมาก = ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
+&emsp;&emsp;3 ดี = ผลการปฎิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br></dd>
+&emsp;&emsp;2 พอใช้ = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br>
+&emsp;&emsp;1 ต้องปรับปรุง = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
+<b>2.การประเมินผลให้แยกประเมินผลตามหัวข้อประเมิน และคิดคะแนนรวมดังนี้</b><br>
+&emsp;&emsp;2.1. ระดับพนักงานทั่วไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. <u>ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60</u><br>
+&emsp;&emsp;2.2. ระดับหัวหน้างานขึ้นไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br>
+<b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
+<b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
+<b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
+<div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
+<b>ชื่อ-นามสกุล :</b> @foreach ( $personal as $item2) @if( $item2->id == $operate_staff->id_posinal ) {{$item2->name}}
+{{$item2->lastname}} @endif @endforeach&emsp;&emsp;&emsp;&emsp;
 
-    <table>
+<b>รหัสพนักงาน :  </b> {{$operate_staff->id_employ}} <br>
+<b>ตำแหน่ง :</b> {{$operate_staff->position}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<b>แผนก/ฝ่าย :</b> {{$operate_staff->department}} <br>
+<b>วันที่เริ่มงาน :</b> {{$operate_staff->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+<b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate_staff->endtime}} <b>ระดับ :</b> {{$operate_staff->degree}} <br>
+<b>ประเมินครั้งที่1 :</b> {{$operate_staff->date_60}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+<b>ประเมินครั้งที่2 :90 วัน วันที่ :</b> {{$operate_staff->date_90}}
+<br><br><br>
+<table>
         <tbody>
             <tr>
                 <td align="center" rowspan="2">หัวข้อการประเมิน (100 คะแนน)<br>เงื่อนไขการให้คะแนนจะจัดแบ่งดังนี้<br>4 ดีมาก 3 ดี 2 พอใช้ 1 ต้องปรับปรุง</td>
@@ -66,7 +79,7 @@
                 <td align="center">ประเมินรอบ 90 วัน</td>
             </tr>
             <tr>
-                <td colspan="3"><b>ระดับปฏิบัติการ (Supervisory Level)</b></td>
+                <td colspan="3"><b>ระดับปฏิบัติการ (Operational Level)</b></td>
             </tr>
             <tr>
                 <td>1. คุณภาพของงานที่ปฏิบัติ</td>
@@ -149,6 +162,7 @@
             </tr>
         </tbody>
     </table>
+
     <br>
     <b>ความคิดเห็นเพิ่มเติม การประเมิน 60 วัน (สำหรับผู้ประเมิน)</b><br>
     <table>
@@ -182,7 +196,13 @@
                 </td>
             </tr>
             <tr>
-                <td align="center"><br><br>ผู้ประเมิน : ...........................................<br> ( คุณ{{$operate_staff->name_rate_60}}
+                <td align="center"><br><br><div class="sigPad signed">
+                        <div class="sigWrapper">
+                        
+                          <canvas class="pad" width="198" height="55"></canvas>
+                        </div>
+                   
+                      </div><br> ( คุณ{{$operate_staff->name_rate_60}}
                     ) <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน....../....../......</td>
                 <td align="center"><br><br>ผู้ถูกประเมิน : ...........................................<br> ( คุณ @foreach ( $personal as $item2)
                     @if( $item2->id == $operate_staff->id_posinal ) {{$item2->name}} {{$item2->lastname}} @endif @endforeach)
@@ -190,6 +210,7 @@
             </tr>
         </tbody>
     </table>
+    <br>   <br>   <br>
     <table>
         <tbody>
             <tr><td align="center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></td></tr>
@@ -393,7 +414,7 @@
             <input type="checkbox" checked="checked">{{$operate_staff->other_suitability}} : {{$operate_staff->other_com_suitability}} <br>
         @endif 
         @if($operate_staff->namerate_suitability != '')
-        <p align = "right"><br><br> ลงนาม ........................................... ผู้จัดการฝ่าย <br>( คุณ{{$operate_staff->namerate_suitability}} )<br>วันที่การประเมิน..../..../....</p>
+        <p align = "center"><br><br> ลงนาม ........................................... ผู้จัดการฝ่าย <br>( คุณ{{$operate_staff->namerate_suitability}} )<br>วันที่การประเมิน..../..../....</p>
         @endif
     </td></tr></table> <br>
     <table>
@@ -498,15 +519,16 @@
             <tr>
                 <td style="text-align:center;"><br><br>
                         @if($operate_staff->human_resource_nre != '')
-                        <p>ลงนาม...........................................ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_staff->human_resource_nre}}
-                            )<br>วันที่การประเมิน....../....../......</p>
+                      
+                        <p>ลงนาม...........................................ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_staff->human_resource_nre}})<br>วันที่การประเมิน....../....../......</p>
                         @endif
+                        
                 </td>
             </tr>
         </tbody>
     </table>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="page-break"></div> 
     <table>
         <tbody>
             <tr>
@@ -541,8 +563,17 @@
         </tbody>
     </table>
 
-
-
+        <input type="hidden" value="{{$operate_staff->signa1}}" id="sig1">
+       
+<br>
+<input type="button" value="ปริ้นเฉพาะใน divprint" onclick="javascript:this.style.display='none';window.print();">
+</div>
+<script>
+        $(document).ready(function() {
+            var  sing  = document.getElementById("sig1").value;
+          $('.sigPad').signaturePad({displayOnly:true}).regenerate(sing);
+          
+        });
+      </script>
 </body>
-
 </html>
