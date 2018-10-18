@@ -110,15 +110,15 @@ Route::get('/dynamicdependent','DynamicDependent@index');
 Route::get('states/get/{id}', 'DynamicDependent@getStates');
 Route::get('states2/get/{id}', 'DynamicDependent@getStates');
 
-Route::get('/pdfemployee/{id}','PDFController@pdfemployee' )->middleware('auth');;
+Route::get('/pdfemployee/{id}','PDFController@pdfemployee' )->middleware('auth');
+Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' )->middleware('auth');
+Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' )->middleware('auth');
+Route::get('/pdfcon_all/{id}','PDFController@pdfconall' )->middleware('auth');
 
-Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' )->middleware('auth');;
-Route::get('/pdftestmbti/{id}','PDFController@pdftestmbti' )->middleware('auth');;
-Route::get('/pdfcon_all/{id}','PDFController@pdfconall' )->middleware('auth');;
 
+Route::get('/pdfcon_staf/{id}','PDFController@pdfoper_staff' )->middleware('auth');
 
-Route::get('/pdfcon_staf/{id}','PDFController@pdfoper_staff' )->middleware('auth');;
-Route::get('/pdfcon_sup/{id}','PDFController@pdfoper_sup' )->middleware('auth');;
+Route::get('/pdfcon_sup/{id}','PDFController@pdfoper_sup' )->middleware('auth');
 
 
 
@@ -150,18 +150,38 @@ Route::get('form', function () {return view("formregister");});
 Route::get('interview', function () { return view("rate/index");})->middleware('auth');
 
 
-Route::get('save', function () { return view("rate/save");});
+Route::get('save', function () { 
+    
+    return view("rate/save");
 
-Route::get('testto', function () { return view("testmbti/index");});
+});
 
-Route::get('testtoo', function () { return view("testdisc/index");});
+Route::get('testto', function () { 
+    
+    return view("testmbti/index");
 
-Route::get('savembti', function () { return view("testmbti/save");});
+});
 
-Route::get('savedisc', function () { return view("testdisc/save");});
+Route::get('testtoo', function () { 
+    
+    return view("testdisc/index");
+});
+
+Route::get('savembti', function () { 
+    return view("testmbti/save");
+});
+
+Route::get('savedisc', function () { 
+    return view("testdisc/save");
+
+});
 
 
-Route::get('save_employ', function () { return view("employ/save");});
+Route::get('save_employ', function () { 
+    
+    return view("employ/save");
+
+});
 
 
 
