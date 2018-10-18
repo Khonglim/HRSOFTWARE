@@ -121,18 +121,14 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
             <div class="table-responsive">
                {{Form::open(['url'=>'evatestingv2'])}}
                 <div  style="display: none;">
-                     {{Form::text('nee_id2',$_POST["nee_id2"])}}
-                     {{Form::text('nee_id1',$_POST["nee_id1"])}} <br>
-                     {{Form::text('id_employee',$_POST["id_employee"])}}<br>
-                     {{Form::text('nee_id',$_POST["nee_id"])}}
-                     {{Form::text('forms1_id',$_POST["forms_id"])}}
+                     {{Form::text('forms1_id',$forms_id)}}
                     </div>
                
             
                    
               
             	 @foreach($partof as $partoftest)
-               @if($partoftest->id_form == $_POST["forms_id"] && $partoftest->subpart == '0')
+               @if($partoftest->id_form == $forms_id && $partoftest->subpart == '0')
                <table class="table table-bordered table-striped">
               <thead>
                 
@@ -164,7 +160,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
              </thead>
              <tbody>
 @foreach($question as $questiontest)
- @if($questiontest->id_form ==  $_POST["forms_id"])
+ @if($questiontest->id_form ==  $forms_id)
              
              	
                

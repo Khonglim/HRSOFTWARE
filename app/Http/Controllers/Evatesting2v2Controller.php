@@ -21,20 +21,25 @@ class Evatesting2v2Controller extends Controller
         return view('testevav_2/checkversion');
     }
 
-    public function test()
+    public function test($id)
     {
+        $emm_id = $id;
         $employeetotest = Employeetotest::all();
         $formfor = Formfor::all();
         $ngg_employee = Ngg_employee::all();
 
          $data = array(
-            'employeetotest' => $employeetotest ,'formfor' => $formfor,'ngg_employee' => $ngg_employee
+            'employeetotest' => $employeetotest ,
+            'formfor' => $formfor,
+            'ngg_employee' => $ngg_employee,
+            'emm_id' => $emm_id
         );
          return view("testevav_2/istestertotestv2",$data);
     }
-     public function test2()
+     public function test2( $id)
     {
-         
+        
+        $forms_id= $id;
          $partof = Partofv2::all();
          $formfor = Formfor::all();
          $question = Questionv2::all();
@@ -43,7 +48,8 @@ class Evatesting2v2Controller extends Controller
             'partof' => $partof ,
             'formfor' => $formfor ,
             'question' => $question , 
-            'descrip'=> $descrip
+            'descrip'=> $descrip,
+            'forms_id'=>$forms_id
         ); 
         return view("testevav_2/starttestv2",$data);
     }

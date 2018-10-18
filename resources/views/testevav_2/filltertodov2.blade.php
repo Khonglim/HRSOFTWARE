@@ -26,11 +26,7 @@ function myFunction() {
              <div class="col-md-6">
                 <div class="form-group" style="display: none;">
                  
-                   <?php    $i=Auth::user()->name; $j=0;?>
-                 
-                   {{Form::open(['url'=>'istestertotestv2','method'=>'POST'])}}
-
-                    {{Form::label('id_employee','รหัส พนักงาน')}}   
+                   <?php    $i=Auth::user()->name; $j=0;?> 
                     {{Form::text('id_employee',$i,['class'=>'form-control','required'])}}   
                    
                   </div>
@@ -239,7 +235,8 @@ function myFunction() {
             <div class="col-md-7">
             <h4>การประเมินประจำปี เป็นแนวทางปฏิบัติตามระเบียบ ในการประเมินของบริษัทในเครือ เอ็น จี จี กรุ๊ป  ซึ่งข้อมูลทุกอย่าง เป็นความลับ ห้ามพนักงานทำการเผยแพร่กับบุคคลอื่นโดยเด็ดขาด หากฝ่ายทรัพยากรบุคคลตรวจสอบพบการเผยแพร่จะลงโทษสถานหนักตามระเบียบข้อบังคับหมวดที่9  ข้อที่  2 ความผิดทางวินัยขั้นร้ายแรง</h4>
                 <input type="checkbox" id="myCheck"  onclick="myFunction()"><p style="color: red;"> ข้าพเจ้าตกลงยอมรับและเข้าใจในระเบียบแนวทางปฏิบัติดังกล่าว</p>
-                <input type="submit" value="เริ่มทำแบบประเมิน" id="mySubmit" class="btn btn-primary" disabled="true">
+
+                <a href="{{'istestertotestv2/'.$i}}" class="btn btn-xs " ><input type="submit" value="เริ่มทำแบบประเมิน" id="mySubmit" class="btn btn-primary" disabled="true"></a>
             </div>
               </div>
               <!-- /.box-footer -->

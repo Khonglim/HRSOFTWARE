@@ -22,8 +22,6 @@
     }
 
   </style>
-
-  
 <?php    $i=0; $j=0; $k=0;?>
  <section class="content">
   <div class="row">
@@ -38,7 +36,7 @@
 
                       @foreach ($ngg_employee as $ngg_employees)
 
-                      @if(($ngg_employees->nem_code ==  $id_employee =  $_POST["id_employee"]))
+                      @if(($ngg_employees->nem_code ==  $emm_id))
                  
  <table class="table table-bordered table-striped">
               <thead>
@@ -75,7 +73,7 @@
  
                 @if($emp->nee_by_employee == $emp2->nem_id && $ngg_employees->nem_id == $emp->nee_is_employee && $forms->id==$emp->nee_id_form  )
                  
-                {{Form::open(['url'=>'starttestv2','method'=>'POST'])}}
+              
 
                 @if($forms->form == 'leader' && $i==0)
                  <tr>
@@ -104,18 +102,12 @@
                       {{Form::label('คุณ','คุณ')}}
                    {{Form::label('id_employee1',$emp2->nem_thai_firstname)}}
                     </td>
-                    <td style="display: none;">
-                      
-                   {{Form::text('nee_id2',$emp->nee_id),['class'=>'form-control','required']}}
-                   {{Form::text('nee_id1',$emp2->nem_id),['class'=>'form-control','required']}}
-                   {{Form::text('id_employee',$ngg_employees->nem_thai_firstname,['class'=>'form-control','required'])}}
-                   {{Form::text('nee_id',$ngg_employees->nem_id,['class'=>'form-control','required'])}}
-                   {{Form::text('forms_id',$forms->id,['class'=>'form-control','required'])}}
-                    </td>
-                    
+                  
                     <td rowspan="2" colspan="5" style="text-align: center;width: 50%;height: 70px;">
                     @if($emp->nee_recheck == true)
-                    {{ Form::submit('เริ่มทำแบบประเมิน',['class'=> 'btn btn-primary'])}}
+
+                    <a href="{{'starttestv2/'.$forms->id}}" class="btn btn-xs " ><input type="submit" value="เริ่มทำแบบประเมิน" id="mySubmit" class="btn btn-primary"></a>
+
                     @else
                     <span><i class="fa fa-check fa-lg" aria-hidden="true" style="color: #35ff16"></i></span>
                     @endif
@@ -123,7 +115,7 @@
                     </td>
                    
                   </tr> 
- {{Form::close()}}
+ 
                 @endif
 
                 @endforeach
@@ -143,7 +135,6 @@
 
             </table>
                     
-
                       @endif
                      
                       @endforeach
