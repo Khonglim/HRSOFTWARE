@@ -9,6 +9,8 @@ use App\Personal;
 use App\Operate_staff;
 use App\Operate_Chioce;
 use DB;
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
 use App\Operate_qSeff;
 class Operate_staffController extends Controller
 {
@@ -106,6 +108,7 @@ class Operate_staffController extends Controller
  
     
      $operateSataff->save();
+     Session::flash('flash_message','สำเร็จ!! ขอบคุณสําหรับการประเมิน');
         return redirect('home');
     }
 
@@ -313,7 +316,7 @@ class Operate_staffController extends Controller
         $operateSataff->line_terms_90= Input::get('line_90') ;
         $operateSataff->line_min_90 = Input::get('min_90');
         $operateSataff->save();
-
+        Session::flash('flash_message','สำเร็จ!! ขอบคุณสําหรับการประเมิน');
         return redirect('home');
 
 

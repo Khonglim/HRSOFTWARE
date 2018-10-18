@@ -732,7 +732,7 @@
                                             </ul>
                                             <div class="sig sigWrapper">
                                               <div class="typed"></div>
-                                              <canvas class="pad" width="200" height="150"></canvas>
+                                              <canvas class="pad" width="198" height="55"></canvas>
                                               <input type="hidden" name="signa4" class="output">
                                       
                                             </div>

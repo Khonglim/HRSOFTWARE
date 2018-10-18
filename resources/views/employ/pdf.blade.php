@@ -25,9 +25,9 @@
 </head>
 
 <body>
-     <div style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="100px" height="100px"></div>
+     <div style="text-align:center;"><img src="{{ public_path('img/NGG-10.png') }}" width="50px" height="50px"></div>
         <h3 style="text-align:center;">  บริษัทในเครือ เอ็น จี จี กรุ๊ป<br>
-            <hr>
+           
             <input type="checkbox" >Cien &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="checkbox" >Sesto &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >NGGTP  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >TAI &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >Xian  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" >UW  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >Other<br>
            **กรุณาทำเครื่องหมาย <input type="checkbox" checked="checked"> เพื่อเลือกบริษัทต้นสังกัด ลงในช่องสี่เหลี่ยม**<br>
             ใบสมัครงาน/Job Application Form </h3>
