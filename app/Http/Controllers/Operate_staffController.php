@@ -100,7 +100,7 @@ class Operate_staffController extends Controller
         $operateSataff->vacation_60= Input::get('vacation');
         $operateSataff->line_terms_60 = Input::get('line');
         $operateSataff->line_min_60 = Input::get('min');
- 
+        $operateSataff->signa1 = Input::get('signa1'); 
  
  
  
