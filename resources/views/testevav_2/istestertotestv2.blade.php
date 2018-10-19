@@ -46,6 +46,7 @@
                      {{Form::label('id_employee1',$ngg_employees->nem_code)}}
                      {{Form::label('id_number1',$ngg_employees->nem_nickname)}}
                      {{Form::label('id_number2',$ngg_employees->nem_id)}}
+
                   </th>
                 </tr>
                 <tr>
@@ -66,7 +67,7 @@
                     @foreach($formfor as $forms)
 
                   @if($ngg_employees->nem_id == $emp->nee_is_employee && $forms->id==$emp->nee_id_form )
-
+                  
                    
                 @foreach($ngg_employee as $emp2)      
                    
@@ -106,7 +107,7 @@
                     <td rowspan="2" colspan="5" style="text-align: center;width: 50%;height: 70px;">
                     @if($emp->nee_recheck == true)
 
-                    <a href="{{'starttestv2/'.$forms->id}}" class="btn btn-xs " ><input type="submit" value="เริ่มทำแบบประเมิน" id="mySubmit" class="btn btn-primary"></a>
+                    <a href="{{'starttestv2/'.$emp->nee_id}}" class="btn btn-xs " ><input type="submit" value="เริ่มทำแบบประเมิน" id="mySubmit" class="btn btn-primary"></a>
 
                     @else
                     <span><i class="fa fa-check fa-lg" aria-hidden="true" style="color: #35ff16"></i></span>

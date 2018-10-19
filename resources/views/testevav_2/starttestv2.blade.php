@@ -120,8 +120,17 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
           <div class="box-body">
             <div class="table-responsive">
                {{Form::open(['url'=>'evatestingv2'])}}
-                <div  style="display: none;">
-                     {{Form::text('forms1_id',$forms_id)}}
+                <div style="display: none;">
+                  @foreach($employeetotests as $employeetotest)
+                  @if($employeetotest->nee_id == $ids )
+                  <?php $forms_id = $employeetotest->nee_id_form; ?>
+                    {{Form::text('forms1_id',$employeetotest->nee_id_form)}}
+                     {{Form::text('nee_id2',$employeetotest->nee_id)}}
+                     @endif
+                  @endforeach
+                     
+                     
+                     
                     </div>
                
             
