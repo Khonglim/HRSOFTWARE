@@ -19,7 +19,7 @@
             <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
             <input type="hidden"  value="{{$e->id}}" name="id_2" >
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
+                <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                 <div class="col-sm-7">
                     <button type="submit" class="btn btn btn-info"><i class="fa  fa-pencil"></i> คลิก</button>
                 </div>
@@ -30,7 +30,7 @@
 
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
+                  <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                   <div class="col-sm-7">
                       <div class="alert alert-success">
                           <i class="fa fa-check"></i> ประเมินแล้ว
@@ -48,10 +48,10 @@
                         @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
 
               <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
+                  <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                   <div class="col-sm-7">
                       <div class="alert alert-danger">
-                              <i class="fa fa-close"></i> ยังไม่สามารถประเมิน 90 วันได้
+                              <i class="fa fa-close"></i> ยังไม่สามารถประเมินครั้งที่ 2
                       </div>
                   </div>
                 </div>
@@ -59,7 +59,7 @@
                @endif
                @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '1')
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                     <div class="col-sm-7">
                         <div class="alert alert-success">
                             <i class="fa fa-check"></i> ประเมินแล้ว
@@ -73,7 +73,7 @@
                 @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                     <div class="col-sm-7">
                       @foreach ($operate_staff as $operate_staffs)
                       @if($operate_staffs->id_posinal ==  $id =  $_POST["id"])
@@ -101,7 +101,7 @@
               <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
               <input type="hidden"  value="{{$e->id}}" name="id_2" >
               <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
+                <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                 <div class="col-sm-7">
                     <button type="submit" class="btn btn btn-warning"><i class="fa  fa-pencil"></i> คลิก</button>
                 </div>
@@ -110,7 +110,7 @@
               @endif
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 60 วัน</label>
+                  <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                   <div class="col-sm-7">
                       <div class="alert alert-success">
                           <i class="fa fa-check"></i> ประเมินแล้ว
@@ -123,17 +123,17 @@
               @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
               @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
               <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
+                  <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                   <div class="col-sm-7">
                       <div class="alert alert-danger">
-                              <i class="fa fa-close"></i> ยังไม่สามารถประเมิน 90 วันได้
+                              <i class="fa fa-close"></i> ยังไม่สามารถประเมินครั้งที่ 2 ได้
                       </div>
                   </div>
                 </div>
                 @endif
                 @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '1')
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                     <div class="col-sm-7">
                         <div class="alert alert-success">
                             <i class="fa fa-check"></i> ประเมินแล้ว
@@ -144,7 +144,7 @@
                 @endif
                 @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">ระยะเวลา 90 วัน</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                     <div class="col-sm-7">
                         @foreach ($operate_sup as $operate_sup)
                         @if($operate_sup->id_posinal ==  $id =  $_POST["id"])

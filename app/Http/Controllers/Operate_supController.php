@@ -202,7 +202,7 @@ class Operate_supController extends Controller
     $operate_sup->signa3 = Input::get('signa3');
 
     $operate_sup->signa4 = Input::get('signa4');
-    $operatesup->signa1_90 = Input::get('signa1_90');
+    $operate_sup->signa1_90 = Input::get('signa1_90');
 
 
 
