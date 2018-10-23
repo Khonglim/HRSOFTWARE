@@ -116,7 +116,7 @@ class CreatePersonalTable extends Migration
             $table->text('thail')->nullable();
             $table->text('thair')->nullable();
 
-            
+
             $table->text('engliss')->nullable();
             $table->text('englisl')->nullable();
             $table->text('englisr')->nullable();
@@ -160,7 +160,7 @@ class CreatePersonalTable extends Migration
             $table->text('firm')->nullable();
             $table->text('telecm')->nullable();
             $table->text('workk')->nullable();
-          
+
             $table->text('positioncm')->nullable();
             $table->text('computer')->nullable();
             $table->text('fax')->nullable();
@@ -168,23 +168,23 @@ class CreatePersonalTable extends Migration
             $table->text('dot')->nullable();
 
             $table->text('crash1')->nullable();
-       
+
 
 
             $table->text('compd')->nullable();
             $table->text('compa')->nullable();
 
             $table->text('crash2')->nullable();
-         
+
 
             $table->text('crash3')->nullable();
-        
+
 
             $table->text('yes')->nullable();
-          
+
 
             $table->text('owncar')->nullable();
-          
+
 
             $table->text('dateworkk')->nullable();
             $table->text('cardec')->nullable();
@@ -192,10 +192,10 @@ class CreatePersonalTable extends Migration
 
             $table->text('exitwork')->nullable();
             $table->text('because')->nullable();
-           
+
 
             $table->text('serious_ill')->nullable();
-    
+
 
             $table->text('offense')->nullable();
 
@@ -214,11 +214,12 @@ class CreatePersonalTable extends Migration
             $table->text('portfolio1')->nullable();
             $table->text('portfolio2')->nullable();
             $table->text('portfolio3')->nullable();
+              $table->text('spouse_tel')->nullable();
 
             $table->text('fronname')->nullable();
 
             $table->tinyInteger('enable')->default('1');
-            $table->tinyInteger('recheck_conduct')->default('0'); 
+            $table->tinyInteger('recheck_conduct')->default('0');
             $table->tinyInteger('recheck_Oper')->default('0');
             $table->tinyInteger('recheck_Oper_90')->default('0');
             $table->tinyInteger('degree')->default('0');

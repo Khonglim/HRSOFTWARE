@@ -8,6 +8,7 @@
                 <div class="panel-heading">การทดสอบบุคลิกภาพ</div>
                 <div class="panel-body">
                     {{Form::open(['url'=>'testdisc','method'=>'POST'])}}
+                    @csrf
                   <div class="row">
                     <div class="col-xs-12">
                         <div align="right">

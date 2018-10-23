@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('content')
+
   <div class="content-wrapper">
         <div class="col-md-5">
     <div class="content container-fluid">
@@ -18,10 +19,10 @@
                           <label for="inputEmail3" class="col-sm-2 control-label">ชื่อ-สกุล</label>
         
                           <div class="col-sm-7">
-                              <select id="country" name="id" required  class="form-control">
+                              <select class="js-example-basic-single  form-control" id="country" name="id" required >
                                   <option value=""  >--เลือกชื่อพนักงาน--</option>
                                   @foreach ($employee  as $e)
-                                  <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   
+                                  <option value="{{$e->nem_id}}"> {{$e->nem_thai_firstname }} {{$e->nem_thai_lastname }}</option>   
                                   @endforeach
                                   </select>
                           </div>
@@ -31,7 +32,7 @@
                             <label for="inputEmail3" class="col-sm-2 control-label">ระดับ</label>
           
                             <div class="col-sm-7">
-                                <select id="country" name="degree" required  class="form-control">
+                                <select     id="country" name="degree" required  class=" form-control">
                                     <option value=""  >--ระดับ--</option>
                                     <option value= 0  >ระดับปฏิบัติการ</option>
                                     <option value= 1 >ระดับผู้บังคับบัญชา</option>
@@ -53,5 +54,5 @@
                 </div>
           </div>
      </div>
- 
+
   @endsection

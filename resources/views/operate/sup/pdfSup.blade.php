@@ -3,8 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
+<script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<title>css print report table continue</title>
+<title> print report  </title>
 <style type="text/css">
  body {
            
@@ -216,7 +220,7 @@
         <table>
             <tbody>
                 <tr>
-                    <td colspan="2">
+                    <td colspan="3">
                         <b>จุดเด่นของพนักงาน :</b> {{$operate_sup->comments_featured}}<br>
                         <b>จุดด้อยของพนักงาน :</b> {{$operate_sup->comments_weakness}} <br>
                             @if($operate_sup->experimental == 'ไม่ผ่านทดลองงาน')
@@ -234,8 +238,39 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="center"><br><br> ผู้ประเมิน : ........................................... <br> ( คุณ{{$operate_sup->name_rate_60}} ) <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน....../....../......</td>
-                    <td align="center"><br><br> ผู้ถูกประเมิน : ........................................... <br> 
+                        <td align="center">
+                                <br>
+                                <div class="sig0">
+                                        <div class="sigWrapper">
+                                        
+                                          <canvas class="pad" width="198" height="55"></canvas>
+                                        </div>
+                                   
+                                      </div>
+                                <br> ( คุณ{{$operate_sup->name_rate_60}} ) 
+                                <br>ผู้บังคับบัญชาต้นสังกัด
+                                <br>วันที่การประเมิน {{$operate_sup->created_at}} น.
+                                <br>การประเมิน 60 วัน	
+                                    
+                            </td>
+                    <td align="center">
+                        <br>
+                        <div class="sig1">
+                                <div class="sigWrapper">
+                                
+                                  <canvas class="pad" width="198" height="55"></canvas>
+                                </div>
+                           
+                              </div>
+                        <br> ( คุณ{{$operate_sup->name_rate_90}} ) 
+                        <br>ผู้บังคับบัญชาต้นสังกัด
+                        <br>วันที่การประเมิน {{$operate_sup->updated_at}} น.
+                        <br>การประเมิน 90 วัน	
+                        	
+                    </td>
+                    <td align="center">
+                        <br>
+                        <br> ผู้ถูกประเมิน : ........................................... <br> 
                         ( คุณ@foreach ( $personal as $item)
                             @if(  $item->id == $operate_sup->id_posinal )
                                 {{$item->name}} {{$item->lastname}}
@@ -448,7 +483,18 @@
                     <input type="checkbox"  checked="checked">{{$operate_sup->other_suitability}} : {{$operate_sup->other_com_suitability}} <br>
                 @endif
                 @if($operate_sup->namerate_suitability != '')
-                    <p style="text-align:center"><br><br> ลงนาม ........................................... ผู้จัดการฝ่าย <br>( คุณ{{$operate_sup->namerate_suitability}} )<br>วันที่การประเมิน....../....../......</p>
+                    <center><br>
+                        
+                        <div class="sig2">
+                                <div class="sigWrapper">
+                           
+                                    <canvas class="pad" width="198" height="55"></canvas>
+                                  </div>
+                             
+                                </div>
+                   
+                        <br>( คุณ{{$operate_sup->namerate_suitability}} )<br>วันที่การประเมิน....../....../......</p>
+                    </center>
                 @endif  
             </td></tr></table> <br>
                 <table>
@@ -541,17 +587,31 @@
                                     @if($operate_sup->human_resource_other == 'อื่นๆ')
                                         <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate_sup->human_resource_othercom}}</u>
                                     <br>@endif 
-                             <tr><td style="text-align:center;"><br><br>
+                             <tr>
+                                 <td align="center">
+                                     <br> <br>
+                                        <div class="sig3">
+                                                <div class="sigWrapper">
+                                                
+                                                  <canvas class="pad" width="198" height="55"></canvas>
+                                                </div>
+                                           
+                                              </div>
                                  @if($operate_sup->human_resource_nre != '')
-                                <p>ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->human_resource_nre}} )<br>วันที่การประเมิน....../....../......</p>
+                               ( คุณ{{$operate_sup->human_resource_nre}} )
+                               <br>วันที่การประเมิน....../....../......</p>
                                 @endif</td></tr>       
                             </td>
                         </tr>
                     </tbody>
-                </table> <br> 
+                </table> <br> <br> 
         <table>
             <tbody>
-                <tr><td align="center"><b>เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</b></td></tr>
+                <tr>
+                    <td align="center">
+                        <b>เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</b>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         @if($operate_sup->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
@@ -574,14 +634,53 @@
                         <br>@endif 
                         </td>
                     </tr>
-                    <tr><td style="text-align:center;"><br><br>
+                    <tr><td align="center">
+                        <br>
+                        <br>
+                        <div class=" sig4">
+                                <div class="sigWrapper">
+                                
+                                  <canvas class="pad" width="198" height="55"></canvas>
+                                </div>
+                           
+                              </div>
                         @if($operate_sup->manager_resource_nre != '')
-                        <p>ลงนาม ........................................... ผู้จัดการฝ่ายทรัพยากรบุคคล <br>( คุณ{{$operate_sup->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
+                       ( คุณ{{$operate_sup->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
                         @endif   
                     </td></tr>
             </tbody>
-        </table><br>
+        </table>
+        
+        <br>
+
+        <input type="hidden" value="{{$operate_sup->signa1_60}}" id="sig0">
+        <input type="hidden" value="{{$operate_sup->signa1_90}}" id="sig1">
+        <input type="hidden" value="{{$operate_sup->signa2}}" id="sig2">
+        <input type="hidden" value="{{$operate_sup->signa3}}" id="sig3">
+        <input type="hidden" value="{{$operate_sup->signa4}}" id="sig4">
     <input type="button" value="ปริ้นเฉพาะใน divprint" onclick="javascript:this.style.display='none';window.print();">
 </div>
+
+<script>
+    $(document).ready(function() {
+
+        var  sing0  = document.getElementById("sig0").value;
+        var  sing1  = document.getElementById("sig1").value;
+        var  sing2  = document.getElementById("sig2").value;
+        var  sing3  = document.getElementById("sig3").value;
+        var  sing4  = document.getElementById("sig4").value;
+   
+    $('.sig0').signaturePad({displayOnly:true}).regenerate(sing0);
+
+    $('.sig1').signaturePad({displayOnly:true}).regenerate(sing1);
+
+      $('.sig2').signaturePad({displayOnly:true}).regenerate(sing2);
+
+      $('.sig3').signaturePad({displayOnly:true}).regenerate(sing3);
+
+      $('.sig4').signaturePad({displayOnly:true}).regenerate(sing4);
+
+    });
+  </script>
 </body>
 </html>

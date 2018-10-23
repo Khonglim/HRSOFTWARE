@@ -9,7 +9,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
 <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
 <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
-<title>css print report table continue</title>
+<title> print report </title>
 <style type="text/css">
  body {
     font-family : "THSarabunNew";
@@ -42,7 +42,7 @@
 
 
 <!-- <div class="page-break"></div> -->
-<center> <img src="{{ url('img/NGG-10.png') }}" width="100px" height="100px"></center>
+<center> <img src="{{ url('img/NGG-10.jpg') }}" width="100px" height="100px"></center>
 <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
 <div class="font" style="text-align:center;"><b>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</b></div>
 <b>1. ระดับในการประเมินผล</b><br>
@@ -181,7 +181,7 @@
     <table>
         <tbody>
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <b>จุดเด่นของพนักงาน :</b> {{$operate_staff->comments_featured}}<br>
                     <b>จุดด้อยของพนักงาน :</b> {{$operate_staff->comments_weakness}} <br> @if($operate_staff->experimental
                     == 'ไม่ผ่านทดลองงาน')
@@ -196,9 +196,26 @@
                 </td>
             </tr>
             <tr>
-                <td align="center"><br><br>
+                    <td align="center">
+                            <br>
+                            <div class="sig0">
+                                    <div class="sigWrapper">
+                                    
+                                      <canvas class="pad" width="198" height="55"></canvas>
+                                    </div>
+                               
+                                  </div>
+                            <br> ( คุณ{{$operate_staff->name_rate_60}} ) 
+                            <br>ผู้บังคับบัญชาต้นสังกัด
+                            <br>วันที่การประเมิน {{$operate_staff->created_at}} น.
+                            <br>การประเมิน 60 วัน	
+                                
+                        </td>
+                <td align="center">
+                   
+                    <br>
 
-                    <div class="sigPad signed">
+                    <div class="sig1">
                         <div class="sigWrapper">
                         
                           <canvas class="pad" width="198" height="55"></canvas>
@@ -206,11 +223,15 @@
                    
                       </div>
                       
-                      <br> ( คุณ{{$operate_staff->name_rate_60}}
-                    ) <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน....../....../......</td>
+                      <br> ( คุณ{{$operate_staff->name_rate_90}}) 
+                      <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน{{$operate_staff->updated_at}} น.
+                      <br>การประเมิน 90 วัน	
+                    </td>
                 <td align="center"><br><br>ผู้ถูกประเมิน : ...........................................<br> ( คุณ @foreach ( $personal as $item2)
                     @if( $item2->id == $operate_staff->id_posinal ) {{$item2->name}} {{$item2->lastname}} @endif @endforeach)
-                    <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
+                    <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......
+                   
+                </td>
             </tr>
         </tbody>
     </table>
@@ -419,9 +440,10 @@
         @if($operate_staff->other_suitability == 'อื่นๆ')
             <input type="checkbox" checked="checked">{{$operate_staff->other_suitability}} : {{$operate_staff->other_com_suitability}} <br>
         @endif 
-        @if($operate_staff->namerate_suitability != '')
+       
+      
         <center> 
-        <div class=" sig2">
+        <div class="sig2">
               <div class="sigWrapper">
          
                   <canvas class="pad" width="198" height="55"></canvas>
@@ -430,8 +452,11 @@
               </div>
           
          <br>( คุณ{{$operate_staff->namerate_suitability}} )<br>วันที่การประเมิน..../..../....  </center>
-        @endif
-    </td></tr></table> <br>
+       
+    </td>
+</tr>
+</table>
+ <br>
     <table>
         <tr>
             <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (ประเมิน 60 วัน)</th>
@@ -533,9 +558,9 @@
             </tr>
             <tr>
                 <td align="center"">
-                    <br><br>
+                  
                         @if($operate_staff->human_resource_nre != '')
-                        <div class="  sig3">
+                        <div class="sig3">
                                 <div class="sigWrapper">
                                 
                                   <canvas class="pad" width="198" height="55"></canvas>
@@ -575,7 +600,9 @@
                 </td>
             </tr>
         <tr>
-                <td align="center"><br><br>
+                <td align="center">
+                    <br>
+                    <br>
                         <div class=" sig4">
                                 <div class="sigWrapper">
                                 
@@ -592,7 +619,8 @@
         </tbody>
     </table>
    
-        <input type="hidden" value="{{$operate_staff->signa1}}" id="sig1">
+            <input type="hidden" value="{{$operate_staff->signa1_60}}" id="sig0">
+         <input type="hidden" value="{{$operate_staff->signa1_90}}" id="sig1">
         <input type="hidden" value="{{$operate_staff->signa2}}" id="sig2">
         <input type="hidden" value="{{$operate_staff->signa3}}" id="sig3">
         <input type="hidden" value="{{$operate_staff->signa4}}" id="sig4">
@@ -601,11 +629,21 @@
 </div>
 <script>
         $(document).ready(function() {
+
+
+            var  sing0  = document.getElementById("sig0").value;
+
             var  sing1  = document.getElementById("sig1").value;
+
             var  sing2  = document.getElementById("sig2").value;
+
             var  sing3  = document.getElementById("sig3").value;
+
             var  sing4  = document.getElementById("sig4").value;
-          $('.sigPad').signaturePad({displayOnly:true}).regenerate(sing1);
+
+             $('.sig0').signaturePad({displayOnly:true}).regenerate(sing0);
+
+            $('.sig1').signaturePad({displayOnly:true}).regenerate(sing1);
 
           $('.sig2').signaturePad({displayOnly:true}).regenerate(sing2);
 

@@ -9,6 +9,12 @@ use App\Operate_qSeff;
 use App\Operate_qSup;
 use App\Operate_staff;
 use App\Operate_sup;
+
+use App\Ngg_employee;
+use App\Ngg_company;
+use App\Ngg_department;
+use App\Ngg_sector;
+use App\Ngg_position;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -191,7 +197,15 @@ Route::get('save_employ', function () {
 
 Route::get('operate_employf', function () { 
     
-    $employee  = Personal::where('enable','=', 1)->get();
+   
+    $employee  = DB::table('Ngg_employee')
+            ->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
+            ->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
+            ->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
+            ->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
+            ->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+            ->where('nem_enable','=', 1)
+            ->get();
     $data = array(
         'employee' => $employee 
     ); 
@@ -282,7 +296,13 @@ Route::get('operate_report**', function () {
 
 Route::post('conduct_employs', function () { 
     
-    $employee  = Personal::where('enable','=', 1  )->get();
+    $employee  = DB::table('Ngg_employee')
+            ->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
+            ->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
+            ->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
+            ->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
+            ->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+            ->get();
     $operate_staff   =       Operate_staff::all();
     $operate_sup   =       Operate_sup::all();
         $data = array(
@@ -312,7 +332,18 @@ Route::get('setting', function () {
 
 })->middleware('auth');
 
-
+Route::get('narathorn',function(){
+   
+            $users = DB::table('Ngg_employee')
+            ->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
+            ->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
+            ->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
+            ->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
+            ->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+            ->get();
+           
+            dd( $users);
+});
 
 
 

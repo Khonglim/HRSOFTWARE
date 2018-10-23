@@ -23,7 +23,7 @@ class Operate_supController extends Controller
      */
     public function index()
     {
-       
+
     }
 
     /**
@@ -52,57 +52,57 @@ class Operate_supController extends Controller
         $personal->save();
 
         $operatesup = new Operate_sup;
-        $operatesup->id_posinal= Input::get('id_posinal');  
-        $operatesup->id_employ= Input::get('id_employ');  
-        $operatesup->position= Input::get('position');  
-        $operatesup->department= Input::get('department');  
+        $operatesup->id_posinal= Input::get('id_posinal');
+        $operatesup->id_employ= Input::get('id_employ');
+        $operatesup->position= Input::get('position');
+        $operatesup->department= Input::get('department');
         $operatesup->degree= Input::get('degree');  ;
-        $operatesup->starttime= Input::get('dateStart2');  
-        $operatesup->endtime= Input::get('dateEnd2');  
-        $operatesup->number= Input::get('totolDay2'); 
-        $operatesup->date_60= Input::get('totolDay_60');  
-        $operatesup->date_90 = Input::get('totolDay_90'); 
+        $operatesup->starttime= Input::get('dateStart2');
+        $operatesup->endtime= Input::get('dateEnd2');
+        $operatesup->number= Input::get('totolDay2');
+        $operatesup->date_60= Input::get('totolDay_60');
+        $operatesup->date_90 = Input::get('totolDay_90');
 
 
-        $operatesup->chioce1_60= Input::get('score60_1');  
-        $operatesup->chioce2_60= Input::get('score60_2');  
-        $operatesup->chioce3_60= Input::get('score60_3');  
-        $operatesup->chioce4_60 = Input::get('score60_4'); 
-        $operatesup->chioce5_60= Input::get('score60_5'); 
-        $operatesup->chioce6_60 = Input::get('score60_6'); 
-        $operatesup->chioce7_60 = Input::get('score60_7'); 
-        $operatesup->chioce8_60= Input::get('score60_8');  
-        $operatesup->chioce9_60= Input::get('score60_9');  
-        $operatesup->chioce10_60 = Input::get('score60_10'); 
-        $operatesup->chioce11_60 = Input::get('score60_11'); 
-        $operatesup->chioce12_60 = Input::get('score60_12'); 
-        $operatesup->chioce13_60 = Input::get('score60_13'); 
-        $operatesup->chioce14_60 = Input::get('score60_14'); 
-        $operatesup->chioce15_60 = Input::get('score60_15'); 
-        $operatesup->chioce16_60 = Input::get('score60_16'); 
-        $operatesup->chioce17_60 = Input::get('score60_17'); 
-        $operatesup->chioce18_60 = Input::get('score60_18'); 
-        $operatesup->chioce19_60 = Input::get('score60_19'); 
-        $operatesup->chioce20_60 = Input::get('score60_20'); 
-        $operatesup->chioce21_60 = Input::get('score60_21'); 
-        $operatesup->chioce22_60 = Input::get('score60_22'); 
-        $operatesup->chioce23_60 = Input::get('score60_23'); 
-        $operatesup->chioce24_60 = Input::get('score60_24'); 
-        $operatesup->chioce25_60 = Input::get('score60_25'); 
+        $operatesup->chioce1_60= Input::get('score60_1');
+        $operatesup->chioce2_60= Input::get('score60_2');
+        $operatesup->chioce3_60= Input::get('score60_3');
+        $operatesup->chioce4_60 = Input::get('score60_4');
+        $operatesup->chioce5_60= Input::get('score60_5');
+        $operatesup->chioce6_60 = Input::get('score60_6');
+        $operatesup->chioce7_60 = Input::get('score60_7');
+        $operatesup->chioce8_60= Input::get('score60_8');
+        $operatesup->chioce9_60= Input::get('score60_9');
+        $operatesup->chioce10_60 = Input::get('score60_10');
+        $operatesup->chioce11_60 = Input::get('score60_11');
+        $operatesup->chioce12_60 = Input::get('score60_12');
+        $operatesup->chioce13_60 = Input::get('score60_13');
+        $operatesup->chioce14_60 = Input::get('score60_14');
+        $operatesup->chioce15_60 = Input::get('score60_15');
+        $operatesup->chioce16_60 = Input::get('score60_16');
+        $operatesup->chioce17_60 = Input::get('score60_17');
+        $operatesup->chioce18_60 = Input::get('score60_18');
+        $operatesup->chioce19_60 = Input::get('score60_19');
+        $operatesup->chioce20_60 = Input::get('score60_20');
+        $operatesup->chioce21_60 = Input::get('score60_21');
+        $operatesup->chioce22_60 = Input::get('score60_22');
+        $operatesup->chioce23_60 = Input::get('score60_23');
+        $operatesup->chioce24_60 = Input::get('score60_24');
+        $operatesup->chioce25_60 = Input::get('score60_25');
 
 
 
 
-        $operatesup->subtotal_60= Input::get('total_60');  
-        $operatesup->rate_60= Input::get('rate_60');  
-    
-        $operatesup->comments_60 = Input::get('assessor'); 
+        $operatesup->subtotal_60= Input::get('total_60');
+        $operatesup->rate_60= Input::get('rate_60');
 
-        $operatesup->comments_featured= Input::get('featured'); 
-        $operatesup->comments_weakness= Input::get('weakness'); 
-        $operatesup->name_rate_60=   Input::get('namerate'); 
-        
-     
+        $operatesup->comments_60 = Input::get('assessor');
+
+        $operatesup->comments_featured= Input::get('featured');
+        $operatesup->comments_weakness= Input::get('weakness');
+        $operatesup->name_rate_60=   Input::get('namerate_60');
+
+
 
 
         $operatesup->startwork_60= Input::get('startrate_60_2') ;
@@ -113,6 +113,7 @@ class Operate_supController extends Controller
         $operatesup->vacation_60= Input::get('vacation');
         $operatesup->line_terms_60 = Input::get('line');
         $operatesup->line_min_60 = Input::get('min');
+        $operatesup->signa1_60 = Input::get('signa1_60');
         $operatesup->save();
         return redirect('home');
     }
@@ -124,7 +125,7 @@ class Operate_supController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    
+
     {
         //
     }
@@ -143,7 +144,7 @@ class Operate_supController extends Controller
             $operate_sup = Operate_sup::find($id);
             $operate_Chioce  = Operate_Chioce::all();
             $operate_qSup  = Operate_qSup::all();
-    
+
             $data = array(
                 'operate_sup' =>  $operate_sup,
                 'operate_Chioce'=>  $operate_Chioce,
@@ -171,47 +172,50 @@ class Operate_supController extends Controller
         $personal->save();
         $operate_sup =  Operate_sup::find($id);
 
-        $operate_sup->chioce1_90= Input::get('score90_1');  
-         $operate_sup->chioce2_90= Input::get('score90_2');  
-    $operate_sup->chioce3_90 = Input::get('score90_3'); 
-    $operate_sup->chioce4_90= Input::get('score90_4');  
-    $operate_sup->chioce5_90 = Input::get('score90_5'); 
-    $operate_sup->chioce6_90= Input::get('score90_6');  
-    $operate_sup->chioce7_90= Input::get('score90_7');  
-    $operate_sup->chioce8_90= Input::get('score90_8');  
-    $operate_sup->chioce9_90= Input::get('score90_9');  
-    $operate_sup->chioce10_90 = Input::get('score90_10'); 
-    $operate_sup->chioce11_90 = Input::get('score90_11'); 
-    $operate_sup->chioce12_90 = Input::get('score90_12'); 
+        $operate_sup->chioce1_90= Input::get('score90_1');
+         $operate_sup->chioce2_90= Input::get('score90_2');
+    $operate_sup->chioce3_90 = Input::get('score90_3');
+    $operate_sup->chioce4_90= Input::get('score90_4');
+    $operate_sup->chioce5_90 = Input::get('score90_5');
+    $operate_sup->chioce6_90= Input::get('score90_6');
+    $operate_sup->chioce7_90= Input::get('score90_7');
+    $operate_sup->chioce8_90= Input::get('score90_8');
+    $operate_sup->chioce9_90= Input::get('score90_9');
+    $operate_sup->chioce10_90 = Input::get('score90_10');
+    $operate_sup->chioce11_90 = Input::get('score90_11');
+    $operate_sup->chioce12_90 = Input::get('score90_12');
     $operate_sup->chioce13_90 = Input::get('score90_13');
-    $operate_sup->chioce14_90= Input::get('score90_14');  
-    $operate_sup->chioce15_90 = Input::get('score90_15'); 
-    $operate_sup->chioce16_90 = Input::get('score90_16'); 
-    $operate_sup->chioce17_90 = Input::get('score90_17'); 
-    $operate_sup->chioce18_90 = Input::get('score90_18'); 
-    $operate_sup->chioce19_90 = Input::get('score90_19'); 
-    $operate_sup->chioce20_90 = Input::get('score90_20'); 
-    $operate_sup->chioce21_90 = Input::get('score90_21'); 
-    $operate_sup->chioce22_90 = Input::get('score90_22'); 
-    $operate_sup->chioce23_90 = Input::get('score90_23'); 
-    $operate_sup->chioce24_90 = Input::get('score90_24'); 
-    $operate_sup->chioce25_90 = Input::get('score90_25'); 
+    $operate_sup->chioce14_90= Input::get('score90_14');
+    $operate_sup->chioce15_90 = Input::get('score90_15');
+    $operate_sup->chioce16_90 = Input::get('score90_16');
+    $operate_sup->chioce17_90 = Input::get('score90_17');
+    $operate_sup->chioce18_90 = Input::get('score90_18');
+    $operate_sup->chioce19_90 = Input::get('score90_19');
+    $operate_sup->chioce20_90 = Input::get('score90_20');
+    $operate_sup->chioce21_90 = Input::get('score90_21');
+    $operate_sup->chioce22_90 = Input::get('score90_22');
+    $operate_sup->chioce23_90 = Input::get('score90_23');
+    $operate_sup->chioce24_90 = Input::get('score90_24');
+    $operate_sup->chioce25_90 = Input::get('score90_25');
+
+    $operate_sup->signa2 = Input::get('signa2');
+    $operate_sup->signa3 = Input::get('signa3');
+
+    $operate_sup->signa4 = Input::get('signa4');
+    $operate_sup->signa1_90 = Input::get('signa1_90');
 
 
 
 
-
-
-
-    $operate_sup->subtotal_90 = Input::get('total_90'); 
-    $operate_sup->rate_90 = Input::get('rate_90'); 
-    $operate_sup->subtotal_final= Input::get('rate_all');  
-    $operate_sup->comments_90 = Input::get('assessor2'); 
-    $operate_sup->experimental = Input::get('experimental'); 
-    $operate_sup->experimental_date = Input::get('clsdate'); 
-    $operate_sup->full_time_worker= Input::get('full_time_worker'); 
-    $operate_sup->full_time_worker_date= Input::get('dateinto'); 
-    $operate_sup->full_time_worker_position= Input::get('full_time_worker_position'); 
+    $operate_sup->subtotal_90 = Input::get('total_90');
+    $operate_sup->rate_90 = Input::get('rate_90');
+    $operate_sup->subtotal_final= Input::get('rate_all');
+    $operate_sup->comments_90 = Input::get('assessor2');
+    $operate_sup->experimental = Input::get('experimental');
+    $operate_sup->experimental_date = Input::get('clsdate');
+    $operate_sup->full_time_worker= Input::get('full_time_worker');
+    $operate_sup->full_time_worker_date= Input::get('dateinto');
+    $operate_sup->full_time_worker_position= Input::get('full_time_worker_position');
 
 
     $operate_sup->modify= Input::get('modify');
@@ -222,7 +226,7 @@ class Operate_supController extends Controller
 
     $operate_sup->other_90= Input::get('other_90');
     $operate_sup->other_com_90 = Input::get('other_com_90');
-    $operate_sup->name_rate_90 = Input::get('namerate');
+    $operate_sup->name_rate_90 = Input::get('namerate_90');
 
 
     $operate_sup->chioce_suitability1= Input::get('staaff_one1') ;
@@ -265,8 +269,8 @@ class Operate_supController extends Controller
     $operate_sup->comment_suitability10 = Input::get('comment_suitability10');
     $operate_sup->ok_suitability = Input::get('ok_suitability');
     $operate_sup->other_suitability = Input::get('other_suitability');
- 
- 
+
+
     $operate_sup->other_com_suitability= Input::get('other_com_suitability') ;
     $operate_sup->namerate_suitability= Input::get('namerate_suitability') ;
 
