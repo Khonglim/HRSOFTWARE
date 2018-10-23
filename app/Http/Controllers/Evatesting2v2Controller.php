@@ -36,10 +36,12 @@ class Evatesting2v2Controller extends Controller
         );
          return view("testevav_2/istestertotestv2",$data);
     }
-     public function test2( $id)
+     public function test2(Request $request, $id)
     {
         
-        $forms_id= $id;
+        
+        $employeetotests = Employeetotest::all();
+        $ids = $id;  
          $partof = Partofv2::all();
          $formfor = Formfor::all();
          $question = Questionv2::all();
@@ -49,7 +51,8 @@ class Evatesting2v2Controller extends Controller
             'formfor' => $formfor ,
             'question' => $question , 
             'descrip'=> $descrip,
-            'forms_id'=>$forms_id
+            'ids' => $ids,
+            'employeetotests' => $employeetotests
         ); 
         return view("testevav_2/starttestv2",$data);
     }
