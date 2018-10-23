@@ -32,7 +32,10 @@ class CreateNggEmployeeTable extends Migration
             $table->tinyInteger('nem_level_id');
             $table->string('nem_remark')->nullable();
             $table->tinyInteger('nem_enable')->default('1');
-            
+            $table->tinyInteger('recheck_conduct')->default('0');
+            $table->tinyInteger('recheck_Oper')->default('0');
+            $table->tinyInteger('recheck_Oper_90')->default('0');
+            $table->tinyInteger('degree')->default('0');
             $table->timestamps();
         });
     }

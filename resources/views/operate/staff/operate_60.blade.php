@@ -42,11 +42,11 @@
 
 
                                               <input type="hidden"  name="id_posinal" value="{{  $id =  $_POST["id_2"] }}">
-                                          <input type="text" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $name =  $_POST["lastname"]}}"  readonly>
+                                          <input type="text" class="form-control" value="{{ $name =  $_POST["name"]}} {{ $lastname =  $_POST["lastname"]}}"  readonly>
                                         </div>
                                         <label  class="col-sm-2 control-label">รหัสพนักงาน:</label>
                                         <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="id_employ"  required>
+                                                <input type="text" class="form-control" name="id_employ" value="{{$nem_code =  $_POST["nem_code"] }}" required  readonly>
                                               </div>
 
 

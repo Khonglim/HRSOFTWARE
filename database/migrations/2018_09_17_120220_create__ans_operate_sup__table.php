@@ -222,6 +222,8 @@ class CreateAnsOperateSupTable extends Migration
             $table->integer('line_terms_90')->nullable();
             $table->integer('line_min_90')->nullable();
             $table->tinyInteger('ngg_enable')->default('1');
+            $table->char('NumberDate_60',100)->nullable();
+            $table->char('NumberDate_90',100)->nullable();
             $table->timestamps();
 
 

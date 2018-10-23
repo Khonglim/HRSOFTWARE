@@ -13,11 +13,12 @@
 
            @if($degree == '0')
            @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
+              @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
               {{Form::open(['url'=>'operate_employstaff','method'=>'POST' ])}}
-            <input type="hidden"  value="{{$e->name}}" name="name" >
-            <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
-            <input type="hidden"  value="{{$e->id}}" name="id_2" >
+            <input type="hidden"  value="{{$e->nem_thai_firstname}}" name="name" >
+            <input type="hidden"  value="{{$e->nem_thai_lastname}}" name="lastname" >
+            <input type="hidden"  value="{{$e->nem_id}}" name="id_2" >
+            <input type="hidden"  value="{{$e->nem_code}}" name="nem_code" >
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                 <div class="col-sm-7">
@@ -28,7 +29,7 @@
               @endif
 
 
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
+              @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                   <div class="col-sm-7">
@@ -44,8 +45,8 @@
             @endforeach
 
               @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
-                        @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
+              @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
+                        @if(($e->nem_id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
 
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
@@ -57,7 +58,7 @@
                 </div>
 
                @endif
-               @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '1')
+               @if(($e->nem_id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '1')
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                     <div class="col-sm-7">
@@ -70,7 +71,7 @@
                 @endif
 
 
-                @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
+                @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
 
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
@@ -94,12 +95,13 @@
 
            @foreach ($employee  as $e)
 
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
+              @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
 
               {{Form::open(['url'=>'operate_employsup','method'=>'POST' ])}}
-              <input type="hidden"  value="{{$e->name}}" name="name" >
-              <input type="hidden"  value="{{$e->lastname}}" name="lastname" >
-              <input type="hidden"  value="{{$e->id}}" name="id_2" >
+              <input type="hidden"  value="{{$e->nem_thai_firstname}}" name="name" >
+              <input type="hidden"  value="{{$e->nem_thai_lastname}}" name="lastname" >
+              <input type="hidden"  value="{{$e->nem_id}}" name="id_2" >
+              <input type="hidden"  value="{{$e->nem_code}}" name="nem_code" >
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                 <div class="col-sm-7">
@@ -108,7 +110,7 @@
               </div>
               {{Form::close()}}
               @endif
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
+              @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '1')))
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                   <div class="col-sm-7">
@@ -120,8 +122,8 @@
               @endif
             @endforeach
               @foreach ($employee  as $e)
-              @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
-              @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
+              @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '0')))
+              @if(($e->nem_id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                   <div class="col-sm-7">
@@ -131,7 +133,7 @@
                   </div>
                 </div>
                 @endif
-                @if(($e->id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '1')
+                @if(($e->nem_id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '1')
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                     <div class="col-sm-7">
@@ -142,7 +144,7 @@
                   </div>
                 @endif
                 @endif
-                @if((($e->id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
+                @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_conduct == '1')))
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
                     <div class="col-sm-7">

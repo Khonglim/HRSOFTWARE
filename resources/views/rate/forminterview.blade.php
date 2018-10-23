@@ -29,7 +29,7 @@
             <div class="content-wrapper">
                 <div class="content container-fluid">
           {{Form::open(['url'=>'rate'])}}
-         
+          @csrf
           <div class="box-body table-responsive no-padding">
             <table  id="customers" class="table table-stripe"  >
                   
@@ -47,7 +47,7 @@
                     <tbody>
                       <tr>
                         <td style="text-align:center" colspan="2">ชื่อผู้สมัคร (Applicant’s Name)
-                            <select id="country" name="employee" required >
+                            <select id="country" name="employee" required class="js-example-basic-single " >
                             <option value=""  >--เลือกชื่อผู้สมัคร--</option>
                             @foreach ($employee  as $e)
                             <option value="{{$e->id}}"> {{$e->name }} {{$e->lastname }}</option>   

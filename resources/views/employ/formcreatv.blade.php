@@ -73,7 +73,7 @@
         
            
         <form action=" {{url('employee')}}" method="post" id="form-data" enctype="multipart/form-data">
-               {{csrf_field()}}
+                @csrf
                 <div id="first">
                     <h4 class="text-center bg-primary p-1rounded tect-light">ประวัติส่วนตัว</h4>
                     <hr>
@@ -137,8 +137,8 @@
                                                     <div class="col-md-3"> 
                                                                     <div class="form-group ">
                                                                     <label class="control-label">รูปภาพ<small class="text-danger">*ขนาดไม่เกิน 512kb</small></label>
-                                                                    <input type="file"    name="image" data-validation-allowing="jpg, png"
-                                                                    data-validation-max-size="512kb" id='image'  >
+                                                                    {{Form::file('image',['id'=>'image'])}}
+                                                                   
                                                                   </div>   
                                                                   <b  class="text-danger" id="imageError"></b>           
                                            </div>
