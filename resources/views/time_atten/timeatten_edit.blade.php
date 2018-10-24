@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-6">
           {{Form::open(['route'=>['timeattendant.update',$idd],'method'=>'PUT','files' => true])}}
-          
+          @csrf
           <br><br>
             @foreach($timeattendant as $timeatten)
                   <?php  $id = $timeatten->net_id;  

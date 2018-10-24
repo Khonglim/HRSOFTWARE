@@ -5,6 +5,7 @@
     <div class="row">
       <div class="col-md-8">
             {{Form::open(['url'=>'timeattendant'])}}
+            @csrf
           <br><br>
         <div class="box">
           <div class="box-header" style="text-align: center;">

@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-6">
           {{Form::open(['route'=>['management.update',$idd],'method'=>'PUT','files' => true])}}
-          
+          @csrf
           <br><br>
             @foreach($employee as $emp)
                   <?php  $id=$emp->nee_id;  $is_emp = $emp->nee_is_employee;  $by_emp = $emp->nee_by_employee; 

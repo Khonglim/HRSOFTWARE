@@ -24,6 +24,7 @@
     <div class="row">
       <div class="col-md-10">
             {{Form::open(['url'=>'management'])}}
+            @csrf
           <br><br>
         <div class="box">
           <div class="box-header" style="text-align: center;">
