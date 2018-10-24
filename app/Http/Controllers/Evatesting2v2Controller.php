@@ -41,6 +41,7 @@ class Evatesting2v2Controller extends Controller
         
         
         $employeetotests = Employeetotest::all();
+        $ngg_employee = Ngg_employee::all();
         $ids = $id;  
          $partof = Partofv2::all();
          $formfor = Formfor::all();
@@ -49,6 +50,7 @@ class Evatesting2v2Controller extends Controller
          $data = array(
             'partof' => $partof ,
             'formfor' => $formfor ,
+            'ngg_employee' => $ngg_employee,
             'question' => $question , 
             'descrip'=> $descrip,
             'ids' => $ids,

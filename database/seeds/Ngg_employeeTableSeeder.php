@@ -87,7 +87,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_nickname'=>'พร',
             'nem_birthday'=>'1980-07-18',
             'nem_company_id'=>'4',
-            'nem_position_id'=>'64',
+            'nem_position_id'=>'56',
             'nem_department_id'=>'33',
             'nem_sector_id'=>'17',
             'nem_level_id'=>'5',

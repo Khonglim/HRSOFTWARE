@@ -121,19 +121,29 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
             <div class="table-responsive">
                {{Form::open(['url'=>'evatestingv2'])}}
                @csrf
-                <div style="display: none;">
-                  @foreach($employeetotests as $employeetotest)
+               @foreach($employeetotests as $employeetotest)
                   @if($employeetotest->nee_id == $ids )
+                <div style="display: none;">
                   <?php $forms_id = $employeetotest->nee_id_form; ?>
                     {{Form::text('forms1_id',$employeetotest->nee_id_form)}}
                      {{Form::text('nee_id2',$employeetotest->nee_id)}}
-                     @endif
-                  @endforeach
-                     
-                     
-                     
+
                     </div>
-               
+                    <div class="row" style="text-align: center;">
+                      <div class="col-md-8">
+                         <div class="container" style="text-align: center;">
+                  @foreach($ngg_employee as $ngg_emp)
+                    @if($ngg_emp->nem_id == $employeetotest->nee_by_employee)
+                    <h3>แบบประเมินคุณ {{$ngg_emp->nem_thai_firstname}}</h3>          
+
+                    @endif
+                  @endforeach
+                 </div>   
+                      </div>
+                    </div>
+                
+                @endif
+                  @endforeach
             
                    
               

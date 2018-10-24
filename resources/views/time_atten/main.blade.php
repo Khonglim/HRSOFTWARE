@@ -23,10 +23,11 @@
   <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
   <link rel="stylesheet"  type="text/css" href="{{ asset('all/jquery-ui.css') }}" />
   <link rel="stylesheet" media="all" type="text/css" href="{{ asset('all/jquery-ui-timepicker-addon.css') }}" />
-  <script type="text/javascript" src="{{ asset('all/jquery-ui.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('all/jquery-ui-timepicker-addon.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('all/jquery-ui-sliderAccess.js') }}"></script>
-
+  <script type="text/javascript" src="{{ asset('all/jquery-ui.min.js') }}" defer></script>
+  <script type="text/javascript" src="{{ asset('all/jquery-ui-timepicker-addon.js') }}" defer></script>
+  <script type="text/javascript" src="{{ asset('all/jquery-ui-sliderAccess.js') }}" defer></script>
+  
+  
   
 
 
@@ -35,12 +36,6 @@
 
 </head>
  
-  
-
- 
-
- 
-  
 
   <script type="text/javascript">
 
@@ -372,9 +367,7 @@ body {
                   </a>
                   <ul class="treeview-menu">
                     <li style="display: none;"><a href="{{url('/summeva') }}">สรุปผลประเมินv1</a></li>
-                    @if(auth()->user()->isAdmin_Master == 1)
-                    <li ><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
-                    @endif
+                    <li style="display: none;"><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
                     <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
                     <li><a href="{{url('/nggemployee') }}">จัดการพนักงาน</a></li>
                     <li><a href="{{url('/timeattendant') }}">จัดการเวลาผู้ประเมิน</a></li>

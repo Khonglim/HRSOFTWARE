@@ -41,7 +41,7 @@
                   แบบประเมิน
                  </th>
                  <td>
-                   <select name="by_form" class="form-control"> 
+                   <select name="by_form"  class=" form-control"> 
                   @foreach($formfor as $form)
                   <option  value={{$form->id}} >{{$form->form}}</option>
                   @endforeach
@@ -64,60 +64,70 @@
               
              <tr>
                <td style="width: 50% ; height: 70px">
-                <select name="by_employee" class="form-control"> 
+                <select name="by_employee"  class="js-example-basic-single  form-control"> 
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
                 </select>
                </td>
-               
+              
                <td>
-                 <select name="is_employee1" class="form-control">
+
+                 <select name="is_employee1"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select> <br>
-                <select name="is_employee2" class="form-control">
+                </select> 
+                <br><br>
+                <select name="is_employee2"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select><br>
-                <select name="is_employee3" class="form-control">
+                </select>
+                <br><br>
+                <select name="is_employee3"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select><br>
-                <select name="is_employee4" class="form-control">
+                </select>
+                <br><br>
+                <select name="is_employee4"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select><br>
-                <select name="is_employee5" class="form-control">
+                </select>
+                <br><br>
+                <select name="is_employee5"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select> <br>
-                <select name="is_employee6" class="form-control">
+                </select>
+                 <br><br>
+                <select name="is_employee6"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select> <br>
-                <select name="is_employee7" class="form-control">
+                </select> 
+                <br><br>
+                <select name="is_employee7"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select> <br>
-                <select name="is_employee8" class="form-control">
+                </select> 
+                <br><br>
+                <select name="is_employee8"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select> <br>
-                <select name="is_employee9" class="form-control">
+                </select> 
+                <br><br>
+                <select name="is_employee9"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select> <br>
-                <select name="is_employee10" class="form-control">
+                </select> 
+                <br><br>
+                <select name="is_employee10"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach

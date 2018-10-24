@@ -115,7 +115,7 @@ function myFunction() {
                    
                      
                        @if($ngg_emp->nem_id == $emp->nee_is_employee  )
-                      
+
 
                                   <?php  $k=$ngg_emp->nem_id;  $i++; $j+=$ngg_eva->nes_q_point;?>
                                  
@@ -146,7 +146,6 @@ function myFunction() {
                                      
                                       <?php  $j=($j/10)*10; $p5=number_format($j, 2);?>
                                       <?php $j=0;?>
-
                                           @break
                                   @endswitch
 
@@ -154,7 +153,7 @@ function myFunction() {
                            <tr>
                             @if($i==21)
 
-                            
+
                             <?php  $change = $ngg_emp->nem_thai_firstname; $change2++;?>
 
                               @foreach($ngg_evaresult_comment as $ngg_comment )
