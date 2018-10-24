@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.operate')
 @section('content')
   <div class="content-wrapper">
     <div class="col-md-6">
@@ -15,10 +15,16 @@
            @foreach ($employee  as $e)
               @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
               {{Form::open(['url'=>'operate_employstaff','method'=>'POST' ])}}
+              @csrf
             <input type="hidden"  value="{{$e->nem_thai_firstname}}" name="name" >
             <input type="hidden"  value="{{$e->nem_thai_lastname}}" name="lastname" >
             <input type="hidden"  value="{{$e->nem_id}}" name="id_2" >
-            <input type="hidden"  value="{{$e->nem_code}}" name="nem_code" >
+            <input type="hidden"  value="{{$e->nem_code}}" name="nem_code">
+            <input type="hidden"  value="{{$e->nps_name}}" name="nps_name">
+            <input type="hidden"  value="{{$e->ndp_name}}" name="ndp_name">
+            <input type="hidden"  value="{{$e->nst_name}}" name="nst_name">
+            <input type="hidden"  value="{{$e->nlv_name}}" name="nlv_name">
+
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                 <div class="col-sm-7">
@@ -96,12 +102,16 @@
            @foreach ($employee  as $e)
 
               @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
-
+              {{$e->nlv_name}}
               {{Form::open(['url'=>'operate_employsup','method'=>'POST' ])}}
               <input type="hidden"  value="{{$e->nem_thai_firstname}}" name="name" >
               <input type="hidden"  value="{{$e->nem_thai_lastname}}" name="lastname" >
               <input type="hidden"  value="{{$e->nem_id}}" name="id_2" >
-              <input type="hidden"  value="{{$e->nem_code}}" name="nem_code" >
+              <input type="hidden"  value="{{$e->nem_code}}" name="nem_code">
+              <input type="hidden"  value="{{$e->nps_name}}" name="nps_name">
+              <input type="hidden"  value="{{$e->ndp_name}}" name="ndp_name">
+              <input type="hidden"  value="{{$e->nst_name}}" name="nst_name">
+              <input type="hidden"  value="{{$e->nlv_name}}" name="nlv_name">
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 1</label>
                 <div class="col-sm-7">

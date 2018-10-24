@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.operate')
 @section('content')
 
 <style>
@@ -40,8 +40,8 @@
                                     <label  class="col-sm-2 control-label">ชื่อ-สกุล:</label>
                                         <div class="col-sm-4">
                                               @foreach ($employee as $employees)
-                                                  @if ($employees->id == $operate_staff->id_posinal )
-                                        <input type="text"  name="id_posinal" value="{{$employees->name}} {{$employees->lastname}}" class="form-control"  readonly>
+                                                  @if ($employees->nem_id == $operate_staff->id_posinal )
+                                        <input type="text"  name="id_posinal" value="{{$employees->nem_thai_firstname}} {{$employees->nem_thai_lastname}}" class="form-control"  readonly>
                                         <input   type="hidden"  value="{{$employees->id}}" name="idemploy"  >
                                                   @endif
                                               @endforeach
@@ -198,18 +198,10 @@
 
 
                                       </table>
-
-
-
-
-
-
-
                             </div>
-
                       </div>
-                               <div class="form-group">
-                                    <div class="col-sm-12">
+                             <div class="form-group">
+                                 <div class="col-sm-12">
                         <table id="customers">
 
                           <tr>
@@ -220,7 +212,7 @@
 
                           </tr>
                           <tr>
-                            <td style="text-align:center">ประเมินรอบ 60 วัน</td>
+                            <td align="center">ประเมินรอบ <input type="text" name="NumberDate_90" id="NumberDate_90" class="form-control"   style="width:100px" required> วัน</td>
 
 
                           </tr>

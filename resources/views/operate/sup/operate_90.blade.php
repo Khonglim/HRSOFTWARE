@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.operate')
 @section('content')
 
 <style>
@@ -32,6 +32,7 @@
                               การทดลองงานระดับบังคับบัญชา
                             </div>
                             {{Form::open(['route'=>['Operate_sup.update', $operate_sup->id],'method'=>'PUT' ])}}
+                            @csrf
                             <div class="form-horizontal">
                               <div class="box-body">
 
@@ -148,18 +149,9 @@
                                           <td style="text-align:center"><input type="text"  name="min" value="{{$operate_sup->line_min_60}}"    style="width:50px"  readonly></td>
 
                                         </tr>
-
-
-
-
-
-
                                       </table>
-
-
                                         </div>
                                   </div>
-
                                   <div class="form-group">
                                         <div class="col-sm-12">
                                             <table id="customers">

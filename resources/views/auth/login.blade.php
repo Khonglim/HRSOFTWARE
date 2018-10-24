@@ -42,7 +42,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">เข้าระบบ</p>
     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-        {{ csrf_field() }}
+      @csrf
         @if(session()->has('login_error'))
           <div class="alert alert-warning">
             {{ session()->get('login_error') }}

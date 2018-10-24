@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.operate')
 @section('content')
 <style>
     #customers {
@@ -46,7 +46,7 @@
                                         </div>
                                         <label  class="col-sm-2 control-label">รหัสพนักงาน:</label>
                                         <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="id_employ" value="{{$nem_code =  $_POST["nem_code"] }}" required  readonly>
+                                                <input type="text" class="form-control" name="id_employ" value="{{$nem_code =  $_POST["nem_code"] }}"   readonly>
                                               </div>
 
 
@@ -56,12 +56,12 @@
 
                                             <label  class="col-sm-2 control-label">ตำแหน่ง:</label>
                                             <div class="col-sm-4">
-                                                    <input type="text" class="form-control" name="position" required>
+                                                    <input type="text" class="form-control" name="position"   value="{{$nps_name =  $_POST["nps_name"] }}"    readonly>
                                                   </div>
-
+                                               
                                                   <label  class="col-sm-2 control-label">แผนก/ฝ่าย:</label>
                                                   <div class="col-sm-4">
-                                                          <input type="text" class="form-control" name="department" required>
+                                                          <input type="text" class="form-control" name="department" value="{{$ndp_name =  $_POST["ndp_name"] }}/{{$nst_name =  $_POST["nst_name"] }}" required readonly>
                                                         </div>
                                       </div>
 
@@ -87,10 +87,10 @@
 
                                                   <label  class="col-sm-2 control-label">ระดับ:</label>
                                                   <div class="col-sm-4">
-                                                        <input type="text" name="degree"  class="form-control" required/>
+                                                        <input type="text" name="degree"  class="form-control"  value="{{$nlv_name =  $_POST["nlv_name"] }}" readonly/>
                                                         </div>
                                       </div>
-
+                                     
                                       <div class="form-group">
 
                                             <label  class="col-sm-2 control-label">ประเมินครั้งที่ 1 : 60 วัน วันที่ :</label>
@@ -106,28 +106,24 @@
 
                                           คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน<br>
                                           1.  ระดับในการประเมินผล <br>
-                                          …….	ดีมาก		=	ผลการปฏิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
-                        …….	ดี		=	ผลการปฏิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br>
-                        …….	พอใช้		=	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br>
-                        …….	ต้องปรับปรุง	=     	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
+                                         …….	ดีมาก		=	ผลการปฏิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
+                                         …….	ดี		=	ผลการปฏิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br>
+                                         …….	พอใช้		=	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br>
+                                         …….	ต้องปรับปรุง	=     	ผลการปฏิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
 
-                           2.	ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป  จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน
+                                         2.	ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป  จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน
                            <div class="form-group">
                                 <div class="col-sm-12">
                     <table id="customers">
-
                       <tr>
                         <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
                             ( 100 คะแนน )
                             </th>
                         <th COLSPAN="1" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
-
                       </tr>
                       <tr>
-                        <td style="text-align:center">ประเมินรอบ 60 วัน</td>
-
-
-                      </tr>
+                        <td align="center">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
+                       </tr>
                       <tr>
                         <td style="text-align:center">ระดับคะแนน</td>
 

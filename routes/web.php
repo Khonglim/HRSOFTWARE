@@ -252,10 +252,15 @@ Route::post('operate_employsup', function () {
 Route::get('operate_report*', function () { 
 
 
-    $employee  =   DB::table('personal')
-                    ->where('enable', '=', 1)
-                    ->where('degree', '=', 0)
-  ->get();
+    $employee = DB::table('Ngg_employee')
+->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
+->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
+->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
+->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
+->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+->where('nem_enable', '=', 1)
+->where('degree', '=', 0)
+->get();
     $operate_staff   =       Operate_staff::all();
     $data = array(
         'employee' => $employee ,
@@ -270,10 +275,23 @@ Route::get('operate_report*', function () {
 
 
 Route::get('operate_report**', function () { 
-    $employee  =   DB::table('personal')
-    ->where('enable', '=', 1)
-    ->where('degree', '=', 1)
+
+
+$employee = DB::table('Ngg_employee')
+->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
+->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
+->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
+->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
+->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+->where('nem_enable', '=', 1)
+->where('degree', '=', 1)
 ->get();
+
+
+
+
+
+
     $operate_sup   =       Operate_sup::all();
 
 

@@ -75,11 +75,9 @@ class PDFController extends Controller
 
     public function pdfoper_staff($id)
     {
-       
-
         $operate_staff = Operate_staff::find($id);
-        $personal  =   DB::table('personal')
-        ->where('enable', '=', 1)
+        $personal  =   DB::table('ngg_employee')
+        ->where('nem_enable', '=', 1)
         ->where('degree', '=', 0)
        ->get();
        $data = array(
@@ -87,28 +85,18 @@ class PDFController extends Controller
         'operate_staff' =>   $operate_staff
     );
        
-      //  $pdf = PDF::loadView('operate.staff.pdfStaff',['operate_staff' =>   $operate_staff,
-        
-       // 'personal' =>    $personal,
-        
-        
-       // ]);
         return view("operate/staff/pdfStaff",$data);
         
     }
 
     public function pdfoper_sup($id)
     {
-        $personal =   DB::table('personal')
-        ->where('enable', '=', 1)
+        $personal  =   DB::table('ngg_employee')
+        ->where('nem_enable', '=', 1)
         ->where('degree', '=', 1)
-    ->get();
+       ->get();
         $operate_sup = Operate_sup::find($id);
-       // $pdf = PDF::loadView('operate.sup.pdfSup',['personal' =>  $personal,
-        
-      //  'operate_sup' =>   $operate_sup
-        
-       // ]);
+       
        $data = array(
         'personal' =>  $personal,
         'operate_sup' =>   $operate_sup

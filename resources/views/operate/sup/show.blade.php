@@ -20,10 +20,10 @@
                             </thead>
                             <tbody>
                                     @forelse($employee as $l)
-                                    @if($l->enable==1)
-                                   <tr>
-                                 <td> {{$l->name}} </td>
-                                 <td> {{$l->lastname}} </td>
+                                    @if($l->nem_enable==1)
+                                    <tr>
+                                  <td> {{$l->nem_thai_firstname}} </td>
+                                  <td> {{$l->nem_thai_lastname}} </td>
                                 
                                  <td>  
                                      
@@ -31,7 +31,7 @@
 
 
                                       @foreach ($operate_sup as $operatesup)
-                                      @if($operatesup->id_posinal ==  $l->id)
+                                      @if($operatesup->id_posinal ==  $l->nem_id)
                                      
                                       <a href="{{url('pdfcon_sup/'.$operatesup['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
                                       @endif

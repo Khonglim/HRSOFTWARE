@@ -12,6 +12,7 @@ use DB;
 use App\Extensions\MongoSessionStore;
 use Illuminate\Support\Facades\Session;
 use App\Operate_qSeff;
+use App\Ngg_employee;
 class Operate_staffController extends Controller
 {
 
@@ -47,11 +48,28 @@ class Operate_staffController extends Controller
      */
     public function store(Request $request  )
     {
-        $personal = Personal::find(Input::get('id_posinal'));
-        $personal->recheck_Oper =1;
-        $personal->recheck_conduct=1;
-        $personal->recheck_Oper_90=1;
-        $personal->save();
+      
+
+        if(Input::get('id_posinal') !== '') {
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_Oper' => 1]);
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_conduct' => 1]);
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_Oper_90' => 1]);
+            }
+
+
+
+
+
+
 
         $operateSataff = new Operate_staff;
         $operateSataff->id_posinal= Input::get('id_posinal');
@@ -103,8 +121,8 @@ class Operate_staffController extends Controller
         $operateSataff->line_terms_60 = Input::get('line');
         $operateSataff->line_min_60 = Input::get('min');
         $operateSataff->signa1_60 = Input::get('signa1_60');
-
-
+        $operateSataff->NumberDate_60 = Input::get('NumberDate_60');
+        $operateSataff->NumberDate_90 = Input::get('NumberDate_90');
 
 
      $operateSataff->save();
@@ -132,7 +150,7 @@ class Operate_staffController extends Controller
     public function edit($id)
     {
         if($id !== '') {
-            $employee  = Personal::where('enable','=', 1)->get();
+            $employee  = Ngg_employee::where('nem_enable','=', 1)->get();
             $manager = DB::table('__manager')->get();
             $operate_staff = Operate_staff::find($id);
             $operate_Chioce  = Operate_Chioce::all();
@@ -159,11 +177,22 @@ class Operate_staffController extends Controller
     public function update(Request $request, $id)
     {
 
+        if(Input::get('idemploy') !== '') {
 
-        $personal = Personal::find(Input::get('idemploy'));
-        $personal->recheck_Oper_90=1;
-        $personal->recheck_conduct=0;
-        $personal->save();
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_Oper_90' => 1]);
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_conduct' => 0]);
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_Oper_90' => 1]);
+            }
+
+   
         $operateSataff =  Operate_staff::find($id);
 
     $operateSataff->chioce1_90= Input::get('score90_1');

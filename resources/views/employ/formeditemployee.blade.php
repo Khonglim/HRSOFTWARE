@@ -7,7 +7,7 @@
                
        
                         {{Form::open(['route'=>['employee.update',$personal->id],'method'=>'PUT','files' => true])}}
-          
+                        @csrf
         <div class="row">
                 <div class="col-md-12">
                 <div class="box box-danger">

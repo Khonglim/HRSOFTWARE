@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.operate')
 @section('content')
 
   <div class="content-wrapper">
@@ -12,6 +12,7 @@
                     <!-- /.box-header -->
                     <!-- form start -->
                     {{Form::open(['url'=>'conduct_employs','method'=>'POST'])}}
+                    @csrf 
                     <div class="form-horizontal">
                       <div class="box-body">
 

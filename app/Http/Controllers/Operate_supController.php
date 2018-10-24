@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Input;
 use App\Operate_Chioce;
 use App\Operate_qSup;
 use App\Operate_sup;
-use App\Personal;
+use App\Ngg_employee;
 use DB;
 class Operate_supController extends Controller
 {
@@ -44,12 +44,28 @@ class Operate_supController extends Controller
      */
     public function store(Request $request)
     {
-        $personal = Personal::find(Input::get('id_posinal'));
-        $personal->recheck_Oper =1;
-        $personal->recheck_conduct=1;
-        $personal->recheck_Oper_90=1;
-        $personal->degree=1;
-        $personal->save();
+        
+        if(Input::get('id_posinal') !== '') {
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_Oper' => 1]);
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_conduct' => 1]);
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['recheck_Oper_90' => 1]);
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('id_posinal'))
+            ->update(['degree' => 1]);
+
+
+
+            }
 
         $operatesup = new Operate_sup;
         $operatesup->id_posinal= Input::get('id_posinal');
@@ -114,6 +130,8 @@ class Operate_supController extends Controller
         $operatesup->line_terms_60 = Input::get('line');
         $operatesup->line_min_60 = Input::get('min');
         $operatesup->signa1_60 = Input::get('signa1_60');
+        $operatesup->NumberDate_60 = Input::get('NumberDate_60');
+        $operatesup->NumberDate_90 = Input::get('NumberDate_90');
         $operatesup->save();
         return redirect('home');
     }
@@ -139,7 +157,7 @@ class Operate_supController extends Controller
     public function edit($id)
     {
         if($id !== '') {
-            $employee  = Personal::where('enable','=', 1)->get();
+            $employee  = Ngg_employee::where('nem_enable','=', 1)->get();
             $manager = DB::table('__manager')->get();
             $operate_sup = Operate_sup::find($id);
             $operate_Chioce  = Operate_Chioce::all();
@@ -165,15 +183,24 @@ class Operate_supController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $personal = Personal::find(Input::get('idemploy'));
-        $personal->recheck_Oper_90=1;
-        $personal->recheck_conduct=0;
+      
 
-        $personal->save();
-        $operate_sup =  Operate_sup::find($id);
+        if(Input::get('idemploy') !== '') {
 
-        $operate_sup->chioce1_90= Input::get('score90_1');
-         $operate_sup->chioce2_90= Input::get('score90_2');
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('idemploy'))
+            ->update(['recheck_Oper_90' => 1]);
+
+            DB::table('Ngg_employee')
+            ->where('nem_id', Input::get('idemploy'))
+            ->update(['recheck_conduct' => 0]);
+
+            }
+
+
+    $operate_sup =  Operate_sup::find($id);
+    $operate_sup->chioce1_90= Input::get('score90_1');
+    $operate_sup->chioce2_90= Input::get('score90_2');
     $operate_sup->chioce3_90 = Input::get('score90_3');
     $operate_sup->chioce4_90= Input::get('score90_4');
     $operate_sup->chioce5_90 = Input::get('score90_5');

@@ -52,8 +52,8 @@
     <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
     <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
     <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
-    <b>ชื่อ-นามสกุล :</b> @foreach ( $personal as $item2) @if( $item2->id == $operate_sup->id_posinal ) {{$item2->name}}
-    {{$item2->lastname}} @endif @endforeach&emsp;&emsp;&emsp;&emsp;
+    <b>ชื่อ-นามสกุล :</b> @foreach ( $personal as $item2) @if( $item2->nem_id == $operate_sup->id_posinal ) {{$item2->nem_thai_firstname}}
+    {{$item2->nem_thai_lastname}} @endif @endforeach&emsp;&emsp;&emsp;&emsp;
     
     <b>รหัสพนักงาน :  </b> {{$operate_sup->id_employ}} <br>
     <b>ตำแหน่ง :</b> {{$operate_sup->position}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -272,8 +272,9 @@
                         <br>
                         <br> ผู้ถูกประเมิน : ........................................... <br> 
                         ( คุณ@foreach ( $personal as $item)
-                            @if(  $item->id == $operate_sup->id_posinal )
-                                {{$item->name}} {{$item->lastname}}
+                            @if(  $item->nem_id == $operate_sup->id_posinal )
+                            {{$item2->nem_thai_firstname}}
+                            {{$item2->nem_thai_lastname}}
                             @endif
                         @endforeach) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
                 </tr>  

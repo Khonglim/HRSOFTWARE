@@ -14,21 +14,23 @@
                              
                               <th>ชื่อ</th>
                               <th>นาสกุล</th>
-                              <th>เพิ่มเติ่ม</th>
+                              <th>สรุปการประเมิน</th>
                             </tr>
                             </thead>
                             <tbody>
                                     @forelse($employee as $l)
-                                    @if($l->enable==1)
+                                    @if($l->nem_enable==1)
                                    <tr>
-                                 <td> {{$l->name}} </td>
-                                 <td> {{$l->lastname}} </td>
+                                 <td> {{$l->nem_thai_firstname}} </td>
+                                 <td> {{$l->nem_thai_lastname}} </td>
                                 
                                  <td>  
                                 
                       @foreach ($operate_staff as $operate_staffs)
                       @if($operate_staffs->id_posinal ==  $l->id)
                       <a href="{{url('pdfcon_staf/'.$operate_staffs['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+                      @else
+                      ไม่มีการประเมินทดลองงาน
                       @endif
                       @endforeach
                        </td>

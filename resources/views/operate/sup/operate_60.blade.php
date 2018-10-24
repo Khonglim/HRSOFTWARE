@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.operate')
 @section('content')
 <style>
         #customers {
@@ -30,6 +30,7 @@
                           การทดลองงานระดับผู้บังคับบัญชา
                         </div>
                         {{Form::open(['url'=>'Operate_sup','method'=>'POST'])}}
+                        @csrf
                         <div class="form-horizontal">
                           <div class="box-body">
 
@@ -42,7 +43,7 @@
                                         </div>
                                         <label  class="col-sm-2 control-label">รหัสพนักงาน:</label>
                                         <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="id_employ" required>
+                                                <input type="text" class="form-control" name="id_employ" value="{{$nem_code =  $_POST["nem_code"] }}"   readonly>
                                               </div>
 
 
@@ -52,12 +53,12 @@
 
                                             <label  class="col-sm-2 control-label">ตำแหน่ง:</label>
                                             <div class="col-sm-4">
-                                                    <input type="text" class="form-control" name="position" required>
+                                                    <input type="text" class="form-control" name="position"  value="{{$nps_name =  $_POST["nps_name"] }}" readonly>
                                                   </div>
 
                                                   <label  class="col-sm-2 control-label">แผนก/ฝ่าย:</label>
                                                   <div class="col-sm-4">
-                                                          <input type="text" class="form-control" name="department" required>
+                                                          <input type="text" class="form-control" name="department"    value="{{$ndp_name =  $_POST["ndp_name"] }}/{{$nst_name =  $_POST["nst_name"] }}"      readonly>
                                                         </div>
                                       </div>
 
@@ -83,7 +84,7 @@
 
                                                   <label  class="col-sm-2 control-label">ระดับ:</label>
                                                   <div class="col-sm-4">
-                                                        <input type="text" name="degree" id="degree" value="" class="form-control" required/>
+                                                        <input type="text" name="degree" id="degree"  class="form-control" value="{{$nlv_name =  $_POST["nlv_name"] }}" readonly/>
                                                         </div>
                                       </div>
 
@@ -133,12 +134,12 @@
 
 
                                     </td>
-                                      <td style="text-align:center"> <input type="text" name="sick"   id="sick"     style="width:50px" > </td>
-                                      <td style="text-align:center"><input type="text" name="errand"    id="errand"   style="width:50px" ></td>
-                                      <td style="text-align:center"><input type="text" name="absence"     id="absence"    style="width:50px" ></td>
-                                      <td style="text-align:center"><input type="text"   name="vacation"   id="vacation"   style="width:50px"></td>
-                                      <td style="text-align:center"><input type="text"  name="line"    id="line"   style="width:50px"></td>
-                                      <td style="text-align:center"><input type="text"  name="min"    id="min"  style="width:50px"></td>
+                                      <td style="text-align:center"> <input type="text" name="sick"   id="sick"   style="width:50px" > </td>
+                                      <td style="text-align:center"><input type="text" name="errand"  id="errand"  style="width:50px" ></td>
+                                      <td style="text-align:center"><input type="text" name="absence"  id="absence"  style="width:50px" ></td>
+                                      <td style="text-align:center"><input type="text"   name="vacation" id="vacation"  style="width:50px"></td>
+                                      <td style="text-align:center"><input type="text"  name="line"  id="line"   style="width:50px"></td>
+                                      <td style="text-align:center"><input type="text"  name="min"   id="min"  style="width:50px"></td>
 
                                     </tr>
                                   </table>
@@ -158,7 +159,7 @@
 
                                   </tr>
                                   <tr>
-                                    <td style="text-align:center">ประเมินรอบ 60 วัน</td>
+                                    <td align="center">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
 
 
                                   </tr>
