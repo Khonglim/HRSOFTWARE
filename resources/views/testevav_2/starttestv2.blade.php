@@ -120,6 +120,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
           <div class="box-body">
             <div class="table-responsive">
                {{Form::open(['url'=>'evatestingv2'])}}
+               @csrf
                 <div style="display: none;">
                   @foreach($employeetotests as $employeetotest)
                   @if($employeetotest->nee_id == $ids )

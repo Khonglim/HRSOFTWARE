@@ -57,6 +57,7 @@
 </div>
 <div class="modal-body">
 {{ Form::open(['route' => ['timeattendant.destroy',$timeatten->net_id, 'method' => "DELETE"] ]) }}
+@csrf
 <input type="hidden" name="_method" value="delete" / >
 <p>คุณต้องการลบใช่หรือไม่!!!!</p>  
 </div>
