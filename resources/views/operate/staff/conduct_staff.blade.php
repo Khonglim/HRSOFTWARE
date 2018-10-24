@@ -102,7 +102,7 @@
            @foreach ($employee  as $e)
 
               @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
-              {{$e->nlv_name}}
+            
               {{Form::open(['url'=>'operate_employsup','method'=>'POST' ])}}
               <input type="hidden"  value="{{$e->nem_thai_firstname}}" name="name" >
               <input type="hidden"  value="{{$e->nem_thai_lastname}}" name="lastname" >
