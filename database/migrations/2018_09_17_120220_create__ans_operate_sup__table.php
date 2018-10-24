@@ -61,8 +61,8 @@ class CreateAnsOperateSupTable extends Migration
             $table->string('comments_featured',500)->nullable();
             $table->string('comments_weakness',500)->nullable();
 
-            
-            $table->char('name_rate_60', 100)->nullable(); 
+
+            $table->char('name_rate_60', 100)->nullable();
 
             $table->integer('chioce1_90')->nullable();
             $table->integer('chioce2_90')->nullable();
@@ -96,69 +96,69 @@ class CreateAnsOperateSupTable extends Migration
             $table->string('comments_90',500)->nullable();
 
             $table->char('experimental',100)->nullable();
-            $table->char('experimental_date',100)->nullable(); 
+            $table->char('experimental_date',100)->nullable();
 
-            $table->char('full_time_worker',100)->nullable(); 
-            $table->char('full_time_worker_date',100)->nullable(); 
-            $table->char('full_time_worker_position',100)->nullable(); 
-
-
-            $table->char('modify',100)->nullable(); 
-            $table->char('modify_position1',100)->nullable(); 
-            $table->char('modify_position2',100)->nullable(); 
-            $table->char('modify_date',100)->nullable(); 
-            
-            $table->char('other_90',100)->nullable(); 
-            $table->char('other_com_90',100)->nullable(); 
-            $table->char('name_rate_90', 100)->nullable(); 
+            $table->char('full_time_worker',100)->nullable();
+            $table->char('full_time_worker_date',100)->nullable();
+            $table->char('full_time_worker_position',100)->nullable();
 
 
-            $table->integer('chioce_suitability1')->nullable(); 
-            $table->integer('chioce_suitability2')->nullable(); 
-            $table->integer('chioce_suitability3')->nullable(); 
-            $table->integer('chioce_suitability4')->nullable(); 
-            $table->integer('chioce_suitability5')->nullable(); 
-            $table->integer('chioce_suitability6')->nullable(); 
-            $table->integer('chioce_suitability7')->nullable(); 
-            $table->integer('chioce_suitability8')->nullable(); 
-            $table->integer('chioce_suitability9')->nullable(); 
-            $table->integer('chioce_suitability10')->nullable(); 
+            $table->char('modify',100)->nullable();
+            $table->char('modify_position1',100)->nullable();
+            $table->char('modify_position2',100)->nullable();
+            $table->char('modify_date',100)->nullable();
 
-            $table->integer('chioce_suitability11')->nullable(); 
-            $table->integer('chioce_suitability12')->nullable(); 
-            $table->integer('chioce_suitability13')->nullable(); 
-            $table->integer('chioce_suitability14')->nullable(); 
-            $table->integer('chioce_suitability15')->nullable(); 
-            $table->integer('chioce_suitability16')->nullable(); 
-            $table->integer('chioce_suitability17')->nullable(); 
-            $table->integer('chioce_suitability18')->nullable(); 
-            $table->integer('chioce_suitability19')->nullable(); 
-            $table->integer('chioce_suitability20')->nullable(); 
+            $table->char('other_90',100)->nullable();
+            $table->char('other_com_90',100)->nullable();
+            $table->char('name_rate_90', 100)->nullable();
 
 
-            $table->integer('chioce_suitability21')->nullable(); 
-            $table->integer('chioce_suitability22')->nullable(); 
-            $table->integer('chioce_suitability23')->nullable(); 
-            $table->integer('chioce_suitability24')->nullable(); 
-            $table->integer('chioce_suitability25')->nullable(); 
-            $table->integer('chioce_suitability26')->nullable(); 
-            $table->integer('chioce_suitability27')->nullable(); 
-            $table->integer('chioce_suitability28')->nullable(); 
-            $table->integer('chioce_suitability29')->nullable(); 
-            $table->integer('chioce_suitability30')->nullable(); 
+            $table->integer('chioce_suitability1')->nullable();
+            $table->integer('chioce_suitability2')->nullable();
+            $table->integer('chioce_suitability3')->nullable();
+            $table->integer('chioce_suitability4')->nullable();
+            $table->integer('chioce_suitability5')->nullable();
+            $table->integer('chioce_suitability6')->nullable();
+            $table->integer('chioce_suitability7')->nullable();
+            $table->integer('chioce_suitability8')->nullable();
+            $table->integer('chioce_suitability9')->nullable();
+            $table->integer('chioce_suitability10')->nullable();
+
+            $table->integer('chioce_suitability11')->nullable();
+            $table->integer('chioce_suitability12')->nullable();
+            $table->integer('chioce_suitability13')->nullable();
+            $table->integer('chioce_suitability14')->nullable();
+            $table->integer('chioce_suitability15')->nullable();
+            $table->integer('chioce_suitability16')->nullable();
+            $table->integer('chioce_suitability17')->nullable();
+            $table->integer('chioce_suitability18')->nullable();
+            $table->integer('chioce_suitability19')->nullable();
+            $table->integer('chioce_suitability20')->nullable();
 
 
-            $table->integer('sum_chioce_suitability10')->nullable(); 
+            $table->integer('chioce_suitability21')->nullable();
+            $table->integer('chioce_suitability22')->nullable();
+            $table->integer('chioce_suitability23')->nullable();
+            $table->integer('chioce_suitability24')->nullable();
+            $table->integer('chioce_suitability25')->nullable();
+            $table->integer('chioce_suitability26')->nullable();
+            $table->integer('chioce_suitability27')->nullable();
+            $table->integer('chioce_suitability28')->nullable();
+            $table->integer('chioce_suitability29')->nullable();
+            $table->integer('chioce_suitability30')->nullable();
 
-            $table->string('comment_suitability10',500)->nullable(); 
-            $table->string('ok_suitability',30)->nullable(); 
-            $table->string('other_suitability',20)->nullable(); 
+
+            $table->integer('sum_chioce_suitability10')->nullable();
+
+            $table->string('comment_suitability10',500)->nullable();
+            $table->string('ok_suitability',30)->nullable();
+            $table->string('other_suitability',20)->nullable();
             $table->string('other_com_suitability',500)->nullable();
-           
-            $table->string('namerate_suitability',50)->nullable(); 
 
-            $table->integer('conclusions')->nullable(); 
-            $table->integer('results_manager')->nullable(); 
+            $table->string('namerate_suitability',50)->nullable();
+
+            $table->integer('conclusions')->nullable();
+            $table->integer('results_manager')->nullable();
 
             $table->char('human_resource_ok',100)->nullable();
 
@@ -173,11 +173,11 @@ class CreateAnsOperateSupTable extends Migration
 
             $table->char('human_resource_fail',100)->nullable();
             $table->char('human_resource_date',100)->nullable();
-           
+
             $table->char('human_resource_other',100)->nullable();
             $table->char('human_resource_othercom',100)->nullable();
             $table->char('human_resource_nre',100)->nullable();
-            
+
 
             $table->char('manager_resource_ok',100)->nullable();
 
@@ -192,14 +192,18 @@ class CreateAnsOperateSupTable extends Migration
 
             $table->char('manager_resource_fail',100)->nullable();
             $table->char('manager_resource_date',100)->nullable();
-           
+
             $table->char('manager_resource_other',100)->nullable();
             $table->char('manager_resource_othercom',100)->nullable();
             $table->char('manager_resource_nre',100)->nullable();
             $table->longText('description')->nullable();
 
+            $table->longText('signa1_60')->nullable();
+            $table->longText('signa1_90')->nullable();
+            $table->longText('signa2')->nullable();
+            $table->longText('signa3')->nullable();
+            $table->longText('signa4')->nullable();
 
-        
             $table->char('startwork_60',100)->nullable();
             $table->char('endwork_60',100)->nullable();
             $table->integer('sick_leave_60')->nullable();
@@ -218,9 +222,11 @@ class CreateAnsOperateSupTable extends Migration
             $table->integer('line_terms_90')->nullable();
             $table->integer('line_min_90')->nullable();
             $table->tinyInteger('ngg_enable')->default('1');
+            $table->char('NumberDate_60',100)->nullable();
+            $table->char('NumberDate_90',100)->nullable();
             $table->timestamps();
-        
-        
+
+
         });
     }
 

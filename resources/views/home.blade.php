@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 
 <div class="content-wrapper">
@@ -14,48 +14,11 @@
 
 
 
-    
-        
-    <div class="sigPad">
-      <ul class="sigNav">
-        <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
-        <li class="clearButton"><a href="#clear">Clear</a></li>
-      </ul>
-      <div class="sig sigWrapper">
-        <div class="typed"></div>
-        <canvas class="pad" width="198" height="55"></canvas>
-        <input type="hidden" name="signa2" class="output">
-      </div>
-    </div>
-
-    <div class="sigPad">
-      <ul class="sigNav">
-        <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
-        <li class="clearButton"><a href="#clear">Clear</a></li>
-      </ul>
-      <div class="sig sigWrapper">
-        <div class="typed"></div>
-        <canvas class="pad" width="198" height="55"></canvas>
-        <input type="hidden" name="signa3" class="output">
-        
-      </div>
-    </div>
 
 
 
-    <div class="sigPad">
-        <ul class="sigNav">
-          <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
-          <li class="clearButton"><a href="#clear">Clear</a></li>
-        </ul>
-        <div class="sig sigWrapper">
-          <div class="typed"></div>
-          <canvas class="pad" width="198" height="55"></canvas>
-          <input type="hidden" name="signa4" class="output">
-        
-        </div>
-      </div>
-  
+
+
 
 
 
@@ -81,10 +44,5 @@
 
 
   </div>
-  <script>
-    $(document).ready(function() {
-      $('.sigPad').signaturePad({drawOnly:true});
-	 		
-    });
-  </script>
+  
 @endsection

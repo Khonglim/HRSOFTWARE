@@ -4,15 +4,7 @@
 
     <br>
     <center>
-        <h1 class="text-light"> สมัครงานออนไลน์ <br> NGG GROUP
-
-
-
-
-        </h1>
-
-
-
+        <h1 class="text-light"> สมัครงานออนไลน์ <br> NGG GROUP </h1>
     </center>
 </div>
 <br> <br> <br>

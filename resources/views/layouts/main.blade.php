@@ -13,32 +13,35 @@
   <link href="{{ asset('plugins/pace/pace.min.css') }}" rel="stylesheet">
   <link href="{{ asset('dist/css/skins/_all-skins.min.css') }}" rel="stylesheet">
   <link href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
-  <script
-  src="http://code.jquery.com/jquery-1.10.2.min.js"
-  integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg="
-  crossorigin="anonymous"></script>
-</head>
+  <script  src="http://code.jquery.com/jquery-1.10.2.min.js"  integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg="  crossorigin="anonymous"></script>
+
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Prompt">
-
-
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
   <link rel="stylesheet"  type="text/css" href="{{ asset('all/jquery-ui.css') }}" />
   <link rel="stylesheet" media="all" type="text/css" href="{{ asset('all/jquery-ui-timepicker-addon.css') }}" />
   <script type="text/javascript" src="{{ asset('all/jquery-ui.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('all/jquery-ui-timepicker-addon.js') }}"></script>
   <script type="text/javascript" src="{{ asset('all/jquery-ui-sliderAccess.js') }}"></script>
-
   <link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
-  
-
- 
-
   <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
- 
   <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
   
+
+
+
+
+
+</head>
+ 
+  
+
+ 
+
+ 
   <script>
       $(document).ready(function() {
         $('.sigPad').signaturePad({drawOnly:true});
@@ -622,7 +625,14 @@ body {
   </script>
   
 
+<script>
+ 
+ $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+   
+});
 
+ </script>
 
 
 
