@@ -40,8 +40,8 @@
                                             <label  class="col-sm-2 control-label">ชื่อ-สกุล:</label>
                                                 <div class="col-sm-4">
                                                       @foreach ($employee as $employees)
-                                                          @if ($employees->id == $operate_sup->id_posinal )
-                                                <input type="text"  name="id_posinal" value="{{$employees->name}} {{$employees->lastname}}" class="form-control"  readonly>
+                                                          @if ($employees->nem_id == $operate_sup->id_posinal )
+                                                <input type="text"  name="id_posinal" value="{{$employees->nem_thai_firstname}} {{$employees->nem_thai_lastname}}" class="form-control"  readonly>
                                                 <input   type="hidden"  value="{{$employees->id}}" name="idemploy"  >
                                                           @endif
                                                       @endforeach
