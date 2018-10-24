@@ -26,9 +26,7 @@
   <script type="text/javascript" src="{{ asset('all/jquery-ui.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('all/jquery-ui-timepicker-addon.js') }}"></script>
   <script type="text/javascript" src="{{ asset('all/jquery-ui-sliderAccess.js') }}"></script>
-  <link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
-  <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
+
   
 
 
@@ -42,12 +40,7 @@
  
 
  
-  <script>
-      $(document).ready(function() {
-        $('.sigPad').signaturePad({drawOnly:true});
-               
-      });
-    </script>
+  
 
   <script type="text/javascript">
 
