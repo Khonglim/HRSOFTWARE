@@ -1,8 +1,7 @@
 <html>
 
 <head>
-  
-   
+
     <style>
         body {
             font-family: 'examplefont', sans-serif;
@@ -18,28 +17,27 @@
         th {
             border: 1px solid;
         }
-        .right {
+        img {
     float: right;
 }
     </style>
 </head>
 
 <body>
-     <div style="text-align:center;"><img src="{{ public_path('img/NGG-10.jpg') }}" width="100px" height="100px"></div>
         <h3 style="text-align:center;">  บริษัทในเครือ เอ็น จี จี กรุ๊ป<br>
-           
+            <hr>
             <input type="checkbox" >Cien &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="checkbox" >Sesto &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >NGGTP  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >TAI &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >Xian  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" >UW  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >Other<br>
            **กรุณาทำเครื่องหมาย <input type="checkbox" checked="checked"> เพื่อเลือกบริษัทต้นสังกัด ลงในช่องสี่เหลี่ยม**<br>
-            ใบสมัครงาน/Job Application Form </h3>
+            ใบสมัครงาน/Job Application From </h3>
 
 
-            <p style="text-align:right;"> <img style="text-align:right;" src="{{$personal->photo}}" style="width:130px;height:170px;margin-left:15px;" ></p>
+     <img src="{{$personal->photo}}" style="width:170px;height:170px;margin-left:15px;" >
     
-    
+     <br><br><br><br>
     <b>ตำแหน่งที่ต้องการ/Position Applied for : </b>{{$personal->positionngg}} <br>
     <b>เงินเดือนที่ต้องการ/Expeccted starting salary : </b>{{$personal->salaryngg}} บาท <br>
     <b>สาขาที่จะสมัคร: </b>{{$personal->talent}}
-   
+    <p>
     <table>
         <tbody>
             <tr>
@@ -438,18 +436,6 @@
         </tbody>
     </table>
 
-  
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-  
-  
