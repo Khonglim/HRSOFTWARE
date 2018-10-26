@@ -78,7 +78,7 @@ function myFunction() {
                             <table  class="table table-bordered table-striped">
                         <thead>
                           <tr >
-                            <th style="text-align: center;width: 10%;height: 70px;" >
+                            <th style="text-align: center;width: 15%;height: 70px;" >
                               {{$a}}
                             </th>
                             <th style="text-align: center;width: 10%;height: 70px;" >
@@ -100,7 +100,9 @@ function myFunction() {
                           </tr>
                         </thead>
                         <tbody>
-                           @foreach($employeetotests as $emp)
+
+
+  @foreach($employeetotests as $emp)
 
                 @foreach($ngg_evaluate_results as $ngg_eva)
 
@@ -109,18 +111,23 @@ function myFunction() {
 
                   @if( $ngg_eva->nes_evaluate_employee_id == $emp->nee_id )
                 @foreach($ngg_employee as $ngg_emp)
-                  @if($ngg_emp->nem_id == $idtest)
+                  @if($ngg_emp->nem_id == $emp->nee_by_employee)
                    <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
+                   
+                  @endif
+                   @if($ngg_emp->nem_id == $emp->nee_is_employee)
+                   <?php  $change = $ngg_emp->nem_nickname; $change2++;?>
+                   
                   @endif
                    
                      
                        @if($ngg_emp->nem_id == $emp->nee_is_employee  )
-                      
+
 
                                   <?php  $k=$ngg_emp->nem_id;  $i++; $j+=$ngg_eva->nes_q_point;?>
                                  
                           
-                                 @switch($i)
+                               @switch($i)
                                       @case($i==8)
                                       
                                       <?php  $j=($j/40)*10; $p1=number_format($j, 2);  ?>
@@ -146,7 +153,6 @@ function myFunction() {
                                      
                                       <?php  $j=($j/10)*10; $p5=number_format($j, 2);?>
                                       <?php $j=0;?>
-
                                           @break
                                   @endswitch
 
@@ -154,8 +160,7 @@ function myFunction() {
                            <tr>
                             @if($i==21)
 
-                            
-                            <?php  $change = $ngg_emp->nem_thai_firstname; $change2++;?>
+                           
 
                               @foreach($ngg_evaresult_comment as $ngg_comment )
 
@@ -163,23 +168,23 @@ function myFunction() {
                                   <?php $commentcount++;  $commenttemp = $ngg_comment->nec_comment; ?>
                           @switch($commentcount)
                                       @case($commentcount==1)
-                                      <?php array_push($comment1, $change,$commenttemp); ?>
+                                      <?php array_push($comment1, $change2,$commenttemp); ?>
                                      
                                           @break
                                       @case($commentcount==2)  
-                                      <?php array_push($comment2, $change,$commenttemp); ?>
+                                      <?php array_push($comment2, $change2,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==3)
-                                      <?php array_push($comment3, $change,$commenttemp); ?>
+                                      <?php array_push($comment3, $change2,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==4)
-                                      <?php array_push($comment4, $change,$commenttemp); ?>
+                                      <?php array_push($comment4, $change2,$commenttemp); ?>
                                       
                                           @break
                                       @case($commentcount==5)
-                                      <?php array_push($comment5, $change,$commenttemp); 
+                                      <?php array_push($comment5, $change2,$commenttemp); 
                                       $commentcount =0;
                                       ?>
 
@@ -190,13 +195,12 @@ function myFunction() {
 
                 @endforeach
 
-                            <td>{{Form::label('คุณ','คุณ')}}{{Form::label('nee_id1',$change)}}</td>
-                            
-                            <td>{{$p1}}<?php  $p1final+=$p1;?></td>
-                            <td>{{$p2}}<?php  $p2final+=$p2;?></td>
-                            <td>{{$p3}}<?php  $p3final+=$p3;?></td>
-                            <td>{{$p4}}<?php  $p4final+=$p4;?></td>
-                            <td>{{$p5}}<?php  $p5final+=$p5;?></td>
+                            <td style="width: 10%;height: 40px;">{{Form::label('nee_id1',$change)}}</td>
+                            <td  style="width: 10%;height: 40px;">{{$p1}}<?php  $p1final+=$p1;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p2}}<?php  $p2final+=$p2;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p3}}<?php  $p3final+=$p3;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p4}}<?php  $p4final+=$p4;?></td>
+                            <td  style="width: 10%;height: 40px;">{{$p5}}<?php  $p5final+=$p5;?></td>
 
                                              
                             <?php $i=0;$count++;
