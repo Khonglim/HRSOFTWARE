@@ -70,6 +70,14 @@ class Evatesting2v2Controller extends Controller
             $question = DB::table('questionv2')->where('id_form', '=', 1)->get();
             $partof = DB::table('partofv2')->where('id_form', '=', 1)->get();
             
+             $point = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->where('nee_by_employee', '=', $id)
+            ->where('nee_id_form', '=', 1)
+            ->where('nee_recheck', '=', 0)  
+            ->get();
+
             $data = array(
 
                 'employeetotests' => $employeetotests,
@@ -79,8 +87,8 @@ class Evatesting2v2Controller extends Controller
                 'question' => $question, 
                 'idtest' => $id,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
-                'timeattendant'=>$timeattendant
-
+                'timeattendant'=>$timeattendant,
+                'point'=> $point
             );
 
             return view('testevav_2/evareportv2_leader',$data);
@@ -92,14 +100,22 @@ class Evatesting2v2Controller extends Controller
     {
           if($id !== '') {
 
-            
+            $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
             $ngg_employee = Ngg_employee::all();
             $ngg_evaluate_results = DB::table('ngg_evaluate_resultv2')->where('nes_q_form', '=', '2')->get();
             $ngg_evaresult_comment = DB::table('ngg_evaresult_commentv2')->where('nec_q_form', '=', '2')->get();
             $question = DB::table('questionv2')->where('id_form', '=', 2)->get();
             $partof = DB::table('partofv2')->where('id_form', '=', 2)->get();
-            $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
+            
+             $point = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->where('nee_id_form', '=', 2)
+            ->where('nee_by_employee', '=', $id)
+            ->where('nee_recheck', '=', 0)  
+            ->get();
+
             $data = array(
 
                 'employeetotests' => $employeetotests,
@@ -109,9 +125,10 @@ class Evatesting2v2Controller extends Controller
                 'question' => $question, 
                 'idtest' => $id,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
-                'timeattendant'=>$timeattendant
-
+                'timeattendant'=>$timeattendant,
+                'point'=> $point
             );
+
 
             return view('testevav_2/evareportv2_officer',$data);
         }
@@ -123,13 +140,22 @@ class Evatesting2v2Controller extends Controller
           if($id !== '') {
 
             
+           $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
             $ngg_employee = Ngg_employee::all();
             $ngg_evaluate_results = DB::table('ngg_evaluate_resultv2')->where('nes_q_form', '=', '3')->get();
             $ngg_evaresult_comment = DB::table('ngg_evaresult_commentv2')->where('nec_q_form', '=', '3')->get();
             $question = DB::table('questionv2')->where('id_form', '=', 3)->get();
             $partof = DB::table('partofv2')->where('id_form', '=', 3)->get();
-                $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
+            
+             $point = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->where('nee_by_employee', '=', $id)
+            ->where('nee_id_form', '=', 3)
+            ->where('nee_recheck', '=', 0)  
+            ->get();
+
             $data = array(
 
                 'employeetotests' => $employeetotests,
@@ -139,8 +165,8 @@ class Evatesting2v2Controller extends Controller
                 'question' => $question, 
                 'idtest' => $id,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
-                'timeattendant'=>$timeattendant
-
+                'timeattendant'=>$timeattendant,
+                'point'=> $point
             );
 
             return view('testevav_2/evareportv2_manager',$data);
@@ -175,7 +201,7 @@ class Evatesting2v2Controller extends Controller
     {
           if($id !== '') {
 
-            $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
+              $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
             $ngg_employee = Ngg_employee::all();
             $ngg_evaluate_results = DB::table('ngg_evaluate_resultv2')->where('nes_q_form', '=', '1')->get();
@@ -183,6 +209,14 @@ class Evatesting2v2Controller extends Controller
             $question = DB::table('questionv2')->where('id_form', '=', 1)->get();
             $partof = DB::table('partofv2')->where('id_form', '=', 1)->get();
             
+             $point = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->where('nee_by_employee', '=', $id)
+            ->where('nee_id_form', '=', 1)
+            ->where('nee_recheck', '=', 0)  
+            ->get();
+
             $data = array(
 
                 'employeetotests' => $employeetotests,
@@ -192,8 +226,8 @@ class Evatesting2v2Controller extends Controller
                 'question' => $question, 
                 'idtest' => $id,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
-                'timeattendant'=>$timeattendant
-
+                'timeattendant'=>$timeattendant,
+                'point'=> $point
             );
 
             return view('testevav_2/evareportblindnamev2_leader',$data);
@@ -205,14 +239,23 @@ class Evatesting2v2Controller extends Controller
     {
           if($id !== '') {
 
-            $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
+           
+              $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
             $ngg_employee = Ngg_employee::all();
-            $ngg_evaluate_results = DB::table('ngg_evaluate_resultv2')->where('nes_q_form', '=', '2')->get();
-            $ngg_evaresult_comment = DB::table('ngg_evaresult_commentv2')->where('nec_q_form', '=', '2')->get();
-            $question = DB::table('questionv2')->where('id_form', '=', 2)->get();
-            $partof = DB::table('partofv2')->where('id_form', '=', 2)->get();
+            $ngg_evaluate_results = DB::table('ngg_evaluate_resultv2')->where('nes_q_form', '=', '3')->get();
+            $ngg_evaresult_comment = DB::table('ngg_evaresult_commentv2')->where('nec_q_form', '=', '3')->get();
+            $question = DB::table('questionv2')->where('id_form', '=', 3)->get();
+            $partof = DB::table('partofv2')->where('id_form', '=', 3)->get();
             
+             $point = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->where('nee_by_employee', '=', $id)
+            ->where('nee_id_form', '=', 3)
+            ->where('nee_recheck', '=', 0)  
+            ->get();
+
             $data = array(
 
                 'employeetotests' => $employeetotests,
@@ -222,8 +265,8 @@ class Evatesting2v2Controller extends Controller
                 'question' => $question, 
                 'idtest' => $id,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
-                'timeattendant'=>$timeattendant
-
+                'timeattendant'=>$timeattendant,
+                'point'=> $point
             );
 
             return view('testevav_2/evareportblindnamev2_officer',$data);
@@ -235,14 +278,23 @@ class Evatesting2v2Controller extends Controller
     {
           if($id !== '') {
 
-            $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
+            
+              $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
             $ngg_employee = Ngg_employee::all();
-            $ngg_evaluate_results = DB::table('ngg_evaluate_resultv2')->where('nes_q_form', '=', '3')->get();
-            $ngg_evaresult_comment = DB::table('ngg_evaresult_commentv2')->where('nec_q_form', '=', '3')->get();
-            $question = DB::table('questionv2')->where('id_form', '=', 3)->get();
-            $partof = DB::table('partofv2')->where('id_form', '=', 3)->get();
+            $ngg_evaluate_results = DB::table('ngg_evaluate_resultv2')->where('nes_q_form', '=', '2')->get();
+            $ngg_evaresult_comment = DB::table('ngg_evaresult_commentv2')->where('nec_q_form', '=', '2')->get();
+            $question = DB::table('questionv2')->where('id_form', '=', 2)->get();
+            $partof = DB::table('partofv2')->where('id_form', '=', 2)->get();
             
+             $point = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->where('nee_by_employee', '=', $id)
+            ->where('nee_id_form', '=', 2)
+            ->where('nee_recheck', '=', 0)  
+            ->get();
+
             $data = array(
 
                 'employeetotests' => $employeetotests,
@@ -252,8 +304,8 @@ class Evatesting2v2Controller extends Controller
                 'question' => $question, 
                 'idtest' => $id,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
-                'timeattendant'=>$timeattendant
-
+                'timeattendant'=>$timeattendant,
+                'point'=> $point
             );
 
             return view('testevav_2/evareportblindnamev2_manager',$data);

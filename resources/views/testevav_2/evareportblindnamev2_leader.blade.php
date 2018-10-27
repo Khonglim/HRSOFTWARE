@@ -10,6 +10,12 @@
     top: 48px;
     right: 15px;
 }
+#report {
+    position: absolute;
+    top: 48px;
+    right: 75px;
+}
+
 .chart {
   width: 100%; 
   min-height: 400px;
@@ -72,6 +78,8 @@ function myFunction() {
                         
                                  @endforeach 
                           <div id="swapname"><a href="{{'reportv2_leader'}}" class="btn btn-primary btn-lg" ><i class="fa fa-eye fa-6" aria-hidden="true"></i></a></div>
+
+                          <div id="report"> <a href="{{'print_report'}}" class="btn btn-primary btn-lg" ><i class="fa fa-print fa-6" aria-hidden="true"></i></a></div>
         
                           <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button><br><br>
                           
@@ -103,65 +111,41 @@ function myFunction() {
                           </tr>
                         </thead>
                         <tbody>
-                           @foreach($employeetotests as $emp)
+                          @foreach($ngg_employee as $ngg_emp)
+                            @if( $ngg_emp->men_id== $idtest)
+                            <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
+                            @endif
+                          @endforeach
 
-                @foreach($ngg_evaluate_results as $ngg_eva)
+                          @foreach($point as $pointt)
+                          <?php $i++; $j+=$pointt->nes_q_point;?>
 
-
-
-
-                  @if( $ngg_eva->nes_evaluate_employee_id == $emp->nee_id )
-                @foreach($ngg_employee as $ngg_emp)
-                  @if($ngg_emp->nem_id == $idtest)
-                   <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
-                   
-                  @endif
-                   
-                     
-                       @if($ngg_emp->nem_id == $emp->nee_is_employee  )
-
-
-                                  <?php  $k=$ngg_emp->nem_id;  $i++; $j+=$ngg_eva->nes_q_point;?>
-                                 
-                          
-                               @switch($i)
-                                      @case($i==8)
-                                      
-                                      <?php  $j=($j/40)*10; $p1=number_format($j, 2);  ?>
-                                      <?php $j=0;?>
-                                          @break
-                                      @case($i==12)
-                                     
-                                      <?php  $j=($j/20)*35;$p2=number_format($j, 2); ?>
-                                          
-                                      <?php  $j=0;?>
-                                          @break
-                                      @case($i==16)
-                                     
-                                      <?php  $j=($j/35)*35; $p3=number_format($j, 2);?>
-                                      <?php $j=0;?>
-                                          @break
-                                      @case($i==19)
-                                     
-                                      <?php  $j=($j/15)*10; $p4=number_format($j, 2);?>
-                                     <?php $j=0;?>
-                                          @break
-                                      @case($i==21)
-                                     
-                                      <?php  $j=($j/10)*10; $p5=number_format($j, 2);?>
-                                      <?php $j=0;?>
-                                          @break
-                                  @endswitch
-
-                                  
-                           <tr>
+                            @if($i==8)
+                             <?php  $j=($j/40)*10; $p1=number_format($j, 2);  ?>
+                             
+                            @endif
+                            @if($i==12)
+                             <?php   $j=$j-$p1; $j=($j/20)*35;$p2=number_format($j, 2);  ?>
+                             
+                            @endif
+                            @if($i==16)
+                             <?php  $j=$j-$p2; $j=($j/35)*35; $p3=number_format($j, 2);  ?>
+                             
+                            @endif
+                            @if($i==19)
+                             <?php  $j=$j-$p3; $j=($j/15)*10; $p4=number_format($j, 2); ?>
+                             
+                            @endif
                             @if($i==21)
+                             <?php  $j=$j-$p4; $j=($j/10)*10; $p5=number_format($j, 2);  ?>
+                             
+                            @endif
 
-                            <?php  $change = $ngg_emp->nem_thai_firstname; $change2++;?>
+                            @if($i==24)
+                             <?php $change2++; $j=0; $i=0; $change= $pointt->nem_thai_firstname; ?>
+                      @foreach($ngg_evaresult_comment as $ngg_comment )
 
-                              @foreach($ngg_evaresult_comment as $ngg_comment )
-
-                    @if($ngg_eva->nes_evaluate_employee_id == $ngg_comment->nec_evaluate_employee_id)
+                    @if($pointt->nes_evaluate_employee_id == $ngg_comment->nec_evaluate_employee_id)
                                   <?php $commentcount++;  $commenttemp = $ngg_comment->nec_comment; ?>
                           @switch($commentcount)
                                       @case($commentcount==1)
@@ -191,13 +175,16 @@ function myFunction() {
                     @endif
 
                 @endforeach
-
+                             
+                            <tr>
                             <td style="width: 10%;height: 40px;">{{Form::label('nee_id1',$change2)}}</td>
                             <td  style="width: 10%;height: 40px;">{{$p1}}<?php  $p1final+=$p1;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p2}}<?php  $p2final+=$p2;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p3}}<?php  $p3final+=$p3;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p4}}<?php  $p4final+=$p4;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p5}}<?php  $p5final+=$p5;?></td>
+                            </tr>
+                            
 
                                              
                             <?php $i=0;$count++;
@@ -215,20 +202,8 @@ function myFunction() {
                                  
 
                             ?>
-                        
                             @endif
-
-                          </tr>
-
-
-
-                                @endif
-                     
-                  @endforeach 
-                   @endif  
-                @endforeach
-              @endforeach
-
+                          @endforeach
                         </tbody>
 
                       </table>

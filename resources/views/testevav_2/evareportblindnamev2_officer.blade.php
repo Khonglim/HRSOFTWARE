@@ -8,6 +8,11 @@
     top: 48px;
     right: 15px;
 }
+#report {
+    position: absolute;
+    top: 48px;
+    right: 75px;
+}
 .chart {
   width: 100%; 
   min-height: 400px;
@@ -71,6 +76,8 @@ function myFunction() {
                                  @endforeach 
 
                           <div id="swapname"><a href="{{'reportv2_officer'}}" class="btn btn-primary btn-lg" ><i class="fa fa-eye fa-6" aria-hidden="true"></i></a></div>
+
+                           <div id="report"> <a href="{{'print_report'}}" class="btn btn-primary btn-lg" ><i class="fa fa-print fa-6" aria-hidden="true"></i></a></div>
         
                           <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button><br><br>
                           
@@ -102,20 +109,10 @@ function myFunction() {
                           </tr>
                         </thead>
                         <tbody>
-                           @foreach($employeetotests as $emp)
-
-                @foreach($ngg_evaluate_results as $ngg_eva)
-
-
-
-
-                  @if( $ngg_eva->nes_evaluate_employee_id == $emp->nee_id )
-
-                           
-                @foreach($ngg_employee as $ngg_emp)
-                  @if($ngg_emp->nem_id == $idtest)
-                   <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
-                   @foreach($timeattendant as $timeatten)
+                           @foreach($ngg_employee as $ngg_emp)
+                            @if( $ngg_emp->nem_id == $idtest)
+                            <?php   $istest=$ngg_emp->nem_thai_firstname; ?>
+                            @foreach($timeattendant as $timeatten)
                               @if($timeatten->net_employee_id == $ngg_emp->nem_id)
 
                                 <?php 
@@ -125,53 +122,40 @@ function myFunction() {
                               $miss_work = number_format($timeatten->net_miss_work*3, 2);
                               $annual_leave = number_format($timeatten->net_annual_leave*0.1, 2);
                               $totle_atten = $sick_leave+$personal_leave+$late+$miss_work+$annual_leave;
-                              $p5=number_format($totle_atten, 2);
+                              $p5 = number_format($totle_atten, 2);
                                 ?>
                             
                                 @endif
                              @endforeach
-                  @endif
-                       @if($ngg_emp->nem_id == $emp->nee_is_employee  )
+                            @endif
+                          @endforeach
 
-                                  <?php  $k=$ngg_emp->nem_id;  $i++; $j+=$ngg_eva->nes_q_point;?>
-                                   
-                             @switch($i)
-                                      @case($i==8)
-                                      
-                                      <?php  $j=($j/50)*15; $p1=number_format($j, 2);  ?>
-                                     
-                                      <?php $j=0;?>
-                                          @break
-                                      @case($i==13)
-                                     
-                                      <?php  $j=($j/25)*25;$p2=number_format($j, 2); ?>
-                                         
-                                      <?php  $j=0;?>
-                                          @break
-                                      @case($i==18)
-                                     
-                                      <?php  $j=($j/25)*25; $p3=number_format($j, 2);?>
-                                    
-                                      <?php $j=0;?>
-                                          @break
-                                      @case($i==23)
-                                     
-                                      <?php  $j=($j/30)*20; $p4=number_format($j, 2);?>
-                                    
-                                     <?php $j=0;?>
-                                          @break
-                                  @endswitch
+                          @foreach($point as $pointt)
+                          <?php $i++; $j+=$pointt->nes_q_point;?>
 
-                                  
+                            @if($i==8)
+                             <?php  $j=($j/50)*15; $p1=number_format($j, 2);  ?>
+                             
+                            @endif
+                            @if($i==13)
+                             <?php   $j=$j-$p1; $j=($j/25)*25;$p2=number_format($j, 2);  ?>
+                             
+                            @endif
+                            @if($i==18)
+                             <?php  $j=$j-$p2; $j=($j/25)*25; $p3=number_format($j, 2);  ?>
+                             
+                            @endif
+                            @if($i==24)
+                             <?php  $j=$j-$p3;  $j=($j/30)*20; $p4=number_format($j, 2); ?>
+                             
+                            @endif
                            
-                            @if($i==23)
 
-                            <?php  $change = $ngg_emp->nem_thai_firstname; $change2++;?>
+                            @if($i==29)
+                             <?php $change2++; $j=0; $i=0; $change= $pointt->nem_thai_firstname; ?>
+                      @foreach($ngg_evaresult_comment as $ngg_comment )
 
-                              @foreach($ngg_evaresult_comment as $ngg_comment )
-                   
-
-                    @if($ngg_eva->nes_evaluate_employee_id == $ngg_comment->nec_evaluate_employee_id)
+                    @if($pointt->nes_evaluate_employee_id == $ngg_comment->nec_evaluate_employee_id)
                                   <?php $commentcount++;  $commenttemp = $ngg_comment->nec_comment; ?>
                           @switch($commentcount)
                                       @case($commentcount==1)
@@ -200,17 +184,20 @@ function myFunction() {
 
                     @endif
 
-                  @endforeach
-                        
+                @endforeach
+                             
+                            <tr>
                             <td style="width: 10%;height: 40px;">{{Form::label('nee_id1',$change2)}}</td>
                             <td  style="width: 10%;height: 40px;">{{$p1}}<?php  $p1final+=$p1;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p2}}<?php  $p2final+=$p2;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p3}}<?php  $p3final+=$p3;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p4}}<?php  $p4final+=$p4;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p5}}<?php  $p5final+=$p5;?></td>
+                            </tr>
+                            
 
                                              
-                            <?php $i=0; $count++;
+                            <?php $i=0;$count++;
                                   array_push($data1, $change,$p1);
                                   array_push($data2, $change,$p2);
                                   array_push($data3, $change,$p3);
@@ -225,20 +212,8 @@ function myFunction() {
                                  
 
                             ?>
-                        
                             @endif
-
-                          </tr>
-
-
-
-                                @endif
-                     
-                  @endforeach 
-                   @endif  
-                @endforeach
-              @endforeach
-
+                          @endforeach
                         </tbody>
 
                       </table>

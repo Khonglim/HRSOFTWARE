@@ -352,22 +352,32 @@ Route::get('setting', function () {
 
 Route::get('narathorn',function(){
    
-           // $users = DB::table('Ngg_employee')
-          //  ->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
-        //    ->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
-        //    ->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
-        //    ->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
-       //     ->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
-       //     ->get();
-      $ngg_evaluate_results1 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 77)->get();
-      $ngg_evaluate_results2 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 59)->get();
-      $ngg_evaluate_results3 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 43)->get();
-      $ngg_evaluate_results4 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 46)->get();
-      $ngg_evaluate_results5 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 39)->get();     
-      $ngg_evaluate_results6 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 49)->get();
+         $users = DB::table('employeetotest')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->leftJoin('ngg_evaresult_commentv2', 'employeetotest.nee_id', '=', 'ngg_evaresult_commentv2.nec_evaluate_employee_id')
+            ->get();
+
+               $user2 = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->leftJoin('ngg_evaresult_commentv2', 'employeetotest.nee_id', '=', 'ngg_evaresult_commentv2.nec_evaluate_employee_id')
+            ->where('nee_by_employee', '=', 8)  
+            ->get();
+            $point = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
+            ->where('nee_by_employee', '=', 8)
+            ->where('nee_recheck', '=', 0)  
+            ->get();
+     // $ngg_evaluate_results1 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 9)->get();
+     // $ngg_evaluate_results2 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 59)->get();
+     // $ngg_evaluate_results3 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 26)->get();
+      //$ngg_evaluate_results4 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 47)->get();
+     // $ngg_evaluate_results5 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 39)->get();
+      //$ngg_evaluate_results6 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 49)->get();
      
 
-            dd(  $ngg_evaluate_results6);
+            dd( $point);
             
 });
 
