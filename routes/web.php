@@ -79,12 +79,20 @@ Route::get('summevav2','Evatesting2v2Controller@test4')->middleware('auth');
 
 Route::get('evareportv2/{id}/reportv2_leader','Evatesting2v2Controller@test3leader')->middleware('auth');
 Route::get('evareportv2/{id}/evareportblindnamev2_leader','Evatesting2v2Controller@test5leader')->middleware('auth');
+Route::get('evareportv2/{id}/print_report_leader','EvareportController@=')->middleware('auth');
+Route::get('evareportv2/{id}/print_blind_report_leader','EvareportController@blind_report_leader')->middleware('auth');
 
 Route::get('evareportv2/{id}/reportv2_officer','Evatesting2v2Controller@test3officer')->middleware('auth');
 Route::get('evareportv2/{id}/evareportblindnamev2_officer','Evatesting2v2Controller@test5officer')->middleware('auth');
+Route::get('evareportv2/{id}/print_report_officer','EvareportController@test3leader')->middleware('auth');
+Route::get('evareportv2/{id}/print_blind_report_officer','EvareportController@test5leader')->middleware('auth');
 
 Route::get('evareportv2/{id}/reportv2_manager','Evatesting2v2Controller@test3manager')->middleware('auth');
 Route::get('evareportv2/{id}/evareportblindnamev2_manager','Evatesting2v2Controller@test5manager')->middleware('auth');
+Route::get('evareportv2/{id}/print_report_manager','EvareportController@test3leader')->middleware('auth');
+Route::get('evareportv2/{id}/print_blind_report_manager','EvareportController@test5leader')->middleware('auth');
+
+
 
 Route::get('evatestversion','Evatesting2v2Controller@index')->middleware('auth');
 
