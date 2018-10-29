@@ -17,27 +17,22 @@
         th {
             border: 1px solid;
         }
-        img {
-    float: right;
-}
+   
     </style>
 </head>
 
 <body>
         <h3 style="text-align:center;">  บริษัทในเครือ เอ็น จี จี กรุ๊ป<br>
-            <hr>
-            <input type="checkbox" >Cien &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="checkbox" >Sesto &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >NGGTP  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >TAI &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >Xian  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" >UW  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" >Other<br>
-           **กรุณาทำเครื่องหมาย <input type="checkbox" checked="checked"> เพื่อเลือกบริษัทต้นสังกัด ลงในช่องสี่เหลี่ยม**<br>
+            <div align="center"><img src=img/NGG-10.jpg style="width:100px;height:100px;"></div>
             ใบสมัครงาน/Job Application From </h3>
 
-
-     <img src="{{$personal->photo}}" style="width:170px;height:170px;margin-left:15px;" >
+     <img src="{{$personal->photo}}" style="width:170px;height:170px;margin-left:15px;float:right;" >
     
      <br><br><br><br>
     <b>ตำแหน่งที่ต้องการ/Position Applied for : </b>{{$personal->positionngg}} <br>
     <b>เงินเดือนที่ต้องการ/Expeccted starting salary : </b>{{$personal->salaryngg}} บาท <br>
     <b>สาขาที่จะสมัคร: </b>{{$personal->talent}}
-    <p>
+    
     <table>
         <tbody>
             <tr>
