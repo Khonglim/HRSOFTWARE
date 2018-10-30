@@ -15,10 +15,16 @@
 
 
 
+    <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">ข้อมูลพนักงาน</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
 
 
-
-
+        </div>
+    </div>
 
 
 
