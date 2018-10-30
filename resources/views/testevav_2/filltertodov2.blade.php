@@ -13,9 +13,9 @@ function myFunction() {
 </script>
 <div class="content-wrapper">
 
- <section class="content">
+ <div class="content container">
   <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-12">
         <div class="box">
           <div class="box-header" >
             <h3 class="box-title" >แบบฟอร์มประเมินผลการปฏิบัติงาน ประจำปี 2561</h3>
@@ -244,6 +244,6 @@ function myFunction() {
       </div>
       
 
-</section>
+</div>
 </div>
 @endsection

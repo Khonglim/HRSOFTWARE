@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
 <div class="content-wrapper">
-  <section class="content">
+  <div class="content container">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
             {{Form::open(['url'=>'timeattendant'])}}
             @csrf
           <br><br>
@@ -14,9 +14,9 @@
           <!-- /.box-header -->
           <div class="box-body" >
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <label>ชื่อพนักงาน::</label>
-                <select name="employee" class="form-control">
+                <select name="employee"  class="js-example-basic-single  form-control">
                   @foreach($ngg_employee as $ngg_emp)
                     @forelse($timeattendant as $timeatten)
                       @if($timeatten->net_employee_id==$ngg_emp->nem_id)
@@ -64,6 +64,6 @@
       {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
                                       {{ Form::close()}} 
     </div>
-  </section>
+  </div>
 </div>
 @endsection

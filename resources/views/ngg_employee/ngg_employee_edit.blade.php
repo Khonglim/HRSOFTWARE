@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <div class="content-wrapper">
-  <section class="content">
+  <div class="content container">
     <div class="row">
       <div class="col-md-12">
           {{Form::open(['route'=>['nggemployee.update',$idd],'method'=>'PUT','files' => true])}}
@@ -207,7 +207,7 @@
         {{Form::close()}}
     </div>
    
-  </section>
+  </div>
 </div>
     
 

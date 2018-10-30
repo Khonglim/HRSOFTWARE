@@ -3,9 +3,11 @@
 
 <div class="content-wrapper">
   <div class="content container">
+      @if(auth()->user()->isAdmin == 1)
     <div class="alert alert-warning">
       <h3><strong>โปรดทราบ!</strong> แถบเมนูบ้างหัวข้อยังไม่สามารถใช้งานได้อยู่ระหว่างการดำเนินการ.</h3>
     </div>
+    @endif
     @if(Session::has('flash_message') )
 
     <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
@@ -14,7 +16,7 @@
 
 
 
-
+    @if(auth()->user()->isAdmin == 1)
     <div class="box">
         <div class="box-header">
           <font size=3><b>- ข้อมูลผู้สมัคร</b></font> <br>
@@ -39,6 +41,7 @@
 
         </div>
     </div>
+    @endif
 
 
 

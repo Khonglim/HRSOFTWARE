@@ -20,10 +20,10 @@
     }
   </style>
 <div class="content-wrapper">
-  <section class="content">
+  <div class="content container">
      {{ Html::link('officer_or_manager','เพิ่มข้อมูลของ manager หรือ officer ',array('class ' => 'btn btn-success')) }}</a>
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-12">
             {{Form::open(['url'=>'management'])}}
             @csrf
           <br><br>
@@ -149,6 +149,6 @@
       {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
                                       {{ Form::close()}} 
     </div>
-  </section>
+  </div>
 </div>
 @endsection

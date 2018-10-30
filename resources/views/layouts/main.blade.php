@@ -301,6 +301,9 @@ body {
                                   <ul class="dropdown-menu" role="menu">
                                       @if(auth()->user()->isAdmin_Master == 1)
                                       <li ><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
+
+                                      <li class="divider"></li>
+
                                       @endif
                                        <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
                                        <li class="divider"></li>
@@ -342,7 +345,7 @@ body {
                                 
                                   <img src="{{URL::asset('dist/img/user2-160x160.png')}}" class="user-image" alt="User Image">
                                   <p>
-                                    {{ Auth::user()->name }} - HR Software
+                                    {{ Auth::user()->name }} - HR system
                                     <small>2018</small>
                                   </p>
                                 </li>

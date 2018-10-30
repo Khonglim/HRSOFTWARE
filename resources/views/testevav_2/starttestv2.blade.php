@@ -107,10 +107,10 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 
  <?php    $i=0; $j=0;?>
 
- <section class="content">
+ <div class="content container">
 
   <div class="row">
-      <div class="col-xs-12">
+      <div class="col-md-12">
         <div class="box">
           <div class="box-header" >
             <h3 class="box-title" >แบบฟอร์มประเมินผลการปฏิบัติงาน ประจำปี 2561</h3>
@@ -254,7 +254,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
     </div>
 
 
-</section>
+</div>
 </div>
 
 @endsection
