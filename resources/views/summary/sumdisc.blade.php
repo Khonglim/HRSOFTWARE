@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="content-wrapper">
-        <div class="content container-fluid">
+        <div class="content container">
 <div class="col-md-12">
         <div class="box box-info">
             <div class="box-header with-border">
