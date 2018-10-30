@@ -24,7 +24,7 @@
         }
         </style>
 <div class="content-wrapper">
-        <div class="content container-fluid">
+        <div class="content container">
                 <div class="box box-info">
                         <div class="box-header with-border">
                           การทดลองงานระดับผู้บังคับบัญชา

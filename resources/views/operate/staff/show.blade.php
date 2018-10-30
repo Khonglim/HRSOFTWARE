@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <div class="content-wrapper">
-        <div class="content container-fluid">
+        <div class="content container">
                 <div class="box"  >
                         <div class="box-header">
                           <h3 class="box-title">สรุปผลการทดลองงาน ระดับปฏิบัติการ</h3>

@@ -359,7 +359,7 @@ body {
                             
                               <img src="{{URL::asset('dist/img/user2-160x160.png')}}" class="user-image" alt="User Image">
                               <p>
-                                {{ Auth::user()->name }} - HR Software
+                                {{ Auth::user()->name }} - HR system
                                 <small>2018</small>
                               </p>
                             </li>
