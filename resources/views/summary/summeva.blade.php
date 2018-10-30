@@ -2,7 +2,7 @@
 @section('content')
 <div class="content-wrapper">
 
- <section class="content">
+ <div class="content container">
 <div class="col-md-6">
         <div class="box">
           <div class="box-header">
@@ -42,6 +42,6 @@
         </div>
       </div>
 
-</section>
+</div>
 </div>
 @endsection

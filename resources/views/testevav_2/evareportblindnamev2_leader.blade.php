@@ -39,7 +39,7 @@ function myFunction() {
  <script src='https://www.google.com/jsapi'></script>
 
 <div class="content-wrapper">
-  <section class="content" >
+  <div class="content container">
     <div class="row">
       <div class="col-xs-12,col-md-6,col-ms-3" >
         <div class="box"  style="background-color: #edf9ff;">
@@ -114,7 +114,7 @@ function myFunction() {
                         </thead>
                         <tbody>
                           @foreach($ngg_employee as $ngg_emp)
-                            @if( $ngg_emp->men_id== $idtest)
+                            @if( $ngg_emp->nem_id== $idtest)
                             <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
                             @endif
                           @endforeach
@@ -883,7 +883,7 @@ function myFunction() {
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </div>
 
  

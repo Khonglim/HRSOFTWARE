@@ -20,7 +20,7 @@
     }
   </style>
 <div class="content-wrapper">
-  <section class="content">
+  <div class="content container">
     <div class="row">
       <div class="col-md-12">
             {{Form::open(['url'=>'nggemployee'])}}
@@ -176,6 +176,6 @@
       {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
                                       {{ Form::close()}} 
     </div>
-  </section>
+  </div>
 </div>
 @endsection

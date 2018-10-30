@@ -13,7 +13,7 @@ function myFunction() {
 </script>
 <div class="content-wrapper">
 
- <section class="content">
+ <div class="content container">
   <div class="row">
       <div class="col-md-10">
         <div class="box">
@@ -244,6 +244,6 @@ function myFunction() {
       </div>
       
 
-</section>
+</div>
 </div>
 @endsection
