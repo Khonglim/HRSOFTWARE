@@ -2,7 +2,7 @@
 @section('title','| แบบประเมินการสัมภาษณ์')
 @section('content')
 <div class="content-wrapper">
-  <div class="content container-fluid">
+  <div class="content container">
     <br>  <br>  <br>
 <center>
         <p>    <h3> โปรดเลือกแบบประเมินการสัมภาษณ์. </h3> </p>

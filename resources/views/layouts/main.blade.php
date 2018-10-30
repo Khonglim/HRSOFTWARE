@@ -239,16 +239,7 @@
                 $("#totolDay2").val(diffDays);
           }
         }
-        
         </script>
-
-
-
-
-
-
-
-
 <style>
 body {
   font-family: 'Prompt', sans-serif;
@@ -262,331 +253,142 @@ body {
               </style>
         
 </head>
-<body class="hold-transition skin-blue fixed sidebar-mini">
+<body class="hold-transition skin-red layout-top-nav">
     <div id="main">
             <div class="wrapper">
-        <header class="main-header">
-            <a href="{{ url('/home') }}" class="logo">
-                <span class="logo-mini"></span>
-                <span class="logo-lg">HR Ngg</span>
-              </a>
-            <nav class="navbar navbar-static-top" role="navigation">
-              <!-- Sidebar toggle button-->
-              <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-              </a>
-              <!-- Navbar Right Menu -->
-              <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                  <li class="dropdown tasks-menu">
-                    <ul class="dropdown-menu">
-                    </ul>
-                  </li>
-                  <!-- User Account Menu -->
-                  <li class="dropdown user user-menu">
-                    <!-- Menu Toggle Button -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <!-- The user image in the navbar-->
-                      <img src="{{URL::asset('dist/img/user2-160x160.png')}}" class="user-image" alt="User Image" >
-                      <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                      <span class="hidden-xs">{{ Auth::user()->name }}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <!-- The user image in the menu -->
-                      <li class="user-header">
-                      
-                        <img src="{{URL::asset('dist/img/user2-160x160.png')}}" class="user-image" alt="User Image">
-                        <p>
-                          {{ Auth::user()->name }} - HR Software
-                          <small>2018</small>
-                        </p>
-                      </li>
-                      <!-- Menu Body -->
-                      <li class="user-body">
-                    
-                        <!-- /.row -->
-                      </li>
-                      <!-- Menu Footer-->
-                      <li class="user-footer">
-                        <div class="pull-left">
+                <header class="main-header">
+                    <nav class="navbar navbar-static-top">
+                      <div class="container">
+                        <div class="navbar-header">
+                          <a href="{{url('/home')}}" class="navbar-brand"><b>HR </b>system</a>
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                          </button>
+                        </div>
+                
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                          <ul class="nav navbar-nav">
+                              @if(auth()->user()->isAdmin == 1)
+                            <li class="active"><a href="{{url('/home')}}"><span>หน้าแรก</span></a></li>
+                            <li ><a href="{{url('/ngg_work')}}"><span>ข้อมูลผู้สมัคร</span></a></li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">แบบประเมินต่างๆ<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li ><a href="{{url('/interview') }}"><span>แบบประเมินผลสัมภาษณ์</span></a></li>
+                                  <li class="divider"></li>
+                                  <li ><a href="{{url('/operate_employf')  }}"><span>แบบประเมินผลการปฏิบัติงาน</span></a></li>
+                         
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">รายงานผลต่างๆ<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li ><a href="{{url('/summbti') }}"><span>รายงานผลทดสอบ MBTI</span></a></li>
+                                    <li class="divider"></li>
+                                    <li ><a href="{{url('/sumdisc') }}"><span>รายงานผลทดสอบ DISC</span></a></li>
+                                    <li class="divider"></li>
+                                    <li ><a href="{{url('/con_all') }}"><span>รายงานทดลองงานปฏิบัติการ</span></a></li>
+                                    <li class="divider"></li>
+                                    <li ><a href="{{url('/operate_report*')  }}"><span>รายงานทดลองงานบังคับบัญชา</span></a></li>
+                                    <li class="divider"></li>
+                                    <li ><a href="{{url('/operate_report**')  }}"><span>รายงานการทดสอบทั้งหมด</span></a></li>
+                                   
+                                </ul>
+                              </li>
+                              <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">การจัดการแบบประเมิน<span class="caret"></span></a>
+                                  <ul class="dropdown-menu" role="menu">
+                                      @if(auth()->user()->isAdmin_Master == 1)
+                                      <li ><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
+                                      @endif
+                                       <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
+                                       <li class="divider"></li>
+                                       <li><a href="{{url('/nggemployee') }}">จัดการพนักงาน</a></li>
+                                       <li class="divider"></li>
+                                       <li><a href="{{url('/timeattendant') }}">จัดการเวลาผู้ประเมิน</a></li>
+                                     
+                                  </ul>
+                                </li>
+                            @endif
+                            @if(auth()->user()->isAdmin == 0)
+                            <li class="active"  ><a href="{{url('/evatestversion') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
+                           @endif
+    
+    
+                          </ul>
                          
                         </div>
-                        <div class="pull-right">
-                         <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-        
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                   @csrf
-                              </form>
-                        </div>
-                      </li>
-                      
-                    </ul>
-                  </li>
-
-
-                  <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </header>
-          <aside class="main-sidebar">
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                        <div class="navbar-custom-menu">
+                          <ul class="nav navbar-nav">
+                            <li class="dropdown tasks-menu">
+                              <ul class="dropdown-menu">
+                              </ul>
+                            </li>
+                            <!-- User Account Menu -->
+                            <li class="dropdown user user-menu">
+                              <!-- Menu Toggle Button -->
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="{{URL::asset('dist/img/user2-160x160.png')}}" class="user-image" alt="User Image" >
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                
+                                  <img src="{{URL::asset('dist/img/user2-160x160.png')}}" class="user-image" alt="User Image">
+                                  <p>
+                                    {{ Auth::user()->name }} - HR Software
+                                    <small>2018</small>
+                                  </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                              
+                                  <!-- /.row -->
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                  <div class="pull-left">
+                                   
+                                  </div>
+                                  <div class="pull-right">
+                                   <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                                                         onclick="event.preventDefault();
+                                                                       document.getElementById('logout-form').submit();">
+                                                          {{ __('Logout') }}
+                                                      </a>
+                  
+                                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                             @csrf
+                                        </form>
+                                  </div>
+                                </li>
+                                
+                              </ul>
+                            </li>
           
-            <!-- sidebar: style can be found in sidebar.less -->
-            <div class="sidebar">
-              <!-- Sidebar Menu -->
-              <ul class="sidebar-menu" data-widget="tree">
-                <li class="header"><center>เมนู</center></li>
-                <!-- Optionally, you can add icons to the links -->
-                @if(auth()->user()->isAdmin == 1)
-                <li class="active"  ><a href="{{url('/home') }}" ><i class="  fa fa-tachometer"></i> <span>หน้าแรก</span></a></li>
-                <li class="active"  ><a href="{{url('/ngg_work')}}"><i class="glyphicon glyphicon-user"></i> <span>ข้อมูลพนักงาน</span></a></li>
-                <li class="active"  ><a href="{{url('/interview') }}"><i class="glyphicon glyphicon-user"></i> <span>แบบประเมินผลสัมภาษณ์</span></a></li>
-               <li class="active"  ><a href="{{url('/operate_employf')  }}"><i class="fa  fa-pencil"></i> <span>แบบประเมินผลการปฏิบัติงาน</span></a></li> 
-                 <li class="active"  ><a href="{{url('/operate_report*')  }}"><i class="fa   fa-eyedropper"></i> <span>รายงานทดลองงานปฏิบัติการ</span></a></li> 
-                <li class="active"  ><a href="{{url('/operate_report**')  }}"><i class="fa   fa-eyedropper"></i> <span>รายงานทดลองงานบังคับบัญชา</span></a></li> 
-             
+          
+                          
+                          </ul>
+                        </div>
+                        <!-- /.navbar-custom-menu -->
+                      </div>
+                      <!-- /.container-fluid -->
+                    </nav>
+                  </header>
+       
 
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-angle-double-right"></i> <span>สรุปผลพนักงาน</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                      </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="{{url('/summbti') }}">รวม MBTI บุคคล</a></li>
-                    <li><a href="{{url('/sumdisc') }}">รวม DISC บุคคล</a></li>
-                  </ul>
-                </li>
-
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-list-ul"></i> <span>การจัดการแบบประเมิน</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                      </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li style="display: none;"><a href="{{url('/summeva') }}">สรุปผลประเมินv1</a></li>
-                    @if(auth()->user()->isAdmin_Master == 1)
-                    <li ><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
-                    @endif
-                    <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
-                    <li><a href="{{url('/nggemployee') }}">จัดการพนักงาน</a></li>
-                    <li><a href="{{url('/timeattendant') }}">จัดการเวลาผู้ประเมิน</a></li>
-                  </ul>
-                </li>
-              
-              
-                <li class="active"  ><a href="{{url('/con_all') }}"><i class="fa fa-book"></i> <span>สรุปผลรวม</span></a></li>
-                <li class="active"  ><a href="{{url('/setting')  }}"><i class="fa  fa-wrench"></i> <span>การตั้งค่า</span></a></li>
-                @endif
-                @if(auth()->user()->isAdmin == 0)
-                <li class="active"  ><a href="{{url('/evatestversion') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
-               @endif
-              
-
-              <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
-          </aside>
-
-        <main class="py-4">
+        <main >
             @yield('content')
         </main>
     </div>
 </div>
-<!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-user bg-yellow"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                <p>New phone +1(800)555-1234</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Update Resume
-                <span class="label label-success pull-right">95%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Laravel Integration
-                <span class="label label-warning pull-right">50%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Back End Framework
-                <span class="label label-primary pull-right">68%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Show me as online
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Turn off notifications
-              <input type="checkbox" class="pull-right">
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Delete chat history
-              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-            </label>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -646,7 +448,16 @@ body {
 
 
 
-
+<footer class="main-footer">
+  <div class="container">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </div>
+  <!-- /.container -->
+</footer>
 
 </body>
 </html>

@@ -27,7 +27,7 @@
     }
     </style>
             <div class="content-wrapper">
-                <div class="content container-fluid">
+                <div class="content container">
           {{Form::open(['url'=>'rate'])}}
           @csrf
           <div class="box-body table-responsive no-padding">
