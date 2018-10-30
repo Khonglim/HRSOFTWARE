@@ -316,6 +316,7 @@ function myFunction() {
                         function drawChart1() {
                           var data = google.visualization.arrayToDataTable([
                             ['{{$b}}', 'คะเเนน'],
+                            ['คะเเนนเต็ม',10],
                               <?php
                             for ($x=1; $x <count($data1) ; $x+=2) { 
                               
@@ -323,7 +324,6 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม',10]
                           ]);
 
                           var options = {
@@ -333,7 +333,7 @@ function myFunction() {
                                
                             }
                           };
-
+                          data.sort([{column: 1}, {column: 0}]);
                            
                             var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1'));
                               chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -352,6 +352,7 @@ function myFunction() {
                         function drawChart2() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$c}}', 'คะเเนน'],
+                            ['คะเเนนเต็ม', 30],
                               <?php
                             for ($x=1; $x <count($data2) ; $x+=2) { 
                               
@@ -359,7 +360,6 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 20]
                           ]);
 
                           var options = {
@@ -369,7 +369,7 @@ function myFunction() {
                              
                             }
                           };
-
+                          data.sort([{column: 1}, {column: 0}]);
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p2'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -386,6 +386,7 @@ function myFunction() {
                         function drawChart3() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$d}}', 'คะเเนน'],
+                            ['คะเเนนเต็ม', 30],
                               <?php
                             for ($x=1; $x <count($data3) ; $x+=2) { 
                               
@@ -393,7 +394,6 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 20]
                           ]);
 
                           var options = {
@@ -403,7 +403,7 @@ function myFunction() {
                               
                             }
                           };
-
+                          data.sort([{column: 1}, {column: 0}]);
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p3'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -420,6 +420,7 @@ function myFunction() {
                         function drawChart4() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$e}}', 'คะเเนน'],
+                            ['คะเเนนเต็ม', 10],
                               <?php
                             for ($x=1; $x <count($data4) ; $x+=2) { 
                               
@@ -427,7 +428,6 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 25]
                           ]);
 
                           var options = {
@@ -437,7 +437,7 @@ function myFunction() {
                              
                             }
                           };
-
+                          data.sort([{column: 1}, {column: 0}]);
                           var chart = new google.charts.Bar(document.getElementById('columnchart_materialp4'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -455,6 +455,7 @@ function myFunction() {
                           var data = google.visualization.arrayToDataTable([
 
                            ['{{$f}}', 'คะเเนน'],
+                            ['คะเเนนเต็ม', 10],
                               <?php
                             for ($x=1; $x <count($data5) ; $x+=2) { 
                               
@@ -462,7 +463,6 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 15]
                           ]);
 
                           var options = {
@@ -472,7 +472,7 @@ function myFunction() {
                             
                             }
                           };
-
+                          data.sort([{column: 1}, {column: 0}]);
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p5'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -490,6 +490,7 @@ function myFunction() {
                           var data = google.visualization.arrayToDataTable([
 
                            ['{{$g}}', 'คะเเนน'],
+                            ['คะเเนนเต็ม', 10],
                               <?php
                             for ($x=1; $x <count($data6) ; $x+=2) { 
                               
@@ -497,7 +498,6 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 15]
                           ]);
 
                           var options = {
@@ -507,7 +507,7 @@ function myFunction() {
                             
                             }
                           };
-
+                          data.sort([{column: 1}, {column: 0}]);
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p6'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -554,13 +554,13 @@ function myFunction() {
 
                         function drawChart() {
                           var data = google.visualization.arrayToDataTable([
-                            ['ด้าน', 'คะเเนนเต็ม', 'คะเเนนประเมิน'],
-                            ['ด้านที่1', 50, {{$p1final}}],
-                            ['ด้านที่2', 40, {{$p2final}}],
+                            ['ผลสรุปรวม', 'คะเเนนเต็ม', 'คะเเนนประเมิน'],
+                            ['ด้านที่1', 10, {{$p1final}}],
+                            ['ด้านที่2', 30, {{$p2final}}],
                             ['ด้านที่3', 30, {{$p3final}}],
-                            ['ด้านที่4', 30, {{$p4final}}],
-                            ['ด้านที่5', 25, {{$p5final}}],
-                            ['ด้านที่5', 25, {{$p6final}}],
+                            ['ด้านที่4', 10, {{$p4final}}],
+                            ['ด้านที่5', 10, {{$p5final}}],
+                            ['ด้านที่5', 10, {{$p6final}}],
                             ['คะเนนรวม', 100, {{$totle}}]
                           ]);
 

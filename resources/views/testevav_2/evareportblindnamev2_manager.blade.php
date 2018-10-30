@@ -116,21 +116,13 @@ function myFunction() {
                           </tr>
                         </thead>
                         <tbody>
-                           @foreach($employeetotests as $emp)
-
-                @foreach($ngg_evaluate_results as $ngg_eva)
-
-
-
-
-                  @if( $ngg_eva->nes_evaluate_employee_id == $emp->nee_id )
-                @foreach($ngg_employee as $ngg_emp)
-                  @if($ngg_emp->nem_id == $idtest)
-                   <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
-                    @foreach($timeattendant as $timeatten)
+                            @foreach($ngg_employee as $ngg_emp)
+                            @if( $ngg_emp->nem_id == $idtest)
+                            <?php   $istest=$ngg_emp->nem_thai_firstname; ?>
+                            @foreach($timeattendant as $timeatten)
                               @if($timeatten->net_employee_id == $ngg_emp->nem_id)
 
-                                <?php 
+                               <?php 
                               $sick_leave =number_format( $timeatten->net_sick_leave*0.2, 2);
                               $personal_leave = number_format($timeatten->net_personal_leave*0.4, 2);
                               $late = number_format($timeatten->net_late*0.25, 2);
@@ -142,59 +134,40 @@ function myFunction() {
                             
                                 @endif
                              @endforeach
-                   
-                  @endif
-                   
-                     
-                       @if($ngg_emp->nem_id == $emp->nee_is_employee  )
+                            @endif
+                          @endforeach
 
+                          @foreach($point as $pointt)
+                          <?php $i++; $j+=$pointt->nes_q_point;?>
 
-                                  <?php  $k=$ngg_emp->nem_id;  $i++; $j+=$ngg_eva->nes_q_point;?>
-                                 
-                          
-                               @switch($i)
-                                      @case($i==8)
-                                      
-                                      <?php  $j=($j/40)*10; $p1=number_format($j, 2);  ?>
-                                      {{$p1}}
-                                      <?php $j=0;?>
-                                          @break
-                                      @case($i==12)
-                                     
-                                      <?php  $j=($j/20)*30;$p2=number_format($j, 2); ?>
-                                          {{$p2}}
-                                      <?php  $j=0;?>
-                                          @break
-                                      @case($i==16)
-                                     
-                                      <?php  $j=($j/35)*30; $p3=number_format($j, 2);?>
-                                      {{$p3}}
-                                      <?php $j=0;?>
-                                          @break
-                                      @case($i==19)
-                                     
-                                      <?php  $j=($j/15)*10; $p4=number_format($j, 2);?>
-                                      {{$p4}}
-                                     <?php $j=0;?>
-                                          @break
-                                      @case($i==21)
-                                     
-                                      <?php  $j=($j/10)*10; $p5=number_format($j, 2);?>
-                                      {{$p5}}
-                                      {{$p6}}
-                                      <?php $j=0;?>
-                                          @break
-                                  @endswitch
+                            @if($i==8)
+                             <?php $j=($j/40)*10; $p1=number_format($j, 2);  ?>
+                             
+                            @endif
+                            @if($i==12)
+                             <?php   $j=$j-$p1; $j=($j/20)*30;$p2=number_format($j, 2);  ?>
+                             
+                            @endif
+                            @if($i==16)
+                             <?php  $j=$j-$p2; $j=($j/35)*30; $p3=number_format($j, 2); ?>
+                             
+                            @endif
+                            @if($i==19)
+                             <?php  $j=$j-$p3;  $j=($j/15)*10; $p4=number_format($j, 2); ?>
+                             
+                            @endif
 
-                                  
-                           <tr>
                             @if($i==21)
+                             <?php  $j=$j-$p4;   $j=($j/10)*10; $p5=number_format($j, 2); ?>
+                             
+                            @endif
+                           
 
-                            <?php  $change = $ngg_emp->nem_thai_firstname; $change2++;?>
+                            @if($i==24)
+                             <?php $change2++; $j=0; $i=0; $change= $pointt->nem_thai_firstname; ?>
+                      @foreach($ngg_evaresult_comment as $ngg_comment )
 
-                              @foreach($ngg_evaresult_comment as $ngg_comment )
-
-                    @if($ngg_eva->nes_evaluate_employee_id == $ngg_comment->nec_evaluate_employee_id)
+                    @if($pointt->nes_evaluate_employee_id == $ngg_comment->nec_evaluate_employee_id)
                                   <?php $commentcount++;  $commenttemp = $ngg_comment->nec_comment; ?>
                           @switch($commentcount)
                                       @case($commentcount==1)
@@ -224,14 +197,16 @@ function myFunction() {
                     @endif
 
                 @endforeach
-
+                             
+                            <tr>
                             <td style="width: 10%;height: 40px;">{{Form::label('nee_id1',$change2)}}</td>
                             <td  style="width: 10%;height: 40px;">{{$p1}}<?php  $p1final+=$p1;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p2}}<?php  $p2final+=$p2;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p3}}<?php  $p3final+=$p3;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p4}}<?php  $p4final+=$p4;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p5}}<?php  $p5final+=$p5;?></td>
-                            <td  style="width: 10%;height: 40px;">{{$p6}}<?php  $p6final+=$p6;?></td>
+                            </tr>
+                            
 
                                              
                             <?php $i=0;$count++;
@@ -240,31 +215,17 @@ function myFunction() {
                                   array_push($data3, $change,$p3);
                                   array_push($data4, $change,$p4);
                                   array_push($data5, $change,$p5);
-                                  array_push($data6, $change,$p6);
 
                                   array_push($data1change, $change2,$p1);
                                   array_push($data2change, $change2,$p2);
                                   array_push($data3change, $change2,$p3);
                                   array_push($data4change, $change2,$p4);
                                   array_push($data5change, $change2,$p5);
-                                  array_push($data6change, $change2,$p6);
                                  
 
                             ?>
-                        
                             @endif
-
-                          </tr>
-
-
-
-                                @endif
-                     
-                  @endforeach 
-                   @endif  
-                @endforeach
-              @endforeach
-
+                          @endforeach
                         </tbody>
 
                       </table>
@@ -361,6 +322,7 @@ function myFunction() {
                         function drawChart1() {
                           var data = google.visualization.arrayToDataTable([
                             ['{{$b}}', 'คะเเนน'],
+                            ['คะเเนนเต็ม',10],
                               <?php
                             for ($x=1; $x <count($data1change) ; $x+=2) { 
                               
@@ -368,7 +330,7 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม',10]
+                            
                           ]);
 
                           var options = {
@@ -377,7 +339,7 @@ function myFunction() {
                               title: '{{$b}}',
                             }
                           };
-
+                          data.sort({column: 0, desc: false});
                             var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1_1'));
                               chart.draw(data, google.charts.Bar.convertOptions(options));
                         $(window).resize(function(){
@@ -394,6 +356,7 @@ function myFunction() {
                         function drawChart2() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$c}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 30],
                               <?php
                             for ($x=1; $x <count($data2change) ; $x+=2) { 
                               
@@ -401,7 +364,7 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 20]
+                            
                           ]);
 
                           var options = {
@@ -411,6 +374,7 @@ function myFunction() {
                              
                             }
                           };
+                          data.sort({column: 0, desc: false});
                             var chart = new google.charts.Bar(document.getElementById('columnchart_material_p2_2'));
                           chart.draw(data, google.charts.Bar.convertOptions(options));
                         $(window).resize(function(){
@@ -427,6 +391,7 @@ function myFunction() {
                         function drawChart3() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$d}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 30],
                               <?php
                             for ($x=1; $x <count($data3change) ; $x+=2) { 
                               
@@ -434,7 +399,7 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 20]
+                            
                           ]);
 
                           var options = {
@@ -447,7 +412,7 @@ function myFunction() {
 
                          
                           
-                            
+                            data.sort({column: 0, desc: false});
                           
                           var chart = new google.charts.Bar(document.getElementById('columnchart_material_p3_3'));
                           chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -464,6 +429,7 @@ function myFunction() {
                         function drawChart4() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$e}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 10],
                               <?php
                             for ($x=1; $x <count($data4change) ; $x+=2) { 
                               
@@ -471,7 +437,7 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 25]
+                            
                           ]);
 
                           var options = {
@@ -481,7 +447,7 @@ function myFunction() {
                              
                             }
                           };
-                          
+                          data.sort({column: 0, desc: false});
                            var chart = new google.charts.Bar(document.getElementById('columnchart_materialp4_4'));
                           chart.draw(data, google.charts.Bar.convertOptions(options));
                          $(window).resize(function(){
@@ -499,6 +465,7 @@ function myFunction() {
                           var data = google.visualization.arrayToDataTable([
 
                            ['{{$f}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 10],
                               <?php
                             for ($x=1; $x <count($data5change) ; $x+=2) { 
                               
@@ -506,7 +473,7 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 15]
+                            
                           ]);
 
                           var options = {
@@ -516,7 +483,7 @@ function myFunction() {
                             
                             }
                           };
-                         
+                         data.sort({column: 0, desc: false});
                             var chart = new google.charts.Bar(document.getElementById('columnchart_material_p5_5'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -535,6 +502,7 @@ function myFunction() {
                           var data = google.visualization.arrayToDataTable([
 
                            ['{{$g}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 10],
                               <?php
                             for ($x=1; $x <count($data6change) ; $x+=2) { 
                               
@@ -542,7 +510,7 @@ function myFunction() {
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 15]
+                            
                           ]);
 
                           var options = {
@@ -552,7 +520,7 @@ function myFunction() {
                             
                             }
                           };
-                         
+                         data.sort({column: 0, desc: false});
                             var chart = new google.charts.Bar(document.getElementById('columnchart_material_p6_6'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -605,12 +573,12 @@ function myFunction() {
                         function drawChart() {
                           var data = google.visualization.arrayToDataTable([
                             ['ผลสรุปรวม', 'คะเเนนเต็ม', 'คะเเนนประเมิน'],
-                            ['ด้านที่1', 50, {{$p1final}}],
-                            ['ด้านที่2', 40, {{$p2final}}],
+                            ['ด้านที่1', 10, {{$p1final}}],
+                            ['ด้านที่2', 30, {{$p2final}}],
                             ['ด้านที่3', 30, {{$p3final}}],
-                            ['ด้านที่4', 30, {{$p4final}}],
-                            ['ด้านที่5', 25, {{$p5final}}],
-                            ['ด้านที่5', 25, {{$p6final}}],
+                            ['ด้านที่4', 10, {{$p4final}}],
+                            ['ด้านที่5', 10, {{$p5final}}],
+                            ['ด้านที่5', 10, {{$p6final}}],
                             ['คะเนนรวม', 100, {{$totle}}]
                           ]);
 

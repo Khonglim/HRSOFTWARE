@@ -502,7 +502,7 @@ function myFunction() {
 
                         function drawChart() {
                           var data = google.visualization.arrayToDataTable([
-                            ['ด้าน', 'คะเเนนเต็ม', 'คะเเนนประเมิน'],
+                            ['ผลสรุปรวม', 'คะเเนนเต็ม', 'คะเเนนประเมิน'],
                             
                             ['ด้านที่1', 10, {{$p1final}}],
                             ['ด้านที่2', 35, {{$p2final}}],

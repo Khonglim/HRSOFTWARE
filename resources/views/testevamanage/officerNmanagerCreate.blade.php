@@ -21,7 +21,6 @@
   </style>
 <div class="content-wrapper">
   <section class="content">
-     {{ Html::link('officer_or_manager','เพิ่มข้อมูลของ manager หรือ officer ',array('class ' => 'btn btn-success')) }}</a>
     <div class="row">
       <div class="col-md-10">
             {{Form::open(['url'=>'management'])}}
@@ -44,10 +43,10 @@
                  <td>
                    <select name="by_form"  class=" form-control"> 
                   @foreach($formfor as $form)
-                    @if ($form->form == 'leader')
-                  <option  value={{$form->id}} selected="true" >{{$form->form}}</option>
+                   @if ($form->form == 'leader')
+                  <option  value={{$form->id}} disabled="true" >{{$form->form}}</option>
                     @else
-                  <option  value={{$form->id}} disabled="true">{{$form->form}}</option>
+                  <option  value={{$form->id}}>{{$form->form}}</option>
                     @endif
                   @endforeach
                 </select>
@@ -106,38 +105,7 @@
                   @foreach($ngg_employee as $ngg_emp)
                   <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
                   @endforeach
-                </select>
-                 <br><br>
-                <select name="is_employee6"  class="js-example-basic-single  form-control">
-                  @foreach($ngg_employee as $ngg_emp)
-                  <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
-                  @endforeach
-                </select> 
-                <br><br>
-                <select name="is_employee7"  class="js-example-basic-single  form-control">
-                  @foreach($ngg_employee as $ngg_emp)
-                  <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
-                  @endforeach
-                </select> 
-                <br><br>
-                <select name="is_employee8"  class="js-example-basic-single  form-control">
-                  @foreach($ngg_employee as $ngg_emp)
-                  <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
-                  @endforeach
-                </select> 
-                <br><br>
-                <select name="is_employee9"  class="js-example-basic-single  form-control">
-                  @foreach($ngg_employee as $ngg_emp)
-                  <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
-                  @endforeach
-                </select> 
-                <br><br>
-                <select name="is_employee10"  class="js-example-basic-single  form-control">
-                  @foreach($ngg_employee as $ngg_emp)
-                  <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
-                  @endforeach
-                </select> 
-               </td>
+                 </td>
              </tr>
              </tbody>
              </table>
@@ -145,7 +113,7 @@
             </div>
         </div>
       </div>
-       {{ Html::link('management','Back',array('class ' => 'btn btn-primary')) }}
+       {{ Html::link('management/create','Back',array('class ' => 'btn btn-primary')) }}
       {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
                                       {{ Form::close()}} 
     </div>

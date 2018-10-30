@@ -192,7 +192,6 @@ function myFunction() {
                             <?php $i=0; $count++;
 
                                   array_push($data1, $change,$p1);
-                                  array_push($test2, $change);
                                   array_push($data2, $change,$p2);
                                   array_push($data3, $change,$p3);
                                   array_push($data4, $change,$p4);

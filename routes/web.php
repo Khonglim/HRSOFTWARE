@@ -98,6 +98,8 @@ Route::get('evatestversion','Evatesting2v2Controller@index')->middleware('auth')
 
 Route::resource('management','EvamanagementController');
 
+Route::get('officer_or_manager','Management2Controller@index')->middleware('auth');
+
 Route::resource('timeattendant','TimeattendantController');
 
 Route::resource('nggemployee','NggemployeeController');

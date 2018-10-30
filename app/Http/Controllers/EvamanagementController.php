@@ -33,6 +33,8 @@ class EvamanagementController extends Controller
         return view('testevamanage/manageindex',$data);
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -57,7 +59,8 @@ class EvamanagementController extends Controller
      */
     public function store(Request $request)
     {
-       
+        if (Input::get('by_form') == 1) {
+
        $emtotest =  new Employeetotest;
        $emtotest->nee_is_employee = Input::get('is_employee1');
        $emtotest->nee_by_employee = Input::get('by_employee');
@@ -137,6 +140,50 @@ class EvamanagementController extends Controller
        $emtotest->nee_recheck = '1';
        $emtotest->nee_enable = '1';
        $emtotest->save();
+        }else{
+
+       $emtotest =  new Employeetotest;
+       $emtotest->nee_is_employee = Input::get('is_employee1');
+       $emtotest->nee_by_employee = Input::get('by_employee');
+       $emtotest->nee_id_form = Input::get('by_form');
+       $emtotest->nee_recheck = '1';
+       $emtotest->nee_enable = '1';
+       $emtotest->save();
+
+       $emtotest =  new Employeetotest;
+       $emtotest->nee_is_employee = Input::get('is_employee2');
+       $emtotest->nee_by_employee = Input::get('by_employee');
+       $emtotest->nee_id_form = Input::get('by_form');
+       $emtotest->nee_recheck = '1';
+       $emtotest->nee_enable = '1';
+       $emtotest->save();
+
+       $emtotest =  new Employeetotest;
+       $emtotest->nee_is_employee = Input::get('is_employee3');
+       $emtotest->nee_by_employee = Input::get('by_employee');
+       $emtotest->nee_id_form = Input::get('by_form');
+       $emtotest->nee_recheck = '1';
+       $emtotest->nee_enable = '1';
+       $emtotest->save();
+
+       $emtotest =  new Employeetotest;
+       $emtotest->nee_is_employee = Input::get('is_employee4');
+       $emtotest->nee_by_employee = Input::get('by_employee');
+       $emtotest->nee_id_form = Input::get('by_form');
+       $emtotest->nee_recheck = '1';
+       $emtotest->nee_enable = '1';
+       $emtotest->save();
+
+       $emtotest =  new Employeetotest;
+       $emtotest->nee_is_employee = Input::get('is_employee5');
+       $emtotest->nee_by_employee = Input::get('by_employee');
+       $emtotest->nee_id_form = Input::get('by_form');
+       $emtotest->nee_recheck = '1';
+       $emtotest->nee_enable = '1';
+       $emtotest->save();
+
+        }
+      
 
         Session::flash('flash_message','บันทึกสำเร็จ!!');
         return redirect()->route("home");
