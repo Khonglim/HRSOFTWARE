@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <div class="content-wrapper">
-  <section class="content">
+  <div class="content container">
     <div class="row">
       <div class="col-md-8">
          
@@ -182,7 +182,7 @@
         {{ Html::link('nggemployee','Back',array('class ' => 'btn btn-primary')) }}
     </div>
    
-  </section>
+  </div>
 </div>
     
 

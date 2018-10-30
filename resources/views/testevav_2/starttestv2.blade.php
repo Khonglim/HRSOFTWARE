@@ -107,7 +107,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 
  <?php    $i=0; $j=0;?>
 
- <section class="content">
+ <div class="content container">
 
   <div class="row">
       <div class="col-xs-12">
@@ -254,7 +254,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
     </div>
 
 
-</section>
+</div>
 </div>
 
 @endsection

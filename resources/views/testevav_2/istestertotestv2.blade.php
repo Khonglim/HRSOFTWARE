@@ -23,7 +23,7 @@
 
   </style>
 <?php    $i=0; $j=0; $k=0;?>
- <section class="content">
+ <div class="content container">
   <div class="row">
       <div class="col-xs-10">
         <div class="box">
@@ -149,7 +149,7 @@
     </div>
 
 
-</section>
+</div>
 </div>
  
   @endsection
