@@ -1,9 +1,12 @@
 @extends('layouts.operate')
 @section('content')
 
+
   <div class="content-wrapper">
-        <div class="col-md-5">
-    <div class="content container-fluid">
+      <div class="content container">
+      <br><br><br>
+      <div class="col-md-3"></div>   <div class="col-md-5">
+   
     
             <div class="box box-info">
                     <div class="box-header with-border">

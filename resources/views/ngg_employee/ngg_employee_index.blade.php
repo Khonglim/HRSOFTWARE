@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
 <div class="content-wrapper">
-  <section class="content">
+    <div class="content container">
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-12">
          
           <a href="nggemployee/create" class="btn btn-success" ><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
   
@@ -79,7 +79,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </div>
     
 

@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
 <div class="content-wrapper">
-  <section class="content">
+    <div class="content container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-ms-12">
          
           <a href="management/create" class="btn btn-success" ><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
   
@@ -92,7 +92,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </div>
     
 
