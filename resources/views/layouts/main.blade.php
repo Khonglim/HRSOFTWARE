@@ -301,7 +301,11 @@ body {
                                   <ul class="dropdown-menu" role="menu">
                                       @if(auth()->user()->isAdmin_Master == 1)
                                       <li ><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
+<<<<<<< HEAD
+                                      
+=======
                                       <li class="divider"></li>
+>>>>>>> 5d5c92615a9ed82065b2de3cd617c2f90172be15
                                       @endif
                                        <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
                                        <li class="divider"></li>
