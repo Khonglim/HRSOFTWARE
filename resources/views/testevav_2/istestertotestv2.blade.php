@@ -25,7 +25,7 @@
 <?php    $i=0; $j=0; $k=0;?>
  <div class="content container">
   <div class="row">
-      <div class="col-xs-10">
+      <div class="col-md-12">
         <div class="box">
           <div class="box-header" >
             <h3 class="box-title" >เลือกผู้ถูกประเมิน</h3>

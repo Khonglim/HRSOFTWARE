@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
 <div class="content-wrapper">
-  <section class="content">
+  <div class="content container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
           {{Form::open(['route'=>['management.update',$idd],'method'=>'PUT','files' => true])}}
           @csrf
           <br><br>
@@ -113,7 +113,7 @@
        
     </div>
    
-  </section>
+  </div>
 </div>
     
 

@@ -37,7 +37,7 @@ function myFunction() {
 <div class="content-wrapper">
   <div class="content container">
     <div class="row">
-      <div class="col-xs-12,col-md-6,col-ms-3" >
+      <div class="col-md-12,col-md-6,col-ms-3" >
         <div class="box"  style="background-color: #edf9ff;">
           <div class="box-header" style=" text-align: center;">
             <h2 class="box-title" >ผลการประเมิน</h2>

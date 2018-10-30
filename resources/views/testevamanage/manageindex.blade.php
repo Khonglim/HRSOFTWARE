@@ -3,7 +3,7 @@
 <div class="content-wrapper">
     <div class="content container">
     <div class="row">
-      <div class="col-ms-12">
+      <div class="col-md-12">
          
           <a href="management/create" class="btn btn-success" ><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
   
