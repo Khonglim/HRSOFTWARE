@@ -79,7 +79,7 @@ Route::get('summevav2','Evatesting2v2Controller@test4')->middleware('auth');
 
 Route::get('evareportv2/{id}/reportv2_leader','Evatesting2v2Controller@test3leader')->middleware('auth');
 Route::get('evareportv2/{id}/evareportblindnamev2_leader','Evatesting2v2Controller@test5leader')->middleware('auth');
-Route::get('evareportv2/{id}/print_report_leader','EvareportController@=')->middleware('auth');
+Route::get('evareportv2/{id}/print_report_leader','EvareportController@report_leader')->middleware('auth');
 Route::get('evareportv2/{id}/print_blind_report_leader','EvareportController@blind_report_leader')->middleware('auth');
 
 Route::get('evareportv2/{id}/reportv2_officer','Evatesting2v2Controller@test3officer')->middleware('auth');

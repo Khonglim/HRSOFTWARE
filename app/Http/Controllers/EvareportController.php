@@ -28,6 +28,7 @@ class EvareportController extends Controller
             $ngg_evaresult_comment = DB::table('ngg_evaresult_commentv2')->where('nec_q_form', '=', '1')->get();
             $question = DB::table('questionv2')->where('id_form', '=', 1)->get();
             $partof = DB::table('partofv2')->where('id_form', '=', 1)->get();
+            $idtest = $id;
             
              $point = DB::table('employeetotest')
             ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
@@ -44,13 +45,13 @@ class EvareportController extends Controller
                 'ngg_employee' => $ngg_employee,
                 'partof' => $partof,
                 'question' => $question, 
-                'idtest' => $id,
+                'idtest' => $idtest,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
                 'timeattendant'=>$timeattendant,
                 'point'=> $point
             );
 
-            return view('evareport/report_leader',$data);
+            return view('evareport/blind_report_leader',$data);
         }
         
         
@@ -67,7 +68,7 @@ class EvareportController extends Controller
             $ngg_evaresult_comment = DB::table('ngg_evaresult_commentv2')->where('nec_q_form', '=', '1')->get();
             $question = DB::table('questionv2')->where('id_form', '=', 1)->get();
             $partof = DB::table('partofv2')->where('id_form', '=', 1)->get();
-            
+            $idtest = $id;
              $point = DB::table('employeetotest')
             ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
             ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
@@ -83,13 +84,13 @@ class EvareportController extends Controller
                 'ngg_employee' => $ngg_employee,
                 'partof' => $partof,
                 'question' => $question, 
-                'idtest' => $id,
+                'idtest' => $idtest,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
                 'timeattendant'=>$timeattendant,
                 'point'=> $point
             );
 
-            return view('evareport/blind_report_leader',$data);
+            return view('evareport/report_leader',$data);
         }
         
         

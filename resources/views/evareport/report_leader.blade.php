@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<title>ผลการประเมิน</title>
+<title>ผลการประเมิน360</title>
 
 <style type="text/css">
  body {
@@ -59,7 +59,7 @@
                                 
                         
                                  @endforeach 
-                               
+                    <br><br>           
  <div class="container">
                  <table>
                         <thead>
@@ -87,7 +87,7 @@
                         </thead>
                           <tbody>
                           @foreach($ngg_employee as $ngg_emp)
-                            @if( $ngg_emp->men_id== $idtest)
+                            @if( $ngg_emp->nem_id== $idtest)
                             <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
                             @endif
                           @endforeach
@@ -152,7 +152,7 @@
                 @endforeach
                              
                             <tr>
-                            <td style="width: 10%;height: 40px;">{{Form::label('nee_id1',$change2)}}</td>
+                            <td style="width: 10%;height: 40px;">{{Form::label('nee_id1',$change)}}</td>
                             <td  style="width: 10%;height: 40px;">{{$p1}}<?php  $p1final+=$p1;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p2}}<?php  $p2final+=$p2;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p3}}<?php  $p3final+=$p3;?></td>
@@ -183,36 +183,104 @@
 
                       </table>
 
-</div>
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                       <script type="text/javascript">
+                      @if($p1final!=0)
+                      <?php  
+                      $p1final=number_format($p1final/$count, 2);
+                      $p2final=number_format($p2final/$count, 2); 
+                      $p3final=number_format($p3final/$count, 2); 
+                      $p4final=number_format($p4final/$count, 2); 
+                      $p5final=number_format($p5final/$count, 2); 
+                      $totle= $p1final+$p2final+$p3final+$p4final+$p5final; ?>
+
+                       @switch($totle)
+                                      @case($totle>90)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด A+ </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ดีเลิศ</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                          @break
+                                      @case($totle>80 && $totle<91)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด A </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ดีเยี่ยม</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                          @break
+                                      @case($totle>70 && $totle<81)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด B+ </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ดีมาก</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                          @break
+                                      @case($totle>60 && $totle<71)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด B </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ดี</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                          @break
+                                      @case($totle>50 && $totle<61)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด C+ </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: พอใช้</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                          @break
+                                      @case($totle>40 && $totle<51)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด C </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: พอใช้</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                          @break
+                                      @case($totle>30 && $totle<41)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด D+ </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ควรปรับปรุง</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                          @break
+                                      @case($totle>20 && $totle<31)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด D </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ควรปรับปรุง</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                          @break
+                                      @case($totle<21)
+                                        <h2 style="text-align: center;">ผลการประเมินของคุณ {{$istest}} </h2>
+                                        <h1 style="text-align: center;">เกรด E </h1>
+                                        <h2 style="text-align: center;">ระดับศักยภาพ: ไม่มีประสิทธิภาพ</h2>
+                                        <h2 style="text-align: center;">คะเเนนเต็ม100 ได้ทั้งหมด {{$totle}}คะแนน</h2>
+                                         @break
+                                  @endswitch
+                                  </div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                      <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
                         google.charts.setOnLoadCallback(drawChart1);
+
                         function drawChart1() {
                           var data = google.visualization.arrayToDataTable([
                             ['{{$b}}', 'คะเเนน'],
+                             ['คะแนนเต็ม',10],
                               <?php
-                            for ($x=1; $x <count($data1change) ; $x+=2) { 
+                            for ($x=1; $x <count($data1) ; $x+=2) { 
                               
-                                echo  "['".$data1change[$x-1]."', '".$data1change[$x]."'],";
+                                echo  "['".$data1[$x-1]."', '".$data1[$x]."'],";
                             }
-                             
                               ?>
-                            ['คะเเนนเต็ม',10]
+                           
                           ]);
 
                           var options = {
-                             height: 400,
+                            height: 400,
                             chart: {
                               title: '{{$b}}',
+                               
                             }
                           };
-
-                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1_1'));
+                         data.sort([{column: 1}, {column: 0}]);
+                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p1'));
                               chart.draw(data, google.charts.Bar.convertOptions(options));
                         $(window).resize(function(){
                                   drawChart1();
                         });
+
                           
                         }
 
@@ -224,14 +292,15 @@
                         function drawChart2() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$c}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 35],
                               <?php
-                            for ($x=1; $x <count($data2change) ; $x+=2) { 
+                            for ($x=1; $x <count($data2) ; $x+=2) { 
                               
-                                echo  "['".$data2change[$x-1]."', '".$data2change[$x]."'],";
+                                echo  "['".$data2[$x-1]."', '".$data2[$x]."'],";
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 20]
+                            
                           ]);
 
                           var options = {
@@ -241,12 +310,13 @@
                              
                             }
                           };
-                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p2_2'));
+                          data.sort([{column: 1}, {column: 0}]);
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p2'));
+
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                        $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart2();
                         });
-                         
                         }
 
                       </script>
@@ -257,14 +327,15 @@
                         function drawChart3() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$d}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 35],
                               <?php
-                            for ($x=1; $x <count($data3change) ; $x+=2) { 
+                            for ($x=1; $x <count($data3) ; $x+=2) { 
                               
-                                echo  "['".$data3change[$x-1]."', '".$data3change[$x]."'],";
+                                echo  "['".$data3[$x-1]."', '".$data3[$x]."'],";
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 20]
+                            
                           ]);
 
                           var options = {
@@ -274,14 +345,11 @@
                               
                             }
                           };
+                          data.sort([{column: 1}, {column: 0}]);
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p3'));
 
-                         
-                          
-                            
-                          
-                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p3_3'));
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                             $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart3();
                         });
                         }
@@ -294,14 +362,15 @@
                         function drawChart4() {
                           var data = google.visualization.arrayToDataTable([
                            ['{{$e}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 10],
                               <?php
-                            for ($x=1; $x <count($data4change) ; $x+=2) { 
+                            for ($x=1; $x <count($data4) ; $x+=2) { 
                               
-                                echo  "['".$data4change[$x-1]."', '".$data4change[$x]."'],";
+                                echo  "['".$data4[$x-1]."', '".$data4[$x]."'],";
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 25]
+                            
                           ]);
 
                           var options = {
@@ -311,32 +380,33 @@
                              
                             }
                           };
-                          
-                           var chart = new google.charts.Bar(document.getElementById('columnchart_materialp4_4'));
+                      data.sort([{column: 1}, {column: 0}]);
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_materialp4'));
+
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                         $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart4();
                         });
-                          
                         }
 
                       </script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
                         google.charts.setOnLoadCallback(drawChart5);
-                        
+
                         function drawChart5() {
                           var data = google.visualization.arrayToDataTable([
 
                            ['{{$f}}', 'คะเเนน'],
+                           ['คะเเนนเต็ม', 10],
                               <?php
-                            for ($x=1; $x <count($data5change) ; $x+=2) { 
+                            for ($x=1; $x <count($data5) ; $x+=2) { 
                               
-                                echo  "['".$data5change[$x-1]."', '".$data5change[$x]."'],";
+                                echo  "['".$data5[$x-1]."', '".$data5[$x]."'],";
                             }
                              
                               ?>
-                            ['คะเเนนเต็ม', 15]
+                            
                           ]);
 
                           var options = {
@@ -346,17 +416,17 @@
                             
                             }
                           };
-                         
-                            var chart = new google.charts.Bar(document.getElementById('columnchart_material_p5_5'));
+                         data.sort([{column: 1}, {column: 0}]);
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material_p5'));
 
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                         $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart5();
                         });
-                          
                         }
 
                       </script>
+                 
 
                         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                        <script type="text/javascript">
@@ -378,18 +448,14 @@
                                           height:400,
                                           title: 'คะเเนนสุทธิ'
                                         };
-                          
-                           
-                         function resize() {
-              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
+                                         function resize() {
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
                           chart.draw(data, options);
                               }
                       window.onload = resize();
                       window.onresize = resize;
-                        }
-                                        
-                                      
+                                      }
                                     </script>
                       <script type="text/javascript">
                         google.charts.load('current', {'packages':['bar']});
@@ -398,12 +464,13 @@
                         function drawChart() {
                           var data = google.visualization.arrayToDataTable([
                             ['ผลสรุปรวม', 'คะเเนนเต็ม', 'คะเเนนประเมิน'],
-                            ['ด้านที่1', 50, {{$p1final}}],
-                            ['ด้านที่2', 40, {{$p2final}}],
-                            ['ด้านที่3', 30, {{$p3final}}],
-                            ['ด้านที่4', 30, {{$p4final}}],
-                            ['ด้านที่5', 25, {{$p5final}}],
-                            ['คะเนนรวม', 100, {{$totle}}]
+                            
+                            ['ด้านที่1', 10, {{$p1final}}],
+                            ['ด้านที่2', 35, {{$p2final}}],
+                            ['ด้านที่3', 35, {{$p3final}}],
+                            ['ด้านที่4', 10, {{$p4final}}],
+                            ['ด้านที่5', 10, {{$p5final}}],
+                            ['คะเนนรวม', 100, {{$totle}}],
                           ]);
 
                           var options = {
@@ -413,25 +480,65 @@
                               subtitle: 'ผลการประเมินประจำปี',
                             }
                           };
+                          var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
-                          
-                          
-                            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
                           chart.draw(data, google.charts.Bar.convertOptions(options));
-                         $(window).resize(function(){
+                          $(window).resize(function(){
                                   drawChart();
                         });
                         }
 
                       </script>
-                      <br>
-<div class="container">
+                      <br><br>
 
-    <div id="columnchart_material_p1_1" class="chart"></div>
+<div class="container">
+  <div class="row">
+  <div class="col-md-7">
+    <div id="columnchart_material_p1" class="chart" style="width: 550px; height: 400px;" ></div>
+  </div>
+  <div class="col-md-4">
+    <div id="columnchart_material_p2" class="chart" style="width: 550px; height: 400px;" ></div>
+  </div> 
+  </div>
+</div>
+<br><br>
+<div class="container">
+  <div class="row">
+  <div class="col-md-7">
+    <div id="columnchart_material_p3" class="chart" style="width: 550px; height: 400px;" ></div>
+  </div>
+  <div class="col-md-4">
+    <div id="columnchart_materialp4" class="chart" style="width: 550px; height: 400px;" ></div>
+  </div> 
+  </div>
+</div>
+<br><br>
+<div class="container">
+  <div class="row">
+  <div class="col-md-7">
+    <div id="columnchart_material_p5" class="chart" style="width: 550px; height: 400px;" ></div>
+  </div>
+  <div class="col-md-4">
+    <div id="columnchart_material" class="chart" style="width: 550px; height: 400px;" ></div>
+  </div> 
+  </div>
+</div>
+<br><br><br><br>
+<div class="container">
+  <div class="row">
+  <div class="col-md-7">
+    <div id="piechart" class="chart" style="width: 550px; height: 400px;" ></div>
+  </div>
+  </div>
 </div>
 <div class="container">
 <input type="button" value="ปริ้นเฉพาะใน divprint" onclick="javascript:this.style.display='none';window.print();">
 </div>
+                    @else
+              <h1> ยังไม่มีข้อมูล</h1>
+                   @endif
+                  
+
 
 </body>
 </html>

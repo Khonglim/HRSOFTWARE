@@ -114,7 +114,7 @@ function myFunction() {
                         </thead>
                         <tbody>
                           @foreach($ngg_employee as $ngg_emp)
-                            @if( $ngg_emp->men_id== $idtest)
+                            @if( $ngg_emp->nem_id== $idtest)
                             <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
                             @endif
                           @endforeach
