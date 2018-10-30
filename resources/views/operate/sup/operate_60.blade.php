@@ -114,6 +114,7 @@
 
                                 <div class="form-group">
                                         <div class="col-sm-12">
+                                                <div  class="table-wrapper-scroll-y">        
                             <table id="customers">
                                     <tr>
                                       <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th>
@@ -143,6 +144,7 @@
 
                                     </tr>
                                   </table>
+                                                </div>
 
                                         </div>
                                  </div>
@@ -150,6 +152,7 @@
 
                                 <div class="form-group">
                                         <div class="col-sm-12">
+                                                <div  class="table-wrapper-scroll-y">        
                                 <table id="customers">
                                   <tr>
                                     <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
@@ -226,6 +229,7 @@
 
 
                                 </table>
+                                                </div>
                             </div>
                             </div>
                                 <div class="form-group">

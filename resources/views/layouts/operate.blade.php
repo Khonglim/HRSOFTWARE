@@ -29,7 +29,17 @@
   <link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
   <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
   <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
-  
+    <style>
+    
+    .table-wrapper-scroll-y {
+  display: block;
+  max-height: 1000px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+    
+    
+    </style>
 
 
 

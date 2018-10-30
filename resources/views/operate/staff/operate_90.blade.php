@@ -119,6 +119,7 @@
                                2.	ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป  จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน
                         <div class="form-group">
                                 <div class="col-sm-12">
+                                        <div  class="table-wrapper-scroll-y">        
                           <table id="customers">
                                 <tr>
                                   <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย จาก 60 วัน</th>
@@ -154,6 +155,7 @@
 
 
                               </table>
+                        </div>
 
 
                                 </div>
@@ -163,6 +165,7 @@
 
                           <div class="form-group">
                             <div class="col-sm-12">
+                                    <div  class="table-wrapper-scroll-y">        
                                 <table id="customers">
                                         <tr>
                                           <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th>
@@ -198,10 +201,12 @@
 
 
                                       </table>
+                                    </div>
                             </div>
                       </div>
                              <div class="form-group">
                                  <div class="col-sm-12">
+                                        <div  class="table-wrapper-scroll-y">        
                         <table id="customers">
 
                           <tr>
@@ -270,6 +275,7 @@
                                  </td>
                              </tr>
                         </table>
+                                        </div>
                     </div>
                 </div>
 

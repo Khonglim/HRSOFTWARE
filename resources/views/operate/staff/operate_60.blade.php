@@ -114,6 +114,7 @@
                                          2.	ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป  จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน
                            <div class="form-group">
                                 <div class="col-sm-12">
+                                    <div  class="table-wrapper-scroll-y">              
                     <table id="customers">
                       <tr>
                         <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
@@ -192,6 +193,9 @@
                          </tr>
 
                     </table>
+
+
+                </div>
                 </div>
             </div>
 
@@ -251,7 +255,7 @@
 
 
 
-
+                        <div  class="table-wrapper-scroll-y">        
 
                                     <table id="customers">
                                             <tr>
@@ -290,7 +294,7 @@
                                           </table>
 
 
-
+                        </div>
 
 
 
