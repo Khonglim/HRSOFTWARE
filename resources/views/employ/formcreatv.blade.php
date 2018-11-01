@@ -1771,7 +1771,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label>ท่านสามารถขับรถยนต์ได้หรือไม่ <small class="text-danger">*</small> </label>&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
+                                                                <label>ท่านสามารถขับรถยนต์ได้หรือไม่ <small class="text-danger">*</small> </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
                                                                 <input type="radio" name="yes" value="ได้"  required > ได้  &emsp;&emsp;&emsp;
                                                                 <input type="radio" name="yes" value="ไม่ได้"  required > ไม่ได้
                                                                 
@@ -1781,8 +1781,8 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label>ท่านมีรถยนต์ส่วนตัวหรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
-                                                                <input type="radio" name="owncar" value="มี"  required >มี &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+                                                                <label>ท่านมีรถยนต์ส่วนตัวหรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                                                <input type="radio" name="owncar" value="มี"  required >มี &emsp;&emsp;&emsp;
                                                                 <input type="radio" name="owncar" value="ไม่มี"  required >ไม่มี
                                                                     <span class="text-danger">{{ $errors->first('owncar') }}</span> 
                                                                 </div>
@@ -1816,10 +1816,10 @@
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="col">
                                                             <div class="form-group">
-                                                                <label>ท่านเคยถูกให้ออกจากงานหรือไม่?<small class="text-danger">*</small></label> &emsp;&emsp;                                                                  
-                                                                <input type="radio" name="exitwork" value="เคย" id="exitwork" required >เคย เพราะ &emsp; {{Form::text('because','',['id'=>'because'])}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     
+                                                                <label>ท่านเคยถูกให้ออกจากงานหรือไม่?<small class="text-danger">*</small></label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                                                                   
+                                                                <input type="radio" name="exitwork" value="เคย" id="exitwork" required >เคย เพราะ &emsp; {{Form::text('because','',['id'=>'because'])}} &emsp;&emsp;
                                                                 <input type="radio" name="exitwork" value="ไม่เคย" id="exitwork"  required >ไม่เคย 
                                                        
                                                                 </div>
@@ -1838,7 +1838,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label>ท่านเคยไดรั้บโทษทาง อาญา หรือ จำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;&emsp;&ensp;
+                                                                <label>ท่านเคยได้รับโทษทาง อาญา หรือ จำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;&emsp;&ensp;
                                                                 <input type="radio" name="offense" value="เคย"  required >เคย   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                                 <input type="radio" name="offense" value="ไม่เคย"  required >ไม่เคย
                                                                
@@ -1848,25 +1848,41 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label>ขณะนี้คุณตั้งครรภ์หรือไม่?<small class="text-danger">*</small> </label>&emsp;&emsp;
+                                                                <label>ขณะนี้คุณตั้งครรภ์หรือไม่?<small class="text-danger">*</small> </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                                 <input type="radio" name="pregnant" value="ใช่"  required >ใช่ &emsp;&emsp;&emsp;
                                                                 <input type="radio" name="pregnant" value="ไม่ใช่"  required > ไม่ใช่
                                                                
                                                                 </div>
                                                         </div>
-                                                        </div>  
+                                                        </div>
+                                                        <div class="row">
+                                                                <div class="col-md-3"> 
+                                                                        <div class="form-group ">
+                                                                        <label class="control-label">ทราบข่าวสารการสมัครงานจากที่ใด<small class="text-danger">*</small></label>
+                                                                                                 {{ Form::select('knowfrom', [''=>'เลือก'  ,'Jobtopgun.com' => 'Jobtopgun.com','Jobsdb.com' => 'Jobsdb.com','Jobthai.com'=> 'Jobthai.com','Jobbkk.com'=> 'Jobbkk.com','Facebook Fanpage : HR NGG Recruitment'=> 'Facebook Fanpage'],null, ['class' => 'form-control','id'=>'knowfrom']) }}
+                                                                                                 <b  class="text-danger" id="knowfromError"></b>
+                                                                        </div>  
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                                อื่นๆ &emsp; {{ 
+                                                                         }}m::text('because2','',['id'=>'because2'])}}
+                                                        </div> 
+                                                        </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group"></div>
                                        
-                                               
-                                               
-                                               
-                                             
-                                
-
-
-
-
-
-
                                 <div class="form-group">
                                         <center>
                                         <a href="#" class="btn btn-danger" id="prev-5">ย้อนกลับ</a>

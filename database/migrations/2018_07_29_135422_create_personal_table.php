@@ -217,6 +217,8 @@ class CreatePersonalTable extends Migration
               $table->text('spouse_tel')->nullable();
 
             $table->text('fronname')->nullable();
+            $table->text('knowfrom')->nullable();
+            $table->text('because2')->nullable();
 
             $table->tinyInteger('enable')->default('1');
             $table->tinyInteger('recheck_conduct')->default('0');
