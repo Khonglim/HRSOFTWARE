@@ -1864,8 +1864,7 @@
                                                                         </div>  
                                                         </div>
                                                         <div class="col-md-3">
-                                                                อื่นๆ &emsp; {{ 
-                                                                         }}m::text('because2','',['id'=>'because2'])}}
+                                                                อื่นๆ &emsp; {{Form::text('because2','',['id'=>'because2'])}}
                                                         </div> 
                                                         </div> 
 

@@ -1262,7 +1262,22 @@
                                                                                 
                                                                             </div>
                                                                     </div>   
-                                                                </div> 
+                                                                </div>
+                                                                <div class="row">      
+                                                                  <div class="col-md-6">
+                                                                          <div class="form-group">
+                                                                                  <label>ทราบข่าวสารการสมัครงานจากที่ใด</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                                  {{ $personal->knowfrom }}
+                                                                                  @if ($personal->because2 !='')
+                                                                                    อื่นๆ :{{ $personal->because2 }}      
+                                                                                  @else
+                                                                                    -  
+                                                                                  @endif
+                                                                                
+                                                                              
+                                                                          </div>
+                                                                  </div>   
+                                                              </div>  
                                                                 
                                                                 
                                                                

@@ -425,7 +425,13 @@
                     been seriously ill or contracted with contagious disease? <br>
                     <b>ท่านเคยไดรับโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่? :</b> {{$personal->offense}} <br>Have
                     you ever been arrested of convicted for any offense or crime or bankrupt? <br>
-                    <b>ขณะนี้คุณตั้งครรภ์หรือไม่? :</b>{{$personal->pregnant}} <br>Are you pregnant?
+                    <b>ขณะนี้คุณตั้งครรภ์หรือไม่? :</b>{{$personal->pregnant}} <br>Are you pregnant? <br>
+                    <b>ทราบข่าวสารการสมัครงานจากที่ใด :</b>{{$personal->knowfrom}} &emsp;&emsp;
+                        @if ($personal->because2 !='')
+                        อื่นๆ :{{ $personal->because2 }}      
+                        @else
+                        -  
+                        @endif
                 </td>
             </tr>
         </tbody>
