@@ -127,6 +127,7 @@
                              
                     
                         @endif
+                        
                         @empty
                   
                 <center>        ไม่มีข้อมูลในส่วนนี้!    </center>  
@@ -139,6 +140,7 @@
           </table>
   </div> 
 
+  <br>
 
   <table >
     <thead>
@@ -147,8 +149,9 @@
       </tr>
     </thead>
     <tbody> 
-    <?php  $col=6; $u=0; $v=0;  ?>   
+    <?php  $col=6; $u=0; $v=0; $p=0; ?>   
     @forelse($inter_sup as $inter )
+      <?php  $p++;?>
     @if (	$inter->id_personal == $personal->id &&  $inter->chioce > '20' &&  $inter->chioce != '102'
     
     &&  $inter->chioce != '103'
@@ -205,7 +208,11 @@
                                  <?php $u=0; ?>
                  <?php echo "</tr>"; ?>
                 @endif
-     
+    @elseif($p==1)
+
+      <tr>
+      <td colspan="6" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
+      </tr>
       @endif
       @empty
       <tr>
@@ -224,8 +231,9 @@
         </thead>
         <tbody>
           
-        <?php  $col3=5; $p=0;?>   
+        <?php  $col3=5; $p=0;  $o=0;?>   
         @forelse ($comment_sup as $conm )
+        <?php $o++;?>
            @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20'  &&  $conm->chioce != '101' )  
            @if($p==0) 
            <?php echo "<tr align=center>"; ?>
@@ -261,6 +269,11 @@
                                <?php $p=0; ?>
                                <?php echo "</tr>"; ?>
                               @endif
+                @elseif($o==1){
+                  <tr>
+                    <td colspan="4" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
+                    </tr>
+                }
 
           @endif
 
@@ -281,8 +294,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <?php  $col4=6; $e=0;?>      
+                    <?php  $col4=6; $e=0; $o=0;?>      
                      @forelse($con_interview as $coni )
+                     <?php $o++ ?>
                             @if (	$coni->id_personal == $personal->id &&  $coni->chioce > '20'  && $coni->chioce != '105'  && $coni->chioce != '106' 
                             
                             && $coni->chioce != '107'  && $coni->chioce != '108'  && $coni->chioce != '109'
@@ -336,11 +350,15 @@
                            <?php $e=0; ?>
                            <?php echo "</tr>"; ?>
                           @endif
+
+@elseif($o==1){
+
+  <tr>
+    <td colspan="6" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
+    </tr>
+}
+
                   @endif
-
-
-
-
                   @empty
                   <tr>
                   <td colspan="6" style="text-align:center" >ไม่มีข้อมูลในส่วนนี้!</td>
@@ -359,9 +377,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <?php  $col5=5; $q=0;?>       
+                    <?php  $col5=5; $q=0;  $o=0; ?>       
                      
                     @forelse ($comment_interview as $conm  )
+                    <?php $o++;?>
         @if (	$conm->id_posinal == $personal->id && $conm->chioce > '20' )   
         @if($q==0) 
         <?php echo "<tr align=center>"; ?>
@@ -409,6 +428,10 @@
     <?php $q=0; ?>
     <?php echo "</tr>"; ?>
    @endif
+   @elseif($o==1)
+   <tr>
+    <td colspan="5"  style="text-align:center">ไม่มีข้อมูลในส่วนนี้!</td>
+    </tr>
    @endif
   @empty
   <tr>

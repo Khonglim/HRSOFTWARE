@@ -306,9 +306,9 @@ body {
                                 <li class="divider"></li>
                                 <li ><a href="{{url('/operate_report*')  }}"><span>รายงานทดลองงานปฏิบัติการ</span></a></li>
                                 <li class="divider"></li>
-                                <li ><a href="{{url('/operate_report**')  }}"><span>รายงานทดลองงานบังคับบัญชา</span></a></li>
+                                <li><a href="{{url('/operate_report**')  }}"><span>รายงานทดลองงานบังคับบัญชา</span></a></li>
                                 <li class="divider"></li>
-                                <li ><a href="{{url('/con_all') }}"><span>รายงานการทดสอบทั้งหมด</span></a></li>
+                                <li><a href="{{url('/con_all') }}"><span>รายงานการทดสอบทั้งหมด</span></a></li>
                                
                             </ul>
                           </li>
