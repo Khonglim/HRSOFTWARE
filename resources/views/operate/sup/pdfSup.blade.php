@@ -56,7 +56,7 @@
     {{$item2->nem_thai_lastname}} @endif @endforeach&emsp;&emsp;&emsp;&emsp;
     
     <b>รหัสพนักงาน :  </b> {{$operate_sup->id_employ}} <br>
-    <b>ตำแหน่ง :</b> {{$operate_sup->position}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <b>ตำแหน่ง :</b> {{$operate_sup->position}}&emsp;&emsp;&emsp;&emsp;
     <b>แผนก/ฝ่าย :</b> {{$operate_sup->department}} <br>
     <b>วันที่เริ่มงาน :</b> {{$operate_sup->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
     <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate_sup->endtime}} <b>ระดับ :</b> {{$operate_sup->degree}} <br>
@@ -70,8 +70,8 @@
                 <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
             </tr>
             <tr>
-                <td align="center">ประเมินรอบ {{$operate_staff->NumberDate_60}} วัน</td>
-                <td align="center">ประเมินรอบ {{$operate_staff->NumberDate_90}} วัน</td>
+                <td align="center">ประเมินรอบ {{$operate_sup->NumberDate_60}} วัน</td>
+                <td align="center">ประเมินรอบ {{$operate_sup->NumberDate_90}} วัน</td>
             </tr>
             <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
             <tr>
@@ -200,19 +200,19 @@
                 <td align="center">{{$operate_sup->chioce25_90}}</td>
             </tr>
             <tr>
-                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : {{$operate_staff->NumberDate_60}} วัน <u><font color="red">{{$operate_sup->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate_sup->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate_sup->subtotal_final}}</font></u> </b></td>
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : {{$operate_sup->NumberDate_60}} วัน <u><font color="red">{{$operate_sup->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate_sup->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate_sup->subtotal_final}}</font></u> </b></td>
             </tr>
         </tbody>
     </table> <br>
-    <b>ความคิดเห็นเพิ่มเติม การประเมิน {{$operate_staff->NumberDate_60}} วัน (สำหรับผู้ประเมิน)</b><br>
+    <b>ความคิดเห็นเพิ่มเติม การประเมิน {{$operate_sup->NumberDate_60}} วัน (สำหรับผู้ประเมิน)</b><br>
         <table>
             <tbody>
                 <tr>
-                    <td align="center">ความคิดเห็นการประเมิน {{$operate_staff->NumberDate_60}} วัน</td>
+                    <td align="center">ความคิดเห็นการประเมิน {{$operate_sup->NumberDate_60}} วัน</td>
                     <td>{{$operate_sup->comments_60}}</td>
                 </tr>
                 <tr>
-                    <td align="center">ความคิดเห็นการประเมิน {{$operate_staff->NumberDate_90}} วัน</td>
+                    <td align="center">ความคิดเห็นการประเมิน {{$operate_sup->NumberDate_90}} วัน</td>
                     <td>{{$operate_sup->comments_90}}</td>
                 </tr>
             </tbody>
@@ -250,7 +250,7 @@
                                 <br> ( คุณ{{$operate_sup->name_rate_60}} ) 
                                 <br>ผู้บังคับบัญชาต้นสังกัด
                                 <br>วันที่การประเมิน {{$operate_sup->created_at}} น.
-                                <br>การประเมิน {{$operate_staff->NumberDate_60}} วัน	
+                                <br>การประเมิน {{$operate_sup->NumberDate_60}} วัน	
                                     
                             </td>
                     <td align="center">
@@ -265,7 +265,7 @@
                         <br> ( คุณ{{$operate_sup->name_rate_90}} ) 
                         <br>ผู้บังคับบัญชาต้นสังกัด
                         <br>วันที่การประเมิน {{$operate_sup->updated_at}} น.
-                        <br>การประเมิน {{$operate_staff->NumberDate_90}} วัน	
+                        <br>การประเมิน {{$operate_sup->NumberDate_90}} วัน	
                         	
                     </td>
                     <td align="center">

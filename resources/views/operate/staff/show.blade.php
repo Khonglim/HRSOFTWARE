@@ -18,16 +18,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                                    @forelse($employee as $l)
-                                    @if($l->nem_enable==1)
+                                @forelse($employee as $l)
+                                    @foreach ($operate_staff as $operate_staffs)
+                                    @if($operate_staffs->id_posinal == $l->nem_id)
+                                          
+
+
+                                   
                                    <tr>
                                  <td> {{$l->nem_thai_firstname}} </td>
                                  <td> {{$l->nem_thai_lastname}} </td>
                                 
                                  <td>  
                                 
-                      @foreach ($operate_staff as $operate_staffs)
-                      @if($operate_staffs->id_posinal == $l->nem_id)
+                     
+                     
                       <a href="{{url('pdfcon_staf/'.$operate_staffs['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
                       <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete2{{$operate_staffs->id}}"><i class=" fa fa-trash"></i></button>
                       <div id="delete2{{$operate_staffs->id}}" class="modal fade" role="dialog">
@@ -53,13 +58,12 @@
   
                         </div>
                       </div>
-                      @else
-                      ไม่มีการประเมินทดลองงาน
+                      
                       @endif
                       @endforeach
                        </td>
                     </tr>
-                    @endif
+                   
                      @empty
                     <tr>
                     <td colspan="6" > No data !!</td>
