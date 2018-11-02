@@ -90,12 +90,12 @@
 
                                       <div class="form-group">
 
-                                            <label  class="col-sm-2 control-label">ประเมินครั้งที่ 1 : 60 วัน วันที่ :</label>
+                                            <label  class="col-sm-2 control-label">ประเมินครั้งที่ 1 : วันที่ :</label>
                                             <div class="col-sm-4">
                                                     <input type="text" name="totolDay_60" id="totolDay_60" value=""  class="form-control"/>
                                                   </div>
 
-                                                  <label  class="col-sm-2 control-label">  ประเมินครั้งที่ 2 : 90 วัน วันที่:</label>
+                                                  <label  class="col-sm-2 control-label">  ประเมินครั้งที่ 2 :  วันที่:</label>
                                                   <div class="col-sm-4">
                                                         <input type="text" name="totolDay_90" id="totolDay_90" value="" class="form-control" />
                                                         </div>

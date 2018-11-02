@@ -20,7 +20,7 @@
                       <div class="box-body">
 
                         <div class="form-group">
-                          <label for="inputEmail3" class="col-sm-2 control-label">ชื่อ-สกุล</label>
+                          <label for="inputEmail3" class="col-sm-3 control-label">ชื่อ-สกุล</label>
         
                           <div class="col-sm-7">
                               <select class="js-example-basic-single  form-control" id="country" name="id" required >
@@ -33,10 +33,10 @@
                         </div>
                     
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">ระดับ</label>
+                            <label for="inputEmail3" class="col-sm-3 control-label">ระดับ</label>
           
                             <div class="col-sm-7">
-                                <select     id="country" name="degree" required  class=" form-control">
+                                <select      name="degree" required id="2"  class=" js-example-basic-single  form-control">
                                     <option value=""  >--ระดับ--</option>
                                     <option value= 0  >ระดับปฏิบัติการ</option>
                                     <option value= 1 >ระดับผู้บังคับบัญชา</option>

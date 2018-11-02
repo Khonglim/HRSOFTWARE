@@ -57,7 +57,9 @@
 <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
 <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
 <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
-<b>ชื่อ-นามสกุล :</b> @foreach ( $personal as $item2) @if( $item2->nem_id == $operate_staff->id_posinal ) {{$item2->nem_thai_firstname}}
+<b>ชื่อ-นามสกุล :</b> @foreach ( $personal as $item2) 
+@if( $item2->nem_id == $operate_staff->id_posinal ) 
+{{$item2->nem_thai_firstname}}
 {{$item2->nem_thai_lastname}} @endif @endforeach&emsp;&emsp;&emsp;&emsp;
 
 <b>รหัสพนักงาน :  </b> {{$operate_staff->id_employ}} <br>
@@ -66,7 +68,7 @@
 <b>วันที่เริ่มงาน :</b> {{$operate_staff->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate_staff->endtime}} <b>ระดับ :</b> {{$operate_staff->degree}} <br>
 <b>ประเมินครั้งที่1 :</b> {{$operate_staff->date_60}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-<b>ประเมินครั้งที่2 :90 วัน วันที่ :</b> {{$operate_staff->date_90}}
+<b>ประเมินครั้งที่2 : วันที่ :</b> {{$operate_staff->date_90}}
 <br><br><br>
 <table>
         <tbody>
@@ -75,8 +77,8 @@
                 <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
             </tr>
             <tr>
-                <td align="center">ประเมินรอบ 60 วัน</td>
-                <td align="center">ประเมินรอบ 90 วัน</td>
+                <td align="center">ประเมินรอบ {{$operate_staff->NumberDate_60}} วัน</td>
+                <td align="center">ประเมินรอบ {{$operate_staff->NumberDate_90}} วัน</td>
             </tr>
             <tr>
                 <td colspan="3"><b>ระดับปฏิบัติการ (Operational Level)</b></td>
@@ -157,22 +159,22 @@
                 <td align="center">{{$operate_staff->chioce15_90}}</td>
             </tr>
             <tr>
-                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วันได้ <u><font color="red">{{$operate_staff->subtotal_60}}</font></u>                    คะแนน ประเมินครั้งที่ 2 : 90 วันได้ <u><font color="red">{{$operate_staff->subtotal_90}} </font></u>คะแนน
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : {{$operate_staff->NumberDate_60}} วันได้ <u><font color="red">{{$operate_staff->subtotal_60}}</font></u>                    คะแนน ประเมินครั้งที่ 2 : 90 วันได้ <u><font color="red">{{$operate_staff->subtotal_90}} </font></u>คะแนน
                     <b>(รวมกันหาร2) = <u><font color="red">{{$operate_staff->subtotal_final}}</font></u></b></td>
             </tr>
         </tbody>
     </table>
 
     <br>
-    <b>ความคิดเห็นเพิ่มเติม การประเมิน 60 วัน (สำหรับผู้ประเมิน)</b><br>
+    <b>ความคิดเห็นเพิ่มเติม การประเมิน {{$operate_staff->NumberDate_60}} วัน (สำหรับผู้ประเมิน)</b><br>
     <table>
         <tbody>
             <tr>
-                <td align="center">ความคิดเห็นการประเมิน 60 วัน</td>
+                <td align="center">ความคิดเห็นการประเมิน {{$operate_staff->NumberDate_60}} วัน</td>
                 <td>{{$operate_staff->comments_60}}</td>
             </tr>
             <tr>
-                <td align="center">ความคิดเห็นการประเมิน 90 วัน</td>
+                <td align="center">ความคิดเห็นการประเมิน {{$operate_staff->NumberDate_90}} วัน</td>
                 <td>{{$operate_staff->comments_90}}</td>
             </tr>
         </tbody>
@@ -208,7 +210,7 @@
                             <br> ( คุณ{{$operate_staff->name_rate_60}} ) 
                             <br>ผู้บังคับบัญชาต้นสังกัด
                             <br>วันที่การประเมิน {{$operate_staff->created_at}} น.
-                            <br>การประเมิน 60 วัน	
+                            <br>การประเมิน {{$operate_staff->NumberDate_60}} วัน	
                                 
                         </td>
                 <td align="center">
@@ -225,7 +227,7 @@
                       
                       <br> ( คุณ{{$operate_staff->name_rate_90}}) 
                       <br>ผู้บังคับบัญชาต้นสังกัด<br>วันที่การประเมิน{{$operate_staff->updated_at}} น.
-                      <br>การประเมิน 90 วัน	
+                      <br>การประเมิน {{$operate_staff->NumberDate_90}} วัน	
                     </td>
                 <td align="center"><br><br>ผู้ถูกประเมิน : ...........................................<br> ( คุณ @foreach ( $personal as $item2)
                     @if( $item2->nem_id == $operate_staff->id_posinal ) 

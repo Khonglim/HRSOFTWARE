@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-use App\Personal;
-use App\Operate_staff;
-use App\Operate_Chioce;
-use DB;
 use App\Extensions\MongoSessionStore;
 use Illuminate\Support\Facades\Session;
+use App\Operate_staff;
+use App\Operate_Chioce;
 use App\Operate_qSeff;
 use App\Ngg_employee;
+use DB;
+
+
 class Operate_staffController extends Controller
 {
 
@@ -52,15 +53,15 @@ class Operate_staffController extends Controller
 
         if(Input::get('id_posinal') !== '') {
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_Oper' => 1]);
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_conduct' => 1]);
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_Oper_90' => 1]);
             }
@@ -122,7 +123,7 @@ class Operate_staffController extends Controller
         $operateSataff->line_min_60 = Input::get('min');
         $operateSataff->signa1_60 = Input::get('signa1_60');
         $operateSataff->NumberDate_60 = Input::get('NumberDate_60');
-        $operateSataff->NumberDate_90 = Input::get('NumberDate_90');
+    
 
 
      $operateSataff->save();
@@ -179,15 +180,15 @@ class Operate_staffController extends Controller
 
         if(Input::get('idemploy') !== '') {
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_Oper_90' => 1]);
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_conduct' => 0]);
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_Oper_90' => 1]);
             }
@@ -344,6 +345,7 @@ class Operate_staffController extends Controller
         $operateSataff->vacation_90 = Input::get('vacation_90');
         $operateSataff->line_terms_90= Input::get('line_90') ;
         $operateSataff->line_min_90 = Input::get('min_90');
+        $operateSataff->NumberDate_90 = Input::get('NumberDate_90');
         $operateSataff->save();
         Session::flash('flash_message','สำเร็จ!! ขอบคุณสําหรับการประเมิน');
         return redirect('home');
@@ -359,7 +361,31 @@ class Operate_staffController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+
     {
-        //
+        if($id != ''){
+
+            DB::table('ngg_employee')
+            ->where('nem_id', '=',  $id)
+            ->update(['recheck_Oper' => 0]);
+    
+            DB::table('ngg_employee')
+            ->where('nem_id', '=',  $id)
+            ->update(['recheck_Oper_90' => 0]);
+    
+    
+            DB::table('ngg_employee')
+            ->where('nem_id', '=',  $id)
+            ->update(['degree' => 0]);
+    
+            DB::table('ngg_employee')
+            ->where('nem_id', '=',  $id)
+            ->update(['recheck_conduct' => 0]);
+
+        }
+       
+        
+        $operate =   DB::table('_ans_operate_staff')->where('id', '=',  $id)->delete();
+        return redirect('home');
     }
 }

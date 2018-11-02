@@ -47,19 +47,19 @@ class Operate_supController extends Controller
         
         if(Input::get('id_posinal') !== '') {
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_Oper' => 1]);
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_conduct' => 1]);
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['recheck_Oper_90' => 1]);
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('id_posinal'))
             ->update(['degree' => 1]);
 
@@ -131,7 +131,7 @@ class Operate_supController extends Controller
         $operatesup->line_min_60 = Input::get('min');
         $operatesup->signa1_60 = Input::get('signa1_60');
         $operatesup->NumberDate_60 = Input::get('NumberDate_60');
-        $operatesup->NumberDate_90 = Input::get('NumberDate_90');
+     
         $operatesup->save();
         return redirect('home');
     }
@@ -187,11 +187,11 @@ class Operate_supController extends Controller
 
         if(Input::get('idemploy') !== '') {
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('idemploy'))
             ->update(['recheck_Oper_90' => 1]);
 
-            DB::table('Ngg_employee')
+            DB::table('ngg_employee')
             ->where('nem_id', Input::get('idemploy'))
             ->update(['recheck_conduct' => 0]);
 
@@ -368,6 +368,7 @@ class Operate_supController extends Controller
         $operate_sup->vacation_90 = Input::get('vacation_90');
         $operate_sup->line_terms_90= Input::get('line_90') ;
         $operate_sup->line_min_90 = Input::get('min_90');
+        $operatesup->NumberDate_90 = Input::get('NumberDate_90');
         $operate_sup->save();
 
         return redirect('home');
@@ -382,6 +383,31 @@ class Operate_supController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        if($id != ''){
+
+            DB::table('ngg_employee')
+            ->where('nem_id', '=',  $id)
+            ->update(['recheck_Oper' => 0]);
+    
+            DB::table('ngg_employee')
+            ->where('nem_id', '=',  $id)
+            ->update(['recheck_Oper_90' => 0]);
+    
+    
+            DB::table('ngg_employee')
+            ->where('nem_id', '=',  $id)
+            ->update(['degree' => 0]);
+    
+            DB::table('ngg_employee')
+            ->where('nem_id', '=',  $id)
+            ->update(['recheck_conduct' => 0]);
+
+        }
+       
+       
+        
+        $operate =   DB::table('_ans_operate_sup_')->where('id', '=',  $id)->delete();
+        return redirect('home');
     }
 }

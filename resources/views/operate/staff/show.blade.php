@@ -27,8 +27,32 @@
                                  <td>  
                                 
                       @foreach ($operate_staff as $operate_staffs)
-                      @if($operate_staffs->id_posinal ==  $l->id)
+                      @if($operate_staffs->id_posinal == $l->nem_id)
                       <a href="{{url('pdfcon_staf/'.$operate_staffs['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
+                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete2{{$operate_staffs->id}}"><i class=" fa fa-trash"></i></button>
+                      <div id="delete2{{$operate_staffs->id}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">ลบข้อมูล</h4>
+                            </div>
+                            <div class="modal-body">
+                              {{Form::open(['url'=>'reset_staff'])}}
+                              @csrf
+                            
+                              <input type="hidden" name="nem_id" value="{{$l->nem_id}}"> 
+                              <p>คุณต้องการลบใช่หรือไม่!!!!</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="summit" class="btn btn-danger">ลบ</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+                            </div>
+                            {{ Form::close() }}
+                          </div>
+  
+                        </div>
+                      </div>
                       @else
                       ไม่มีการประเมินทดลองงาน
                       @endif

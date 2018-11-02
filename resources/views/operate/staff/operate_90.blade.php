@@ -34,6 +34,7 @@
                               การทดลองงานระดับปฏิบัติการ
                             </div>
                             {{Form::open(['route'=>['Operate_staff.update', $operate_staff->id],'method'=>'PUT' ])}}
+                            @csrf
                             <div class="form-horizontal">
                               <div class="box-body">
                                 <div class="form-group">
@@ -98,12 +99,12 @@
 
                                           <div class="form-group">
 
-                                                <label  class="col-sm-2 control-label">ประเมินครั้งที่ 1 : 60 วัน วันที่ :</label>
+                                                <label  class="col-sm-2 control-label">ประเมินครั้งที่ 1 : วันที่ :</label>
                                                 <div class="col-sm-4">
                                                 <input type="text" name="totolDay_60"  value="{{$operate_staff->date_60}}"  class="form-control"  readonly/>
                                                       </div>
 
-                                                      <label  class="col-sm-2 control-label">  ประเมินครั้งที่ 2 : 90 วัน วันที่:</label>
+                                                      <label  class="col-sm-2 control-label">  ประเมินครั้งที่ 2 : วันที่:</label>
                                                       <div class="col-sm-4">
                                                       <input type="text" name="totolDay_90"  value="{{$operate_staff->date_90}}" class="form-control" readonly/>
                                                             </div>

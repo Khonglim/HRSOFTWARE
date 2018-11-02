@@ -108,6 +108,7 @@
               @if((($e->nem_id ==  $id =  $_POST["id"]) && ($e->recheck_Oper == '0')))
             
               {{Form::open(['url'=>'operate_employsup','method'=>'POST' ])}}
+              @csrf
               <input type="hidden"  value="{{$e->nem_thai_firstname}}" name="name" >
               <input type="hidden"  value="{{$e->nem_thai_lastname}}" name="lastname" >
               <input type="hidden"  value="{{$e->nem_id}}" name="id_2" >
@@ -140,7 +141,7 @@
               @if(($e->nem_id ==  $id =  $_POST["id"]) && $e->recheck_Oper_90 == '0')
               <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">ประเมินครั้งที่ 2</label>
-                  <div class="col-sm-7">
+                  <div class="col-sm-8">
                       <div class="alert alert-danger">
                               <i class="fa fa-close"></i> ยังไม่สามารถประเมินครั้งที่ 2 ได้
                       </div>

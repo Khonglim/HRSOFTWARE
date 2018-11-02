@@ -33,9 +33,9 @@ Route::resource('employee','EmployeeController');
 Route::get('/ngg_work', 'EmployeeController@index')->middleware('auth');
 
 
+Route::resource('reset_staff','Reset_staff_operController');
 
-
-
+Route::resource('reset_sup','Reset_sup_operController');
 
 
 
@@ -208,12 +208,12 @@ Route::get('save_employ', function () {
 Route::get('operate_employf', function () { 
     
    
-    $employee  = DB::table('Ngg_employee')
-            ->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
-            ->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
-            ->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
-            ->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
-            ->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+    $employee  = DB::table('ngg_employee')
+            ->leftJoin('ngg_company', 'ngg_employee.nem_company_id', '=', 'ngg_company.ncp_id')
+            ->leftJoin('ngg_department', 'ngg_employee.nem_department_id', '=', 'ngg_department.ndp_id')
+            ->leftJoin('ngg_sector', 'ngg_employee.nem_sector_id', '=', 'ngg_sector.nst_id')
+            ->leftJoin('ngg_position', 'ngg_employee.nem_position_id', '=', 'ngg_position.id')
+            ->leftJoin('ngg_level', 'ngg_employee.nem_level_id', '=', 'ngg_level.nlv_id')
             ->where('nem_enable','=', 1)
             ->get();
     $data = array(
@@ -262,12 +262,12 @@ Route::post('operate_employsup', function () {
 Route::get('operate_report*', function () { 
 
 
-    $employee = DB::table('Ngg_employee')
-->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
-->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
-->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
-->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
-->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+    $employee = DB::table('ngg_employee')
+->leftJoin('ngg_company', 'ngg_employee.nem_company_id', '=', 'ngg_company.ncp_id')
+->leftJoin('ngg_department', 'ngg_employee.nem_department_id', '=', 'ngg_department.ndp_id')
+->leftJoin('ngg_sector', 'ngg_employee.nem_sector_id', '=', 'ngg_sector.nst_id')
+->leftJoin('ngg_position', 'ngg_employee.nem_position_id', '=', 'ngg_position.id')
+->leftJoin('ngg_level', 'ngg_employee.nem_level_id', '=', 'ngg_level.nlv_id')
 ->where('nem_enable', '=', 1)
 ->where('degree', '=', 0)
 ->get();
@@ -287,12 +287,12 @@ Route::get('operate_report*', function () {
 Route::get('operate_report**', function () { 
 
 
-$employee = DB::table('Ngg_employee')
-->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
-->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
-->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
-->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
-->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+$employee = DB::table('ngg_employee')
+->leftJoin('ngg_company', 'ngg_employee.nem_company_id', '=', 'ngg_company.ncp_id')
+->leftJoin('ngg_department', 'ngg_employee.nem_department_id', '=', 'ngg_department.ndp_id')
+->leftJoin('ngg_sector', 'ngg_employee.nem_sector_id', '=', 'ngg_sector.nst_id')
+->leftJoin('ngg_position', 'ngg_employee.nem_position_id', '=', 'ngg_position.id')
+->leftJoin('ngg_level', 'ngg_employee.nem_level_id', '=', 'ngg_level.nlv_id')
 ->where('nem_enable', '=', 1)
 ->where('degree', '=', 1)
 ->get();
@@ -324,12 +324,12 @@ $employee = DB::table('Ngg_employee')
 
 Route::post('conduct_employs', function () { 
     
-    $employee  = DB::table('Ngg_employee')
-            ->leftJoin('Ngg_company', 'Ngg_employee.nem_company_id', '=', 'Ngg_company.ncp_id')
-            ->leftJoin('Ngg_department', 'Ngg_employee.nem_department_id', '=', 'Ngg_department.ndp_id')
-            ->leftJoin('Ngg_sector', 'Ngg_employee.nem_sector_id', '=', 'Ngg_sector.nst_id')
-            ->leftJoin('Ngg_position', 'Ngg_employee.nem_position_id', '=', 'Ngg_position.id')
-            ->leftJoin('Ngg_level', 'Ngg_employee.nem_level_id', '=', 'Ngg_level.nlv_id')
+    $employee  = DB::table('ngg_employee')
+            ->leftJoin('ngg_company', 'ngg_employee.nem_company_id', '=', 'ngg_company.ncp_id')
+            ->leftJoin('ngg_department', 'ngg_employee.nem_department_id', '=', 'ngg_department.ndp_id')
+            ->leftJoin('ngg_sector', 'ngg_employee.nem_sector_id', '=', 'ngg_sector.nst_id')
+            ->leftJoin('ngg_position', 'ngg_employee.nem_position_id', '=', 'ngg_position.id')
+            ->leftJoin('ngg_level', 'ngg_employee.nem_level_id', '=', 'ngg_level.nlv_id')
             ->get();
     $operate_staff   =       Operate_staff::all();
     $operate_sup   =       Operate_sup::all();

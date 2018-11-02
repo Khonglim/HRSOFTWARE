@@ -10,9 +10,10 @@ use App\Comment_sup;
 use App\Inter_sup;
 use App\Operate_staff;
 use App\Operate_sup;
+use Illuminate\Support\Facades\DB;
 use PDF;
 
-use Illuminate\Support\Facades\DB;
+
 
 class PDFController extends Controller
 {

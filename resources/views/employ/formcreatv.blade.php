@@ -1684,7 +1684,7 @@
                                                                 <div class="col-md-3">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
-                                                                            <input type="checkbox" class="form-check-input" id="portfolio1" name="portfolio1" value="คอมพิวเตอร์" required> <label class="control-label"> คอมพิวเตอร์<small class="text-danger">*</small></label>
+                                                                            <input type="checkbox" class="form-check-input" id="portfolio1" name="portfolio1" value="คอมพิวเตอร์" required> <label class="control-label"> คอมพิวเตอร์<small class="text-danger">*จำเป็นต้องระบุ</small></label>
                                                                             {{Form::text('computer','',['required'])}}      
                                                                        </div>
                                                                     </div>
