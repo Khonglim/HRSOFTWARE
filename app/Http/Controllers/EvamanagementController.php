@@ -209,6 +209,7 @@ class EvamanagementController extends Controller
     public function edit($id)
     {
         if($id !== '') {
+          
           $employee= DB::table('employeetotest')->where('nee_id', '=', $id)
               ->where('nee_enable', '=', 1)
               ->get();
