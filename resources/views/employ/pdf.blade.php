@@ -29,6 +29,7 @@
      <img src="{{$personal->photo}}" style="width:170px;height:170px;margin-left:15px;float:right;" >
     
      <br><br><br><br>
+     <b>วันที่สมัคร : </b>{{$personal->created_at}} <br>
     <b>ตำแหน่งที่ต้องการ/Position Applied for : </b>{{$personal->positionngg}} <br>
     <b>เงินเดือนที่ต้องการ/Expeccted starting salary : </b>{{$personal->salaryngg}} บาท <br>
     <b>สาขาที่จะสมัคร: </b>{{$personal->talent}}
@@ -426,7 +427,7 @@
                     <b>ท่านเคยไดรับโทษทางอาญาหรือจำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่? :</b> {{$personal->offense}} <br>Have
                     you ever been arrested of convicted for any offense or crime or bankrupt? <br>
                     <b>ขณะนี้คุณตั้งครรภ์หรือไม่? :</b>{{$personal->pregnant}} <br>Are you pregnant? <br>
-                    <b>ทราบข่าวสารการสมัครงานจากที่ใด :</b>{{$personal->knowfrom}} &emsp;&emsp;
+                    <b>ทราบข่าวสารการสมัครงานจากที่ใด :</b>{{$personal->knowfrom}} &nbsp;&nbsp;
                         @if ($personal->because2 !='')
                         อื่นๆ :{{ $personal->because2 }}      
                         @else

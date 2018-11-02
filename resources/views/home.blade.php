@@ -4,8 +4,11 @@
 <div class="content-wrapper">
   <div class="content container">
       @if(auth()->user()->isAdmin == 1)
-    <div class="alert alert-warning">
-      <h3><strong>โปรดทราบ!</strong> แถบเมนูบ้างหัวข้อยังไม่สามารถใช้งานได้อยู่ระหว่างการดำเนินการ.</h3>
+    <div class="alert alert-success">
+      <h4><strong>ประกาศ!</strong> <br><br> -การประเมินการทดลองงานสามารถทดสอบการใช้งานได้แล้วและลบการประเมินจากการทดสอบได้เลย สามารถเซ็นลายเซ็นบนเว็บและบนจอทัชสกรีนได้<br>
+    -เพิ่มทราบข่าวสารการสมัครงานจากที่ใดแล้วครับ<br>
+    -เพิ่มวันที่ลงPDFแล้วครับ</h4><br>
+      หากเกิดข้อผิดพลาดสามารถติดต่อได้ทันที<strong> ไม่เว้นวันหยุดครับ </strong>
     </div>
     @endif
     @if(Session::has('flash_message') )
