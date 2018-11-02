@@ -81,7 +81,7 @@ function myFunction() {
                                  @endforeach 
                           <div id="swapname"><a href="{{'reportv2_manager'}}" class="btn btn-primary btn-lg" ><i class="fa fa-eye fa-6" aria-hidden="true"></i></a></div>
 
-                           <div id="report"> <a href="{{'print_blind_report_manager'}}" class="btn btn-primary btn-lg" ><i class="fa fa-print fa-6" aria-hidden="true"></i></a></div>
+                           <div id="report" style="display: none;"> <a href="{{'print_blind_report_manager'}}" class="btn btn-primary btn-lg" ><i class="fa fa-print fa-6" aria-hidden="true"></i></a></div>
         
                           <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button><br><br>
                           
