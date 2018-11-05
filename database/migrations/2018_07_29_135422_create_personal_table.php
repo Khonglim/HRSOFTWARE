@@ -36,6 +36,7 @@ class CreatePersonalTable extends Migration
             $table->text("moblie")->nullable();
             $table->text("office")->nullable();
             $table->string("email")->unique();
+            $table->string("email_2")->nullable();
             $table->text("address1")->nullable();
             $table->text("address2")->nullable();
             $table->text("idcard")->nullable();

@@ -62,11 +62,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-         
-            'email' => 'required|string|email|max:255|unique:personal'
-            
-        ]);
+       
         $personal = new Personal;
         $personal->salaryngg = $request->salaryngg;
         $personal->positionngg = $request->positionngg;
@@ -92,7 +88,7 @@ class EmployeeController extends Controller
         $personal->home = $request->home;
         $personal->moblie = $request->moblie;
         $personal->office = $request->office;
-        $personal->email = $request->email;
+        $personal->email_2 = $request->email_2;
         $personal->address1 = $request->address1;
         $personal->address2 = $request->address2;
         $personal->idcard = $request->idcard;
@@ -318,7 +314,7 @@ class EmployeeController extends Controller
             
             'nationality' => 'required|max:35',
             'birthday' => 'required',
-            'email' => ['required',Rule::unique('personal')->ignore($id), ],
+            'email_2' => ['required',Rule::unique('personal')->ignore($id), ],
             'address1' => 'required',
             'tel' => 'required|numeric',
             'race' => 'required',
@@ -405,7 +401,7 @@ class EmployeeController extends Controller
         $personal->home = $request->home;
         $personal->moblie = $request->moblie;
         $personal->office = $request->office;
-        $personal->email = $request->email;
+        $personal->email_2 = $request->email_2;
         $personal->address1 = $request->address1;
         $personal->address2 = $request->address2;
         $personal->idcard = $request->idcard;

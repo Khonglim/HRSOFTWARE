@@ -67,7 +67,13 @@
 
             <tr>
                 <td colspan="3"><b>โทรศัพท์มือถือ:</b> {{$personal->moblie}} <br>Mobile</td>
-                <td colspan="6"><b>อีเมล์:</b> {{$personal->email}} <br>Email</td>
+                <td colspan="6"><b>อีเมล์:</b> 
+                    @if($personal->email == '')
+                    {{$personal->email_2}}
+                    @else
+                    {{$personal->email}}
+                     @endif
+                     <br>Email</td>
             </tr>
             <tr>
                 <td colspan="9"><b>ที่อยู่ปัจจุบันที่ติดต่อได้สะดวก: </b>{{$personal->address1}} <br>Present Address</td>

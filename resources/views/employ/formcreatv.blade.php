@@ -35,7 +35,13 @@
           overflow:auto;
         }
 
+input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
 
+input.valid, textarea.valid{
+	border: 2px solid green;
+}
         </style>
 </head>
 <body class="bg-dark">
@@ -83,7 +89,7 @@
                                     <div class="col-md-3 ">
                                             <div class="form-group ">
                                                 <label class="control-label">เงินเดือนที่ต้องการ<small class="text-danger">*</small></label>
-                                                {{ Form::text('salaryngg','', ['class' => 'form-control','id'=>'salaryngg']) }}
+                                                {{ Form::text('salaryngg','', ['class' => 'form-control ','id'=>'salaryngg']) }}
                                                 <b  class="text-danger" id="salarynggError"></b>
                                                </div>
                             
@@ -418,7 +424,7 @@
                                                 <div class="col-md-4">
                                                         <div class="form-group ">
                                                                 <label class="control-label">อีเมล<small class="text-danger">*</small></label>
-                                                                {{Form::text('email','',['class'=>'form-control','id'=>'email'])}}  
+                                                                {{Form::text('email_2','',['class'=>'form-control','id'=>'email'])}}  
                                                                 <b  class="text-danger" id="emailError"></b>      
                                                        </div>
                                                        
@@ -1961,7 +1967,7 @@ $(document).ready(function(){
 
 
            if($("#salaryngg").val() == ''  ){
-
+                $("#salarynggError").addClass("invalid");
              $("#salarynggError").html('*จำเป็นต้องระบุ');
             $("#allError").html('ไม่สามารถทำรายการถัดไปไ้ด้กรุณาตรวจสอบข้อมูลที่กรอก&กรอกไม่ครบหรือไม่!');
             return false;
