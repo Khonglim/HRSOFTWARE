@@ -24,7 +24,7 @@ class CreateNggEmployeeTable extends Migration
             $table->string('nem_eng_firstname',200);
             $table->string('nem_eng_lastname',200);
             $table->string('nem_nickname');
-            $table->tinyInteger('nem_salary');
+            $table->string('nem_salary',8);
             $table->string('nem_sex',10);
             $table->string('nem_enducation',200);
             $table->date('nem_birthday');
