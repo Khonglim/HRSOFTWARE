@@ -373,6 +373,93 @@
                     @if($personal->lastsalary3 =='') - @else {{$personal->lastsalary3}} @endif
                 </td>
             </tr>
+            <tr>
+                <td>
+                    @if($personal->list_of_employed4 =='') - @else {{$personal->list_of_employed4}} @endif
+                </td>
+                <td>
+
+                    @if($personal->job_description4 =='') - @else {{$personal->job_description4}} @endif
+                </td>
+                <td>
+
+                    @if($personal->call4 =='') - @else {{$personal->call4}} @endif
+                </td>
+                <td>
+                    @if($personal->start_job_duration7 =='') - @else {{$personal->start_job_duration7}} @endif
+                </td>
+                <td>
+                    @if($personal->end_job_duration8 =='') - @else {{$personal->end_job_duration8}} @endif
+                </td>
+                <td>
+
+                    @if($personal->position4 =='') - @else {{$personal->position4}} @endif
+                </td>
+                <td>
+                    @if($personal->reasonLeaving4 =='') - @else {{$personal->reasonLeaving4}} @endif
+                </td>
+                <td>
+                    @if($personal->lastsalary4 =='') - @else {{$personal->lastsalary4}} @endif
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @if($personal->list_of_employed5 =='') - @else {{$personal->list_of_employed5}} @endif
+                </td>
+                <td>
+
+                    @if($personal->job_description5 =='') - @else {{$personal->job_description5}} @endif
+                </td>
+                <td>
+
+                    @if($personal->call5 =='') - @else {{$personal->call5}} @endif
+                </td>
+                <td>
+                    @if($personal->start_job_duration9 =='') - @else {{$personal->start_job_duration9}} @endif
+                </td>
+                <td>
+                    @if($personal->end_job_duration10 =='') - @else {{$personal->end_job_duration10}} @endif
+                </td>
+                <td>
+
+                    @if($personal->position5 =='') - @else {{$personal->position5}} @endif
+                </td>
+                <td>
+                    @if($personal->reasonLeaving5 =='') - @else {{$personal->reasonLeaving5}} @endif
+                </td>
+                <td>
+                    @if($personal->lastsalary5 =='') - @else {{$personal->lastsalary5}} @endif
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @if($personal->list_of_employed6 =='') - @else {{$personal->list_of_employed6}} @endif
+                </td>
+                <td>
+
+                    @if($personal->job_description6 =='') - @else {{$personal->job_description6}} @endif
+                </td>
+                <td>
+
+                    @if($personal->call3 =='') - @else {{$personal->call3}} @endif
+                </td>
+                <td>
+                    @if($personal->start_job_duration11 =='') - @else {{$personal->start_job_duration11}} @endif
+                </td>
+                <td>
+                    @if($personal->end_job_duration12 =='') - @else {{$personal->end_job_duration12}} @endif
+                </td>
+                <td>
+
+                    @if($personal->position6 =='') - @else {{$personal->position6}} @endif
+                </td>
+                <td>
+                    @if($personal->reasonLeaving6 =='') - @else {{$personal->reasonLeaving6}} @endif
+                </td>
+                <td>
+                    @if($personal->lastsalary6 =='') - @else {{$personal->lastsalary6}} @endif
+                </td>
+            </tr>
         </tbody>
     </table>
 

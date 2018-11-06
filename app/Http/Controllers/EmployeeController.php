@@ -206,6 +206,33 @@ class EmployeeController extends Controller
         $personal->reasonLeaving3 = $request->reasonLeaving3;
         $personal->lastsalary3= $request->lastsalary3;
         $personal->position3 = $request->position3;
+
+        $personal->list_of_employed4 = $request->list_of_employed4;
+        $personal->job_description4 = $request->job_description4;
+        $personal->call4 = $request->call4;
+        $personal->start_job_duration7 = $request->start_job_duration7;
+        $personal->end_job_duration8 = $request->end_job_duration8;
+        $personal->reasonLeaving4 = $request->reasonLeaving4;
+        $personal->lastsalary4= $request->lastsalary4;
+        $personal->position4 = $request->position4;
+
+        $personal->list_of_employed5 = $request->list_of_employed5;
+        $personal->job_description5 = $request->job_description5;
+        $personal->call5 = $request->call5;
+        $personal->start_job_duration9 = $request->start_job_duration9;
+        $personal->end_job_duration10 = $request->end_job_duration10;
+        $personal->reasonLeaving5 = $request->reasonLeaving5;
+        $personal->lastsalary5= $request->lastsalary5;
+        $personal->position5 = $request->position5;
+
+        $personal->list_of_employed6 = $request->list_of_employed6;
+        $personal->job_description6 = $request->job_description6;
+        $personal->call6 = $request->call6;
+        $personal->start_job_duration11 = $request->start_job_duration11;
+        $personal->end_job_duration12 = $request->end_job_duration12;
+        $personal->reasonLeaving6 = $request->reasonLeaving6;
+        $personal->lastsalary6= $request->lastsalary6;
+        $personal->position6 = $request->position6;
      
 
         $personal->namecm = $request->namecm;

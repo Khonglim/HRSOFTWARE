@@ -703,55 +703,230 @@
                                                 <tbody>
                                                   <tr>
                                                     <td> 
-                                                
                                                                 @if($personal->list_of_employed1 == '')
                                                                   -
                                                                 @else
-                                                                {{$personal->list_of_employed1 }}
+                                                                  {{$personal->list_of_employed1 }}
                                                                 @endif
-                                                
                                                 </td>
                                                     <td> 
                                                               @if($personal->job_description1 == '')
                                                                 -
                                                               @else
-                                                              {{$personal->job_description1 }}
+                                                                {{$personal->job_description1 }}
+                                                              @endif
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->call1 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->call1 }}
+                                                              @endif
+                                                </td>
+                                                    <td>
+                                                              @if($personal->start_job_duration1 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->start_job_duration1 }}
+                                                              @endif
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->end_job_duration2 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->end_job_duration2 }}
+                                                              @endif
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->position1 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->position1 }}
+                                                              @endif 
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->reasonLeaving1 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->reasonLeaving1 }}
+                                                              @endif
+                                                </td>
+                                                    <td>  
+                                                              @if($personal->lastsalary1 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->lastsalary1 }}
+                                                              @endif 
+                                                </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td> 
+                                                              @if($personal->list_of_employed2 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->list_of_employed2}}
+                                                              @endif 
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->job_description2 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->job_description2}}
+                                                              @endif 
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->call2 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->call2}}
+                                                              @endif
+                                                </td>
+                                                    <td>    
+                                                              @if($personal->start_job_duration3 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->start_job_duration3}}
+                                                              @endif
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->end_job_duration4 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->end_job_duration4}}
+                                                              @endif
+                                                </td>
+                                                    <td>
+                                                              @if($personal->position2 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->position2}}
+                                                              @endif
+                                                </td>
+                                                    <td>
+                                                              @if($personal->reasonLeaving2 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->reasonLeaving2}}
+                                                              @endif
+                                                </td>
+                                                    <td>     
+                                                              @if($personal->lastsalary2 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->lastsalary2}}
+                                                              @endif
+                                                </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>
+                                                              @if($personal->list_of_employed3 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->list_of_employed3}}
+
+                                                              @endif 
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->job_description3 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->job_description3}}
+                                                              @endif
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->call3 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->call3}}
+                                                              @endif 
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->start_job_duration5 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->start_job_duration5}}
+                                                              @endif 
+                                                </td>
+                                                    <td>      
+                                                                @if($personal->end_job_duration6 == '')
+                                                                -
+                                                         @else
+                                                              {{$personal->end_job_duration6}}
+                                                              @endif
+                                                </td>
+                                                    <td>
+                                                                @if($personal->position3 == '')
+                                                                -
+                                                         @else
+                                                              {{$personal->position3}}
+                                                              @endif 
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->reasonLeaving3 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->reasonLeaving3}}
+                                                              @endif
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->lastsalary3 == '')
+                                                                -
+                                                              @else
+                                                                {{$personal->lastsalary3}}
+                                                               @endif
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td> 
+                                                
+                                                                @if($personal->list_of_employed4 == '')
+                                                                  -
+                                                                @else
+                                                                {{$personal->list_of_employed4 }}
+                                                                @endif
+                                                
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->job_description4 == '')
+                                                                -
+                                                              @else
+                                                              {{$personal->job_description4 }}
                                                               @endif
                                                 
                                                 </td>
                                                     <td> 
-                                                             @if($personal->call1 == '')
+                                                             @if($personal->call4 == '')
                                                                 -
                                                               @else
-                                                              {{$personal->call1 }}
+                                                              {{$personal->call4 }}
                                                               @endif
                                                 
                                                 </td>
                                                     <td>
-                                                             @if($personal->start_job_duration1 == '')
+                                                             @if($personal->start_job_duration7 == '')
                                                                 -
                                                               @else
-                                                              {{$personal->start_job_duration1 }}
+                                                              {{$personal->start_job_duration7 }}
                                                               @endif
                                                 
                                                 
                                                 </td>
                                                     <td> 
-                                                                @if($personal->end_job_duration2 == '')
+                                                                @if($personal->end_job_duration8 == '')
                                                                 -
                                                               @else
-                                                              {{$personal->end_job_duration2 }}
+                                                              {{$personal->end_job_duration8}}
                                                               @endif   
                                                         
                                                         
                                                 
                                                 </td>
                                                     <td> 
-                                                                @if($personal->position1 == '')
+                                                                @if($personal->position4 == '')
                                                                 -
                                                               @else
 
-                                                              {{$personal->position1 }}
+                                                              {{$personal->position4 }}
 
                                                               @endif  
                                                               
@@ -759,11 +934,11 @@
                                                 
                                                 </td>
                                                     <td> 
-                                                                @if($personal->reasonLeaving1 == '')
+                                                                @if($personal->reasonLeaving4 == '')
                                                                 -
                                                               @else
 
-                                                              {{$personal->reasonLeaving1 }}
+                                                              {{$personal->reasonLeaving4 }}
 
                                                               @endif      
                                                       
@@ -771,11 +946,11 @@
                                                 </td>
                                                     <td> 
                                                             
-                                                        @if($personal->lastsalary1 == '')
+                                                        @if($personal->lastsalary4 == '')
                                                                 -
                                                               @else
 
-                                                              {{$personal->lastsalary1 }}
+                                                              {{$personal->lastsalary4 }}
 
                                                               @endif 
                                                       
@@ -784,223 +959,163 @@
                                                   </tr>
                                                   <tr>
                                                     <td> 
-                                                                @if($personal->list_of_employed2 == '')
-                                                                -
-                                                              @else
-
-                                                              {{$personal->list_of_employed2}}
-
-                                                              @endif 
-                                                       
                                                 
+                                                                @if($personal->list_of_employed5 == '')
+                                                                  -
+                                                                @else
+                                                                {{$personal->list_of_employed5 }}
+                                                                @endif
                                                 
                                                 </td>
                                                     <td> 
-                                                                @if($personal->job_description2 == '')
+                                                              @if($personal->job_description5 == '')
                                                                 -
                                                               @else
-
-                                                              {{$personal->job_description2}}
-
-                                                              @endif    
-                                                       
+                                                              {{$personal->job_description5 }}
+                                                              @endif
                                                 
                                                 </td>
                                                     <td> 
-                                                                @if($personal->call2 == '')
+                                                             @if($personal->call5 == '')
                                                                 -
                                                               @else
-
-                                                              {{$personal->call2}}
-
-                                                              @endif    
-                                                       
-                                                
-                                                </td>
-                                                    <td> 
-                                                            
-                                                                @if($personal->start_job_duration3 == '')
-                                                                -
-                                                              @else
-
-                                                              {{$personal->start_job_duration3}}
-
-                                                              @endif    
-                                                        
-                                                       
-                                                
-                                                </td>
-                                                    <td> 
-                                                                @if($personal->end_job_duration4 == '')
-                                                                -
-                                                              @else
-
-                                                              {{$personal->end_job_duration4}}
-
-                                                              @endif       
-                                                        
-                                                     
-                                                
-                                                </td>
-                                                    <td> 
-                                                        
-                                                                @if($personal->position2 == '')
-                                                                -
-                                                              @else
-
-                                                              {{$personal->position2}}
-
-                                                              @endif        
-                                                        
-                                                        
-                                                       
+                                                              {{$personal->call5 }}
+                                                              @endif
                                                 
                                                 </td>
                                                     <td>
-                                                                @if($personal->reasonLeaving2 == '')
+                                                             @if($personal->start_job_duration9 == '')
+                                                                -
+                                                              @else
+                                                              {{$personal->start_job_duration9 }}
+                                                              @endif
+                                                
+                                                
+                                                </td>
+                                                    <td> 
+                                                                @if($personal->end_job_duration10 == '')
+                                                                -
+                                                              @else
+                                                              {{$personal->end_job_duration10}}
+                                                              @endif   
+                                                        
+                                                        
+                                                
+                                                </td>
+                                                    <td> 
+                                                                @if($personal->position5 == '')
                                                                 -
                                                               @else
 
-                                                              {{$personal->reasonLeaving2}}
+                                                              {{$personal->position5 }}
 
-                                                              @endif        
+                                                              @endif  
+                                                              
+                                                              
+                                                
+                                                </td>
+                                                    <td> 
+                                                                @if($personal->reasonLeaving5 == '')
+                                                                -
+                                                              @else
+
+                                                              {{$personal->reasonLeaving5 }}
+
+                                                              @endif      
+                                                      
                                                 
                                                 </td>
                                                     <td> 
                                                             
-                                                                @if($personal->lastsalary2 == '')
+                                                        @if($personal->lastsalary5 == '')
                                                                 -
                                                               @else
 
-                                                              {{$personal->lastsalary2}}
+                                                              {{$personal->lastsalary5 }}
 
-                                                              @endif  
-                                                        
+                                                              @endif 
+                                                      
                                                 
                                                 </td>
                                                   </tr>
                                                   <tr>
                                                     <td> 
                                                 
-                                                                @if($personal->list_of_employed3 == '')
+                                                                @if($personal->list_of_employed6 == '')
+                                                                  -
+                                                                @else
+                                                                {{$personal->list_of_employed6 }}
+                                                                @endif
+                                                
+                                                </td>
+                                                    <td> 
+                                                              @if($personal->job_description6 == '')
+                                                                -
+                                                              @else
+                                                              {{$personal->job_description6 }}
+                                                              @endif
+                                                
+                                                </td>
+                                                    <td> 
+                                                             @if($personal->call6 == '')
+                                                                -
+                                                              @else
+                                                              {{$personal->call6 }}
+                                                              @endif
+                                                
+                                                </td>
+                                                    <td>
+                                                             @if($personal->start_job_duration11 == '')
+                                                                -
+                                                              @else
+                                                              {{$personal->start_job_duration11 }}
+                                                              @endif
+                                                
+                                                
+                                                </td>
+                                                    <td> 
+                                                                @if($personal->end_job_duration12 == '')
+                                                                -
+                                                              @else
+                                                              {{$personal->end_job_duration12 }}
+                                                              @endif   
+                                                        
+                                                        
+                                                
+                                                </td>
+                                                    <td> 
+                                                                @if($personal->position6 == '')
                                                                 -
                                                               @else
 
-                                                              {{$personal->list_of_employed3}}
+                                                              {{$personal->position6 }}
 
                                                               @endif  
-                                                
+                                                              
+                                                              
                                                 
                                                 </td>
                                                     <td> 
-                                                
-                                                                @if($personal->job_description3 == '')
+                                                                @if($personal->reasonLeaving6 == '')
                                                                 -
                                                               @else
 
-                                                              {{$personal->job_description3}}
+                                                              {{$personal->reasonLeaving6 }}
 
-                                                              @endif  
-                                                
-                                                
-                                                
-                                                
-                                                
+                                                              @endif      
+                                                      
                                                 
                                                 </td>
                                                     <td> 
-                                                
-                                                        @if($personal->call3 == '')
+                                                            
+                                                        @if($personal->lastsalary6 == '')
                                                                 -
                                                               @else
 
-                                                              {{$personal->call3}}
-
-                                                              @endif  
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                </td>
-                                                    <td> 
-                                                
-                                                        @if($personal->start_job_duration5 == '')
-                                                                -
-                                                         @else
-
-                                                              {{$personal->start_job_duration5}}
-
-                                                              @endif  
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                </td>
-                                                    <td> 
-                                                
-                                                
-                                                                @if($personal->end_job_duration6 == '')
-                                                                -
-                                                         @else
-
-                                                              {{$personal->end_job_duration6}}
-
-                                                              @endif  
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                </td>
-                                                    <td> 
-                                                
-                                                
-                                                 
-                                                                @if($personal->position3 == '')
-                                                                -
-                                                         @else
-
-                                                              {{$personal->position3}}
-
-                                                              @endif  
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                </td>
-                                                    <td> 
-                                                
-                                                
-                                                                @if($personal->reasonLeaving3 == '')
-                                                                -
-                                                         @else
-
-                                                              {{$personal->reasonLeaving3}}
+                                                              {{$personal->lastsalary6 }}
 
                                                               @endif 
-                                                
-                                                
-                                                
-                                                
-                                                </td>
-                                                    <td> 
-                                                
-                                                                @if($personal->lastsalary3 == '')
-                                                                -
-                                                         @else
-
-                                                              {{$personal->lastsalary3}}
-
-                                                              @endif 
-                                                
-                                                
-                                                
+                                                      
                                                 
                                                 </td>
                                                   </tr>

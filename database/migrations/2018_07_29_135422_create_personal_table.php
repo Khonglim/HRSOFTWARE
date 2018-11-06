@@ -155,6 +155,33 @@ class CreatePersonalTable extends Migration
             $table->text('reasonLeaving3')->nullable();
             $table->text('lastsalary3')->nullable();
 
+            $table->text('list_of_employed4')->nullable();
+            $table->text('call4')->nullable();
+            $table->text('job_description4')->nullable();
+            $table->text('start_job_duration7')->nullable();
+            $table->text('end_job_duration8')->nullable();
+            $table->text('position4')->nullable();
+            $table->text('reasonLeaving4')->nullable();
+            $table->text('lastsalary4')->nullable();
+
+            $table->text('list_of_employed5')->nullable();
+            $table->text('call5')->nullable();
+            $table->text('job_description5')->nullable();
+            $table->text('start_job_duration9')->nullable();
+            $table->text('end_job_duration10')->nullable();
+            $table->text('position5')->nullable();
+            $table->text('reasonLeaving5')->nullable();
+            $table->text('lastsalary5')->nullable();
+
+            $table->text('list_of_employed6')->nullable();
+            $table->text('call6')->nullable();
+            $table->text('job_description6')->nullable();
+            $table->text('start_job_duration11')->nullable();
+            $table->text('end_job_duration12')->nullable();
+            $table->text('position6')->nullable();
+            $table->text('reasonLeaving6')->nullable();
+            $table->text('lastsalary6')->nullable();
+
 
             $table->text('namecm')->nullable();
             $table->text('lastnamecm')->nullable();

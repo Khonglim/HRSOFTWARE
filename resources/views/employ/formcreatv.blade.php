@@ -1599,6 +1599,258 @@ input.valid, textarea.valid{
                                                  
                                               </div>
                                           </div>
+                                          <hr>
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >4.ชื่อสถานที่ประกอบการ</label>
+                                                                  {{Form::text('list_of_employed4','',['class'=>'form-control','id'=>'list_of_employed4'])}}
+                                                                  <b  class="text-danger" id="list_of_employed4Error"></b> 
+                                                             </div>
+                                                          </div> 
+                                                   
+                                              </div>
+                                             
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >ลักษณะงานที่รับผิดชอบ</label>
+                                                                  {{Form::text('job_description4','',['class'=>'form-control','id'=>'job_description4'])}}
+                                                                  <b  class="text-danger" id="job_description4Error"></b> 
+                                                             </div>
+                                                          </div> 
+                                                
+                                              </div>
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" > ตำแหน่ง</label>
+                                                                  {{Form::text('position4','',['class'=>'form-control','id'=>'position4'])}} 
+                                                                  <b  class="text-danger" id="position4Error"></b> 
+                                                             </div>
+                                                  </div> 
+
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                   
+                                                              <div class="form-group ">
+                                                                  <label >ระยะงานเริ่ม</label>
+                                                                  {{Form::date('start_job_duration7','',['class'=>'form-control','id'=>'start_job_duration7'])}}
+                                                                  <b  class="text-danger" id="start_job_duration7Error" ></b> 
+                                                             </div>
+                                                         
+                                               
+                                              </div>
+                                              <div class="col-md-3">
+                                                    
+                                                              <div class="form-group ">
+                                                                  <label>ระยะงานสิ้นสุด</label>
+                                                                  {{Form::date('end_job_duration8','',['class'=>'form-control','id'=>'end_job_duration8'])}} 
+                                                                  <b  class="text-danger" id="end_job_duration8Error"></b> 
+                                                            
+                                                  </div> 
+                                              </div>
+                                              
+                                                
+                                              </div>
+                                             
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                     
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >สาเหตุที่ออก</label>
+                                                                  {{Form::text('reasonLeavin4','',['class'=>'form-control','id'=>'reasonLeaving4'])}} 
+                                                                  <b  class="text-danger" id="reasonLeaving4Error"></b> 
+                                                            
+                                                  </div> 
+                                                 
+                                              </div>
+                        
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
+                                                                  {{Form::text('lastsalary4','',['class'=>'form-control','id'=>'lastsalary4'])}} 
+                                                                  <b  class="text-danger" id="lastsalary4Error"></b> 
+                                                             </div>
+                                                  </div> 
+                                                 
+                                              </div>
+                                          </div>
+                                          <hr>
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >5.ชื่อสถานที่ประกอบการ</label>
+                                                                  {{Form::text('list_of_employed5','',['class'=>'form-control','id'=>'list_of_employed5'])}}
+                                                                  <b  class="text-danger" id="list_of_employed5Error"></b> 
+                                                             </div>
+                                                          </div> 
+                                                   
+                                              </div>
+                                             
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >ลักษณะงานที่รับผิดชอบ</label>
+                                                                  {{Form::text('job_description5','',['class'=>'form-control','id'=>'job_description5'])}}
+                                                                  <b  class="text-danger" id="job_description5Error"></b> 
+                                                             </div>
+                                                          </div> 
+                                                
+                                              </div>
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" > ตำแหน่ง</label>
+                                                                  {{Form::text('position5','',['class'=>'form-control','id'=>'position5'])}} 
+                                                                  <b  class="text-danger" id="position5Error"></b> 
+                                                             </div>
+                                                  </div> 
+
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                   
+                                                              <div class="form-group ">
+                                                                  <label >ระยะงานเริ่ม</label>
+                                                                  {{Form::date('start_job_duration9','',['class'=>'form-control','id'=>'start_job_duration9'])}}
+                                                                  <b  class="text-danger" id="start_job_duration9Error" ></b> 
+                                                             </div>
+                                                         
+                                               
+                                              </div>
+                                              <div class="col-md-3">
+                                                    
+                                                              <div class="form-group ">
+                                                                  <label>ระยะงานสิ้นสุด</label>
+                                                                  {{Form::date('end_job_duration10','',['class'=>'form-control','id'=>'end_job_duration10'])}} 
+                                                                  <b  class="text-danger" id="end_job_duration10Error"></b> 
+                                                            
+                                                  </div> 
+                                              </div>
+                                              
+                                                
+                                              </div>
+                                             
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                     
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >สาเหตุที่ออก</label>
+                                                                  {{Form::text('reasonLeavin5','',['class'=>'form-control','id'=>'reasonLeaving5'])}} 
+                                                                  <b  class="text-danger" id="reasonLeaving3Error"></b> 
+                                                            
+                                                  </div> 
+                                                 
+                                              </div>
+                        
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
+                                                                  {{Form::text('lastsalary5','',['class'=>'form-control','id'=>'lastsalary5'])}} 
+                                                                  <b  class="text-danger" id="lastsalary5Error"></b> 
+                                                             </div>
+                                                  </div> 
+                                                 
+                                              </div>
+                                          </div>
+                                          <hr>
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >6.ชื่อสถานที่ประกอบการ</label>
+                                                                  {{Form::text('list_of_employed6','',['class'=>'form-control','id'=>'list_of_employed6'])}}
+                                                                  <b  class="text-danger" id="list_of_employed6Error"></b> 
+                                                             </div>
+                                                          </div> 
+                                                   
+                                              </div>
+                                             
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >ลักษณะงานที่รับผิดชอบ</label>
+                                                                  {{Form::text('job_description6','',['class'=>'form-control','id'=>'job_description6'])}}
+                                                                  <b  class="text-danger" id="job_description6Error"></b> 
+                                                             </div>
+                                                          </div> 
+                                                
+                                              </div>
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" > ตำแหน่ง</label>
+                                                                  {{Form::text('position6','',['class'=>'form-control','id'=>'position6'])}} 
+                                                                  <b  class="text-danger" id="position6Error"></b> 
+                                                             </div>
+                                                  </div> 
+
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                   
+                                                              <div class="form-group ">
+                                                                  <label >ระยะงานเริ่ม</label>
+                                                                  {{Form::date('start_job_duration11','',['class'=>'form-control','id'=>'start_job_duration11'])}}
+                                                                  <b  class="text-danger" id="start_job_duration11Error" ></b> 
+                                                             </div>
+                                                         
+                                               
+                                              </div>
+                                              <div class="col-md-3">
+                                                    
+                                                              <div class="form-group ">
+                                                                  <label>ระยะงานสิ้นสุด</label>
+                                                                  {{Form::date('end_job_duration12','',['class'=>'form-control','id'=>'end_job_duration12'])}} 
+                                                                  <b  class="text-danger" id="end_job_duration12Error"></b> 
+                                                            
+                                                  </div> 
+                                              </div>
+                                              
+                                                
+                                              </div>
+                                             
+                                          <div class="row">
+                                                  <div class="col-md-1"></div>
+                                              <div class="col-md-3">
+                                                     
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >สาเหตุที่ออก</label>
+                                                                  {{Form::text('reasonLeavin6','',['class'=>'form-control','id'=>'reasonLeaving6'])}} 
+                                                                  <b  class="text-danger" id="reasonLeaving6Error"></b> 
+                                                            
+                                                  </div> 
+                                                 
+                                              </div>
+                        
+                                              <div class="col-md-3">
+                                                      <div class="input-group">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label" >เงินเดือนครั้งสุดท้าย</label>
+                                                                  {{Form::text('lastsalary6','',['class'=>'form-control','id'=>'lastsalary6'])}} 
+                                                                  <b  class="text-danger" id="lastsalary6Error"></b> 
+                                                             </div>
+                                                  </div> 
+                                                 
+                                              </div>
+                                          </div>
                                 <div class="form-group">
                                         <center>
                                         <a href="#" class="btn btn-danger" id="prev-4">ย้อนกลับ</a>
