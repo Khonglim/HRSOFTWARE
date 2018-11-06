@@ -16,6 +16,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91112',
             'nem_id_card'=>'3101600595921',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'นันทธนา',
             'nem_thai_lastname'=>'วัชรปาน',
             'nem_eng_title'=>'Miss',
@@ -29,6 +30,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'11',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -37,6 +40,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91238',
             'nem_id_card'=>'3102201864695', 
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'พัชร์',
             'nem_thai_lastname'=>'รักษ์บำรุง',
             'nem_eng_title'=>'Mr.',
@@ -50,6 +54,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'10',
             'nem_level_id'=>'1',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -58,6 +64,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91111',
             'nem_id_card'=>'3101701236668',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'ฐิติพร',
             'nem_thai_lastname'=>'ศรีมาจันทร์',
             'nem_eng_title'=>'Miss',
@@ -71,6 +78,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'6',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -79,6 +88,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61145',
             'nem_id_card'=>'3710900675690',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'สุภร',
             'nem_thai_lastname'=>'อาจคงหาญ',
             'nem_eng_title'=>'Miss',
@@ -92,6 +102,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'17',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -100,6 +112,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91077',
             'nem_id_card'=>'3100903670392',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'ศริญรัตน์',
             'nem_thai_lastname'=>'ศิลาวรรณ์',
             'nem_eng_title'=>'Miss',
@@ -113,6 +126,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'6',
             'nem_level_id'=>'2',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -121,6 +136,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'62052',
             'nem_id_card'=>'3101202479948',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'กนกพร',
             'nem_thai_lastname'=>'ฉัตรสินทอง',
             'nem_eng_title'=>'Miss.',
@@ -134,6 +150,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'7',
             'nem_level_id'=>'2',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -142,6 +160,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91086',
             'nem_id_card'=>'3102200617091',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'สุขพงศ์',
             'nem_thai_lastname'=>'สหัสนันท์',
             'nem_eng_title'=>'Mr.',
@@ -155,6 +174,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'5',
             'nem_level_id'=>'2',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -163,6 +184,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'21003',
             'nem_id_card'=>'3101202984936',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ภควัต',
             'nem_thai_lastname'=>'ภู่สกุล',
             'nem_eng_title'=>'Mr.',
@@ -176,6 +198,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'4',
             'nem_level_id'=>'2',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -184,6 +208,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61055',
             'nem_id_card'=>'3100905641225',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'เทพฤทธิ์',
             'nem_thai_lastname'=>'ห่วงจริง',
             'nem_eng_title'=>'Mr.',
@@ -197,6 +222,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'1',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -205,6 +232,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51043',
             'nem_id_card'=>'3100901509021',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'เกียรติ',
             'nem_thai_lastname'=>'เหล่าวณิชย์พงษ์',
             'nem_eng_title'=>'Mr.',
@@ -218,6 +246,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'2',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -226,6 +256,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'81047',
             'nem_id_card'=>'3170200335981',
             'nem_thai_title'=>'ว่าที่ร้อยตรี',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ชูชีพ',
             'nem_thai_lastname'=>'ขุนทอง',
             'nem_eng_title'=>'Mr.',
@@ -239,6 +270,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -247,6 +280,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'94001',
             'nem_id_card'=>'3120300039194',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ชายชาญ',
             'nem_thai_lastname'=>'กุศลจิตกรณ์',
             'nem_eng_title'=>'Mr.',
@@ -260,6 +294,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'2',
             'nem_level_id'=>'1',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -268,6 +304,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91264',
             'nem_id_card'=>'3341500030271',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'ปณิชา',
             'nem_thai_lastname'=>'ภานะรมย์กุล',
             'nem_eng_title'=>'Miss',
@@ -281,6 +318,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'9',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -289,6 +328,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51171',
             'nem_id_card'=>'3102401326034',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'จันทร์เพ็ญ',
             'nem_thai_lastname'=>'นาทอง',
             'nem_eng_title'=>'Miss',
@@ -302,6 +342,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'32',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -310,6 +352,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51062',
             'nem_id_card'=>'3101401353383',
             'nem_thai_title'=>'นาง',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'พงษ์พงา',
             'nem_thai_lastname'=>'มณีไพโรจน์',
             'nem_eng_title'=>'Mrs.',
@@ -323,6 +366,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'1',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -331,6 +376,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51193',
             'nem_id_card'=>'1101800005340',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ไพโรจน์',
             'nem_thai_lastname'=>'ปานแสง',
             'nem_eng_title'=>'Mr.',
@@ -344,6 +390,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'16',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -352,6 +400,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'41012',
             'nem_id_card'=>'3100202263022',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'รำไพพรรรณ',
             'nem_thai_lastname'=>'จ๋วงพานิช',
             'nem_eng_title'=>'Miss.',
@@ -365,6 +414,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'22',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -373,6 +424,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'81057',
             'nem_id_card'=>'1600100309804',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'วรรณิภา',
             'nem_thai_lastname'=>'แตงทอง',
             'nem_eng_title'=>'Miss',
@@ -386,6 +438,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'21',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -394,6 +448,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91066',
             'nem_id_card'=>'1311400004271',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'พนม',
             'nem_thai_lastname'=>'แจ่มพะโยม',
             'nem_eng_title'=>'Mr.',
@@ -407,6 +462,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'8',
             'nem_level_id'=>'6',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -415,6 +472,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'94005',
             'nem_id_card'=>'1100800558488',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'รุ่งธรรม',
             'nem_thai_lastname'=>'โชติชวาลรัตนกุล',
             'nem_eng_title'=>'Mr.',
@@ -428,6 +486,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'2',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -436,6 +496,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'94003',
             'nem_id_card'=>'1100600194423',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ฐิติพงศ์',
             'nem_thai_lastname'=>'งามวิศิษฐ์ศิลป์',
             'nem_eng_title'=>'Mr.',
@@ -449,6 +510,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'2',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -457,6 +520,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'94002',
             'nem_id_card'=>'1100200241017',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'วาฑิต',
             'nem_thai_lastname'=>'เตชเสริมภูมิ',
             'nem_eng_title'=>'Mr.',
@@ -470,6 +534,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'2',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -478,6 +544,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61007',
             'nem_id_card'=>'3101800725004',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'สุพจน์',
             'nem_thai_lastname'=>'ศุภธนาเศรษฐ์',
             'nem_eng_title'=>'Mr.',
@@ -491,6 +558,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'20',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -499,6 +568,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61161',
             'nem_id_card'=>'1101401193673',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'อริษา',
             'nem_thai_lastname'=>'อรรถพรรณ',
             'nem_eng_title'=>'Miss',
@@ -512,6 +582,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'20',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -520,6 +592,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61163',
             'nem_id_card'=>'3100202557476',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ภาคิน',
             'nem_thai_lastname'=>'ภัคพัตรพิบูล',
             'nem_eng_title'=>'Mr.',
@@ -533,6 +606,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'20',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -541,6 +616,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'21008',
             'nem_id_card'=>'3600500793505',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'เกศริน',
             'nem_thai_lastname'=>'สุขโพธิ์',
             'nem_eng_title'=>'Miss',
@@ -554,6 +630,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'18',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -562,6 +640,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'21007',
             'nem_id_card'=>'3349900834447',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'ชนัญพัชร์',
             'nem_thai_lastname'=>'ภัทรินวัฒนะรัชต์',
             'nem_eng_title'=>'Miss',
@@ -575,6 +654,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'19',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -583,6 +664,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'21004',
             'nem_id_card'=>'3321200201053',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'ณัทมนตร์',
             'nem_thai_lastname'=>'บันลือทรัพย์',
             'nem_eng_title'=>'Miss',
@@ -596,6 +678,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'18',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -604,6 +688,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61024',
             'nem_id_card'=>'3200400076589',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'สุริยันต์',
             'nem_thai_lastname'=>'เปจะโปะ',
             'nem_eng_title'=>'Mr.',
@@ -617,6 +702,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -625,6 +712,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61003',
             'nem_id_card'=>'3400900572231',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'มนัสนันท์',
             'nem_thai_lastname'=>'มาตดก',
             'nem_eng_title'=>'Miss.',
@@ -638,6 +726,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'16',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -646,6 +736,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61197',
             'nem_id_card'=>'1100900424416',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ต่อพงศ์',
             'nem_thai_lastname'=>'วงศ์จิรัฐิติกาล',
             'nem_eng_title'=>'Mr.',
@@ -659,6 +750,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -667,6 +760,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91248',
             'nem_id_card'=>'5929900001161',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'เบญจพร',
             'nem_thai_lastname'=>'บุญจันทร์',
             'nem_eng_title'=>'Miss',
@@ -680,6 +774,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'5',
             'nem_level_id'=>'6',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -688,6 +784,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61079',
             'nem_id_card'=>'3230400128414',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'เสาร์คำ',
             'nem_thai_lastname'=>'ปัญญาคำ',
             'nem_eng_title'=>'Mr.',
@@ -701,6 +798,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -709,6 +808,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61046',
             'nem_id_card'=>'5301490008819',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'บุญหลาย',
             'nem_thai_lastname'=>'คนโฑฉิมพลี',
             'nem_eng_title'=>'Mr.',
@@ -722,6 +822,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -730,6 +832,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51067',
             'nem_id_card'=>'1510690000549',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'กิติยา',
             'nem_thai_lastname'=>'ไชยองการ',
             'nem_eng_title'=>'Miss',
@@ -743,6 +846,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'13',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -751,6 +856,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51037',
             'nem_id_card'=>'3450700364405',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'บังอร',
             'nem_thai_lastname'=>'นพคุณ',
             'nem_eng_title'=>'Miss',
@@ -764,6 +870,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'13',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -772,6 +880,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51019',
             'nem_id_card'=>'3550600190625',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'สันติ',
             'nem_thai_lastname'=>'กำแทง',
             'nem_eng_title'=>'Mr.',
@@ -785,6 +894,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -793,6 +904,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51009',
             'nem_id_card'=>'1710900024111',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'นาตยา',
             'nem_thai_lastname'=>'จ่าพิชม',
             'nem_eng_title'=>'Miss',
@@ -806,6 +918,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'15',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -814,6 +928,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51018',
             'nem_id_card'=>'3860400437497',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'สมพร',
             'nem_thai_lastname'=>'อ่าวรุ่งเรือง',
             'nem_eng_title'=>'Mr.',
@@ -827,6 +942,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -835,6 +952,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51006',
             'nem_id_card'=>'3180500334807',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ทองอินทร์',
             'nem_thai_lastname'=>'บานเย็น',
             'nem_eng_title'=>'Mr.',
@@ -848,6 +966,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -856,6 +976,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51001',
             'nem_id_card'=>'3200900774862',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ไชยรัตน์',
             'nem_thai_lastname'=>'จินตนาภรณ์',
             'nem_eng_title'=>'Mr.',
@@ -869,6 +990,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'13',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -877,6 +1000,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91201',
             'nem_id_card'=>'1100801049480',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'พิสิฐชัย',
             'nem_thai_lastname'=>'ชัยวงศ์สุรฤทธิ์',
             'nem_eng_title'=>'Mr.',
@@ -890,6 +1014,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'6',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -898,6 +1024,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91258',
             'nem_id_card'=>'3100700514841',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ภัทรพล',
             'nem_thai_lastname'=>'เหลี่ยมพิทักษ์',
             'nem_eng_title'=>'Mr.',
@@ -911,6 +1038,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'5',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -919,6 +1048,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'61119',
             'nem_id_card'=>'3102002400478',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'ธฤตา',
             'nem_thai_lastname'=>'ตั้งวงษ์ไชย',
             'nem_eng_title'=>'Miss.',
@@ -932,6 +1062,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'19',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -940,6 +1072,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91005',
             'nem_id_card'=>'3102200990816',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'สุรเชษฐ์',
             'nem_thai_lastname'=>'ชื่นสินธุ์วน',
             'nem_eng_title'=>'Mr.',
@@ -953,6 +1086,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'10',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -961,6 +1096,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91006',
             'nem_id_card'=>'3101200141982',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'สมชาติ',
             'nem_thai_lastname'=>'ไพบูลย์เรืองสุข',
             'nem_eng_title'=>'Mr.',
@@ -974,6 +1110,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'3',
             'nem_level_id'=>'1',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -982,6 +1120,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91265',
             'nem_id_card'=>'3101200805040',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'โธรัยห์',
             'nem_thai_lastname'=>'เจริญสุข',
             'nem_eng_title'=>'Mr.',
@@ -995,6 +1134,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'8',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1003,6 +1144,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91221',
             'nem_id_card'=>'3750200386661',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ณรงค์',
             'nem_thai_lastname'=>'วรรณพุก',
             'nem_eng_title'=>'Mr.',
@@ -1016,6 +1158,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'5',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1024,6 +1168,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91099',
             'nem_id_card'=>'3110400659143',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'สิริมา',
             'nem_thai_lastname'=>'โชคศิริวรรณา',
             'nem_eng_title'=>'Miss',
@@ -1037,6 +1182,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'5',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1045,6 +1192,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91247',
             'nem_id_card'=>'1560300019479',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'เป็นไท',
             'nem_thai_lastname'=>'ถาวร',
             'nem_eng_title'=>'Mr.',
@@ -1058,6 +1206,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'6',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1066,6 +1216,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91135',
             'nem_id_card'=>'1100400426096',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'กิตติทัพพ์',
             'nem_thai_lastname'=>'จันทร์ฉายทอง',
             'nem_eng_title'=>'Mr.',
@@ -1079,6 +1230,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'12',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1087,6 +1240,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91118',
             'nem_id_card'=>'3129900340616',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'สรภูมิ',
             'nem_thai_lastname'=>'เรืองฤทธิ์',
             'nem_eng_title'=>'Mr.',
@@ -1100,6 +1254,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'5',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1108,6 +1264,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'91129',
             'nem_id_card'=>'3730100847402',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'วันวิสา',
             'nem_thai_lastname'=>'ธุวภัทร',
             'nem_eng_title'=>'Miss.',
@@ -1121,6 +1278,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'5',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1129,6 +1288,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'42143',
             'nem_id_card'=>'1709900828901',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'วีรภัทร ',
             'nem_thai_lastname'=>'มูลวัน',
             'nem_eng_title'=>'Mr.',
@@ -1142,6 +1302,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1150,6 +1312,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'41002',
             'nem_id_card'=>'3240300716403',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'ชนิษฐา',
             'nem_thai_lastname'=>'รุ่งอรุณ',
             'nem_eng_title'=>'Miss.',
@@ -1163,6 +1326,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'15',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1171,6 +1336,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'21001',
             'nem_id_card'=>'3102002873333',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'วิลาสินี',
             'nem_thai_lastname'=>'สุขลำดวน',
             'nem_eng_title'=>'Miss.',
@@ -1184,6 +1350,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'23',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1192,6 +1360,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'81071',
             'nem_id_card'=>'1100400056183',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'วิลาวัณย์',
             'nem_thai_lastname'=>'ศิริเถียร',
             'nem_eng_title'=>'Miss',
@@ -1205,6 +1374,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'15',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1213,6 +1384,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'81067',
             'nem_id_card'=>'1100200384977',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ฤทธิ์ธา',
             'nem_thai_lastname'=>'บินสลาม',
             'nem_eng_title'=>'Mr.',
@@ -1226,6 +1398,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'4',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1234,6 +1408,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'51174',
             'nem_id_card'=>'3100202263022',
             'nem_thai_title'=>'นางสาว',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'น้ำทิพย์',
             'nem_thai_lastname'=>'บุญคุ้ม',
             'nem_eng_title'=>'Miss.',
@@ -1247,6 +1422,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'22',
             'nem_level_id'=>'3',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1255,6 +1432,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'81026',
             'nem_id_card'=>'1709900706384',
             'nem_thai_title'=>'นาย',
+            'nem_sex'=>'ชาย',
             'nem_thai_firstname'=>'ทวีทรัพย์',
             'nem_thai_lastname'=>'ออมสิน',
             'nem_eng_title'=>'Mr.',
@@ -1268,6 +1446,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'14',
             'nem_level_id'=>'5',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);
@@ -1276,6 +1456,7 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_code'=>'81080',
             'nem_id_card'=>'3190600200292',
             'nem_thai_title'=>'นาง',
+            'nem_sex'=>'หญิง',
             'nem_thai_firstname'=>'ปิยะนันท์ ',
             'nem_thai_lastname'=>'นัฐเศรษฐสิริ',
             'nem_eng_title'=>'Mrs.',
@@ -1289,6 +1470,8 @@ class Ngg_employeeTableSeeder extends Seeder
             'nem_sector_id'=>'13',
             'nem_level_id'=>'6',
             'nem_remark'=>'',
+            'nem_salary'=>'0',
+            'nem_enducation'=>'',
             'nem_enable'=>'1',
             
         ]);

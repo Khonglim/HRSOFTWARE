@@ -112,7 +112,8 @@
                    <div class="col-md-3"> 
                                 <div class="form-group label-floating">
                                 <label class="control-label">Company</label>
-                                  <select name="company" class=" form-control">
+                                  <select name="company" class="js-example-basic-single form-control">
+                                    <option value='เลือก'>เลือก</option>
                                     @foreach($ngg_company as $company)
                                     <option value={{$company->ncp_id}}>{{$company->ncp_name}}</option>
                                     @endforeach
@@ -122,7 +123,8 @@
                         <div class="col-md-3"> 
                                  <div class="form-group label-floating">
                             <label class="control-label">Department</label>
-                            <select name="department" class=" form-control">
+                            <select name="department" class="js-example-basic-single form-control">
+                                    <option value='เลือก'>เลือก</option>
                                       @foreach($ngg_department as $department)
                                     <option value={{ $department->ndp_id}}>{{$department->ndp_name}}</option>
                                       @endforeach
@@ -132,7 +134,8 @@
                          <div class="col-md-3"> 
                                         <div class="form-group label-floating">
                          <label class="control-label">Position</label>
-                                  <select name="position" class=" form-control">
+                                  <select name="position" class="js-example-basic-single form-control">
+                                    <option value='เลือก'>เลือก</option>
                                     @foreach($ngg_position as $position)
                                     <option value={{$position->id}}>{{$position->nps_name}}</option>
                                       @endforeach
@@ -143,25 +146,52 @@
                  <div class="col-md-3"> 
                                         <div class="form-group label-floating">
                          <label class="control-label">Level</label>
-                                  <select name="level" class=" form-control">
+                                  <select name="level" class="js-example-basic-single form-control">
+                                    <option value='เลือก'>เลือก</option>
                                     @foreach($ngg_level as $level)
                                     <option value={{$level->nlv_id}}>{{$level->nlv_name}}</option>
                                       @endforeach
                                   </select> 
                         </div> 
                 </div>
-                <div class="col-md-3"> 
+        </div>
+  </div>
+   <br>
+  <div class="row">
+    <div class="form-group"> 
+                 <div class="col-md-3"> 
                                         <div class="form-group label-floating">
                          <label class="control-label">Sector</label>
-                              <select name="sector" class=" form-control">
+                              <select name="sector" class="js-example-basic-single  form-control">
+                                <option value='เลือก'>เลือก</option>
                                     @foreach($ngg_sector as $sector)
                                     <option value={{$sector->nst_id}}>{{$sector->nst_name}}</option>
                                       @endforeach
                                   </select>
                         </div> 
+                </div>  
+                <div class="col-md-3"> 
+                                        <div class="form-group label-floating">
+                         <label class="control-label">เงินเดือน</label>
+                           {{Form::text('salary','',['class'=>'form-control','required'])}}    
+                        </div> 
+                </div>
+                <div class="col-md-3"> 
+                                        <div class="form-group label-floating">
+                         <label class="control-label">เพศ</label>
+                              {{ Form::select('sex', [ '' =>'เลือก', 'ชาย' => 'ชาย', 'หญิง' => 'หญิง'],null, ['class' => 'form-control','required'])
+                            }}
+                        </div> 
+                </div>
+                <div class="col-md-3"> 
+                                        <div class="form-group label-floating">
+                         <label class="control-label">วุฒิการศึกษา</label>
+                               <textarea class="form-control" value='' style="resize: none;" name='enducation' ></textarea>
+                        </div> 
                 </div>      
         </div>
   </div>
+
       <div class="form-group">
           <div class="row">
             <div class="col-md-12"> 

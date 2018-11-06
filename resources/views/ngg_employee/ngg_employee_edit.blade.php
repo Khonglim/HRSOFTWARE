@@ -24,6 +24,9 @@
                         $level1 = $ngg_empl->nem_level_id;
                         $sector1 = $ngg_empl->nem_sector_id;
                         $remark1 = $ngg_empl->nem_remark;
+                        $salary  = $ngg_empl->nem_salary;
+                        $sex  = $ngg_empl->nem_sex;
+                        $enducation   = $ngg_empl->nem_enducation;
 
                   ?>
                 @endforeach
@@ -50,6 +53,7 @@
                 </div>  
                             
         </div>
+         <br>
             <div class="row">    
                            
                    <div class="col-md-3"> 
@@ -171,6 +175,11 @@
                                   </select> 
                         </div> 
                 </div>
+        </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="form-group"> 
                 <div class="col-md-3"> 
                                         <div class="form-group label-floating">
                          <label class="control-label">Sector</label>
@@ -185,10 +194,37 @@
                                     @endforeach
                                   </select>
                         </div> 
+                </div>
+                <div class="col-md-3"> 
+                                        <div class="form-group label-floating">
+                         <label class="control-label">เงินเดือน</label>
+                           {{Form::text('salary',$salary,['class'=>'form-control','required'])}}    
+                        </div> 
+                </div>
+                <div class="col-md-3"> 
+                                        <div class="form-group label-floating">
+                         <label class="control-label">Sector</label>
+                              <select name="sex" class=" form-control">
+                                @if($sex =='ชาย')
+                                  <option value="ชาย" selected="true">ชาย</option>
+                                  <option value="หญิง">หญิง</option>
+                                @else
+                                 <option value="ชาย">ชาย</option>
+                                  <option value="หญิง"selected="true">หญิง</option>
+                                @endif
+                              </select> 
+                        </div> 
+                </div>
+                <div class="col-md-3"> 
+                                        <div class="form-group label-floating">
+                         <label class="control-label">วุฒิการศึกษา</label>
+                               <textarea class="form-control" value={{$enducation}} style="resize: none;" name='enducation' ></textarea>
+                        </div> 
                 </div>      
         </div>
   </div>
-      <div class="form-group">
+
+   <div class="form-group">
           <div class="row">
             <div class="col-md-12"> 
               <label class="control-label">เพิ่มเติม</label>
@@ -196,11 +232,9 @@
             </div> 
           </div>
       </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+           </div>
+    </div>   
+          <div class="row">
       <div class="col-md-6">
         {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
         {{ Html::link('nggemployee','Back',array('class ' => 'btn btn-primary')) }}
@@ -208,6 +242,10 @@
     </div>
    
   </div>
+        </div>
+      </div>
+    
+ 
 </div>
     
 

@@ -24,7 +24,9 @@
                         $level1 = $ngg_empl->nem_level_id;
                         $sector1 = $ngg_empl->nem_sector_id;
                         $remark1 = $ngg_empl->nem_remark;
-
+                        $salary  = $ngg_empl->nem_salary;
+                        $sex  = $ngg_empl->nem_sex;
+                        $enducation   = $ngg_empl->nem_enducation;
                   ?>
                 @endforeach
 
@@ -53,69 +55,52 @@
 <br>
             <div class="row">         
                 <div class="col-md-3">
-                                <label class="control-label">คำนำหน้าชื่อ(ภาษาไทย)</label> 
+                                <label class="control-label">{{$title_tname}} </label> 
                 </div>
-                <div class="col-md-2">
-                                   {{$title_tname}} 
-                </div>
-                <div class="col-md-3"> 
-                  <label class="control-label">ชื่อ(ภาษาไทย)</label>
-                  </div> 
                   <div class="col-md-2">
                      {{$thai_name}}
                   </div>   
+                <div class="col-md-3">
+                                <label class="control-label">นามสกุล </label> 
+                </div>
+                  <div class="col-md-2">
+                   {{$thai_lastname}} 
+               </div> 
             </div>
+            <br>
+            <div class="row">         
+                <div class="col-md-3">
+                                <label class="control-label">{{$eng_title}}</label> 
+                </div>
+                  <div class="col-md-2">
+                      {{$eng_name}} 
+                  </div>   
+                <div class="col-md-3">
+                                <label class="control-label">lastname</label> 
+                </div>
+                  <div class="col-md-2">
+                    {{$eng_lastname}}
+               </div> 
+            </div>
+
 
          <br>   
             <div class="row">
-               <div class="col-md-3"> 
-                    <label class="control-label">นามสกุล(ภาษาไทย)</label> 
-               </div>
-               <div class="col-md-2">
-                   {{$thai_lastname}} 
-               </div> 
                <div class="col-md-3">
                  <label class="control-label">ชื่อเล่น</label>
                 </div>
-                <div class="row">
+                <div class="col-md-2">
                   {{$nickname}} 
                 </div>
-            </div>      
-<br>
-           
-        <div class="row">
-                <div class="col-md-3">
-                  <label class="control-label">คำนำหน้าชื่อ(ภาษาอังกฤษ)</label>
-                </div>
-                <div class="col-md-2">
-                  {{$eng_title}}
-                </div> 
-                 <div class="col-md-3">
-              <label class="control-label">ชื่อ(ภาษาอังกฤษ)</label>
-          </div>
-          <div class="col-md-2">
-            {{$eng_name}} 
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-md-3">
-                <label class="control-label">นามสกุล(ภาษาอังกฤษ)</label>
-          </div> 
-          <div class="col-md-2">
-                {{$eng_lastname}}
-          </div>
-          <div class="col-md-3 ">
+                <div class="col-md-3 ">
             <label class="control-label">วันเกิด</label>
           </div>
           <div class="col-md-2">
             {{$birthday}} 
           </div>
-        </div>
-        <br>
-          </div>
-          <br>
-          
+            </div>      
+<br>
+         
           <div class="row">      
                   <div class="col-md-3">
                     <label class="control-label">Company</label>                   
@@ -140,7 +125,7 @@
           </div>
           <br>
           <div class="row">
-            <div class="col-md-3">
+             <div class="col-md-3">
                    <label class="control-label">Position</label> 
                 </div>
             <div class="col-md-2">
@@ -151,6 +136,20 @@
                       @endforeach
             </div>
              <div class="col-md-3">
+                   <label class="control-label">Sector</label>    
+            </div>
+            <div class="col-md-2">
+                     @foreach($ngg_sector as $sector)
+                     @if($sector->nst_id == $sector1)
+                      {{$sector->nst_name}}
+                     @endif
+                    @endforeach
+            </div>
+             
+          </div>
+          <br>
+           <div class="row">      
+              <div class="col-md-3">
                    <label class="control-label">Level</label>    
             </div>
             <div class="col-md-2">
@@ -159,10 +158,32 @@
                       {{$level->nlv_name}}
                      @endif
                     @endforeach
+            </div> 
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+                   <label class="control-label">เพศ</label> 
+                </div>
+            <div class="col-md-2">
+                   {{$sex}}
+            </div>
+             <div class="col-md-3">
+                   <label class="control-label">วุฒิการศึกษา</label>    
+            </div>
+            <div class="col-md-2">
+                   {{$enducation}}
             </div>
           </div>
+
       <br>
           <div class="row">
+             <div class="col-md-3">
+                   <label class="control-label">เงินเดือน</label>    
+            </div>
+            <div class="col-md-2">
+                   {{$salary}}
+            </div>
             <div class="col-md-3"> 
               <label class="control-label">เพิ่มเติม</label>
             </div> 
@@ -170,20 +191,22 @@
               {{$remark1}}
             </div>
           </div>
+
           <br/>
-      <br/>
       
-          </div>
-        </div>
-      </div>
+      <br/>
+
       <div class="row">
       <div class="col-md-6">
         {{ Html::link('nggemployee','Back',array('class ' => 'btn btn-primary')) }}
-    </div>
+      </div>
    
-  </div>
+      </div>
+   
+          </div>
+      </div>
     </div>
-    
+  </div>
 </div>
     
 

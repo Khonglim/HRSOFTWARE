@@ -81,6 +81,9 @@ class NggemployeeController extends Controller
          $ngg_employee->nem_sector_id =Input::get('sector');
          $ngg_employee->nem_level_id =Input::get('level');
          $ngg_employee->nem_remark =Input::get('remark');
+         $ngg_employee->nem_salary=Input::get('salary');
+         $ngg_employee->nem_sex=Input::get('sex');
+         $ngg_employee->nem_enducation=Input::get('enducation');
          $ngg_employee->save();
          Session::flash('flash_message','บันทึกสำเร็จ!!');
          return redirect()->route("home");
@@ -223,6 +226,18 @@ class NggemployeeController extends Controller
             DB::table('ngg_employee')
             ->where('nem_id', $id)
             ->update(['nem_remark' => Input::get('remark')]);
+
+            DB::table('ngg_employee')
+            ->where('nem_id', $id)
+            ->update(['nem_salary' => Input::get('salary')]);
+
+            DB::table('ngg_employee')
+            ->where('nem_id', $id)
+            ->update(['nem_sex' => Input::get('sex')]);
+
+            DB::table('ngg_employee')
+            ->where('nem_id', $id)
+            ->update(['nem_enducation' => Input::get('enducation')]);
            
             }
             Session::flash('flash_message','บันทึกการแก้ไขเรียบร้อย!!');
