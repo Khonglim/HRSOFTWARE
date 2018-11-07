@@ -314,6 +314,12 @@ body {
                                 <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">การจัดการโดยรวม<span class="caret"></span></a>
                                   <ul class="dropdown-menu" role="menu">
+                                      @if(auth()->user()->isAdmin_Master == 1)
+                                      <li ><a href="{{url('/summevav2') }}">การจัดการผู้ใช้</a></li>
+
+                                      <li class="divider"></li>
+
+                                      @endif
                                        <li><a href="{{url('/companysmanage') }}">จัดการบริษัท</a></li>
                                        <li class="divider"></li>
                                        <li><a href="{{url('/departmentsmanage') }}">จัดการแผนก</a></li>
@@ -325,7 +331,7 @@ body {
                                        <li><a href="{{url('/levelsmanage') }}">จัดการระดับ</a></li>
                                        <li class="divider"></li>
                                        <li><a href="{{url('/nggemployee') }}">จัดการผนักงาน</a></li>
-                                       <li class="divider"></li>
+                                       
                                      
                                   </ul>
                                 </li>
