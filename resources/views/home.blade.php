@@ -3,7 +3,7 @@
 
 <div class="content-wrapper">
   <div class="content container">
-      @if(auth()->user()->isAdmin == 1)
+      @if(auth()->user()->isAdmin == '001' || auth()->user()->isAdmin == '010')
     <div class="alert alert-success">
       <h4><strong>ประกาศ!</strong> <br><br> -การประเมินการทดลองงานสามารถทดสอบการใช้งานได้แล้วและลบการประเมินจากการทดสอบได้เลย สามารถเซ็นลายเซ็นบนเว็บและบนจอทัชสกรีนได้<br>
     -เพิ่มทราบข่าวสารการสมัครงานจากที่ใดแล้วครับ<br>
@@ -19,7 +19,7 @@
 
 
 
-    @if(auth()->user()->isAdmin == 1)
+    @if(auth()->user()->isAdmin == '001' || auth()->user()->isAdmin == '010')
     <div class="box">
         <div class="box-header">
            <h3>กรุณาเลือกการทำงาน จากเมนูด้านบน</h3> 

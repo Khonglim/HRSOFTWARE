@@ -11,7 +11,7 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                                    @if(auth()->user()->isAdmin_Master == 1)
+                                    @if( auth()->user()->isAdmin == '010')
                               <table id="user_setting" class="table table-bordered table-striped">
                                     <thead>
                                           <tr>

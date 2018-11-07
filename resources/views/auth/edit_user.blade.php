@@ -13,7 +13,7 @@
                                      
                                                       <form  class="form-horizontal" method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                                             <div class="box-body">
-                                                      @if(auth()->user()->isAdmin_Master == 1)
+                                                @if( auth()->user()->isAdmin == '010')
                                                       <div class="form-group">
                                                                   <label for="inputEmail3" class="col-sm-2 control-label">ชื่อผู้ใช้/username</label>
                                                 

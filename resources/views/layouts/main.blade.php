@@ -269,7 +269,7 @@ body {
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                           <ul class="nav navbar-nav">
-                              @if(auth()->user()->isAdmin == 1)
+                              @if(auth()->user()->isAdmin == '001' || auth()->user()->isAdmin == '010')
                             <li class="active"><a href="{{url('/home')}}"><span>หน้าแรก</span></a></li>
                             <li ><a href="{{url('/ngg_work')}}"><span>ข้อมูลผู้สมัคร</span></a></li>
                             <li class="dropdown">
@@ -299,7 +299,7 @@ body {
                               <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">การจัดการแบบประเมิน<span class="caret"></span></a>
                                   <ul class="dropdown-menu" role="menu">
-                                      @if(auth()->user()->isAdmin_Master == 1)
+                                      @if(auth()->user()->isAdmin == '010')
                                       <li ><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
 
                                       <li class="divider"></li>
@@ -314,7 +314,7 @@ body {
                                 <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">การจัดการโดยรวม<span class="caret"></span></a>
                                   <ul class="dropdown-menu" role="menu">
-                                      @if(auth()->user()->isAdmin_Master == 1)
+                                      @if(auth()->user()->isAdmin == '010')
                                       <li ><a href="{{url('/user_setting') }}">การจัดการผู้ใช้</a></li>
 
                                       <li class="divider"></li>
@@ -336,7 +336,7 @@ body {
                                   </ul>
                                 </li>
                             @endif
-                            @if(auth()->user()->isAdmin == 0)
+                            @if(auth()->user()->isAdmin == '000')
                             <li class="active"  ><a href="{{url('/evatestversion') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
                            @endif
     

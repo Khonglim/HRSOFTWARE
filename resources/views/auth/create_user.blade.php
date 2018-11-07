@@ -13,10 +13,10 @@
                                      
                                                     
                                             <div class="box-body">
-                                                      @if(auth()->user()->isAdmin_Master == 1)
+                                                    @if( auth()->user()->isAdmin == '010')
                                                        <form method="POST" action="{{ url('user_setting') }}" aria-label="{{ __('Register') }}">
-                        @csrf
-                        <div class="form-group row">
+                                                            @csrf
+                                                       <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
