@@ -396,6 +396,7 @@ Route::get('narathorn',function(){
             
 });
 
+Route::resource('user_setting','User_settingController');
 
 
 

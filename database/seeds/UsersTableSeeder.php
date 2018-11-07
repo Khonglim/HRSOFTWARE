@@ -13,13 +13,12 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'admin',
-            'isAdmin'=>'1',
+            'isAdmin'=>'001',
             'password' => bcrypt('123456'),
         ]);
         DB::table('users')->insert([
             'name' => 'adminmaster',
-            'isAdmin'=>'1',
-            'isAdmin_Master'=>'1',
+            'isAdmin'=>'010',
             'password' => bcrypt('123456789'),
         ]);
         DB::table('users')->insert([

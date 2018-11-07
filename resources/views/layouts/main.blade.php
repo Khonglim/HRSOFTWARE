@@ -315,7 +315,7 @@ body {
                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">การจัดการโดยรวม<span class="caret"></span></a>
                                   <ul class="dropdown-menu" role="menu">
                                       @if(auth()->user()->isAdmin_Master == 1)
-                                      <li ><a href="{{url('/summevav2') }}">การจัดการผู้ใช้</a></li>
+                                      <li ><a href="{{url('/user_setting') }}">การจัดการผู้ใช้</a></li>
 
                                       <li class="divider"></li>
 
@@ -436,6 +436,9 @@ body {
       $('#employee').DataTable()
       $('#testmbti').DataTable()
       $('#conall').DataTable()
+      $('#user_setting').DataTable()
+  
+      
     });
   </script>
   
