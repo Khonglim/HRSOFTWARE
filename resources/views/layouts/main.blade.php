@@ -324,7 +324,7 @@ body {
                                        <li class="divider"></li>
                                        <li><a href="{{url('/levelsmanage') }}">จัดการระดับ</a></li>
                                        <li class="divider"></li>
-                                       <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
+                                       <li><a href="{{url('/nggemployee') }}">จัดการผนักงาน</a></li>
                                        <li class="divider"></li>
                                      
                                   </ul>

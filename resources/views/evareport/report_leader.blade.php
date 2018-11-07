@@ -55,11 +55,48 @@
                                       <?php $f=$part->part;?> 
                                         @break
                                 @endswitch
-
-                                
-                        
                                  @endforeach 
-                    <br><br>           
+                                  <br><br>
+
+  <div class="container">
+    @foreach($ngg_employee as $ngg_emp)
+              @if( $ngg_emp->nem_id == $idtest)
+              <?php  $istest=$ngg_emp->nem_thai_firstname; ?>
+     <div class="row">
+       <div class="col-md-4">
+           <label for="identity" class="col-md-4 control-label">ชื่อ-สกุล:</label> 
+           {{$ngg_emp->nem_thai_title}}{{$ngg_emp->nem_thai_firstname}}  {{$ngg_emp->nem_thai_lastname}}
+           
+         </div>
+         <div class="col-md-4">
+           <label for="identity" class="col-md-4 control-label">บริษัท:</label> 
+              @foreach($ngg_company as $ngg_com)
+                @if($ngg_com->ncp_id == $ngg_emp->nem_company_id)
+                  {{$ngg_com->ncp_name}}
+                @endif
+              @endforeach
+            </div> 
+          <div class="col-md-4">
+           <label for="identity" class="col-md-4 control-label"> แผนก:</label> 
+           @foreach($ngg_department as $ngg_depart)
+                @if($ngg_depart->ndp_id == $ngg_emp->nem_department_id)
+                  {{$ngg_depart->ndp_name}}
+                @endif
+              @endforeach
+         </div>
+         <div class="col-md-4">
+           <label for="identity" class="col-md-4 control-label"> ตำแหน่ง:</label> 
+            @foreach($ngg_position as $position)
+                @if( $position->id == $ngg_emp->nem_position_id)
+                    {{$position->nps_name}}
+                 @endif
+            @endforeach
+         </div>
+     </div>
+     @endif
+      @endforeach                    
+  </div>  
+                           
  <div class="container">
                  <table>
                         <thead>
@@ -530,10 +567,12 @@
     <div id="piechart" class="chart" style="width: 550px; height: 400px;" ></div>
   </div>
   </div>
+
 </div>
-<div class="container">
-<input type="button" value="ปริ้นเฉพาะใน divprint" onclick="javascript:this.style.display='none';window.print();">
+<div class="container" style="text-align: center;">
+<input type="button" value="พิมพ์เอกสาร" class="btn btn-primary" onclick="javascript:this.style.display='none';window.print();">
 </div>
+<br><br>
                     @else
               <h1> ยังไม่มีข้อมูล</h1>
                    @endif

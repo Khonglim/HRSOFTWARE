@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Formfor;
 use App\Partofv2;
 use App\Questionv2;
+use App\Ngg_department;
+use App\Ngg_company;
+use App\Ngg_position;
 use App\Description;
 use App\Ngg_employee;
 use App\Employeetotest;
@@ -20,6 +23,11 @@ class EvareportController extends Controller
      public function blind_report_leader($id)
     {
           if($id !== '') {
+
+             $ngg_department = Ngg_department::where('ndp_enable', '=', 1)->get();
+            $ngg_company = Ngg_company::where('ncp_enable', '=', 1)->get();
+            $ngg_position = Ngg_position::where('nps_enable', '=', 1)->get();
+
 
             $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
@@ -48,7 +56,10 @@ class EvareportController extends Controller
                 'idtest' => $idtest,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
                 'timeattendant'=>$timeattendant,
-                'point'=> $point
+                'point'=> $point,
+                'ngg_department' => $ngg_department,
+                'ngg_company' => $ngg_company,
+                'ngg_position' => $ngg_position
             );
 
             return view('evareport/blind_report_leader',$data);
@@ -60,6 +71,10 @@ class EvareportController extends Controller
     public function report_leader($id)
     {
           if($id !== '') {
+            $ngg_department = Ngg_department::where('ndp_enable', '=', 1)->get();
+            $ngg_company = Ngg_company::where('ncp_enable', '=', 1)->get();
+            $ngg_position = Ngg_position::where('nps_enable', '=', 1)->get();
+            
 
             $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
             $employeetotests = DB::table('employeetotest')->where('nee_by_employee', '=', $id)->get();
@@ -87,7 +102,10 @@ class EvareportController extends Controller
                 'idtest' => $idtest,
                 'ngg_evaresult_comment'=>$ngg_evaresult_comment,
                 'timeattendant'=>$timeattendant,
-                'point'=> $point
+                'point'=> $point,
+                'ngg_department' => $ngg_department,
+                'ngg_company' => $ngg_company,
+                'ngg_position' => $ngg_position
             );
 
             return view('evareport/report_leader',$data);
