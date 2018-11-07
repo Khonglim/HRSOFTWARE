@@ -61,7 +61,9 @@
 						<li class="nav-item">
 								<a class="nav-link cool" href="{{url('/userlogin') }}">ทำแบบประเมิน360</a>
 							</li>
-						 
+							<li class="nav-item">
+									<a class="nav-link cool" href="{{url('/manpowercreate') }}">คำขอกำลังคน</a>
+								</li>
 					</ul>
 
 				</div>

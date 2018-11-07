@@ -10,15 +10,24 @@
               <div class="panel-body">
                   {{Form::open(['url'=>'start','method'=>'POST'])}}
                 <div class="row">
-                  <div class="col-xs-12">
+                  <div class="col-md-12">
+                      <br><br>
                       <div align="right">
                           <label class="col-xs-3">ชื่อ :</label>
                       </div>
-                      <div class="col-xs-3">
+                      <div class="col-md-6">
                           {{Form::text('name','',['class'=>'form-control','required','placeholder'=>"กรุณาระบุชื่อ"])}}   
                          
                       </div>
-                      <div class="col-xs-3">
+                      <div class="row">
+
+                        <br><br> 
+
+                      </div>
+                      <div align="right">
+                        <label class="col-xs-3">นามสกุล:</label>
+                    </div>
+                      <div class="col-md-6">
                           {{Form::text('lastname','',['class'=>'form-control','required','placeholder'=>"กรุณาระบุนามสกุล"])}}   
                    
                       </div>

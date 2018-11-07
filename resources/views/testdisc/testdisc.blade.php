@@ -38,7 +38,7 @@
                     <div class="panel-body">
 
                             {{Form::open(['url'=>'ansdisc','method'=>'POST','id'=>'testdisc' , 'onSubmit'=>'JavaScript:return fncSubmit();'])}}
-                            {{ csrf_field() }}
+                            @csrf
                             @forelse ($testemp as $c)
                             <?php  $r++; ?>
                             @if((($c->name ==  $name =  $_POST["name"]) && ($c->lastname ==  $lastname =  $_POST["lastname"] )))
