@@ -150,6 +150,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
        
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
        
 
         /*
@@ -217,7 +218,7 @@ return [
         'Html' => Collective\Html\HtmlFacades::class,
         
         'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
-
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
     ],
 
 ];

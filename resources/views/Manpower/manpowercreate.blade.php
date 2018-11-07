@@ -8,9 +8,11 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Manpower</title>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-            crossorigin="anonymous">
-
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
+    
+     
+            <script src='https://www.google.com/recaptcha/api.js'></script>
       <style>
             body {
                   font-family: 'Prompt', sans-serif;
@@ -306,45 +308,51 @@
                               </div>
                         </div>
 
-
+<br><br>
                         <div class="row">
-
+                                    <div class="col-md-4 "></div>
                                     <div class="col-md-4 ">
                                           <div class="form-group ">
-                                                <label class="control-label">ผู้ขอจ้าง/Requested<small class="text-danger">*</small></label>                                    {{Form::text('tel','',['class'=>'form-control','id'=>'tel'])}}
+                                               
+                                                <div class="col-sm-4">
+
+                                                            <div class="sigPad">
+                                                                    <ul class="sigNav">
+                                                                      <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                                                                      <li class="clearButton"><a href="#clear">Clear</a></li>
+                                                                    </ul>
+                                                                    <div class="sig sigWrapper">
+                                                                      <div class="typed"></div>
+                                                                      <canvas class="pad" width="220" height="70"></canvas>
+                                                                      <input type="hidden" name="signa1_60" class="output">
+                            
+                                                                    </div>
+                                                                  </div>
+                                                      </div>
+                                                      <br>
+                                                      <label class="control-label">ผู้ขอจ้าง/Requested<small class="text-danger">*</small></label>
+                                                {{Form::text('tel','',['class'=>'form-control','id'=>'tel'])}}
             
                                           </div>
-            
+                                          {!! NoCaptcha::display() !!}
+
+                                          @if ($errors->has('g-recaptcha-response'))
+                                          <span class="help-block">
+                                              <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                          </span>
+                                      @endif
                                     </div>
-            
-                                  
-                                
-            
-            
-            
-                              </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                    
+                              </div> <br>
+                            <center> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง">  </center> 
+      
             </form>
       </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
       <script type="text/javascript">
             function sizeFrame() {
                   $("#iframeid", top.document).css({ height: 0 });
@@ -365,7 +373,13 @@
 
 
 
-
+ 
+<script>
+            $(document).ready(function() {
+              $('.sigPad').signaturePad({drawOnly:true});
+                     
+            });
+          </script>
 
 
 
