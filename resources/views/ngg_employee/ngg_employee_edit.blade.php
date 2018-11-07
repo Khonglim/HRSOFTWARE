@@ -203,7 +203,7 @@
                 </div>
                 <div class="col-md-3"> 
                                         <div class="form-group label-floating">
-                         <label class="control-label">Sector</label>
+                         <label class="control-label">เพศ</label>
                               <select name="sex" class=" form-control">
                                 @if($sex =='ชาย')
                                   <option value="ชาย" selected="true">ชาย</option>
@@ -236,8 +236,9 @@
     </div>   
           <div class="row">
       <div class="col-md-6">
-        {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+        
         {{ Html::link('nggemployee','Back',array('class ' => 'btn btn-primary')) }}
+        {{ Form::submit('Seve',['class'=> 'btn btn-success'])}}
         {{Form::close()}}
     </div>
    

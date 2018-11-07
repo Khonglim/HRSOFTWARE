@@ -33,13 +33,13 @@
           <div class="box-body" >
              <div class="row">    
                            
-                   <div class="col-md-6"> 
+                 <div class="col-md-6"> 
                         <div class="form-group label-floating">
                                 <label class="control-label">รหัสพนักงาน</label>
                                  {{Form::text('code','',['class'=>'form-control','required'])}}
                         </div>  
                 </div>  
-                        <div class="col-md-6"> 
+                   <div class="col-md-6"> 
                                  <div class="form-group label-floating">
                             <label class="control-label">เลขบัตรประจำตัวประชาชน</label>
                             {{Form::text('idcard','',['class'=>'form-control','required'])}}

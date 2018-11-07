@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('content')
+  @if(auth()->user()->isAdmin_Master == 1)
 <div class="content-wrapper">
  <div class="content container">
   <div class="row">
@@ -58,4 +59,12 @@
 </div>
 </div>
 </div>
+@else
+<div class="content-wrapper">
+ <div class="content container">
+<h1 style="text-align: center; color: red;">คุณไม่มีสิทธิ์เข้าถึง</h1>
+</div>
+</div>
+
+@endif
 @endsection

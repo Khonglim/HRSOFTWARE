@@ -307,9 +307,25 @@ body {
                                       @endif
                                        <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
                                        <li class="divider"></li>
-                                       <li><a href="{{url('/nggemployee') }}">จัดการพนักงาน</a></li>
-                                       <li class="divider"></li>
                                        <li><a href="{{url('/timeattendant') }}">จัดการเวลาผู้ประเมิน</a></li>
+                                     
+                                  </ul>
+                                </li>
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">การจัดการโดยรวม<span class="caret"></span></a>
+                                  <ul class="dropdown-menu" role="menu">
+                                       <li><a href="{{url('/companysmanage') }}">จัดการบริษัท</a></li>
+                                       <li class="divider"></li>
+                                       <li><a href="{{url('/departmentsmanage') }}">จัดการแผนก</a></li>
+                                       <li class="divider"></li>
+                                       <li><a href="{{url('/positionsmanage') }}">จัดการตำแหน่ง</a></li>
+                                       <li class="divider"></li>
+                                       <li><a href="{{url('/sectorsmanage') }}">จัดการsector</a></li>
+                                       <li class="divider"></li>
+                                       <li><a href="{{url('/levelsmanage') }}">จัดการระดับ</a></li>
+                                       <li class="divider"></li>
+                                       <li><a href="{{url('/nggemployee') }}">จัดการผนักงาน</a></li>
+                                       <li class="divider"></li>
                                      
                                   </ul>
                                 </li>

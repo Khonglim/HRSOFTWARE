@@ -129,8 +129,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/saveep', 'EmployeeController@index')->name('saveep');
 Route::get('/dynamicdependent','DynamicDependent@index');
-Route::get('states/get/{id}', 'DynamicDependent@getStates');
-Route::get('states2/get/{id}', 'DynamicDependent@getStates');
+Route::get('states/get/{id}','DynamicDependent@getStates');
+Route::get('states2/get/{id}','DynamicDependent@getStates');
 
 Route::get('/pdfemployee/{id}','PDFController@pdfemployee' )->middleware('auth');
 Route::get('/pdftestdisc/{id}','PDFController@pdftestdisc' )->middleware('auth');
@@ -142,7 +142,7 @@ Route::get('/pdfcon_staf/{id}','PDFController@pdfoper_staff' )->middleware('auth
 
 Route::get('/pdfcon_sup/{id}','PDFController@pdfoper_sup' )->middleware('auth');
 
-
+Route::resource('/companysmanage', 'CompanyController')->middleware('auth');
 
 Route::get('summbti', function () {
     
