@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Company;
+use App\Ngg_company;
 
 class CompanyController extends Controller
 {
@@ -15,13 +15,13 @@ class CompanyController extends Controller
     public function index()
     {
         
-        $company = Company::where('enable', '=', 1)->get();
+        $company = Ngg_company::where('ncp_enable', '=', 1)->get();
         $data = array(
             'company' => $company
         );
 
         
-        return view('company/company',$data );
+        return view('ngg_company/ngg_company_index',$data);
     }
 
     /**
@@ -31,7 +31,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('company/fromcreatcompany');
+        return view('ngg_company/ngg_company_create');
     }
 
     /**
