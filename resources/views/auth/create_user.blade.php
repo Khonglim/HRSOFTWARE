@@ -63,12 +63,12 @@
                                      <option value="000">ผู้ใช้ทั่วไป</option>
                                      <option value="001">admin</option>
                                      <option value="010">admin_Master</option>
-                                     <option value="100">หัวหน้าส่วนงานสรรหาว่าจ้าง/Sup.HR Recruitment</option>
-                                     <option value="011">ประธานกรรมการ MD</option>
-                                     <option value="101">ผู้บังคับบัญชาต้นสังกัด</option>
-                                     <option value="110">ผู้จัดการฝ่าย</option>
-                                     <option value="111">ฝ่ายทรัพยากรบุคคล</option>
-                                     <option value="111">กรรมการผู้จัดการ/ผู้จัดการทั่วไป</option>
+                                     <option value="100">หัวหน้าส่วนงานสรรหาว่าจ้าง/Sup.HR Recruitment  (สำหรับขอกำลังคน)</option>
+                                     <option value="011">ประธานกรรมการ MD (สำหรับขอกำลังคน)</option>
+                                     <option value="101">ผู้บังคับบัญชาต้นสังกัด  (สำหรับการประเมินทดลองงาน)</option>
+                                     <option value="110">ผู้จัดการฝ่าย  (สำหรับการประเมินทดลองงาน)</option>
+                                     <option value="111">ฝ่ายทรัพยากรบุคคล  (สำหรับการประเมินทดลองงาน)</option>
+                                     <option value="111">กรรมการผู้จัดการ/ผู้จัดการทั่วไป (สำหรับการประเมินทดลองงาน)</option>
                                        </select>
                                     </div>
                                 </div>

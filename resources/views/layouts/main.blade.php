@@ -336,11 +336,13 @@ body {
                                   </ul>
                                 </li>
                             @endif
-                            @if(auth()->user()->isAdmin == '000')
-                            <li class="active"  ><a href="{{url('/evatestversion') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
+                           
+                           @if( auth()->user()->isAdmin == '100' )
+                           <li ><a href="{{url('/home') }}"><i class="fa fa-book"></i> <span>ตรวจสอบคำขอกำลังคน</span></a></li>
                            @endif
-    
-    
+                           @if(auth()->user()->isAdmin == '000'|| auth()->user()->isAdmin == '100' )
+                           <li class="active"  ><a href="{{url('/evatestversion') }}"><i class="fa fa-book"></i> <span>Evaluation Testing</span></a></li>
+                          @endif
                           </ul>
                          
                         </div>

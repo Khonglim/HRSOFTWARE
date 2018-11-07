@@ -4,6 +4,12 @@
       <div class="content container">
                   <a href="user_setting/create" class="btn btn-success"><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
                   <br><br>
+                  @if(Session::has('flash_message') )
+                  
+                  <div class="col-md-3">
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
+                  </div>
+    @endif
             <div class="col-md-12">
                   <div class="box">
                         <div class="box-header">

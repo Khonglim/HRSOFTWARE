@@ -11,7 +11,8 @@
                                           <!-- /.box-header -->
                                           <!-- form start -->
                                      
-                                                      <form  class="form-horizontal" method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                                                 
+                                                          {{Form::open(['route'=>['user_setting.update',$user->id],'method'=>'PUT','class' => 'form-horizontal'])}}
                                             <div class="box-body">
                                                 @if( auth()->user()->isAdmin == '010')
                                                       <div class="form-group">
@@ -25,15 +26,15 @@
                                                                   <label for="inputPassword3" class="col-sm-2 control-label">รหัสผ่าน/Password</label>
                                                 
                                                                   <div class="col-sm-5">
-                                                                    <input type="password" class="form-control" id="inputPassword3" placeholder="ค่าเริ่มต้นคือเลขบัตรประชาชน">
+                                                                    <input type="password" class="form-control" id="inputPassword3" placeholder="ค่าเริ่มต้นคือเลขบัตรประชาชน" value="">
                                                                   </div>
                                                                 </div>
                                                             
                                                               </div>
                                                               <!-- /.box-body -->
                                                               <div class="box-footer">
-                                                                <button  class="btn btn-default">Cancel</button>
-                                                                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                                                              
+                                                               <center><button type="submit" class="btn btn-info pull-center">บันทึก</button></center> 
                                                               </div>
                                                               <!-- /.box-footer -->
 
@@ -44,7 +45,7 @@
                                                          คุณไม่มีสิทธิ์แก้ไข
                                                          @endif
                                            
-                                          </form>
+                                                         {{ Form::close()}}    
                                         </div>
                          
                   </div>

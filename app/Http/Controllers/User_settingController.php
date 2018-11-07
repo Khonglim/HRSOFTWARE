@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\User;
 class User_settingController extends Controller
@@ -46,8 +47,9 @@ class User_settingController extends Controller
         $user = new User;
         $user->name = $request->name;
         $user->password = bcrypt($request->password);
+        $user->isAdmin = $request->isAdmin;
         $user->save();
-
+        Session::flash('flash_message','บันทึกสำเร็จ!!');
         return redirect('user_setting');
     }
 
@@ -90,7 +92,13 @@ class User_settingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->password = bcrypt($request->password);
+        $user->isAdmin = $request->isAdmin;
+        $user->save();
+        Session::flash('flash_message','อัพเดทข้อมูลสำเร็จ!!');
+        return redirect('user_setting');
     }
 
     /**
@@ -101,6 +109,9 @@ class User_settingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lib = User::find($id);
+        $lib->delete();
+        Session::flash('flash_message', 'ลบสำเร็จ!!');
+        return redirect('user_setting');
     }
 }
