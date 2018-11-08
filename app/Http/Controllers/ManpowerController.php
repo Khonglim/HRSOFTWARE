@@ -37,6 +37,8 @@ class ManpowerController extends Controller
     public function store(Request $request)
     {
         $manpower = new Manpower;
+        $manpower->internal_Recruit = $request->internal_Recruit;
+        $manpower->external_Recruit = $request->external_Recruit;
         $manpower->company = $request->company;
         $manpower->position_required = $request->position_required;
         $manpower->section = $request->section;
