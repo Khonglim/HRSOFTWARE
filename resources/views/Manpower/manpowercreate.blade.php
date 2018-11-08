@@ -346,7 +346,7 @@
                                                                     <div class="sig sigWrapper">
                                                                       <div class="typed"></div>
                                                                       <canvas class="pad" width="220" height="70"></canvas>
-                                                                      <input type="hidden" name="signa1_60" class="output" required>
+                                                                      <input type="hidden" name="signa1_requested" class="output" required>
                             
                                                                     </div>
                                                                   </div>
