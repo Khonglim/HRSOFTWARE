@@ -86,7 +86,7 @@ class NggemployeeController extends Controller
          $ngg_employee->nem_enducation=Input::get('enducation');
          $ngg_employee->save();
          Session::flash('flash_message','บันทึกสำเร็จ!!');
-         return redirect()->route("home");
+         return redirect("nggemployee");
 
     }
 
@@ -241,7 +241,7 @@ class NggemployeeController extends Controller
            
             }
             Session::flash('flash_message','บันทึกการแก้ไขเรียบร้อย!!');
-        return redirect()->route("home");
+        return redirect("nggemployee");
     }
 
     /**
@@ -257,6 +257,7 @@ class NggemployeeController extends Controller
             ->where('nem_id', $id)
             ->update(['nem_enable' => 0]);
             }
-            return redirect('nggemployee');
+            Session::flash('flash_message','ลบเรียบร้อย!!');
+            return redirect("nggemployee");
     }
 }

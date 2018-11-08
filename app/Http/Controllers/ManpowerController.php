@@ -13,6 +13,11 @@ class ManpowerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $manpower = Manpower::all();
@@ -118,7 +123,13 @@ class ManpowerController extends Controller
      */
     public function edit($id)
     {
-        //
+        if($id !== '') {
+            $manpower = Manpower::find($id);
+            $data = array(
+                'manpower' =>  $manpower
+            );
+            return view('Manpower/send_manpower',$data);
+        }
     }
 
     /**

@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
-  @if(auth()->user()->isAdmin_Master == 1)
 <div class="content-wrapper">
  <div class="content container">
   <div class="row">
+   
 <div class="col-md-12">
         <div class="box">
           <div class="box-header">
@@ -12,6 +12,7 @@
            <?php    $i=''; $j=''; $k=''; $l='leader';  $m='';?>
           <!-- /.box-header -->
           <div class="box-body">
+             @if(auth()->user()->isAdmin == '010')
           <table id="employee" class="table table-bordered table-striped">
              <thead>
               <tr>
@@ -52,6 +53,10 @@
               </tr>
               </tfoot>
             </table>
+            @else
+
+<h1 style="text-align: center; color: red;">คุณไม่มีสิทธิ์เข้าถึง</h1>
+@endif
           </div>
         </div>
       </div>
@@ -59,12 +64,5 @@
 </div>
 </div>
 </div>
-@else
-<div class="content-wrapper">
- <div class="content container">
-<h1 style="text-align: center; color: red;">คุณไม่มีสิทธิ์เข้าถึง</h1>
-</div>
-</div>
 
-@endif
 @endsection
