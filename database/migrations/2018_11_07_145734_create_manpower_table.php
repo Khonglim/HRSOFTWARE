@@ -64,6 +64,10 @@ class CreateManpowerTable extends Migration
             $table->string('other_experience_com',100)->nullable();
             $table->longText('signa1_60')->nullable();
             $table->char('requested',100)->nullable();
+            $table->tinyInteger('man_enable')->default('1');
+            $table->tinyInteger('Sup_enable')->default('1');
+            $table->tinyInteger('MD_enable')->default('1');
+            $table->tinyInteger('Send_enable')->default('1');
             $table->timestamps();
 
         });
