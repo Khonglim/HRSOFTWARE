@@ -25,30 +25,52 @@
 
       <div class="container">
 
+                  @if(Session::has('flash_message') )
+
+                  <div class="alert alert-success d-flex align-items-center"> {!! session('flash_message') !!}</div>
+              
+                  @endif
             <form action="{{url('/manpower')}}"  id="inviter" method="POST" >
                   @csrf
                   <div class="row">
+                              <div class="col-md-4 ">
+                                    การสรรหา<b class="text-danger">*</b>
+                              <div class="form-group ">
+                                          <div class="form-check">
+                                                <label class="form-check-label">
+                                                              <input type="checkbox" class="form-check-input" name="external_Recruit" value="สรรหาภายนอก" >สรรหาภายนอก/(External Recruit)
+                                                            </label>
+                                                            
+                                                            <label class="form-check-label">
+                                                                        <input type="checkbox" class="form-check-input" name="internal_Recruit" value="สรรหาภายใน" >สรรหาภายใน/(Internal Recruit)
+                                                                      </label>
+                                          </div>
+                              </div>
 
+                  </div>
+            </div>
+                  <div class="row">
+                             
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">บริษัทต้นสังกัด/company<small class="text-danger">*</small></label>                                    
-                                    {{Form::text('company','',['class'=>'form-control','id'=>'company'])}}
+                                    <label class="control-label">บริษัทต้นสังกัด/company<b class="text-danger">*</b></label>                                    
+                                    {{Form::text('company','',['class'=>'form-control','id'=>'company','required'])}}
                               </div>
 
                         </div>
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">ตำแหน่งที่ต้องการ/Position Required<small class="text-danger">*</small></label>                                   
-                                    {{Form::text('position_required','',['class'=>'form-control','id'=>'position_required'])}}
+                                    <label class="control-label">ตำแหน่งที่ต้องการ/Position Required<b class="text-danger">*</b></label>                                   
+                                    {{Form::text('position_required','',['class'=>'form-control','id'=>'position_required','required'])}}
                               </div>
 
                         </div>
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">แผนก/ส่วน/Section/Dividion<small class="text-danger">*</small></label>                                    
-                                    {{Form::text('section','',['class'=>'form-control','id'=>'section'])}}    
+                                    <label class="control-label">แผนก/ส่วน/Section/Dividion<b class="text-danger">*</b></label>                                    
+                                    {{Form::text('section','',['class'=>'form-control','id'=>'section','required'])}}    
                               </div>
 
                         </div>
@@ -60,24 +82,24 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">วันที่ต้องการ/Date Required<small class="text-danger">*</small></label>                                   
-                                    {{Form::date('date_required','',['class'=>'form-control','id'=>'date_required'])}}
+                                    <label class="control-label">วันที่ต้องการ/Date Required<b class="text-danger">*</b></label>                                   
+                                    {{Form::date('date_required','',['class'=>'form-control','id'=>'date_required','required'])}}
                               </div>
 
                         </div>
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">จำนวนพนักงานที่ต้องการ/Number<small class="text-danger">*</small> </label>                                    
-                                    {{Form::Number('number','',['class'=>'form-control','id'=>'number'])}}
+                                    <label class="control-label">จำนวนพนักงานที่ต้องการ/Number<b class="text-danger">*</b> </label>                                    
+                                    {{Form::Number('number','',['class'=>'form-control','id'=>'number','required'])}}
                               </div>
 
                         </div>
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">อายุ/Age<small class="text-danger">*</small></label> 
-                                    {{Form::Number('age','',['class'=>'form-control','id'=>'age'])}}
+                                    <label class="control-label">อายุ/Age<b class="text-danger">*</b></label> 
+                                    {{Form::Number('age','',['class'=>'form-control','id'=>'age','required'])}}
                               </div>
 
                         </div>
@@ -85,7 +107,7 @@
 
                   <div class="row">
                         <div class="col-md-5 ">
-                              ประเภทของการจ้างงาน/Type of Employent
+                              ประเภทของการจ้างงาน/Type of Employent<b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
@@ -133,7 +155,7 @@
 
                         </div>
                         <div class="col-md-5 ">
-                              ประเภทของความต้องการ/Type of Rquirement
+                              ประเภทของความต้องการ/Type of Rquirement<b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
@@ -156,7 +178,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">อัตราจ้าง/Salary<small class="text-danger">*</small></label>                                    
+                                    <label class="control-label">อัตราจ้าง/Salary<b class="text-danger">*</b></label>                                    
                                     {{Form::text('ratesalary','',['class'=>'form-control','id'=>'ratesalary'])}}
                               </div>
 
@@ -166,7 +188,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">สวัสดิการอื่นๆ<small class="text-danger">*</small></label>                                    
+                                    <label class="control-label">สวัสดิการอื่นๆ<b class="text-danger">*</b></label>                                    
                                     <textarea class="form-control" rows="1" id="benefits" name="benefits"></textarea>
                               </div>
 
@@ -174,7 +196,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">ลักษณะงานที่ทำโดยสังเขป/Description<small class="text-danger">*</small></label>
+                                    <label class="control-label">ลักษณะงานที่ทำโดยสังเขป/Description<b class="text-danger">*</b></label>
                                     <textarea class="form-control" rows="1" id="description" name="description"></textarea>
                               </div>
 
@@ -184,17 +206,17 @@
 
                   <div class="row">
                         <div class="col-md-5 ">
-                              คุณสมบัติ/Qualification : เพศ/Sex
+                              คุณสมบัติ/Qualification : เพศ/Sex<b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                                    <input type="checkbox" class="form-check-input" name="gender" value="ชาย">ชาย/Male
+                                                                    <input type="radio" class="form-check-input" name="gender" value="ชาย">ชาย/Male
                                                                   </label>
 
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                                          <input type="checkbox" class="form-check-input" name="gender" value="หญิง">หญิง/Female
+                                                                          <input type="radio" class="form-check-input" name="gender" value="หญิง">หญิง/Female
                                                                           
                                                                         </label>
                                     </div>
@@ -202,7 +224,7 @@
                         </div>
 
                         <div class="col-md-6 ">
-                              การศึกษา/Education
+                              การศึกษา/Education<b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
@@ -296,7 +318,7 @@
                                                 <div class="form-check">
                                                        
                                                             <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="additional_experience" value="additional">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) <input type="text" name="additional_com" id="additional_com" class="form-control_com" placeholder="ระบุ">
+                                                                        <input type="checkbox" class="form-check-input" name="additional_experience" value="additional">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) <input type="text" name="additional_com" id="additional_com" class="form-control" placeholder="ระบุ">
                                                                   </label>
                                                       </div>
                                                       <div class="form-check">
@@ -310,12 +332,12 @@
 
 <br><br>
                         <div class="row">
-                                    <div class="col-md-4 "></div>
-                                    <div class="col-md-4 ">
+                                    <div class="col-md-3 "></div>
+                                    <div class="col-md-6 ">
                                           <div class="form-group ">
-                                               
+                                                      <b class="text-danger">*จำเป็นต้องเซ็นชื่อ(อย่ากดส่งคำร้องหากท่านยังไม่ลงลายเซ็น)</b>
                                                 <div class="col-sm-4">
-
+                                                           
                                                             <div class="sigPad">
                                                                     <ul class="sigNav">
                                                                       <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
@@ -324,13 +346,13 @@
                                                                     <div class="sig sigWrapper">
                                                                       <div class="typed"></div>
                                                                       <canvas class="pad" width="220" height="70"></canvas>
-                                                                      <input type="hidden" name="signa1_60" class="output">
+                                                                      <input type="hidden" name="signa1_60" class="output" required>
                             
                                                                     </div>
                                                                   </div>
                                                       </div>
                                                       <br>
-                                                      <label class="control-label">ผู้ขอจ้าง/Requested<small class="text-danger">*</small></label>
+                                                      <label class="control-label">ผู้ขอจ้าง/Requested<b class="text-danger">*</b></label>
                                                 {{Form::text('requested','',['class'=>'form-control','id'=>'requested'])}}
             
                                           </div>
@@ -338,13 +360,20 @@
 
                                           @if ($errors->has('g-recaptcha-response'))
                                           <span class="help-block">
-                                              <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                              <strong class="text-danger">{{ $errors->first('g-recaptcha-response') }}</strong>
                                           </span>
                                       @endif
                                     </div>
                                     
                               </div> <br>
-                            <center> <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"> </span> </center> 
+                            <center> 
+                                    <b class="text-danger">(อย่ากดส่งคำร้องหากท่านยังไม่ลงลายเซ็น)</b><br>
+                              <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"> </span> 
+                        <br>
+                              <strong class="text-danger">โปรดอ่าน:หากกดส่งคำร้องครั้งแรกเกิดผิดพลาด กรุณาตรวจสอบข้อมูลทั้งหมดอีกครั้งว่าถูกต้องหรือไม่เมื่อกดส่งคำร้องครั้งอีกครั้ง</strong>
+                        
+                        
+                            </center> 
       
             </form>
       </div>

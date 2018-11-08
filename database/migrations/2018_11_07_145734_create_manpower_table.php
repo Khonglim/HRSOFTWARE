@@ -15,6 +15,8 @@ class CreateManpowerTable extends Migration
     {
         Schema::create('manpower', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('external_Recruit',100)->nullable();
+            $table->char('internal_Recruit',100)->nullable();
             $table->char('company',100)->nullable();
             $table->char('position_required',100)->nullable();
             $table->char('section',100)->nullable();
@@ -26,7 +28,7 @@ class CreateManpowerTable extends Migration
             $table->char('subcontract',100)->nullable();
             $table->char('daily',100)->nullable();
             $table->char('monthly',100)->nullable();
-            $table->char('start',100)->nullable();
+         
             $table->char('checkstart',100)->nullable();
             $table->char('timestart',100)->nullable();
             $table->char('timeend',100)->nullable();
@@ -44,7 +46,7 @@ class CreateManpowerTable extends Migration
             $table->char('high_vocational',100)->nullable();
             $table->char('undergraduate',100)->nullable();
             $table->char('other_education',100)->nullable();
-            $table->char('foreign_lnguages',100)->nullable();
+            $table->char('foreign_languages',100)->nullable();
             $table->string('languages_name',100)->nullable();
             $table->char('typing',100)->nullable();
             $table->string('typing_name',100)->nullable();
@@ -62,6 +64,10 @@ class CreateManpowerTable extends Migration
             $table->string('other_experience_com',100)->nullable();
             $table->longText('signa1_60')->nullable();
             $table->char('requested',100)->nullable();
+            $table->tinyInteger('man_enable')->default('1');
+            $table->tinyInteger('Sup_enable')->default('0');
+            $table->tinyInteger('MD_enable')->default('0');
+            $table->tinyInteger('Send_enable')->default('0');
             $table->timestamps();
 
         });

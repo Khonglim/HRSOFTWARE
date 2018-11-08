@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
+Route::resource('Email_send','Email_sendController');
 Route::resource('employee','EmployeeController');
 
 Route::get('/ngg_work', 'EmployeeController@index')->middleware('auth');
@@ -44,9 +45,6 @@ Route::get('/manpowercreate', function ()
     return view('Manpower.manpower');
 
 });
-
-
-
 
 Route::resource('rate','InterviewController');
 
