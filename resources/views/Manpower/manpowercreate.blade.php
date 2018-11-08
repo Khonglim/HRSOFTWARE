@@ -324,7 +324,7 @@
                                                       <div class="form-check">
                                                        
                                                                   <label class="form-check-label">
-                                                                              <input type="checkbox" class="form-check-input" name="other_experience" value="other3">อื่นๆ/Other <input type="text" name="other_experience_com" id="other_experience_com" class="form-control" placeholder="ระบุ">
+                                                                              <input type="checkbox" class="form-check-input" name="other_experience" value="other3">อื่นๆ/Other <input type="text" name="other_education" id="other_education" class="form-control" placeholder="ระบุ">
                                                                         </label>
                                       </div>
                               </div>
