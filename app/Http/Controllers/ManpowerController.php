@@ -86,6 +86,7 @@ class ManpowerController extends Controller
         $manpower->requested = $request->requested;
         $manpower->knowledge_name = $request->knowledge_name;
         $manpower->other_skill_name = $request->other_skill_name;
+        $manpower->other_experience_com = $request->other_experience_com;
         $manpower->save();
 
 
