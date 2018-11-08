@@ -37,6 +37,14 @@ Route::resource('reset_staff','Reset_staff_operController');
 
 Route::resource('reset_sup','Reset_sup_operController');
 
+Route::resource('manpower','ManpowerController');
+
+Route::get('/manpowercreate', function () 
+{
+    return view('Manpower.manpower');
+
+});
+
 
 
 
@@ -389,6 +397,7 @@ Route::get('narathorn',function(){
             
 });
 
+Route::resource('user_setting','User_settingController');
 
 
 
