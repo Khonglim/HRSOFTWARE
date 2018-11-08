@@ -54,7 +54,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">บริษัทต้นสังกัด/company<b class="text-danger">*</b></label>                                    
-                                    {{Form::text('company','',['class'=>'form-control','id'=>'company'])}}
+                                    {{Form::text('company','',['class'=>'form-control','id'=>'company','required'])}}
                               </div>
 
                         </div>
@@ -62,7 +62,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">ตำแหน่งที่ต้องการ/Position Required<b class="text-danger">*</b></label>                                   
-                                    {{Form::text('position_required','',['class'=>'form-control','id'=>'position_required'])}}
+                                    {{Form::text('position_required','',['class'=>'form-control','id'=>'position_required','required'])}}
                               </div>
 
                         </div>
@@ -70,7 +70,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">แผนก/ส่วน/Section/Dividion<b class="text-danger">*</b></label>                                    
-                                    {{Form::text('section','',['class'=>'form-control','id'=>'section'])}}    
+                                    {{Form::text('section','',['class'=>'form-control','id'=>'section','required'])}}    
                               </div>
 
                         </div>
@@ -83,7 +83,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">วันที่ต้องการ/Date Required<b class="text-danger">*</b></label>                                   
-                                    {{Form::date('date_required','',['class'=>'form-control','id'=>'date_required'])}}
+                                    {{Form::date('date_required','',['class'=>'form-control','id'=>'date_required','required'])}}
                               </div>
 
                         </div>
@@ -91,7 +91,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">จำนวนพนักงานที่ต้องการ/Number<b class="text-danger">*</b> </label>                                    
-                                    {{Form::Number('number','',['class'=>'form-control','id'=>'number'])}}
+                                    {{Form::Number('number','',['class'=>'form-control','id'=>'number','required'])}}
                               </div>
 
                         </div>
@@ -99,7 +99,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">อายุ/Age<b class="text-danger">*</b></label> 
-                                    {{Form::Number('age','',['class'=>'form-control','id'=>'age'])}}
+                                    {{Form::Number('age','',['class'=>'form-control','id'=>'age','required'])}}
                               </div>
 
                         </div>
@@ -107,7 +107,7 @@
 
                   <div class="row">
                         <div class="col-md-5 ">
-                              ประเภทของการจ้างงาน/Type of Employent
+                              ประเภทของการจ้างงาน/Type of Employent<b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
@@ -155,7 +155,7 @@
 
                         </div>
                         <div class="col-md-5 ">
-                              ประเภทของความต้องการ/Type of Rquirement
+                              ประเภทของความต้องการ/Type of Rquirement<b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
@@ -206,7 +206,7 @@
 
                   <div class="row">
                         <div class="col-md-5 ">
-                              คุณสมบัติ/Qualification : เพศ/Sex
+                              คุณสมบัติ/Qualification : เพศ/Sex<b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
@@ -224,7 +224,7 @@
                         </div>
 
                         <div class="col-md-6 ">
-                              การศึกษา/Education
+                              การศึกษา/Education<b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
@@ -318,7 +318,7 @@
                                                 <div class="form-check">
                                                        
                                                             <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="additional_experience" value="additional">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) <input type="text" name="additional_com" id="additional_com" class="form-control_com" placeholder="ระบุ">
+                                                                        <input type="checkbox" class="form-check-input" name="additional_experience" value="additional">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) <input type="text" name="additional_com" id="additional_com" class="form-control" placeholder="ระบุ">
                                                                   </label>
                                                       </div>
                                                       <div class="form-check">
@@ -335,9 +335,9 @@
                                     <div class="col-md-4 "></div>
                                     <div class="col-md-4 ">
                                           <div class="form-group ">
-                                               
+                                                      <b class="text-danger">*จำเป็นต้องเซ็นชื่อ</b>
                                                 <div class="col-sm-4">
-
+                                                           
                                                             <div class="sigPad">
                                                                     <ul class="sigNav">
                                                                       <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
