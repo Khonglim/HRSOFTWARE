@@ -38,11 +38,11 @@
                               <div class="form-group ">
                                           <div class="form-check">
                                                 <label class="form-check-label">
-                                                              <input type="checkbox" class="form-check-input" name="external_Recruit" value="สรรหาภายนอก" required>สรรหาภายนอก/(External Recruit)
+                                                              <input type="checkbox" class="form-check-input" name="external_Recruit" value="สรรหาภายนอก" >สรรหาภายนอก/(External Recruit)
                                                             </label>
                                                             
                                                             <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="internal_Recruit" value="สรรหาภายใน" required>สรรหาภายใน/(Internal Recruit)
+                                                                        <input type="checkbox" class="form-check-input" name="internal_Recruit" value="สรรหาภายใน" >สรรหาภายใน/(Internal Recruit)
                                                                       </label>
                                           </div>
                               </div>
@@ -332,10 +332,10 @@
 
 <br><br>
                         <div class="row">
-                                    <div class="col-md-4 "></div>
-                                    <div class="col-md-4 ">
+                                    <div class="col-md-3 "></div>
+                                    <div class="col-md-6 ">
                                           <div class="form-group ">
-                                                      <b class="text-danger">*จำเป็นต้องเซ็นชื่อ</b>
+                                                      <b class="text-danger">*จำเป็นต้องเซ็นชื่อ(อย่ากดส่งคำร้องหากท่านยังไม่ลงลายเซ็น)</b>
                                                 <div class="col-sm-4">
                                                            
                                                             <div class="sigPad">
@@ -346,7 +346,7 @@
                                                                     <div class="sig sigWrapper">
                                                                       <div class="typed"></div>
                                                                       <canvas class="pad" width="220" height="70"></canvas>
-                                                                      <input type="hidden" name="signa1_60" class="output">
+                                                                      <input type="hidden" name="signa1_60" class="output" required>
                             
                                                                     </div>
                                                                   </div>
@@ -360,13 +360,20 @@
 
                                           @if ($errors->has('g-recaptcha-response'))
                                           <span class="help-block">
-                                              <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                              <strong class="text-danger">{{ $errors->first('g-recaptcha-response') }}</strong>
                                           </span>
                                       @endif
                                     </div>
                                     
                               </div> <br>
-                            <center> <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"> </span> </center> 
+                            <center> 
+                                    <b class="text-danger">(อย่ากดส่งคำร้องหากท่านยังไม่ลงลายเซ็น)</b><br>
+                              <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"> </span> 
+                        <br>
+                              <strong class="text-danger">โปรดอ่าน:หากกดส่งคำร้องครั้งแรกเกิดผิดพลาด กรุณาตรวจสอบข้อมูลทั้งหมดอีกครั้งว่าถูกต้องหรือไม่เมื่อกดส่งคำร้องครั้งอีกครั้ง</strong>
+                        
+                        
+                            </center> 
       
             </form>
       </div>

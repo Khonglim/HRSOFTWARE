@@ -38,6 +38,9 @@ class ManpowerController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'g-recaptcha-response' => 'required|captcha'
+       ]);
         $manpower = new Manpower;
         $manpower->internal_Recruit = $request->internal_Recruit;
         $manpower->external_Recruit = $request->external_Recruit;
@@ -138,6 +141,9 @@ class ManpowerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manpower = Manpower::find($id);
+        $manpower->delete();
+        Session::flash('flash_message', 'ลบสำเร็จ!!');
+        return redirect('manpower');
     }
 }
