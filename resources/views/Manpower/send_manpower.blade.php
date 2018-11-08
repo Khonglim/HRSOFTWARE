@@ -18,6 +18,12 @@
                   font-family: 'Prompt', sans-serif;
 
             }
+            .table-wrapper-scroll-y {
+  display: block;
+  max-height: 1000px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
       </style>
       <style type="text/css">
             body {
@@ -56,6 +62,7 @@
                               <div class="card-body">
                                           <h2>บริษัทในเครือของ เอ็น จี จี กรุ๊ป</h2><hr>
                                           <b>บริษัทต้นสังกัด/company :</b> {{ $manpower->company }} <br>
+                                          <div class="table-wrapper-scroll-y">
                                           <table>
                                               <tr><td colspan="4"><p align="center">ใบขอกำลังคน / Manpower Requistion</p></td></tr>
                                               <tr>
@@ -211,24 +218,51 @@
                                                                   </div>
                                                              
                                                                 </div> <br> ....../....../......</td>
-                                                  <td align="center" colspan="2"><b>หัวหน้าส่วนงานสรรหาว่าจ้าง/Sup.HR Recruitmunt</b><br><br> ....../....../......</td>
-                                                  <td align="center"><b>ประธานกรรมการ/MD.</b><br><br> ....../....../......</td>
+                                                  <td align="center" colspan="2">
+                                                            <b>ประธานกรรมการ/MD.</b>
+                                                      
+                                                      
+                                                      
+                                                            <br>
+                                                            <div class="table-wrapper-scroll-y">
+                                                            <div class="sigPad">
+                                                                        <ul class="sigNav">
+                                                                          <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                                                                          <li class="clearButton"><a href="#clear">Clear</a></li>
+                                                                        </ul>
+                                                                        <div class="sig sigWrapper">
+                                                                          <div class="typed"></div>
+                                                                          <canvas class="pad" width="220" height="70"></canvas>
+                                                                          <input type="hidden" name="signa" class="output" required>
+                                
+                                                                        </div>
+                                                                      </div>
+                                                            
+                                                            
+                                                            <br> ....../....../......</td>
+                                                      
+                                                                  </div>
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                  <td align="center" colspan="2">
+                                                            <b>หัวหน้าส่วนงานสรรหาว่าจ้าง/Sup.HR Recruitmunt</b><br><br> ....../....../......</td>
+
                                               </tr>
                                           </table>
+                                    </div>
                                           <input type="hidden" value="{{$manpower->signa1_60}}" id="sig1">
                                        
-                                    <div class="sigPad">
-                                          <ul class="sigNav">
-                                                <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
-                                                <li class="clearButton"><a href="#clear">Clear</a></li>
-                                          </ul>
-                                          <div class="sig sigWrapper">
-                                                <div class="typed"></div>
-                                                <canvas class="pad" width="220" height="70"></canvas>
-                                                <input type="hidden" name="signa2_MG" class="output" required>
-
-                                          </div>
-                                    </div>
+                                   
 
 
 
