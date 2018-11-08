@@ -9,9 +9,7 @@
                             <div class="alert alert-success d-flex align-items-center"> {!! session('flash_message') !!}</div>
                         
                             @endif
-                         
-                  
-                          <br><br>
+                               
                           <div class="box">
                             <div class="box-header">
                               <h3 class="box-title">คำขอกำลังคน/Manpower Requisition</h3>
@@ -47,16 +45,16 @@
                                               <div class="modal-content">
                                                 <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">ลบข้อมูล</h4>
+                                                  <h4 class="modal-title">ส่งเมลล์</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT'])}}
+                                                    {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
                                                       
                                                   <p>คุณต้องการส่งเมลล์ใช่หรือไม่จะไม่สามารถส่งได้อีกครั้ง คำขอกำลังคนของ{{$item->requested}}</p>
-                                                  <input type="hidden" name="mail" value="http://127.0.0.1/user_setting/{{$item->id}}/edit">
+                                                  <input type="hidden" name="mail" value="http://127.0.0.1/manpower/{{$item->id}}/edit">
                                                 </div>
                                                 <div class="modal-footer">
-                                                  <button type="summit" class="btn btn-danger">ลบ</button>
+                                                <span id="sendData"> <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>  
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
                                                 </div>
                                                 {{ Form::close() }}
@@ -102,13 +100,17 @@
                                     <td>
                                     @if($item->Sup_enable && $item->MD_enable == 0)
 
-                                   <b class="text-danger">ยังไม่อนุมัติลายเซ็น</b>  
+                                   <b class="text-danger">ยังไม่อนุมัติลายเซ็น/</b>  
                                    @elseif($item->Sup_enable && $item->MD_enable == 1)
-                                   <b class="text-success">อนุมัติลายเซ็นแล้ว</b>  
+                                   <b class="text-success">อนุมัติลายเซ็นแล้ว/</b>  
                                         @else
-                                        <b class="text-danger">ยังไม่อนุมัติลายเซ็น</b>  
+                                        <b class="text-danger">ยังไม่อนุมัติลายเซ็น/</b>  
                                     @endif
-
+                                    @if($item->Send_enable == 1)
+                                    <b class="text-success"> ส่งเมลล์แล้ว</b>
+                                    @else
+                                    <b class="text-danger">ยังไม่ได้ส่งเมลล์แล้ว</b>  
+                                    @endif
 
 
 
@@ -154,4 +156,17 @@
 
     </div>
 </div>
+<script>
+
+$("#inviter").submit(function(){    
+    
+    $("#sendData").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+    
+     return true; });
+
+
+
+
+
+</script>
 @endsection

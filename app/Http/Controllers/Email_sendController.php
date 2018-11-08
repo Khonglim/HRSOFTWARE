@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Extensions\MongoSessionStore;
 use Illuminate\Support\Facades\Session;
-use App\Mail\HRNGGGROUP;
+use App\Mail\HR_NGG_GROUP;
 use Illuminate\Support\Facades\Mail;
 use App\Manpower;
 class Email_sendController extends Controller
@@ -78,7 +78,7 @@ class Email_sendController extends Controller
 
         $sed_mail =  new \stdClass();
         $sed_mail->mail = $request->mail;
-        Mail::to("narathorn182539@gmail.com")->send(new HRNGGGROUP($sed_mail));
+        Mail::to("narathorn182539@gmail.com")->send(new HR_NGG_GROUP($sed_mail));
         Session::flash('flash_message','ระบบได้ทำการส่งเมลล์เรียบร้อยแล้ว');
         return redirect('manpower');
     }

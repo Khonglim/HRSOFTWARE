@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class HRNGGGROUP extends Mailable
+class HR_NGG_GROUP extends Mailable
 {
     use Queueable, SerializesModels;
 
