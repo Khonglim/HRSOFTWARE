@@ -4,7 +4,9 @@
     <div class="content container">
     <div class="row">
       <div class="col-md-12">
-         
+         @if(Session::has('flash_message') )
+            <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
+            @endif
           <a href="nggemployee/create" class="btn btn-success" ><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
   
           <br><br>
@@ -35,13 +37,13 @@
              <td>  
                   <a href="{{'nggemployee/'.$ngg_emp->nem_id}}" class="btn btn-primary btn-xs" ><i class="fa fa-search"></i></a>
                   <a href="{{'nggemployee/'.$ngg_emp->nem_id.'/edit'}}" class="btn btn-warning btn-xs " ><i class="fa fa-pencil"></i></a>
-                  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"><i class=" fa fa-trash"></i></button>
-        <div id="myModal" class="modal fade" role="dialog">
+                  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$ngg_emp->nem_id}}"><i class=" fa fa-trash"></i></button>
+        <div id="myModal{{$ngg_emp->nem_id}}" class="modal fade" role="dialog">
                   <div class="modal-dialog">
                      <div class="modal-content">
                  <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-<h4 class="modal-title">ลบข้อมูล</h4>
+<h4 class="modal-title">ลบข้อมูล::{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</h4>
 </div>
 <div class="modal-body">
 {{ Form::open(['route' => ['nggemployee.destroy',$ngg_emp->nem_id, 'method' => "DELETE"] ]) }}

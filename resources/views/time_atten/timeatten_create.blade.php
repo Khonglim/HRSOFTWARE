@@ -9,7 +9,7 @@
           <br><br>
         <div class="box">
           <div class="box-header" style="text-align: center;">
-            <h3 class="box-title">ข้อมูลพนักงาน</h3>
+            <h3 class="box-title">ข้อมูลเวลาพนักงาน</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body" >

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ngg_company;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
 class CompanyController extends Controller
 {
     /**
@@ -42,15 +46,17 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'company_Name' => 'required',
-            
-        ]);
-        $company = new Company;
-        $company->company_Name = $request->company_Name;
-        $company->remark = $request->remark;
+        
+        $company = new Ngg_company;
+        $company->ncp_name = Input::get('name');
+        $company->ncp_remark = Input::get('remark');
         $company->save();
-        return redirect('company');
+
+
+        Session::flash('flash_message','สำเร็จ!! บันทึกเรียบร้อย');
+         return redirect()->route("companysmanage");
+
+
 
     }
 
@@ -61,8 +67,21 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    { 
+
+        if($id !== '') {
+
+
+            $company = Ngg_company::where('ncp_enable', '=', 1)
+            ->where('ncp_id', '=', $id)
+            ->get();
+            $data = array(
+            'company' => $company
+            );
+                  }
+         
+        
+        return view('ngg_company/ngg_company_show',$data);
     }
 
     /**
@@ -74,11 +93,15 @@ class CompanyController extends Controller
     public function edit($id)
     {
         if($id !== '') {
-            $company = Company::find($id);
+             $company = Ngg_company::where('ncp_enable', '=', 1)
+            ->where('ncp_id', '=', $id)
+            ->get();
+            $idd = $id;
             $data = array(
-                'company' => $company
+                'company' => $company,
+                'idd' => $idd
             );
-            return view('company/formompany',$data);
+            return view('ngg_company/ngg_company_edit',$data);
         }
     }
 
@@ -91,14 +114,19 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'company_Name' => 'required',
-        ]);
-        $company =  Company::find($id);
-        $company->company_Name = $request->company_Name;
-        $company->remark = $request->remark;
-        $company->save();
-        return redirect('company'); 
+        if($id !== '') {
+             DB::table('ngg_company')
+            ->where('ncp_id', $id)
+            ->update(['ncp_name' => Input::get('name')]);
+
+            DB::table('ngg_company')
+            ->where('ncp_id', $id)
+            ->update(['ncp_remark' => Input::get('remark')]);
+
+        }
+       
+        Session::flash('flash_message','สำเร็จ!! แก้ไขเรียบร้อย');
+         return redirect()->route("companysmanage");
     }
 
     /**
@@ -109,9 +137,13 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        $company = Company::find($id);
-        $company->enable =0;
-        $company->save();
-        return redirect('company'); //
+        if($id !== '') {
+        DB::table('ngg_company')
+            ->where('ncp_id', '=', $id)
+            ->where('ncp_enable', '=', 1)
+            ->update(['ncp_enable' => 0]);
+        }
+       
+        return redirect('companysmanage'); 
     }
 }

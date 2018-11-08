@@ -4,7 +4,7 @@
     <div class="content container">
     <div class="row">
       <div class="col-md-10">
-        {{Form::open(['url'=>'nggemployee'])}}
+        {{Form::open(['url'=>'companysmanage'])}}
           <br><br>
         <div class="box">
           <div class="box-header">
@@ -24,7 +24,7 @@
                    <div class="col-md-3"> 
                                  <div class="form-group label-floating">
                             <label class="control-label">หมายเหตุ</label>
-                            {{Form::text('remark','',['class'=>'form-control','required'])}}
+                            {{Form::text('remark','',['class'=>'form-control'])}}
                         </div>  
                 </div>
   
@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-md-3"> 
-              {{ Html::link('nggemployee','Back',array('class ' => 'btn btn-primary')) }}
+              {{ Html::link('companysmanage','Back',array('class ' => 'btn btn-primary')) }}
               {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
               {{ Form::close()}} 
                                     </div>
