@@ -211,13 +211,20 @@
                                                   <td align="center">
                                                         
                                                       
-                                                      <b>ผู้ขอจ้าง/Requested by</b> <br>     <div class=" sig1">
+                                                      <b>ผู้ขอจ้าง/Requested by</b> <br>     
+                                                      <div class="table-wrapper-scroll-y">
+                                                      <div class=" sig1">
                                                                   <div class="sigWrapper">
                                                                   
                                                                     <canvas class="pad" width="198" height="55"></canvas>
                                                                   </div>
                                                              
-                                                                </div> <br> ....../....../......</td>
+                                                                </div> 
+                                                      </div>
+                                                                <br> {{$manpower->requested}}
+                                                            
+                                                            
+                                                            </td>
                                                   <td align="center" colspan="2">
                                                             <b>ประธานกรรมการ/MD.</b>
                                                       
@@ -239,7 +246,7 @@
                                                                       </div>
                                                             
                                                             
-                                                            <br> ....../....../......</td>
+                                                            <br> </td>
                                                       
                                                                   </div>
                                                       
@@ -260,7 +267,7 @@
                                               </tr>
                                           </table>
                                     </div>
-                                          <input type="hidden" value="{{$manpower->signa1_60}}" id="sig1">
+                                          <input type="hidden" value="{{$manpower->signa1_requested}}" id="sig1">
                                        
                                    
 
