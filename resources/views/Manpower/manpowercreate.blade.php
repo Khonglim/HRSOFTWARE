@@ -25,7 +25,7 @@
 
       <div class="container">
 
-            <form action="/action_page.php">
+            <form action="{{url('/manpower')}}"  id="inviter" method="POST" >
                   @csrf
                   <div class="row">
 
@@ -344,7 +344,7 @@
                                     </div>
                                     
                               </div> <br>
-                            <center> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง">  </center> 
+                            <center> <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"> </span> </center> 
       
             </form>
       </div>
@@ -379,10 +379,16 @@
               $('.sigPad').signaturePad({drawOnly:true});
                      
             });
-          </script>
+          
 
 
-
+$("#inviter").submit(function(){    
+    
+      $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
+      
+       return true; });
+ 
+ </script>
 
 </body>
 

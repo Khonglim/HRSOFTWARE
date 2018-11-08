@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class ManpowerController extends Controller
@@ -13,7 +14,7 @@ class ManpowerController extends Controller
      */
     public function index()
     {
-        return view('Manpower.manpowercreate');
+        return view('Manpower.manpowerSave');  
     }
 
     /**
@@ -23,7 +24,7 @@ class ManpowerController extends Controller
      */
     public function create()
     {
-        //
+        return view('Manpower.manpowercreate');
     }
 
     /**
@@ -34,7 +35,8 @@ class ManpowerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Session::flash('flash_message','บันทึกเรียบร้อย!!');
+        return redirect('manpower');
     }
 
     /**
