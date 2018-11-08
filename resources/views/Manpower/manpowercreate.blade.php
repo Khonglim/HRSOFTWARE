@@ -210,13 +210,13 @@
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                                    <input type="checkbox" class="form-check-input" name="gender" value="ชาย">ชาย/Male
+                                                                    <input type="radio" class="form-check-input" name="gender" value="ชาย">ชาย/Male
                                                                   </label>
 
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                                          <input type="checkbox" class="form-check-input" name="gender" value="หญิง">หญิง/Female
+                                                                          <input type="radio" class="form-check-input" name="gender" value="หญิง">หญิง/Female
                                                                           
                                                                         </label>
                                     </div>
