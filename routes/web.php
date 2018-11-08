@@ -45,9 +45,6 @@ Route::get('/manpowercreate', function ()
 
 });
 
-
-
-
 Route::resource('rate','InterviewController');
 
 Route::resource('rate_sup','Interview_supController');

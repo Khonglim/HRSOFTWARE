@@ -25,13 +25,35 @@
 
       <div class="container">
 
+                  @if(Session::has('flash_message') )
+
+                  <div class="alert alert-success d-flex align-items-center"> {!! session('flash_message') !!}</div>
+              
+                  @endif
             <form action="{{url('/manpower')}}"  id="inviter" method="POST" >
                   @csrf
                   <div class="row">
+                              <div class="col-md-4 ">
+                                    การสรรหา<b class="text-danger">*</b>
+                              <div class="form-group ">
+                                          <div class="form-check">
+                                                <label class="form-check-label">
+                                                              <input type="checkbox" class="form-check-input" name="permanent" value="สรรหาภายนอก" required>สรรหาภายนอก/(Extenal Recruit)
+                                                            </label>
+                                                            
+                                                            <label class="form-check-label">
+                                                                        <input type="checkbox" class="form-check-input" name="permanent" value="สรรหาภายนอก" required>สรรหาภายใน/(Internal Recruit)
+                                                                      </label>
+                                          </div>
+                              </div>
 
+                  </div>
+            </div>
+                  <div class="row">
+                             
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">บริษัทต้นสังกัด/company<small class="text-danger">*</small></label>                                    
+                                    <label class="control-label">บริษัทต้นสังกัด/company<b class="text-danger">*</b></label>                                    
                                     {{Form::text('company','',['class'=>'form-control','id'=>'company'])}}
                               </div>
 
@@ -39,7 +61,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">ตำแหน่งที่ต้องการ/Position Required<small class="text-danger">*</small></label>                                   
+                                    <label class="control-label">ตำแหน่งที่ต้องการ/Position Required<b class="text-danger">*</b></label>                                   
                                     {{Form::text('position_required','',['class'=>'form-control','id'=>'position_required'])}}
                               </div>
 
@@ -47,7 +69,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">แผนก/ส่วน/Section/Dividion<small class="text-danger">*</small></label>                                    
+                                    <label class="control-label">แผนก/ส่วน/Section/Dividion<b class="text-danger">*</b></label>                                    
                                     {{Form::text('section','',['class'=>'form-control','id'=>'section'])}}    
                               </div>
 
@@ -60,7 +82,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">วันที่ต้องการ/Date Required<small class="text-danger">*</small></label>                                   
+                                    <label class="control-label">วันที่ต้องการ/Date Required<b class="text-danger">*</b></label>                                   
                                     {{Form::date('date_required','',['class'=>'form-control','id'=>'date_required'])}}
                               </div>
 
@@ -68,7 +90,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">จำนวนพนักงานที่ต้องการ/Number<small class="text-danger">*</small> </label>                                    
+                                    <label class="control-label">จำนวนพนักงานที่ต้องการ/Number<b class="text-danger">*</b> </label>                                    
                                     {{Form::Number('number','',['class'=>'form-control','id'=>'number'])}}
                               </div>
 
@@ -76,7 +98,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">อายุ/Age<small class="text-danger">*</small></label> 
+                                    <label class="control-label">อายุ/Age<b class="text-danger">*</b></label> 
                                     {{Form::Number('age','',['class'=>'form-control','id'=>'age'])}}
                               </div>
 
@@ -156,7 +178,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">อัตราจ้าง/Salary<small class="text-danger">*</small></label>                                    
+                                    <label class="control-label">อัตราจ้าง/Salary<b class="text-danger">*</b></label>                                    
                                     {{Form::text('ratesalary','',['class'=>'form-control','id'=>'ratesalary'])}}
                               </div>
 
@@ -166,7 +188,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">สวัสดิการอื่นๆ<small class="text-danger">*</small></label>                                    
+                                    <label class="control-label">สวัสดิการอื่นๆ<b class="text-danger">*</b></label>                                    
                                     <textarea class="form-control" rows="1" id="benefits" name="benefits"></textarea>
                               </div>
 
@@ -174,7 +196,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">ลักษณะงานที่ทำโดยสังเขป/Description<small class="text-danger">*</small></label>
+                                    <label class="control-label">ลักษณะงานที่ทำโดยสังเขป/Description<b class="text-danger">*</b></label>
                                     <textarea class="form-control" rows="1" id="description" name="description"></textarea>
                               </div>
 
@@ -330,7 +352,7 @@
                                                                   </div>
                                                       </div>
                                                       <br>
-                                                      <label class="control-label">ผู้ขอจ้าง/Requested<small class="text-danger">*</small></label>
+                                                      <label class="control-label">ผู้ขอจ้าง/Requested<b class="text-danger">*</b></label>
                                                 {{Form::text('requested','',['class'=>'form-control','id'=>'requested'])}}
             
                                           </div>
