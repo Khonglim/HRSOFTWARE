@@ -17,6 +17,7 @@
             <table id="employee" class="table table-bordered table-striped">
               <thead>
               <tr>
+                <th>ลำดับ</th>
                 <th>ผู้ประเมิน</th>
                 <th>ผู้ถูกประเมิน</th>
                 <th>ชุดการประเมิน</th>
@@ -27,27 +28,14 @@
                
                <tr>
                @forelse($employeetotest as $emp)
-               @foreach($ngg_employee as $ngg_emp)
-                @if($emp->nee_is_employee == $ngg_emp->nem_id)
-                <td>{{$ngg_emp->nem_thai_firstname}}</td>
-                @endif
-               @endforeach
-               @foreach($ngg_employee as $ngg_emp2)
-                @if($emp->nee_by_employee == $ngg_emp2->nem_id)
-                <td>{{$ngg_emp2->nem_thai_firstname}}</td>
-                 @endif
-              @endforeach
-              @foreach($formfor as $form)
-                @if($form->id== $emp->nee_id_form)
-             <td>{{$form->form}}</td>
-                @endif
-              @endforeach 
-
-             
+                <td>{{$emp->nee_id}}</td>
+                <td>{{$emp->nee_is_employee}}</td>
+                <td>{{$emp->nee_by_employee}}</td>
+                <td>{{$emp->nee_id_form}}</td>
              <td>  
                   <a href="{{'management/'.$emp['nee_id'].'/edit'}}" class="btn btn-warning btn-xs " ><i class="fa fa-pencil"></i></a>
-                  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"><i class=" fa fa-trash"></i></button>
-        <div id="myModal" class="modal fade" role="dialog">
+                  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$emp['nee_id']}}"><i class=" fa fa-trash"></i></button>
+        <div id="myModal{{$emp['nee_id']}}" class="modal fade" role="dialog">
                   <div class="modal-dialog">
                      <div class="modal-content">
                  <div class="modal-header">
@@ -81,6 +69,7 @@
               </tbody>
               <tfoot>
               <tr>
+                <th>ลำดับ</th>
                   <th>ผู้ประเมิน</th>
                 <th>ผู้ถูกประเมิน</th>
                 <th>ชุดการประเมิน</th>

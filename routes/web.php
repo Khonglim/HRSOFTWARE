@@ -97,7 +97,7 @@ Route::get('evareportv2/{id}/evareportblindnamev2_manager','Evatesting2v2Control
 Route::get('evareportv2/{id}/print_report_manager','EvareportController@test3leader')->middleware('auth');
 Route::get('evareportv2/{id}/print_blind_report_manager','EvareportController@test5leader')->middleware('auth');
 
-
+Route::resource('/companysmanage', 'CompanyController')->middleware('auth');
 
 Route::get('evatestversion','Evatesting2v2Controller@index')->middleware('auth');
 
@@ -142,7 +142,7 @@ Route::get('/pdfcon_staf/{id}','PDFController@pdfoper_staff' )->middleware('auth
 
 Route::get('/pdfcon_sup/{id}','PDFController@pdfoper_sup' )->middleware('auth');
 
-Route::resource('/companysmanage', 'CompanyController')->middleware('auth');
+
 
 Route::get('summbti', function () {
     
@@ -367,23 +367,21 @@ Route::get('setting', function () {
 
 Route::get('narathorn',function(){
    
-         $users = DB::table('employeetotest')
-            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
-            ->leftJoin('ngg_evaresult_commentv2', 'employeetotest.nee_id', '=', 'ngg_evaresult_commentv2.nec_evaluate_employee_id')
+         $employeetotest1 = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('formfor', 'employeetotest.nee_id_form', '=', 'formfor.id')
+            ->where('nee_enable', '=', 1)
+            ->where('nem_enable', '=', 1)
             ->get();
 
-               $user2 = DB::table('employeetotest')
-            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
-            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
-            ->leftJoin('ngg_evaresult_commentv2', 'employeetotest.nee_id', '=', 'ngg_evaresult_commentv2.nec_evaluate_employee_id')
-            ->where('nee_by_employee', '=', 8)  
+         $employeetotest2 = DB::table('employeetotest')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_by_employee', '=', 'ngg_employee.nem_id')
+            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_ id')
+            ->leftJoin('formfor', 'employeetotest.nee_id_form', '=', 'formfor.id')
+            ->where('nee_enable', '=', 1)
+            ->where('nem_enable', '=', 1)
             ->get();
-            $point = DB::table('employeetotest')
-            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_id')
-            ->leftJoin('ngg_evaluate_resultv2', 'employeetotest.nee_id', '=', 'ngg_evaluate_resultv2.nes_evaluate_employee_id')
-            ->where('nee_by_employee', '=', 8)
-            ->where('nee_recheck', '=', 0)  
-            ->get();
+              
      // $ngg_evaluate_results1 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 9)->get();
      // $ngg_evaluate_results2 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 59)->get();
      // $ngg_evaluate_results3 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 26)->get();
@@ -392,7 +390,7 @@ Route::get('narathorn',function(){
       //$ngg_evaluate_results6 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 49)->get();
      
 
-            dd( $point);
+            dd( $employeetotest2);
             
 });
 

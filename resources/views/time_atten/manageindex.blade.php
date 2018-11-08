@@ -46,8 +46,8 @@
              
              <td>  
                   <a href="{{'management/'.$emp['nee_id'].'/edit'}}" class="btn btn-warning btn-xs " ><i class="fa fa-pencil"></i></a>
-                  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"><i class=" fa fa-trash"></i></button>
-        <div id="myModal" class="modal fade" role="dialog">
+                  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$emp['nee_id']}}"><i class=" fa fa-trash"></i></button>
+        <div id="myModal{{$emp['nee_id']}}" class="modal fade" role="dialog">
                   <div class="modal-dialog">
                      <div class="modal-content">
                  <div class="modal-header">

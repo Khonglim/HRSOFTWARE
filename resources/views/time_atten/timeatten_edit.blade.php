@@ -73,8 +73,8 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
         {{ Html::link('timeattendant','Back',array('class ' => 'btn btn-primary')) }}
+        {{ Form::submit('Seve',['class'=> 'btn btn-success'])}}
         {{Form::close()}}
     </div>
    

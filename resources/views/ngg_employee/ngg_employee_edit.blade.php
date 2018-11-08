@@ -218,7 +218,7 @@
                 <div class="col-md-3"> 
                                         <div class="form-group label-floating">
                          <label class="control-label">วุฒิการศึกษา</label>
-                               <textarea class="form-control" value={{$enducation}} style="resize: none;" name='enducation' ></textarea>
+                               <textarea class="form-control" style="resize: none;" name='enducation' >{{$enducation}}</textarea>
                         </div> 
                 </div>      
         </div>

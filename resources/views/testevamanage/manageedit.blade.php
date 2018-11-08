@@ -18,7 +18,6 @@
                     <?php $formname =  $forms->form ?>
                   @endif
                 @endforeach
-                  
                 @foreach($ngg_employee as $ngg_emp)
                   @if($ngg_emp->nem_id == $is_emp)
                   <?php $is_emp_new =  $ngg_emp->nem_thai_firstname?>

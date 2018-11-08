@@ -20,11 +20,16 @@ class TimeattendantController extends Controller
      */
     public function index()
     {
-        $timeattendant = Timeattendant::where('net_enable', '=', 1)->get();
-        $ngg_employee = Ngg_employee::where('nem_enable', '=', 1)->get();
+        
+
+
+        $time_at = DB::table('ngg_empolyee_timeattendant')
+            ->leftJoin('ngg_employee', 'ngg_empolyee_timeattendant.net_employee_id', '=', 'ngg_employee.nem_id')
+            ->where('net_enable', '=', 1)
+            ->get();
+
          $data = array(
-            'timeattendant' => $timeattendant,
-                'ngg_employee' => $ngg_employee
+                'time_at' => $time_at
         );
         return view('time_atten/timeatten_index',$data);
     }
@@ -139,7 +144,7 @@ class TimeattendantController extends Controller
             
             }
             Session::flash('flash_message','บันทึกการแก้ไขเรียบร้อย!!');
-        return redirect()->route("home");
+        return redirect()->route("timeattendant");
     }
 
     /**
