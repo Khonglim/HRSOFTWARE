@@ -15,6 +15,8 @@ class CreateManpowerTable extends Migration
     {
         Schema::create('manpower', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('external_Recruit',100)->nullable();
+            $table->char('internal_Recruit',100)->nullable();
             $table->char('company',100)->nullable();
             $table->char('position_required',100)->nullable();
             $table->char('section',100)->nullable();
