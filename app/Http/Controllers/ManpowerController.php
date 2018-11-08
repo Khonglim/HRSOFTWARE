@@ -50,7 +50,7 @@ class ManpowerController extends Controller
         $manpower->subcontract = $request->subcontract;
         $manpower->daily = $request->daily;
         $manpower->monthly = $request->monthly;
-        $manpower->start = $request->start;
+        
         $manpower->checkstart = $request->checkstart;
         $manpower->timestart = $request->timestart;
         $manpower->timeend = $request->timeend;
@@ -68,7 +68,7 @@ class ManpowerController extends Controller
         $manpower->high_vocational = $request->high_vocational;
         $manpower->undergraduate = $request->undergraduate;
         $manpower->other_education = $request->other_education;
-        $manpower->foreign_lnguages = $request->foreign_lnguages;
+        $manpower->foreign_lnguages = $request->foreign_languages;
         $manpower->languages_name = $request->languages_name;
         $manpower->typing = $request->typing;
         $manpower->typing_name = $request->typing_name;
@@ -84,6 +84,9 @@ class ManpowerController extends Controller
         $manpower->other_experience_com = $request->other_experience_com;
         $manpower->signa1_60 = $request->signa1_60;
         $manpower->requested = $request->requested;
+        $manpower->knowledge_name = $request->knowledge_name;
+        $manpower->other_skill_name = $request->other_skill_name;
+        $manpower->save();
 
 
         Session::flash('flash_message','บันทึกเรียบร้อย!! รอการติดต่อกลับเจ้าหน้าที่');

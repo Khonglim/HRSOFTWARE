@@ -28,7 +28,7 @@ class CreateManpowerTable extends Migration
             $table->char('subcontract',100)->nullable();
             $table->char('daily',100)->nullable();
             $table->char('monthly',100)->nullable();
-            $table->char('start',100)->nullable();
+         
             $table->char('checkstart',100)->nullable();
             $table->char('timestart',100)->nullable();
             $table->char('timeend',100)->nullable();
