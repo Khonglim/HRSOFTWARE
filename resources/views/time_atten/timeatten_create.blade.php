@@ -13,21 +13,14 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body" >
+
             <div class="row">
               <div class="col-md-6">
                 <label>ชื่อพนักงาน::</label>
                 <select name="employee"  class="js-example-basic-single  form-control">
-                  @foreach($ngg_employee as $ngg_emp)
-                    @forelse($timeattendant as $timeatten)
-                      @if($timeatten->net_employee_id==$ngg_emp->nem_id)
-                        <option value={{$ngg_emp->nem_id}} disabled="true">{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
-                      @else
-                      <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
-                      @endif
-                    @empty
-                    <option value={{$ngg_emp->nem_id}} >{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
-                    @endforelse
-                  @endforeach
+                    @foreach($ngg_employee as $ngg_emp)
+                         <option value={{$ngg_emp->nem_id}}>{{$ngg_emp->nem_thai_firstname}} {{$ngg_emp->nem_thai_lastname}}</option>
+                   @endforeach
                 </select>
               </div>
             </div>

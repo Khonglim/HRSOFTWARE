@@ -186,7 +186,7 @@ class EvamanagementController extends Controller
       
 
         Session::flash('flash_message','บันทึกสำเร็จ!!');
-        return redirect()->route("home");
+        return redirect("management");
     }
 
     /**
@@ -234,9 +234,9 @@ class EvamanagementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    { 
         if($id !== '') {
-
+           
             DB::table('employeetotest')
             ->where('nee_id', $id)
             ->update(['nee_id_form' => Input::get('formname')]);
@@ -250,7 +250,7 @@ class EvamanagementController extends Controller
             ->update(['nee_by_employee' => Input::get('by_emp_new')]);
             }
         Session::flash('flash_message','บันทึกการแก้ไขเรียบร้อย!!');
-        return redirect()->route("home");
+        return redirect("management");
     }
 
     /**
@@ -266,5 +266,16 @@ class EvamanagementController extends Controller
             ->where('nee_id', $id)
             ->update(['nee_enable' => 0]);
             }
-    }
+            $formfor = Formfor::all();
+            $ngg_employee = Ngg_employee::where('nem_enable', '=', 1)->get();
+            $employeetotest = Employeetotest::where('nee_enable', '=', 1)->get();
+            $data = array(
+                'formfor' => $formfor,
+                'employeetotest' => $employeetotest,
+                'ngg_employee' => $ngg_employee
+            );
+            
+        Session::flash('flash_message','ลบร้อยร้อยเเล้ว!!');
+        return redirect("management");
+    } 
 }

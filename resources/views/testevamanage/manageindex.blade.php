@@ -4,7 +4,12 @@
     <div class="content container">
     <div class="row">
       <div class="col-md-12">
-         
+            @if(Session::has('flash_message') )
+
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
+
+    @endif
+
           <a href="management/create" class="btn btn-success" ><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
   
           <br><br>
@@ -29,9 +34,24 @@
                <tr>
                @forelse($employeetotest as $emp)
                 <td>{{$emp->nee_id}}</td>
-                <td>{{$emp->nee_is_employee}}</td>
-                <td>{{$emp->nee_by_employee}}</td>
-                <td>{{$emp->nee_id_form}}</td>
+               @forelse($ngg_employee as $ngg_empl)
+                @if($ngg_empl->nem_id == $emp->nee_is_employee )
+                <?php $emp_tepm1 = $ngg_empl->nem_thai_firstname?>
+                <td>{{$ngg_empl->nem_thai_firstname}}</td>
+                @endif
+               @endforeach
+               @forelse($ngg_employee as $ngg_empl)
+                @if($ngg_empl->nem_id == $emp->nee_by_employee )
+                <?php $emp_tepm2 = $ngg_empl->nem_thai_firstname?>
+               <td>{{$ngg_empl->nem_thai_firstname}}</td>
+                @endif
+               @endforeach
+                @forelse($formfor as $form)
+                @if($form->id == $emp->nee_id_form )
+               <td>{{$form->form}}</td>
+                @endif
+               @endforeach
+                
              <td>  
                   <a href="{{'management/'.$emp['nee_id'].'/edit'}}" class="btn btn-warning btn-xs " ><i class="fa fa-pencil"></i></a>
                   <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$emp['nee_id']}}"><i class=" fa fa-trash"></i></button>
@@ -40,7 +60,7 @@
                      <div class="modal-content">
                  <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-<h4 class="modal-title">ลบข้อมูล</h4>
+<h4 class="modal-title">ลบข้อมูลคุณ :: "{{$emp_tepm1}}" ประเมินคุณ :: "{{$emp_tepm2}}"</h4>
 </div>
 <div class="modal-body">
 {{ Form::open(['route' => ['management.destroy',$emp['nee_id'], 'method' => "DELETE"] ]) }}

@@ -377,14 +377,12 @@ Route::get('narathorn',function(){
             ->where('nem_enable', '=', 1)
             ->get();
 
-         $employeetotest2 = DB::table('employeetotest')
-            ->leftJoin('ngg_employee', 'employeetotest.nee_by_employee', '=', 'ngg_employee.nem_id')
-            ->leftJoin('ngg_employee', 'employeetotest.nee_is_employee', '=', 'ngg_employee.nem_ id')
-            ->leftJoin('formfor', 'employeetotest.nee_id_form', '=', 'formfor.id')
-            ->where('nee_enable', '=', 1)
-            ->where('nem_enable', '=', 1)
-            ->get();
-              
+        
+
+            $time_at = DB::table('ngg_empolyee_timeattendant')
+            ->leftJoin('ngg_employee', 'ngg_empolyee_timeattendant.net_employee_id', '=', 'ngg_employee.nem_id')
+            ->where('net_enable', '=', 1)
+            ->get();   
      // $ngg_evaluate_results1 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 9)->get();
      // $ngg_evaluate_results2 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 59)->get();
      // $ngg_evaluate_results3 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 26)->get();
@@ -393,7 +391,7 @@ Route::get('narathorn',function(){
       //$ngg_evaluate_results6 = DB::table('ngg_evaluate_resultv2')->where('nes_evaluate_employee_id', '=', 49)->get();
      
 
-            dd( $employeetotest2);
+            dd( $time_at);
             
 });
 
