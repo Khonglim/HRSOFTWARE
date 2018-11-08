@@ -118,7 +118,13 @@ class ManpowerController extends Controller
      */
     public function edit($id)
     {
-        //
+        if($id !== '') {
+            $manpower = Manpower::find($id);
+            $data = array(
+                'manpower' =>  $manpower
+            );
+            return view('Manpower/send_manpower',$data);
+        }
     }
 
     /**

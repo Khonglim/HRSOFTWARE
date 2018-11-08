@@ -53,6 +53,7 @@
                                                     {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT'])}}
                                                       
                                                   <p>คุณต้องการส่งเมลล์ใช่หรือไม่จะไม่สามารถส่งได้อีกครั้ง คำขอกำลังคนของ{{$item->requested}}</p>
+                                                  <input type="hidden" name="mail" value="http://127.0.0.1/user_setting/{{$item->id}}/edit">
                                                 </div>
                                                 <div class="modal-footer">
                                                   <button type="summit" class="btn btn-danger">ลบ</button>
