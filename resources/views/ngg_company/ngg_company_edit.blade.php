@@ -5,6 +5,7 @@
     <div class="row">
       <div class="col-md-10">
         {{Form::open(['route'=>['companysmanage.update',$idd],'method'=>'PUT','files' => true])}}
+        @csrf
           <br><br>
         <div class="box">
           <div class="box-header">

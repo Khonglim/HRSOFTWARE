@@ -48,7 +48,7 @@
 
                  
                     @if($formname == $form->form)
-                     <option  value={{$form->id}} selected="true">{{$form->form}}</option>
+                     <option  value={{$form->id}} selected="true" >{{$form->form}}</option>
                     @else
                      <option  value={{$form->id}}>{{$form->form}}</option>
                     @endif
@@ -106,8 +106,9 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        {{ Form::submit('Seve',['class'=> 'btn btn-primary'])}}
+        
         {{ Html::link('management','Back',array('class ' => 'btn btn-primary')) }}
+        {{ Form::submit('Seve',['class'=> 'btn btn-success'])}}
        {{Form::close()}}
        
     </div>

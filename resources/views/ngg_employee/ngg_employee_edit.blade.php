@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-12">
           {{Form::open(['route'=>['nggemployee.update',$idd],'method'=>'PUT','files' => true])}}
-          
+          @csrf
           <br><br>
                   @foreach($ngg_employee as $ngg_empl)
                   <?php $code = $ngg_empl->nem_code;

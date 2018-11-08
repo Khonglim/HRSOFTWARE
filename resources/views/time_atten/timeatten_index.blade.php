@@ -4,7 +4,9 @@
   <div class="content container">
     <div class="row" >
       <div class="col-md-12">
-         
+          @if(Session::has('flash_message') )
+            <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
+            @endif
           <a href="timeattendant/create" class="btn btn-success" ><i class="fa fa-user-plus">เพิ่มข้อมูล</i></a>
   
           <br><br>

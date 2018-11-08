@@ -5,6 +5,7 @@
     <div class="row">
       <div class="col-md-10">
         {{Form::open(['url'=>'companysmanage'])}}
+        @csrf
           <br><br>
         <div class="box">
           <div class="box-header">
