@@ -99,7 +99,6 @@ class User_settingController extends Controller
     {
         $user = User::find($id);
         $user->name = $request->name;
-        $user->password = bcrypt($request->password);
         $user->isAdmin = $request->isAdmin;
         $user->save();
         Session::flash('flash_message','อัพเดทข้อมูลสำเร็จ!!');

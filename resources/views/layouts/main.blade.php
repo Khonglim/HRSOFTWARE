@@ -293,7 +293,8 @@ body {
                                     <li ><a href="{{url('/operate_report**')  }}"><span>รายงานทดลองงานบังคับบัญชา</span></a></li>
                                     <li class="divider"></li>
                                     <li ><a href="{{url('/con_all') }}"><span>รายงานการทดสอบทั้งหมด</span></a></li>
-                                   
+                                    <li class="divider"></li>
+                                    <li ><a href="{{url('/manpower') }}"><span>รายงานขอกำลังคน</span></a></li>
                                 </ul>
                               </li>
                               <li class="dropdown">
@@ -439,8 +440,8 @@ body {
       $('#testmbti').DataTable()
       $('#conall').DataTable()
       $('#user_setting').DataTable()
-  
-      
+      $('#manpower').DataTable()
+     
     });
   </script>
   

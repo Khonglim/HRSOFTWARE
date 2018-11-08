@@ -15,7 +15,9 @@ class ManpowerController extends Controller
      */
     public function index()
     {
-        
+        $manpower = Manpower::all();
+        $data = array('manpower' =>$manpower);
+        return view('Manpower.index_manpower',$data);
     }
 
     /**
@@ -68,7 +70,7 @@ class ManpowerController extends Controller
         $manpower->high_vocational = $request->high_vocational;
         $manpower->undergraduate = $request->undergraduate;
         $manpower->other_education = $request->other_education;
-        $manpower->foreign_lnguages = $request->foreign_languages;
+        $manpower->foreign_languages = $request->foreign_languages;
         $manpower->languages_name = $request->languages_name;
         $manpower->typing = $request->typing;
         $manpower->typing_name = $request->typing_name;
@@ -86,11 +88,11 @@ class ManpowerController extends Controller
         $manpower->requested = $request->requested;
         $manpower->knowledge_name = $request->knowledge_name;
         $manpower->other_skill_name = $request->other_skill_name;
-        $manpower->other_experience_com = $request->other_experience_com;
+     
         $manpower->save();
 
 
-        Session::flash('flash_message','บันทึกเรียบร้อย!! รอการติดต่อกลับเจ้าหน้าที่');
+        Session::flash('flash_message','บันทึกเรียบร้อย!! รอการติดต่อกลับจากเจ้าหน้าที่');
         return view('Manpower.manpowercreate');
     }
 
