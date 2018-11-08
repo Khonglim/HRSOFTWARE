@@ -47,10 +47,10 @@
     <tr>
         <td colspan="4">
             @if ($manpower->internal_Recruit!='')
-                <input type="checkbox" checked> {{ $manpower->internal_Recruit }}
+                 {{ $manpower->internal_Recruit }}
             @endif
             @if ($manpower->internal_Recruit!='')
-        <br>    <input type="checkbox" checked> {{ $manpower->external_Recruit }}
+        <br>     {{ $manpower->external_Recruit }}
             @endif
         </td>
     </tr>
@@ -64,52 +64,38 @@
         <td><b>อายุ :</b> {{ $manpower->age }} <br> Age</td>
     </tr>
     <tr>
-        <td rowspan="2"><b>ประเภทของพนักงาน <br> Type of Employent</b></td>
-        <td>
+        <td colspan="4"><b>ประเภทของพนักงาน</b>
             @if ($manpower->permanent!='')
-                <input type="checkbox" checked> {{ $manpower->permanent }}
+                {{ $manpower->permanent }}
+            @endif &emsp;
+            @if ($manpower->apprentie!='')
+                {{ $manpower->apprentie }}
+            @endif &emsp;
+            @if ($manpower->subcontract!='')
+                {{ $manpower->subcontract }}
             @endif
-        </td>
-        <td>
-                @if ($manpower->apprentie!='')
-                    <input type="checkbox" checked> {{ $manpower->apprentie }}
-                @endif
-        </td>
-        <td>
-                @if ($manpower->subcontract!='')
-                    <input type="checkbox" checked> {{ $manpower->subcontract }}
-                @endif
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
+            <br> Type of Employent &emsp;
             @if ($manpower->daily!='')
-                <input type="checkbox" checked> {{ $manpower->daily }}
-            @endif
+                {{ $manpower->daily }}
+            @endif &emsp;
             @if ($manpower->monthly!='')
-                <input type="checkbox" checked> {{ $manpower->monthly }}
-            @endif
-        </td>
-        <td>
+                {{ $manpower->monthly }}
+            @endif &emsp;
             @if ($manpower->checkstart!='')
-                <input type="checkbox" checked> {{ $manpower->checkstart }} &emsp;&emsp;
                 <b>เริ่มต้น :</b>{{ $manpower->timestart }} &emsp;
                 <b>สิ้นสุด :</b>{{ $manpower->timeend }}
             @endif
         </td>
     </tr>
     <tr>
-        <td><b>ประเภทของความต้องการ :</b></td>
-        <td>
+        <td colspan="4"><b>ประเภทของความต้องการ :</b>
             @if ($manpower->hire!='')
-                <input type="checkbox" checked> {{ $manpower->hire }}
+                {{ $manpower->hire }}
+            @endif &emsp;&emsp;
+            @if ($manpower->substitute!='')
+                {{ $manpower->substitute }}
+                <b>ชื่อ-นามสกุล :</b> {{ $manpower->name_substitute }}
             @endif
-        </td>
-        <td colspan="2">
-                @if ($manpower->substitute!='')
-                    <input type="checkbox" checked> {{ $manpower->substitute }}
-                    <b>ชื่อ-นามสกุล :</b> {{ $manpower->name_substitute }}
-                @endif
         </td>
     </tr>
     <tr>
@@ -122,72 +108,72 @@
     <tr>
         <td colspan="4"><b>คุณสมบัติ/Qualification : เพศ/Sex </b>
             @if ($manpower->gender=='ชาย')
-                <input type="checkbox" checked> {{ $manpower->gender }}
+                {{ $manpower->gender }}
             @endif
             @if ($manpower->gender=='หญิง')
-                <input type="checkbox" checked> {{ $manpower->gender }}
+                {{ $manpower->gender }}
             @endif
         </td>
     </tr>
     <tr>
         <td colspan="4"><b>การศึกษา/Education :</b>&emsp;
             @if ($manpower->primary!='')
-                    <input type="checkbox" checked> {{ $manpower->primary }}
+                    {{ $manpower->primary }}
             @endif 
             @if ($manpower->secondary!='')
-    &emsp;&emsp;    <input type="checkbox" checked> {{ $manpower->secondary }}
+    &emsp;&emsp;    {{ $manpower->secondary }}
             @endif 
             @if ($manpower->high_school!='')
-    &emsp;&emsp;    <input type="checkbox" checked> {{ $manpower->high_school }}
+    &emsp;&emsp;    {{ $manpower->high_school }}
             @endif
             @if ($manpower->vocational!='')
-    &emsp;&emsp;    <input type="checkbox" checked> {{ $manpower->primary }}
+    &emsp;&emsp;    {{ $manpower->primary }}
             @endif
             @if ($manpower->high_vocational!='')
-    &emsp;&emsp;    <input type="checkbox" checked> {{ $manpower->high_vocational }}
+    &emsp;&emsp;    {{ $manpower->high_vocational }}
             @endif
             @if ($manpower->undergraduate!='')
-    &emsp;&emsp;    <input type="checkbox" checked> {{ $manpower->undergraduate }}
+    &emsp;&emsp;    {{ $manpower->undergraduate }}
             @endif
             @if ($manpower->other_education!='')
-    &emsp;&emsp;    <input type="checkbox" checked> {{ $manpower->other_education }} 
+    &emsp;&emsp;    {{ $manpower->other_education }} 
             @endif
         </td>
     </tr>
     <tr>
         <td colspan="4"><b>ความสามารถพิเศษ/Special Skill :</b> 
             @if ($manpower->foreign_languages!='')
-    <br>        <input type="checkbox" checked> {{ $manpower->foreign_languages }} &emsp; {{ $manpower->languages_name }}
+    <br>        {{ $manpower->foreign_languages }} &emsp; {{ $manpower->languages_name }}
             @endif
             @if ($manpower->typing!='')
-    <br>        <input type="checkbox" checked> {{ $manpower->typing }} &emsp; {{ $manpower->typing_name }}
+    <br>        {{ $manpower->typing }} &emsp; {{ $manpower->typing_name }}
             @endif
             @if ($manpower->computer_knowledge!='')
-    <br>        <input type="checkbox" checked> {{ $manpower->computer_knowledge }} &emsp; {{ $manpower->knowledge_name }}
+    <br>        {{ $manpower->computer_knowledge }} &emsp; {{ $manpower->knowledge_name }}
             @endif
             @if ($manpower->other_skill!='')
-    <br>        <input type="checkbox" checked> {{ $manpower->other_skill }} &emsp; {{ $manpower->other_skill_name }}
+    <br>        {{ $manpower->other_skill }} &emsp; {{ $manpower->other_skill_name }}
             @endif
         </td>
     </tr>
     <tr>
         <td colspan="4"><b>ประสบการณ์/Experience :</b>
             @if ($manpower->inexperience!='')
-    <br>        <input type="checkbox" checked> {{ $manpower->inexperience }} 
+    <br>        {{ $manpower->inexperience }} 
             @endif
             @if ($manpower->minimum_experience!='')
-    <br>        <input type="checkbox" checked> {{ $manpower->minimum_experience }} {{ $manpower->minimum_experience_com }}
+    <br>        {{ $manpower->minimum_experience }} {{ $manpower->minimum_experience_com }}
             @endif
             @if ($manpower->additional_experience!='')
-    <br>        <input type="checkbox" checked> {{ $manpower->additional_experience }} {{ $manpower->additional_com }}
+    <br>        {{ $manpower->additional_experience }} {{ $manpower->additional_com }}
             @endif
             @if ($manpower->other_experience='')
-    <br>        <input type="checkbox" checked> {{ $manpower->other_experience }} {{ $manpower->other_experience_com }}
+    <br>        {{ $manpower->other_experience }} {{ $manpower->other_experience_com }}
             @endif
         </td>
     </tr>
     <tr>
-        <td align="center"><b>ผู้ขอจ้าง/Requested by</b> <br> {{ $manpower->signa1_60 }} <br> ....../....../......</td>
+        <td align="center"><b>ผู้ขอจ้าง/Requested by</b> <br>  <br>{{ $manpower->requested }}<br> ....../....../......</td>
         <td align="center" colspan="2"><b>หัวหน้าส่วนงานสรรหาว่าจ้าง/Sup.HR Recruitmunt</b><br><br> ....../....../......</td>
         <td align="center"><b>ประธานกรรมการ/MD.</b><br><br> ....../....../......</td>
     </tr>

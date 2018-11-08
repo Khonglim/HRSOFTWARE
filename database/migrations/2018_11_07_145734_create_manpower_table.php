@@ -62,7 +62,9 @@ class CreateManpowerTable extends Migration
             $table->string('additional_com',100)->nullable();
             $table->char('other_experience',100)->nullable();
             $table->string('other_experience_com',100)->nullable();
-            $table->longText('signa1_60')->nullable();
+            $table->longText('signa1_requested')->nullable();
+            $table->longText('signa1_sup')->nullable();
+            $table->longText('signa1_md')->nullable();
             $table->char('requested',100)->nullable();
             $table->tinyInteger('man_enable')->default('1');
             $table->tinyInteger('Sup_enable')->default('0');
