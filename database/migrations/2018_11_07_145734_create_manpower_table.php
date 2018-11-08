@@ -46,7 +46,7 @@ class CreateManpowerTable extends Migration
             $table->char('high_vocational',100)->nullable();
             $table->char('undergraduate',100)->nullable();
             $table->char('other_education',100)->nullable();
-            $table->char('foreign_lnguages',100)->nullable();
+            $table->char('foreign_languages',100)->nullable();
             $table->string('languages_name',100)->nullable();
             $table->char('typing',100)->nullable();
             $table->string('typing_name',100)->nullable();
