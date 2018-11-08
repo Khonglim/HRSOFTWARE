@@ -40,7 +40,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">ตำแหน่งที่ต้องการ/Position Required<small class="text-danger">*</small></label>                                   
-                                    {{Form::text('positionrequired','',['class'=>'form-control','id'=>'positionrequired'])}}
+                                    {{Form::text('position_required','',['class'=>'form-control','id'=>'position_required'])}}
                               </div>
 
                         </div>
@@ -61,7 +61,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">วันที่ต้องการ/Date Required<small class="text-danger">*</small></label>                                   
-                                    {{Form::date('daterequired','',['class'=>'form-control','id'=>'daterequired'])}}
+                                    {{Form::date('date_required','',['class'=>'form-control','id'=>'date_required'])}}
                               </div>
 
                         </div>
@@ -119,10 +119,10 @@
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                                          <input type="checkbox" class="form-check-input" name="start" value="เริ่มต้น">เริ่มต้น 
-                                                                          <input type="date" name="start1" class="form-control" >
+                                                                          <input type="checkbox" class="form-check-input" name="checkstart" value="เริ่มต้น">เริ่มต้น 
+                                                                          <input type="date" name="timestart" class="form-control" >
                                                                           สิ้นสุด
-                                                                          <input type="date" name="end" class="form-control" >
+                                                                          <input type="date" name="timeend" class="form-control" >
                                                                         </label>
                                     </div>
 
@@ -167,7 +167,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">สวัสดิการอื่นๆ<small class="text-danger">*</small></label>                                    
-                                    <textarea class="form-control" rows="1" id="benefits1" name="benefits1"></textarea>
+                                    <textarea class="form-control" rows="1" id="benefits" name="benefits"></textarea>
                               </div>
 
                         </div>
@@ -253,25 +253,25 @@
                         <div class="col-md-6 ">
                                     <div class="form-check">
                                                 <label class="form-check-label">
-                                           <input type="checkbox" class="form-check-input" name="foreign_lnguages" value="ภาษาต่างประเทศ">ภาษาต่างประเทศ/Foreign Languages Command <input type="text" name="" id="" class="form-control" placeholder="ระบุ">
+                                           <input type="checkbox" class="form-check-input" name="foreign_languages" value="ภาษาต่างประเทศ">ภาษาต่างประเทศ/Foreign Languages Command <input type="text" name="languages_name" id="languages_name" class="form-control" placeholder="ระบุ">
                                                 </label>
                                                
                                           </div>
                                           <div class="form-check">
                                                       <label class="form-check-label">
-                                                                  <input type="checkbox" class="form-check-input"  name="typing" value="พิมพ์ดีด">พิมพ์ดีดไทย & อังกฤษ/Thai & English Typing <input type="text" name="" id="" class="form-control" placeholder="ระบุ">
+                                                                  <input type="checkbox" class="form-check-input"  name="typing" value="พิมพ์ดีด">พิมพ์ดีดไทย & อังกฤษ/Thai & English Typing <input type="text" name="typing_name" id="typing_name" class="form-control" placeholder="ระบุ">
                                                                        </label>
                                           </div>
                                           <div class="form-check">
                                                  
                                                       <label class="form-check-label">
-                                                                  <input type="checkbox" class="form-check-input" name="computer_knowledge" value="ความรู้ทางคอมพิวเตอร์">ความรู้ทางคอมพิวเตอร์/Computer Knowledge <input type="text" name="" id="" class="form-control" placeholder="ระบุ">
+                                                                  <input type="checkbox" class="form-check-input" name="computer_knowledge" value="ความรู้ทางคอมพิวเตอร์">ความรู้ทางคอมพิวเตอร์/Computer Knowledge <input type="text" name="knowledge_name" id="knowledge_name" class="form-control" placeholder="ระบุ">
                                                             </label>
                                                 </div>
                                                 <div class="form-check">
                                                  
                                                             <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="other_skill" value="other2">อื่นๆ/Other <input type="text" name="" id="" class="form-control" placeholder="ระบุ">
+                                                                        <input type="checkbox" class="form-check-input" name="other_skill" value="other2">อื่นๆ/Other <input type="text" name="other_skill_name" id="other_skill_name" class="form-control" placeholder="ระบุ">
                                                                   </label>
                                                       </div>
 
@@ -284,25 +284,25 @@
                               <div class="col-md-6 ">
                                           <div class="form-check">
                                                       <label class="form-check-label">
-                                                 <input type="checkbox" class="form-check-input" name="inexperience" value="ไม่มีประสบการณ์">ไม่มีประสบการณ์/Inexperience <input type="text" name="" id="" class="form-control" placeholder="ระบุ">
+                                                 <input type="checkbox" class="form-check-input" name="inexperience" value="ไม่มีประสบการณ์">ไม่มีประสบการณ์/Inexperience <input type="text" name="inexperience_com" id="inexperience_com" class="form-control" placeholder="ระบุ">
                                                       </label>
                                                      
                                                 </div>
                                                 <div class="form-check">
                                                             <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="minimum_experience" value="ประสบการณ์ขั้นต่ำ">ประสบการณ์ขั้นต่ำ/Minimum Experience <input type="text" name="" id="" class="form-control" placeholder="ระบุ">
+                                                                        <input type="checkbox" class="form-check-input" name="minimum_experience" value="ประสบการณ์ขั้นต่ำ">ประสบการณ์ขั้นต่ำ/Minimum Experience <input type="text" name="minimum_experience_com" id="minimum_experience_com" class="form-control" placeholder="ระบุ">
                                                                              </label>
                                                 </div>
                                                 <div class="form-check">
                                                        
                                                             <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="additional_experience" value="additional">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) <input type="text" name="" id="" class="form-control" placeholder="ระบุ">
+                                                                        <input type="checkbox" class="form-check-input" name="additional_experience" value="additional">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) <input type="text" name="additional_com" id="additional_com" class="form-control_com" placeholder="ระบุ">
                                                                   </label>
                                                       </div>
                                                       <div class="form-check">
                                                        
                                                                   <label class="form-check-label">
-                                                                              <input type="checkbox" class="form-check-input" name="other_experience" value="other3">อื่นๆ/Other <input type="text" name="" id="" class="form-control" placeholder="ระบุ">
+                                                                              <input type="checkbox" class="form-check-input" name="other_experience" value="other3">อื่นๆ/Other <input type="text" name="other_experience_com" id="other_experience_com" class="form-control" placeholder="ระบุ">
                                                                         </label>
                                       </div>
                               </div>
