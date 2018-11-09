@@ -146,13 +146,13 @@
             {{ $manpower->foreign_languages }} &emsp; {{ $manpower->languages_name }}
             @endif
             @if ($manpower->typing!='')
-            {{ $manpower->typing }} &emsp; {{ $manpower->typing_name }}
+    <br>        {{ $manpower->typing }} &emsp; {{ $manpower->typing_name }}
             @endif
             @if ($manpower->computer_knowledge!='')
-            {{ $manpower->computer_knowledge }} &emsp; {{ $manpower->knowledge_name }}
+    <br>        {{ $manpower->computer_knowledge }} &emsp; {{ $manpower->knowledge_name }}
             @endif
             @if ($manpower->other_skill!='')
-            {{ $manpower->other_skill }} &emsp; {{ $manpower->other_skill_name }}
+    <br>        {{ $manpower->other_skill }} &emsp; {{ $manpower->other_skill_name }}
             @endif
         </td>
     </tr>
@@ -162,13 +162,13 @@
             {{ $manpower->inexperience }} 
             @endif
             @if ($manpower->minimum_experience!='')
-            {{ $manpower->minimum_experience }} {{ $manpower->minimum_experience_com }}
+    <br>        {{ $manpower->minimum_experience }} {{ $manpower->minimum_experience_com }}
             @endif
             @if ($manpower->additional_experience!='')
-            {{ $manpower->additional_experience }} {{ $manpower->additional_com }}
+    <br>        {{ $manpower->additional_experience }} {{ $manpower->additional_com }}
             @endif
             @if ($manpower->other_experience='')
-            {{ $manpower->other_experience }} {{ $manpower->other_experience_com }}
+    <br>        {{ $manpower->other_experience }} {{ $manpower->other_experience_com }}
             @endif
         </td>
     </tr>
