@@ -9,9 +9,7 @@
                             <div class="alert alert-success d-flex align-items-center"> {!! session('flash_message') !!}</div>
                         
                             @endif
-                         
-                  
-                          <br><br>
+                               
                           <div class="box">
                             <div class="box-header">
                               <h3 class="box-title">คำขอกำลังคน/Manpower Requisition</h3>
@@ -38,7 +36,7 @@
                                     <td>{{$item->position_required}}</td>
                                     <td>{{$item->requested}}</td>
                                     <td> 
-                                        <a href="{{url('manpower/'.$item['id'])}}" class="btn btn-success btn-xs "><i class="fa  fa-search"></i></a>
+                                        <a href="{{'manpower/'.$item['id'].'/edit'}}" class="btn btn-success btn-xs "><i class="fa   fa-pencil-square-o"></i></a>
                                         @if($item->Send_enable  == 0)
                                        
                                         <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send{{$item['id']}}"><i class=" fa  fa-send-o"></i></button>
@@ -47,15 +45,16 @@
                                               <div class="modal-content">
                                                 <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">ลบข้อมูล</h4>
+                                                  <h4 class="modal-title">ส่งเมลล์</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT'])}}
+                                                    {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
                                                       
                                                   <p>คุณต้องการส่งเมลล์ใช่หรือไม่จะไม่สามารถส่งได้อีกครั้ง คำขอกำลังคนของ{{$item->requested}}</p>
+                                                  <input type="hidden" name="mail" value="http://127.0.0.1/manpower/{{$item->id}}/edit">
                                                 </div>
                                                 <div class="modal-footer">
-                                                  <button type="summit" class="btn btn-danger">ลบ</button>
+                                                <span id="sendData"> <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>  
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
                                                 </div>
                                                 {{ Form::close() }}
@@ -71,7 +70,7 @@
 
                                         @endif
                                       @if($item->Sup_enable && $item->MD_enable == 1)
-                                        <a href="{{url('manpower/'.$item['id'])}}" class="btn btn-success btn-xs "><i class="fa fa-download"></i></a>
+                                        <a href="{{url('manpower/'.$item['id'])}}" class="btn btn-info btn-xs "><i class="fa fa-download"></i></a>
                                         @endif
                                         <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$item['id']}}"><i class=" fa fa-trash"></i></button>
                                         <div id="myModal{{$item['id']}}" class="modal fade" role="dialog">
@@ -101,13 +100,17 @@
                                     <td>
                                     @if($item->Sup_enable && $item->MD_enable == 0)
 
-                                   <b class="text-danger">ยังไม่อนุมัติลายเซ็น</b>  
-                                   @elseif($item->Sup_enable && $item->MD_enable == 1)
-                                   <b class="text-success">อนุมัติลายเซ็นแล้ว</b>  
+                                   <b class="text-danger">ยังไม่อนุมัติลายเซ็น/</b>  
+                                   @elseif( $item->MD_enable == 1)
+                                   <b class="text-success">อนุมัติลายเซ็นแล้วจากประธาน/</b>  
                                         @else
-                                        <b class="text-danger">ยังไม่อนุมัติลายเซ็น</b>  
+                                        <b class="text-danger">ยังไม่อนุมัติลายเซ็นจากประธาน</b>  
                                     @endif
-
+                                    @if($item->Send_enable == 1)
+                                    <b class="text-success"> ส่งเมลล์แล้ว</b>
+                                    @else
+                                    <b class="text-danger">ยังไม่ได้ส่งเมลล์แล้ว</b>  
+                                    @endif
 
 
 
@@ -153,4 +156,17 @@
 
     </div>
 </div>
+<script>
+
+$("#inviter").submit(function(){    
+    
+    $("#sendData").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+    
+     return true; });
+
+
+
+
+
+</script>
 @endsection

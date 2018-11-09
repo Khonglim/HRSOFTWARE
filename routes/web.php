@@ -46,6 +46,26 @@ Route::get('/manpowercreate', function ()
 
 });
 
+Route::get('savepower', function () 
+{
+    return view('Manpower.save_manpower');
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::resource('rate','InterviewController');
 
 Route::resource('rate_sup','Interview_supController');
