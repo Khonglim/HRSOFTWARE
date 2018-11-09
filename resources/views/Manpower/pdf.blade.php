@@ -43,13 +43,13 @@
 <h2>บริษัทในเครือของ เอ็น จี จี กรุ๊ป</h2><hr>
 <b>บริษัทต้นสังกัด/company :</b> {{ $manpower->company }} <br>
 <table>
-    <tr><td colspan="4"><p align="center">ใบขอกำลังคน / Manpower Requistion</p></td></tr>
+    <tr><td colspan="4" align="center">ใบขอกำลังคน / Manpower Requistion</td></tr>
     <tr>
         <td colspan="4">
             @if ($manpower->internal_Recruit!='')
                  {{ $manpower->internal_Recruit }}
             @endif
-            @if ($manpower->internal_Recruit!='')
+            @if ($manpower->external_Recruit!='')
         <br>     {{ $manpower->external_Recruit }}
             @endif
         </td>
@@ -143,32 +143,32 @@
     <tr>
         <td colspan="4"><b>ความสามารถพิเศษ/Special Skill :</b> 
             @if ($manpower->foreign_languages!='')
-    <br>        {{ $manpower->foreign_languages }} &emsp; {{ $manpower->languages_name }}
+            {{ $manpower->foreign_languages }} &emsp; {{ $manpower->languages_name }}
             @endif
             @if ($manpower->typing!='')
-    <br>        {{ $manpower->typing }} &emsp; {{ $manpower->typing_name }}
+            {{ $manpower->typing }} &emsp; {{ $manpower->typing_name }}
             @endif
             @if ($manpower->computer_knowledge!='')
-    <br>        {{ $manpower->computer_knowledge }} &emsp; {{ $manpower->knowledge_name }}
+            {{ $manpower->computer_knowledge }} &emsp; {{ $manpower->knowledge_name }}
             @endif
             @if ($manpower->other_skill!='')
-    <br>        {{ $manpower->other_skill }} &emsp; {{ $manpower->other_skill_name }}
+            {{ $manpower->other_skill }} &emsp; {{ $manpower->other_skill_name }}
             @endif
         </td>
     </tr>
     <tr>
         <td colspan="4"><b>ประสบการณ์/Experience :</b>
             @if ($manpower->inexperience!='')
-    <br>        {{ $manpower->inexperience }} 
+            {{ $manpower->inexperience }} 
             @endif
             @if ($manpower->minimum_experience!='')
-    <br>        {{ $manpower->minimum_experience }} {{ $manpower->minimum_experience_com }}
+            {{ $manpower->minimum_experience }} {{ $manpower->minimum_experience_com }}
             @endif
             @if ($manpower->additional_experience!='')
-    <br>        {{ $manpower->additional_experience }} {{ $manpower->additional_com }}
+            {{ $manpower->additional_experience }} {{ $manpower->additional_com }}
             @endif
             @if ($manpower->other_experience='')
-    <br>        {{ $manpower->other_experience }} {{ $manpower->other_experience_com }}
+            {{ $manpower->other_experience }} {{ $manpower->other_experience_com }}
             @endif
         </td>
     </tr>
