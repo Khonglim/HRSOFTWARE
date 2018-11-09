@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Department;
-use App\Company;
+use App\Ngg_department;
+use Illuminate\Support\Facades\DB;
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 class DepartmentController extends Controller
 {
@@ -15,10 +17,12 @@ class DepartmentController extends Controller
     public function index()
     
     {
-        $company = Company::where('enable','=', 1)->get();
-        $department = Department::where('enable', '=', 1)->get();
-        $data = array('department' => $department , 'company' => $company  );
-        return view('department/department',$data );
+         $department = Ngg_department::where('ndp_enable', '=', 1)->get();
+         $data = array(
+           'department' => $department
+        );
+        
+        return view('ngg_department/ngg_department_index',$data);
     }
 
     /**
@@ -28,15 +32,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {   
-        
-       $titles = Department::where('enable','=', 1)->pluck('department_name','id');
-        $company = Company::where('enable','=', 1)->pluck('company_Name','id');
-       
-        $departments = Department::where('enable','=', 1)->paginate();
-      
-        $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
-
-        return view('department/formcreatedepartment',$data );
+        return view('ngg_department/ngg_department_create');
     }
 
     /**
@@ -47,28 +43,11 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'company_id' => 'required|int',
-            'department_name' => 'required|alpha',
-        ]);
-        $department = new Department;
-        $department->department_name = $request->department_name;
-        if ( Input::get('departtt') == 'threeCarDiv') {
-
-           $department->department_head_id =$request->department_head_id_2;
-
-        }elseif ( Input::get('departtt') == 'twoCarDiv') {
-
-             $department->department_head_id=$request->department_head_id_1;
-
-        }else{
-            echo "none";
-           
-        }
-        $department->company_id = $request->company_id;
-        $department->Remark = $request->Remark;
-        $department->save();
-        return redirect('department');
+       $department =  new Ngg_department;
+       $department->ndp_name = Input::get('name');
+       $department->ndp_remark = Input::get('remark');
+       $department->save();
+        return redirect('departmentsmanage');
     }
 
     /**
@@ -79,7 +58,19 @@ class DepartmentController extends Controller
      */
     public function show($id)
     {
-        //
+
+        if($id !== '') {
+          $department = Ngg_department::where('ndp_enable', '=', 1)
+          ->where('ndp_id', '=', $id)
+          ->get();
+         $data = array(
+           'department' => $department
+        );
+        return view('ngg_department/ngg_department_show',$data); 
+            
+        }
+
+        
     }
 
     /**
@@ -92,13 +83,16 @@ class DepartmentController extends Controller
     {
        
         if($id !== '') {
-             $department = Department::find($id);
-            $companys =  Company::where('enable','=', 1)->get();
-            $departments =  Department::where('enable','=', 1)->get();
+           $department = Ngg_department::where('ndp_enable', '=', 1)
+            ->where('ndp_id', '=', $id)
+            ->get();
+            $idd = $id;
             $data = array(
-                'department' => $department,'departments' => $departments,'companys' => $companys 
+           'department' => $department,
+           'idd' => $idd 
             );
-            return view('formdepartment',$data);
+
+            return view('ngg_department/ngg_department_edit',$data);
         }
     }
 
@@ -111,17 +105,22 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'company_id' => 'required|alpha',
-            'department_name' => 'required|alpha',
-        ]);
-        $department =  Department::find($id);
-        $department->department_name = $request->department_name;
-        $department->department_head_id = $request->company_id;
-        $department->company_id = $request->company_id;
-        $department->Remark = $request->Remark;
-        $department->save();
-        return redirect('department'); 
+        if($id !== '') {
+            
+             DB::table('ngg_department')
+            ->where('ndp_id', $id)
+            ->update(['ndp_name' => Input::get('name')]);
+
+            DB::table('ngg_department')
+            ->where('ndp_id', $id)
+            ->update(['ndp_name' => Input::get('remark')]);
+
+            Session::flash('flash_message','สำเร็จ!! แก้ไขเรียบร้อย');
+            return redirect('departmentsmanage'); 
+        }
+       
+        
+
     }
 
     /**
@@ -132,9 +131,11 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        $department = Department::find($id);
-        $department->enable =0;
-        $department->save();
-        return redirect('department'); 
+         DB::table('ngg_department')
+            ->where('ndp_id', $id)
+            ->update(['ndp_enable' => 0]);
+
+        Session::flash('flash_message','สำเร็จ!! ลบเรียบร้อย');
+        return redirect('departmentsmanage'); 
     }
 }

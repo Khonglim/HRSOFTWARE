@@ -7,14 +7,14 @@
           <br><br>
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">บริษัท</h3>
+            <h3 class="box-title">ระดับ</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body"">
             @foreach($company as $com)
             <?php 
             $com_title = $com->ncp_name;
-            $com_remark = $com->ncp_remark;
+            $com_  remark = $com->ncp_remark;
             ?>
             @endforeach
           <div class="row">
