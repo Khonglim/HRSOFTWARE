@@ -127,7 +127,7 @@
     &emsp;&emsp;    {{ $manpower->high_school }}
             @endif
             @if ($manpower->vocational!='')
-    &emsp;&emsp;    {{ $manpower->primary }}
+    &emsp;&emsp;    {{ $manpower->vocational }}
             @endif
             @if ($manpower->high_vocational!='')
     &emsp;&emsp;    {{ $manpower->high_vocational }}
