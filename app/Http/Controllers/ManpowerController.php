@@ -13,10 +13,7 @@ class ManpowerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+   
 
     public function index()
     {
@@ -92,14 +89,11 @@ class ManpowerController extends Controller
         $manpower->additional_com = $request->additional_com;
         $manpower->other_experience = $request->other_experience;
         $manpower->other_experience_com = $request->other_experience_com;
-        $manpower->signa1_60 = $request->signa1_60;
+        $manpower->signa1_requested = $request->signa1_requested;
         $manpower->requested = $request->requested;
         $manpower->knowledge_name = $request->knowledge_name;
         $manpower->other_skill_name = $request->other_skill_name;
-     
         $manpower->save();
-
-
         Session::flash('flash_message','บันทึกเรียบร้อย!! รอการติดต่อกลับจากเจ้าหน้าที่');
         return view('Manpower.manpowercreate');
     }
@@ -112,7 +106,11 @@ class ManpowerController extends Controller
      */
     public function show($id)
     {
-        //
+        $manpower =  Manpower::find($id);
+        $data = array(
+            'manpower' =>  $manpower
+        );
+        return view('Manpower/pdf',$data);
     }
 
     /**
@@ -141,7 +139,26 @@ class ManpowerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        $manpower =  Manpower::find($id);
+        if($request->signa1_md != ''){
+            $manpower->signa1_md = $request->signa1_md;
+            $manpower->MD_enable =1;
+        }
+        if($request->signa1_sup != ''){
+            $manpower->signa1_sup = $request->signa1_sup;
+            $manpower->Sup_enable =1;
+        }
+       
+       
+
+
+        
+        $manpower->save();
+        Session::flash('flash_message','บันทึกเรียบร้อย!! รอการติดต่อกลับจากเจ้าหน้าที่');
+        return 'สำเร็จ';
+
     }
 
     /**
