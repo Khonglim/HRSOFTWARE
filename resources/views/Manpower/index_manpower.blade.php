@@ -36,7 +36,7 @@
                                     <td>{{$item->position_required}}</td>
                                     <td>{{$item->requested}}</td>
                                     <td> 
-                                        <a href="{{url('manpower/'.$item['id'])}}" class="btn btn-success btn-xs "><i class="fa  fa-search"></i></a>
+                                        <a href="{{'manpower/'.$item['id'].'/edit'}}" class="btn btn-success btn-xs "><i class="fa   fa-pencil-square-o"></i></a>
                                         @if($item->Send_enable  == 0)
                                        
                                         <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send{{$item['id']}}"><i class=" fa  fa-send-o"></i></button>
@@ -70,7 +70,7 @@
 
                                         @endif
                                       @if($item->Sup_enable && $item->MD_enable == 1)
-                                        <a href="{{url('manpower/'.$item['id'])}}" class="btn btn-success btn-xs "><i class="fa fa-download"></i></a>
+                                        <a href="{{url('manpower/'.$item['id'])}}" class="btn btn-info btn-xs "><i class="fa fa-download"></i></a>
                                         @endif
                                         <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$item['id']}}"><i class=" fa fa-trash"></i></button>
                                         <div id="myModal{{$item['id']}}" class="modal fade" role="dialog">
@@ -101,10 +101,10 @@
                                     @if($item->Sup_enable && $item->MD_enable == 0)
 
                                    <b class="text-danger">ยังไม่อนุมัติลายเซ็น/</b>  
-                                   @elseif($item->Sup_enable && $item->MD_enable == 1)
-                                   <b class="text-success">อนุมัติลายเซ็นแล้ว/</b>  
+                                   @elseif( $item->MD_enable == 1)
+                                   <b class="text-success">อนุมัติลายเซ็นแล้วจากประธาน/</b>  
                                         @else
-                                        <b class="text-danger">ยังไม่อนุมัติลายเซ็น/</b>  
+                                        <b class="text-danger">ยังไม่อนุมัติลายเซ็นจากประธาน</b>  
                                     @endif
                                     @if($item->Send_enable == 1)
                                     <b class="text-success"> ส่งเมลล์แล้ว</b>
