@@ -50,7 +50,7 @@
                  {{ $manpower->internal_Recruit }}
             @endif
             @if ($manpower->external_Recruit!='')
-        <br>     {{ $manpower->external_Recruit }}
+            {{ $manpower->external_Recruit }}
             @endif
         </td>
     </tr>
@@ -173,11 +173,126 @@
         </td>
     </tr>
     <tr>
-        <td align="center"><b>ผู้ขอจ้าง/Requested by</b> <br>  <br>{{ $manpower->requested }}<br> ....../....../......</td>
-        <td align="center" colspan="2"><b>หัวหน้าส่วนงานสรรหาว่าจ้าง/Sup.HR Recruitmunt</b><br><br> ....../....../......</td>
-        <td align="center"><b>ประธานกรรมการ/MD.</b><br><br> ....../....../......</td>
+        <td align="center"> <b>ผู้ขอจ้าง/Requested by</b> 
+            <br>     
+                    <div class="table-wrapper-scroll-y">
+                        <div class=" sig1">
+                                    <div class="sigWrapper">
+                                    
+                                      <canvas class="pad" width="220" height="70"></canvas>
+                                    </div>
+                               
+                                  </div> 
+                        </div>
+                            
+                                <b>ชื่อ-นามสกุล:</b> {{$manpower->requested}} ผู้ร้องขอ</td>
+        <td align="center" colspan="2">
+                <b>ประธานกรรมการ/MD.</b>
+                <br>
+                @if($manpower->signa1_md =='')
+                <div class="table-wrapper-scroll-y">
+                <div class="sigPad">
+                            <ul class="sigNav">
+                              <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                              <li class="clearButton"><a href="#clear">Clear</a></li>
+                            </ul>
+                            <div class="sig sigWrapper">
+                              <div class="typed"></div>
+                              <canvas class="pad" width="220" height="70"></canvas>
+                              <input type="hidden" name="signa1_md" class="output" required>
+
+                            </div>
+                          </div>
+                        </div>
+                        @else
+                        <div class="table-wrapper-scroll-y">
+                                <div class="sig2">
+                                            <div class="sigWrapper">
+                                            
+                                              <canvas class="pad" width="220" height="70"></canvas>
+                                            </div>
+                                       
+                                          </div> 
+                                </div>
+                        @endif
+                
+                <br> 
+
+
+
+        </td>
+        <td align="center">
+                <div class="table-wrapper-scroll-y">
+                        <b>หัวหน้าส่วนงานสรรหาว่าจ้าง/Sup.HR Recruitmunt</b><br>
+                    @if($manpower->signa1_sup =='' && $manpower->MD_enable == 1)
+                        <div class="sigPad">
+                                    <ul class="sigNav">
+                                      <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                                      <li class="clearButton"><a href="#clear">Clear</a></li>
+                                    </ul>
+                                    <div class="sig sigWrapper">
+                                      <div class="typed"></div>
+                                      <canvas class="pad" width="220" height="70"></canvas>
+                                      <input type="hidden" name="signa1_sup" class="output" required>
+
+                                    </div>
+                                  </div>
+                                  @else
+
+                                  <div class="table-wrapper-scroll-y">
+                                        <div class=" sig3">
+                                                    <div class="sigWrapper">
+                                                    
+                                                      <canvas class="pad" width="220" height="70"></canvas>
+                                                    </div>
+                                               
+                                                  </div> 
+                                        </div>
+
+
+
+
+
+
+
+                        @endif
+                                </div>
+                   <br> 
+                
+                   <input type="hidden" value="{{$manpower->signa1_requested}}" id="sig1">
+                   <input type="hidden" value="{{$manpower->signa1_md}}" id="sig2">
+                   <input type="hidden" value="{{$manpower->signa1_sup}}" id="sig3">
+        
+        
+        </td>
     </tr>
 </table>
         </div>
+<br>
+   <br>
+
+
+   <script>
+        $(document).ready(function() {
+          $('.sigPad').signaturePad({drawOnly:true});
+                 
+        });
+
+$(document).ready(function() {
+
+    
+    var  sing1  = document.getElementById("sig1").value;
+    var  sing2  = document.getElementById("sig2").value;
+    var  sing3  = document.getElementById("sig3").value;
+   
+  
+$('.sig1').signaturePad({displayOnly:true}).regenerate(sing1);
+$('.sig2').signaturePad({displayOnly:true}).regenerate(sing2);
+$('.sig3').signaturePad({displayOnly:true}).regenerate(sing3);
+  
+
+});
+
+  </script>
 </body>
 </html>

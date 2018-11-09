@@ -157,7 +157,7 @@ class ManpowerController extends Controller
         
         $manpower->save();
         Session::flash('flash_message','บันทึกเรียบร้อย!! รอการติดต่อกลับจากเจ้าหน้าที่');
-        return 'สำเร็จ';
+        return redirect('savepower');
 
     }
 

@@ -203,8 +203,9 @@
                                                             <td align="center">
                                                                   
                                                                 
-                                                                <b>ผู้ขอจ้าง/Requested by</b> <br>     
-                                                                <div class="table-wrapper-scroll-y">
+                                                    <b>ผู้ขอจ้าง/Requested by</b> 
+                                                    <br>     
+                                                            <div class="table-wrapper-scroll-y">
                                                                 <div class=" sig1">
                                                                             <div class="sigWrapper">
                                                                             
@@ -213,7 +214,8 @@
                                                                        
                                                                           </div> 
                                                                 </div>
-                                                                          <br><b>ชื่อ-นามสกุล:</b> {{$manpower->requested}} ผู้ร้องขอ
+                                                                     <br>
+                                                                        <b>ชื่อ-นามสกุล:</b> {{$manpower->requested}} ผู้ร้องขอ
                                                                       
                                                                       
                                                                       </td>
@@ -340,7 +342,7 @@
       
     $('.sig1').signaturePad({displayOnly:true}).regenerate(sing1);
     $('.sig2').signaturePad({displayOnly:true}).regenerate(sing2);
-        $('.sig3').signaturePad({displayOnly:true}).regenerate(sing3);
+    $('.sig3').signaturePad({displayOnly:true}).regenerate(sing3);
       
 
     });
