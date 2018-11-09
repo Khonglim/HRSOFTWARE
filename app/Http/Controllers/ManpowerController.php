@@ -145,19 +145,24 @@ class ManpowerController extends Controller
         if($request->signa1_md != ''){
             $manpower->signa1_md = $request->signa1_md;
             $manpower->MD_enable =1;
+            $manpower->save();
+            Session::flash('flash_message','บันทึกเรียบร้อย!! ');
+            return redirect('savepower');
         }
         if($request->signa1_sup != ''){
             $manpower->signa1_sup = $request->signa1_sup;
             $manpower->Sup_enable =1;
+            $manpower->save();
+            Session::flash('flash_message','บันทึกเรียบร้อย!! ');
+            return redirect('manpower');
         }
        
        
 
 
         
-        $manpower->save();
-        Session::flash('flash_message','บันทึกเรียบร้อย!! รอการติดต่อกลับจากเจ้าหน้าที่');
-        return redirect('savepower');
+       
+       
 
     }
 
