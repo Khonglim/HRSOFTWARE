@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Department;
-use App\Company;
-use App\Position;
-use Illuminate\Support\Facades\Input;
+use App\Ngg_position;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Controller;
 
 class PositionController extends Controller
 {
@@ -17,13 +18,11 @@ class PositionController extends Controller
      */
     public function index()
     {
-        $position = Position::where('enable', '=', 1)->get();
-        $company = Company::where('enable', '=', 1)->get();
-        $department = Department::where('enable', '=', 1)->get();
+        $position = Ngg_position::where('nps_enable', '=', 1)->get();
         $data = array(
-            'position' => $position,'department' => $department ,'company' => $company
+            'position' => $position
         );
-        return view('position/position',$data );
+        return view('ngg_position/ngg_position_index',$data );
     }
 
     /**
@@ -33,14 +32,8 @@ class PositionController extends Controller
      */
     public function create()
     {
-         $titles = Department::where('enable','=', 1)->pluck('department_name','id');
-        $company = Company::where('enable','=', 1)->pluck('company_Name','id');
-       
-        $departments = Department::where('enable','=', 1)->paginate();
-      
-        $data = array('titles' => $titles, 'departments' => $departments ,'company' => $company );
-
-        return view('position/formcreateposition',$data );
+        
+        return view('ngg_position/ngg_position_create');
         
     }
 
@@ -52,16 +45,14 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'position_name' => 'required',
-        
-        ]);
-        $position = new Position;
-        $position->position_name = $request->position_name ;
-        $position->Department_ID = $request->Department_ID;
-        $position->Remark = $request->Remark;
+       
+        $position = new Ngg_position;
+        $position->nps_name = Input::get('name');
+        $position->nps_remark = Input::get('remark');
         $position->save();
-        return redirect('position');
+
+        Session::flash('flash_message','บันทึกสำเร็จ!!');
+         return redirect("positionsmanage");
     }
 
     /**
@@ -72,7 +63,17 @@ class PositionController extends Controller
      */
     public function show($id)
     {
-       
+             if($id !== '') {
+            $position = Ngg_position::where('nps_enable', '=', 1)
+            ->where('id', '=',$id)
+            ->get();
+             $data = array(
+            'position' => $position
+            );
+             return view('ngg_position/ngg_position_show',$data );
+            }
+        
+        
     }
 
     /**
@@ -83,16 +84,16 @@ class PositionController extends Controller
      */
     public function edit($id)
     {
-         if($id !== '') {
-            $position = Position::find($id);
-            $company =  Company::where('enable','=', 1)->get();
-            $department =  Department::where('enable','=', 1)->get();
-            $positions =  Position::where('enable','=', 1)->get();
-
-            $data = array(
-                'position' => $position,'positions' => $positions,'company' => $company,'department' => $department
+         if($id !== '') {     
+            $position = Ngg_position::where('nps_enable', '=', 1)
+            ->where('id', '=',$id)
+            ->get();
+            $idd = $id;
+             $data = array(
+                'idd'=>$idd,
+            'position' => $position
             );
-            return view('position/formposition',$data);
+            return view('ngg_position/ngg_position_edit',$data);
         }
     }
 
@@ -105,16 +106,19 @@ class PositionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'position_name' => 'required',
         
-        ]);
-        $position =  Position::find($id);
-        $position->position_name = $request->position_name;
-        $position->Department_ID = $request->Department_ID;
-        $position->Remark = $request->Remark;
-        $position->save();
-        return redirect('position'); 
+       if($id !== '') {    
+        DB::table('ngg_position')
+        ->where('id', $id)
+        ->update(['nps_name' => Input::get('name')]);
+
+        DB::table('ngg_position')
+        ->where('id', $id)
+        ->update(['nps_remark' => Input::get('remark')]);
+
+        Session::flash('flash_message','แก้ไขสำเร็จ!!');
+        return redirect('positionsmanage'); 
+        }
     }
 
     /**
@@ -125,9 +129,13 @@ class PositionController extends Controller
      */
     public function destroy($id)
     {
-        $position = Position::find($id);
-        $position->enable =0;
-        $position->save();
-        return redirect('position'); 
+         if($id !== '') {    
+        DB::table('ngg_position')
+        ->where('id', $id)
+        ->update(['nps_enable' => 0]);
+    
+        Session::flash('flash_message','ลบสำเร็จ!!');
+        return redirect('positionsmanage'); 
+        }
     }
 }
