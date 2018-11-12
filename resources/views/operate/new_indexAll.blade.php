@@ -14,7 +14,9 @@
                   </div>
                   <div class="form-horizontal">
                         <div class="box-body">
-                              {{Form::open(['url'=>'Operate','name'=>'frmMain' ])}} @csrf
+                              {{Form::open(['url'=>'Operate','name'=>'frmMain' ])}} 
+                              @csrf
+                            
                               <div class="form-group">
                                     <label class="col-sm-2 control-label">ค้นหาชื่อในระบบ: </label>
 
@@ -24,11 +26,12 @@
                                           <select class="js-example-basic-single  form-control" id="country" name="id" required OnChange="resutName(this.value);">
                                                                         <option value=""  >--เลือกชื่อพนักงาน--</option>
                                                                         @foreach ($employee  as $e)
-                                          <option value="{{$e->nem_thai_firstname}} {{$e->nem_thai_lastname }}|{{$e->nem_code}}|{{$e->nps_name}}|{{$e->ndp_name}}/{{$e->nst_name}}|{{$e->ncp_name}}|{{$e->nlv_name}}"> {{$e->nem_thai_firstname }} {{$e->nem_thai_lastname }}</option>   
+                                          <option value="{{$e->nem_thai_firstname}} {{$e->nem_thai_lastname }}|{{$e->nem_code}}|{{$e->nps_name}}|{{$e->ndp_name}}/{{$e->nst_name}}|{{$e->ncp_name}}|{{$e->nlv_name}}|{{$e->nem_id}}"> {{$e->nem_thai_firstname }} {{$e->nem_thai_lastname }}</option>   
                                                                         @endforeach
                                                                         </select>
                                          
                                     </div>
+                                    <input type="hidden" name="id_employ" id="id_employ">
                                     <label class="col-sm-2 control-label">บริษัท:</label>
                                     <div class="col-sm-4">
                                           <input type="text" class="form-control" name="textCompany">
@@ -109,7 +112,7 @@
 
                                     <label class="col-sm-2 control-label">ระดับ</label>
                                     <div class="col-sm-4">
-                                          <select name="degree" id="degree" class="form-control">
+                                          <select name="degree_en" id="degree" class="form-control">
                                                       <option value="0">ปฏิบัติการ</option>
                                                       <option value="1">ผู้บังคับัญชา</option>
 
@@ -123,7 +126,7 @@
                               <div class="form-group">
                                     <label class="col-sm-2 control-label">จำนวนวันที่ประเมิน/วัน</label>
                                     <div class="col-sm-4">
-                                          <input type="number" name="number" id="number" class="form-control">
+                                          <input type="number" name="numberMN" id="numberMN" class="form-control">
                                     </div>
 
                               </div>
@@ -147,7 +150,9 @@
                         frmMain.textPosition.value = strCusName.split("|")[2];
                         frmMain.textDepartment.value = strCusName.split("|")[3];
                         frmMain.textCompany.value = strCusName.split("|")[4];
-                        frmMain.textDegree.value = strCusName.split("|")[5];          
+                        frmMain.textDegree.value = strCusName.split("|")[5];       
+                        frmMain.id_employ.value = strCusName.split("|")[6];        
+
             }
 </script>
 @endsection
