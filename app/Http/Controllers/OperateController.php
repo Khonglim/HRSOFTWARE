@@ -46,20 +46,28 @@ class OperateController extends Controller
      */
     public function store(Request $request)
     {
-        $employee  = DB::table('ngg_employee')
-        ->leftJoin('ngg_company', 'ngg_employee.nem_company_id', '=', 'ngg_company.ncp_id')
-        ->leftJoin('ngg_department', 'ngg_employee.nem_department_id', '=', 'ngg_department.ndp_id')
-        ->leftJoin('ngg_sector', 'ngg_employee.nem_sector_id', '=', 'ngg_sector.nst_id')
-        ->leftJoin('ngg_position', 'ngg_employee.nem_position_id', '=', 'ngg_position.id')
-        ->leftJoin('ngg_level', 'ngg_employee.nem_level_id', '=', 'ngg_level.nlv_id')
-        ->get();
         $operater = new Operate;
-        
+        $operater->company =  $request->textCompany;
+        $operater->first_name =  $request->textName;
+        $operater->new_id_employ = $request->textNem_code;
+        $operater->new_position = $request->textPosition;
+        $operater->new_department = $request->textDepartment;
+        $operater->email = $request->email;
+        $operater->id_employ = $request->id_employ;
+        $operater->degree = $request->textDegree;
+        $operater->starttime = $request->dateStart2;
+        $operater->endtime = $request->dateEnd2;
+        $operater->number = $request->totolDay2;
+        $operater->numberMN = $request->numberMN;
+        $operater->date_60 = $request->totolDay_60;
+        $operater->date_90 = $request->totolDay_90;
+        $operater->email = $request->email;
+        $operater->degree_enable =  $request->degree_en;
+        $operater->save();
 
-
-        $data = array('employee' => $employee);
+     
         Session::flash('flash_message','บันทึกเรียบร้อย!! และส่งอีเมลล์เรียบร้อย');
-        return view("operate/new_indexAll",$data);
+        return redirect('Operate');
     }
 
     /**
