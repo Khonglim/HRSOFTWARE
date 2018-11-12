@@ -107,13 +107,13 @@ class DepartmentController extends Controller
     {
         if($id !== '') {
             
-             DB::table('ngg_department')
+            DB::table('ngg_department')
             ->where('ndp_id', $id)
             ->update(['ndp_name' => Input::get('name')]);
 
             DB::table('ngg_department')
             ->where('ndp_id', $id)
-            ->update(['ndp_name' => Input::get('remark')]);
+            ->update(['ndp_remark' => Input::get('remark')]);
 
             Session::flash('flash_message','สำเร็จ!! แก้ไขเรียบร้อย');
             return redirect('departmentsmanage'); 

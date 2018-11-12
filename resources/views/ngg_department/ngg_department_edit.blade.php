@@ -23,13 +23,13 @@
              <div class="col-md-3"> 
                         <div class="form-group label-floating">
                                 <label class="control-label">ชื่อบริษัท</label>
-                                 {{Form::text('name1',$com_title,['class'=>'form-control','required'])}}
+                                 {{Form::text('name',$com_title,['class'=>'form-control','required'])}}
                         </div>  
                 </div>  
                    <div class="col-md-3"> 
                                  <div class="form-group label-floating">
                             <label class="control-label">หมายเหตุ</label>
-                            {{Form::text('remark1',$com_remark,['class'=>'form-control'])}}
+                            {{Form::text('remark',$com_remark,['class'=>'form-control'])}}
                         </div>  
                 </div>
   

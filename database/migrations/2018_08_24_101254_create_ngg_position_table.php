@@ -18,7 +18,7 @@ class CreateNggPositionTable extends Migration
             $table->char('nps_name',200);
             $table->char('nps_remark',255)->nullable();
             $table->tinyInteger('nps_enable')->default('1');
-            
+            $table->timestamps(); 
         });
     }
 
