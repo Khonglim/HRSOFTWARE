@@ -440,6 +440,7 @@ body {
       $('#conall').DataTable()
       $('#user_setting').DataTable()
       $('#manpower').DataTable()
+      $('#operate').DataTable()
      
     });
   </script>

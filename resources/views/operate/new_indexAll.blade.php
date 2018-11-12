@@ -3,9 +3,7 @@
 
 <div class="content-wrapper">
       <div class="content container">
-                  @if(Session::has('flash_message') )
-                  <div class="alert alert-success d-flex align-items-center"> {!! session('flash_message') !!}</div>
-                  @endif
+               
             <div class="box box-danger">
                   <div class="box-header with-border">
                         <h3 class="box-title">ประเมินผลการทดลองงาน(สำหรับผู้ประเมินครั้งแรกเท่านั้น)</h3>

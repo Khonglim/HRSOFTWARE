@@ -8,6 +8,7 @@ use App\Extensions\MongoSessionStore;
 use Illuminate\Support\Facades\Session;
 use DB;
 use App\Operate;
+
 class OperateController extends Controller
 {
     /**
@@ -17,7 +18,9 @@ class OperateController extends Controller
      */
     public function index()
     {
-        //
+        $operater = Operate::all();
+        $data = array('operater'=>'$operater');
+        return view("operate/index_operate",$data);
     }
 
     /**
