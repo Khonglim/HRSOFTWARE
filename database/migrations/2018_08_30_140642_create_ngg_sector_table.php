@@ -16,8 +16,9 @@ class CreateNggSectorTable extends Migration
         Schema::create('ngg_sector', function (Blueprint $table) {
             $table->increments('nst_id');
             $table->string('nst_name',200);
-            $table->string('nst_remark',500);
+            $table->string('nst_remark',500)->nullable();
             $table->tinyInteger('nst_enable')->default('1');
+            $table->timestamps(); 
         });
     }
 

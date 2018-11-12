@@ -16,9 +16,9 @@ class CreateNggLevelTable extends Migration
         Schema::create('ngg_level', function (Blueprint $table) {
             $table->increments('nlv_id');
             $table->string('nlv_name',200);
-            $table->string('nlv_remark',500);
+            $table->string('nlv_remark',500)->nullable();
             $table->tinyInteger('nlv_enable')->default('1');
-            
+            $table->timestamps(); 
         });
     }
 

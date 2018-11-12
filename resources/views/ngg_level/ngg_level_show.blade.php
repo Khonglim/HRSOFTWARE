@@ -11,17 +11,17 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body"">
-            @foreach($company as $com)
+            @foreach($level as $lev)
             <?php 
-            $com_title = $com->ncp_name;
-            $com_  remark = $com->ncp_remark;
+            $com_title = $lev->nlv_name;
+            $com_remark = $lev->nlv_remark;
             ?>
             @endforeach
           <div class="row">
             <div class="col-md-3"></div>
              <div class="col-md-3"> 
                         <div class="form-group label-floating">
-                                <label class="control-label">ชื่อบริษัท</label>
+                                <label class="control-label">ชื่อระดับ</label>
                                 {{$com_title}}
                         </div>  
                 </div>  
@@ -40,7 +40,7 @@
         </div>
         <div class="row">
             <div class="col-md-3"> 
-              {{ Html::link('companysmanage','Back',array('class ' => 'btn btn-primary')) }}
+              {{ Html::link('levelsmanage','Back',array('class ' => 'btn btn-primary')) }}
                                     </div>
             
           </div>

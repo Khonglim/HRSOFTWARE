@@ -94,7 +94,7 @@ class ManpowerController extends Controller
         $manpower->knowledge_name = $request->knowledge_name;
         $manpower->other_skill_name = $request->other_skill_name;
         $manpower->save();
-        Session::flash('flash_message','บันทึกเรียบร้อย!! รอการติดต่อกลับจากเจ้าหน้าที่');
+        Session::flash('flash_message','บันทึกเรียบร้อย!! และส่งอีเมลล์เรียบร้อย');
         return view('Manpower.manpowercreate');
     }
 

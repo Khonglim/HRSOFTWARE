@@ -4,12 +4,12 @@
     <div class="content container">
     <div class="row">
       <div class="col-md-10">
-        {{Form::open(['url'=>'companysmanage'])}}
+        {{Form::open(['url'=>'levelsmanage'])}}
         @csrf
           <br><br>
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">เพิ่มบริษัท</h3>
+            <h3 class="box-title">เพิ่มระดับ</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body"">
@@ -18,7 +18,7 @@
             <div class="col-md-3"></div>
              <div class="col-md-3"> 
                         <div class="form-group label-floating">
-                                <label class="control-label">ชื่อบริษัท</label>
+                                <label class="control-label">ชื่อระดับ</label>
                                  {{Form::text('name','',['class'=>'form-control','required'])}}
                         </div>  
                 </div>  
@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="col-md-3"> 
-              {{ Html::link('companysmanage','Back',array('class ' => 'btn btn-primary')) }}
+              {{ Html::link('levelsmanage','Back',array('class ' => 'btn btn-primary')) }}
               {{ Form::submit('บันทึก',['class'=> 'btn btn-success'])}} 
               {{ Form::close()}} 
                                     </div>

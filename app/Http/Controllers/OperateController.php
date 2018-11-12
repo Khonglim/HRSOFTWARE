@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Operate_Chioce;
-use App\Operate_qSeff;
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
 use DB;
+use App\Operate;
 class OperateController extends Controller
 {
     /**
@@ -34,7 +35,7 @@ class OperateController extends Controller
         ->leftJoin('ngg_level', 'ngg_employee.nem_level_id', '=', 'ngg_level.nlv_id')
         ->get();
         $data = array('employee' => $employee);
-        return view("operate/์new_indexAll",$data);
+        return view("operate/new_indexAll",$data);
     }
 
     /**
@@ -45,7 +46,28 @@ class OperateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $operater = new Operate;
+        $operater->company =  $request->textCompany;
+        $operater->first_name =  $request->textName;
+        $operater->new_id_employ = $request->textNem_code;
+        $operater->new_position = $request->textPosition;
+        $operater->new_department = $request->textDepartment;
+        $operater->email = $request->email;
+        $operater->id_employ = $request->id_employ;
+        $operater->degree = $request->textDegree;
+        $operater->starttime = $request->dateStart2;
+        $operater->endtime = $request->dateEnd2;
+        $operater->number = $request->totolDay2;
+        $operater->numberMN = $request->numberMN;
+        $operater->date_60 = $request->totolDay_60;
+        $operater->date_90 = $request->totolDay_90;
+        $operater->email = $request->email;
+        $operater->degree_enable =  $request->degree_en;
+        $operater->save();
+
+     
+        Session::flash('flash_message','บันทึกเรียบร้อย!! และส่งอีเมลล์เรียบร้อย');
+        return redirect('Operate');
     }
 
     /**

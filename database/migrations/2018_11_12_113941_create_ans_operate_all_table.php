@@ -18,14 +18,13 @@ class CreateAnsOperateAllTable extends Migration
             
             $table->char('company')->nullable();
             $table->char('first_name')->nullable();
-            $table->char('last_name')->nullable();
+         
             $table->integer('new_id_employ');
             $table->char('new_position', 100)->nullable();
             $table->char('new_department', 100)->nullable();
-
+            $table->string('email')->nullable();
             $table->integer('id_employ');
-            $table->char('position', 100)->nullable();
-            $table->char('department', 100)->nullable();
+            $table->integer('numberMN')->nullable();
             $table->char('degree', 100)->nullable();
             $table->char('starttime', 100)->nullable();
             $table->char('endtime', 100)->nullable();
@@ -218,7 +217,7 @@ class CreateAnsOperateAllTable extends Migration
             $table->tinyInteger('signa3_enable')->default('0');
             $table->tinyInteger('signa4_enable')->default('0');
             $table->tinyInteger('degree_enable')->default('0');
-
+            
 
 
             $table->integer('absence_90')->nullable();
