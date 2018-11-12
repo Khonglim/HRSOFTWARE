@@ -41,7 +41,7 @@ class ManpowerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'g-recaptcha-response' => 'required|captcha'
+           // 'g-recaptcha-response' => 'required|captcha'
        ]);
         $manpower = new Manpower;
         $manpower->internal_Recruit = $request->internal_Recruit;

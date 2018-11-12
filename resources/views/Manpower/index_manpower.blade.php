@@ -51,11 +51,11 @@
                                                     {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
                                                       
                                                   <p>คุณต้องการส่งเมลล์ใช่หรือไม่จะไม่สามารถส่งได้อีกครั้ง คำขอกำลังคนของ{{$item->requested}}</p>
-                                                  <input type="hidden" name="mail" value="http://127.0.0.1/manpower/{{$item->id}}/edit">
+                                                  <input type="hidden" name="mail" value="http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit">
                                                 </div>
                                                 <div class="modal-footer">
                                                 <span id="sendData"> <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>  
-                                                  <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
                                                 </div>
                                                 {{ Form::close() }}
                                               </div>
@@ -104,12 +104,12 @@
                                    @elseif( $item->MD_enable == 1)
                                    <b class="text-success">อนุมัติลายเซ็นแล้วจากประธาน/</b>  
                                         @else
-                                        <b class="text-danger">ยังไม่อนุมัติลายเซ็นจากประธาน</b>  
+                                        <b class="text-danger">ยังไม่อนุมัติลายเซ็นจากประธาน/</b>  
                                     @endif
                                     @if($item->Send_enable == 1)
                                     <b class="text-success"> ส่งเมลล์แล้ว</b>
                                     @else
-                                    <b class="text-danger">ยังไม่ได้ส่งเมลล์แล้ว</b>  
+                                    <b class="text-danger">ยังไม่ได้ส่งเมลล์</b>  
                                     @endif
 
 

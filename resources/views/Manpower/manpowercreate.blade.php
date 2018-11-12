@@ -356,13 +356,9 @@
                                                 {{Form::text('requested','',['class'=>'form-control','id'=>'requested'])}}
             
                                           </div>
-                                          {!! NoCaptcha::display() !!}
+                                    
 
-                                          @if ($errors->has('g-recaptcha-response'))
-                                          <span class="help-block">
-                                              <strong class="text-danger">{{ $errors->first('g-recaptcha-response') }}</strong>
-                                          </span>
-                                      @endif
+                                         
                                     </div>
                                     
                               </div> <br>

@@ -287,9 +287,9 @@
                                           <input type="hidden" value="{{$manpower->signa1_sup}}" id="sig3">
                                         <br> <br>
                                        @if($manpower->MD_enable == 1 && $manpower->Sup_enable == 1 )
-                                               อนุมัติแล้ว
+                                <center>    <a href="{{url('manpower')}}">ย้อนกลับ</a>  อนุมัติแล้ว  </center>  
                                        @else 
-                                       <center>     {{ Form::submit('อนุมัติ',['class'=> 'btn btn-success'])}}   </center>  
+                                       <center>    {{ Form::submit('อนุมัติ',['class'=> 'btn btn-success'])}}   </center>  
                                        @endif
                                   
                                         
