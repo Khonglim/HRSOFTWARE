@@ -6,7 +6,7 @@
 
             <div class="box box-danger">
                   <div class="box-header with-border">
-                        <h3 class="box-title">ประเมินผลการทดลองงาน</h3>
+                        <h3 class="box-title">ประเมินผลการทดลองงาน(สำหรับผู้ประเมินครั้งแรกเท่านั้น)</h3>
                   </div>
                   <div class="form-horizontal">
                         <div class="box-body">
