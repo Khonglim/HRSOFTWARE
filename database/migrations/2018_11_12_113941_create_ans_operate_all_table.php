@@ -15,15 +15,18 @@ class CreateAnsOperateAllTable extends Migration
     {
         Schema::create('ans_operate_all', function (Blueprint $table) {
             $table->increments('id');
-
+            
             $table->char('company')->nullable();
             $table->char('first_name')->nullable();
             $table->char('last_name')->nullable();
+            $table->integer('new_id_employ');
+            $table->char('new_position', 100)->nullable();
+            $table->char('new_department', 100)->nullable();
+
             $table->integer('id_employ');
             $table->char('position', 100)->nullable();
             $table->char('department', 100)->nullable();
             $table->char('degree', 100)->nullable();
-
             $table->char('starttime', 100)->nullable();
             $table->char('endtime', 100)->nullable();
             $table->char('number', 100)->nullable();
@@ -202,12 +205,19 @@ class CreateAnsOperateAllTable extends Migration
             $table->char('endtwork_90', 100)->nullable();
             $table->integer('sick_leave_90')->nullable();
             $table->integer('errand_leave_90')->nullable();
-            
+
             $table->longText('signa1_60')->nullable();
             $table->longText('signa1_90')->nullable();
             $table->longText('signa2')->nullable();
             $table->longText('signa3')->nullable();
             $table->longText('signa4')->nullable();
+
+            $table->tinyInteger('signa1_60_enable')->default('0');
+            $table->tinyInteger('signa1_90_enable')->default('0');
+            $table->tinyInteger('signa2_enable')->default('0');
+            $table->tinyInteger('signa3_enable')->default('0');
+            $table->tinyInteger('signa4_enable')->default('0');
+            $table->tinyInteger('degree_enable')->default('0');
 
 
 
