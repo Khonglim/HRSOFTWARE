@@ -134,6 +134,11 @@ Route::resource('timeattendant','TimeattendantController');
 
 Route::resource('nggemployee','NggemployeeController');
 
+Route::resource('departmentsmanage','DepartmentController');
+Route::resource('positionsmanage','PositionController');
+Route::resource('sectorsmanage','SectorController');
+Route::resource('levelsmanage','LevelController');
+
 Auth::routes();
 Route::get('/', function () 
 {

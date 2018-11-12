@@ -140,7 +140,7 @@
                                                         &emsp;&emsp;    {{ $manpower->high_school }}
                                                                 @endif
                                                                 @if ($manpower->vocational!='')
-                                                        &emsp;&emsp;    {{ $manpower->primary }}
+                                                        &emsp;&emsp;    {{ $manpower->vocational }}
                                                                 @endif
                                                                 @if ($manpower->high_vocational!='')
                                                         &emsp;&emsp;    {{ $manpower->high_vocational }}
@@ -172,7 +172,7 @@
                                                         <tr>
                                                             <td colspan="4"><b>ประสบการณ์/Experience :</b>
                                                                 @if ($manpower->inexperience!='')
-                                                                {{ $manpower->inexperience }} 
+                                                                    {{ $manpower->inexperience }} 
                                                                 @endif
                                                                 @if ($manpower->minimum_experience!='')
                                                         <br>        {{ $manpower->minimum_experience }} {{ $manpower->minimum_experience_com }}

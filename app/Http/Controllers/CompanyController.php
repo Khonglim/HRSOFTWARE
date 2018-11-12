@@ -54,7 +54,7 @@ class CompanyController extends Controller
 
 
         Session::flash('flash_message','สำเร็จ!! บันทึกเรียบร้อย');
-         return redirect()->route("companysmanage");
+         return redirect('companysmanage'); 
 
 
 
@@ -115,18 +115,19 @@ class CompanyController extends Controller
     public function update(Request $request, $id)
     {
         if($id !== '') {
+            
              DB::table('ngg_company')
             ->where('ncp_id', $id)
-            ->update(['ncp_name' => Input::get('name')]);
+            ->update(['ncp_name' => Input::get('name1')]);
 
             DB::table('ngg_company')
             ->where('ncp_id', $id)
-            ->update(['ncp_remark' => Input::get('remark')]);
+            ->update(['ncp_remark' => Input::get('remark1')]);
 
         }
        
         Session::flash('flash_message','สำเร็จ!! แก้ไขเรียบร้อย');
-         return redirect()->route("companysmanage");
+        return redirect('companysmanage'); 
     }
 
     /**
