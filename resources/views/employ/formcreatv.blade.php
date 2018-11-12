@@ -2123,8 +2123,52 @@ input.valid, textarea.valid{
                                                         </div>
                                                         <div class="col-md-3">
                                                                 อื่นๆ &emsp; {{Form::text('because2','',['id'=>'because2'])}}
-                                                        </div> 
-                                                        </div> 
+                                                        </div>
+                                                        </div>
+                                                        <hr> 
+                                                        <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label>ชื่อผู้ติดต่อ กรณีฉุกเฉิน</label>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            <div class="row">    
+                                                                <div class="col-md-3">
+                                                                        <div class="input-group">
+                                                                                <div class="form-group label-floating">
+                                                                                    <label class="control-label">ชื่อ-นามสกุล<small class="text-danger">*</small></label>
+                                                                                    {{Form::text('contact_name','',['class'=>'form-control','required'])}}        
+                                                                               </div>
+                                                                            </div> 
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                        <div class="input-group">
+                                                                                <div class="form-group label-floating">
+                                                                                    <label class="control-label">ความสัมพันธ์<small class="text-danger">*</small></label>
+                                                                                    {{Form::text('contact_firm','',['class'=>'form-control','required'])}}        
+                                                                               </div>
+                                                                            </div>
+                                                                </div>
+                                                                <div class="col-md-3">   
+                                                                        <div class="input-group">
+                                                                                <div class="form-group label-floating">
+                                                                                    <label class="control-label">โทรศัพท์<small class="text-danger">*</small></label>
+                                                                                    {{Form::text('contact_tel','',['class'=>'form-control','required'])}}        
+                                                                               </div>
+                                                                        </div>        
+                                                                    </div>   
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-md-5">
+                                                                                <div class="input-group">
+                                                                                        <div class="form-group label-floating">
+                                                                                            <label class="control-label">ที่อยู่<small class="text-danger">*</small></label>
+                                                                                            <textarea  name="contact_address" type="text"  style="text-align:center" class ='form-control' required></textarea>
+                                                                                       </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
 
 
 

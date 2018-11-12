@@ -1128,7 +1128,7 @@
 
                               <div class="tab-pane" id="tab_5">
 
-                                    <label>บุคลที่ไม่ใช่ญาติซึ่งทราบประวัติของท่านและบริษัทฯ สามารถสอบถามได้</label>
+                                    <label>บุลคลที่ไม่ใช่ญาติซึ่งทราบประวัติของท่านและบริษัทฯ สามารถสอบถามได้</label>
 
                                        <div class="box-body table-responsive no-padding">
                         <div class="form-group">
@@ -1384,15 +1384,40 @@
                                                                                   <label>ทราบข่าวสารการสมัครงานจากที่ใด</label>&emsp;&emsp;&emsp;&emsp;&emsp;
                                                                                   {{ $personal->knowfrom }}
                                                                                   @if ($personal->because2 !='')
-                                                                                    อื่นๆ :{{ $personal->because2 }}      
-                                                                                  @else
-                                                                                    -  
+                                                                                    อื่นๆ :{{ $personal->because2 }} 
                                                                                   @endif
-                                                                                
-                                                                              
                                                                           </div>
                                                                   </div>   
-                                                              </div>  
+                                                              </div>
+                                                              <label>ชื่อผู้ติดต่อฉุกเฉิน</label>
+                                                              <div class="form-group">
+                                                                  <table class="table table-bordered">
+                                                                    <thead>
+                                                                      <tr>
+                                                                        <th>ชื่อ-นามสกุล</th>
+                                                                        <th>ความสัมพันธ์</th>
+                                                                        <th>ที่อยู่</th>
+                                                                        <th>โทรศัพท์</th>
+                                                                      </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                      <tr>
+                                                                        <td>
+                                                                            {{ $personal->contact_name }}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{ $personal->contact_firm }}
+                                                                        </td>
+                                                                        <td>    
+                                                                            {{ $personal->contact_address }}
+                                                                        </td>
+                                                                        <td>       
+                                                                            {{ $personal->contact_tel }}
+                                                                        </td>
+                                                                      </tr>
+                                                                    </tbody>
+                                                                  </table>
+                                                                </div> 
                                                                 
                                                                 
                                                                

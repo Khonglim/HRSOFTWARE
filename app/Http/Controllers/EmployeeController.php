@@ -276,6 +276,10 @@ class EmployeeController extends Controller
         $personal->talent = $request->talent;
         $personal->knowfrom = $request->knowfrom;
         $personal->because2 = $request->because2;
+        $personal->contact_name = $request->contact_name;
+        $personal->contact_firm = $request->contact_firm;
+        $personal->contact_tel = $request->contact_tel;
+        $personal->contact_address = $request->contact_address;
         $personal->portfolio1 = $request->portfolio1;
         $personal->portfolio2 = $request->portfolio2;
         $personal->portfolio3 = $request->portfolio3;

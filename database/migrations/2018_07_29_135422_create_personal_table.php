@@ -249,9 +249,9 @@ class CreatePersonalTable extends Migration
             $table->text('because2')->nullable();
 
             $table->text('contact_name')->nullable();
-            $table->text('contact_address')->nullable();
-            $table->text('contact_related')->nullable();
+            $table->text('contact_firm')->nullable();
             $table->text('contact_tel')->nullable();
+            $table->text('contact_address')->nullable();
 
             $table->tinyInteger('enable')->default('1');
             $table->tinyInteger('recheck_conduct')->default('0');
