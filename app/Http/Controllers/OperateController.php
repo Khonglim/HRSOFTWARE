@@ -26,15 +26,15 @@ class OperateController extends Controller
      */
     public function create()
     {
-        $manager = DB::table('__manager')->get();
-        $operate_Chioce  = Operate_Chioce::all();
-        $operate_qSeff  = Operate_qSeff::all();
-        $data = array(
-            'operate_Chioce' =>  $operate_Chioce,
-            'operate_qSeff' =>   $operate_qSeff,
-            'manager' =>   $manager,
-        );
-        return view("operate/operate_staff",$data);
+        $employee  = DB::table('ngg_employee')
+        ->leftJoin('ngg_company', 'ngg_employee.nem_company_id', '=', 'ngg_company.ncp_id')
+        ->leftJoin('ngg_department', 'ngg_employee.nem_department_id', '=', 'ngg_department.ndp_id')
+        ->leftJoin('ngg_sector', 'ngg_employee.nem_sector_id', '=', 'ngg_sector.nst_id')
+        ->leftJoin('ngg_position', 'ngg_employee.nem_position_id', '=', 'ngg_position.id')
+        ->leftJoin('ngg_level', 'ngg_employee.nem_level_id', '=', 'ngg_level.nlv_id')
+        ->get();
+        $data = array('employee' => $employee);
+        return view("operate/์new_indexAll",$data);
     }
 
     /**

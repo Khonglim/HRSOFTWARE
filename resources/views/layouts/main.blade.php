@@ -271,6 +271,7 @@ body {
                           <ul class="nav navbar-nav">
                               @if(auth()->user()->isAdmin == '001' || auth()->user()->isAdmin == '010')
                             <li class="active"><a href="{{url('/home')}}"><span>หน้าแรก</span></a></li>
+                            <li ><a href="{{url('Operate/create')}}"><span>ประเมินทดลองงาน</span></a></li>
                             <li ><a href="{{url('/ngg_work')}}"><span>ข้อมูลผู้สมัคร</span></a></li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">แบบประเมินต่างๆ<span class="caret"></span></a>
