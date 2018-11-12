@@ -242,11 +242,16 @@ class CreatePersonalTable extends Migration
             $table->text('portfolio1')->nullable();
             $table->text('portfolio2')->nullable();
             $table->text('portfolio3')->nullable();
-              $table->text('spouse_tel')->nullable();
+            $table->text('spouse_tel')->nullable();
 
             $table->text('fronname')->nullable();
             $table->text('knowfrom')->nullable();
             $table->text('because2')->nullable();
+
+            $table->text('contact_name')->nullable();
+            $table->text('contact_address')->nullable();
+            $table->text('contact_related')->nullable();
+            $table->text('contact_tel')->nullable();
 
             $table->tinyInteger('enable')->default('1');
             $table->tinyInteger('recheck_conduct')->default('0');

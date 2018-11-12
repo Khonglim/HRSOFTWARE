@@ -40,6 +40,10 @@ Route::resource('reset_sup','Reset_sup_operController');
 
 Route::resource('manpower','ManpowerController');
 
+Route::get('manpower', 'ManpowerController@index')->middleware('auth');
+
+
+
 Route::get('/manpowercreate', function () 
 {
     return view('Manpower.manpower');

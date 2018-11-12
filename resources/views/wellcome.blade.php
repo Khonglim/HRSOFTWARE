@@ -7,7 +7,7 @@
 
   
      
-<a href="javascript:window.open('','_self');window.close()" >Close</a>
+
 </section>
 
 

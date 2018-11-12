@@ -78,7 +78,8 @@ class Email_sendController extends Controller
 
         $sed_mail =  new \stdClass();
         $sed_mail->mail = $request->mail;
-        Mail::to("narathorn182539@gmail.com")->send(new HR_NGG_GROUP($sed_mail));
+        Mail::to("tr.narathorn@nioachievers.com")->send(new HR_NGG_GROUP($sed_mail));
+        Mail::to("hrrecruit@ciengems.com")->send(new HR_NGG_GROUP($sed_mail));
         Session::flash('flash_message','ระบบได้ทำการส่งเมลล์เรียบร้อยแล้ว');
         return redirect('manpower');
     }
