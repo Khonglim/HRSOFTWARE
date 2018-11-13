@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'mail.ngg-co.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'khonglimjame@gmail.com  '),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@ngg-co.com'),
         'name' => env('MAIL_FROM_NAME', 'NGG HR'),
     ],
 

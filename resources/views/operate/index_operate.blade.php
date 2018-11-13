@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="content-wrapper">
-      <div class="content container">
+  <div class="content container-fluid">
 
 
 
@@ -26,7 +26,7 @@
                                         <th>ผู้จัดการฝ่ายบุคคล</th>
                                         <th>กรรมการผู้จัดการ/ผู้จัดการทั่วไป</th>
                                         <th>เพิ่มเติม</th>
-                                        <th>สถานะ</th>
+                                        <th>สถานะเซ็น</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -61,7 +61,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                       <form action=" {{url('Email_send_oper')}}" method="GET" >
-                                                                          
+                                                                        @csrf 
                                                                       <p>กรุณาระบุอีเมลล์ที่จะส่งถึงต้นสังกัด</p>
                                                                       <input type="email" name="email1" required class="form-control">
                                                                       <input type="hidden" name="mail" value="http://hr.ngg.link/public_html/Operate/{{$item->id}}/edit">
@@ -91,7 +91,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                       <form action=" {{url('Email_send_oper')}}" method="GET" >
-                                                                          
+                                                                        @csrf
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่าย</p>
                                                                         <input type="email" name="email2" required class="form-control">
                                                                       <input type="hidden" name="mail" value="http://hr.ngg.link/public_html/Operate/{{$item->id}}/edit">
@@ -123,7 +123,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                       <form action=" {{url('Email_send_oper')}}" method="GET" >
-                                                                          
+                                                                        @csrf
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่ายบุคคล</p>
                                                                         <input type="email" name="email3" required class="form-control">
                                                                       <input type="hidden" name="mail" value="http://hr.ngg.link/public_html/Operate/{{$item->id}}/edit">
@@ -156,7 +156,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                       <form action=" {{url('Email_send_oper')}}" method="GET" >
-                                                                          
+                                                                        @csrf
                                                                             
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="email4" required class="form-control">
@@ -197,7 +197,7 @@
                                                       <th>ผู้จัดการฝ่ายบุคคล</th>
                                                       <th>กรรมการผู้จัดการ/ผู้จัดการทั่วไป</th>
                                                       <th>เพิ่มเติม</th>
-                                                      <th>สถานะ</th>
+                                                      <th>สถานะปัจจุบัน</th>
                                             </tr>
                                           </tfoot>
                                         </table>
