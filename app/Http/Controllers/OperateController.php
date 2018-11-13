@@ -71,7 +71,6 @@ class OperateController extends Controller
         $operater->date_90 = $request->totolDay_90;
         $operater->email = $request->email;
         $operater->degree_enable =  $request->degree_en;
-        $operater->signa1_60_enable =1;
         $operater->save();
 
      

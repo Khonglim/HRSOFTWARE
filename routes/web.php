@@ -56,7 +56,13 @@ Route::get('savepower', function ()
 
 });
 
-Route::get('Email_send_oper','Email_operateController@affiliation');
+Route::get('Email_send_oper','Email_operateController@email_send');
+
+Route::get('send1/{id}','Info_operateController@affiliation1');
+Route::get('send2/{id}','Info_operateController@affiliation2');
+Route::get('send3/{id}','Info_operateController@manager');
+Route::get('send4/{id}','Info_operateController@personnel_manager');
+Route::get('send5/{id}','Info_operateController@handler');
 
 
 
