@@ -56,9 +56,7 @@ Route::get('savepower', function ()
 
 });
 
-
-
-
+Route::get('Email_send_oper','Email_operateController@affiliation');
 
 
 
@@ -71,21 +69,13 @@ Route::get('savepower', function ()
 
 
 Route::resource('rate','InterviewController');
-
 Route::resource('rate_sup','Interview_supController');
-
 Route::resource('disctest','DisctestController');
-
 Route::resource('con_all', 'Con_allController');
-
 Route::resource('Operate', 'OperateController');
-
 Route::resource('Operate_sup', 'Operate_supController');
-
 Route::resource('Operate_staff', 'Operate_staffController');
-
 Route::resource('reset', 'ResetController');
-
 Route::resource('mbti','TestmbtiController');
 Route::post('/start','AnswerController@start');
 Route::post('/endtest','AnswerController@answer');
