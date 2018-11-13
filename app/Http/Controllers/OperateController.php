@@ -19,7 +19,7 @@ class OperateController extends Controller
     public function index()
     {
         $operater = Operate::all();
-        $data = array('operater'=>'$operater');
+        $data = array('operater'=>$operater);
         return view("operate/index_operate",$data);
     }
 
@@ -66,6 +66,7 @@ class OperateController extends Controller
         $operater->date_90 = $request->totolDay_90;
         $operater->email = $request->email;
         $operater->degree_enable =  $request->degree_en;
+        $operater->signa1_60_enable =1;
         $operater->save();
 
      
@@ -92,7 +93,13 @@ class OperateController extends Controller
      */
     public function edit($id)
     {
-        //
+        if($id !== '') {
+            $operate = Operate::find($id);
+            $data = array(
+                'operate' =>   $operate
+            );
+            return view('operate/send',$data);
+        }
     }
 
     /**
