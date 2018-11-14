@@ -11,9 +11,17 @@ class Email_operateController extends Controller
         $id=$request->id;
         $operater = Operate::all();
         foreach ( $operater as  $user){
+          if($user->id== $id && $user->signa1_60_enable == 0){
+            $operate = Operate::find($id);
+            $operate->signa1_60_enable =1;
+            $operate->save();
+          return "เสร็จ";
+
+        }
+
           if($user->id== $id && $user->signa1_90_enable == 0){
               $operate = Operate::find($id);
-              $operate->signa1_90_enable =0;
+              $operate->signa1_90_enable =1;
               $operate->save();
             return "เสร็จ";
 

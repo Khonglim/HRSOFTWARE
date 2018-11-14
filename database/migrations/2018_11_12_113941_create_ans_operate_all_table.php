@@ -46,6 +46,16 @@ class CreateAnsOperateAllTable extends Migration
             $table->integer('chioce13_60')->nullable();
             $table->integer('chioce14_60')->nullable();
             $table->integer('chioce15_60')->nullable();
+            $table->integer('chioce16_60')->nullable();
+            $table->integer('chioce17_60')->nullable();
+            $table->integer('chioce18_60')->nullable();
+            $table->integer('chioce19_60')->nullable();
+            $table->integer('chioce20_60')->nullable();
+            $table->integer('chioce21_60')->nullable();
+            $table->integer('chioce22_60')->nullable();
+            $table->integer('chioce23_60')->nullable();
+            $table->integer('chioce24_60')->nullable();
+            $table->integer('chioce25_60')->nullable();
             $table->integer('subtotal_60')->nullable();
             $table->integer('rate_60')->nullable();
             $table->integer('rate_90')->nullable();
@@ -72,7 +82,17 @@ class CreateAnsOperateAllTable extends Migration
             $table->integer('chioce13_90')->nullable();
             $table->integer('chioce14_90')->nullable();
             $table->integer('chioce15_90')->nullable();
-
+            $table->integer('chioce16_90')->nullable();
+            $table->integer('chioce17_90')->nullable();
+            $table->integer('chioce18_90')->nullable();
+            $table->integer('chioce19_90')->nullable();
+            $table->integer('chioce20_90')->nullable();
+            $table->integer('chioce21_90')->nullable();
+            $table->integer('chioce22_90')->nullable();
+            $table->integer('chioce23_90')->nullable();
+            $table->integer('chioce24_90')->nullable();
+            $table->integer('chioce25_90')->nullable();
+        
             $table->integer('subtotal_90')->nullable();
             $table->integer('subtotal_final')->nullable();
 
