@@ -371,7 +371,34 @@
   <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
 
 @if( $operate->degree_enable == 1)
-
+<script>
+        $(document).ready(function() {
+          $('.sigPad').signaturePad({drawOnly:true});
+                 
+        });
+      </script>
+    
+    <script type='text/javascript'>
+          var add_value = [];
+          var pont = 0 ;
+            $('select').change(function(){
+    
+                add_value[this.name] = this.value;
+                var pont = 0 ;
+    
+    
+                for(var key in add_value){
+                   pont=parseInt(pont)+parseInt(add_value[key]);
+    
+    
+                }
+                if(pont >100){
+                    alert("คุณกรอกคะแนนเกิน 100 กรุณาตรวจสอบ");
+                }
+                $('#sum_chioce_suitability10').val(pont);
+                $('#scoremp').val(pont);
+            });
+        </script>
 
 @else
 

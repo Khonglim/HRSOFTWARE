@@ -144,6 +144,8 @@
 
 
 @if( $operate->degree_enable == 1)
+{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+@csrf
 <div class="form-group">
       <div class="col-sm-12">
               <div  class="table-wrapper-scroll-y">        
@@ -179,7 +181,7 @@
                  @foreach ($operate_Chioce as $item)
 
 
-                 <input type="radio" id="score60_{{$operate_qSups->id}}" name="score60_{{$operate_qSups->id}}" value={{$item->score_operate}} required > {{$item->score_operate}}  {{$item->meaning_operate}}&ensp;
+                 <input type="radio" id="score90_{{$operate_qSups->id}}" name="score90_{{$operate_qSups->id}}" value={{$item->score_operate}} required > {{$item->score_operate}}  {{$item->meaning_operate}}&ensp;
                  @endforeach
      </td>
 </tr>
@@ -191,7 +193,7 @@
  รวมคะแนน
  </td>
  <td style="text-align:center">
- <input type="text" name="total_60" id="total_60" readonly>
+ <input type="text" name="total_90" id="total_90" readonly>
 
   </td>
 
@@ -204,8 +206,13 @@
 
       <td  COLSPAN="4" >
 
-              รวมคะแนนทั้งสิ้น  ประเมินครั้งที่ 1   <input type="text" name="rate_60" id="rate_60" readonly > คะแนน <br><br>
-                            ประเมินครั้งที่ 2    <input type="text" name="rate_90" id="rate_90" readonly> คะแนน
+              รวมคะแนนทั้งสิ้น <br> <br> ประเมินครั้งที่ 1   <input type="text" name="rate_60" id="rate_60" value="{{$operate->rate_60}}" readonly > คะแนน <br><br>
+                            ประเมินครั้งที่ 2    <input type="text" name="rate_90" id="rate_90" readonly>
+                        <br><br>
+                         รวมหาร 2   <input type="text" name="rate_all" id="rate_all" readonly>
+                            
+                            
+                            คะแนน
             </td>
 
 
@@ -231,29 +238,21 @@
 
 <div class="form-group">
 
+        <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมินครั้งแรก)</label>
+        <div class="col-sm-4">
+        <textarea class="form-control" rows="3" name="assessor" readonly>{{$operate->comments_60}}</textarea>
+              </div>
       <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
       <div class="col-sm-4">
-              <textarea class="form-control" rows="3" name="assessor"></textarea>
+              <textarea class="form-control" rows="3" name="assessor2"></textarea>
             </div>
           </div>
-<div class="form-group">
 
-      <label  class="col-sm-2 control-label">จุดเด่นพนักงาน:</label>
-      <div class="col-sm-4">
-              <textarea class="form-control" rows="3" name="featured" required></textarea>
-            </div>
-
-            <label  class="col-sm-2 control-label">จุดด้อยพนักงาน:</label>
-      <div class="col-sm-4">
-              <textarea class="form-control" rows="3" name="weakness" required></textarea>
-            </div>
-
-</div>
 <div class="form-group">
 
       <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
       <div class="col-sm-4">
-              <input type="text" name="namerate_60" id="namerate_60" required class="form-control">
+              <input type="text" name="namerate_90" id="namerate_90" required class="form-control">
             </div>
            </div>
            <div class="form-group">
@@ -268,13 +267,15 @@
                           <div class="sig sigWrapper">
                             <div class="typed"></div>
                             <canvas class="pad" width="220" height="70"></canvas>
-                            <input type="hidden" name="signa1_60" class="output">
+                            <input type="hidden" name="signa1_90" class="output">
 
                           </div>
                         </div>
             </div>
 
-
+            <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
+            {{Form::close()}}
+    
 @else
 {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
 @csrf
@@ -361,7 +362,7 @@
    </div>
 
 
-   <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมิน 60 วัน)</label>
+   <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมินครั้งแรก)</label>
    <div class="col-sm-4">
    <textarea class="form-control" rows="3" name="assessor" readonly>{{$operate->comments_60}}</textarea>
          </div>
@@ -539,9 +540,7 @@
     
             $('input[type=radio]').change(function(){
                
-                var group_total =0;
-    
-    
+                
                 var group_90_1=0;
                 var group_90_2=0;
                 var group_90_3=0;
@@ -629,7 +628,7 @@
                            }
     
     
-            if(score60_4[0].checked ){
+            if(score90_4[0].checked ){
                    group_90_4 =  score90_4[0].value
                            }
                            if( score90_4[1].checked ){
@@ -760,7 +759,7 @@
                            if( score90_12[1].checked ){
                                group_90_12 =  score90_12[1].value
                            }
-                           if( score60_12[2].checked ){
+                           if( score90_12[2].checked ){
                                group_90_12 =  score90_12[2].value
     
                            }
@@ -790,7 +789,7 @@
                            if( score90_14[1].checked ){
                                group_90_14 =  score90_14[1].value
                            }
-                           if( score60_14[2].checked ){
+                           if( score90_14[2].checked ){
                                group_90_14=  score90_14[2].value
     
                            }
@@ -814,7 +813,173 @@
     
                            }
     
-                       group_90_total =(parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15))*100/60;
+                           if(score90_16[0].checked ){
+               group_90_16 =  score90_16[0].value
+                       }
+                       if( score90_16[1].checked ){
+                           group_90_16=  score90_16[1].value
+                       }
+                       if( score90_16[2].checked ){
+                           group_90_16=  score90_16[2].value
+
+                       }
+                        if( score90_16[3].checked ){
+                           group_90_16 =  score90_16[3].value
+
+                       }
+
+                       if(score90_17[0].checked ){
+                                 group_90_17 =  score90_17[0].value
+                       }
+                       if( score90_17[1].checked ){
+                           group_90_17=  score90_17[1].value
+                       }
+                       if( score90_17[2].checked ){
+                           group_90_17=  score90_17[2].value
+
+                       }
+                        if( score90_17[3].checked ){
+                           group_90_17 =  score90_17[3].value
+
+                       }
+
+
+
+ if(score90_18[0].checked ){
+               group_90_18 =  score90_18[0].value
+                       }
+                       if( score90_18[1].checked ){
+                           group_90_18=  score90_18[1].value
+                       }
+                       if( score90_18[2].checked ){
+                           group_90_18=  score90_18[2].value
+
+                       }
+                        if( score90_18[3].checked ){
+                           group_90_18 =  score90_18[3].value
+
+                       }
+
+
+
+ if(score90_19[0].checked ){
+               group_90_19 =  score90_19[0].value
+                       }
+                       if( score90_19[1].checked ){
+                           group_90_19=  score90_19[1].value
+                       }
+                       if( score90_19[2].checked ){
+                           group_90_19=  score90_19[2].value
+
+                       }
+                        if( score90_19[3].checked ){
+                           group_90_19 =  score90_19[3].value
+
+                       }
+
+
+
+ if(score90_20[0].checked ){
+               group_90_20 =  score90_20[0].value
+                       }
+                       if( score90_20[1].checked ){
+                           group_90_20=  score90_20[1].value
+                       }
+                       if( score90_20[2].checked ){
+                           group_90_20=  score90_20[2].value
+
+                       }
+                        if( score90_20[3].checked ){
+                           group_90_20 =  score90_20[3].value
+
+                       }
+
+
+ if(score90_21[0].checked ){
+               group_90_21 =  score90_21[0].value
+                       }
+                       if( score90_21[1].checked ){
+                           group_90_21=  score90_21[1].value
+                       }
+                       if( score90_21[2].checked ){
+                           group_90_21=  score90_21[2].value
+
+                       }
+                        if( score90_21[3].checked ){
+                           group_90_21 =  score90_21[3].value
+
+                       }
+
+
+ if(score90_22[0].checked ){
+               group_90_22 =  score90_22[0].value
+                       }
+                       if( score90_22[1].checked ){
+                           group_90_22=  score90_22[1].value
+                       }
+                       if( score90_22[2].checked ){
+                           group_90_22=  score90_22[2].value
+
+                       }
+                        if( score90_22[3].checked ){
+                           group_90_22 =  score90_22[3].value
+
+                       }
+
+
+
+
+ if(score90_23[0].checked ){
+               group_90_23 =  score90_23[0].value
+                       }
+                       if( score90_23[1].checked ){
+                           group_90_23=  score90_23[1].value
+                       }
+                       if( score90_23[2].checked ){
+                           group_90_23=  score90_23[2].value
+
+                       }
+                        if( score90_23[3].checked ){
+                           group_90_23 =  score90_23[3].value
+
+                       }
+
+
+       if(score90_24[0].checked ){
+               group_90_24 =  score90_24[0].value
+                       }
+                       if( score90_24[1].checked ){
+                           group_90_24=  score90_24[1].value
+                       }
+                       if( score90_24[2].checked ){
+                           group_90_24=  score90_24[2].value
+
+                       }
+                        if( score90_24[3].checked ){
+                           group_90_24 =  score90_24[3].value
+
+                       }
+
+
+       if(score90_25[0].checked ){
+               group_90_25 =  score90_25[0].value
+                       }
+                       if( score90_25[1].checked ){
+                           group_90_25=  score90_25[1].value
+                       }
+                       if( score90_25[2].checked ){
+                           group_90_25=  score90_25[2].value
+
+                       }
+                        if( score90_25[3].checked ){
+                           group_90_25 =  score90_25[3].value
+
+                       }
+
+
+                           group_90_total =(parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15)
+       +parseInt(group_90_16)+parseInt(group_90_17)+parseInt(group_90_18)+parseInt(group_90_19)+parseInt(group_90_20)+parseInt(group_90_21) +parseInt(group_90_22)+parseInt(group_90_23)+parseInt(group_90_24)+parseInt(group_90_25)                );
+
     
     
     
@@ -824,13 +989,18 @@
     
     
     
-                     $('#rate_all').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt({{$operate->rate_90}}))/2);
+                     $('#rate_all').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt({{$operate->rate_60}}))/2);
     
     
     
            });
            </script>
-
+<script>
+        $(document).ready(function() {
+          $('.sigPad').signaturePad({drawOnly:true});
+                 
+        });
+      </script>
 @else
 
            <script>
@@ -1101,7 +1271,7 @@
 
                            }
 
-                       group_90_total =(parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15))*100/60;
+                       group_90_total =(parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15));
 
 
 

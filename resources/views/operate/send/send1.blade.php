@@ -144,6 +144,7 @@
 
 
 @if( $operate->degree_enable == 1)
+{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
 <div class="form-group">
       <div class="col-sm-12">
               <div  class="table-wrapper-scroll-y">        
@@ -273,7 +274,11 @@
                           </div>
                         </div>
             </div>
-
+           </div>
+       
+            <center>  ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
+        <button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
+            {{Form::close()}}
 
 @else
 {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
@@ -956,7 +961,12 @@
     
            });
            </script>
-
+<script>
+        $(document).ready(function() {
+          $('.sigPad').signaturePad({drawOnly:true});
+                 
+        });
+      </script>
            @else
 
            <script>
