@@ -70,7 +70,7 @@
               <tfoot>
                 <tr>
                   <th>ลำดับ</th>
-                <th>บริษัท</th>
+                <th>ระดับ</th>
                 <th>จัดการ</th>
               </tr>
               </tfoot>

@@ -118,11 +118,11 @@ class CompanyController extends Controller
             
              DB::table('ngg_company')
             ->where('ncp_id', $id)
-            ->update(['ncp_name' => Input::get('name1')]);
+            ->update(['ncp_name' => Input::get('name')]);
 
             DB::table('ngg_company')
             ->where('ncp_id', $id)
-            ->update(['ncp_remark' => Input::get('remark1')]);
+            ->update(['ncp_remark' => Input::get('remark')]);
 
         }
        
