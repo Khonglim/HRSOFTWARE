@@ -11,11 +11,7 @@ class Ngg_departmentTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('ngg_department')->insert([ 
-        	'ndp_name' => 'Management',
-            'ndp_remark' => '',
-            'ndp_enable' => '1',
-        ]);
+      
          DB::table('ngg_department')->insert([ 
         	'ndp_name' => 'IT',
             'ndp_remark' => '',
@@ -71,11 +67,7 @@ class Ngg_departmentTableSeeder extends Seeder
             'ndp_remark' => '',
             'ndp_enable' => '1',
         ]);
-    DB::table('ngg_department')->insert([ 
-        	'ndp_name' => 'Sales Multi Brand',
-            'ndp_remark' => '',
-            'ndp_enable' => '1',
-        ]);
+
     DB::table('ngg_department')->insert([ 
         	'ndp_name' => 'Marketing Communication',
             'ndp_remark' => '',

@@ -759,7 +759,36 @@ class Ngg_positionTableSeeder extends Seeder
             'nps_remark' => '',
             'nps_enable' => '1',
         ]);
-       
-
+        DB::table('ngg_position')->insert([
+            'nps_name' => 'Call center agent Inbound & Outbound',
+            'nps_remark' => '',
+            'nps_enable' => '1',
+        ]);
+        DB::table('ngg_position')->insert([
+            'nps_name' => 'ช่างฝัง',
+            'nps_remark' => '',
+            'nps_enable' => '1',
+        ]);
+        DB::table('ngg_position')->insert([
+            'nps_name' => 'International Sales Supervisor',
+            'nps_remark' => '',
+            'nps_enable' => '1',
+        ]);
+        DB::table('ngg_position')->insert([
+            'nps_name' => 'ช่างแกะแว็กซ์',
+            'nps_remark' => '',
+            'nps_enable' => '1',
+        ]);
+        DB::table('ngg_position')->insert([
+            'nps_name' => 'พนักงานขนส่ง',
+            'nps_remark' => '',
+            'nps_enable' => '1',
+        ]);
+        DB::table('ngg_position')->insert([
+            'nps_name' => 'Sales Executive',
+            'nps_remark' => '',
+            'nps_enable' => '1',
+        ]);
+        
     }
 }
