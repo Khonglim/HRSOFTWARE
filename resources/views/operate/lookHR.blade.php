@@ -6,7 +6,14 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Operate</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
+      <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
+      <style>
+      body {
+        font-family: 'Prompt', sans-serif;
+       
+      }
+      </style>
+    </head>
 <body>
       <div class="container">
       <style>
@@ -35,107 +42,107 @@
     
     <div class="container-fluid">
             <div class="card">
-                        <div class="card-header">Header</div>
+                        <div class="card-header">ตรวจสอบการประเมิน</div>
                         <div class="card-body">
-                        <div class="form-group">
-                        <div class="row">
-                                    <div class="col-md-4 ">
-                                                <div class="form-group ">
-                                                    <label class="control-label ">ชื่อ-สกุล:</label>
-                                                   
-                                                    <input type="text" class="form-control" >
-                                                   </div>
-                                
-                                            </div>
+                            <div class="form-group">
+                                <div class="row">
                                             <div class="col-md-4 ">
-                                                      <div class="form-group ">
-                                                          <label class="control-label">รหัสพนักงาน:</label>
-                                                          <input type="text" class="form-control" name="id_employ" >
-                                                
-                                                         </div>
-                                      
-                                                  </div>
-                                                  <div class="col-md-4 ">
-                                                            <div class="form-group ">
-                                                                <label class="control-label">ตำแหน่ง:</label>
-                                                                <input type="text" class="form-control" name="position"  >
-                                                      
-                                                               </div>
-                                            
-                                                        </div>
-                              </div>
-                              <div class="row">
-                                          <div class="col-md-4 ">
-                                                      <div class="form-group ">
-                                                          <label class="control-label ">แผนก/ฝ่าย:</label>
-                                                          <input type="text" class="form-control" name="department"    >
-                                                
-                                                         </div>
-                                      
-                                                  </div>
-                                                  <div class="col-md-4 ">
-                                                            <div class="form-group ">
-                                                                <label class="control-label">วันเริ่มงาน:</label>
-                                                                <input type="text" name="dateStart2" id="dateStart2" value="" class="form-control" required/>
-                                                      
-                                                               </div>
-                                            
-                                                        </div>
-                                                        <div class="col-md-4 ">
-                                                                  <div class="form-group ">
-                                                                      <label class="control-label">ครบการทดลองงาน:</label>
-                                                                      <input type="text" name="dateEnd2" id="dateEnd2" value="" class="form-control" required/>
-                                                            
-                                                                     </div>
-                                                  
-                                                              </div>
-                                    </div>
-                                    <div class="row">
-                                                <div class="col-md-4 ">
-                                                            <div class="form-group ">
-                                                                <label class="control-label ">จำนวนวัน:</label>
-                                                                <input type="text" name="totolDay2" id="totolDay2" value=""  readonly class="form-control" required/>
-                                                      
-                                                               </div>
-                                            
-                                                        </div>
-                                                        <div class="col-md-4 ">
-                                                                  <div class="form-group ">
-                                                                      <label class="control-label">ระดับ:</label>
-                                                                      <input type="text" name="degree" id="degree"  class="form-control" />
-                                                            
-                                                                     </div>
-                                                  
-                                                              </div>
-                                                              <div class="col-md-4 ">
-                                                                        <div class="form-group ">
-                                                                            <label class="control-label">ประเมินครั้งที่ 1 : วันที่ :</label>
-                                                                            <input type="text" name="totolDay_60" id="totolDay_60" value=""  class="form-control"/>
-                                                                  
-                                                                           </div>
+                                                        <div class="form-group ">
+                                                            <label class="control-label ">ชื่อ-สกุล:</label>
+                                                           
+                                                        <input type="text" class="form-control"  readonly value="{{$operate->first_name}}">
+                                                           </div>
+                                        
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label">รหัสพนักงาน:</label>
+                                                              <input type="text" class="form-control" name="id_employ"  readonly  value="{{$operate->new_id_employ}}">
                                                         
-                                                                    </div>
-                                          </div>
-
-                                          <div class="row">
-                                                      <div class="col-md-4 ">
-                                                                  <div class="form-group ">
-                                                                      <label class="control-label ">ประเมินครั้งที่ 2 : วันที่:</label>
-                                                                      <input type="text" name="totolDay_90" id="totolDay_90" value="" class="form-control" />
-                                                            
-                                                                     </div>
-                                                  
-                                                              </div>
-                                                  
-                                                </div>
-                                             
-                        </div>
+                                                                 </div>
+                                              
+                                                          </div>
+                                                          <div class="col-md-4 ">
+                                                                    <div class="form-group ">
+                                                                        <label class="control-label">ตำแหน่ง:</label>
+                                                                        <input type="text" class="form-control" name="position" readonly value="{{$operate->new_position}}" >
+                                                              
+                                                                       </div>
+                                                    
+                                                                </div>
+                                      </div>
+                                      <div class="row">
+                                                  <div class="col-md-4 ">
+                                                              <div class="form-group ">
+                                                                  <label class="control-label ">แผนก/ฝ่าย:</label>
+                                                                  <input type="text" class="form-control" name="department"   readonly value="{{$operate->new_department}}" >
+                                                        
+                                                                 </div>
+                                              
+                                                          </div>
+                                                          <div class="col-md-4 ">
+                                                                    <div class="form-group ">
+                                                                        <label class="control-label">วันเริ่มงาน:</label>
+                                                                    <input type="text" name="dateStart2" id="dateStart2" class="form-control" readonly value="{{$operate->starttime}}">
+                                                              
+                                                                       </div>
+                                                    
+                                                                </div>
+                                                                <div class="col-md-4 ">
+                                                                          <div class="form-group ">
+                                                                              <label class="control-label">ครบการทดลองงาน:</label>
+                                                                          <input type="text" name="dateEnd2" id="dateEnd2"  class="form-control" readonly value="{{$operate->endtime}}">
+                                                                    
+                                                                             </div>
+                                                          
+                                                                      </div>
+                                            </div>
+                                            <div class="row">
+                                                        <div class="col-md-4 ">
+                                                                    <div class="form-group ">
+                                                                        <label class="control-label ">จำนวนวัน:</label>
+                                                                    <input type="text" name="totolDay2" id="totolDay2"   readonly class="form-control" readonly value="{{$operate->number}}"/>
+                                                              
+                                                                       </div>
+                                                    
+                                                                </div>
+                                                                <div class="col-md-4 ">
+                                                                          <div class="form-group ">
+                                                                              <label class="control-label">ระดับ:</label>
+                                                                          <input type="text" name="degree" id="degree"  class="form-control"  readonly value="{{$operate->degree}}" />
+                                                                    
+                                                                             </div>
+                                                          
+                                                                      </div>
+                                                                      <div class="col-md-4 ">
+                                                                                <div class="form-group ">
+                                                                                    <label class="control-label">ประเมินครั้งที่ 1 : วันที่ :</label>
+                                                                                    <input type="text" name="totolDay_60" id="totolDay_60"   class="form-control"  value="{{$operate->date_60}}"/>
+                                                                          
+                                                                                   </div>
+                                                                
+                                                                            </div>
+                                                  </div>
+        
+                                                  <div class="row">
+                                                              <div class="col-md-4 ">
+                                                                          <div class="form-group ">
+                                                                              <label class="control-label ">ประเมินครั้งที่ 2 : วันที่:</label>
+                                                                              <input type="text" name="totolDay_90" id="totolDay_90"  class="form-control"   value="{{$operate->date_90}}"/>
+                                                                    
+                                                                             </div>
+                                                          
+                                                                      </div>
+                                                          
+                                                        </div>
+                                                     
+                                </div>
                         <div class="form-group">
                                     <div class="col-sm-12">
                                             <div  class="table-wrapper-scroll-y">        
                         <table id="customers">
                                 <tr>
-                                  <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</th>
+                                  <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสายครั้งที่ 1</th>
                                 </tr>
                                 <tr>
                                   <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
@@ -167,138 +174,235 @@
                                     </div>
                              </div>
 
-
-
                              <div class="form-group">
-                                    <div class="col-sm-12">
-                                            <div  class="table-wrapper-scroll-y">        
-                            <table id="customers">
-                              <tr>
-                                <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
-                                    ( 100 คะแนน )
-                                    </th>
-                                <th COLSPAN="2" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
+                                <div class="col-sm-12">
+                                        <div  class="table-wrapper-scroll-y">        
+                                    <table id="customers">
+                                            <tr>
+                                              <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสายครั้งที่2</th>
+                                            </tr>
+                                            <tr>
+                                              <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                                              <td style="text-align:center">ลาป่วย(วัน )</td>
+                                              <td style="text-align:center">ลากิจ (วัน )</td>
+                                              <td style="text-align:center">ขาดงาน (วัน )</td>
+                                              <td style="text-align:center">พักร้อน (วัน )</td>
+                                              <td style="text-align:center">สาย (ครั้ง)</td>
+                                              <td style="text-align:center">สาย (นาที)</td>
 
-                              </tr>
-                              <tr>
-                                <td align="center">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
-
-
-                              </tr>
-                              <tr>
-
-                                <td style="text-align:center">ระดับคะแนน</td>
-
-                              </tr>
-                              <tr>
-                                <td COLSPAN="4" style="text-align:center">ระดับผู้บังคับบัญชา ( Supervisory Level )</td>
-                              </tr>
-                              @foreach ($operate_qSup  as $operate_qSups)
+                                            </tr>
+                                            <tr>
+                                              <td style="text-align:center">ตั้งแต่วันที่  <input type="text" id="startrate_90" name="startrate_90"  required > <br><br>
+                                                ถึงวันที่    <input type="text" id="endrate_90"  name="endrate_90"  required >
 
 
-                              <tr>
+                                            </td>
+                                              <td style="text-align:center"> <input type="text" name="sick_90"   id="sick_90"     style="width:50px" required> </td>
+                                              <td style="text-align:center"><input type="text" name="errand_90"    id="errand_90"   style="width:50px" required ></td>
+                                              <td style="text-align:center"><input type="text" name="absence_90"     id="absence_90"    style="width:50px" required></td>
+                                              <td style="text-align:center"><input type="text"   name="vacation_90"   id="vacation_90"   style="width:50px"  required></td>
+                                              <td style="text-align:center"><input type="text"  name="line_90"    id="line_90"   style="width:50px"  required></td>
+                                              <td style="text-align:center"><input type="text"  name="min_90"    id="min_90"  style="width:50px"  required></td>
 
-
-                                   <td  style="width:43%"  > {{  $operate_qSups->operate_qsup  }} </td>
-                                   <td style="text-align:center">
-                                               @foreach ($operate_Chioce as $item)
-
-
-                                               <input type="radio" id="score60_{{$operate_qSups->id}}" name="score60_{{$operate_qSups->id}}" value={{$item->score_operate}} required > {{$item->score_operate}}  {{$item->meaning_operate}}&ensp;
-                                               @endforeach
-                                   </td>
-                              </tr>
-
-                              @endforeach
-
-                            <tr>
-                               <td style="text-align:center">
-                               รวมคะแนน
-                               </td>
-                               <td style="text-align:center">
-                               <input type="text" name="total_60" id="total_60" readonly>
-
-                                </td>
-
-
-                            </tr>
-
-
-                            <tr>
-
-
-                                    <td  COLSPAN="4" >
-
-                                            รวมคะแนนทั้งสิ้น  ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly > คะแนน <br><br>
-                                                          ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly> คะแนน
-                                          </td>
-
-
-
-
-
-                             </tr>
+                                            </tr>
 
 
 
 
 
 
-
-
-
-                            </table>
-                                            </div>
-                        </div>
-                        </div>
-
-
-
-                        <div class="form-group">
-    
-                                    <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
-                                    <div class="col-sm-4">
-                                            <textarea class="form-control" rows="3" name="assessor"></textarea>
-                                          </div>
+                                          </table>
                                         </div>
-                            <div class="form-group">
 
-                                    <label  class="col-sm-2 control-label">จุดเด่นพนักงาน:</label>
-                                    <div class="col-sm-4">
-                                            <textarea class="form-control" rows="3" name="featured" required></textarea>
-                                          </div>
 
-                                          <label  class="col-sm-2 control-label">จุดด้อยพนักงาน:</label>
-                                    <div class="col-sm-4">
-                                            <textarea class="form-control" rows="3" name="weakness" required></textarea>
-                                          </div>
 
-                              </div>
-                              <div class="form-group">
 
-                                    <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
-                                    <div class="col-sm-4">
-                                            <input type="text" name="namerate_60" id="namerate_60" required class="form-control">
-                                          </div>
-                                         </div>
-                                         <div class="form-group">
-                                                <div class="col-sm-3"></div>
-                                            <div class="col-sm-4">
 
-                                                <div class="sigPad">
-                                                        <ul class="sigNav">
-                                                          <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
-                                                          <li class="clearButton"><a href="#clear">Clear</a></li>
-                                                        </ul>
-                                                        <div class="sig sigWrapper">
-                                                          <div class="typed"></div>
-                                                          <canvas class="pad" width="198" height="55"></canvas>
-                                                          <input type="hidden" name="signa1_60" class="output">
 
-                                                        </div>
-                                                      </div>
-                                          </div>
 
+                                </div>
+
+                          </div>
+                          @if( $operate->degree_enable == 1)
+
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                    <div  class="table-wrapper-scroll-y">        
+                    <table id="customers">
+                      <tr>
+                        <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
+                            ( 100 คะแนน )
+                            </th>
+                        <th COLSPAN="2" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
+
+                      </tr>
+                      <tr>
+                        <td align="center">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
+
+
+                      </tr>
+                      <tr>
+
+                        <td style="text-align:center">ระดับคะแนน</td>
+
+                      </tr>
+                      <tr>
+                        <td COLSPAN="4" style="text-align:center">ระดับผู้บังคับบัญชา ( Supervisory Level )</td>
+                      </tr>
+                      @foreach ($operate_qSup  as $operate_qSups)
+
+
+                      <tr>
+
+
+                           <td  style="width:43%"  > {{  $operate_qSups->operate_qsup  }} </td>
+                           <td style="text-align:center">
+                                       @foreach ($operate_Chioce as $item)
+
+
+                                       <input type="radio" id="score60_{{$operate_qSups->id}}" name="score60_{{$operate_qSups->id}}" value={{$item->score_operate}} required > {{$item->score_operate}}  {{$item->meaning_operate}}&ensp;
+                                       @endforeach
+                           </td>
+                      </tr>
+
+                      @endforeach
+
+                    <tr>
+                       <td style="text-align:center">
+                       รวมคะแนน
+                       </td>
+                       <td style="text-align:center">
+                       <input type="text" name="total_60" id="total_60" readonly>
+
+                        </td>
+
+
+                    </tr>
+
+
+                    <tr>
+
+
+                            <td  COLSPAN="4" >
+
+                                    รวมคะแนนทั้งสิ้น  ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly > คะแนน <br><br>
+                                                  ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly> คะแนน
+                                  </td>
+
+
+
+
+
+                     </tr>
+
+
+
+
+
+
+
+
+
+                    </table>
+                                    </div>
+                </div>
+                </div>
+
+
+
+
+                          @else 
+
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <div  class="table-wrapper-scroll-y">              
+                <table id="customers">
+                  <tr>
+                    <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
+                        ( 100 คะแนน )
+                        </th>
+                    <th COLSPAN="1" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
+                  </tr>
+                  <tr>
+                    <td align="center">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
+                   </tr>
+                  <tr>
+                    <td style="text-align:center">ระดับคะแนน</td>
+
+
+                  </tr>
+                  <tr>
+                    <td COLSPAN="2" style="text-align:center">ระดับปฏิบัติการ ( Operational Level )</td>
+                  </tr>
+                  @foreach ($operate_qSeff as $operate_qSef)
+
+
+                   <tr>
+
+
+                        <td  style="width:43%"  > {{  $operate_qSef->operate_qstaff  }} </td>
+                        <td style="text-align:center">
+                                    @foreach ($operate_Chioce as $item)
+
+
+                                    <input type="radio" id="score60_{{$operate_qSef->id}}" name="score60_{{$operate_qSef->id}}" value={{$item->score_operate}}> {{$item->score_operate}}    {{$item->meaning_operate}} &ensp;
+
+
+                                    @endforeach
+                        </td>
+
+
+                   </tr>
+
+                   @endforeach
+
+                   <tr>
+                        <td style="text-align:center">
+
+                        รวมคะแนน
+
+                        </td>
+
+                        <td style="text-align:center">
+
+                     <input type="text" name="total_60" id="total_60" style="text-align:center" readonly>
+
+                         </td>
+
+
+
+
+
+
+
+                     </tr>
+
+                     <tr>
+
+
+                            <td  COLSPAN="2" >
+
+                                    รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center"  > คะแนน  <br><br>
+                                                  ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center"> คะแนน<br><br>
+                                                  (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center"> คะแนน
+                                  </td>
+
+
+
+
+
+                     </tr>
+
+                </table>
+
+
+            </div>
+            </div>
+        </div>
+
+
+
+                          @endif
 
 
 

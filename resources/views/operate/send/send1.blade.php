@@ -104,7 +104,7 @@
                                                 <div class="col-md-4 ">
                                                             <div class="form-group ">
                                                                 <label class="control-label ">จำนวนวัน:</label>
-                                                            <input type="text" name="totolDay2" id="totolDay2"   readonly class="form-control" readonly value="{{$operate->numberMN}}"/>
+                                                            <input type="text" name="totolDay2" id="totolDay2"   readonly class="form-control" readonly value="{{$operate->number}}"/>
                                                       
                                                                </div>
                                             

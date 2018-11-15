@@ -8,6 +8,11 @@ use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use App\Operate_Chioce;
+use App\Operate_qSeff;
+use App\Operate_qSup;
+use App\Operate_staff;
+use App\Operate_sup;
 
 class OperateController extends Controller
 {
@@ -91,14 +96,26 @@ class OperateController extends Controller
      */
     public function edit($id)
     {
-        if ($id !== '') {
+        if($id !== '') {
             $operate = Operate::find($id);
+            $operate_Chioce   = Operate_Chioce::all();
+            $operate_qSeff    = Operate_qSeff::all();
+            $operate_qSup     = Operate_qSup::all();
+            $operate_staff    = Operate_staff::all();
+            $manager = DB::table('__manager')->get();
+
 
             $data = array(
-                'operate' => $operate,
+                'operate' =>   $operate,
+                'operate_Chioce' =>  $operate_Chioce,
+                'operate_qSeff' =>   $operate_qSeff,
+                'operate_staff' =>   $operate_staff,
+                'operate_qSup' =>   $operate_qSup,
+                'manager' =>   $manager,
             );
 
-            return view('operate/send', $data);
+
+            return view('operate/lookHR', $data);
         }
     }
 
