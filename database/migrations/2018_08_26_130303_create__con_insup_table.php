@@ -18,7 +18,7 @@ class CreateConInsupTable extends Migration
             $table->integer('id_personal')->nullable();
             $table->integer('chioce')->nullable();
             $table->integer('score');
-            $table->integer('group')->nullable();;
+            $table->integer('group')->nullable();
             $table->timestamps();
         });
     }
