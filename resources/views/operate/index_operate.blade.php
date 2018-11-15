@@ -91,7 +91,7 @@
                                                                       <p>กรุณาระบุอีเมลล์ที่จะส่งถึงต้นสังกัด</p>
                                                                       <input type="hidden" name="id" value="{{$item['id']}}">
                                                                       <input type="email" name="email2" required class="form-control">
-                                                                      <input type="hidden" name="link1" value="http://127.0.0.1/send2/{{$item->id}}">
+                                                                      <input type="hidden" name="link2" value="http://127.0.0.1/send2/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -122,7 +122,7 @@
                                                                         <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่าย</p>
                                                                         <input type="email" name="email3" required class="form-control">
-                                                                        <input type="hidden" name="mail" value="http://127.0.0.1/send3/{{$item->id}}">
+                                                                        <input type="hidden" name="link3" value="http://127.0.0.1/send3/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -155,7 +155,7 @@
                                                                         <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่ายบุคคล</p>
                                                                         <input type="email" name="email4" required class="form-control">
-                                                                        <input type="hidden" name="mail" value="http://127.0.0.1/send4/{{$item->id}}">
+                                                                        <input type="hidden" name="link4" value="http://127.0.0.1/send4/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -189,7 +189,7 @@
                                                                              <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="email5" required class="form-control">
-                                                                        <input type="hidden" name="mail" value="http://127.0.0.1/send5/{{$item->id}}">
+                                                                        <input type="hidden" name="link5" value="http://127.0.0.1/send5/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
