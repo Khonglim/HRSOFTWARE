@@ -70,7 +70,7 @@
               <tfoot>
                 <tr>
                   <th>ลำดับ</th>
-                <th>บริษัท</th>
+                <th>แผนก</th>
                 <th>จัดการ</th>
               </tr>
               </tfoot>
