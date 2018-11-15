@@ -235,19 +235,21 @@
 </div>
 
 
-
+<div class="row">
 <div class="form-group">
-
-        <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมินครั้งแรก)</label>
-        <div class="col-sm-4">
+    <div class="col-md">
+        <label>ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมินครั้งแรก)</label>
         <textarea class="form-control" rows="3" name="assessor" readonly>{{$operate->comments_60}}</textarea>
               </div>
-      <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
-      <div class="col-sm-4">
+</div>
+<div class="col-md-2"></div>
+<div class="form-group"> 
+      <div class="col-md">
+            <label>ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
               <textarea class="form-control" rows="3" name="assessor2"></textarea>
             </div>
           </div>
-
+</div>
 <div class="form-group">
 
       <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
@@ -353,84 +355,57 @@
              </div>
 </div>
 </div>
+<div class="row">
+    <div class="form-group">
+        <div class="col-md">
+        <label>ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
+            <textarea class="form-control" rows="3" name="assessor2" required></textarea>
+    </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="form-group">
+        <div class="col-md">
+        <label>ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมินครั้งแรก)</label>
+        <textarea class="form-control" rows="3" name="assessor" readonly>{{$operate->comments_60}}</textarea>
+    </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <label  class="col-sm-2 control-label"></label>
 
-<div class="form-group">
+                <div class="col-md">
+                <div class="checkbox">
+                        <label><input type="checkbox" value="ไม่ผ่านทดลองงาน" name="experimental">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   <input type="text"  name="clsdate"  id="clsdate" class="form-control">
+                      </div>
+                    </div>
+                    <label  class="col-sm-2 control-label"></label>
+                    <div class="col-md">
+                            <div class="checkbox">
+                                    <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="full_time_worker">อนุมัติให้บรรจุเป็นพนักงานประจำ</label><br> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto" class="form-control" > ตำแหน่ง:<input type="text"  id="t2"  class="form-control" name="full_time_worker_position"/>
+                                  </div>
+                        </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="form-group">
+                <label  class="col-sm-2 control-label"></label>
+                <div class="col-md">
+                        <div class="checkbox">
+                                <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="modify">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง:</label>
+                                <input type="text" name="modify_position1" id="t1"   class="form-control"/>
 
-<label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
-<div class="col-sm-4">
-     <textarea class="form-control" rows="3" name="assessor2" required></textarea>
-   </div>
-
-
-   <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมินครั้งแรก)</label>
-   <div class="col-sm-4">
-   <textarea class="form-control" rows="3" name="assessor" readonly>{{$operate->comments_60}}</textarea>
-         </div>
-
-
-
- </div>
-
-
-
-   <div class="form-group">
-         <label  class="col-sm-2 control-label"></label>
-
-                 <div class="col-sm-4">
-                 <div class="checkbox">
-                         <label><input type="checkbox" value="ไม่ผ่านทดลองงาน" name="experimental">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   <input type="text"  name="clsdate"  id="clsdate" class="form-control">
-                       </div>
-                     </div>
-
-
-
-         </div>
-
-
-         <div class="form-group">
-
-                 <label  class="col-sm-2 control-label"></label>
-                 <div class="col-sm-4">
-                         <div class="checkbox">
-                                 <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="full_time_worker">อนุมัติให้บรรจุเป็นพนักงานประจำ</label><br> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto" class="form-control" > ตำแหน่ง:<input type="text"  id="t2"  class="form-control" name="full_time_worker_position"/>
-                               </div>
-                     </div>
-
-
-
-         </div>
-
-
-         <div class="form-group">
-
-                 <label  class="col-sm-2 control-label"></label>
-                 <div class="col-sm-4">
-                         <div class="checkbox">
-                                 <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="modify">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง:</label>
-                                 <input type="text" name="modify_position1" id="t1"   class="form-control"/>
-
-                                 ตั้งแต่วันที่:<input type="text"  name="modify_date"  id="modify_date"  class="form-control"> เป็นตำแหน่ง:<input type="text" name="modify_position2" id="t2"   class="form-control"/>
-                               </div>
-                     </div>
-
-
-
-         </div>
-
-
-
-
-         <div class="form-group">
-                 <label  class="col-sm-2 control-label"></label>
-                 <div class="col-sm-4">
-
+                                ตั้งแต่วันที่:<input type="text"  name="modify_date"  id="modify_date"  class="form-control"> เป็นตำแหน่ง:<input type="text" name="modify_position2" id="t2"   class="form-control"/>
+                              </div>
+                    </div>
+        </div>
+    </div>
+    <div class="form-group">
+                
+        <div class="col-md-3">
          <div class="checkbox">
-                 <label><input type="checkbox" value="อื่นๆ"  name="other_90">อื่นๆ</label>  <textarea class="form-control" rows="3" name="other_com_90"></textarea>
-               </div>
-                     </div>
-
-
-
+                <label><input type="checkbox" value="อื่นๆ"  name="other_90">อื่นๆ</label>  <textarea class="form-control" rows="3" name="other_com_90"></textarea>
+            </div>
+            </div>
          </div>
          <div class="form-group">
 

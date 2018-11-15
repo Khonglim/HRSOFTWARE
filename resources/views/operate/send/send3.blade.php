@@ -239,47 +239,32 @@
 
       </div>
   </div>
-
+<div class="row">
   <div class="form-group">
-
-          <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
-          <div class="col-sm-6">
-
+          <label  class="col-md control-label">ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน)</label>
+          <div class="col-md">
           <textarea class="form-control" rows="3" name="comment_suitability10" required></textarea>
-          </div>
-
-
-  </div>
-
-
-
-  <div class="form-group">
-
-          <label  class="col-sm-2 control-label"></label>
-          <div class="col-sm-6">
-
-          <div class="checkbox">
-                  <label><input type="checkbox"  name="ok_suitability"   value="อนุมัติตามผู้บังคับบัญชาเสนอ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
-                </div>
-
-
-
-                      <div class="checkbox">
-                              <label><input type="checkbox" name="other_suitability" value="อื่นๆ">อื่นๆ</label><textarea class="form-control" rows="3" name="other_com_suitability"></textarea>
-                            </div>
-
-          </div>
-  </div>
-
+          </div> <br>
+          <div class="col-md">
+              <div class="checkbox">
+                <label><input type="checkbox"  name="ok_suitability"   value="อนุมัติตามผู้บังคับบัญชาเสนอ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
+              </div>
+            </div>  
+    </div>
+    <div class="col-md-1"></div>
+    <div class="form-group">
+        <div class="col-md"></div>
+            <div class="checkbox">
+                    <label><input type="checkbox" name="other_suitability" value="อื่นๆ">อื่นๆ</label><textarea class="form-control" rows="3" name="other_com_suitability"></textarea>
+                  </div>
+    </div>
+</div>
   <div class="form-group">
           <label  class="col-sm-2 control-label">ชื่อผู้จัดการฝ่าย:</label>
 
           <div class="col-sm-4">
               <input type="text"  name="namerate_suitability" id="namerate_suitability"  class="form-control">
           </div>
-
-
-
   </div>
   <div class="form-group">
           <div class="col-sm-3"></div>

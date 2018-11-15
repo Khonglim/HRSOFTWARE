@@ -229,34 +229,43 @@
 </div>
 
 
+<div class="row">
+        <div class="form-group">
+            <div class="col-md-12">
+            <label >ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน)</label>
+                    <textarea class="form-control" rows="3" name="assessor" required></textarea>
+                  </div>
+                </div>
+             
+                <div class="form-group">
+                    <div class="col-md-12">
+                    <label >จุดเด่นพนักงาน:</label>
+                   
+                            <textarea class="form-control" rows="3" name="featured" required></textarea>
+                          </div>
+                       
+    
+              </div>
+    
+    
+              <div class="form-group">
+              <div class="col-md-12">
+                <label >จุดด้อยพนักงาน:</label>
+       
+                  <textarea class="form-control" rows="3" name="weakness" required></textarea>
+                </div>
+              </div>
+    
+    </div>
 
 <div class="form-group">
 
-      <label  class="col-sm-2 control-label">ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
-      <div class="col-sm-4">
-              <textarea class="form-control" rows="3" name="assessor"></textarea>
-            </div>
-          </div>
-<div class="form-group">
-
-      <label  class="col-sm-2 control-label">จุดเด่นพนักงาน:</label>
-      <div class="col-sm-4">
-              <textarea class="form-control" rows="3" name="featured" required></textarea>
-            </div>
-
-            <label  class="col-sm-2 control-label">จุดด้อยพนักงาน:</label>
-      <div class="col-sm-4">
-              <textarea class="form-control" rows="3" name="weakness" required></textarea>
-            </div>
-
-</div>
-<div class="form-group">
-
-      <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
+      <label  class="col-sm control-label"> ชื่อผู้ประเมิน:</label>
       <div class="col-sm-4">
               <input type="text" name="namerate_60" id="namerate_60" required class="form-control">
             </div>
            </div>
+ 
            <div class="form-group">
                   <div class="col-sm-3"></div>
               <div class="col-sm-4">
@@ -275,7 +284,7 @@
                         </div>
             </div>
            </div>
-       
+              
             <center>  ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
         <button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
             {{Form::close()}}
@@ -373,13 +382,8 @@
     <div class="form-group">
         <div class="col-md-12">
         <label >ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน)</label>
-      
                 <textarea class="form-control" rows="3" name="assessor" required></textarea>
               </div>
-
-
-
-
             </div>
          
             <div class="form-group">
