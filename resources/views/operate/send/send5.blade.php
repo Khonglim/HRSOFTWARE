@@ -140,250 +140,145 @@
                                                 </div>
                                              
                         </div>
-                   
+                        <div class="form-group">
+                                    <div class="col-sm-12">
+                    
+                                            <table id="customers">
+                                                    <tr>
+                                                      <th COLSPAN="3" style="text-align:center">สรุปผลการประเมิน</th>
+                    
+                                                    </tr>
+                                                    <tr>
+                                                      <td style="text-align:center">ประเภทการประเมิน</td>
+                                                      <td style="text-align:center">คะแนนเต็ม</td>
+                                                      <td style="text-align:center">คะแนนที่ได้</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td style="width:35%" >1. การประเมินผลการปฏิบัติงาน
+                                                            โดย <b> ผู้บังคับบัญชา </b>
+                                                         </td>
+                                                      <td style="text-align:center">100
+                                                        </td>
+                                                      <td style="text-align:center"> <input type="text"  name="conclusions"    id="scoresp" value="{{$operate->subtotal_final}}" style="width:50px"  readonly></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>2. การประเมินผลการปฏิบัติงาน
+                                                            โดย <b> ผู้จัดการฝ่าย </b></td>
+                                                      <td style="text-align:center">100</td>
+                                                      <td style="text-align:center"><input type="text"  name="results_manager"    id="scoremp" value="{{$operate->sum_chioce_suitability10}}"  style="width:50px" readonly></td>
+                                                    </tr>
+                    
+                                                  </table>
+                    
+                    
+                                    </div>
+                            </div>
+                    
 
 
                         {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
                         @csrf
-<div class="form-group">
-      <div class="col-sm-12">
-                  <div class="alert alert-danger">
-                              <strong>โปรดทราบ!</strong> แต่ละหัวข้อเลือกคะแนนเพียงช่องเดียว
-                            </div>
-              <div  class="table-wrapper-scroll-y">        
-          <table id="customers">
-              <tr>
-                <th COLSPAN="4" style="text-align:center">เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน(100 คะแนน )</th>
-              </tr>
-              <tr>
-                <td style="text-align:center">หัวข้อการประเมิน</td>
-                <td style="text-align:center">10-8
-                      ดี
-                      </td>
-                <td style="text-align:center">7-5
-                      พอใช้
-                      </td>
-                <td style="text-align:center">4-1
-                      ปรับปรุง
-                      </td>
-
-              </tr>
-              <?php $a = 1;
-              $b = 50;
-              $c = 100;
-              ?>
-          @foreach ($manager as $managers)
-
-              <tr>
-                      <td  style="width:43%"  > {{  $managers->manager  }} </td>
-                      <td style="text-align:center">
-
-                      <select name="staaff_one{{$a++}}"      style="text-align:center">
-
-                              <option value="0" >เลือก</option>
-                                      <option value="8">8</option>
-                                      <option value="9">9</option>
-                                      <option value="10">10</option>
-
-                                    </select>
-
-
-                      </td>
-                      <td style="text-align:center" >
-
-                      <select name="staaff_one{{$b++}}"   style="text-align:center">
-
-                              <option value="0" >เลือก</option>
-                                      <option value="5">5</option>
-                                      <option value="6">6</option>
-                                      <option value="7">7</option>
-                                    </select>
-                          </td>
-                          <td style="text-align:center">
-
-                          <select    name="staaff_one{{$c++}}"     style="text-align:center" >
-
-                                          <option value="0">เลือก</option>
-                                          <option value="1">1</option>
-                                          <option value="2">2</option>
-                                          <option value="3">3</option>
-                                          <option value="4">4</option>
-                                        </select>
-
-                              </td>
-              </tr>
-
-
-
-
-          @endforeach
-
-          <tr>
-
-                  <td style="text-align:center" >
-      รวมคะแนน
-
-                  </td>
-                  <td  COLSPAN="3" style="text-align:center">
-
-                      <input type="text" name="sum_chioce_suitability10"  id="sum_chioce_suitability10" style="width:50px" style="text-align:center" >
-                      </td>
-
-           </tr>
-
-            </table>
-              </div>
-
-
-      </div>
-  </div>
-<div class="row">
-  <div class="form-group">
-          <label  class="col-md control-label">ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน)</label>
-          <div class="col-md">
-          <textarea class="form-control" rows="3" name="comment_suitability10" required></textarea>
-          </div> <br>
-          <div class="col-md">
-              <div class="checkbox">
-                <label><input type="checkbox"  name="ok_suitability"   value="อนุมัติตามผู้บังคับบัญชาเสนอ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
-              </div>
-            </div>  
-    </div>
-    <div class="col-md-1"></div>
-    <div class="form-group">
-        <div class="col-md"></div>
-            <div class="checkbox">
-                    <label><input type="checkbox" name="other_suitability" value="อื่นๆ">อื่นๆ</label><textarea class="form-control" rows="3" name="other_com_suitability"></textarea>
-                  </div>
+                     
+                    
+                                           
+        <div class="panel panel-info" style="width:100%">
+                  <div class="panel-heading">เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</div>
+                  <div class="panel-body">
+                    <div class="form-group"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                        <div class="col-md ">
+                                            <input type="checkbox" name="manager_resource_ok" value="อนุมัติตามผู้บังคับบัญชาเสนอ"> ให้บรรจุเป็นพนักงานประจำ
+                                        </div>
+                                        <div class="col-md">
+                                            <input type="checkbox" name="manager_resource_modi" value="ปรับอัตราเงินเดือน"> ปรับอัตราเงินเดือน:  <input type="text" name="manager_resource_comdi" class="form-control"/>
+                                        </div>
+                                </div>
+                            <div class="form-group">
+                                    <div class="col-md">
+                                    <input type="checkbox" name="manager_resource_nodi" value="ยังไม่ปรับเงินเดือน"> ยังไม่ปรับเงินเดือน:  <input type="text" name="manager_resource_comno" class="form-control">
+                                </div>
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                                <div class="form-group"></div>
+                                <div class="form-group">
+                                        <div class="col-md">
+                                              <input type="checkbox" value="ให้ปรับตำแหน่งเป็น "  name="manager_resource_adjust"> ให้ปรับตำแหน่งเป็น: <input type="text"  name="manager_resource_posi" class="form-control">
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <div class="col-md">
+                                              <input type="checkbox"  name="manager_resource_fail"  value="ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่ "  name="nomodi_11"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่: <input type="text"  name="manager_resource_date" class="form-control">
+        
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                          <div class="form-group">
+  
+                                  <label  class="col-sm-2 control-label"></label>
+                                  <div class="col-sm-4 ">
+  
+                                        <input type="checkbox" value="อื่นๆ" name="manager_resource_other"> อื่นๆ : <textarea class="form-control" rows="3" name="manager_resource_othercom"></textarea>
+  
+                                      </div>
+  
+  
+                          </div>
+                          <div class="form-group">
+                                  <div class="col-sm-3"></div>
+                                  <div class="col-sm-5">
+                                          <div class="sigPad">
+                                                  <ul class="sigNav">
+                                                    <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
+                                                    <li class="clearButton"><a href="#clear">Clear</a></li>
+                                                  </ul>
+                                                  <div class="sig sigWrapper">
+                                                    <div class="typed"></div>
+                                                    <canvas class="pad" width="220" height="70"></canvas>
+                                                    <input type="hidden" name="signa4" class="output">
+  
+                                                  </div>
+                                                </div>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                                  <label  class="col-sm-3 control-label">ชื่อกรรมการผู้จัดการ/ผู้จัดการทั่วไป:</label>
+  
+                                  <div class="col-sm-4">
+                                      <input type="text"  name="manager_resource_nre"  class="form-control">
+                                  </div>
+  
+  
+  
+                          </div>
+  
+                      </div>
+  
+  
+  
+  
+  
+          </div>
+  
+                    
+                    
+                             <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
+                                        {{Form::close()}}
+                             </div>
+                        </div>      
+               </div>
+          </div>
     </div>
 </div>
-  <div class="form-group">
-          <label  class="col-sm-2 control-label">ชื่อผู้จัดการฝ่าย:</label>
-
-          <div class="col-sm-4">
-              <input type="text"  name="namerate_suitability" id="namerate_suitability"  class="form-control">
-          </div>
-  </div>
-  <div class="form-group">
-          <div class="col-sm-3"></div>
-          <div class="col-sm-5">
-                  <div class="sigPad">
-                          <ul class="sigNav">
-                            <li class="drawIt"><a href="#draw-it">ลายเซ็น</a></li>
-                            <li class="clearButton"><a href="#clear">Clear</a></li>
-                          </ul>
-                          <div class="sig sigWrapper">
-                            <div class="typed"></div>
-                            <canvas class="pad" width="220" height="70"></canvas>
-                            <input type="hidden" name="signa2" class="output">
-
-                          </div>
-                        </div>
-      </div>
-  </div>
-  <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
-  {{Form::close()}}
-                            
-
-                                      
-
-
-
-
-
-
-
-
-
-
-
-
-                        </div>
-                        </div>
-                              
-
-                        
-                      </div>
-    </div>
-
-
-                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </div>
-
-
-
-
-
-
-      </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
   <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
 
-@if( $operate->degree_enable == 1)
-<script>
-        $(document).ready(function() {
-          $('.sigPad').signaturePad({drawOnly:true});
-                 
-        });
-      </script>
-    
-    <script type='text/javascript'>
-          var add_value = [];
-          var pont = 0 ;
-            $('select').change(function(){
-    
-                add_value[this.name] = this.value;
-                var pont = 0 ;
-    
-    
-                for(var key in add_value){
-                   pont=parseInt(pont)+parseInt(add_value[key]);
-    
-    
-                }
-                if(pont >100){
-                    alert("คุณกรอกคะแนนเกิน 100 กรุณาตรวจสอบ");
-                }
-                $('#sum_chioce_suitability10').val(pont);
-                $('#scoremp').val(pont);
-            });
-        </script>
-
-@else
 
 
 <script>
@@ -393,28 +288,8 @@
     });
   </script>
 
-<script type='text/javascript'>
-      var add_value = [];
-      var pont = 0 ;
-        $('select').change(function(){
 
-            add_value[this.name] = this.value;
-            var pont = 0 ;
-
-
-            for(var key in add_value){
-               pont=parseInt(pont)+parseInt(add_value[key]);
-
-
-            }
-            if(pont >100){
-                alert("คุณกรอกคะแนนเกิน 100 กรุณาตรวจสอบ");
-            }
-            $('#sum_chioce_suitability10').val(pont);
-            $('#scoremp').val(pont);
-        });
-    </script>
-           @endif
+       
 
 
 

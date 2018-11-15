@@ -72,8 +72,6 @@ Route::get('send5/{id}','Info_operateController@handler');
 
 
 
-
-
 Route::resource('rate','InterviewController');
 Route::resource('rate_sup','Interview_supController');
 Route::resource('disctest','DisctestController');

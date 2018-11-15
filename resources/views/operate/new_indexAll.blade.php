@@ -51,17 +51,17 @@
                               <div class="form-group">
                                     <label class="col-sm-2 control-label">วันเริ่มงาน:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" name="dateStart2" id="dateStart2" class="form-control" required onchange="document.getElementById('startrate').value=document.getElementById('dateStart2').value"/>
+                                          <input type="text" name="dateStart2" id="dateStart2" class="form-control" autocomplete="off"    required onchange="document.getElementById('startrate').value=document.getElementById('dateStart2').value"/>
                                     </div>
                                     <label class="col-sm-2 control-label">ครบการทดลองงาน:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" name="dateEnd2" id="dateEnd2" class="form-control" required/>
+                                          <input type="text" name="dateEnd2" id="dateEnd2" class="form-control" autocomplete="off"  required/>
                                     </div>
                               </div>
                               <div class="form-group">
                                     <label class="col-sm-2 control-label">จำนวนวัน:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" name="totolDay2" id="totolDay2" class="form-control" required/>
+                                          <input type="text" name="totolDay2" id="totolDay2" class="form-control"  required/>
                                     </div>
                                     <label class="col-sm-2 control-label">ระดับ:</label>
                                     <div class="col-sm-4">
@@ -72,11 +72,11 @@
 
                                     <label class="col-sm-2 control-label">ประเมินครั้งที่ 1 : วันที่ :</label>
                                     <div class="col-sm-4">
-                                          <input type="text" name="totolDay_60" id="totolDay_60" class="form-control" />
+                                          <input type="text" name="totolDay_60" id="totolDay_60" class="form-control" autocomplete="off" />
                                     </div>
                                     <label class="col-sm-2 control-label">  ประเมินครั้งที่ 2 :  วันที่:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" name="totolDay_90" id="totolDay_90" class="form-control" />
+                                          <input type="text" name="totolDay_90" id="totolDay_90" class="form-control" autocomplete="off" />
                                     </div>
                               </div>
                               <div class="form-group">
@@ -88,17 +88,10 @@
 
                                               </select>
                                     </div>
-                                    <label class="col-sm-2 control-label">ส่งถึงต้นสังกัด(email)</label>
-                                    <div class="col-sm-4">
-                                          <input type="email" name="email" id="email" class="form-control">
-                                    </div>
-                              </div>
-                              <div class="form-group">
                                     <label class="col-sm-2 control-label">จำนวนวันที่ประเมิน/วัน</label>
                                     <div class="col-sm-4">
                                           <input type="number" name="numberMN" id="numberMN" class="form-control">
                                     </div>
-
                               </div>
                               <center> <button type="submit" class="btn btn-info ">บันทึก/ส่งถึงผู้ประเมิน</button></center>
                               {{Form::close()}}
