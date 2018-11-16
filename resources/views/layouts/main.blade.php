@@ -271,7 +271,7 @@ body {
                           <ul class="nav navbar-nav">
                               @if(auth()->user()->isAdmin == '001' || auth()->user()->isAdmin == '010')
                             <li class="active"><a href="{{url('/home')}}"><span>หน้าแรก</span></a></li>
-                            <li ><a href="{{url('Operate/create')}}"><span>ประเมินทดลองงาน</span></a></li>
+                            
                             <li ><a href="{{url('/ngg_work')}}"><span>ข้อมูลผู้สมัคร</span></a></li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">แบบประเมินต่างๆ<span class="caret"></span></a>
@@ -279,7 +279,8 @@ body {
                                   <li ><a href="{{url('/interview') }}"><span>แบบประเมินผลสัมภาษณ์</span></a></li>
                                   <li class="divider"></li>
                                   <li ><a href="{{url('/operate_employf')  }}"><span>แบบประเมินผลการปฏิบัติงาน</span></a></li>
-                         
+                                  <li class="divider"></li>
+                                  <li ><a href="{{url('Operate/create')}}"><span>ประเมินทดลองงาน</span></a></li>
                               </ul>
                             </li>
                             <li class="dropdown">
@@ -296,6 +297,8 @@ body {
                                     <li ><a href="{{url('/con_all') }}"><span>รายงานการทดสอบทั้งหมด</span></a></li>
                                     <li class="divider"></li>
                                     <li ><a href="{{url('/manpower') }}"><span>รายงานขอกำลังคน</span></a></li>
+                                    <li class="divider"></li>
+                                    <li ><a href="{{url('/Operate') }}"><span>รายงานการประเมินทดลองงาน</span></a></li>
                                 </ul>
                               </li>
                               <li class="dropdown">

@@ -37,12 +37,6 @@
 
 
 </head>
- 
-  
-
- 
-
- 
   <script>
       $(document).ready(function() {
         $('.sigPad').signaturePad({drawOnly:true});
@@ -286,7 +280,7 @@ body {
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                       <ul class="nav navbar-nav">
-                          @if(auth()->user()->isAdmin == 1)
+                        @if(auth()->user()->isAdmin == '001' || auth()->user()->isAdmin == '010')
                         <li class="active"><a href="{{url('/home')}}"><span>หน้าแรก</span></a></li>
                         <li ><a href="{{url('/ngg_work')}}"><span>ข้อมูลผู้สมัคร</span></a></li>
                         <li class="dropdown">
@@ -295,7 +289,8 @@ body {
                               <li ><a href="{{url('/interview') }}"><span>แบบประเมินผลสัมภาษณ์</span></a></li>
                               <li class="divider"></li>
                               <li ><a href="{{url('/operate_employf')  }}"><span>แบบประเมินผลการปฏิบัติงาน</span></a></li>
-                     
+                              <li class="divider"></li>
+                              <li ><a href="{{url('Operate/create')}}"><span>ประเมินทดลองงาน</span></a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
@@ -310,7 +305,8 @@ body {
                                 <li><a href="{{url('/operate_report**')  }}"><span>รายงานทดลองงานบังคับบัญชา</span></a></li>
                                 <li class="divider"></li>
                                 <li><a href="{{url('/con_all') }}"><span>รายงานการทดสอบทั้งหมด</span></a></li>
-                               
+                                <li class="divider"></li>
+                                <li ><a href="{{url('/Operate') }}"><span>รายงานการประเมินทดลองงาน</span></a></li>
                             </ul>
                           </li>
                           <li class="dropdown">
@@ -325,6 +321,30 @@ body {
                                    <li><a href="{{url('/nggemployee') }}">จัดการพนักงาน</a></li>
                                    <li class="divider"></li>
                                    <li><a href="{{url('/timeattendant') }}">จัดการเวลาผู้ประเมิน</a></li>
+                                 
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">การจัดการโดยรวม<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                  @if(auth()->user()->isAdmin == '010')
+                                  <li ><a href="{{url('/user_setting') }}">การจัดการผู้ใช้</a></li>
+
+                                  <li class="divider"></li>
+
+                                  @endif
+                                   <li><a href="{{url('/companysmanage') }}">จัดการบริษัท</a></li>
+                                   <li class="divider"></li>
+                                   <li><a href="{{url('/departmentsmanage') }}">จัดการแผนก</a></li>
+                                   <li class="divider"></li>
+                                   <li><a href="{{url('/positionsmanage') }}">จัดการตำแหน่ง</a></li>
+                                   <li class="divider"></li>
+                                   <li><a href="{{url('/sectorsmanage') }}">จัดการsector</a></li>
+                                   <li class="divider"></li>
+                                   <li><a href="{{url('/levelsmanage') }}">จัดการระดับ</a></li>
+                                   <li class="divider"></li>
+                                   <li><a href="{{url('/nggemployee') }}">จัดการผนักงาน</a></li>
+                                   
                                  
                               </ul>
                             </li>

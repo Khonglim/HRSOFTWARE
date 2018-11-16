@@ -25,27 +25,27 @@
                                     <input type="hidden" name="id_employ" id="id_employ">
                                     <label class="col-sm-2 control-label">บริษัท:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" class="form-control" name="textCompany">
+                                          <input type="text" class="form-control" name="textCompany" readonly>
                                     </div>
                               </div>
                               <div class="form-group">
                                     <label class="col-sm-2 control-label">ชื่อ-สกุล:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" class="form-control" name="textName">
+                                          <input type="text" class="form-control" name="textName" readonly>
                                     </div>
                                     <label class="col-sm-2 control-label">รหัสพนักงาน:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" class="form-control" name="textNem_code">
+                                          <input type="text" class="form-control" name="textNem_code" readonly>
                                     </div>
                               </div>
                               <div class="form-group">
                                     <label class="col-sm-2 control-label">ตำแหน่ง:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" class="form-control" name="textPosition">
+                                          <input type="text" class="form-control" name="textPosition" readonly>
                                     </div>
                                     <label class="col-sm-2 control-label">แผนก/ฝ่าย:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" class="form-control" name="textDepartment" required>
+                                          <input type="text" class="form-control" name="textDepartment" readonly>
                                     </div>
                               </div>
                               <div class="form-group">
@@ -61,18 +61,18 @@
                               <div class="form-group">
                                     <label class="col-sm-2 control-label">จำนวนวัน:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" name="totolDay2" id="totolDay2" class="form-control"  required/>
+                                          <input type="text" name="totolDay2" id="totolDay2" class="form-control"  readonly/>
                                     </div>
                                     <label class="col-sm-2 control-label">ระดับ:</label>
                                     <div class="col-sm-4">
-                                          <input type="text" name="textDegree" class="form-control" />
+                                          <input type="text" name="textDegree" class="form-control"  readonly/>
                                     </div>
                               </div>
                               <div class="form-group">
 
                                     <label class="col-sm-2 control-label">ประเมินครั้งที่ 1 : วันที่ :</label>
                                     <div class="col-sm-4">
-                                          <input type="text" name="totolDay_60" id="totolDay_60" class="form-control" autocomplete="off" />
+                                          <input type="text" name="totolDay_60" id="totolDay_60" class="form-control" autocomplete="off"  />
                                     </div>
                                     <label class="col-sm-2 control-label">  ประเมินครั้งที่ 2 :  วันที่:</label>
                                     <div class="col-sm-4">
