@@ -237,41 +237,151 @@
 
                       </tr>
                       <tr>
-                        <td align="center">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
+                        <td align="center" colspan="2">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
 
 
                       </tr>
                       <tr>
-
-                        <td style="text-align:center">ระดับคะแนน</td>
-
+                        <td style="text-align:center" colspan="2">ระดับคะแนน</td>
                       </tr>
                       <tr>
                         <td COLSPAN="4" style="text-align:center">ระดับผู้บังคับบัญชา ( Supervisory Level )</td>
                       </tr>
-                      @foreach ($operate_qSup  as $operate_qSups)
-
-
                       <tr>
-
-
-                           <td  style="width:43%"  > {{  $operate_qSups->operate_qsup  }} </td>
-                           <td style="text-align:center">
-                                       @foreach ($operate_Chioce as $item)
-
-
-                                       <input type="radio" id="score60_{{$operate_qSups->id}}" name="score60_{{$operate_qSups->id}}" value={{$item->score_operate}} required > {{$item->score_operate}}  {{$item->meaning_operate}}&ensp;
-                                       @endforeach
-                           </td>
+                          <td></td>
+                          <td style="text-align:center">การประเมินรอบที่ 1</td>
+                          <td style="text-align:center">การประเมินรอบที่ 2</td>
                       </tr>
-
-                      @endforeach
-
+                    <tr>
+                <td>1. คุณภาพของงานที่ปฏิบัติ</td>
+                <td align="center">{{$operate->chioce1_60}}</td>
+                <td align="center">{{$operate->chioce1_90}}</td>
+            </tr>
+            <tr>
+                <td>2. ปริมาณของงาน และเวลาที่ใช้ปฏิบัติงาน</td>
+                <td align="center">{{$operate->chioce2_60}}</td>
+                <td align="center">{{$operate->chioce2_90}}</td>
+            </tr>
+            <tr>
+                <td>3. ความรับผิดชอบและไว้วางใจในการทำงาน</td>
+                <td align="center">{{$operate->chioce3_60}}</td>
+                <td align="center">{{$operate->chioce3_90}}</td>
+            </tr>    
+            <tr>
+                <td>4. การปฏิบัติตามคำสั่ง และ คำแนะนำ</td>
+                <td align="center">{{$operate->chioce4_60}}</td>
+                <td align="center">{{$operate->chioce4_90}}</td>
+            </tr>
+            <tr>
+                <td>5. การประพฤติตามระเบียบข้อบังคับของบริษัท</td>
+                <td align="center">{{$operate->chioce5_60}}</td>
+                <td align="center">{{$operate->chioce5_90}}</td>
+            </tr>
+            <tr>
+                <td>6. ความซื่อสัตย์ และ น่าเชื่อถือไว้ใจ</td>
+                <td align="center">{{$operate->chioce6_60}}</td>
+                <td align="center">{{$operate->chioce6_90}}</td>
+            </tr>
+            <tr>
+                <td>7. ความตั้งใจและความกระตือรือร้นในการทำงานให้สำเร็จ</td>
+                <td align="center">{{$operate->chioce7_60}}</td>
+                <td align="center">{{$operate->chioce7_90}}</td>
+            </tr>
+            <tr>
+                <td>8. ความสามารถในการเรียนรู้งาน</td>
+                <td align="center">{{$operate->chioce8_60}}</td>
+                <td align="center">{{$operate->chioce8_90}}</td>
+            </tr>
+            <tr>
+                <td>9. ความสามารถด้านการคิดริเริ่มสร้างสรรค์</td>
+                <td align="center">{{$operate->chioce9_60}}</td>
+                <td align="center">{{$operate->chioce9_90}}</td>
+            </tr>
+            <tr>
+                <td>10. ความสามารถในการแก้ไขข้อบกพร่องของตนเอง</td>
+                <td align="center">{{$operate->chioce10_60}}</td>
+                <td align="center">{{$operate->chioce10_90}}</td>
+            </tr>
+            <tr>
+                <td>11. การให้ความร่วมมือประสานงานและการทำงานเป็นทีมกับผู้อื่น</td>
+                <td align="center">{{$operate->chioce11_60}}</td>
+                <td align="center">{{$operate->chioce11_90}}</td>
+            </tr>
+            <tr>
+                <td>12. ความสามารถในการแก้ไขปัญหาเฉพาะหน้าและตัดสินใจด้วยตนเอง</td>
+                <td align="center">{{$operate->chioce12_60}}</td>
+                <td align="center">{{$operate->chioce12_90}}</td>
+            </tr>
+            <tr>
+                <td>13. ทัศนคติที่มีต่อบริษัท</td>
+                <td align="center">{{$operate->chioce13_60}}</td>
+                <td align="center">{{$operate->chioce13_90}}</td>
+            </tr>
+            <tr>
+                <td>14. การใช้ทรัพย์สินและค่าใช้จ่ายของบริษัทอย่างประหยัดและปลอดภัย</td>
+                <td align="center">{{$operate->chioce14_60}}</td>
+                <td align="center">{{$operate->chioce14_90}}</td>
+            </tr>
+            <tr>
+                <td>15. มีสุขภาพร่างกายพร้อมที่จะปฏิบัติงาน</td>
+                <td align="center">{{$operate->chioce15_60}}</td>
+                <td align="center">{{$operate->chioce15_90}}</td>
+            </tr>
+            <tr>
+                <td>16. ความสามารถในการทำงานบังคับบัญชา การควบคุมระเบียบวินัย</td>
+                <td align="center">{{$operate->chioce16_60}}</td>
+                <td align="center">{{$operate->chioce16_90}}</td>
+            </tr>
+            <tr>
+                <td>17. การมอบหมายงาน/ควบคุมงาน/ติดตามงาน</td>
+                <td align="center">{{$operate->chioce17_60}}</td>
+                <td align="center">{{$operate->chioce17_90}}</td>
+            </tr>
+            <tr>
+                <td>18. การสอนงาน และการพัฒนาผู้ใต้บังคับบัญชา</td>
+                <td align="center">{{$operate->chioce18_60}}</td>
+                <td align="center">{{$operate->chioce18_90}}</td>
+            </tr>
+            <tr>
+                <td>19. การกระตุ้นและการสร้างสรรค์การทำงานเป็นทีม</td>
+                <td align="center">{{$operate->chioce19_60}}</td>
+                <td align="center">{{$operate->chioce19_90}}</td>
+            </tr>
+            <tr>
+                <td>20. ความสามารถด้านวางแผน/จัดระบบงาน/ขั้นตอนการทำงาน การบริหารเวลา</td>
+                <td align="center">{{$operate->chioce20_60}}</td>
+                <td align="center">{{$operate->chioce20_90}}</td>
+            </tr>
+            <tr>
+                <td>21. ความสามารถในการแก้ไขปัญหาและการตัดสินใจในการบริหารงาน</td>
+                <td align="center">{{$operate->chioce21_60}}</td>
+                <td align="center">{{$operate->chioce21_90}}</td>
+            </tr>
+            <tr>
+                <td>22. การมีมุมมอง/การปฏิบัติตามนโยบาย/เป้าหมาย โดยภาพรวมบริษัท</td>
+                <td align="center">{{$operate->chioce22_60}}</td>
+                <td align="center">{{$operate->chioce22_90}}</td>
+            </tr>
+            <tr>
+                <td>23. ความสามารถในการรับแรงกดดัน สภาพบีบบังคับ</td>
+                <td align="center">{{$operate->chioce23_60}}</td>
+                <td align="center">{{$operate->chioce23_90}}</td>
+            </tr>
+            <tr>
+                <td>24. ความสามารถในการเจรจาต่อรองและการโน้มน้าวจูงใจผู้ใต้บังคับบัญชา</td>
+                <td align="center">{{$operate->chioce24_60}}</td>
+                <td align="center">{{$operate->chioce24_90}}</td>
+            </tr>
+            <tr>
+                <td>25. ความสามารถในการสรุปงานและการนำเสนองาน</td>
+                <td align="center">{{$operate->chioce25_60}}</td>
+                <td align="center">{{$operate->chioce25_90}}</td>
+            </tr>
                     <tr>
                        <td style="text-align:center">
                        รวมคะแนน
                        </td>
-                       <td style="text-align:center">
+                       <td style="text-align:center" colspan="2">
                        <input type="text" name="total_60" id="total_60" readonly>
 
                         </td>
@@ -324,37 +434,94 @@
                     <th COLSPAN="1" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
                   </tr>
                   <tr>
-                    <td align="center">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
+                    <td align="center" colspan="2">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
                    </tr>
-                  <tr>
-                    <td style="text-align:center">ระดับคะแนน</td>
-
-
-                  </tr>
-                  <tr>
-                    <td COLSPAN="2" style="text-align:center">ระดับปฏิบัติการ ( Operational Level )</td>
-                  </tr>
-                  @foreach ($operate_qSeff as $operate_qSef)
-
-
                    <tr>
-
-
-                        <td  style="width:43%"  > {{  $operate_qSef->operate_qstaff  }} </td>
-                        <td style="text-align:center">
-                                    @foreach ($operate_Chioce as $item)
-
-
-                                    <input type="radio" id="score60_{{$operate_qSef->id}}" name="score60_{{$operate_qSef->id}}" value={{$item->score_operate}}> {{$item->score_operate}}    {{$item->meaning_operate}} &ensp;
-
-
-                                    @endforeach
-                        </td>
-
-
-                   </tr>
-
-                   @endforeach
+                        <td style="text-align:center" colspan="2">ระดับคะแนน</td>
+                      </tr>
+                      <tr>
+                        <td COLSPAN="4" style="text-align:center">ระดับปฏิบัติการ ( Operational Level )</td>
+                      </tr>
+                      <tr>
+                          <td></td>
+                          <td style="text-align:center">การประเมินรอบที่ 1</td>
+                          <td style="text-align:center">การประเมินรอบที่ 2</td>
+                      </tr>
+                  <tr>
+                        <td>1. คุณภาพของงานที่ปฏิบัติ</td>
+                        <td align="center">{{$operate->chioce1_60}}</td>
+                        <td align="center">{{$operate->chioce1_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>2. ปริมาณของงาน และเวลาที่ใช้ปฏิบัติงาน</td>
+                        <td align="center">{{$operate->chioce2_60}}</td>
+                        <td align="center">{{$operate->chioce2_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>3. ความรับผิดชอบและไว้วางใจในการทำงาน</td>
+                        <td align="center">{{$operate->chioce3_60}}</td>
+                        <td align="center">{{$operate->chioce3_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>4. การปฏิบัติตามคำสั่ง และ คำแนะนำ</td>
+                        <td align="center">{{$operate->chioce4_60}}</td>
+                        <td align="center">{{$operate->chioce4_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>5. การประพฤติตามระเบียบข้อบังคับของบริษัท</td>
+                        <td align="center">{{$operate->chioce5_60}}</td>
+                        <td align="center">{{$operate->chioce5_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>6. ความซื่อสัตย์ และ น่าเชื่อถือไว้ใจ</td>
+                        <td align="center">{{$operate->chioce6_60}}</td>
+                        <td align="center">{{$operate->chioce6_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>7. ความตั้งใจและความกระตือรือร้นในการทำงานให้สำเร็จ</td>
+                        <td align="center">{{$operate->chioce7_60}}</td>
+                        <td align="center">{{$operate->chioce7_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>8. ความสามารถในการเรียนรู้งาน</td>
+                        <td align="center">{{$operate->chioce8_60}}</td>
+                        <td align="center">{{$operate->chioce8_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>9. ความสามารถด้านการคิดริเริ่มสร้างสรรค์</td>
+                        <td align="center">{{$operate->chioce9_60}}</td>
+                        <td align="center">{{$operate->chioce9_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>10. ความสามารถในการแก้ไขข้อบกพร่องของตนเอง</td>
+                        <td align="center">{{$operate->chioce10_60}}</td>
+                        <td align="center">{{$operate->chioce10_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>11. การให้ความร่วมมือประสานงานและการทำงานเป็นทีมกับผู้อื่น</td>
+                        <td align="center">{{$operate->chioce11_60}}</td>
+                        <td align="center">{{$operate->chioce11_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>12. ความสามารถในการแก้ไขปัญหาเฉพาะหน้าและตัดสินใจด้วยตนเอง</td>
+                        <td align="center">{{$operate->chioce12_60}}</td>
+                        <td align="center">{{$operate->chioce12_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>13. ทัศนคติที่มีต่อบริษัท</td>
+                        <td align="center">{{$operate->chioce13_60}}</td>
+                        <td align="center">{{$operate->chioce13_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>14. การใช้ทรัพย์สินและค่าใช้จ่ายของบริษัทอย่างประหยัดและปลอดภัย</td>
+                        <td align="center">{{$operate->chioce14_60}}</td>
+                        <td align="center">{{$operate->chioce14_90}}</td>
+                    </tr>
+                    <tr>
+                        <td>15. มีสุขภาพร่างกายพร้อมที่จะปฏิบัติงาน</td>
+                        <td align="center">{{$operate->chioce15_60}}</td>
+                        <td align="center">{{$operate->chioce15_90}}</td>
+                    </tr>
 
                    <tr>
                         <td style="text-align:center">
@@ -363,7 +530,7 @@
 
                         </td>
 
-                        <td style="text-align:center">
+                        <td style="text-align:center" colspan="2">
 
                      <input type="text" name="total_60" id="total_60" style="text-align:center" readonly>
 
@@ -380,7 +547,7 @@
                      <tr>
 
 
-                            <td  COLSPAN="2" >
+                            <td  COLSPAN="3" >
 
                                     รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center"  > คะแนน  <br><br>
                                                   ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center"> คะแนน<br><br>

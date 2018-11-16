@@ -188,43 +188,50 @@
                     <div class="row">
                         <div class="col-md-6">
                                 <div class="form-group">
+                                    <div class="checkbox">
                                         <div class="col-md ">
-                                            <input type="checkbox" name="manager_resource_ok" value="อนุมัติตามผู้บังคับบัญชาเสนอ"> ให้บรรจุเป็นพนักงานประจำ
+                                            <label><input type="checkbox" name="manager_resource_ok" value="อนุมัติตามผู้บังคับบัญชาเสนอ"> ให้บรรจุเป็นพนักงานประจำ</label>
                                         </div>
                                         <div class="col-md">
-                                            <input type="checkbox" name="manager_resource_modi" value="ปรับอัตราเงินเดือน"> ปรับอัตราเงินเดือน:  <input type="text" name="manager_resource_comdi" class="form-control"/>
+                                            <label><input type="checkbox" name="manager_resource_modi" value="ปรับอัตราเงินเดือน"> ปรับอัตราเงินเดือน: </label> <input type="text" name="manager_resource_comdi" class="form-control"/>
                                         </div>
+                                    </div>
                                 </div>
                             <div class="form-group">
+                                    <div class="checkbox">
                                     <div class="col-md">
-                                    <input type="checkbox" name="manager_resource_nodi" value="ยังไม่ปรับเงินเดือน"> ยังไม่ปรับเงินเดือน:  <input type="text" name="manager_resource_comno" class="form-control">
+                                    <label><input type="checkbox" name="manager_resource_nodi" value="ยังไม่ปรับเงินเดือน"> ยังไม่ปรับเงินเดือน: </label> <input type="text" name="manager_resource_comno" class="form-control">
+                                </div>
                                 </div>
                                 </div>
                         </div>
                         <div class="col-md-6">
                                 <div class="form-group"></div>
                                 <div class="form-group">
+                                    <div class="checkbox">
                                         <div class="col-md">
-                                              <input type="checkbox" value="ให้ปรับตำแหน่งเป็น "  name="manager_resource_adjust"> ให้ปรับตำแหน่งเป็น: <input type="text"  name="manager_resource_posi" class="form-control">
+                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น "  name="manager_resource_adjust"> ให้ปรับตำแหน่งเป็น:</label> <input type="text"  name="manager_resource_posi" class="form-control">
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
+                                    <div class="checkbox">
                                         <div class="col-md">
-                                              <input type="checkbox"  name="manager_resource_fail"  value="ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่ "  name="nomodi_11"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่: <input type="text"  name="manager_resource_date" class="form-control">
-        
-                                        </div>
+                                                <label><input type="checkbox"  name="manager_resource_fail"  value="ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่ "  name="nomodi_11"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่: </label><input type="text"  name="manager_resource_date" class="form-control">
+                                    </div>
+                                </div>
                                 </div>
                         </div>
                     </div>
                           <div class="form-group">
-  
+                                <div class="checkbox">
                                   <label  class="col-sm-2 control-label"></label>
                                   <div class="col-sm-4 ">
   
-                                        <input type="checkbox" value="อื่นๆ" name="manager_resource_other"> อื่นๆ : <textarea class="form-control" rows="3" name="manager_resource_othercom"></textarea>
+                                        <label><input type="checkbox" value="อื่นๆ" name="manager_resource_other"> อื่นๆ : </label><textarea class="form-control" rows="3" name="manager_resource_othercom"></textarea>
   
                                       </div>
-  
+                                    </div>
   
                           </div>
                           <div class="form-group">
