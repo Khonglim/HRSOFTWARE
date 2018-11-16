@@ -181,32 +181,36 @@
                      
                     <div class="row">
                         <div class="form-group">
+                                <div class="checkbox">
                             <label  class="col-sm-2 control-label"></label>
-                            <div class="col-md ">
-                                <input type="checkbox" name="human_resource_ok" value="บรรจุเป็นพนักงานประจำ">บรรจุเป็นพนักงานประจำ
+                            <div class="col-md">
+                                <label><input type="checkbox" name="human_resource_ok" value="บรรจุเป็นพนักงานประจำ">บรรจุเป็นพนักงานประจำ</label>
                             </div>
                             <div class="col-md">
-                                <input type="checkbox" name="human_resource_modi" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:  <input type="text" name="human_resource_commo" class="form-control"/>
+                                    <label><input type="checkbox" name="human_resource_modi" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:</label>  <input type="text" name="human_resource_commo" class="form-control"/>
                             </div>
                             <label  class="col-sm-6 control-label"></label>
                             <div class="col-md">
-                                <input type="checkbox" name="human_resource_nodi" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:  <input type="text" name="human_resource_comno" class="form-control">
+                                    <label><input type="checkbox" name="human_resource_nodi" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:</label>  <input type="text" name="human_resource_comno" class="form-control">
                             </div>
                                 <label  class="col-sm-2 control-label"></label>
                             <div class="col-md ">
-                                <input type="checkbox"  name="human_resource_adjust"   value="ให้ปรับตำแหน่งเป็น "> ให้ปรับตำแหน่งเป็น: <input type="text"  name="human_resource_posi" class="form-control">
+                                    <label><input type="checkbox"  name="human_resource_adjust"   value="ให้ปรับตำแหน่งเป็น "> ให้ปรับตำแหน่งเป็น:</label> <input type="text"  name="human_resource_posi" class="form-control">
                             </div>
+                                </div>
                         </div> 
                         <div class="col-md-2"></div>
                         <div class="form-group">
+                        <div class="checkbox">
                             <label  class="col-sm-2 control-label"></label>
                             <div class="col-md ">
-                                <input type="checkbox" name="human_resource_fail" value="ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่: <input type="text"  name="human_resource_date" class="form-control">
+                                    <label><input type="checkbox" name="human_resource_fail" value="ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่:</label> <input type="text"  name="human_resource_date" class="form-control">
                             </div>
                                 <label  class="col-sm-2 control-label"></label>
                             <div class="col-md ">
-                                <input type="checkbox" name="human_resource_other"  value="อื่นๆ">  อื่นๆ : <textarea class="form-control" rows="3" name="human_resource_othercom"></textarea>
+                                    <label><input type="checkbox" name="human_resource_other"  value="อื่นๆ">  อื่นๆ :</label> <textarea class="form-control" rows="3" name="human_resource_othercom"></textarea>
                             </div>
+                        </div>
                         </div>
                     </div>
 
