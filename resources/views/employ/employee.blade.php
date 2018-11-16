@@ -28,11 +28,11 @@
               <tbody>
                 @forelse($personal as $l) @if($l['enable']==1)
                 <tr>
-                  <td> {{$l['created_at']}} นาที </td>
-                  <td> {{$l['fronname']}} {{$l['name']}} </td>
-                  <td> {{$l['lastname']}} </td>
-                  <td> {{$l['positionngg']}} </td>
-                  <td>
+                  <td  style="width: 30px; "> {{$l['created_at']}} นาที </td>
+                  <td  style="width: 30px; "> {{$l['fronname']}} {{$l['name']}} </td>
+                  <td  style="width: 30px; "> {{$l['lastname']}} </td>
+                  <td  style="width: 30px; "> {{$l['positionngg']}} </td>
+                  <td  style="width: 30px; ">
                     <a href="{{'employee/'.$l['id']}}" class="btn btn-primary btn-xs"><i class="fa fa-search"></i></a>
                     <a href="{{'employee/'.$l['id'].'/edit'}}" class="btn btn-warning btn-xs "><i class="fa fa-pencil"></i></a>
                     <a href="{{url('pdfemployee/'.$l['id'])}}" class="btn btn-success btn-xs "><i class="fa fa-download"></i></a>
