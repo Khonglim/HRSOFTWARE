@@ -8,9 +8,14 @@ use App\Con_interview;
 use App\Comment_interview;
 use App\Comment_sup;
 use App\Inter_sup;
-use App\Operate_staff;
-use App\Operate_sup;
+
 use Illuminate\Support\Facades\DB;
+use App\Operate_Chioce;
+use App\Operate_qSeff;
+use App\Operate_qSup;
+use App\Operate;
+
+
 use PDF;
 
 
@@ -74,34 +79,16 @@ class PDFController extends Controller
     }
 
 
-    public function pdfoper_staff($id)
-    {
-        $operate_staff = Operate_staff::find($id);
-        $personal  =   DB::table('ngg_employee')
-        ->where('nem_enable', '=', 1)
-        ->where('degree', '=', 0)
-       ->get();
-       $data = array(
-        'personal' =>  $personal,
-        'operate_staff' =>   $operate_staff
-    );
-       
-        return view("operate/staff/pdfStaff",$data);
-        
-    }
+   
 
     public function pdfoper_sup($id)
     {
-        $personal  =   DB::table('ngg_employee')
-        ->where('nem_enable', '=', 1)
-        ->where('degree', '=', 1)
-       ->get();
-        $operate_sup = Operate_sup::find($id);
-       
-       $data = array(
-        'personal' =>  $personal,
-        'operate_sup' =>   $operate_sup
-    );
+          $operate = Operate::find($id);
+          
+          $data =array(
+              'operate' =>$operate
+          );
+      
        
        return view("operate/sup/pdfSup",$data);
     }

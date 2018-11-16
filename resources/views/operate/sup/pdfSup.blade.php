@@ -38,7 +38,12 @@
 <div class="container">
     <br>
     <center> <img src="{{ url('img/NGG-10.png') }}" width="100px" height="100px"></center>
+    @if ($operate->degree == 1)
     <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
+    @else
+    <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
+    @endif
+   
     <div class="font" style="text-align:center;"><b>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</b></div>
     <b>1. ระดับในการประเมินผล</b><br>
     &emsp;&emsp;4 ดีมาก = ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
@@ -52,17 +57,17 @@
     <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
     <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
     <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
-    <b>ชื่อ-นามสกุล :</b> @foreach ( $personal as $item2) @if( $item2->nem_id == $operate_sup->id_posinal ) {{$item2->nem_thai_firstname}}
-    {{$item2->nem_thai_lastname}} @endif @endforeach&emsp;&emsp;&emsp;&emsp;
+    <b>ชื่อ-นามสกุล :</b> &emsp;&emsp;&emsp;&emsp;
     
-    <b>รหัสพนักงาน :  </b> {{$operate_sup->id_employ}} <br>
-    <b>ตำแหน่ง :</b> {{$operate_sup->position}}&emsp;&emsp;&emsp;&emsp;
-    <b>แผนก/ฝ่าย :</b> {{$operate_sup->department}} <br>
-    <b>วันที่เริ่มงาน :</b> {{$operate_sup->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-    <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate_sup->endtime}} <b>ระดับ :</b> {{$operate_sup->degree}} <br>
-    <b>ประเมินครั้งที่1 :</b> {{$operate_sup->date_60}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-    <b>ประเมินครั้งที่2 : วันที่ :</b> {{$operate_sup->date_90}}
+    <b>รหัสพนักงาน :  </b> {{$operate->new_id_employ}} <br>
+    <b>ตำแหน่ง :</b> {{$operate->new_position}}&emsp;&emsp;&emsp;&emsp;
+    <b>แผนก/ฝ่าย :</b> {{$operate->new_department}} <br>
+    <b>วันที่เริ่มงาน :</b> {{$operate->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+    <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate->endtime}} <b>ระดับ :</b> {{$operate->degree}} <br>
+    <b>ประเมินครั้งที่1 :</b> {{$operate->date_60}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    <b>ประเมินครั้งที่2 : วันที่ :</b> {{$operate->date_90}}
     <br><br><br>
+    @if ($operate->degree == 1)
     <table>
         <tbody>
             <tr>
@@ -70,150 +75,251 @@
                 <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
             </tr>
             <tr>
-                <td align="center">ประเมินรอบ {{$operate_sup->NumberDate_60}} วัน</td>
-                <td align="center">ประเมินรอบ {{$operate_sup->NumberDate_90}} วัน</td>
+                <td align="center">ประเมินรอบ {{$operate->NumberDate_60}} วัน</td>
+                <td align="center">ประเมินรอบ {{$operate->NumberDate_90}} วัน</td>
             </tr>
             <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
             <tr>
                 <td>1. คุณภาพของงานที่ปฏิบัติ</td>
-                <td align="center">{{$operate_sup->chioce1_60}}</td>
-                <td align="center">{{$operate_sup->chioce1_90}}</td>
+                <td align="center">{{$operate->chioce1_60}}</td>
+                <td align="center">{{$operate->chioce1_90}}</td>
             </tr>
             <tr>
                 <td>2. ปริมาณของงาน และเวลาที่ใช้ปฏิบัติงาน</td>
-                <td align="center">{{$operate_sup->chioce2_60}}</td>
-                <td align="center">{{$operate_sup->chioce2_90}}</td>
+                <td align="center">{{$operate->chioce2_60}}</td>
+                <td align="center">{{$operate->chioce2_90}}</td>
             </tr>
             <tr>
                 <td>3. ความรับผิดชอบและไว้วางใจในการทำงาน</td>
-                <td align="center">{{$operate_sup->chioce3_60}}</td>
-                <td align="center">{{$operate_sup->chioce3_90}}</td>
+                <td align="center">{{$operate->chioce3_60}}</td>
+                <td align="center">{{$operate->chioce3_90}}</td>
             </tr>    
             <tr>
                 <td>4. การปฏิบัติตามคำสั่ง และ คำแนะนำ</td>
-                <td align="center">{{$operate_sup->chioce4_60}}</td>
-                <td align="center">{{$operate_sup->chioce4_90}}</td>
+                <td align="center">{{$operate->chioce4_60}}</td>
+                <td align="center">{{$operate->chioce4_90}}</td>
             </tr>
             <tr>
                 <td>5. การประพฤติตามระเบียบข้อบังคับของบริษัท</td>
-                <td align="center">{{$operate_sup->chioce5_60}}</td>
-                <td align="center">{{$operate_sup->chioce5_90}}</td>
+                <td align="center">{{$operate->chioce5_60}}</td>
+                <td align="center">{{$operate->chioce5_90}}</td>
             </tr>
             <tr>
                 <td>6. ความซื่อสัตย์ และ น่าเชื่อถือไว้ใจ</td>
-                <td align="center">{{$operate_sup->chioce6_60}}</td>
-                <td align="center">{{$operate_sup->chioce6_90}}</td>
+                <td align="center">{{$operate->chioce6_60}}</td>
+                <td align="center">{{$operate->chioce6_90}}</td>
             </tr>
             <tr>
                 <td>7. ความตั้งใจและความกระตือรือร้นในการทำงานให้สำเร็จ</td>
-                <td align="center">{{$operate_sup->chioce7_60}}</td>
-                <td align="center">{{$operate_sup->chioce7_90}}</td>
+                <td align="center">{{$operate->chioce7_60}}</td>
+                <td align="center">{{$operate->chioce7_90}}</td>
             </tr>
             <tr>
                 <td>8. ความสามารถในการเรียนรู้งาน</td>
-                <td align="center">{{$operate_sup->chioce8_60}}</td>
-                <td align="center">{{$operate_sup->chioce8_90}}</td>
+                <td align="center">{{$operate->chioce8_60}}</td>
+                <td align="center">{{$operate->chioce8_90}}</td>
             </tr>
             <tr>
                 <td>9. ความสามารถด้านการคิดริเริ่มสร้างสรรค์</td>
-                <td align="center">{{$operate_sup->chioce9_60}}</td>
-                <td align="center">{{$operate_sup->chioce9_90}}</td>
+                <td align="center">{{$operate->chioce9_60}}</td>
+                <td align="center">{{$operate->chioce9_90}}</td>
             </tr>
             <tr>
                 <td>10. ความสามารถในการแก้ไขข้อบกพร่องของตนเอง</td>
-                <td align="center">{{$operate_sup->chioce10_60}}</td>
-                <td align="center">{{$operate_sup->chioce10_90}}</td>
+                <td align="center">{{$operate->chioce10_60}}</td>
+                <td align="center">{{$operate->chioce10_90}}</td>
             </tr>
             <tr>
                 <td>11. การให้ความร่วมมือประสานงานและการทำงานเป็นทีมกับผู้อื่น</td>
-                <td align="center">{{$operate_sup->chioce11_60}}</td>
-                <td align="center">{{$operate_sup->chioce11_90}}</td>
+                <td align="center">{{$operate->chioce11_60}}</td>
+                <td align="center">{{$operate->chioce11_90}}</td>
             </tr>
             <tr>
                 <td>12. ความสามารถในการแก้ไขปัญหาเฉพาะหน้าและตัดสินใจด้วยตนเอง</td>
-                <td align="center">{{$operate_sup->chioce12_60}}</td>
-                <td align="center">{{$operate_sup->chioce12_90}}</td>
+                <td align="center">{{$operate->chioce12_60}}</td>
+                <td align="center">{{$operate->chioce12_90}}</td>
             </tr>
             <tr>
                 <td>13. ทัศนคติที่มีต่อบริษัท</td>
-                <td align="center">{{$operate_sup->chioce13_60}}</td>
-                <td align="center">{{$operate_sup->chioce13_90}}</td>
+                <td align="center">{{$operate->chioce13_60}}</td>
+                <td align="center">{{$operate->chioce13_90}}</td>
             </tr>
             <tr>
                 <td>14. การใช้ทรัพย์สินและค่าใช้จ่ายของบริษัทอย่างประหยัดและปลอดภัย</td>
-                <td align="center">{{$operate_sup->chioce14_60}}</td>
-                <td align="center">{{$operate_sup->chioce14_90}}</td>
+                <td align="center">{{$operate->chioce14_60}}</td>
+                <td align="center">{{$operate->chioce14_90}}</td>
             </tr>
             <tr>
                 <td>15. มีสุขภาพร่างกายพร้อมที่จะปฏิบัติงาน</td>
-                <td align="center">{{$operate_sup->chioce15_60}}</td>
-                <td align="center">{{$operate_sup->chioce15_90}}</td>
+                <td align="center">{{$operate->chioce15_60}}</td>
+                <td align="center">{{$operate->chioce15_90}}</td>
             </tr>
             <tr>
                 <td>16. ความสามารถในการทำงานบังคับบัญชา การควบคุมระเบียบวินัย</td>
-                <td align="center">{{$operate_sup->chioce16_60}}</td>
-                <td align="center">{{$operate_sup->chioce16_90}}</td>
+                <td align="center">{{$operate->chioce16_60}}</td>
+                <td align="center">{{$operate->chioce16_90}}</td>
             </tr>
             <tr>
                 <td>17. การมอบหมายงาน/ควบคุมงาน/ติดตามงาน</td>
-                <td align="center">{{$operate_sup->chioce17_60}}</td>
-                <td align="center">{{$operate_sup->chioce17_90}}</td>
+                <td align="center">{{$operate->chioce17_60}}</td>
+                <td align="center">{{$operate->chioce17_90}}</td>
             </tr>
             <tr>
                 <td>18. การสอนงาน และการพัฒนาผู้ใต้บังคับบัญชา</td>
-                <td align="center">{{$operate_sup->chioce18_60}}</td>
-                <td align="center">{{$operate_sup->chioce18_90}}</td>
+                <td align="center">{{$operate->chioce18_60}}</td>
+                <td align="center">{{$operate->chioce18_90}}</td>
             </tr>
             <tr>
                 <td>19. การกระตุ้นและการสร้างสรรค์การทำงานเป็นทีม</td>
-                <td align="center">{{$operate_sup->chioce19_60}}</td>
-                <td align="center">{{$operate_sup->chioce19_90}}</td>
+                <td align="center">{{$operate->chioce19_60}}</td>
+                <td align="center">{{$operate->chioce19_90}}</td>
             </tr>
             <tr>
                 <td>20. ความสามารถด้านวางแผน/จัดระบบงาน/ขั้นตอนการทำงาน การบริหารเวลา</td>
-                <td align="center">{{$operate_sup->chioce20_60}}</td>
-                <td align="center">{{$operate_sup->chioce20_90}}</td>
+                <td align="center">{{$operate->chioce20_60}}</td>
+                <td align="center">{{$operate->chioce20_90}}</td>
             </tr>
             <tr>
                 <td>21. ความสามารถในการแก้ไขปัญหาและการตัดสินใจในการบริหารงาน</td>
-                <td align="center">{{$operate_sup->chioce21_60}}</td>
-                <td align="center">{{$operate_sup->chioce21_90}}</td>
+                <td align="center">{{$operate->chioce21_60}}</td>
+                <td align="center">{{$operate->chioce21_90}}</td>
             </tr>
             <tr>
                 <td>22. การมีมุมมอง/การปฏิบัติตามนโยบาย/เป้าหมาย โดยภาพรวมบริษัท</td>
-                <td align="center">{{$operate_sup->chioce22_60}}</td>
-                <td align="center">{{$operate_sup->chioce22_90}}</td>
+                <td align="center">{{$operate->chioce22_60}}</td>
+                <td align="center">{{$operate->chioce22_90}}</td>
             </tr>
             <tr>
                 <td>23. ความสามารถในการรับแรงกดดัน สภาพบีบบังคับ</td>
-                <td align="center">{{$operate_sup->chioce23_60}}</td>
-                <td align="center">{{$operate_sup->chioce23_90}}</td>
+                <td align="center">{{$operate->chioce23_60}}</td>
+                <td align="center">{{$operate->chioce23_90}}</td>
             </tr>
             <tr>
                 <td>24. ความสามารถในการเจรจาต่อรองและการโน้มน้าวจูงใจผู้ใต้บังคับบัญชา</td>
-                <td align="center">{{$operate_sup->chioce24_60}}</td>
-                <td align="center">{{$operate_sup->chioce24_90}}</td>
+                <td align="center">{{$operate->chioce24_60}}</td>
+                <td align="center">{{$operate->chioce24_90}}</td>
             </tr>
             <tr>
                 <td>25. ความสามารถในการสรุปงานและการนำเสนองาน</td>
-                <td align="center">{{$operate_sup->chioce25_60}}</td>
-                <td align="center">{{$operate_sup->chioce25_90}}</td>
+                <td align="center">{{$operate->chioce25_60}}</td>
+                <td align="center">{{$operate->chioce25_90}}</td>
             </tr>
             <tr>
-                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : {{$operate_sup->NumberDate_60}} วัน <u><font color="red">{{$operate_sup->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate_sup->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate_sup->subtotal_final}}</font></u> </b></td>
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : {{$operate->NumberDate_60}} วัน <u><font color="red">{{$operate->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate->subtotal_final}}</font></u> </b></td>
             </tr>
         </tbody>
-    </table> <br>
-    <b>ความคิดเห็นเพิ่มเติม การประเมิน {{$operate_sup->NumberDate_60}} วัน (สำหรับผู้ประเมิน)</b><br>
+    </table> 
+    @else
+    <table>
+        <tbody>
+            <tr>
+                <td align="center" rowspan="2">หัวข้อการประเมิน (100 คะแนน)<br>เงื่อนไขการให้คะแนนจะจัดแบ่งดังนี้<br>4 ดีมาก 3 ดี 2 พอใช้ 1 ต้องปรับปรุง</td>
+                <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
+            </tr>
+            <tr>
+                <td align="center">ประเมินรอบ {{$operate->NumberDate_60}} วัน</td>
+                <td align="center">ประเมินรอบ {{$operate->NumberDate_90}} วัน</td>
+            </tr>
+            <tr>
+                <td colspan="3"><b>ระดับปฏิบัติการ (Operational Level)</b></td>
+            </tr>
+            <tr>
+                <td>1. คุณภาพของงานที่ปฏิบัติ</td>
+                <td align="center">{{$operate->chioce1_60}}</td>
+                <td align="center">{{$operate->chioce1_90}}</td>
+            </tr>
+            <tr>
+                <td>2. ปริมาณของงาน และเวลาที่ใช้ปฏิบัติงาน</td>
+                <td align="center">{{$operate->chioce2_60}}</td>
+                <td align="center">{{$operate->chioce2_90}}</td>
+            </tr>
+            <tr>
+                <td>3. ความรับผิดชอบและไว้วางใจในการทำงาน</td>
+                <td align="center">{{$operate->chioce3_60}}</td>
+                <td align="center">{{$operate->chioce3_90}}</td>
+            </tr>
+            <tr>
+                <td>4. การปฏิบัติตามคำสั่ง และ คำแนะนำ</td>
+                <td align="center">{{$operate->chioce4_60}}</td>
+                <td align="center">{{$operate->chioce4_90}}</td>
+            </tr>
+            <tr>
+                <td>5. การประพฤติตามระเบียบข้อบังคับของบริษัท</td>
+                <td align="center">{{$operate->chioce5_60}}</td>
+                <td align="center">{{$operate->chioce5_90}}</td>
+            </tr>
+            <tr>
+                <td>6. ความซื่อสัตย์ และ น่าเชื่อถือไว้ใจ</td>
+                <td align="center">{{$operate->chioce6_60}}</td>
+                <td align="center">{{$operate->chioce6_90}}</td>
+            </tr>
+            <tr>
+                <td>7. ความตั้งใจและความกระตือรือร้นในการทำงานให้สำเร็จ</td>
+                <td align="center">{{$operate->chioce7_60}}</td>
+                <td align="center">{{$operate->chioce7_90}}</td>
+            </tr>
+            <tr>
+                <td>8. ความสามารถในการเรียนรู้งาน</td>
+                <td align="center">{{$operate->chioce8_60}}</td>
+                <td align="center">{{$operate->chioce8_90}}</td>
+            </tr>
+            <tr>
+                <td>9. ความสามารถด้านการคิดริเริ่มสร้างสรรค์</td>
+                <td align="center">{{$operate->chioce9_60}}</td>
+                <td align="center">{{$operate->chioce9_90}}</td>
+            </tr>
+            <tr>
+                <td>10. ความสามารถในการแก้ไขข้อบกพร่องของตนเอง</td>
+                <td align="center">{{$operate->chioce10_60}}</td>
+                <td align="center">{{$operate->chioce10_90}}</td>
+            </tr>
+            <tr>
+                <td>11. การให้ความร่วมมือประสานงานและการทำงานเป็นทีมกับผู้อื่น</td>
+                <td align="center">{{$operate->chioce11_60}}</td>
+                <td align="center">{{$operate->chioce11_90}}</td>
+            </tr>
+            <tr>
+                <td>12. ความสามารถในการแก้ไขปัญหาเฉพาะหน้าและตัดสินใจด้วยตนเอง</td>
+                <td align="center">{{$operate->chioce12_60}}</td>
+                <td align="center">{{$operate->chioce12_90}}</td>
+            </tr>
+            <tr>
+                <td>13. ทัศนคติที่มีต่อบริษัท</td>
+                <td align="center">{{$operate->chioce13_60}}</td>
+                <td align="center">{{$operate->chioce13_90}}</td>
+            </tr>
+            <tr>
+                <td>14. การใช้ทรัพย์สินและค่าใช้จ่ายของบริษัทอย่างประหยัดและปลอดภัย</td>
+                <td align="center">{{$operate->chioce14_60}}</td>
+                <td align="center">{{$operate->chioce14_90}}</td>
+            </tr>
+            <tr>
+                <td>15. มีสุขภาพร่างกายพร้อมที่จะปฏิบัติงาน</td>
+                <td align="center">{{$operate->chioce15_60}}</td>
+                <td align="center">{{$operate->chioce15_90}}</td>
+            </tr>
+            <tr>
+                <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : {{$operate->NumberDate_60}} วันได้ <u><font color="red">{{$operate->subtotal_60}}</font></u>                    คะแนน ประเมินครั้งที่ 2 : 90 วันได้ <u><font color="red">{{$operate->subtotal_90}} </font></u>คะแนน
+                    <b>(รวมกันหาร2) = <u><font color="red">{{$operate->subtotal_final}}</font></u></b></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    @endif
+    
+    
+    <br>
+    <b>ความคิดเห็นเพิ่มเติม การประเมิน {{$operate->NumberDate_60}} วัน (สำหรับผู้ประเมิน)</b><br>
         <table>
             <tbody>
                 <tr>
-                    <td align="center">ความคิดเห็นการประเมิน {{$operate_sup->NumberDate_60}} วัน</td>
-                    <td>{{$operate_sup->comments_60}}</td>
+                    <td align="center">ความคิดเห็นการประเมิน {{$operate->NumberDate_60}} วัน</td>
+                    <td>{{$operate->comments_60}}</td>
                 </tr>
                 <tr>
-                    <td align="center">ความคิดเห็นการประเมิน {{$operate_sup->NumberDate_90}} วัน</td>
-                    <td>{{$operate_sup->comments_90}}</td>
+                    <td align="center">ความคิดเห็นการประเมิน {{$operate->NumberDate_90}} วัน</td>
+                    <td>{{$operate->comments_90}}</td>
                 </tr>
             </tbody>
         </table> <br>
@@ -221,19 +327,19 @@
             <tbody>
                 <tr>
                     <td colspan="3">
-                        <b>จุดเด่นของพนักงาน :</b> {{$operate_sup->comments_featured}}<br>
-                        <b>จุดด้อยของพนักงาน :</b> {{$operate_sup->comments_weakness}} <br>
-                            @if($operate_sup->experimental == 'ไม่ผ่านทดลองงาน')
-                        <input type="checkbox" checked="checked">{{$operate_sup->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate_sup->experimental_date}} <br>
+                        <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
+                        <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
+                            @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
+                        <input type="checkbox" checked="checked">{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
                         @endif 
-                            @if($operate_sup->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                        <input type="checkbox" checked="checked">{{$operate_sup->full_time_worker}} ตั้งแต่วันที่ : {{$operate_sup->full_time_worker_date}} ตำแหน่ง : {{$operate_sup->full_time_worker_position}} <br>
+                            @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                        <input type="checkbox" checked="checked">{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
                         @endif 
-                            @if($operate_sup->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                        <input type="checkbox" checked="checked">{{$operate_sup->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate_sup->modify_position1}} เป็นตำแหน่ง : {{$operate_sup->modify_position2}} ตั้งแต่วันที่ : {{$operate_sup->modify_date}} <br>
+                            @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                        <input type="checkbox" checked="checked">{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
                          @endif 
-                            @if($operate_sup->other_90 == 'อื่นๆ')
-                        <input type="checkbox" checked="checked">{{$operate_sup->other_90}} : {{$operate_sup->other_com_90}}
+                            @if($operate->other_90 == 'อื่นๆ')
+                        <input type="checkbox" checked="checked">{{$operate->other_90}} : {{$operate->other_com_90}}
                         @endif
                     </td>
                 </tr>
@@ -247,10 +353,10 @@
                                         </div>
                                    
                                       </div>
-                                <br> ( คุณ{{$operate_sup->name_rate_60}} ) 
+                                <br> ( คุณ{{$operate->name_rate_60}} ) 
                                 <br>ผู้บังคับบัญชาต้นสังกัด
-                                <br>วันที่การประเมิน {{$operate_sup->created_at}} น.
-                                <br>การประเมิน {{$operate_sup->NumberDate_60}} วัน	
+                                <br>วันที่การประเมิน {{$operate->created_at}} น.
+                                <br>การประเมิน {{$operate->NumberDate_60}} วัน	
                                     
                             </td>
                     <td align="center">
@@ -262,21 +368,16 @@
                                 </div>
                            
                               </div>
-                        <br> ( คุณ{{$operate_sup->name_rate_90}} ) 
+                        <br> ( คุณ{{$operate->name_rate_90}} ) 
                         <br>ผู้บังคับบัญชาต้นสังกัด
-                        <br>วันที่การประเมิน {{$operate_sup->updated_at}} น.
-                        <br>การประเมิน {{$operate_sup->NumberDate_90}} วัน	
+                        <br>วันที่การประเมิน {{$operate->updated_at}} น.
+                        <br>การประเมิน {{$operate->NumberDate_90}} วัน	
                         	
                     </td>
                     <td align="center">
                         <br>
                         <br> ผู้ถูกประเมิน : ........................................... <br> 
-                        ( คุณ@foreach ( $personal as $item)
-                            @if(  $item->nem_id == $operate_sup->id_posinal )
-                            {{$item2->nem_thai_firstname}}
-                            {{$item2->nem_thai_lastname}}
-                            @endif
-                        @endforeach) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
+                        ( คุณ) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
                 </tr>  
             </tbody>
             </table> <br>
@@ -295,195 +396,195 @@
                     </tr>
                     <tr>
                         <td>1.บุคลิกภาพ และการแต่งกาย</td>
-                        <td align="center">@if($operate_sup->chioce_suitability1 == 0)
+                        <td align="center">@if($operate->chioce_suitability1 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability1}}        
+                            {{$operate->chioce_suitability1}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability11 == 0)
+                        <td align="center">@if($operate->chioce_suitability11 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability11}}        
+                            {{$operate->chioce_suitability11}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability21 == 0)
+                        <td align="center">@if($operate->chioce_suitability21 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability21}}        
+                            {{$operate->chioce_suitability21}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>2.ความสุภาพ กิริยา มารยาท</td>
-                        <td align="center">@if($operate_sup->chioce_suitability2 == 0)
+                        <td align="center">@if($operate->chioce_suitability2 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability2}}        
+                            {{$operate->chioce_suitability2}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability12 == 0)
+                        <td align="center">@if($operate->chioce_suitability12 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability12}}        
+                            {{$operate->chioce_suitability12}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability22 == 0)
+                        <td align="center">@if($operate->chioce_suitability22 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability22}}        
+                            {{$operate->chioce_suitability22}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>3.ความเคร่งครัดต่อระเบียบวินัย</td>
-                        <td align="center">@if($operate_sup->chioce_suitability3 == 0)
+                        <td align="center">@if($operate->chioce_suitability3 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability3}}        
+                            {{$operate->chioce_suitability3}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability13 == 0)
+                        <td align="center">@if($operate->chioce_suitability13 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability13}}        
+                            {{$operate->chioce_suitability13}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability23 == 0)
+                        <td align="center">@if($operate->chioce_suitability23 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability23}}        
+                            {{$operate->chioce_suitability23}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>4.ความตรงต่อเวลา</td>
-                        <td align="center">@if($operate_sup->chioce_suitability4 == 0)
+                        <td align="center">@if($operate->chioce_suitability4 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability4}}        
+                            {{$operate->chioce_suitability4}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability14 == 0)
+                        <td align="center">@if($operate->chioce_suitability14 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability14}}        
+                            {{$operate->chioce_suitability14}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability24 == 0)
+                        <td align="center">@if($operate->chioce_suitability24 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability24}}        
+                            {{$operate->chioce_suitability24}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>5.การประพฤติต่อผู้บังคับบัญชา</td>
-                        <td align="center">@if($operate_sup->chioce_suitability5 == 0)
+                        <td align="center">@if($operate->chioce_suitability5 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability5}}        
+                            {{$operate->chioce_suitability5}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability15 == 0)
+                        <td align="center">@if($operate->chioce_suitability15 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability15}}        
+                            {{$operate->chioce_suitability15}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability25 == 0)
+                        <td align="center">@if($operate->chioce_suitability25 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability25}}        
+                            {{$operate->chioce_suitability25}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>6.ทัศนคติต่องาน / บริษัท</td>
-                        <td align="center">@if($operate_sup->chioce_suitability6 == 0)
+                        <td align="center">@if($operate->chioce_suitability6 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability6}}        
+                            {{$operate->chioce_suitability6}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability16 == 0)
+                        <td align="center">@if($operate->chioce_suitability16 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability16}}        
+                            {{$operate->chioce_suitability16}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability26 == 0)
+                        <td align="center">@if($operate->chioce_suitability26 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability26}}        
+                            {{$operate->chioce_suitability26}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>7.การช่วยเหลือเพื่อนร่วมงาน</td>
-                        <td align="center">@if($operate_sup->chioce_suitability7 == 0)
+                        <td align="center">@if($operate->chioce_suitability7 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability7}}        
+                            {{$operate->chioce_suitability7}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability17 == 0)
+                        <td align="center">@if($operate->chioce_suitability17 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability17}}        
+                            {{$operate->chioce_suitability17}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability27 == 0)
+                        <td align="center">@if($operate->chioce_suitability27 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability27}}        
+                            {{$operate->chioce_suitability27}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>8.ลักษณะความเป็นผู้นำ</td>
-                        <td align="center">@if($operate_sup->chioce_suitability8 == 0)
+                        <td align="center">@if($operate->chioce_suitability8 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability8}}        
+                            {{$operate->chioce_suitability8}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability18 == 0)
+                        <td align="center">@if($operate->chioce_suitability18 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability18}}        
+                            {{$operate->chioce_suitability18}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability28 == 0)
+                        <td align="center">@if($operate->chioce_suitability28 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability28}}        
+                            {{$operate->chioce_suitability28}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>9.ความคิดริเริ่ม สร้างสรรค์</td>
-                        <td align="center">@if($operate_sup->chioce_suitability9 == 0)
+                        <td align="center">@if($operate->chioce_suitability9 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability9}}        
+                            {{$operate->chioce_suitability9}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability19 == 0)
+                        <td align="center">@if($operate->chioce_suitability19 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability19}}        
+                            {{$operate->chioce_suitability19}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability29 == 0)
+                        <td align="center">@if($operate->chioce_suitability29 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability29}}        
+                            {{$operate->chioce_suitability29}}        
                         @endif</td>
                     </tr>
                     <tr>
                         <td>10.ความคิดเห็นโดยทั่วไป</td>
-                        <td align="center">@if($operate_sup->chioce_suitability10 == 0)
+                        <td align="center">@if($operate->chioce_suitability10 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability10}}        
+                            {{$operate->chioce_suitability10}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability20 == 0)
+                        <td align="center">@if($operate->chioce_suitability20 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability20}}        
+                            {{$operate->chioce_suitability20}}        
                         @endif</td>
-                        <td align="center">@if($operate_sup->chioce_suitability30 == 0)
+                        <td align="center">@if($operate->chioce_suitability30 == 0)
                             - 
                         @else
-                            {{$operate_sup->chioce_suitability30}}        
+                            {{$operate->chioce_suitability30}}        
                         @endif</td>
                     </tr>
-                    <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate_sup->sum_chioce_suitability10}}</font> คะแนน</td></tr>
+                    <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate->sum_chioce_suitability10}}</font> คะแนน</td></tr>
                 </tbody>    
             </table> <br>
-            <table><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate_sup->comment_suitability10}} <br>
-                @if($operate_sup->ok_suitability == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
-                    <input type="checkbox" checked="checked"> {{$operate_sup->ok_suitability}} <br>
+            <table><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate->comment_suitability10}} <br>
+                @if($operate->ok_suitability == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
+                    <input type="checkbox" checked="checked"> {{$operate->ok_suitability}} <br>
                 @endif 
-                @if($operate_sup->other_suitability == 'อื่นๆ')
-                    <input type="checkbox"  checked="checked">{{$operate_sup->other_suitability}} : {{$operate_sup->other_com_suitability}} <br>
+                @if($operate->other_suitability == 'อื่นๆ')
+                    <input type="checkbox"  checked="checked">{{$operate->other_suitability}} : {{$operate->other_com_suitability}} <br>
                 @endif
-                @if($operate_sup->namerate_suitability != '')
+                @if($operate->namerate_suitability != '')
                     <center><br>
                         
                         <div class="sig2">
@@ -494,7 +595,7 @@
                              
                                 </div>
                    
-                        <br>( คุณ{{$operate_sup->namerate_suitability}} )<br>วันที่การประเมิน....../....../......</p>
+                        <br>( คุณ{{$operate->namerate_suitability}} )<br>วันที่การประเมิน....../....../......</p>
                     </center>
                 @endif  
             </td></tr></table> <br>
@@ -510,13 +611,13 @@
                         <td style="text-align:center">สาย (นาที)</td>
                     </tr>
                     <tr>
-                        <td>ตั้งแต่วันที่ :{{$operate_sup->startwork_60}} <br>ถึงวันที่ :{{$operate_sup->endwork_60}}</td>
-                        <td style="text-align:center">{{$operate_sup->sick_leave_60}}</td>
-                        <td style="text-align:center">{{$operate_sup->errand_leave_60}}</td>
-                        <td style="text-align:center">{{$operate_sup->absence_60}}</td>
-                        <td style="text-align:center">{{$operate_sup->vacation_60}}</td>
-                        <td style="text-align:center">{{$operate_sup->line_terms_60}}</td>
-                        <td style="text-align:center">{{$operate_sup->line_min_60}}</td>
+                        <td>ตั้งแต่วันที่ :{{$operate->startwork_60}} <br>ถึงวันที่ :{{$operate->endwork_60}}</td>
+                        <td style="text-align:center">{{$operate->sick_leave_60}}</td>
+                        <td style="text-align:center">{{$operate->errand_leave_60}}</td>
+                        <td style="text-align:center">{{$operate->absence_60}}</td>
+                        <td style="text-align:center">{{$operate->vacation_60}}</td>
+                        <td style="text-align:center">{{$operate->line_terms_60}}</td>
+                        <td style="text-align:center">{{$operate->line_min_60}}</td>
                     </tr>
                 </table> <br>
                 <table>
@@ -531,13 +632,13 @@
                         <td style="text-align:center">สาย (นาที)</td>
                     </tr>
                     <tr>
-                        <td>ตั้งแต่วันที่ :{{$operate_sup->startwork_60}} <br>ถึงวันที่ :{{$operate_sup->endwork_60}}</td>
-                        <td style="text-align:center">{{$operate_sup->sick_leave_90}}</td>
-                        <td style="text-align:center">{{$operate_sup->errand_leave_90}}</td>
-                        <td style="text-align:center">{{$operate_sup->absence_90}}</td>
-                        <td style="text-align:center">{{$operate_sup->vacation_90}}</td>
-                        <td style="text-align:center">{{$operate_sup->line_terms_90}}</td>
-                        <td style="text-align:center">{{$operate_sup->line_min_90}}</td>
+                        <td>ตั้งแต่วันที่ :{{$operate->startwork_60}} <br>ถึงวันที่ :{{$operate->endwork_60}}</td>
+                        <td style="text-align:center">{{$operate->sick_leave_90}}</td>
+                        <td style="text-align:center">{{$operate->errand_leave_90}}</td>
+                        <td style="text-align:center">{{$operate->absence_90}}</td>
+                        <td style="text-align:center">{{$operate->vacation_90}}</td>
+                        <td style="text-align:center">{{$operate->line_terms_90}}</td>
+                        <td style="text-align:center">{{$operate->line_min_90}}</td>
                     </tr>
                 </table> <br> 
                 <table>
@@ -551,12 +652,12 @@
                         <tr>
                             <td>1. การประเมินผลการปฏิบัติงานโดย <b>ผู้บังคับบัญชา</b></td>
                             <td align="center">100</td>
-                            <td align="center">{{$operate_sup->conclusions}}</td>
+                            <td align="center">{{$operate->subtotal_final}}</td>
                         </tr>
                         <tr>
                             <td>1. การประเมินผลการปฏิบัติงานโดย <b>ผู้จัดการฝ่าย</b></td>
                             <td align="center">100</td>
-                            <td align="center">{{$operate_sup->results_manager}}</td>
+                            <td align="center">{{$operate->sum_chioce_suitability10}}</td>
                         </tr>
                         <tr>
                             <td align="center">รวมคะแนนทั้งสิ้น</td>
@@ -570,23 +671,23 @@
                         <tr><td align="center"><b>เฉพาะฝ่ายทรัพยากรบุคคล</b></td></tr>
                         <tr>
                             <td>
-                                    @if($operate_sup->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
+                                    @if($operate->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
                                         <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
                                     @endif
-                                    @if($operate_sup->human_resource_modi == 'ปรับอัตราเงินเดือน')
-                                        <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน <u>{{$operate_sup->human_resource_commo}}</u>
+                                    @if($operate->human_resource_modi == 'ปรับอัตราเงินเดือน')
+                                        <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน <u>{{$operate->human_resource_commo}}</u>
                                     <br>@endif
-                                    @if($operate_sup->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                                        <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน <u>{{$operate_sup->human_resource_comno}}</u>
+                                    @if($operate->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
+                                        <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน <u>{{$operate->human_resource_comno}}</u>
                                     <br>@endif
-                                    @if($operate_sup->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น <u>{{$operate_sup->human_resource_posi}}</u> และปรับเงินเดือน
+                                    @if($operate->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
+                                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น <u>{{$operate->human_resource_posi}}</u> และปรับเงินเดือน
                                     <br>@endif
-                                    @if($operate_sup->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
-                                        <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate_sup->human_resource_date}}</u>
+                                    @if($operate->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
+                                        <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate->human_resource_date}}</u>
                                     <br>@endif 
-                                    @if($operate_sup->human_resource_other == 'อื่นๆ')
-                                        <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate_sup->human_resource_othercom}}</u>
+                                    @if($operate->human_resource_other == 'อื่นๆ')
+                                        <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate->human_resource_othercom}}</u>
                                     <br>@endif 
                              <tr>
                                  <td align="center">
@@ -598,8 +699,8 @@
                                                 </div>
                                            
                                               </div>
-                                 @if($operate_sup->human_resource_nre != '')
-                               ( คุณ{{$operate_sup->human_resource_nre}} )
+                                 @if($operate->human_resource_nre != '')
+                               ( คุณ{{$operate->human_resource_nre}} )
                                <br>วันที่การประเมิน....../....../......</p>
                                 @endif</td></tr>       
                             </td>
@@ -615,23 +716,23 @@
                 </tr>
                 <tr>
                     <td>
-                        @if($operate_sup->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
+                        @if($operate->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
                             <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
                         @endif
-                        @if($operate_sup->manager_resource_modi == 'ปรับอัตราเงินเดือน')
-                            <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน {{$operate_sup->manager_resource_comdi}}
+                        @if($operate->manager_resource_modi == 'ปรับอัตราเงินเดือน')
+                            <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน {{$operate->manager_resource_comdi}}
                         <br>@endif
-                        @if($operate_sup->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                            <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน {{$operate_sup->manager_resource_comno}}
+                        @if($operate->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
+                            <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน {{$operate->manager_resource_comno}}
                         <br>@endif
-                         @if($operate_sup->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                            <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น {{$operate_sup->manager_resource_posi}} และปรับเงินเดือน
+                         @if($operate->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
+                            <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น {{$operate->manager_resource_posi}} และปรับเงินเดือน
                         <br>@endif 
-                        @if($operate_sup->manager_resource_fail == 'ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่')
-                            <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate_sup->manager_resource_date}}
+                        @if($operate->manager_resource_fail == 'ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่')
+                            <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate->manager_resource_date}}
                         <br>@endif 
-                        @if($operate_sup->manager_resource_other == 'อื่นๆ')
-                            <input type="checkbox" checked="checked">อื่นๆ {{$operate_sup->manager_resource_othercom}}
+                        @if($operate->manager_resource_other == 'อื่นๆ')
+                            <input type="checkbox" checked="checked">อื่นๆ {{$operate->manager_resource_othercom}}
                         <br>@endif 
                         </td>
                     </tr>
@@ -645,8 +746,8 @@
                                 </div>
                            
                               </div>
-                        @if($operate_sup->manager_resource_nre != '')
-                       ( คุณ{{$operate_sup->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
+                        @if($operate->manager_resource_nre != '')
+                       ( คุณ{{$operate->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
                         @endif   
                     </td></tr>
             </tbody>
@@ -654,11 +755,11 @@
         
         <br>
 
-        <input type="hidden" value="{{$operate_sup->signa1_60}}" id="sig0">
-        <input type="hidden" value="{{$operate_sup->signa1_90}}" id="sig1">
-        <input type="hidden" value="{{$operate_sup->signa2}}" id="sig2">
-        <input type="hidden" value="{{$operate_sup->signa3}}" id="sig3">
-        <input type="hidden" value="{{$operate_sup->signa4}}" id="sig4">
+        <input type="hidden" value="{{$operate->signa1_60}}" id="sig0">
+        <input type="hidden" value="{{$operate->signa1_90}}" id="sig1">
+        <input type="hidden" value="{{$operate->signa2}}" id="sig2">
+        <input type="hidden" value="{{$operate->signa3}}" id="sig3">
+        <input type="hidden" value="{{$operate->signa4}}" id="sig4">
     <input type="button" value="ปริ้นเฉพาะใน divprint" onclick="javascript:this.style.display='none';window.print();">
 </div>
 

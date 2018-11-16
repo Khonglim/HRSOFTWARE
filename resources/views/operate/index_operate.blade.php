@@ -206,7 +206,7 @@
                                                 </td>   
                                                 <td>
                                                             <a href="{{'Operate/'.$item['id'].'/edit'}}" class="btn btn-success btn-xs "><i class="fa   fa-pencil-square-o"></i></a>
-
+                                                            <a href="{{url('pdfcon_sup/'.$item['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
 
                                                 </td>
                                                 <td>
