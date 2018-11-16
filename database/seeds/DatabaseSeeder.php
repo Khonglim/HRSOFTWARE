@@ -37,6 +37,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DescriptionTableSeeder::class);
         $this->call(Ngg_companyTableSeeder::class);
         $this->call(Ngg_departmentTableSeeder::class);
-
+        $this->call(Ngg_workplaceTableSeeder::class);
     }
 }

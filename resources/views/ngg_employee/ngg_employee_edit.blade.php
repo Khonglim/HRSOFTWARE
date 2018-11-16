@@ -26,7 +26,7 @@
                         $remark1 = $ngg_empl->nem_remark;
                         $salary  = $ngg_empl->nem_salary;
                         $sex  = $ngg_empl->nem_sex;
-                        $enducation   = $ngg_empl->nem_enducation;
+                        $enducation   = $ngg_empl->nem_education;
 
                   ?>
                 @endforeach
