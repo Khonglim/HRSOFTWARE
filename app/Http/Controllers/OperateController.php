@@ -73,7 +73,7 @@ class OperateController extends Controller
         $operater->degree_enable = $request->degree_en;
         $operater->save();
 
-        Session::flash('flash_message', 'บันทึกเรียบร้อย!! และส่งอีเมลล์เรียบร้อย');
+        Session::flash('flash_message', 'บันทึกเรียบร้อย!! ');
         return redirect('Operate');
     }
 
@@ -615,8 +615,18 @@ class OperateController extends Controller
         }
 
         $operater->save();
-        Session::flash('flash_message', 'บันทึกเรียบร้อย!! และส่งอีเมลล์เรียบร้อย');
-        return redirect('Operate');
+        Session::flash('flash_message', 'บันทึกเรียบร้อย!!');
+        if(Input::get('signa1_60') != '' || Input::get('signa1_90') != '' || Input::get('signa2') != '' 
+        || Input::get('signa3') != '' || Input::get('signa4') != ''
+        
+        ){
+            return redirect('/');
+           
+        } else{
+
+            return redirect('Operate');
+
+        }
     }
 
     /**
@@ -627,6 +637,9 @@ class OperateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $operate = Operate::find($id);
+        $operate->delete();
+        Session::flash('flash_message', 'ลบสำเร็จ!!');
+        return redirect('Operate');
     }
 }

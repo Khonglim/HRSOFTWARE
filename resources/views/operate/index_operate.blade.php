@@ -56,7 +56,7 @@
                                                                        <input type="hidden" name="id" value="{{$item['id']}}">
                                                                   <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                   <input type="email" name="email1" required class="form-control">
-                                                                <input type="hidden" name="link" value="http://127.0.0.1/send1/{{$item->id}}">
+                                                                <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send1/{{$item->id}}">
                                                               </div>
                                                               <div class="modal-footer">
                                                                <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -91,7 +91,7 @@
                                                                       <p>กรุณาระบุอีเมลล์ที่จะส่งถึงต้นสังกัด</p>
                                                                       <input type="hidden" name="id" value="{{$item['id']}}">
                                                                       <input type="email" name="email2" required class="form-control">
-                                                                      <input type="hidden" name="link" value="http://127.0.0.1/send2/{{$item->id}}">
+                                                                      <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send2/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -122,7 +122,7 @@
                                                                         <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่าย</p>
                                                                         <input type="email" name="email3" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://127.0.0.1/send3/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send3/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -155,7 +155,7 @@
                                                                         <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่ายบุคคล</p>
                                                                         <input type="email" name="email4" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://127.0.0.1/send4/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send4/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -189,7 +189,7 @@
                                                                              <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="email5" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://127.0.0.1/send5/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send5/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -207,7 +207,28 @@
                                                 <td>
                                                             <a href="{{'Operate/'.$item['id'].'/edit'}}" class="btn btn-success btn-xs "><i class="fa   fa-pencil-square-o"></i></a>
                                                             <a href="{{url('pdfcon_sup/'.$item['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
-
+                                                            <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#de{{$item['id']}}"><i class=" fa fa-trash"></i></button>
+                                                            <div id="de{{$item['id']}}" class="modal fade" role="dialog">
+                                                              <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                  <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                    <h4 class="modal-title">ลบข้อมูล</h4>
+                                                                  </div>
+                                                                  <div class="modal-body">
+                                                                    {{ Form::open(['route' => ['Operate.destroy',$item['id'], 'method' => "DELETE"] ]) }}
+                                                                    <input type="hidden" name="_method" value="delete" />
+                                                                    <p>คุณต้องการลบใช่หรือไม่!!!!</p>
+                                                                  </div>
+                                                                  <div class="modal-footer">
+                                                                    <button type="summit" class="btn btn-danger">ลบ</button>
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+                                                                  </div>
+                                                                  {{ Form::close() }}
+                                                                </div>
+                                        
+                                                              </div>
+                                                            </div>
                                                 </td>
                                                 <td>
 

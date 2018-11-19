@@ -526,7 +526,7 @@
                         @else
                         -  
                         @endif <br>
-                    <b>ชื่อผู้ติดต่อ กรณีฉุกเฉิน :</b> {{ $personal->contact_name }} &emsp; <b>ความสัมพันธ์ :</b> {{ $personal->contact_firm }} &emsp; <b>ที่อยู่ :</b> {{ $personal->contact_address }} &emsp; <b>โทร :</b> {{ $personal->contact_tel }}
+                    <b>ชื่อผู้ติดต่อ กรณีฉุกเฉิน :</b> {{ $personal->contact_name }} &nbsp;&nbsp;&nbsp;&nbsp; <b>ความสัมพันธ์ :</b> {{ $personal->contact_firm }} &nbsp;&nbsp;&nbsp;&nbsp; <b>ที่อยู่ :</b> {{ $personal->contact_address }} &nbsp;&nbsp;&nbsp;&nbsp; <b>โทร :</b> {{ $personal->contact_tel }}
                 </td>
             </tr>
         </tbody>
