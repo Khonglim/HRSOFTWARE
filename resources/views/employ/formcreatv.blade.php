@@ -1939,37 +1939,43 @@ input.valid, textarea.valid{
                                                         </div>  
                                                     </div>  
                                                     <div class="row">
+                                                            
                                                                 <div class="col-md-3">
+                                                                        <div class="checkbox">
                                                                 <div class="input-group">
                                                                         <div class="form-group label-floating">
-                                                                            <input type="checkbox" class="form-check-input" id="portfolio1" name="portfolio1" value="คอมพิวเตอร์" required> <label class="control-label"> คอมพิวเตอร์<small class="text-danger">*จำเป็นต้องระบุ</small></label>
+                                                                            <label><input type="checkbox" class="form-check-input" id="portfolio1" name="portfolio1" value="คอมพิวเตอร์" required>คอมพิวเตอร์</label><small class="text-danger">*จำเป็นต้องระบุ</small>
                                                                             {{Form::text('computer','',['required'])}}      
                                                                        </div>
                                                                     </div>
                                                                 </div> 
-                                                        
+                                                            </div>
                                                         
                                                             <div class="form-group"> 
+                                                                <div class="checkbox">
                                                                 <div class="col-md-8">
-                                                                <input type="checkbox" class="form-check-input" id="fax" name="fax" value="เครื่องโทรสาร"> เครื่องโทรสาร 
+                                                                <label><input type="checkbox" class="form-check-input" id="fax" name="fax" value="เครื่องโทรสาร"> เครื่องโทรสาร</label>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group"> 
-                                                            <div class="col-md-8">
-                                                            <input type="checkbox" class="form-check-input" id="typewriter" name="typewriter"  value="เครื่องพิมพ์ดีดไทย" >เครื่องพิมพ์ดีดไทย  
                                                         </div>
+                                                        <div class="form-group"> 
+                                                            <div class="checkbox">
+                                                            <div class="col-md-8">
+                                                            <label><input type="checkbox" class="form-check-input" id="typewriter" name="typewriter"  value="เครื่องพิมพ์ดีดไทย" >เครื่องพิมพ์ดีดไทย  </label>
+                                                        </div>
+                                                            </div>
                                                     </div>
                                                         <div class="form-group"> 
                                                             <div class="col-md-8">
-                                                               
                                                                 <input type="text" name="dot" id="dot"  style="width:50px"/>คำ/นาที
-                                                                
                                                             </div>
                                                         </div>
-                                                            <div class="form-group"> 
+                                                            <div class="form-group">
+                                                                <div class="checkbox"> 
                                                                 <div class="col-md-8">
-                                                                <input type="checkbox" class="form-check-input" id="portfolio1" name="portfolio2" value="อื่นๆ"> อื่นๆ  <input type="text" name="portfolio3" id="portfolio3"  style="width:250px"/> &emsp;&emsp;
+                                                                <label><input type="checkbox" class="form-check-input" id="portfolio1" name="portfolio2" value="อื่นๆ"> อื่นๆ</label>  <input type="text" name="portfolio3" id="portfolio3"  style="width:250px"/> &emsp;&emsp;
                                                             </div>
+                                                        </div>
                                                         </div>
                                                            
                                                        
@@ -1978,10 +1984,12 @@ input.valid, textarea.valid{
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group ">
+                                                                <div class="radio">
                                                                 <label>ในตำแหน่งที่ต้องการต้องมีผู้ค้ำประกัน(เป็นราชการ/รัฐวิสาหกิจ)<small class="text-danger">*</small></label> &emsp;&emsp;
-                                                                <input type="radio" name="crash1" value="ขัดข้อง"  id="crash1" required > ขัดข้อง
-                                                                <input type="radio" name="crash1" value="ไม่ขัดข้อง" id="crash1" required > ไม่ขัดข้อง                                    
-                                                                </div>
+                                                                <label><input type="radio" name="crash1" value="ขัดข้อง"  id="crash1" required > ขัดข้อง</label>
+                                                                <label><input type="radio" name="crash1" value="ไม่ขัดข้อง" id="crash1" required > ไม่ขัดข้อง</label>                               
+                                                            </div>    
+                                                            </div>
                                                         </div>
                                                         </div>
                                                     <div class="row">
@@ -2009,30 +2017,33 @@ input.valid, textarea.valid{
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group ">
+                                                                <div class="radio">
                                                                 <label>ในการปฏิบัติงานหมุนเวียนเป็นกะหมุนเวียนกันไป<small class="text-danger">*</small></label> &emsp;&emsp;&ensp;
-                                                                <input type="radio" name="crash2" value="ขัดข้อง"  required >ขัดข้อง    &emsp;&emsp;&emsp;&emsp;
-                                                                <input type="radio" name="crash2" value="ไม่ขัดข้อง"  required > ไม่ขัดข้อง
-                                                                  
+                                                                <label><input type="radio" name="crash2" value="ขัดข้อง"  required >ขัดข้อง</label>    &emsp;&emsp;&emsp;&emsp;
+                                                                <label><input type="radio" name="crash2" value="ไม่ขัดข้อง"  required > ไม่ขัดข้อง</label>
+                                                            </div>
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
+                                                                    <div class="radio">
                                                                 <label>ท่านสามารถเปลี่ยนแปลงหน้าที่ตามความเหมาะสม<small class="text-danger">*</small></label>&emsp;&emsp;
-                                                                <input type="radio" name="crash3" value="ขัดข้อง"  required > ขัดข้อง  &emsp;&emsp;&emsp;&emsp;
-                                                                <input type="radio" name="crash3" value="ไม่ขัดข้อง"  required >ไม่ขัดข้อง                                
-                                                                                
+                                                                <label><input type="radio" name="crash3" value="ขัดข้อง"  required > ขัดข้อง </label> &emsp;&emsp;&emsp;&emsp;
+                                                                <label><input type="radio" name="crash3" value="ไม่ขัดข้อง"  required >ไม่ขัดข้อง  </label>                              
+                                                            </div>                    
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
+                                                                <div class="radio">
                                                                 <label>ท่านสามารถขับรถยนต์ได้หรือไม่ <small class="text-danger">*</small> </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
-                                                                <input type="radio" name="yes" value="ได้"  required > ได้  &emsp;&emsp;&emsp;
-                                                                <input type="radio" name="yes" value="ไม่ได้"  required > ไม่ได้
-                                                                
+                                                                <label><input type="radio" name="yes" value="ได้"  required > ได้ </label> &emsp;&emsp;&emsp;
+                                                                <label><input type="radio" name="yes" value="ไม่ได้"  required > ไม่ได้</label>
+                                                            </div>
                                                                 </div>
                                                         </div>
                                                         </div> <br>
@@ -2040,8 +2051,8 @@ input.valid, textarea.valid{
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label>ท่านมีรถยนต์ส่วนตัวหรือไม่?</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                                                <input type="radio" name="owncar" value="มี"  required >มี &emsp;&emsp;&emsp;
-                                                                <input type="radio" name="owncar" value="ไม่มี"  required >ไม่มี
+                                                                <label><input type="radio" name="owncar" value="มี"  required >มี </label>&emsp;&emsp;&emsp;
+                                                                <label><input type="radio" name="owncar" value="ไม่มี"  required >ไม่มี</label>
                                                                     <span class="text-danger">{{ $errors->first('owncar') }}</span> 
                                                                 </div>
                                                         </div>
@@ -2076,40 +2087,44 @@ input.valid, textarea.valid{
                                                     <div class="row">
                                                         <div class="col">
                                                             <div class="form-group">
+                                                                <div class="radio">
                                                                 <label>ท่านเคยถูกให้ออกจากงานหรือไม่?<small class="text-danger">*</small></label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                                                                   
-                                                                <input type="radio" name="exitwork" value="เคย" id="exitwork" required >เคย เพราะ &emsp; {{Form::text('because','',['id'=>'because'])}} &emsp;&emsp;
-                                                                <input type="radio" name="exitwork" value="ไม่เคย" id="exitwork"  required >ไม่เคย 
-                                                       
+                                                                <label><input type="radio" name="exitwork" value="เคย" id="exitwork" required >เคย </label> เพราะ &emsp; {{Form::text('because','',['id'=>'because'])}} &emsp;&emsp;
+                                                                <label><input type="radio" name="exitwork" value="ไม่เคย" id="exitwork"  required >ไม่เคย </label>
+                                                            </div>
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group ">
+                                                                <div class="radio">
                                                                 <label>ท่านเคยป่วยหนักและเป็นโรคร้ายแรงมาก่อนหรือไม่?<small class="text-danger">*</small></label>&emsp;
-                                                                <input type="radio" name="serious_ill" value="เคย"  required > เคย &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                <input type="radio" name="serious_ill" value="ไม่เคย"  required >ไม่เคย
-                                                              
+                                                                <label><input type="radio" name="serious_ill" value="เคย"  required > เคย</label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                <label><input type="radio" name="serious_ill" value="ไม่เคย"  required >ไม่เคย</label>
+                                                            </div>
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
+                                                                <div class="radio">
                                                                 <label>ท่านเคยได้รับโทษทาง อาญา หรือ จำคุก หรือ เป็นบุคคลล้มละลาย หรือไม่?<small class="text-danger">*</small></label>&emsp;&emsp;&emsp;&ensp;
-                                                                <input type="radio" name="offense" value="เคย"  required >เคย   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                <input type="radio" name="offense" value="ไม่เคย"  required >ไม่เคย
-                                                               
+                                                                <label><input type="radio" name="offense" value="เคย"  required >เคย</label>   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                <label><input type="radio" name="offense" value="ไม่เคย"  required >ไม่เคย</label>
+                                                            </div>
                                                                 </div>
                                                         </div>
                                                         </div> <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
+                                                                <div class="radio">
                                                                 <label>ขณะนี้คุณตั้งครรภ์หรือไม่?<small class="text-danger">*</small> </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                <input type="radio" name="pregnant" value="ใช่"  required >ใช่ &emsp;&emsp;&emsp;
-                                                                <input type="radio" name="pregnant" value="ไม่ใช่"  required > ไม่ใช่
-                                                               
+                                                                <label><input type="radio" name="pregnant" value="ใช่"  required >ใช่ </label>&emsp;&emsp;&emsp;
+                                                                <label><input type="radio" name="pregnant" value="ไม่ใช่"  required > ไม่ใช่</label>
+                                                            </div>
                                                                 </div>
                                                         </div>
                                                         </div>
