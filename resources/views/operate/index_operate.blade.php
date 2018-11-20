@@ -176,6 +176,37 @@
                                                 <td>
                                                             @if ($item->signa4_enable == 1)
                                                             <i class="fa  fa-check text-success"></i> ส่งประเมินเเล้ว
+                                                            <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send4{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
+                                                            <div id="send4{{$item['id']}}" class="modal fade" role="dialog">
+                                                                <div class="modal-dialog">
+                                                                  <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                      <h4 class="modal-title">ส่งเมลล์</h4>
+                                                                    </div>
+                                                                    <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter5">
+                                                                      @csrf
+                                                                    <div class="modal-body">
+                                                                     
+                                                                             <input type="hidden" name="id" value="{{$item['id']}}">
+                                                                        <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
+                                                                        <input type="email" name="email5" required class="form-control">
+                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send5/{{$item->id}}">
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                      <span id="sendData5">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
+                                                                      <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
+                                                                    </div>
+                                                                  </form>
+                                                                  </div>
+                                                              
+                                                                </div>
+                                                              </div>
+
+
+
+
+
                                                             @else
                                                             <i class="fa  fa-close text-danger"></i> ยังไม่ส่ง
                                                             <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send4{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
