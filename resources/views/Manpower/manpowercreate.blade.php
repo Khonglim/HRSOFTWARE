@@ -31,7 +31,7 @@
             <div class="alert alert-success d-flex align-items-center"> {!! session('flash_message') !!}</div>
 
             @endif
-            <form action="{{url('/manpower')}}" id="inviter" method="POST">
+            <form action="{{url('/manpower')}}" id="inviter" method="POST" onSubmit="JavaScript:return fncSubmit();"  name="form1">
                   @csrf
                   <div class="row">
                         <div class="col-md-4 ">
@@ -39,11 +39,11 @@
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                              <input type="checkbox" class="form-check-input" name="external_Recruit" value="สรรหาภายนอก/External Recruit" >สรรหาภายนอก/(External Recruit)
+                                                              <input type="checkbox" class="form-check-input" name="external_Recruit" id="external_Recruit" value="สรรหาภายนอก/External Recruit" >สรรหาภายนอก/(External Recruit)
                                                             </label>
 
                                           <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="internal_Recruit" value="สรรหาภายใน/Internal Recruit" >สรรหาภายใน/(Internal Recruit)
+                                                                        <input type="checkbox" class="form-check-input" name="internal_Recruit" id="internal_Recruit" value="สรรหาภายใน/Internal Recruit" >สรรหาภายใน/(Internal Recruit)
                                                                       </label>
                                     </div>
                               </div>
@@ -250,7 +250,7 @@
                         </div>
 
                         <div class="col-md-6 ">
-                              การศึกษา/Education<b class="text-danger">*</b>
+                              การศึกษา/Education<b class="text-danger">*</b></label>     <b class="text-danger">*</b>
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
@@ -297,7 +297,7 @@
                   </div>
 
                   <div class="row">
-                        ความสามารถพิเศษ/Special Skill
+                        ความสามารถพิเศษ/Special Skill<b class="text-danger">*</b></label>     
                         <div class="col-md-6 ">
                               <div class="form-check">
                                     <label class="form-check-label">
@@ -332,7 +332,7 @@
 
                   <br>
                   <div class="row">
-                        ประสบการณ์/Experience &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        ประสบการณ์/Experience<b class="text-danger">*</b></label>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="col-md-6 ">
                               <div class="form-check">
                                     <label class="form-check-label">
@@ -396,7 +396,7 @@
 
                   </div> <br>
                   <center>
-                              <strong class="text-danger">โปรดอ่าน:หากกดส่งคำร้องครั้งแรกเกิดผิดพลาด กรุณาตรวจสอบข้อมูลทั้งหมดอีกครั้งว่าถูกต้องหรือไม่เมื่อกดส่งคำร้องครั้งอีกครั้ง</strong>
+                              <strong class="text-danger">โปรดอ่าน:หากกดส่งคำร้องครั้งแรกเกิดผิดพลาด กรุณาตรวจสอบข้อมูลทั้งหมดอีกครั้งว่าถูกต้องหรือไม่เมื่อกดส่งคำร้องอีกครั้ง</strong>
                         <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"> </span>
                         <br>
                       
@@ -444,7 +444,7 @@
 
 $("#inviter").submit(function(){    
     
-      $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
+    
       
        return true; });
 
@@ -533,7 +533,7 @@ $("#inviter").submit(function(){
  $('#substitute').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#inexperience_com").show();
+      $("#name_substitute").show();
     
   }else {
       $("#name_substitute").hide(); 
@@ -547,7 +547,7 @@ $("#inviter").submit(function(){
      
     
   }else {
-      $("#name_substitute").hide(); 
+      $("#other_experience_com").hide(); 
   }
 });
 
@@ -557,7 +557,7 @@ $("#inviter").submit(function(){
       $("#additional_com").show();
      
   }else {
-      $("#name_substitute").hide(); 
+      $("#additional_com").hide(); 
   }
 });
 
@@ -568,7 +568,7 @@ $("#inviter").submit(function(){
        $("#minimum_experience_com").show();
    
   }else {
-      $("#name_substitute").hide(); 
+      $("#minimum_experience_com").hide(); 
   }
 });
 
@@ -579,7 +579,7 @@ $("#inviter").submit(function(){
        
     
   }else {
-      $("#name_substitute").hide(); 
+      $("#inexperience_com").hide(); 
   }
 });
 $('#other_skill').click(function() {
@@ -588,7 +588,7 @@ $('#other_skill').click(function() {
       $("#other_skill_name").show();
       
   }else {
-      $("#name_substitute").hide(); 
+      $("#other_skill_name").hide(); 
   }
 });
 $('#computer_knowledge').click(function() {
@@ -598,7 +598,7 @@ $('#computer_knowledge').click(function() {
        
     
   }else {
-      $("#name_substitute").hide(); 
+      $("#knowledge_name").hide(); 
   }
 });
 $('#typing').click(function() {
@@ -609,7 +609,7 @@ $('#typing').click(function() {
     
     
   }else {
-      $("#name_substitute").hide(); 
+      $("#typing_name").hide(); 
   }
 });
 $('#foreign_languages').click(function() {
@@ -618,28 +618,29 @@ $('#foreign_languages').click(function() {
       $("#languages_name").show();
     
   }else {
-      $("#name_substitute").hide(); 
+      $("#languages_name").hide(); 
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 });
 
       </script>
+
+<script language="javascript">
+            function fncSubmit()
+            {
+                  if(document.form1.internal_Recruit.checked == false && document.form1.external_Recruit.checked == false)
+                  {
+                        alert('Please Click Checkbox 1 ');
+                        return false;
+                  }else{
+                          $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
+                          
+                  }	
+                  
+                  document.form1.submit();
+            }
+            </script>
 
 </body>
 
