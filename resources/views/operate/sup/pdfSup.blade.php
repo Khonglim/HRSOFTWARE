@@ -59,6 +59,8 @@
     <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
     <b>ชื่อ-นามสกุล :</b> &emsp;&emsp;&emsp;&emsp;
     
+
+    
     <b>รหัสพนักงาน :  </b> {{$operate->new_id_employ}} <br>
     <b>ตำแหน่ง :</b> {{$operate->new_position}}&emsp;&emsp;&emsp;&emsp;
     <b>แผนก/ฝ่าย :</b> {{$operate->new_department}} <br>
