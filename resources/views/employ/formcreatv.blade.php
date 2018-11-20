@@ -78,7 +78,7 @@ input.valid, textarea.valid{
           </div>
         
            
-        <form action=" {{url('employee')}}" method="post" id="form-data" enctype="multipart/form-data">
+        <form action=" {{url('employee')}}" method="post" id="form-data" enctype="multipart/form-data" id="inviterSave">
                 @csrf
                 <div id="first">
                     <h4 class="text-center bg-primary p-1rounded tect-light">ประวัติส่วนตัว</h4>
@@ -2186,9 +2186,9 @@ input.valid, textarea.valid{
                                        
                                 <div class="form-group">
                                         <center>
-                                        <a href="#" class="btn btn-danger" id="prev-5">ย้อนกลับ</a>
+                                  <span id=""><a href="#" class="btn btn-danger" id="prev-5">ย้อนกลับ</a>
                         
-                                       <input type="submit" name="submit"  class="btn btn-success" value="บันทึก"> 
+                                    <input type="submit" name="submit"  class="btn btn-success" value="บันทึก"> </span>      
                                         </center>
                                      </div>
 
@@ -2992,7 +2992,11 @@ if( exitwork[0].checked ){
 
 
 
-
+ $("#inviterSave").submit(function(){    
+        
+        $("#sendDataSave").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+        
+         return true; });
 
 
  </script> 

@@ -26,6 +26,16 @@ class PDFController extends Controller
     public function pdfemployee($id)
     {
         $personal = Personal::find($id);
+        if($personal->recheck_Oper==1){
+            $personal->recheck_Oper=0;
+
+        }else{
+            $personal->recheck_Oper=1;
+
+        }
+       
+        $personal->save();
+
         $pdf = PDF::loadView('employ.pdf',['personal' => $personal ]);
        
         return $pdf->stream('employ.pdf');

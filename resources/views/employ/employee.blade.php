@@ -14,6 +14,7 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+           <center> (หมายเหตุ:ในส่วนดูข้อมูลล่าสุด เวลาอัพเดทเมื่อกดดูPDFเท่านั้น)</center>   
             <table id="employee" class="table table-bordered table-striped">
               <thead>
                 <tr>
@@ -23,6 +24,7 @@
                   <th>ตำแหน่ง</th>
 
                   <th>เพิ่มเติ่ม</th>
+                  <th>การดูข้อมูลครั้งล่าสุด</th>
                 </tr>
               </thead>
               <tbody>
@@ -59,6 +61,7 @@
                       </div>
                     </div>
                   </td>
+                  <td  style="width: 30px; "> {{$l['updated_at']}} นาที </td>
                 </tr>
                 @endif @empty
                 <tr>
@@ -73,6 +76,7 @@
                   <th>นามสกุล</th>
                   <th>ตำแหน่ง</th>
                   <th>เพิ่มเติ่ม</th>
+                  <th>การดูข้อมูลครั้งล่าสุด</th>
                 </tr>
               </tfoot>
             </table>
