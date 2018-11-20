@@ -75,7 +75,11 @@ class Email_operateController extends Controller
         }
 
     }
-    return "ส่งไปแล้ว";
+    $objEmail = new \stdClass();
+    $objEmail->emailto = $request->emailto;
+    $objEmail->link = $request->link;
+    Mail::to($objEmail->emailto)->send(new HRSystemEmail($objEmail));
+    return redirect('Operate');
 
 
   }
