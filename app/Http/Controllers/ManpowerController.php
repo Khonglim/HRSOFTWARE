@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Extensions\MongoSessionStore;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use App\Mail\Alert;
+use Illuminate\Support\Facades\Mail;
 use App\Manpower;
 
 class ManpowerController extends Controller
@@ -94,6 +96,10 @@ class ManpowerController extends Controller
         $manpower->knowledge_name = $request->knowledge_name;
         $manpower->other_skill_name = $request->other_skill_name;
         $manpower->save();
+        //Mail::to('hrrecruit@ciengems.com')->send(new Alert());
+        //Mail::to('hrrecruit1@ciengems.com')->send(new Alert());
+        //Mail::to('hrrecruit2@ciengems.com')->send(new Alert());
+        //Mail::to('tr.panya@nioachievers.com')->send(new Alert());
         Session::flash('flash_message','บันทึกเรียบร้อย!! และส่งอีเมลล์แจ้งฝ่ายบุคคลแล้วค่ะ');
         return view('Manpower.manpowercreate');
     }

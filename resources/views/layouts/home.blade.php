@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body >
 	<!--Header-->
 
 	<header>
@@ -91,7 +91,13 @@
 		  </footer>
 	<script src="new/js/jquery-2.2.3.min.js"></script>
 	<script src="new/js/bootstrap.js"></script>
-		
+	<script type="text/javascript">
+	
+	function iframeHeight(obj){
+    the_height= obj.contentWindow.document.body.offsetHeight;
+    obj.height=the_height+10;
+}
+		</script>
 </body>
 
 </html>

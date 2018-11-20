@@ -39,8 +39,8 @@
                                                             
                                                       @if ($item->signa1_60_enable == 1)
                                                       <i class="fa  fa-check text-success"></i> ส่งประเมินเเล้ว
-                                                      <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send1{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
-                                                      <div id="send1{{$item['id']}}" class="modal fade" role="dialog">
+                                                      <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send11{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
+                                                      <div id="send11{{$item['id']}}" class="modal fade" role="dialog">
                                                           <div class="modal-dialog">
                                                             <div class="modal-content">
                                                               <div class="modal-header">
@@ -51,7 +51,7 @@
                                                                 @csrf
                                                               <div class="modal-body">
                                                                
-                                                                       <input type="hidden" name="id" value="{{$item['id']}}">
+                                                                   
                                                                   <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                   <input type="email" name="emailto" required class="form-control">
                                                                   <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send1/{{$item->id}}">
@@ -68,8 +68,8 @@
                                                       @else
                                                       <i class="fa  fa-close text-danger"></i> ยังไม่ส่ง
                                                      
-                                                      <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send0{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
-                                                      <div id="send0{{$item['id']}}" class="modal fade" role="dialog">
+                                                      <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send1{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
+                                                      <div id="send1{{$item['id']}}" class="modal fade" role="dialog">
                                                           <div class="modal-dialog">
                                                             <div class="modal-content">
                                                               <div class="modal-header">
@@ -101,8 +101,8 @@
                                                 <td style="width: 250px; ">
                                                             @if ($item->signa1_90_enable == 1)
                                                             <i class="fa  fa-check text-success"></i> ส่งประเมินเเล้ว
-                                                            <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send2{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
-                                                            <div id="send2{{$item['id']}}" class="modal fade" role="dialog">
+                                                            <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send22{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
+                                                            <div id="send22{{$item['id']}}" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
                                                                   <div class="modal-content">
                                                                     <div class="modal-header">
@@ -129,8 +129,8 @@
                                                               </div>
                                                             @else
                                                             <i class="fa  fa-close text-danger"></i> ยังไม่ส่ง
-                                                            <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send1{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
-                                                            <div id="send1{{$item['id']}}" class="modal fade" role="dialog">
+                                                            <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send2{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
+                                                            <div id="send2{{$item['id']}}" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
                                                                   <div class="modal-content">
                                                                     <div class="modal-header">
@@ -187,8 +187,8 @@
                                                               </div>
                                                             @else
                                                             <i class="fa  fa-close text-danger"></i> ยังไม่ส่ง
-                                                            <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send2{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
-                                                            <div id="send2{{$item['id']}}" class="modal fade" role="dialog">
+                                                            <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send3{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
+                                                            <div id="send3{{$item['id']}}" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
                                                                   <div class="modal-content">
                                                                     <div class="modal-header">
@@ -219,8 +219,8 @@
                                                 <td style="width: 250px; ">
                                                             @if ($item->signa3_enable == 1)
                                                             <i class="fa  fa-check text-success"></i> ส่งประเมินเเล้ว
-                                                            <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send4{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
-                                                            <div id="send4{{$item['id']}}" class="modal fade" role="dialog">
+                                                            <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send44{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
+                                                            <div id="send44{{$item['id']}}" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
                                                                   <div class="modal-content">
                                                                     <div class="modal-header">
@@ -247,15 +247,15 @@
                                                               </div>
                                                             @else
                                                             <i class="fa  fa-close text-danger"></i> ยังไม่ส่ง
-                                                            <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send3{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
-                                                            <div id="send3{{$item['id']}}" class="modal fade" role="dialog">
+                                                            <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send4{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
+                                                            <div id="send4{{$item['id']}}" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
                                                                   <div class="modal-content">
                                                                     <div class="modal-header">
                                                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                       <h4 class="modal-title">ส่งเมลล์</h4>
                                                                     </div>
-                                                                    <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter4">
+                                                                    <form action=" {{url('Email_send_oper')}}" method="POST" id="inviter4">
                                                                       @csrf
                                                                     <div class="modal-body">
       
@@ -280,15 +280,15 @@
                                                 <td style="width: 250px; ">
                                                             @if ($item->signa4_enable == 1)
                                                             <i class="fa  fa-check text-success"></i> ส่งประเมินเเล้ว
-                                                            <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send5{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
-                                                            <div id="send5{{$item['id']}}" class="modal fade" role="dialog">
+                                                            <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send55{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่งอีกครั้ง</button>
+                                                            <div id="send55{{$item['id']}}" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
                                                                   <div class="modal-content">
                                                                     <div class="modal-header">
                                                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                       <h4 class="modal-title">ส่งเมลล์</h4>
                                                                     </div>
-                                                                    <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter5">
+                                                                    <form action=" {{url('Email_send_oper')}}" method="POST" id="inviter5">
                                                                       @csrf
                                                                     <div class="modal-body">
                                                                      
@@ -313,15 +313,15 @@
 
                                                             @else
                                                             <i class="fa  fa-close text-danger"></i> ยังไม่ส่ง
-                                                            <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send4{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
-                                                            <div id="send4{{$item['id']}}" class="modal fade" role="dialog">
+                                                            <button type="button" class="btn btn-info btn-xs " data-toggle="modal" data-target="#send5{{$item['id']}}"><i class=" fa  fa-send-o"></i>ส่ง</button>
+                                                            <div id="send5{{$item['id']}}" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
                                                                   <div class="modal-content">
                                                                     <div class="modal-header">
                                                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                       <h4 class="modal-title">ส่งเมลล์</h4>
                                                                     </div>
-                                                                    <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter5">
+                                                                    <form action=" {{url('Email_send_oper')}}" method="POST" id="inviter5">
                                                                       @csrf
                                                                     <div class="modal-body">
                                                                      
