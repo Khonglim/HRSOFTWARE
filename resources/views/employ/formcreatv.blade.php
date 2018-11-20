@@ -2974,7 +2974,7 @@ if( crash1[0].checked ){
     $("#compd").attr("readonly", "readonly"); 
     $("#compa").attr("readonly", "readonly"); 
                 }
-                if( crash1[1].checked ){
+if( crash1[1].checked ){
 
   $("#compd").removeAttr("readonly"); 
   $("#compa").removeAttr("readonly"); 

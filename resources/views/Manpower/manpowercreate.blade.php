@@ -106,62 +106,62 @@
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input" name="permanent" value="ประจำ/Permanent">ประจำ/Permanent
+                                                        <input type="checkbox" class="form-check-input" name="permanent" id="permanent" value="ประจำ/Permanent">ประจำ/Permanent
                                                       </label>
                                           <div class="form-check">
-                                                <label class="form-check-label">
-                                                                                            <input type="checkbox" class="form-check-input"  name="daily" value="รายวัน/Daily">รายวัน/Daily
-                                                                                          </label>
+                                                <label class="form-check-label" id="labe1">
+                        <input type="checkbox" class="form-check-input"  name="daily1" id="daily1" value="รายวัน/Daily" >รายวัน/Daily
+                               </label>
                                           </div>
                                           <div class="form-check">
-                                                <label class="form-check-label">
-                                                                                                  <input type="checkbox" class="form-check-input"  name="monthly" value="รายเดือน/Monthly">รายเดือน/Monthly
+                                                <label class="form-check-label" id="labe2">
+                      <input type="checkbox" class="form-check-input"  name="monthly2" id="monthly2"  value="รายเดือน/Monthly" >รายเดือน/Monthly
                                                                                                 </label>
                                           </div>
                                     </div>
                                     <div class="form-check">
-                                          <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input" name="apprentie" value="ฝึกงาน/Apprentie">ฝึกงาน/Apprentie
+                                          <label class="form-check-label" >
+                                                        <input type="checkbox" class="form-check-input" name="apprentie" id="apprentie" value="ฝึกงาน/Apprentie">ฝึกงาน/Apprentie
                                                       </label>
                                                       <div class="form-check">
-                                                                  <label class="form-check-label">
-                                                                                                              <input type="checkbox" class="form-check-input"  name="daily" value="รายวัน/Daily">รายวัน/Daily
-                                                                                                            </label>
+                                                                  <label class="form-check-label"  id="labe3">
+                                     <input type="checkbox" class="form-check-input"  name="daily3" id="daily3" value="รายวัน/Daily" >รายวัน/Daily
+                                                 </label>
                                                             </div>
                                                             <div class="form-check">
-                                                                  <label class="form-check-label">
-                                                                                                                    <input type="checkbox" class="form-check-input"  name="monthly" value="รายเดือน/Monthly">รายเดือน/Monthly
-                                                                                                                  </label>
+                                                                  <label class="form-check-label" id="labe4">
+                   <input type="checkbox" class="form-check-input"  name="monthly4" id="monthly4" value="รายเดือน/Monthly" >รายเดือน/Monthly
+                                                       </label>
                                                             </div>
                                                             <div class="form-check">
-                                                                        <label class="form-check-label">
-                                                                                                        <input type="checkbox" class="form-check-input" name="checkstart" value="เริ่มต้น">เริ่มต้น 
-                                                                                                        <input type="date" name="timestart" class="form-control" >
+                               <label class="form-check-label" id="labe5">
+                        <input type="checkbox" class="form-check-input" name="checkstart"  id="checkstart1" value="เริ่มต้น" >เริ่มต้น 
+                        <input type="date" name="timestart" id="timestart1" class="form-control" >
                                                                                                         สิ้นสุด
-                                                                                                        <input type="date" name="timeend" class="form-control" >
+                        <input type="date" name="timeend1"  id="timeend1" class="form-control" >
                                                                                                       </label>
                                                                   </div>
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                              <input type="checkbox" class="form-check-input" name="subcontract" value="สัญญาจ้างชั่วคราว/Subcontract">สัญญาจ้างชั่วคราว/Subcontract
+                                                              <input type="checkbox" class="form-check-input" name="subcontract" id="subcontract" value="สัญญาจ้างชั่วคราว/Subcontract">สัญญาจ้างชั่วคราว/Subcontract
                                                             </label>
                                                             <div class="form-check">
-                                                                        <label class="form-check-label">
-                                                                                                                    <input type="checkbox" class="form-check-input"  name="daily" value="รายวัน/Daily">รายวัน/Daily
-                                                                                                                  </label>
+                                                                        <label class="form-check-label" id="labe6">
+                                    <input type="checkbox" class="form-check-input"  name="daily5" id="daily5" value="รายวัน/Daily" >รายวัน/Daily
+                                                 </label>
                                                                   </div>
                                                                   <div class="form-check">
-                                                                        <label class="form-check-label">
-                                                                                                                          <input type="checkbox" class="form-check-input"  name="monthly" value="รายเดือน/Monthly">รายเดือน/Monthly
-                                                                                                                        </label>
+                                                                        <label class="form-check-label" id="labe7">
+                               <input type="checkbox" class="form-check-input"  name="monthly6" id="monthly6" value="รายเดือน/Monthly" >รายเดือน/Monthly
+                                                                  </label>
                                                                   </div>
                                                                   <div class="form-check">
-                                                                              <label class="form-check-label">
-                                                                                                              <input type="checkbox" class="form-check-input" name="checkstart" value="เริ่มต้น">เริ่มต้น 
-                                                                                                              <input type="date" name="timestart" class="form-control" >
+                                                                              <label class="form-check-label" id="labe8">
+                  <input type="checkbox" class="form-check-input" name="checkstart" id="checkstart2" value="เริ่มต้น">เริ่มต้น 
+                  <input type="date" name="timestart2" id="timestart2" class="form-control" >
                                                                                                               สิ้นสุด
-                                                                                                              <input type="date" name="timeend" class="form-control" >
+                  <input type="date" name="timeend2" id="timeend2" class="form-control" >
                                                                                                             </label>
                                                                         </div>
                                     </div>
@@ -185,15 +185,15 @@
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" name="hire" value="กรณีจ้างเพิ่ม/New">กรณีจ้างเพิ่ม/New
+                                            <input type="checkbox" class="form-check-input" name="hire" id="hire" value="กรณีจ้างเพิ่ม/New">กรณีจ้างเพิ่ม/New
                                           </label>
-                                          <textarea name="" id="" cols="20" rows="1" class="form-control"></textarea>
+                                          <textarea name="bec" id="bec" cols="20" rows="1" class="form-control"  ></textarea>
 
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                  <input type="checkbox" class="form-check-input" name="substitute" value="กรณีทดแทน/Replace">กรณีทดแทน/Replace
-                                                  <input type="text" name="name_substitute" id="name_substitute" class="form-control" placeholder="ชื่อ-นามสกุล">
+                                                  <input type="checkbox" class="form-check-input" name="substitute" id="substitute" value="กรณีทดแทน/Replace">กรณีทดแทน/Replace
+                                                  <input type="text" name="name_substitute" id="name_substitute" class="form-control" placeholder="ชื่อ-นามสกุล" >
                                                 </label>
                                     </div>
                               </div>
@@ -301,25 +301,29 @@
                         <div class="col-md-6 ">
                               <div class="form-check">
                                     <label class="form-check-label">
-                                           <input type="checkbox" class="form-check-input" name="foreign_languages" value="ภาษาต่างประเทศ/Foreign Languages Command">ภาษาต่างประเทศ/Foreign Languages Command <input type="text" name="languages_name" id="languages_name" class="form-control" placeholder="ระบุ">
+                                           <input type="checkbox" class="form-check-input" name="foreign_languages" id="foreign_languages" value="ภาษาต่างประเทศ/Foreign Languages Command">ภาษาต่างประเทศ/Foreign Languages Command 
+                                           <input type="text" name="languages_name" id="languages_name" class="form-control" placeholder="ระบุ" >
                                                 </label>
 
                               </div>
                               <div class="form-check">
                                     <label class="form-check-label">
-                                                                  <input type="checkbox" class="form-check-input"  name="typing" value="พิมพ์ดีดไทย & อังกฤษ/Thai & English Typing">พิมพ์ดีดไทย & อังกฤษ/Thai & English Typing <input type="text" name="typing_name" id="typing_name" class="form-control" placeholder="ระบุ">
+                                                                  <input type="checkbox" class="form-check-input"  name="typing" id="typing" value="พิมพ์ดีดไทย & อังกฤษ/Thai & English Typing">พิมพ์ดีดไทย & อังกฤษ/Thai & English Typing 
+                                                                  <input type="text" name="typing_name" id="typing_name" class="form-control" placeholder="ระบุ" >
                                                                        </label>
                               </div>
                               <div class="form-check">
 
                                     <label class="form-check-label">
-                                                                  <input type="checkbox" class="form-check-input" name="computer_knowledge" value="ความรู้ทางคอมพิวเตอร์/Computer Knowledge">ความรู้ทางคอมพิวเตอร์/Computer Knowledge <input type="text" name="knowledge_name" id="knowledge_name" class="form-control" placeholder="ระบุ">
+                                                                  <input type="checkbox" class="form-check-input" name="computer_knowledge" id="computer_knowledge" value="ความรู้ทางคอมพิวเตอร์/Computer Knowledge">ความรู้ทางคอมพิวเตอร์/Computer Knowledge 
+                                                                  <input type="text" name="knowledge_name" id="knowledge_name" class="form-control" placeholder="ระบุ" >
                                                             </label>
                               </div>
                               <div class="form-check">
 
                                     <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="other_skill" value="อื่นๆ/Other">อื่นๆ/Other <input type="text" name="other_skill_name" id="other_skill_name" class="form-control" placeholder="ระบุ">
+                                                                        <input type="checkbox" class="form-check-input" name="other_skill" id="other_skill" value="อื่นๆ/Other">อื่นๆ/Other 
+                                                                        <input type="text" name="other_skill_name" id="other_skill_name" class="form-control" placeholder="ระบุ" >
                                                                   </label>
                               </div>
 
@@ -332,25 +336,29 @@
                         <div class="col-md-6 ">
                               <div class="form-check">
                                     <label class="form-check-label">
-                                                 <input type="checkbox" class="form-check-input" name="inexperience" value="ไม่มีประสบการณ์/Inexperience">ไม่มีประสบการณ์/Inexperience <input type="text" name="inexperience_com" id="inexperience_com" class="form-control" placeholder="ระบุ">
+                                                 <input type="checkbox" class="form-check-input" name="inexperience" id="inexperience" value="ไม่มีประสบการณ์/Inexperience">ไม่มีประสบการณ์/Inexperience 
+                                                 <input type="text" name="inexperience_com" id="inexperience_com" class="form-control" placeholder="ระบุ" >
                                                       </label>
 
                               </div>
                               <div class="form-check">
                                     <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="minimum_experience" value="ประสบการณ์ขั้นต่ำ/Minimum Experience">ประสบการณ์ขั้นต่ำ/Minimum Experience <input type="text" name="minimum_experience_com" id="minimum_experience_com" class="form-control" placeholder="ระบุ">
+                                                                        <input type="checkbox" class="form-check-input" name="minimum_experience" id="minimum_experience" value="ประสบการณ์ขั้นต่ำ/Minimum Experience">ประสบการณ์ขั้นต่ำ/Minimum Experience 
+                                                                        <input type="text" name="minimum_experience_com" id="minimum_experience_com" class="form-control" placeholder="ระบุ" >
                                                                              </label>
                               </div>
                               <div class="form-check">
 
                                     <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input" name="additional_experience" value="หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any)">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) <input type="text" name="additional_com" id="additional_com" class="form-control" placeholder="ระบุ">
+                                                                        <input type="checkbox" class="form-check-input" name="additional_experience" id="additional_experience" value="หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any)">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) 
+                                                                        <input type="text" name="additional_com" id="additional_com" class="form-control" placeholder="ระบุ" >
                                                                   </label>
                               </div>
                               <div class="form-check">
 
                                     <label class="form-check-label">
-                                                                              <input type="checkbox" class="form-check-input" name="other_experience" value="อื่นๆ/Other">อื่นๆ/Other <input type="text" name="other_experience_com" id="other_experience_com" class="form-control" placeholder="ระบุ">
+                                                                              <input type="checkbox" class="form-check-input" name="other_experience" id="other_experience" value="อื่นๆ/Other">อื่นๆ/Other 
+                                                                        <input type="text" name="other_experience_com" id="other_experience_com" class="form-control" placeholder="ระบุ" >
                                                                         </label>
                               </div>
                         </div>
@@ -361,7 +369,7 @@
                         <div class="col-md-3 "></div>
                         <div class="col-md-6 ">
                               <div class="form-group ">
-                                    <b class="text-danger">*จำเป็นต้องเซ็นชื่อ(อย่ากดส่งคำร้องหากท่านยังไม่ลงลายเซ็น)</b>
+                                    <b class="text-danger">*จำเป็นต้องเซ็นชื่อ</b>
                                     <div class="col-sm-4">
 
                                           <div class="sigPad">
@@ -388,10 +396,10 @@
 
                   </div> <br>
                   <center>
-                        <b class="text-danger">(อย่ากดส่งคำร้องหากท่านยังไม่ลงลายเซ็น)</b><br>
+                              <strong class="text-danger">โปรดอ่าน:หากกดส่งคำร้องครั้งแรกเกิดผิดพลาด กรุณาตรวจสอบข้อมูลทั้งหมดอีกครั้งว่าถูกต้องหรือไม่เมื่อกดส่งคำร้องครั้งอีกครั้ง</strong>
                         <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"> </span>
                         <br>
-                        <strong class="text-danger">โปรดอ่าน:หากกดส่งคำร้องครั้งแรกเกิดผิดพลาด กรุณาตรวจสอบข้อมูลทั้งหมดอีกครั้งว่าถูกต้องหรือไม่เมื่อกดส่งคำร้องครั้งอีกครั้ง</strong>
+                      
 
 
                   </center>
@@ -439,6 +447,198 @@ $("#inviter").submit(function(){
       $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
       
        return true; });
+
+
+
+
+    $(document).ready(function() {    
+       $("#labe1").hide();
+       $("#labe2").hide();
+       $("#labe3").hide();
+       $("#labe4").hide();
+       $("#labe5").hide();
+       $("#labe6").hide();
+       $("#labe7").hide();
+       $("#labe8").hide();
+       $("#bec").hide();  
+       $("#name_substitute").hide(); 
+
+       $("#languages_name").hide();
+       $("#typing_name").hide();
+       $("#knowledge_name").hide();
+       $("#other_skill_name").hide();
+       $("#minimum_experience_com").hide();
+       $("#additional_com").hide();
+       $("#other_experience_com").hide();
+       $("#inexperience_com").hide();
+
+
+
+
+
+
+
+
+
+      $('#permanent').click(function() {
+        if ($(this).is(':checked')) {
+            $("#labe1").show();
+            $("#labe2").show();
+        }else {
+            $("#labe1").hide();
+            $("#labe2").hide();
+        }
+    });
+  
+  $('#apprentie').click(function() {
+        if ($(this).is(':checked')) {
+       $("#labe3").show();
+       $("#labe4").show();
+       $("#labe5").show();
+        }else {
+      $("#labe3").hide();
+       $("#labe4").hide();
+       $("#labe5").hide();
+        }
+    });
+
+
+
+
+  $('#subcontract').click(function() {
+  
+        if ($(this).is(':checked')) {
+       $("#labe6").show();
+       $("#labe7").show();
+       $("#labe8").show();
+          
+        }else {
+      $("#labe6").hide();
+       $("#labe7").hide();
+       $("#labe8").hide();
+        }
+    });
+
+ $('#hire').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#bec").show();  
+      
+    
+  }else {
+      $("#bec").hide();  
+  }
+});
+
+ $('#substitute').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#inexperience_com").show();
+    
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+
+ $('#other_experience').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#other_experience_com").show();
+     
+    
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+
+ $('#additional_experience').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#additional_com").show();
+     
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+
+ $('#minimum_experience').click(function() {
+  
+  if ($(this).is(':checked')) {
+     
+       $("#minimum_experience_com").show();
+   
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+
+ $('#inexperience').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#inexperience_com").show();
+       
+    
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+$('#other_skill').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#other_skill_name").show();
+      
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+$('#computer_knowledge').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#knowledge_name").show();
+       
+    
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+$('#typing').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#typing_name").show();
+       
+    
+    
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+$('#foreign_languages').click(function() {
+  
+  if ($(this).is(':checked')) {
+      $("#languages_name").show();
+    
+  }else {
+      $("#name_substitute").hide(); 
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+});
+
       </script>
 
 </body>
