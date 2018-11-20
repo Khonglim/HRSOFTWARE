@@ -51,15 +51,15 @@
                                                                 <h4 class="modal-title">ส่งเมลล์</h4>
                                                               </div>
                                                               <div class="modal-body">
-                                                                <form action=" {{url('Email_send_oper')}}" method="GET" >
+                                                                <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter1">
                                                                   @csrf
                                                                        <input type="hidden" name="id" value="{{$item['id']}}">
-                                                                  <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
+                                                                  <p>กรุณาระบุอีเมลล์ที่จะส่งถึงต้นสังกัดรอบที่1 60 วันหรืออื่นๆ</p>
                                                                   <input type="email" name="email1" required class="form-control">
                                                                 <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send1/{{$item->id}}">
                                                               </div>
                                                               <div class="modal-footer">
-                                                               <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
+                                                                <span id="sendData1">    <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
                                                               </div>
                                                             </form>
@@ -85,16 +85,17 @@
                                                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                       <h4 class="modal-title">ส่งเมลล์</h4>
                                                                     </div>
+                                                                    <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter2">
+                                                                      @csrf 
                                                                     <div class="modal-body">
-                                                                      <form action=" {{url('Email_send_oper')}}" method="GET" >
-                                                                        @csrf 
-                                                                      <p>กรุณาระบุอีเมลล์ที่จะส่งถึงต้นสังกัด</p>
+                                                                  
+                                                                      <p>กรุณาระบุอีเมลล์ที่จะส่งถึงต้นสังกัดรอบที่2 90 วัน </p>
                                                                       <input type="hidden" name="id" value="{{$item['id']}}">
                                                                       <input type="email" name="email2" required class="form-control">
                                                                       <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send2/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
+                                                                      <span id="sendData2">   <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
                                                                       <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
                                                                     </div>
                                                                   </form>
@@ -116,16 +117,17 @@
                                                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                       <h4 class="modal-title">ส่งเมลล์</h4>
                                                                     </div>
+                                                                    <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter3">
+                                                                      @csrf
                                                                     <div class="modal-body">
-                                                                      <form action=" {{url('Email_send_oper')}}" method="GET" >
-                                                                        @csrf
+                                                                      
                                                                         <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่าย</p>
                                                                         <input type="email" name="email3" required class="form-control">
                                                                         <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send3/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
+                                                                      <span id="sendData3">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
                                                                       <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
                                                                     </div>
                                                                   </form>
@@ -149,16 +151,17 @@
                                                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                       <h4 class="modal-title">ส่งเมลล์</h4>
                                                                     </div>
+                                                                    <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter4">
+                                                                      @csrf
                                                                     <div class="modal-body">
-                                                                      <form action=" {{url('Email_send_oper')}}" method="GET" >
-                                                                        @csrf
+      
                                                                         <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่ายบุคคล</p>
                                                                         <input type="email" name="email4" required class="form-control">
                                                                         <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send4/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
+                                                                      <span id="sendData4">      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
                                                                       <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
                                                                     </div>
                                                                   </form>
@@ -183,16 +186,17 @@
                                                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                       <h4 class="modal-title">ส่งเมลล์</h4>
                                                                     </div>
+                                                                    <form action=" {{url('Email_send_oper')}}" method="GET" id="inviter5">
+                                                                      @csrf
                                                                     <div class="modal-body">
-                                                                      <form action=" {{url('Email_send_oper')}}" method="GET" >
-                                                                        @csrf
+                                                                     
                                                                              <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="email5" required class="form-control">
                                                                         <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send5/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
+                                                                      <span id="sendData5">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
                                                                       <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
                                                                     </div>
                                                                   </form>
@@ -257,7 +261,41 @@
 
 
 
+   <script>
 
+    $("#inviter1").submit(function(){    
+        
+        $("#sendData1").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+        
+         return true; });
+    
+         $("#inviter2").submit(function(){    
+        
+        $("#sendData2").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+        
+         return true; });
+
+          $("#inviter3").submit(function(){    
+        
+        $("#sendData3").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+        
+         return true; });
+
+          $("#inviter4").submit(function(){    
+        
+        $("#sendData4").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+        
+         return true; });
+
+        $("#inviter5").submit(function(){    
+        
+        $("#sendData5").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+        
+         return true; });
+    
+    
+    
+    </script>
 
 
 

@@ -10,7 +10,7 @@
                   </div>
                   <div class="form-horizontal">
                         <div class="box-body">
-                              {{Form::open(['url'=>'Operate','name'=>'frmMain' ])}} 
+                              {{Form::open(['url'=>'Operate','name'=>'frmMain','id'=>'inviterSave' ])}} 
                               @csrf
                               <div class="form-group">
                                     <label class="col-sm-2 control-label">ค้นหาชื่อในระบบ: </label>
@@ -93,7 +93,7 @@
                                           <input type="number" name="numberMN" id="numberMN" class="form-control">
                                     </div>
                               </div>
-                              <center> <button type="submit" class="btn btn-info ">บันทึก/ส่งถึงผู้ประเมิน</button></center>
+                              <center> <span id="sendDataSave"><button type="submit" class="btn btn-info ">บันทึก</button>   </span>     </center>
                               {{Form::close()}}
                         </div>
                   </div>
@@ -117,5 +117,11 @@
                         frmMain.id_employ.value = strCusName.split("|")[6];        
 
             }
+
+        $("#inviterSave").submit(function(){    
+        
+        $("#sendDataSave").html("ระบบกำลังทำการส่งโปรดรอสักครู่.....");    
+        
+         return true; });
 </script>
 @endsection
