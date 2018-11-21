@@ -344,6 +344,9 @@ body {
                                    <li><a href="{{url('/levelsmanage') }}">จัดการระดับ</a></li>
                                    <li class="divider"></li>
                                    <li><a href="{{url('/nggemployee') }}">จัดการผนักงาน</a></li>
+                                   <li class="divider"></li>
+                                   <li><a href="{{url('/Email_HR') }}">จัดการการส่งอีเมลล์</a></li>
+                                   
                                    
                                  
                               </ul>
