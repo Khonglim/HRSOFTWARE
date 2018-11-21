@@ -28,6 +28,17 @@
                         $sex  = $ngg_empl->nem_sex;
                         $enducation   = $ngg_empl->nem_education;
 
+
+                        $nationality = $ngg_empl->nem_nationality;
+                        $age = $ngg_empl->nem_age;
+                        $datestart = $ngg_empl->nem_datestart;
+                        $packingdate = $ngg_empl->nem_packingdate;
+                        $workplace = $ngg_empl->nem_workplace;
+                        $duration1 = $ngg_empl->nem_duration1;
+                        $duration2 = $ngg_empl->nem_duration2;
+                        $duration3 = $ngg_empl->nem_duration3;
+                        $address1 = $ngg_empl->nem_address1;
+                        $address2 = $ngg_empl->nem_address2;
                   ?>
                 @endforeach
 
@@ -108,6 +119,77 @@
                  <div class="form-group label-floating">
                                 <label class="control-label">วันเกิด</label>
                         {{Form::date('birthday',$birthday,['class'=>'form-control','required'])}}   
+                         </div>
+                        </div>
+                        
+         </div>
+          </div>
+          <br>
+          <div class="form-group">     
+        <div class="row"> 
+                          <div class="col-md-3"> 
+                                 <div class="form-group label-floating">
+                            <label class="control-label">อายุ</label>
+                            {{Form::text('age',$age,['class'=>'form-control','required'])}}
+                        </div>  
+                </div> 
+                        <div class="col-md-3"> 
+                                <div class="form-group label-floating">
+                                <label class="control-label">duration1</label>
+                                  @if($duration1 == 'FALSE')
+                                <?php $duration3 = '-';?>
+                                @endif
+                                   {{Form::text('duration1',$duration1,['class'=>'form-control','required'])}} 
+                        </div>  
+                </div>  
+                        
+                        <div class="col-md-3"> 
+                                        <div class="form-group label-floating">
+                         <label class="control-label">duration2</label>
+                         @if($duration2 == 'FALSE')
+                                <?php $duration3 = '-';?>
+                                @endif
+                    {{Form::text('duration2',$duration2,['class'=>'form-control','required'])}} 
+                        </div> 
+                </div> 
+                <div class="col-md-3 ">
+                 <div class="form-group label-floating">
+                                <label class="control-label">duration3</label>
+                                @if($duration3 == 'FALSE')
+                                <?php $duration3 = '-';?>
+                                @endif
+                                 
+                        {{Form::text('duration3',$duration3,['class'=>'form-control','required'])}}   
+                         </div>
+                        </div>
+                        
+         </div>
+          </div>
+          <br>
+          <div class="form-group">     
+        <div class="row"> 
+                          <div class="col-md-3"> 
+                                 <div class="form-group label-floating">
+                            <label class="control-label">อายุ</label>
+                            {{Form::text('eng_name',$age,['class'=>'form-control','required'])}}
+                        </div>  
+                </div> 
+                        <div class="col-md-3"> 
+                                <div class="form-group label-floating">
+                                <label class="control-label">duration1</label>
+                                   {{Form::date('duration1',$duration1,['class'=>'form-control','required'])}} 
+                        </div>  
+                </div>  
+                        <div class="col-md-3"> 
+                                        <div class="form-group label-floating">
+                         <label class="control-label">duration2</label>
+                    {{Form::text('duration2',$duration2,['class'=>'form-control','required'])}} 
+                        </div> 
+                </div> 
+                <div class="col-md-3 ">
+                 <div class="form-group label-floating">
+                                <label class="control-label">duration3</label>
+                        {{Form::text('duration3',$duration3,['class'=>'form-control','required'])}}   
                          </div>
                         </div>
                         
