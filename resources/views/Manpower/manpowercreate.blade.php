@@ -498,12 +498,17 @@ $("#inviter").submit(function(){
        $("#labe3").show();
        $("#labe4").show();
        $("#labe5").show();
-       $("#timestart1").removeAttr('disabled', 'disabled')
+       $("#timestart1").removeAttr('disabled', 'disabled');
+       $("#timeend1").removeAttr('disabled', 'disabled');
         }else {
       $("#labe3").hide();
        $("#labe4").hide();
        $("#labe5").hide();
-       $("#timestart1").attr('disabled', 'disabled')
+       $("#daily3").removeAttr("checked","checked");
+       $("#monthly4").removeAttr("checked","checked");
+       $("#checkstart1").removeAttr("checked","checked");
+       $("#timestart1").attr('disabled', 'disabled');
+       $("#timeend1").attr('disabled', 'disabled');
         }
     });
 
@@ -516,11 +521,18 @@ $("#inviter").submit(function(){
        $("#labe6").show();
        $("#labe7").show();
        $("#labe8").show();
+       $("#timestart2").removeAttr('disabled', 'disabled');
+       $("#timeend2").removeAttr('disabled', 'disabled');
           
         }else {
       $("#labe6").hide();
        $("#labe7").hide();
        $("#labe8").hide();
+       $("#daily5").removeAttr("checked","checked");
+       $("#monthly6").removeAttr("checked","checked");
+       $("#checkstart2").removeAttr("checked","checked");
+       $("#timestart2").attr('disabled', 'disabled');
+       $("#timeend2").attr('disabled', 'disabled');
         }
     });
 
@@ -528,10 +540,11 @@ $("#inviter").submit(function(){
   
   if ($(this).is(':checked')) {
       $("#bec").show();  
-      
-    
+      $("#bec").removeAttr('disabled', 'disabled');
+
   }else {
       $("#bec").hide();  
+      $("#bec").attr('disabled', 'disabled');
   }
 });
 
@@ -539,9 +552,11 @@ $("#inviter").submit(function(){
   
   if ($(this).is(':checked')) {
       $("#name_substitute").show();
+      $("#name_substitute").removeAttr('disabled', 'disabled');
     
   }else {
       $("#name_substitute").hide(); 
+      $("#name_substitute").attr('disabled', 'disabled');
   }
 });
 
@@ -549,10 +564,12 @@ $("#inviter").submit(function(){
   
   if ($(this).is(':checked')) {
       $("#other_experience_com").show();
+      $("#other_experience_com").removeAttr('disabled', 'disabled');
      
     
   }else {
-      $("#other_experience_com").hide(); 
+      $("#other_experience_com").hide();
+      $("#other_experience_com").attr('disabled', 'disabled'); 
   }
 });
 
@@ -560,9 +577,13 @@ $("#inviter").submit(function(){
   
   if ($(this).is(':checked')) {
       $("#additional_com").show();
+      $("#additional_com").removeAttr('disabled', 'disabled');
+
      
   }else {
       $("#additional_com").hide(); 
+      $("#additional_com").attr('disabled', 'disabled'); 
+
   }
 });
 
@@ -571,9 +592,13 @@ $("#inviter").submit(function(){
   if ($(this).is(':checked')) {
      
        $("#minimum_experience_com").show();
+       $("#minimum_experience_com").removeAttr('disabled', 'disabled');
+
    
   }else {
       $("#minimum_experience_com").hide(); 
+      $("#minimum_experience_com").attr('disabled', 'disabled'); 
+
   }
 });
 
@@ -581,49 +606,63 @@ $("#inviter").submit(function(){
   
   if ($(this).is(':checked')) {
       $("#inexperience_com").show();
-       
-    
+      $("#inexperience_com").removeAttr('disabled', 'disabled');
+           
   }else {
-      $("#inexperience_com").hide(); 
+      $("#inexperience_com").hide();
+      $("#inexperience_com").attr('disabled', 'disabled'); 
+ 
   }
 });
 $('#other_skill').click(function() {
   
   if ($(this).is(':checked')) {
       $("#other_skill_name").show();
+      $("#other_skill_name").removeAttr('disabled', 'disabled');
+
       
   }else {
       $("#other_skill_name").hide(); 
+      $("#other_skill_name").attr('disabled', 'disabled'); 
+
   }
 });
 $('#computer_knowledge').click(function() {
   
   if ($(this).is(':checked')) {
       $("#knowledge_name").show();
+      $("#knowledge_name").removeAttr('disabled', 'disabled');
+
        
     
   }else {
       $("#knowledge_name").hide(); 
+      $("#knowledge_name").attr('disabled', 'disabled'); 
+
   }
 });
 $('#typing').click(function() {
   
   if ($(this).is(':checked')) {
       $("#typing_name").show();
-       
-    
-    
+      $("#typing_name").removeAttr('disabled', 'disabled');
+
   }else {
       $("#typing_name").hide(); 
+      $("#typing_name").attr('disabled', 'disabled'); 
+
   }
 });
 $('#foreign_languages').click(function() {
   
   if ($(this).is(':checked')) {
       $("#languages_name").show();
+      $("#languages_name").removeAttr('disabled', 'disabled');
     
   }else {
       $("#languages_name").hide(); 
+      $("#languages_name").attr('disabled', 'disabled'); 
+
   }
 });
 
