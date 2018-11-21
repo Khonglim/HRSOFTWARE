@@ -397,7 +397,7 @@
                   </div> <br>
                   <center>
                               <strong class="text-danger">โปรดอ่าน:หากกดส่งคำร้องครั้งแรกเกิดผิดพลาด กรุณาตรวจสอบข้อมูลทั้งหมดอีกครั้งว่าถูกต้องหรือไม่เมื่อกดส่งคำร้องอีกครั้ง</strong>
-                        <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"> </span>
+                        <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง" > </span>
                         <br>
                       
 
@@ -487,6 +487,9 @@ $("#inviter").submit(function(){
         }else {
             $("#labe1").hide();
             $("#labe2").hide();
+            $("#daily1").removeAttr("checked","checked");
+            $("#monthly2").removeAttr("checked","checked");
+            
         }
     });
   
@@ -495,10 +498,12 @@ $("#inviter").submit(function(){
        $("#labe3").show();
        $("#labe4").show();
        $("#labe5").show();
+       $("#timestart1").removeAttr('disabled', 'disabled')
         }else {
       $("#labe3").hide();
        $("#labe4").hide();
        $("#labe5").hide();
+       $("#timestart1").attr('disabled', 'disabled')
         }
     });
 
