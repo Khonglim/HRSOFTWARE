@@ -135,8 +135,8 @@
                                                             </div>
                                                             <div class="form-check">
                                <label class="form-check-label" id="labe5">
-                        <input type="checkbox" class="form-check-input" name="checkstart"  id="checkstart1" value="เริ่มต้น" >เริ่มต้น 
-                        <input type="date" name="timestart" id="timestart1" class="form-control" >
+                        <input type="checkbox" class="form-check-input" name="checkstart1"  id="checkstart1" value="เริ่มต้น" >เริ่มต้น 
+                        <input type="date" name="timestart1" id="timestart1" class="form-control" >
                                                                                                         สิ้นสุด
                         <input type="date" name="timeend1"  id="timeend1" class="form-control" >
                                                                                                       </label>
@@ -158,7 +158,7 @@
                                                                   </div>
                                                                   <div class="form-check">
                                                                               <label class="form-check-label" id="labe8">
-                  <input type="checkbox" class="form-check-input" name="checkstart" id="checkstart2" value="เริ่มต้น">เริ่มต้น 
+                  <input type="checkbox" class="form-check-input" name="checkstart2" id="checkstart2" value="เริ่มต้น">เริ่มต้น 
                   <input type="date" name="timestart2" id="timestart2" class="form-control" >
                                                                                                               สิ้นสุด
                   <input type="date" name="timeend2" id="timeend2" class="form-control" >
