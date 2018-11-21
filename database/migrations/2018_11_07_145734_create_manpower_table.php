@@ -26,14 +26,20 @@ class CreateManpowerTable extends Migration
             $table->char('permanent',100)->nullable();
             $table->char('apprentie',100)->nullable();
             $table->char('subcontract',100)->nullable();
-            $table->char('daily',100)->nullable();
-            $table->char('monthly',100)->nullable();
-         
-         
-            $table->char('checkstart',100)->nullable();
-            $table->char('timestart',100)->nullable();
-            $table->char('timeend',100)->nullable();
+            $table->char('daily1',100)->nullable();
+            $table->char('monthly2',100)->nullable();
+            $table->char('daily3',100)->nullable();
+            $table->char('monthly4',100)->nullable();
+            $table->char('daily5',100)->nullable();
+            $table->char('monthly6',100)->nullable();
+            $table->char('checkstart1',100)->nullable();
+            $table->char('timestart1',100)->nullable();
+            $table->char('timeend1',100)->nullable();
+            $table->char('checkstart2',100)->nullable();
+            $table->char('timestart2',100)->nullable();
+            $table->char('timeend2',100)->nullable();
             $table->char('hire',100)->nullable();
+            $table->char('bec',100)->nullable();
             $table->char('substitute',100)->nullable();
             $table->char('name_substitute',100)->nullable();
             $table->char('ratesalary',100)->nullable();

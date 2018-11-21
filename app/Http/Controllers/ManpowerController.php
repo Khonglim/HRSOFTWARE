@@ -57,12 +57,30 @@ class ManpowerController extends Controller
         $manpower->permanent = $request->permanent;
         $manpower->apprentie = $request->apprentie;
         $manpower->subcontract = $request->subcontract;
-        $manpower->daily = $request->daily;
-        $manpower->monthly = $request->monthly;
-        
-        $manpower->checkstart = $request->checkstart;
-        $manpower->timestart = $request->timestart;
-        $manpower->timeend = $request->timeend;
+
+
+//เพิ่ม
+        $manpower->daily1 = $request->daily1;
+        $manpower->monthly2 = $request->monthly2;
+        $manpower->daily3 = $request->daily3;
+        $manpower->monthly4 = $request->monthly4;
+        $manpower->daily5 = $request->daily5;
+        $manpower->monthly6 = $request->monthly6;
+
+
+        $manpower->checkstart1 = $request->checkstart1;
+        $manpower->timestart1 = $request->timestart1;
+        $manpower->timeend1 = $request->timeend1;
+        $manpower->checkstart2 = $request->checkstart2;
+        $manpower->timestart2 = $request->timestart2;
+        $manpower->timeend2 = $request->timeend2;
+
+        $manpower->bec = $request->bec;
+       
+
+//เพิ่ม
+
+
         $manpower->hire = $request->hire;
         $manpower->substitute = $request->substitute;
         $manpower->name_substitute = $request->name_substitute;
