@@ -73,6 +73,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Inter_sup' => $baseDir . '/app/Inter_sup.php',
     'App\\Interview' => $baseDir . '/app/Interview.php',
+    'App\\Mail\\Alert' => $baseDir . '/app/Mail/Alert.php',
     'App\\Mail\\HRSystemEmail' => $baseDir . '/app/Mail/HRSystemEmail.php',
     'App\\Mail\\HR_NGG_GROUP' => $baseDir . '/app/Mail/HR_NGG_GROUP.php',
     'App\\Manpower' => $baseDir . '/app/Manpower.php',

@@ -448,6 +448,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Inter_sup' => __DIR__ . '/../..' . '/app/Inter_sup.php',
         'App\\Interview' => __DIR__ . '/../..' . '/app/Interview.php',
+        'App\\Mail\\Alert' => __DIR__ . '/../..' . '/app/Mail/Alert.php',
         'App\\Mail\\HRSystemEmail' => __DIR__ . '/../..' . '/app/Mail/HRSystemEmail.php',
         'App\\Mail\\HR_NGG_GROUP' => __DIR__ . '/../..' . '/app/Mail/HR_NGG_GROUP.php',
         'App\\Manpower' => __DIR__ . '/../..' . '/app/Manpower.php',
