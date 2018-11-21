@@ -68,7 +68,8 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">แผนก/ส่วน/Section/Dividion<b class="text-danger">*</b></label>                                    {{Form::text('section','',['class'=>'form-control','id'=>'section','required'])}}
+                                    <label class="control-label">แผนก/ส่วน/Section/Dividion<b class="text-danger">*</b></label>                                    
+                                    {{Form::text('section','',['class'=>'form-control','id'=>'section','required'])}}
                               </div>
 
                         </div>
@@ -80,21 +81,24 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">วันที่ต้องการ/Date Required<b class="text-danger">*</b></label>                                    {{Form::date('date_required','',['class'=>'form-control','id'=>'date_required','required'])}}
+                                    <label class="control-label">วันที่ต้องการ/Date Required<b class="text-danger">*</b></label>                                    
+                                    {{Form::date('date_required','',['class'=>'form-control','id'=>'date_required','required'])}}
                               </div>
 
                         </div>
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">จำนวนพนักงานที่ต้องการ/Number<b class="text-danger">*</b> </label>                                    {{Form::Number('number','',['class'=>'form-control','id'=>'number','required'])}}
+                                    <label class="control-label">จำนวนพนักงานที่ต้องการ/Number<b class="text-danger">*</b> </label>                                   
+                                     {{Form::Number('number','',['class'=>'form-control','id'=>'number','required'])}}
                               </div>
 
                         </div>
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">อายุ/Age<b class="text-danger">*</b></label> {{Form::Number('age','',['class'=>'form-control','id'=>'age','required'])}}
+                                    <label class="control-label">อายุ/Age<b class="text-danger">*</b></label> 
+                                    {{Form::Number('age','',['class'=>'form-control','id'=>'age','required'])}}
                               </div>
 
                         </div>
@@ -164,16 +168,7 @@
                   <input type="date" name="timeend2" id="timeend2" class="form-control" >
                                                                                                             </label>
                                                                         </div>
-                                    </div>
-
-
-
-
-
-
-
-                                   
-
+                                                                  </div>
 
                               </div>
 
@@ -187,13 +182,13 @@
                                           <label class="form-check-label">
                                             <input type="checkbox" class="form-check-input" name="hire" id="hire" value="กรณีจ้างเพิ่ม/New">กรณีจ้างเพิ่ม/New
                                           </label>
-                                          <textarea name="bec" id="bec" cols="20" rows="1" class="form-control"  ></textarea>
+                                          <textarea name="bec" id="bec" cols="20" rows="1" class="form-control"  placeholder="ระบุ"></textarea>
 
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
                                                   <input type="checkbox" class="form-check-input" name="substitute" id="substitute" value="กรณีทดแทน/Replace">กรณีทดแทน/Replace
-                                                  <input type="text" name="name_substitute" id="name_substitute" class="form-control" placeholder="ชื่อ-นามสกุล" >
+                                                  <input type="text" name="name_substitute" id="name_substitute" class="form-control" placeholder="ชื่อ-นามสกุล"  >
                                                 </label>
                                     </div>
                               </div>
@@ -205,7 +200,7 @@
 
                         <div class="col-md-4 ">
                               <div class="form-group ">
-                                    <label class="control-label">อัตราจ้าง/Salary<b class="text-danger">*</b></label> {{Form::text('ratesalary','',['class'=>'form-control','id'=>'ratesalary'])}}
+                                    <label class="control-label">อัตราจ้าง/Salary<b class="text-danger">*</b></label> {{Form::text('ratesalary','',['class'=>'form-control','id'=>'ratesalary','required' ])}}
                               </div>
 
                         </div>
@@ -215,7 +210,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">สวัสดิการอื่นๆ<b class="text-danger">*</b></label>
-                                    <textarea class="form-control" rows="1" id="benefits" name="benefits"></textarea>
+                                    <textarea class="form-control" rows="1" id="benefits" name="benefits" required></textarea>
                               </div>
 
                         </div>
@@ -223,7 +218,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">ลักษณะงานที่ทำโดยสังเขป/Description<b class="text-danger">*</b></label>
-                                    <textarea class="form-control" rows="1" id="description" name="description"></textarea>
+                                    <textarea class="form-control" rows="1" id="description" name="description" required></textarea>
                               </div>
 
                         </div>
@@ -236,13 +231,13 @@
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="gender" value="ชาย/Male">ชาย/Male
+                                                                    <input type="radio" class="form-check-input" name="gender" value="ชาย/Male" required>ชาย/Male
                                                                   </label>
 
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                                          <input type="radio" class="form-check-input" name="gender" value="หญิง/Female">หญิง/Female
+                                                                          <input type="radio" class="form-check-input" name="gender" value="หญิง/Female" required>หญิง/Female
                                                                           
                                                                         </label>
                                     </div>
@@ -254,41 +249,41 @@
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                 <input type="checkbox" class="form-check-input" name="primary" value="ป.6/Primary School(P.6)">ป.6/Primary School(P.6)
+                                                 <input type="checkbox" class="form-check-input" name="primary" id="primary" value="ป.6/Primary School(P.6)">ป.6/Primary School(P.6)
                                           </label>
 
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                             <input type="checkbox" class="form-check-input" name="high_school" value="ม.6/High School(M.6)">ม.6/High School(M.6)
+                                             <input type="checkbox" class="form-check-input" name="high_school" id="high_school" value="ม.6/High School(M.6)">ม.6/High School(M.6)
                                           </label>
                                     </div>
 
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                           <input type="checkbox" class="form-check-input" name="high_vocational" value="ปวส./High Vocational School">ปวส./High Vocational School
+                                           <input type="checkbox" class="form-check-input" name="high_vocational" id="high_vocational" value="ปวส./High Vocational School">ปวส./High Vocational School
                                           </label>
                                     </div>
 
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                         <input type="checkbox" class="form-check-input" name="othereducation" value="อื่นๆ (ส่วนสูง,น้ำหนัก,หน้าตา ฯลฯ/Other High,Weigh,Appearance etc)">อื่นๆ (ส่วนสูง,น้ำหนัก,หน้าตา ฯลฯ/Other High,Weigh,Appearance etc)
+                                         <input type="checkbox" class="form-check-input" name="othereducation" id="othereducation" value="อื่นๆ (ส่วนสูง,น้ำหนัก,หน้าตา ฯลฯ/Other High,Weigh,Appearance etc)">อื่นๆ (ส่วนสูง,น้ำหนัก,หน้าตา ฯลฯ/Other High,Weigh,Appearance etc)
                                                 </label>
                                     </div>
 
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                           <input type="checkbox" class="form-check-input" name="secondary" value="ม.3/Secondary">ม.3/Secondary
+                                           <input type="checkbox" class="form-check-input" name="secondary" id="secondary" value="ม.3/Secondary">ม.3/Secondary
                                                 </label>
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                 <input type="checkbox" class="form-check-input" name="vocational" value="ปวช./Vocational School">ปวช./Vocational School
+                                                 <input type="checkbox" class="form-check-input" name="vocational" id="vocational" value="ปวช./Vocational School">ปวช./Vocational School
                                                       </label>
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                       <input type="checkbox" class="form-check-input" name="undergraduate" value="ปริญญาตรี/Undergraduate">ปริญญาตรี/Undergraduate
+                                                       <input type="checkbox" class="form-check-input" name="undergraduate" id="undergraduate" value="ปริญญาตรี/Undergraduate">ปริญญาตรี/Undergraduate
                                                             </label>
                                     </div>
                               </div>
@@ -386,7 +381,9 @@
                                           </div>
                                     </div>
                                     <br>
-                                    <label class="control-label">ผู้ขอจ้าง/Requested<b class="text-danger">*</b></label>                                    {{Form::text('requested','',['class'=>'form-control','id'=>'requested'])}}
+                                    <label class="control-label">ผู้ขอจ้าง/Requested<b class="text-danger">*</b></label>                                    
+                                    
+                                    {{Form::text('requested','',['class'=>'form-control','id'=>'requested','required'])}}
 
                               </div>
 
@@ -397,7 +394,7 @@
                   </div> <br>
                   <center>
                               <strong class="text-danger">โปรดอ่าน:หากกดส่งคำร้องครั้งแรกเกิดผิดพลาด กรุณาตรวจสอบข้อมูลทั้งหมดอีกครั้งว่าถูกต้องหรือไม่เมื่อกดส่งคำร้องอีกครั้ง</strong>
-                        <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง" > </span>
+                        <span id="sendData"> <input type="submit" name="submit"  class="btn btn-success" value="ส่งคำร้อง"  > </span>
                         <br>
                       
 
@@ -675,9 +672,47 @@ $('#foreign_languages').click(function() {
             {
                   if(document.form1.internal_Recruit.checked == false && document.form1.external_Recruit.checked == false)
                   {
-                        alert('Please Click Checkbox 1 ');
+                        alert('โปรดเลือกการสรรหาอย่างน้อย 1 ตัวเลือก');
                         return false;
-                  }else{
+                  }else if( document.form1.permanent.checked == false && document.form1.apprentie.checked == false && document.form1.subcontract.checked == false){
+                        alert('โปรดเลือกประเภทของการจ้างงาน/Type of Employentอย่างน้อย 1 ตัวเลือกค่ะ');
+                        return false;
+                  }
+                  else if( document.form1.hire.checked == false && document.form1.substitute.checked == false){
+                        alert('โปรดเลือกประเภทของความต้องการ/Type of Rquirementอย่างน้อย 1 ตัวเลือกค่ะ');
+                        return false;
+                  }
+                  else if( document.form1.primary.checked == false && 
+                          document.form1.high_school.checked == false &&
+                          document.form1.high_vocational.checked == false &&
+                          document.form1.othereducation.checked == false &&
+                          document.form1.secondary.checked == false &&
+                          document.form1.vocational.checked == false &&
+                          document.form1.undergraduate.checked == false
+                          
+                          ){
+                        alert('โปรดเลือก การศึกษา/Education อย่างน้อย 1 ตัวเลือกค่ะ');
+                        return false;
+                  } else if( document.form1.foreign_languages.checked == false && 
+                          document.form1.typing.checked == false &&
+                          document.form1.computer_knowledge.checked == false &&
+                          document.form1.other_skill.checked == false
+                         
+                          ){
+                        alert('โปรดเลือก  ความสามารถพิเศษ/Special Skill อย่างน้อย 1 ตัวเลือกค่ะ');
+                        return false;
+                  }else if( document.form1.inexperience.checked == false &&
+                          document.form1.minimum_experience.checked == false &&
+                          document.form1.additional_experience.checked == false &&
+                          document.form1.other_experience.checked == false){
+                              alert('โปรดเลือก   ประสบการณ์/Experience อย่างน้อย 1 ตัวเลือกค่ะ');
+                        return false;
+
+
+                          }
+                  
+                  
+                  else{
                           $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
                           
                   }	

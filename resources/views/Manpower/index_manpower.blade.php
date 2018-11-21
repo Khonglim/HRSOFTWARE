@@ -49,9 +49,36 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
-                                                      
-                                                  <p>คุณต้องการส่งเมลล์ใช่หรือไม่จะไม่สามารถส่งได้อีกครั้ง คำขอกำลังคนของ{{$item->requested}}</p>
-                                                  <input type="hidden" name="mail" value="http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit">
+                                                    @csrf
+                                                  <p>คุณต้องการส่งเมลล์ใช่หรือไม่ คำขอกำลังคนของ{{$item->requested}}</p>
+                                                  <input type="email" name="mail" required class="form-control">
+                                                  <input type="hidden" name="link" value="http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit">
+                                                </div>
+                                                <div class="modal-footer">
+                                                <span id="sendData"> <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>  
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
+                                                </div>
+                                                {{ Form::close() }}
+                                              </div>
+                      
+                                            </div>
+                                          </div>
+                                        @else
+
+                                        <button type="button" class="btn btn-danger btn-xs " data-toggle="modal" data-target="#send{{$item['id']}}"><i class=" fa  fa-send-o">ส่งอีกครั้ง</i></button>
+                                        <div id="send{{$item['id']}}" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">ส่งเมลล์</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
+                                                    @csrf
+                                                  <p>คุณต้องการส่งเมลล์ใช่หรือไม่ คำขอกำลังคนของ{{$item->requested}}</p>
+                                                  <input type="email" name="mail" required class="form-control">
+                                                  <input type="hidden" name="link" value="http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit">
                                                 </div>
                                                 <div class="modal-footer">
                                                 <span id="sendData"> <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>  
@@ -67,8 +94,8 @@
 
 
 
-
                                         @endif
+
                                       @if($item->Sup_enable && $item->MD_enable == 1)
                                         <a href="{{url('manpower/'.$item['id'])}}" class="btn btn-info btn-xs "><i class="fa fa-download"></i></a>
                                         @endif

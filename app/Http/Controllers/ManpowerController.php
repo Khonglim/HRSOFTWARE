@@ -94,7 +94,7 @@ class ManpowerController extends Controller
         $manpower->vocational = $request->vocational;
         $manpower->high_vocational = $request->high_vocational;
         $manpower->undergraduate = $request->undergraduate;
-        $manpower->other_education = $request->other_education;
+        $manpower->other_education = $request->othereducation;
         $manpower->foreign_languages = $request->foreign_languages;
         $manpower->languages_name = $request->languages_name;
         $manpower->typing = $request->typing;
@@ -116,8 +116,8 @@ class ManpowerController extends Controller
         $manpower->save();
         //Mail::to('hrrecruit@ciengems.com')->send(new Alert());
         //Mail::to('hrrecruit1@ciengems.com')->send(new Alert());
-        //Mail::to('hrrecruit2@ciengems.com')->send(new Alert());
-        //Mail::to('tr.panya@nioachievers.com')->send(new Alert());
+        Mail::to('tr.narathorn@nioachievers.com')->send(new Alert());
+        Mail::to('tr.panya@nioachievers.com')->send(new Alert());
         Session::flash('flash_message','บันทึกเรียบร้อย!! และส่งอีเมลล์แจ้งฝ่ายบุคคลแล้วค่ะ');
         return view('Manpower.manpowercreate');
     }
