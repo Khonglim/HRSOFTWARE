@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\DB;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::resource('Email_HR','Email_hrController');
 Route::resource('Email_send','Email_sendController');
 Route::resource('employee','EmployeeController');
 

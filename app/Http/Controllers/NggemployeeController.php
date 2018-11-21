@@ -9,6 +9,7 @@ use App\Ngg_company;
 use App\Ngg_position;
 use App\Ngg_level;
 use App\Ngg_sector;
+use App\Ngg_workpalce;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use App\Extensions\MongoSessionStore;
@@ -106,6 +107,7 @@ class NggemployeeController extends Controller
           $ngg_department = Ngg_department::where('ndp_enable', '=', 1)->get();
           $ngg_company = Ngg_company::where('ncp_enable', '=', 1)->get();
           $ngg_position = Ngg_position::where('nps_enable', '=', 1)->get();
+          $ngg_workpalce = Ngg_workpalce::where('nwp_enable', '=', 1)->get();
           $ngg_level = Ngg_level::where('nlv_enable', '=', 1)->get();
           $ngg_sector = Ngg_sector::where('nst_enable', '=', 1)->get();
           $data = array(
@@ -115,7 +117,8 @@ class NggemployeeController extends Controller
             'ngg_company' => $ngg_company,
             'ngg_position' => $ngg_position,
             'ngg_level' => $ngg_level,
-            'ngg_sector' => $ngg_sector
+            'ngg_sector' => $ngg_sector,
+            'ngg_workpalce' => $ngg_workpalce
             );
             return view('ngg_employee/ngg_employee_show',$data);
         }
@@ -137,6 +140,7 @@ class NggemployeeController extends Controller
           $ngg_department = Ngg_department::where('ndp_enable', '=', 1)->get();
           $ngg_company = Ngg_company::where('ncp_enable', '=', 1)->get();
           $ngg_position = Ngg_position::where('nps_enable', '=', 1)->get();
+           $ngg_workpalce = Ngg_workpalce::where('nwp_enable', '=', 1)->get();
           $ngg_level = Ngg_level::where('nlv_enable', '=', 1)->get();
           $ngg_sector = Ngg_sector::where('nst_enable', '=', 1)->get();
           $data = array(
@@ -146,7 +150,8 @@ class NggemployeeController extends Controller
             'ngg_company' => $ngg_company,
             'ngg_position' => $ngg_position,
             'ngg_level' => $ngg_level,
-            'ngg_sector' => $ngg_sector
+            'ngg_sector' => $ngg_sector,
+            'ngg_workpalce' => $ngg_workpalce
                 
             );
             return view('ngg_employee/ngg_employee_edit',$data);

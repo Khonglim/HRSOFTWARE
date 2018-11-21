@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmailHRTabl extends Migration
+class CreateEmailHRTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class CreateEmailHRTabl extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('email__h_r', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('email_hr')->unique();
+            $table->integer('email_enable')->default('1');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class CreateEmailHRTabl extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('email__h_r');
     }
 }
