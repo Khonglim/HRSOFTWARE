@@ -48,7 +48,7 @@ input.valid, textarea.valid{
         <div class="banner-inner ">
               <br>
               <center>
-                <img src="{{URL::asset('img/NGGlogo.jpg')}}"  width="110px" height="110px"> 
+                <img src="{{URL::asset('img/NGG-10.jpg')}}"  width="110px" height="110px"> 
               </center>
         </div> 
  <div class="container">

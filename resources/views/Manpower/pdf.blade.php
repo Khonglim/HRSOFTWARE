@@ -64,40 +64,71 @@
         <td><b>อายุ :</b> {{ $manpower->age }} <br> Age</td>
     </tr>
     <tr>
-        <td colspan="4"><b>ประเภทของพนักงาน</b>
-            @if ($manpower->permanent!='')
-                {{ $manpower->permanent }}
-            @endif &emsp;
-            @if ($manpower->apprentie!='')
-                {{ $manpower->apprentie }}
-            @endif &emsp;
-            @if ($manpower->subcontract!='')
-                {{ $manpower->subcontract }}
-            @endif
-            <br> Type of Employent &emsp;
-            @if ($manpower->daily!='')
-                {{ $manpower->daily }}
-            @endif &emsp;
-            @if ($manpower->monthly!='')
-                {{ $manpower->monthly }}
-            @endif &emsp;
-            @if ($manpower->checkstart!='')
-                <b>เริ่มต้น :</b>{{ $manpower->timestart }} &emsp;
-                <b>สิ้นสุด :</b>{{ $manpower->timeend }}
-            @endif
-        </td>
-    </tr>
-    <tr>
-        <td colspan="4"><b>ประเภทของความต้องการ :</b>
-            @if ($manpower->hire!='')
-                {{ $manpower->hire }}
-            @endif &emsp;&emsp;
-            @if ($manpower->substitute!='')
-                {{ $manpower->substitute }}
-                <b>ชื่อ-นามสกุล :</b> {{ $manpower->name_substitute }}
-            @endif
-        </td>
-    </tr>
+            <td><b>ประเภทของพนักงาน</b><br> Type of Employent</td>
+            <td colspan="3">
+                @if ($manpower->permanent!='')
+                    {{ $manpower->permanent }} :
+                @endif 
+                    @if ($manpower->daily1!='')
+                        {{ $manpower->daily1 }} 
+                    @endif
+                    @if ($manpower->monthly2!='')
+                        {{ $manpower->monthly2 }} 
+                    @endif <br>
+
+                @if ($manpower->apprentie!='')
+                    {{ $manpower->apprentie }} :
+                @endif 
+                    @if ($manpower->daily3!='')
+                        {{ $manpower->daily3 }} 
+                    @endif
+                    @if ($manpower->monthly4!='')
+                        {{ $manpower->monthly4 }} 
+                    @endif 
+                    @if ($manpower->checkstart1!='')
+                        {{ $manpower->checkstart1 }}
+                    @endif
+                    @if ($manpower->timestart1!='')
+                        {{ $manpower->timestart1 }}
+                    @endif
+                    @if ($manpower->timeend1!='')
+                    สิ้นสุด  {{ $manpower->timeend1 }}
+                    @endif <br>
+
+                @if ($manpower->subcontract!='')
+                    {{ $manpower->subcontract }} :
+                @endif
+                    @if ($manpower->daily5!='')
+                        {{ $manpower->daily5 }} 
+                    @endif
+                    @if ($manpower->monthly6!='')
+                        {{ $manpower->monthly6 }} 
+                    @endif
+                    @if ($manpower->checkstart2!='')
+                        {{ $manpower->checkstart2 }}
+                    @endif
+                    @if ($manpower->timestart2!='')
+                        {{ $manpower->timestart2 }}
+                    @endif
+                    @if ($manpower->timeend2!='')
+                    สิ้นสุด  {{ $manpower->timeend2 }}
+                    @endif
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><b>ประเภทของความต้องการ :</b>
+                @if ($manpower->hire!='')
+                    {{ $manpower->hire }} :
+                @endif 
+                    @if ($manpower->bec!='')
+                        {{ $manpower->bec }}
+                    @endif &emsp;&emsp;
+                @if ($manpower->substitute!='')
+                    {{ $manpower->substitute }}
+                    <b>ชื่อ-นามสกุล :</b> {{ $manpower->name_substitute }}
+                @endif
+            </td>
+        </tr>
     <tr>
         <td colspan="2"><b>อัตราจ้าง/salary :</b> {{ $manpower->ratesalary }}</td>
         <td colspan="2"><b>สวัสดิการอื่นๆ :</b> {{ $manpower->benefits }}</td>
