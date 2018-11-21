@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class HRSystemEmail extends Mailable
+class HREmail extends Mailable
 {
     use Queueable, SerializesModels;
     public $user;
@@ -36,6 +36,6 @@ class HRSystemEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.HR');
+        return $this->view('emails.HR_NGG');
     }
 }
