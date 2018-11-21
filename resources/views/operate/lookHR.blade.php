@@ -570,10 +570,202 @@
 
 
                           @endif
-
-
-
-
+                          
+                            <table id="customers">
+                                    <tbody>
+                                        <th style="text-align:center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></th>
+                                        <tr>
+                                            <td align="center" rowspan="2"><b>หัวข้อการประเมิน</b></td>   
+                                            <td align="center" colspan="3"><b>ระบุคะแนน</b></td>
+                                        </tr>    
+                                        <tr>
+                                            <td align="center">10-8 ดี</td>
+                                            <td align="center">7-5 พอใช้</td>
+                                            <td align="center">4-1 ปรับปรุง</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1.บุคลิกภาพ และการแต่งกาย</td>
+                                            <td align="center">@if($operate->chioce_suitability1 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability1}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability11 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability11}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability21 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability21}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.ความสุภาพ กิริยา มารยาท</td>
+                                            <td align="center">@if($operate->chioce_suitability2 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability2}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability12 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability12}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability22 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability22}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.ความเคร่งครัดต่อระเบียบวินัย</td>
+                                            <td align="center">@if($operate->chioce_suitability3 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability3}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability13 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability13}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability23 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability23}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.ความตรงต่อเวลา</td>
+                                            <td align="center">@if($operate->chioce_suitability4 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability4}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability14 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability14}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability24 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability24}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.การประพฤติต่อผู้บังคับบัญชา</td>
+                                            <td align="center">@if($operate->chioce_suitability5 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability5}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability15 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability15}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability25 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability25}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6.ทัศนคติต่องาน / บริษัท</td>
+                                            <td align="center">@if($operate->chioce_suitability6 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability6}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability16 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability16}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability26 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability26}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7.การช่วยเหลือเพื่อนร่วมงาน</td>
+                                            <td align="center">@if($operate->chioce_suitability7 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability7}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability17 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability17}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability27 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability27}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8.ลักษณะความเป็นผู้นำ</td>
+                                            <td align="center">@if($operate->chioce_suitability8 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability8}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability18 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability18}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability28 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability28}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9.ความคิดริเริ่ม สร้างสรรค์</td>
+                                            <td align="center">@if($operate->chioce_suitability9 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability9}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability19 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability19}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability29 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability29}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10.ความคิดเห็นโดยทั่วไป</td>
+                                            <td align="center">@if($operate->chioce_suitability10 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability10}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability20 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability20}}        
+                                            @endif</td>
+                                            <td align="center">@if($operate->chioce_suitability30 == 0)
+                                                - 
+                                            @else
+                                                {{$operate->chioce_suitability30}}        
+                                            @endif</td>
+                                        </tr>
+                                        <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate->sum_chioce_suitability10}}</font> คะแนน</td></tr>
+                                    </tbody>    
+                                </table>
 
 
 
