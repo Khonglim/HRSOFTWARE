@@ -54,7 +54,7 @@
                                                                    
                                                                   <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                   <input type="email" name="emailto" required class="form-control">
-                                                                  <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send1/{{$item->id}}">
+                                                                  <input type="hidden" name="link" value="https://www.hr.ngg.link/public_html/send1/{{$item->id}}">
                                                               </div>
                                                               <div class="modal-footer">
                                                                 <span id="sendData1">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
@@ -82,7 +82,7 @@
                                                                        <input type="hidden" name="id" value="{{$item['id']}}">
                                                                   <p>กรุณาระบุอีเมลล์ที่จะส่งถึงต้นสังกัดรอบที่1 60 วันหรืออื่นๆ</p>
                                                                   <input type="email" name="email1" required class="form-control">
-                                                                <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send1/{{$item->id}}">
+                                                                <input type="hidden" name="link" value="hr.ngg.link/public_html/send1/{{$item->id}}">
                                                               </div>
                                                               <div class="modal-footer">
                                                                 <span id="sendData1">    <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  
@@ -116,7 +116,7 @@
                                                                              <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="emailto" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send2/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="hr.ngg.link/public_html/send2/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       <span id="sendData2">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
@@ -144,7 +144,7 @@
                                                                       <p>กรุณาระบุอีเมลล์ที่จะส่งถึงต้นสังกัดรอบที่2 90 วัน </p>
                                                                       <input type="hidden" name="id" value="{{$item['id']}}">
                                                                       <input type="email" name="email2" required class="form-control">
-                                                                      <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send2/{{$item->id}}">
+                                                                      <input type="hidden" name="link" value="hr.ngg.link/public_html/send2/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       <span id="sendData2">   <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
@@ -174,7 +174,7 @@
                                                                              <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="emailto" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send3/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="hr.ngg.link/public_html/send3/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       <span id="sendData3">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
@@ -202,7 +202,7 @@
                                                                         <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่าย</p>
                                                                         <input type="email" name="email3" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send3/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="hr.ngg.link/public_html/send3/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       <span id="sendData3">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
@@ -234,7 +234,7 @@
                                                                              <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="emailto" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send4/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="www.hr.ngg.link/public_html/send4/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       <span id="sendData4">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
@@ -262,7 +262,7 @@
                                                                         <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการฝ่ายบุคคล</p>
                                                                         <input type="email" name="email4" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send4/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="hr.ngg.link/public_html/send4/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       <span id="sendData4">      <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
@@ -295,7 +295,7 @@
                                                                              <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="emailto" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send5/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="hr.ngg.link/public_html/send5/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       <span id="sendData5">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
@@ -328,7 +328,7 @@
                                                                              <input type="hidden" name="id" value="{{$item['id']}}">
                                                                         <p>กรุณาระบุอีเมลล์ที่จะส่งถึงผู้จัดการทั่วไป</p>
                                                                         <input type="email" name="email5" required class="form-control">
-                                                                        <input type="hidden" name="link" value="http://hr.ngg.link/public_html/send5/{{$item->id}}">
+                                                                        <input type="hidden" name="link" value="ngg.link/public_html/send5/{{$item->id}}">
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       <span id="sendData5">     <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>
