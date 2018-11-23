@@ -145,6 +145,7 @@
 
 @if( $operate->degree_enable == 1)
 {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+@csrf
 <div class="form-group">
       <div class="col-sm-12">
               <div  class="table-wrapper-scroll-y">        

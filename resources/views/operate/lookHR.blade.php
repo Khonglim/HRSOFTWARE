@@ -42,6 +42,8 @@
     
     <div class="container-fluid">
             <div class="card">
+                    {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+                    @csrf
                         <div class="card-header">ตรวจสอบการประเมิน</div>
                         <div class="card-body">
                             <div class="form-group">
@@ -778,13 +780,14 @@
 
 
                         </div>
+                        <div class="card-footer">ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน
+                                <button type="submit" class="btn btn-info pull-right">ตกลง</button>
+                                {{Form::close()}}
+                                </div>
                         </div>
                               
 
-                        <div class="card-footer">ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน
-                                    <button type="submit" class="btn btn-info pull-right">ตกลง</button>
-                                    {{Form::close()}}
-                                    </div>
+                       
                       </div>
     </div>
 
