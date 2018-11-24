@@ -47,13 +47,11 @@ function myFunction() {
           <!-- /.box-header -->
           <div class="box-body">
 @if(auth()->user()->isAdmin == '010')
-            <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ ผู้ประเมิน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();$test1 = array();$test11 = array();  $test111 = array();$test2 = array();$test22 = array();  $test222 = array();
+            <?php  $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ ผู้ประเมิน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();$test1 = array();$test11 = array();  $test111 = array();$test2 = array();$test22 = array();  $test222 = array();
             $data2 = array();$data3 = array();$data4 = array();$data5 = array(); $istest=''; $change=''; $change2=0;$data1change = array();
             $data2change = array();$data3change = array();$data4change = array();$data5change = array(); $comment1 = array();$comment2 = array();$comment3 = array();$comment4 = array();$comment5 = array(); $commentcount=0; $commenttemp=''; $posi =0; $pointo=0;
 
             ?>
-
-                         
                                 @foreach($partof as $part)
 
                                  @switch($part->id_part)

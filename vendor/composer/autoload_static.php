@@ -452,6 +452,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Employeetotest' => __DIR__ . '/../..' . '/app/Employeetotest.php',
         'App\\Evatest' => __DIR__ . '/../..' . '/app/Evatest.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Exports\\Sum_of_evaExport' => __DIR__ . '/../..' . '/app/Exports/Sum_of_evaExport.php',
         'App\\Formfor' => __DIR__ . '/../..' . '/app/Formfor.php',
         'App\\Http\\Controllers\\AnswerController' => __DIR__ . '/../..' . '/app/Http/Controllers/AnswerController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

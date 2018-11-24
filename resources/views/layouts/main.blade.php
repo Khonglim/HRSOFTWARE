@@ -307,6 +307,8 @@ body {
                                       @if(auth()->user()->isAdmin == '010')
                                       <li ><a href="{{url('/summevav2') }}">สรุปผลประเมินv2</a></li>
                                       <li class="divider"></li>
+                                      <li ><a href="{{url('/storeExcel') }}">ผลประเมินExcel</a></li>
+                                      <li class="divider"></li>
                                       @endif
                                        <li><a href="{{url('/management') }}">จัดการผู้ประเมิน</a></li>
                                        <li class="divider"></li>

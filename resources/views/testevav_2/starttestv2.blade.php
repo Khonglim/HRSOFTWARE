@@ -127,7 +127,6 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                   <?php $forms_id = $employeetotest->nee_id_form; ?>
                     {{Form::text('forms1_id',$employeetotest->nee_id_form)}}
                      {{Form::text('nee_id2',$employeetotest->nee_id)}}
-
                     </div>
                     <div class="row" style="text-align: center;">
                       <div class="col-md-8">
