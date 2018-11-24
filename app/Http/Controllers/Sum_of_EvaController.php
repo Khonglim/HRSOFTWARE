@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Sum_of_eva;
 use App\Ngg_evaluate_resultv2;
 use App\Ngg_evaresult_commentv2;
+use App\Extensions\MongoSessionStore;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Input;
 
 class Sum_of_EvaController extends Controller

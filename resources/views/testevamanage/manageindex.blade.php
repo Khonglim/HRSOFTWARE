@@ -19,6 +19,7 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+            <?php $i=0;?>
             <table id="employee" class="table table-bordered table-striped">
               <thead>
               <tr>
@@ -34,7 +35,8 @@
                
                <tr>
                @forelse($employeetotest as $emp)
-                <td>{{$emp->nee_id}}</td>
+                <?php $i++;?>
+                <td>{{$i}}</td>
                @forelse($ngg_employee as $ngg_empl)
                 @if($ngg_empl->nem_id == $emp->nee_is_employee )
                 <?php $emp_tepm1 = $ngg_empl->nem_thai_firstname?>
