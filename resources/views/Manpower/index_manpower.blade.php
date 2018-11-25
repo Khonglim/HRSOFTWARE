@@ -50,8 +50,8 @@
                                                 <div class="modal-body">
                                                     {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
                                                     @csrf
-                                                  <p>คัดลอก link {{$item->requested}}</p>
-                                                  <input type="email" name="mail" required class="form-control">
+                                                  <p>คัดลอก link </p>
+                                                 
                                                  
                                                   <label for="">http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit</label>
                                                 </div>
