@@ -45,7 +45,7 @@
                                               <div class="modal-content">
                                                 <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">ส่งเมลล์</h4>
+                                                  <h4 class="modal-title">ยืนยัน link</h4>
                                                 </div>
                                                 <div class="modal-body">
                                                     {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
@@ -56,7 +56,7 @@
                                                   <label for="">http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit</label>
                                                 </div>
                                                 <div class="modal-footer">
-                                                <span id="sendData"> <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>  
+                                                <span id="sendData"> <button type="summit" class="btn btn-danger">ยืนยัน</button>  </span>  
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
                                                 </div>
                                                 {{ Form::close() }}
