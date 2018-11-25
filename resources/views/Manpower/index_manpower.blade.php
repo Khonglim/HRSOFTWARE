@@ -50,9 +50,10 @@
                                                 <div class="modal-body">
                                                     {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
                                                     @csrf
-                                                  <p>คุณต้องการส่งเมลล์ใช่หรือไม่ คำขอกำลังคนของ{{$item->requested}}</p>
+                                                  <p>คัดลอก link {{$item->requested}}</p>
                                                   <input type="email" name="mail" required class="form-control">
-                                                  <input type="hidden" name="link" value="http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit">
+                                                 
+                                                  <label for="">http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit</label>
                                                 </div>
                                                 <div class="modal-footer">
                                                 <span id="sendData"> <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>  
