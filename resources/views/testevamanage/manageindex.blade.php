@@ -19,6 +19,7 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+            <?php $i=0;?>
             <table id="employee" class="table table-bordered table-striped">
               <thead>
               <tr>
@@ -26,6 +27,7 @@
                 <th>ผู้ประเมิน</th>
                 <th>ผู้ถูกประเมิน</th>
                 <th>ชุดการประเมิน</th>
+                <th>สถานะการประเมิน</th>
                 <th>จัดการ</th>
               </tr>
               </thead>
@@ -33,7 +35,8 @@
                
                <tr>
                @forelse($employeetotest as $emp)
-                <td>{{$emp->nee_id}}</td>
+                <?php $i++;?>
+                <td>{{$i}}</td>
                @forelse($ngg_employee as $ngg_empl)
                 @if($ngg_empl->nem_id == $emp->nee_is_employee )
                 <?php $emp_tepm1 = $ngg_empl->nem_thai_firstname?>
@@ -51,7 +54,14 @@
                <td>{{$form->form}}</td>
                 @endif
                @endforeach
-                
+               @if($emp->nee_recheck == false)
+                 <td><span><i class="fa fa-check fa-lg" aria-hidden="true" style="color: #45e600"></i></span></td>
+               @else
+               <td><span><i class="fa fa-times fa-lg" aria-hidden="true" style="color: #ff3300"></i></span></td>
+               @endif
+               
+
+                    
              <td>  
                   <a href="{{'management/'.$emp['nee_id'].'/edit'}}" class="btn btn-warning btn-xs " ><i class="fa fa-pencil"></i></a>
                   <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal{{$emp['nee_id']}}"><i class=" fa fa-trash"></i></button>
@@ -93,6 +103,7 @@
                   <th>ผู้ประเมิน</th>
                 <th>ผู้ถูกประเมิน</th>
                 <th>ชุดการประเมิน</th>
+                <th>สถานะการประเมิน</th>
                 <th>จัดการ</th>
               </tr>
               </tfoot>

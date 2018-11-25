@@ -13,6 +13,11 @@
     top: 48px;
     right: 75px;
 }
+#save {
+    position: absolute;
+    top: 48px;
+    right: 135px;
+}
 .chart {
   width: 100%; 
   min-height: 400px;
@@ -45,6 +50,10 @@ function myFunction() {
           <!-- /.box-header -->
           <div class="box-body">
 @if(auth()->user()->isAdmin == '010')
+
+ {{Form::open(['url'=>'storeExcel'])}}
+            @csrf
+
             <?php    $i=0; $count=0; $count2=0;  $j=0; $k=0; $p1=0;  $p2=0; $p3=0;  $p4=0; $p5=0; $p1final=0;  $p2final=0; $p3final=0;  $p4final=0; $p5final=0; $a='ชื่อ ผู้ประเมิน'; $b='';  $c=''; $d='';  $e=''; $f=''; $totle=0; $tester='';  $data1 = array();
             $data2 = array();$data3 = array();$data4 = array();$data5 = array(); $istest=''; $change=''; $change2=0;$data1change = array();
             $data2change = array();$data3change = array();$data4change = array();$data5change = array(); $comment1 = array();$comment2 = array();$comment3 = array();$comment4 = array();$comment5 = array(); $commentcount=0; $commenttemp=''; ?>
@@ -74,8 +83,10 @@ function myFunction() {
                           <div id="swapname"> <a href="{{'evareportblindnamev2_leader'}}" class="btn btn-primary btn-lg" ><i class="fa fa-eye-slash fa-6" aria-hidden="true"></i></a></div>
 
                           <div id="report" > <a href="{{'print_report_leader'}}" class="btn btn-primary btn-lg" ><i class="fa fa-print fa-6" aria-hidden="true"></i></a></div>
+                          
+                          <div id="save" >
+                            <button class='btn btn-primary btn-lg' type='submit'><i class='fa fa-table fa-6'></i></button> </div>
 
-        
                           <button  type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="myFunction()" >ตารางแสดงผล</button>
 
                         <div id="myDIV" style="display: none;">
@@ -111,7 +122,10 @@ function myFunction() {
                             <?php   $istest=$ngg_emp->nem_thai_firstname; ?>
                             @endif
                           @endforeach
-
+                              <div >
+                                {{Form::text('name_is_employee',$istest)}}
+                                {{Form::text('form','leader')}}
+                              </div>
                           @foreach($point as $pointt)
                           <?php $i++; $j+=$pointt->nes_q_point;?>
 
@@ -138,6 +152,9 @@ function myFunction() {
 
                             @if($i==24)
                              <?php $change2++; $j=0; $i=0; $change= $pointt->nem_thai_firstname; ?>
+                             <div ><input name="name_by_employee_{{$change2}}" type="text" value={{$change}}></div>
+                              
+
                       @foreach($ngg_evaresult_comment as $ngg_comment )
 
                     @if($pointt->nes_evaluate_employee_id == $ngg_comment->nec_evaluate_employee_id)
@@ -178,7 +195,10 @@ function myFunction() {
                             <td  style="width: 10%;height: 40px;">{{$p3}}<?php  $p3final+=$p3;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p4}}<?php  $p4final+=$p4;?></td>
                             <td  style="width: 10%;height: 40px;">{{$p5}}<?php  $p5final+=$p5;?></td>
+
                             </tr>
+                            <?php $sum = $p1+$p2+$p3+$p4+$p5; ?>
+                            <div ><input name='point_{{$change2}}' type="text" value={{$sum}}></div>
                             
 
                                              
@@ -219,7 +239,6 @@ function myFunction() {
                       $p5final=number_format($p5final/$count, 2); 
                       $totle= $p1final+$p2final+$p3final+$p4final+$p5final; ?>
 
-           
 
                       <br><br>
 
@@ -871,5 +890,5 @@ function myFunction() {
   </div>
 </div>
     
-   
+                                      {{ Form::close()}} 
   @endsection

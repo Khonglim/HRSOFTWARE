@@ -20,6 +20,7 @@ return array(
     'App\\Employeetotest' => $baseDir . '/app/Employeetotest.php',
     'App\\Evatest' => $baseDir . '/app/Evatest.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Exports\\Sum_of_evaExport' => $baseDir . '/app/Exports/Sum_of_evaExport.php',
     'App\\Formfor' => $baseDir . '/app/Formfor.php',
     'App\\Http\\Controllers\\AnswerController' => $baseDir . '/app/Http/Controllers/AnswerController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
