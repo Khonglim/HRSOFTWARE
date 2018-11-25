@@ -139,6 +139,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         ),
         'J' => 
         array (
+            'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
         'I' => 
@@ -328,6 +329,10 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'JakubOnderka\\PhpConsoleHighlighter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
+        ),
         'JakubOnderka\\PhpConsoleColor\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
@@ -421,13 +426,6 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
             ),
         ),
-        'J' => 
-        array (
-            'JakubOnderka\\PhpConsoleHighlighter' => 
-            array (
-                0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
-            ),
-        ),
         'D' => 
         array (
             'Doctrine\\Common\\Lexer\\' => 
@@ -494,6 +492,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Http\\Controllers\\Reset_staff_operController' => __DIR__ . '/../..' . '/app/Http/Controllers/Reset_staff_operController.php',
         'App\\Http\\Controllers\\Reset_sup_operController' => __DIR__ . '/../..' . '/app/Http/Controllers/Reset_sup_operController.php',
         'App\\Http\\Controllers\\SectorController' => __DIR__ . '/../..' . '/app/Http/Controllers/SectorController.php',
+        'App\\Http\\Controllers\\Sum_of_EvaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sum_of_EvaController.php',
         'App\\Http\\Controllers\\TestdiscController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestdiscController.php',
         'App\\Http\\Controllers\\TestmbtiController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestmbtiController.php',
         'App\\Http\\Controllers\\TimeattendantController' => __DIR__ . '/../..' . '/app/Http/Controllers/TimeattendantController.php',
@@ -543,6 +542,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'App\\Question' => __DIR__ . '/../..' . '/app/Question.php',
         'App\\Questionv2' => __DIR__ . '/../..' . '/app/Questionv2.php',
         'App\\Scoreinterview' => __DIR__ . '/../..' . '/app/Scoreinterview.php',
+        'App\\Sum_of_eva' => __DIR__ . '/../..' . '/app/Sum_of_eva.php',
         'App\\Test' => __DIR__ . '/../..' . '/app/Test.php',
         'App\\Testdisc' => __DIR__ . '/../..' . '/app/Testdisc.php',
         'App\\Testmbti' => __DIR__ . '/../..' . '/app/Testmbti.php',
@@ -2055,7 +2055,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'InterviewTableSeeder' => __DIR__ . '/../..' . '/database/seeds/InterviewTableSeeder.php',
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
-        'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -2331,6 +2331,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Monolog\\Handler\\HandlerWrapper' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/HandlerWrapper.php',
         'Monolog\\Handler\\HipChatHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/HipChatHandler.php',
         'Monolog\\Handler\\IFTTTHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php',
+        'Monolog\\Handler\\InsightOpsHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/InsightOpsHandler.php',
         'Monolog\\Handler\\LogEntriesHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php',
         'Monolog\\Handler\\LogglyHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/LogglyHandler.php',
         'Monolog\\Handler\\MailHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/MailHandler.php',
@@ -2369,11 +2370,15 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Monolog\\Processor\\MemoryUsageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php',
         'Monolog\\Processor\\MercurialProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MercurialProcessor.php',
         'Monolog\\Processor\\ProcessIdProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/ProcessIdProcessor.php',
+        'Monolog\\Processor\\ProcessorInterface' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/ProcessorInterface.php',
         'Monolog\\Processor\\PsrLogMessageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/PsrLogMessageProcessor.php',
         'Monolog\\Processor\\TagProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/TagProcessor.php',
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+        'Monolog\\ResettableInterface' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ResettableInterface.php',
+        'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
+        'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
         'Mpdf\\Barcode' => __DIR__ . '/..' . '/mpdf/mpdf/src/Barcode.php',
         'Mpdf\\Barcode\\AbstractBarcode' => __DIR__ . '/..' . '/mpdf/mpdf/src/Barcode/AbstractBarcode.php',
         'Mpdf\\Barcode\\BarcodeException' => __DIR__ . '/..' . '/mpdf/mpdf/src/Barcode/BarcodeException.php',
@@ -2443,10 +2448,13 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Mpdf\\Pdf\\Protection\\UniqidGenerator' => __DIR__ . '/..' . '/mpdf/mpdf/src/Pdf/Protection/UniqidGenerator.php',
         'Mpdf\\QrCode\\QrCode' => __DIR__ . '/..' . '/mpdf/mpdf/src/QrCode/QrCode.php',
         'Mpdf\\QrCode\\QrCodeException' => __DIR__ . '/..' . '/mpdf/mpdf/src/QrCode/QrCodeException.php',
+        'Mpdf\\RemoteContentFetcher' => __DIR__ . '/..' . '/mpdf/mpdf/src/RemoteContentFetcher.php',
+        'Mpdf\\ServiceFactory' => __DIR__ . '/..' . '/mpdf/mpdf/src/ServiceFactory.php',
         'Mpdf\\Shaper\\Indic' => __DIR__ . '/..' . '/mpdf/mpdf/src/Shaper/Indic.php',
         'Mpdf\\Shaper\\Myanmar' => __DIR__ . '/..' . '/mpdf/mpdf/src/Shaper/Myanmar.php',
         'Mpdf\\Shaper\\Sea' => __DIR__ . '/..' . '/mpdf/mpdf/src/Shaper/Sea.php',
         'Mpdf\\SizeConverter' => __DIR__ . '/..' . '/mpdf/mpdf/src/SizeConverter.php',
+        'Mpdf\\Strict' => __DIR__ . '/..' . '/mpdf/mpdf/src/Strict.php',
         'Mpdf\\TTFontFile' => __DIR__ . '/..' . '/mpdf/mpdf/src/TTFontFile.php',
         'Mpdf\\TTFontFileAnalysis' => __DIR__ . '/..' . '/mpdf/mpdf/src/TTFontFileAnalysis.php',
         'Mpdf\\TableOfContents' => __DIR__ . '/..' . '/mpdf/mpdf/src/TableOfContents.php',
@@ -2565,6 +2573,19 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Mpdf\\Utils\\NumericString' => __DIR__ . '/..' . '/mpdf/mpdf/src/Utils/NumericString.php',
         'Mpdf\\Utils\\PdfDate' => __DIR__ . '/..' . '/mpdf/mpdf/src/Utils/PdfDate.php',
         'Mpdf\\Utils\\UtfString' => __DIR__ . '/..' . '/mpdf/mpdf/src/Utils/UtfString.php',
+        'Mpdf\\Writer\\BackgroundWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/BackgroundWriter.php',
+        'Mpdf\\Writer\\BaseWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/BaseWriter.php',
+        'Mpdf\\Writer\\BookmarkWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/BookmarkWriter.php',
+        'Mpdf\\Writer\\ColorWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/ColorWriter.php',
+        'Mpdf\\Writer\\FontWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/FontWriter.php',
+        'Mpdf\\Writer\\FormWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/FormWriter.php',
+        'Mpdf\\Writer\\ImageWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/ImageWriter.php',
+        'Mpdf\\Writer\\JavaScriptWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/JavaScriptWriter.php',
+        'Mpdf\\Writer\\MetadataWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/MetadataWriter.php',
+        'Mpdf\\Writer\\ObjectWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/ObjectWriter.php',
+        'Mpdf\\Writer\\OptionalContentWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/OptionalContentWriter.php',
+        'Mpdf\\Writer\\PageWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/PageWriter.php',
+        'Mpdf\\Writer\\ResourceWriter' => __DIR__ . '/..' . '/mpdf/mpdf/src/Writer/ResourceWriter.php',
         'NationalityTableSeeder' => __DIR__ . '/../..' . '/database/seeds/NationalityTableSeeder.php',
         'Ngg_companyTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Ngg_companyTableSeeder.php',
         'Ngg_departmentTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Ngg_departmentTableSeeder.php',
@@ -3555,6 +3576,7 @@ class ComposerStaticInit109a741d4843f49eafba93b948961494
         'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/NullLogger.php',
         'Psr\\Log\\Test\\DummyTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+        'Psr\\Log\\Test\\TestLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/TestLogger.php',
         'Psr\\SimpleCache\\CacheException' => __DIR__ . '/..' . '/psr/simple-cache/src/CacheException.php',
         'Psr\\SimpleCache\\CacheInterface' => __DIR__ . '/..' . '/psr/simple-cache/src/CacheInterface.php',
         'Psr\\SimpleCache\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/simple-cache/src/InvalidArgumentException.php',
