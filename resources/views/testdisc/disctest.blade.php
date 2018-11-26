@@ -10,15 +10,19 @@
                     {{Form::open(['url'=>'testdisc','method'=>'POST'])}}
                     @csrf
                   <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-md-12">
                         <div align="right">
                             <label class="col-xs-3">ชื่อ :</label>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-md-3">
                             {{Form::text('name','',['class'=>'form-control','required','placeholder'=>"กรุณาระบุชื่อ"])}}   
                            
                         </div>
-                        <div class="col-xs-3">
+                        <br><br>
+                        <div align="right">
+                            <label class="col-xs-3">นามสกุล:</label>
+                        </div>
+                        <div class="col-md-3">
                             {{Form::text('lastname','',['class'=>'form-control','required','placeholder'=>"กรุณาระบุนามสกุล"])}}    
                      
                         </div>
