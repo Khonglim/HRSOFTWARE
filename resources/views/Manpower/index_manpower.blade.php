@@ -135,9 +135,9 @@
                                         <b class="text-danger">ยังไม่อนุมัติลายเซ็นจากประธาน/</b>  
                                     @endif
                                     @if($item->Send_enable == 1)
-                                    <b class="text-success"> ส่งเมลล์แล้ว</b>
+                                    <b class="text-success">คัดลอกแล้ว</b>
                                     @else
-                                    <b class="text-danger">ยังไม่ได้ส่งเมลล์</b>  
+                                    <b class="text-danger">ยังไม่ได้คัดลอกแล้ว</b>  
                                     @endif
 
 
