@@ -287,8 +287,7 @@ body {
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">แบบประเมินต่างๆ<span class="caret"></span></a>
                           <ul class="dropdown-menu" role="menu">
                               <li ><a href="{{url('/interview') }}"><span>แบบประเมินผลสัมภาษณ์</span></a></li>
-                              <li class="divider"></li>
-                              <li ><a href="{{url('/operate_employf')  }}"><span>แบบประเมินผลการปฏิบัติงาน</span></a></li>
+                            
                               <li class="divider"></li>
                               <li ><a href="{{url('Operate/create')}}"><span>ประเมินทดลองงาน</span></a></li>
                           </ul>
@@ -299,10 +298,7 @@ body {
                                 <li ><a href="{{url('/summbti') }}"><span>รายงานผลทดสอบ MBTI</span></a></li>
                                 <li class="divider"></li>
                                 <li ><a href="{{url('/sumdisc') }}"><span>รายงานผลทดสอบ DISC</span></a></li>
-                                <li class="divider"></li>
-                                <li ><a href="{{url('/operate_report*')  }}"><span>รายงานทดลองงานปฏิบัติการ</span></a></li>
-                                <li class="divider"></li>
-                                <li><a href="{{url('/operate_report**')  }}"><span>รายงานทดลองงานบังคับบัญชา</span></a></li>
+                              
                                 <li class="divider"></li>
                                 <li><a href="{{url('/con_all') }}"><span>รายงานการทดสอบทั้งหมด</span></a></li>
                                 <li class="divider"></li>
