@@ -6,7 +6,12 @@
     
     font-size: 16px;
 }
-
+.table-wrapper-scroll-y {
+  display: block;
+  max-height: 1000px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 </style>
    <?php  $i=1;     $r=1; 
                  $l=45;  
@@ -69,8 +74,8 @@
                                                 </div> 
                                             </div>
                                         </div>
-    
-                                        <table class="table table-hover">
+                                        <div class="table-wrapper-scroll-y">
+                                        <table class="table table-hover" > 
                                 <thead>
                                   <tr>
                                     <th style="text-align:center" >D</th>
@@ -84,7 +89,7 @@
                                          
                                   <tr>
                       
-                                      <td >
+                                      <td class="text-nowrap">
                                       
                                       <select name="chioe{{$a++}}" id="chioe{{$aa++}}" class="uniqueSelection{{$i++}}"  required>
                                               
@@ -94,7 +99,7 @@
                                                 <option value=4>4</option>
                                               </select>&emsp;{{$dis->choice1}}
                                       </td>
-                                       <td>
+                                       <td class="text-nowrap">
                            
                                              
                                     <select name="chioe{{$t++}}"  id="chioe{{$tt++}}"  class="uniqueSelection{{$y++}}" required>
@@ -106,7 +111,7 @@
                                           </select>&emsp;{{$dis->choice2}}
                                           
                                        </td>
-                                       <td>
+                                       <td class="text-nowrap">
                                         <select name="chioe{{$w++}}"  id="chioe{{$ww++}}"  class="uniqueSelection{{$h++}}" required>
                                           
                                             <option value=1>1</option>
@@ -115,7 +120,7 @@
                                             <option value=4>4</option>
                                           </select>&emsp;{{$dis->choice3}}
                                        </td>
-                                       <td>
+                                       <td class="text-nowrap">
                                           
                                         <select name="chioe{{$l++}}" id="chioe{{$ll++}}"   class="uniqueSelection{{$q++}}" required>
                                           
@@ -130,6 +135,7 @@
                                 @endforeach
                               </tbody>
                             </table>
+                                        </div>
     
                             <div class="box-footer">
     

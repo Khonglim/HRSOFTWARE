@@ -124,6 +124,10 @@ Route::resource('management','EvamanagementController');
 
 Route::get('officer_or_manager','Management2Controller@index')->middleware('auth');
 
+Route::get('exportExcel','EvareportController@Sum_eva')->middleware('auth');
+
+Route::resource('storeExcel','Sum_of_EvaController');
+
 Route::resource('timeattendant','TimeattendantController');
 
 Route::resource('nggemployee','NggemployeeController');

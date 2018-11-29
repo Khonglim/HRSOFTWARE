@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\User;
 use App\Formfor;
+use App\Exports\Sum_of_evaExport;
 use App\Partofv2;
 use App\Questionv2;
 use App\Ngg_department;
@@ -16,6 +18,8 @@ use App\Employeetotest;
 use App\Timeattendant;
 use App\Ngg_evaluate_resultv2;
 use App\Ngg_evaresult_commentv2;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Input;
 
 class EvareportController extends Controller
@@ -112,5 +116,15 @@ class EvareportController extends Controller
         }
         
         
+    }
+     public function Sum_eva()
+    {
+        //$users = User::all();
+       // $data = array(
+              //  'users' => $users
+           // );
+       // return view('evareport/sum_of_eava_excel',$data);
+        return Excel::download(new Sum_of_evaExport, 'EvaluaionTestResult.xlsx');
+    
     }
 }

@@ -114,12 +114,7 @@ class ManpowerController extends Controller
         $manpower->knowledge_name = $request->knowledge_name;
         $manpower->other_skill_name = $request->other_skill_name;
         $manpower->save();
-        $mail_hr = Email_HR::all();
-       foreach($mail_hr as $emails   ){
-           if( $emails->email_enable == 1){
-            Mail::to( $emails->email_hr)->send(new Alert());
-           }
-       }
+        
        
         Session::flash('flash_message','บันทึกเรียบร้อย!! และส่งอีเมลล์แจ้งฝ่ายบุคคลแล้วค่ะ');
         return view('Manpower.manpowercreate');

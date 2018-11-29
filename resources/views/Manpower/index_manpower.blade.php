@@ -45,17 +45,18 @@
                                               <div class="modal-content">
                                                 <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">ส่งเมลล์</h4>
+                                                  <h4 class="modal-title">ยืนยัน link</h4>
                                                 </div>
                                                 <div class="modal-body">
                                                     {{Form::open(['route'=>['Email_send.update',$item->id],'method'=>'PUT','id'=>'inviter'])}}
                                                     @csrf
-                                                  <p>คุณต้องการส่งเมลล์ใช่หรือไม่ คำขอกำลังคนของ{{$item->requested}}</p>
-                                                  <input type="email" name="mail" required class="form-control">
-                                                  <input type="hidden" name="link" value="http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit">
+                                                  <p>คัดลอก link </p>
+                                                 
+                                                 
+                                                  <label for="">http://hr.ngg.link/public_html/manpower/{{$item->id}}/edit</label>
                                                 </div>
                                                 <div class="modal-footer">
-                                                <span id="sendData"> <button type="summit" class="btn btn-danger">ส่งเมลล์</button>  </span>  
+                                                <span id="sendData"> <button type="summit" class="btn btn-danger">ยืนยัน</button>  </span>  
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
                                                 </div>
                                                 {{ Form::close() }}
@@ -134,9 +135,9 @@
                                         <b class="text-danger">ยังไม่อนุมัติลายเซ็นจากประธาน/</b>  
                                     @endif
                                     @if($item->Send_enable == 1)
-                                    <b class="text-success"> ส่งเมลล์แล้ว</b>
+                                    <b class="text-success">คัดลอกแล้ว</b>
                                     @else
-                                    <b class="text-danger">ยังไม่ได้ส่งเมลล์</b>  
+                                    <b class="text-danger">ยังไม่ได้คัดลอกแล้ว</b>  
                                     @endif
 
 

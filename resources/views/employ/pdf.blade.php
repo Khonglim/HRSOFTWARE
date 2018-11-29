@@ -1,7 +1,6 @@
 <html>
 
 <head>
-
     <style>
         body {
             font-family: 'examplefont', sans-serif;
