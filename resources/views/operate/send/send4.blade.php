@@ -676,7 +676,7 @@
                                      
                                         </div>
                            
-                                <br>( คุณ{{$operate->namerate_suitability}} )<br>ผู้จัดการฝ่าย</p>
+                                <br>( คุณ{{$operate->namerate_suitability}} )<br>ผู้จัดการฝ่าย
                             </center>
                         @endif  
                     </td>
