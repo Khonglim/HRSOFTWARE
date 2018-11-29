@@ -44,7 +44,7 @@
             </style>
     
     <div class="container-fluid">
-            @if ($operate->degree == 1)
+            @if ($operate->degree_enable == 1)
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
             @else
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
@@ -676,7 +676,7 @@
                                      
                                         </div>
                            
-                                <br>( คุณ{{$operate->namerate_suitability}} )<br>ผู้จัดการฝ่าย</p>
+                                <br>( คุณ{{$operate->namerate_suitability}} )<br>ผู้จัดการฝ่าย
                             </center>
                         @endif  
                     </td>

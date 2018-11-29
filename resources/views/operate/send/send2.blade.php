@@ -44,7 +44,7 @@
             </style>
     
     <div class="container-fluid">
-            @if ($operate->degree == 1)
+            @if ($operate->degree_enable == 1)
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
             @else
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
@@ -336,6 +336,22 @@
             </div>
           </div>
 </div>
+<div class="row">
+      
+        <div class="form-group"> 
+              <div class="col-md">
+                    <label>จุดเด่น</label>
+                      <textarea class="form-control" rows="3" name="assessor2" readonly>{{$operate->comments_featured}}</textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+    <div class="form-group"> 
+          <div class="col-md">
+                <label>จุดด้อย</label>
+                  <textarea class="form-control" rows="3" name="assessor2" readonly>{{$operate->comments_weakness}} </textarea>
+                </div>
+              </div>
+    </div>
 <div class="form-group">
 
       <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>

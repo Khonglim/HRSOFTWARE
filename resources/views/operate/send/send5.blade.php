@@ -44,7 +44,7 @@
             </style>
     
     <div class="container-fluid">
-            @if ($operate->degree == 1)
+            @if ($operate->degree_enable == 1)
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
             @else
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
@@ -720,7 +720,48 @@
                                     </div>
                             </div>
                     
-
+                            <table id="customers">
+                                    <tbody>
+                                        <tr><td align="center"><b>เฉพาะฝ่ายทรัพยากรบุคคล</b></td></tr>
+                                        <tr>
+                                            <td>
+                                                    @if($operate->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
+                                                        <input type="checkbox" checked="checked" disabled>ให้บรรจุเป็นพนักงานประจำ
+                                                    @endif
+                                                    @if($operate->human_resource_modi == 'ปรับอัตราเงินเดือน')
+                                                        <input type="checkbox" checked="checked" disabled>ปรับอัตราเงินเดือน <u>{{$operate->human_resource_commo}}</u>
+                                                    <br>@endif
+                                                    @if($operate->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
+                                                        <input type="checkbox" checked="checked" disabled>ยังไม่ปรับอัตราเงินเดือน <u>{{$operate->human_resource_comno}}</u>
+                                                    <br>@endif
+                                                    @if($operate->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
+                                                    <input type="checkbox" checked="checked" disabled>ให้ปรับตำแหน่งเป็น <u>{{$operate->human_resource_posi}}</u> และปรับเงินเดือน
+                                                    <br>@endif
+                                                    @if($operate->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
+                                                        <input type="checkbox" checked="checked"  disabled>ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate->human_resource_date}}</u>
+                                                    <br>@endif 
+                                                    @if($operate->human_resource_other == 'อื่นๆ')
+                                                        <input type="checkbox" checked="checked" disabled>อื่นๆ <u>{{$operate->human_resource_othercom}}</u>
+                                                    <br>@endif 
+                                            </td>
+                                             <tr>
+                                                 <td align="center">
+                                                     <br> <br>
+                                                        <div class="sig3">
+                                                                <div class="sigWrapper">
+                                                                
+                                                                  <canvas class="pad" width="198" height="55"></canvas>
+                                                                </div>
+                                                           
+                                                              </div>
+                                                 @if($operate->human_resource_nre != '')
+                                               ( คุณ{{$operate->human_resource_nre}} )
+                                               <br>ฝ่ายทรัพยากรบุคคล
+                                                @endif
+                                            </td>
+                                        </tr>       
+                                    </tbody>
+                                </table>
 
                         {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
                         @csrf
@@ -754,6 +795,7 @@
                         <div class="col-md-6">
                                 <div class="form-group"></div>
                                 <div class="form-group">
+                                    
                                     <div class="checkbox">
                                         <div class="col-md">
                                                 <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น "  name="manager_resource_adjust"> ให้ปรับตำแหน่งเป็น:</label> <input type="text"  name="manager_resource_posi" class="form-control">

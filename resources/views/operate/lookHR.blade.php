@@ -5,6 +5,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Operate</title>
+      <link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+      <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Prompt">
       <style>
@@ -46,6 +50,7 @@
                     @csrf
                         <div class="card-header">ตรวจสอบการประเมิน</div>
                         <div class="card-body">
+                              
                             <div class="form-group">
                                 <div class="row">
                                             <div class="col-md-4 ">
@@ -157,17 +162,17 @@
 
                                 </tr>
                                 <tr>
-                                  <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate_60_2" id="startrate_60_2"  > <br><br>
-                                    ถึงวันที่    <input type="text" name="endrate_60_2" id="endrate_60_2" >
+                                <td style="text-align:center">ตั้งแต่วันที่  <input type="text" name="startrate_60_2" id="startrate_60_2" value="{{$operate->startwork_60}}"  > <br><br>
+                                ถึงวันที่    <input type="text" name="endrate_60_2" id="endrate_60_2" value="{{$operate->endwork_60}}">
 
 
                                 </td>
-                                  <td style="text-align:center"> <input type="text" name="sick"   id="sick"   style="width:50px" > </td>
-                                  <td style="text-align:center"><input type="text" name="errand"  id="errand"  style="width:50px" ></td>
-                                  <td style="text-align:center"><input type="text" name="absence"  id="absence"  style="width:50px" ></td>
-                                  <td style="text-align:center"><input type="text"   name="vacation" id="vacation"  style="width:50px"></td>
-                                  <td style="text-align:center"><input type="text"  name="line"  id="line"   style="width:50px"></td>
-                                  <td style="text-align:center"><input type="text"  name="min"   id="min"  style="width:50px"></td>
+                            <td style="text-align:center"> <input type="text" name="sick"   id="sick"   style="width:50px"  value="{{$operate->sick_leave_60}}"> </td>
+                            <td style="text-align:center"><input type="text" name="errand"  id="errand"  style="width:50px" value="{{$operate->errand_leave_60}}"></td>
+                            <td style="text-align:center"><input type="text" name="absence"  id="absence"  style="width:50px" value="{{$operate->absence_60}}"></td>
+                            <td style="text-align:center"><input type="text"   name="vacation" id="vacation"  style="width:50px" value="{{$operate->vacation_60}}"></td>
+                            <td style="text-align:center"><input type="text"  name="line"  id="line"   style="width:50px" value="{{$operate->line_terms_60}}"></td>
+                            <td style="text-align:center"><input type="text"  name="min"   id="min"  style="width:50px" value="{{$operate->line_min_60}}"></td>
 
                                 </tr>
                               </table>
@@ -194,17 +199,17 @@
 
                                             </tr>
                                             <tr>
-                                              <td style="text-align:center">ตั้งแต่วันที่  <input type="text" id="startrate_90" name="startrate_90"  > <br><br>
-                                                ถึงวันที่    <input type="text" id="endrate_90"  name="endrate_90"   >
+                                            <td style="text-align:center">ตั้งแต่วันที่  <input type="text" id="startrate_90" name="startrate_90" value="{{$operate->startwork_90}}" > <br><br>
+                                            ถึงวันที่    <input type="text" id="endrate_90"  name="endrate_90"  value="{{$operate->endtwork_90}}">
 
 
                                             </td>
-                                              <td style="text-align:center"> <input type="text" name="sick_90"   id="sick_90"     style="width:50px" > </td>
-                                              <td style="text-align:center"><input type="text" name="errand_90"    id="errand_90"   style="width:50px" ></td>
-                                              <td style="text-align:center"><input type="text" name="absence_90"     id="absence_90"    style="width:50px" ></td>
-                                              <td style="text-align:center"><input type="text"   name="vacation_90"   id="vacation_90"   style="width:50px"  ></td>
-                                              <td style="text-align:center"><input type="text"  name="line_90"    id="line_90"   style="width:50px"  ></td>
-                                              <td style="text-align:center"><input type="text"  name="min_90"    id="min_90"  style="width:50px"  ></td>
+                                        <td style="text-align:center"> <input type="text" name="sick_90"   id="sick_90"  value="{{$operate->sick_leave_90}}"   style="width:50px" > </td>
+                                        <td style="text-align:center"><input type="text" name="errand_90"    id="errand_90" value="{{$operate->errand_leave_90}}"  style="width:50px" ></td>
+                                        <td style="text-align:center"><input type="text" name="absence_90"     id="absence_90"  value="{{$operate->absence_90}}"  style="width:50px" ></td>
+                                        <td style="text-align:center"><input type="text"   name="vacation_90"   id="vacation_90" value="{{$operate->vacation_90}}"  style="width:50px"  ></td>
+                                        <td style="text-align:center"><input type="text"  name="line_90"    id="line_90" value="{{$operate->line_terms_90}}"  style="width:50px"  ></td>
+                                        <td style="text-align:center"><input type="text"  name="min_90"    id="min_90" value="{{$operate->line_min_90}}" style="width:50px"  ></td>
 
                                             </tr>
 
@@ -225,8 +230,45 @@
                                 </div>
 
                           </div>
+                          <div class="form-group">
+                                <div class="col-sm-12">
+                
+                                        <table id="customers">
+                                                <tr>
+                                                  <th COLSPAN="3" style="text-align:center">สรุปผลการประเมิน</th>
+                
+                                                </tr>
+                                                <tr>
+                                                  <td style="text-align:center">ประเภทการประเมิน</td>
+                                                  <td style="text-align:center">คะแนนเต็ม</td>
+                                                  <td style="text-align:center">คะแนนที่ได้</td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="width:35%" >1. การประเมินผลการปฏิบัติงาน
+                                                        โดย <b> ผู้บังคับบัญชา </b>
+                                                     </td>
+                                                  <td style="text-align:center">100
+                                                    </td>
+                                                  <td style="text-align:center"> {{$operate->subtotal_final}}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>2. การประเมินผลการปฏิบัติงาน
+                                                        โดย <b> ผู้จัดการฝ่าย </b></td>
+                                                  <td style="text-align:center">100</td>
+                                                  <td style="text-align:center">{{$operate->sum_chioce_suitability10}}</td>
+                                                </tr>
+                
+                                              </table>
+                
+                
+                                </div>
+                        </div>
                           @if( $operate->degree_enable == 1)
-
+                          <input type="hidden" value="{{$operate->signa1_60}}" id="sig0">
+                      <input type="hidden" value="{{$operate->signa1_90}}" id="sig1">
+                      <input type="hidden" value="{{$operate->signa2}}" id="sig2">
+                      <input type="hidden" value="{{$operate->signa3}}" id="sig3">
+                      <input type="hidden" value="{{$operate->signa4}}" id="sig4">
                           <div class="form-group">
                             <div class="col-sm-12">
                                     <div  class="table-wrapper-scroll-y">        
@@ -239,7 +281,7 @@
 
                       </tr>
                       <tr>
-                        <td align="center" colspan="2">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
+                        <td align="center" colspan="2">ประเมินรอบ</td>
 
 
                       </tr>
@@ -251,8 +293,8 @@
                       </tr>
                       <tr>
                           <td></td>
-                          <td style="text-align:center">การประเมินรอบที่ 1</td>
-                          <td style="text-align:center">การประเมินรอบที่ 2</td>
+                          <td style="text-align:center">การประเมินรอบที่ 1  60 วัน</td>
+                          <td style="text-align:center">การประเมินรอบที่ 2  90 วัน</td>
                       </tr>
                     <tr>
                 <td>1. คุณภาพของงานที่ปฏิบัติ</td>
@@ -379,34 +421,17 @@
                 <td align="center">{{$operate->chioce25_60}}</td>
                 <td align="center">{{$operate->chioce25_90}}</td>
             </tr>
-                    <tr>
-                       <td style="text-align:center">
-                       รวมคะแนน
-                       </td>
-                       <td style="text-align:center" colspan="2">
-                       <input type="text" name="total_60" id="total_60" readonly>
-
-                        </td>
+                   
 
 
-                    </tr>
+            <tr>
+                    <td  COLSPAN="3" >
+                            รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center" value="{{$operate->subtotal_60}}" > คะแนน  <br><br>
+                            ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center" value="{{$operate->subtotal_90}}"> คะแนน<br><br>
+                            (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center" value="{{$operate->subtotal_final}}"> คะแนน
+                          </td>
 
-
-                    <tr>
-
-
-                            <td  COLSPAN="4" >
-
-                                    รวมคะแนนทั้งสิ้น  ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly > คะแนน <br><br>
-                                                  ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly> คะแนน
-                                  </td>
-
-
-
-
-
-                     </tr>
-
+             </tr>
 
 
 
@@ -419,12 +444,392 @@
                                     </div>
                 </div>
                 </div>
+ 
+                <table id="customers">
+                        <tbody>
+                            <th style="text-align:center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></th>
+                            <tr>
+                                <td align="center" rowspan="2"><b>หัวข้อการประเมิน</b></td>   
+                                <td align="center" colspan="3"><b>ระบุคะแนน</b></td>
+                            </tr>    
+                            <tr>
+                                <td align="center">10-8 ดี</td>
+                                <td align="center">7-5 พอใช้</td>
+                                <td align="center">4-1 ปรับปรุง</td>
+                            </tr>
+                            <tr>
+                                <td>1.บุคลิกภาพ และการแต่งกาย</td>
+                                <td align="center">@if($operate->chioce_suitability1 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability1}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability11 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability11}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability21 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability21}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>2.ความสุภาพ กิริยา มารยาท</td>
+                                <td align="center">@if($operate->chioce_suitability2 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability2}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability12 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability12}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability22 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability22}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>3.ความเคร่งครัดต่อระเบียบวินัย</td>
+                                <td align="center">@if($operate->chioce_suitability3 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability3}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability13 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability13}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability23 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability23}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>4.ความตรงต่อเวลา</td>
+                                <td align="center">@if($operate->chioce_suitability4 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability4}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability14 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability14}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability24 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability24}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>5.การประพฤติต่อผู้บังคับบัญชา</td>
+                                <td align="center">@if($operate->chioce_suitability5 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability5}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability15 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability15}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability25 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability25}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>6.ทัศนคติต่องาน / บริษัท</td>
+                                <td align="center">@if($operate->chioce_suitability6 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability6}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability16 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability16}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability26 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability26}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>7.การช่วยเหลือเพื่อนร่วมงาน</td>
+                                <td align="center">@if($operate->chioce_suitability7 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability7}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability17 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability17}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability27 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability27}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>8.ลักษณะความเป็นผู้นำ</td>
+                                <td align="center">@if($operate->chioce_suitability8 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability8}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability18 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability18}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability28 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability28}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>9.ความคิดริเริ่ม สร้างสรรค์</td>
+                                <td align="center">@if($operate->chioce_suitability9 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability9}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability19 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability19}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability29 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability29}}        
+                                @endif</td>
+                            </tr>
+                            <tr>
+                                <td>10.ความคิดเห็นโดยทั่วไป</td>
+                                <td align="center">@if($operate->chioce_suitability10 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability10}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability20 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability20}}        
+                                @endif</td>
+                                <td align="center">@if($operate->chioce_suitability30 == 0)
+                                    - 
+                                @else
+                                    {{$operate->chioce_suitability30}}        
+                                @endif</td>
+                            </tr>
+                            <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate->sum_chioce_suitability10}}</font> คะแนน</td></tr>
+                        </tbody>    
+                    </table>
 
+
+                    <table id="customers"><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate->comment_suitability10}} <br>
+                        @if($operate->ok_suitability == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
+                            <input type="checkbox" checked="checked" disabled> {{$operate->ok_suitability}} <br>
+                        @endif 
+                        @if($operate->other_suitability == 'อื่นๆ')
+                            <input type="checkbox"  checked="checked" disabled>{{$operate->other_suitability}} : {{$operate->other_com_suitability}} <br>
+                        @endif
+                        @if($operate->namerate_suitability != '')
+                            <center><br>
+                                
+                                <div class="sig2">
+                                        <div class="sigWrapper">
+                                   
+                                            <canvas class="pad" width="198" height="55"></canvas>
+                                          </div>
+                                     
+                                        </div>
+                           
+                                <br>( คุณ{{$operate->namerate_suitability}} )<br>ผู้จัดการฝ่าย
+                            </center>
+                        @endif  
+                    </td>
+                </tr>
+            </table> 
+            <br>
+            <div class="form-group">
+                    <div class="col-sm-12">
+                            <table id="customers">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3">
+                                                <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
+                                                <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
+                                                    @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
+                                                <input type="checkbox" checked="checked" disabled>{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
+                                                @endif 
+                                                    @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                                                <input type="checkbox" checked="checked" disabled>{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
+                                                @endif 
+                                                    @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                                                <input type="checkbox" checked="checked" disabled>{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
+                                                 @endif 
+                                                    @if($operate->other_90 == 'อื่นๆ')
+                                                <input type="checkbox" checked="checked" disabled>{{$operate->other_90}} : {{$operate->other_com_90}}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center">
+                                                        <br>
+                                                        <div class="sig0">
+                                                                <div class="sigWrapper">
+                                                                
+                                                                  <canvas class="pad" width="220" height="70"></canvas>
+                                                                </div>
+                                                           
+                                                              </div>
+                                                        <br> ( คุณ{{$operate->name_rate_60}} ) 
+                                                        <br>ผู้บังคับบัญชาต้นสังกัด
+                                                        <br>วันที่การประเมิน {{$operate->created_at}} น.
+                                                        <br>การประเมิน 60 วัน	
+                                                            
+                                                    </td>
+                                            <td align="center">
+                                                <br>
+                                                <div class="sig1">
+                                                        <div class="sigWrapper">
+                                                        
+                                                          <canvas class="pad" width="220" height="70"></canvas>
+                                                        </div>
+                                                   
+                                                      </div>
+                                                <br> ( คุณ{{$operate->name_rate_90}} ) 
+                                                <br>ผู้บังคับบัญชาต้นสังกัด
+                                                <br>วันที่การประเมิน {{$operate->updated_at}} น.
+                                                <br>การประเมิน 90 วัน	
+                                                    
+                                            </td>
+                                            <td align="center">
+                                                <br>
+                                                <br> ผู้ถูกประเมิน : ........................................... <br> 
+                                                ( คุณ {{$operate->first_name}} 	) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
+                                        </tr>  
+                                    </tbody>
+                                    </table> 
+            </div>
+            </div>
+            <br>
+            <table  id="customers">
+                    <tbody>
+                        <tr><td align="center"><b>เฉพาะฝ่ายทรัพยากรบุคคล</b></td></tr>
+                        <tr>
+                            <td>
+                                    @if($operate->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
+                                        <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
+                                    @endif
+                                    @if($operate->human_resource_modi == 'ปรับอัตราเงินเดือน')
+                                        <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน <u>{{$operate->human_resource_commo}}</u>
+                                    <br>@endif
+                                    @if($operate->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
+                                        <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน <u>{{$operate->human_resource_comno}}</u>
+                                    <br>@endif
+                                    @if($operate->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
+                                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น <u>{{$operate->human_resource_posi}}</u> และปรับเงินเดือน
+                                    <br>@endif
+                                    @if($operate->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
+                                        <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate->human_resource_date}}</u>
+                                    <br>@endif 
+                                    @if($operate->human_resource_other == 'อื่นๆ')
+                                        <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate->human_resource_othercom}}</u>
+                                    <br>@endif 
+                            </td>
+                             <tr>
+                                 <td align="center">
+                                     <br> <br>
+                                        <div class="sig3">
+                                                <div class="sigWrapper">
+                                                
+                                                  <canvas class="pad" width="220" height="70"></canvas>
+                                                </div>
+                                           
+                                              </div>
+                                 @if($operate->human_resource_nre != '')
+                               ( คุณ{{$operate->human_resource_nre}} )
+                               <br>วันที่การประเมิน....../....../......
+                                @endif
+                            </td>
+                        </tr>       
+                    </tbody>
+                </table> 
+
+
+            <br>  <br>
+            <table id="customers">
+                    <tbody>
+                        <tr>
+                            <td align="center">
+                                <b>เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @if($operate->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
+                                    <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
+                                @endif
+                                @if($operate->manager_resource_modi == 'ปรับอัตราเงินเดือน')
+                                    <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน {{$operate->manager_resource_comdi}}
+                                <br>@endif
+                                @if($operate->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
+                                    <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน {{$operate->manager_resource_comno}}
+                                <br>@endif
+                                 @if($operate->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
+                                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น {{$operate->manager_resource_posi}} และปรับเงินเดือน
+                                <br>@endif 
+                                @if($operate->manager_resource_fail == 'ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่')
+                                    <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate->manager_resource_date}}
+                                <br>@endif 
+                                @if($operate->manager_resource_other == 'อื่นๆ')
+                                    <input type="checkbox" checked="checked">อื่นๆ {{$operate->manager_resource_othercom}}
+                                <br>@endif 
+                                </td>
+                            </tr>
+                            <tr><td align="center">
+                                <br>
+                                <br>
+                                <div class=" sig4">
+                                        <div class="sigWrapper">
+                                        
+                                          <canvas class="pad" width="220" height="70"></canvas>
+                                        </div>
+                                   
+                                      </div>
+                                @if($operate->manager_resource_nre != '')
+                               ( คุณ{{$operate->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....
+                                @endif   
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
 
                           @else 
-
+                          <input type="hidden" value="{{$operate->signa1_60}}" id="sig0">
+                          <input type="hidden" value="{{$operate->signa1_90}}" id="sig1">
+                          <input type="hidden" value="{{$operate->signa2}}" id="sig2">
+                          <input type="hidden" value="{{$operate->signa3}}" id="sig3">
+                          <input type="hidden" value="{{$operate->signa4}}" id="sig4">
                           <div class="form-group">
                             <div class="col-sm-12">
                                 <div  class="table-wrapper-scroll-y">              
@@ -436,7 +841,7 @@
                     <th COLSPAN="1" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
                   </tr>
                   <tr>
-                    <td align="center" colspan="2">ประเมินรอบ <input type="text" name="NumberDate_60" id="NumberDate_60" class="form-control"   style="width:100px" required> วัน</td>
+                    <td align="center" colspan="2">ประเมินรอบ</td>
                    </tr>
                    <tr>
                         <td style="text-align:center" colspan="2">ระดับคะแนน</td>
@@ -446,8 +851,8 @@
                       </tr>
                       <tr>
                           <td></td>
-                          <td style="text-align:center">การประเมินรอบที่ 1</td>
-                          <td style="text-align:center">การประเมินรอบที่ 2</td>
+                          <td style="text-align:center">การประเมินรอบที่ 1  60 วัน</td>
+                          <td style="text-align:center">การประเมินรอบที่ 2  90 วัน</td>
                       </tr>
                   <tr>
                         <td>1. คุณภาพของงานที่ปฏิบัติ</td>
@@ -525,26 +930,13 @@
                         <td align="center">{{$operate->chioce15_90}}</td>
                     </tr>
 
-                   <tr>
-                        <td style="text-align:center">
-
-                        รวมคะแนน
-
-                        </td>
-
-                        <td style="text-align:center" colspan="2">
-
-                     <input type="text" name="total_60" id="total_60" style="text-align:center" readonly>
-
-                         </td>
-                     </tr>
+                
 
                      <tr>
                             <td  COLSPAN="3" >
-
-                                    รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center"  > คะแนน  <br><br>
-                                                  ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center"> คะแนน<br><br>
-                                                  (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center"> คะแนน
+                                    รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center" value="{{$operate->subtotal_60}}" > คะแนน  <br><br>
+                                    ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center" value="{{$operate->subtotal_90}}"> คะแนน<br><br>
+                                    (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center" value="{{$operate->subtotal_final}}"> คะแนน
                                   </td>
 
                      </tr>
@@ -556,9 +948,89 @@
             </div>
         </div>
 
+        <div class="form-group">
+                <div class="col-sm-12">
+        <table id="customers">
+                <tbody >
+                    <tr>
+                        <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 60 วัน</td>
+                        <td  style="width: 100px; ">{{$operate->comments_60}}</td>
+                    </tr>
+                    <tr>
+                        <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 90 วัน</td>
+                        <td  style="width: 100px; ">{{$operate->comments_90}}</td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+        </div>
+
+        <div class="form-group">
+                <div class="col-sm-12">
+                        <table id="customers">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3">
+                                            <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
+                                            <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
+                                                @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
+                                            <input type="checkbox" checked="checked" disabled>{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
+                                            @endif 
+                                                @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                                            <input type="checkbox" checked="checked" disabled>{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
+                                            @endif 
+                                                @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                                            <input type="checkbox" checked="checked" disabled>{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
+                                             @endif 
+                                                @if($operate->other_90 == 'อื่นๆ')
+                                            <input type="checkbox" checked="checked" disabled>{{$operate->other_90}} : {{$operate->other_com_90}}
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td align="center">
+                                                    <br>
+                                                    <div class="sig0">
+                                                            <div class="sigWrapper">
+                                                            
+                                                              <canvas class="pad" width="220" height="70"></canvas>
+                                                            </div>
+                                                       
+                                                          </div>
+                                                    <br> ( คุณ{{$operate->name_rate_60}} ) 
+                                                    <br>ผู้บังคับบัญชาต้นสังกัด
+                                                    <br>วันที่การประเมิน {{$operate->created_at}} น.
+                                                    <br>การประเมิน 60 วัน	
+                                                        
+                                                </td>
+                                        <td align="center">
+                                            <br>
+                                            <div class="sig1">
+                                                    <div class="sigWrapper">
+                                                    
+                                                      <canvas class="pad" width="220" height="70"></canvas>
+                                                    </div>
+                                               
+                                                  </div>
+                                            <br> ( คุณ{{$operate->name_rate_90}} ) 
+                                            <br>ผู้บังคับบัญชาต้นสังกัด
+                                            <br>วันที่การประเมิน {{$operate->updated_at}} น.
+                                            <br>การประเมิน 90 วัน	
+                                                
+                                        </td>
+                                        <td align="center">
+                                            <br>
+                                            <br> ผู้ถูกประเมิน : ........................................... <br> 
+                                            ( คุณ {{$operate->first_name}} 	) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
+                                    </tr>  
+                                </tbody>
+                                </table> 
+        </div>
+        </div>
 
 
-                          @endif
+
+                         
                           
                             <table id="customers">
                                     <tbody>
@@ -757,18 +1229,133 @@
                                 </table>
 
 
+                                <table id="customers"><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate->comment_suitability10}} <br>
+                                    @if($operate->ok_suitability == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
+                                        <input type="checkbox" checked="checked" disabled> {{$operate->ok_suitability}} <br>
+                                    @endif 
+                                    @if($operate->other_suitability == 'อื่นๆ')
+                                        <input type="checkbox"  checked="checked" disabled>{{$operate->other_suitability}} : {{$operate->other_com_suitability}} <br>
+                                    @endif
+                                    @if($operate->namerate_suitability != '')
+                                        <center><br>
+                                            
+                                            <div class="sig2">
+                                                    <div class="sigWrapper">
+                                               
+                                                        <canvas class="pad" width="198" height="55"></canvas>
+                                                      </div>
+                                                 
+                                                    </div>
+                                       
+                                            <br>( คุณ{{$operate->namerate_suitability}} )<br>ผู้จัดการฝ่าย
+                                        </center>
+                                    @endif  
+                                </td>
+                            </tr>
+                        </table> 
+                        <br>
+                        <br>
+                        <table  id="customers">
+                                <tbody>
+                                    <tr><td align="center"><b>เฉพาะฝ่ายทรัพยากรบุคคล</b></td></tr>
+                                    <tr>
+                                        <td>
+                                                @if($operate->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
+                                                    <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
+                                                @endif
+                                                @if($operate->human_resource_modi == 'ปรับอัตราเงินเดือน')
+                                                    <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน <u>{{$operate->human_resource_commo}}</u>
+                                                <br>@endif
+                                                @if($operate->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
+                                                    <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน <u>{{$operate->human_resource_comno}}</u>
+                                                <br>@endif
+                                                @if($operate->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
+                                                <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น <u>{{$operate->human_resource_posi}}</u> และปรับเงินเดือน
+                                                <br>@endif
+                                                @if($operate->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
+                                                    <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate->human_resource_date}}</u>
+                                                <br>@endif 
+                                                @if($operate->human_resource_other == 'อื่นๆ')
+                                                    <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate->human_resource_othercom}}</u>
+                                                <br>@endif 
+                                        </td>
+                                         <tr>
+                                             <td align="center">
+                                                 <br> <br>
+                                                    <div class="sig3">
+                                                            <div class="sigWrapper">
+                                                            
+                                                              <canvas class="pad" width="220" height="70"></canvas>
+                                                            </div>
+                                                       
+                                                          </div>
+                                             @if($operate->human_resource_nre != '')
+                                           ( คุณ{{$operate->human_resource_nre}} )
+                                           <br>วันที่การประเมิน....../....../......
+                                            @endif
+                                        </td>
+                                    </tr>       
+                                </tbody>
+                            </table> 
 
 
+                        <br>  <br>
+                        <table id="customers">
+                                <tbody>
+                                    <tr>
+                                        <td align="center">
+                                            <b>เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @if($operate->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
+                                                <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
+                                            @endif
+                                            @if($operate->manager_resource_modi == 'ปรับอัตราเงินเดือน')
+                                                <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน {{$operate->manager_resource_comdi}}
+                                            <br>@endif
+                                            @if($operate->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
+                                                <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน {{$operate->manager_resource_comno}}
+                                            <br>@endif
+                                             @if($operate->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
+                                                <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น {{$operate->manager_resource_posi}} และปรับเงินเดือน
+                                            <br>@endif 
+                                            @if($operate->manager_resource_fail == 'ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่')
+                                                <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate->manager_resource_date}}
+                                            <br>@endif 
+                                            @if($operate->manager_resource_other == 'อื่นๆ')
+                                                <input type="checkbox" checked="checked">อื่นๆ {{$operate->manager_resource_othercom}}
+                                            <br>@endif 
+                                            </td>
+                                        </tr>
+                                        <tr><td align="center">
+                                            <br>
+                                            <br>
+                                            <div class=" sig4">
+                                                    <div class="sigWrapper">
+                                                    
+                                                      <canvas class="pad" width="220" height="70"></canvas>
+                                                    </div>
+                                               
+                                                  </div>
+                                            @if($operate->manager_resource_nre != '')
+                                           ( คุณ{{$operate->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....
+                                            @endif   
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-
+                            @endif
 
 
 
 
 
                         </div>
-                        <div class="card-footer">ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน
-                                <button type="submit" class="btn btn-info pull-right">ตกลง</button>
+                        <div class="card-footer">ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
+                              <center> <button type="submit" class="btn btn-info pull-right">ตกลง</button></center> 
                                 {{Form::close()}}
                                 </div>
                         </div>
@@ -776,6 +1363,7 @@
 
                        
                       </div>
+                     
     </div>
 
 
@@ -811,744 +1399,59 @@
     
     
     
-    </div>
+    
 
 
 
 
+    @if( $operate->degree_enable == 1)
 
+    <script>
+            $(document).ready(function() {
+        
+                var  sing0  = document.getElementById("sig0").value;
+                var  sing1  = document.getElementById("sig1").value;
+                var  sing2  = document.getElementById("sig2").value;
+                var  sing3  = document.getElementById("sig3").value;
+                var  sing4  = document.getElementById("sig4").value;
+           
+            $('.sig0').signaturePad({displayOnly:true}).regenerate(sing0);
+        
+            $('.sig1').signaturePad({displayOnly:true}).regenerate(sing1);
+        
+              $('.sig2').signaturePad({displayOnly:true}).regenerate(sing2);
+        
+              $('.sig3').signaturePad({displayOnly:true}).regenerate(sing3);
+        
+              $('.sig4').signaturePad({displayOnly:true}).regenerate(sing4);
+        
+            });
+          </script>
+    @else
 
-      </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+            $(document).ready(function() {
+        
+                var  sing0  = document.getElementById("sig0").value;
+                var  sing1  = document.getElementById("sig1").value;
+                var  sing2  = document.getElementById("sig2").value;
+                var  sing3  = document.getElementById("sig3").value;
+                var  sing4  = document.getElementById("sig4").value;
+           
+            $('.sig0').signaturePad({displayOnly:true}).regenerate(sing0);
+        
+            $('.sig1').signaturePad({displayOnly:true}).regenerate(sing1);
+        
+              $('.sig2').signaturePad({displayOnly:true}).regenerate(sing2);
+        
+              $('.sig3').signaturePad({displayOnly:true}).regenerate(sing3);
+        
+              $('.sig4').signaturePad({displayOnly:true}).regenerate(sing4);
+        
+            });
+          </script>
 
-<script>
-    
-            $('input[type=radio]').change(function(){
-                var group_60_1=0;
-                var group_60_2=0;
-                var group_60_3=0;
-                var group_60_4=0;
-                var group_60_5=0;
-                var group_60_6=0;
-                var group_60_7=0;
-                var group_60_8=0;
-                var group_60_9=0;
-                var group_60_10=0;
-                var group_60_11=0;
-                var group_60_12=0;
-                var group_60_13=0;
-                var group_60_14=0;
-                var group_60_15=0;
-                var group_60_16=0;
-                var group_60_17=0;
-                var group_60_18=0;
-                var group_60_19=0;
-                var group_60_20=0;
-                var group_60_21=0;
-                var group_60_22=0;
-                var group_60_23=0;
-                var group_60_24=0;
-                var group_60_25=0;
-                var group_total =0;
-    
-    
-                var group_90_1=0;
-                var group_90_2=0;
-                var group_90_3=0;
-                var group_90_4=0;
-                var group_90_5=0;
-                var group_90_6=0;
-                var group_90_7=0;
-                var group_90_8=0;
-                var group_90_9=0;
-                var group_90_10=0;
-                var group_90_11=0;
-                var group_90_12=0;
-                var group_90_13=0;
-                var group_90_14=0;
-                var group_90_15=0;
-                var group_90_16=0;
-                var group_90_17=0;
-                var group_90_18=0;
-                var group_90_19=0;
-                var group_90_20=0;
-                var group_90_21=0;
-                var group_90_22=0;
-                var group_90_23=0;
-                var group_90_24=0;
-                var group_90_25=0;
-                var group_90_total =0;
-    
-               var group_all_total =0;
-    
-    
-    
-    
-               if(score60_1[0].checked ){
-                   group_60_1 =  score60_1[0].value
-                           }
-                           if( score60_1[1].checked ){
-                               group_60_1 =  score60_1[1].value
-                           }
-                           if( score60_1[2].checked ){
-                               group_60_1 =  score60_1[2].value
-    
-                           }
-                            if( score60_1[3].checked ){
-                               group_60_1 =  score60_1[3].value
-    
-                           }
-    
-    
-            if(score60_2[0].checked ){
-                   group_60_2 =  score60_2[0].value
-                           }
-                           if( score60_2[1].checked ){
-                               group_60_2 =  score60_2[1].value
-                           }
-                           if( score60_2[2].checked ){
-                               group_60_2 =  score60_2[2].value
-    
-                           }
-                            if( score60_2[3].checked ){
-                               group_60_2 =  score60_2[3].value
-    
-                           }
-    
-            if(score60_3[0].checked ){
-                   group_60_3 =  score60_3[0].value
-                           }
-                           if( score60_3[1].checked ){
-                               group_60_3 =  score60_3[1].value
-                           }
-                           if( score60_3[2].checked ){
-                               group_60_3 =  score60_3[2].value
-    
-                           }
-                            if( score60_3[3].checked ){
-                               group_60_3 =  score60_3[3].value
-    
-                           }
-    
-    
-            if(score60_4[0].checked ){
-                   group_60_4 =  score60_4[0].value
-                           }
-                           if( score60_4[1].checked ){
-                               group_60_4 =  score60_4[1].value
-                           }
-                           if( score60_4[2].checked ){
-                               group_60_4 =  score60_4[2].value
-    
-                           }
-                            if( score60_4[3].checked ){
-                               group_60_4 =  score60_4[3].value
-    
-                           }
-    
-            if(score60_5[0].checked ){
-                   group_60_5 =  score60_5[0].value
-                           }
-                           if( score60_5[1].checked ){
-                               group_60_5 =  score60_5[1].value
-                           }
-                           if( score60_5[2].checked ){
-                               group_60_5 =  score60_5[2].value
-    
-                           }
-                            if( score60_5[3].checked ){
-                               group_60_5 =  score60_5[3].value
-    
-                           }
-    
-    
-    
-            if(score60_6[0].checked ){
-                   group_60_6 =  score60_6[0].value
-                           }
-                           if( score60_6[1].checked ){
-                               group_60_6 =  score60_6[1].value
-                           }
-                           if( score60_6[2].checked ){
-                               group_60_6 =  score60_6[2].value
-    
-                           }
-                            if( score60_6[3].checked ){
-                               group_60_6 =  score60_6[3].value
-    
-                           }
-    
-    
-            if(score60_7[0].checked ){
-                   group_60_7 =  score60_7[0].value
-                           }
-                           if( score60_7[1].checked ){
-                               group_60_7 =  score60_7[1].value
-                           }
-                           if( score60_7[2].checked ){
-                               group_60_7 =  score60_7[2].value
-    
-                           }
-                            if( score60_7[3].checked ){
-                               group_60_7 =  score60_7[3].value
-    
-                           }
-    
-    
-            if(score60_8[0].checked ){
-                   group_60_8 =  score60_8[0].value
-                           }
-                           if( score60_8[1].checked ){
-                               group_60_8 =  score60_8[1].value
-                           }
-                           if( score60_8[2].checked ){
-                               group_60_8 =  score60_8[2].value
-    
-                           }
-                            if( score60_8[3].checked ){
-                               group_60_8 =  score60_8[3].value
-    
-                           }
-    
-            if(score60_9[0].checked ){
-                   group_60_9 =  score60_9[0].value
-                           }
-                           if( score60_9[1].checked ){
-                               group_60_9 =  score60_9[1].value
-                           }
-                           if( score60_9[2].checked ){
-                               group_60_9 =  score60_9[2].value
-    
-                           }
-                            if( score60_9[3].checked ){
-                               group_60_9 =  score60_9[3].value
-    
-                           }
-    
-    
-           if(score60_10[0].checked ){
-                   group_60_10 =  score60_10[0].value
-                           }
-                           if( score60_10[1].checked ){
-                               group_60_10 =  score60_10[1].value
-                           }
-                           if( score60_10[2].checked ){
-                               group_60_10 =  score60_10[2].value
-    
-                           }
-                            if( score60_10[3].checked ){
-                               group_60_10 =  score60_10[3].value
-    
-                           }
-    
-           if(score60_11[0].checked ){
-                   group_60_11 =  score60_11[0].value
-                           }
-                           if( score60_11[1].checked ){
-                               group_60_11 =  score60_11[1].value
-                           }
-                           if( score60_11[2].checked ){
-                               group_60_11 =  score60_11[2].value
-    
-                           }
-                            if( score60_11[3].checked ){
-                               group_60_11 =  score60_11[3].value
-    
-                           }
-    
-           if(score60_12[0].checked ){
-                   group_60_12 =  score60_12[0].value
-                           }
-                           if( score60_12[1].checked ){
-                               group_60_12 =  score60_12[1].value
-                           }
-                           if( score60_12[2].checked ){
-                               group_60_12 =  score60_12[2].value
-    
-                           }
-                            if( score60_12[3].checked ){
-                               group_60_12 =  score60_12[3].value
-    
-                           }
-    
-           if(score60_13[0].checked ){
-                   group_60_13 =  score60_13[0].value
-                           }
-                           if( score60_13[1].checked ){
-                               group_60_13 =  score60_13[1].value
-                           }
-                           if( score60_13[2].checked ){
-                               group_60_13=  score60_13[2].value
-    
-                           }
-                            if( score60_13[3].checked ){
-                               group_60_13 =  score60_13[3].value
-    
-                           }
-    
-           if(score60_14[0].checked ){
-                   group_60_14 =  score60_14[0].value
-                           }
-                           if( score60_14[1].checked ){
-                               group_60_14 =  score60_14[1].value
-                           }
-                           if( score60_14[2].checked ){
-                               group_60_14=  score60_14[2].value
-    
-                           }
-                            if( score60_14[3].checked ){
-                               group_60_14 =  score60_14[3].value
-    
-                           }
-    
-           if(score60_15[0].checked ){
-                   group_60_15 =  score60_15[0].value
-                           }
-                           if( score60_15[1].checked ){
-                               group_60_15=  score60_15[1].value
-                           }
-                           if( score60_15[2].checked ){
-                               group_60_15=  score60_15[2].value
-    
-                           }
-                            if( score60_15[3].checked ){
-                               group_60_15 =  score60_15[3].value
-    
-                           }
-    
-    
-                           if(score60_16[0].checked ){
-                   group_60_16 =  score60_16[0].value
-                           }
-                           if( score60_16[1].checked ){
-                               group_60_16=  score60_16[1].value
-                           }
-                           if( score60_16[2].checked ){
-                               group_60_16=  score60_16[2].value
-    
-                           }
-                            if( score60_16[3].checked ){
-                               group_60_16 =  score60_16[3].value
-    
-                           }
-    
-                           if(score60_17[0].checked ){
-                                     group_60_17 =  score60_17[0].value
-                           }
-                           if( score60_17[1].checked ){
-                               group_60_17=  score60_17[1].value
-                           }
-                           if( score60_17[2].checked ){
-                               group_60_17=  score60_17[2].value
-    
-                           }
-                            if( score60_17[3].checked ){
-                               group_60_17 =  score60_17[3].value
-    
-                           }
-    
-    
-    
-     if(score60_18[0].checked ){
-                   group_60_18 =  score60_18[0].value
-                           }
-                           if( score60_18[1].checked ){
-                               group_60_18=  score60_18[1].value
-                           }
-                           if( score60_18[2].checked ){
-                               group_60_18=  score60_18[2].value
-    
-                           }
-                            if( score60_18[3].checked ){
-                               group_60_18 =  score60_18[3].value
-    
-                           }
-    
-    
-    
-     if(score60_19[0].checked ){
-                   group_60_19 =  score60_19[0].value
-                           }
-                           if( score60_19[1].checked ){
-                               group_60_19=  score60_19[1].value
-                           }
-                           if( score60_19[2].checked ){
-                               group_60_19=  score60_19[2].value
-    
-                           }
-                            if( score60_19[3].checked ){
-                               group_60_19 =  score60_19[3].value
-    
-                           }
-    
-    
-    
-     if(score60_20[0].checked ){
-                   group_60_20 =  score60_20[0].value
-                           }
-                           if( score60_20[1].checked ){
-                               group_60_20=  score60_20[1].value
-                           }
-                           if( score60_20[2].checked ){
-                               group_60_20=  score60_20[2].value
-    
-                           }
-                            if( score60_20[3].checked ){
-                               group_60_20 =  score60_20[3].value
-    
-                           }
-    
-    
-     if(score60_21[0].checked ){
-                   group_60_21 =  score60_21[0].value
-                           }
-                           if( score60_21[1].checked ){
-                               group_60_21=  score60_21[1].value
-                           }
-                           if( score60_21[2].checked ){
-                               group_60_21=  score60_21[2].value
-    
-                           }
-                            if( score60_21[3].checked ){
-                               group_60_21 =  score60_21[3].value
-    
-                           }
-    
-    
-     if(score60_22[0].checked ){
-                   group_60_22 =  score60_22[0].value
-                           }
-                           if( score60_22[1].checked ){
-                               group_60_22=  score60_22[1].value
-                           }
-                           if( score60_22[2].checked ){
-                               group_60_22=  score60_22[2].value
-    
-                           }
-                            if( score60_22[3].checked ){
-                               group_60_22 =  score60_22[3].value
-    
-                           }
-    
-    
-    
-    
-     if(score60_23[0].checked ){
-                   group_60_23 =  score60_23[0].value
-                           }
-                           if( score60_23[1].checked ){
-                               group_60_23=  score60_23[1].value
-                           }
-                           if( score60_23[2].checked ){
-                               group_60_23=  score60_23[2].value
-    
-                           }
-                            if( score60_23[3].checked ){
-                               group_60_23 =  score60_23[3].value
-    
-                           }
-    
-    
-           if(score60_24[0].checked ){
-                   group_60_24 =  score60_24[0].value
-                           }
-                           if( score60_24[1].checked ){
-                               group_60_24=  score60_24[1].value
-                           }
-                           if( score60_24[2].checked ){
-                               group_60_24=  score60_24[2].value
-    
-                           }
-                            if( score60_24[3].checked ){
-                               group_60_24 =  score60_24[3].value
-    
-                           }
-    
-    
-           if(score60_25[0].checked ){
-                   group_60_25 =  score60_25[0].value
-                           }
-                           if( score60_25[1].checked ){
-                               group_60_25=  score60_25[1].value
-                           }
-                           if( score60_25[2].checked ){
-                               group_60_25=  score60_25[2].value
-    
-                           }
-                            if( score60_25[3].checked ){
-                               group_60_25 =  score60_25[3].value
-    
-                           }
-    
-           group_total =(parseInt(group_60_1)+parseInt(group_60_2)+parseInt(group_60_3)+parseInt(group_60_4)+parseInt(group_60_5)+parseInt(group_60_6)+parseInt(group_60_7)+parseInt(group_60_8)+parseInt(group_60_9)+parseInt(group_60_10)+parseInt(group_60_11)+parseInt(group_60_12)+parseInt(group_60_13)+parseInt(group_60_14)+parseInt(group_60_15)
-           +parseInt(group_60_16)+parseInt(group_60_17)+parseInt(group_60_18)+parseInt(group_60_19)+parseInt(group_60_20)+parseInt(group_60_21) +parseInt(group_60_22)+parseInt(group_60_23)+parseInt(group_60_24)+parseInt(group_60_25)                );
-    
-    
-                           $('#total_60').val(group_total.toFixed( 2 ));
-                           $('#rate_60').val(group_total.toFixed( 2 ));
-    
-    
-    
-    
-    
-    
-    
-           if(score90_1[0].checked ){
-                   group_90_1 =  score90_1[0].value
-                           }
-                           if( score90_1[1].checked ){
-                               group_90_1 =  score90_1[1].value
-                           }
-                           if( score90_1[2].checked ){
-                               group_90_1 =  score90_1[2].value
-    
-                           }
-                            if( score90_1[3].checked ){
-                               group_90_1 =  score90_1[3].value
-    
-                           }
-    
-    
-            if(score90_2[0].checked ){
-                   group_90_2 =  score90_2[0].value
-                           }
-                           if( score90_2[1].checked ){
-                               group_90_2 =  score90_2[1].value
-                           }
-                           if( score90_2[2].checked ){
-                               group_90_2 =  score90_2[2].value
-    
-                           }
-                            if( score90_2[3].checked ){
-                               group_90_2 =  score90_2[3].value
-    
-                           }
-    
-            if(score90_3[0].checked ){
-                   group_90_3 =  score90_3[0].value
-                           }
-                           if( score90_3[1].checked ){
-                               group_90_3 =  score90_3[1].value
-                           }
-                           if( score90_3[2].checked ){
-                               group_90_3 =  score90_3[2].value
-    
-                           }
-                            if( score90_3[3].checked ){
-                               group_90_3 =  score90_3[3].value
-    
-                           }
-    
-    
-            if(score60_4[0].checked ){
-                   group_90_4 =  score90_4[0].value
-                           }
-                           if( score90_4[1].checked ){
-                               group_90_4 =  score90_4[1].value
-                           }
-                           if( score90_4[2].checked ){
-                               group_90_4 =  score90_4[2].value
-    
-                           }
-                            if( score90_4[3].checked ){
-                               group_90_4 =  score90_4[3].value
-    
-                           }
-    
-            if(score90_5[0].checked ){
-                   group_90_5 =  score90_5[0].value
-                           }
-                           if( score90_5[1].checked ){
-                               group_90_5 =  score90_5[1].value
-                           }
-                           if( score90_5[2].checked ){
-                               group_90_5 =  score90_5[2].value
-    
-                           }
-                            if( score90_5[3].checked ){
-                               group_90_5 =  score90_5[3].value
-    
-                           }
-    
-    
-    
-            if(score90_6[0].checked ){
-                   group_90_6 =  score90_6[0].value
-                           }
-                           if( score90_6[1].checked ){
-                               group_90_6 =  score90_6[1].value
-                           }
-                           if( score90_6[2].checked ){
-                               group_90_6 =  score90_6[2].value
-    
-                           }
-                            if( score90_6[3].checked ){
-                               group_90_6 =  score90_6[3].value
-    
-                           }
-    
-    
-            if(score90_7[0].checked ){
-                   group_90_7 =  score90_7[0].value
-                           }
-                           if( score90_7[1].checked ){
-                               group_90_7 =  score90_7[1].value
-                           }
-                           if( score90_7[2].checked ){
-                               group_90_7 =  score90_7[2].value
-    
-                           }
-                            if( score90_7[3].checked ){
-                               group_90_7 =  score90_7[3].value
-    
-                           }
-    
-    
-            if(score90_8[0].checked ){
-                   group_60_8 =  score90_8[0].value
-                           }
-                           if( score90_8[1].checked ){
-                               group_90_8 =  score90_8[1].value
-                           }
-                           if( score90_8[2].checked ){
-                               group_90_8 =  score90_8[2].value
-    
-                           }
-                            if( score90_8[3].checked ){
-                               group_90_8 =  score90_8[3].value
-    
-                           }
-    
-            if(score90_9[0].checked ){
-                   group_90_9 =  score90_9[0].value
-                           }
-                           if( score90_9[1].checked ){
-                               group_90_9 =  score90_9[1].value
-                           }
-                           if( score90_9[2].checked ){
-                               group_90_9 =  score90_9[2].value
-    
-                           }
-                            if( score90_9[3].checked ){
-                               group_90_9 =  score90_9[3].value
-    
-                           }
-    
-    
-           if(score90_10[0].checked ){
-                   group_90_10 =  score90_10[0].value
-                           }
-                           if( score90_10[1].checked ){
-                               group_90_10 =  score90_10[1].value
-                           }
-                           if( score90_10[2].checked ){
-                               group_90_10 =  score90_10[2].value
-    
-                           }
-                            if( score90_10[3].checked ){
-                               group_90_10 =  score90_10[3].value
-    
-                           }
-    
-           if(score90_11[0].checked ){
-                   group_90_11 =  score90_11[0].value
-                           }
-                           if( score90_11[1].checked ){
-                               group_90_11 =  score90_11[1].value
-                           }
-                           if( score90_11[2].checked ){
-                               group_90_11 =  score90_11[2].value
-    
-                           }
-                            if( score90_11[3].checked ){
-                               group_90_11 =  score90_11[3].value
-    
-                           }
-    
-           if(score90_12[0].checked ){
-                   group_90_12 =  score90_12[0].value
-                           }
-                           if( score90_12[1].checked ){
-                               group_90_12 =  score90_12[1].value
-                           }
-                           if( score60_12[2].checked ){
-                               group_90_12 =  score90_12[2].value
-    
-                           }
-                            if( score90_12[3].checked ){
-                               group_90_12 =  score90_12[3].value
-    
-                           }
-    
-           if(score90_13[0].checked ){
-                   group_90_13 =  score90_13[0].value
-                           }
-                           if( score90_13[1].checked ){
-                               group_90_13 =  score90_13[1].value
-                           }
-                           if( score90_13[2].checked ){
-                               group_90_13=  score90_13[2].value
-    
-                           }
-                            if( score90_13[3].checked ){
-                               group_90_13 =  score90_13[3].value
-    
-                           }
-    
-           if(score90_14[0].checked ){
-                   group_90_14 =  score90_14[0].value
-                           }
-                           if( score90_14[1].checked ){
-                               group_90_14 =  score90_14[1].value
-                           }
-                           if( score60_14[2].checked ){
-                               group_90_14=  score90_14[2].value
-    
-                           }
-                            if( score90_14[3].checked ){
-                               group_90_14 =  score90_14[3].value
-    
-                           }
-    
-           if(score90_15[0].checked ){
-                   group_90_15 =  score90_15[0].value
-                           }
-                           if( score90_15[1].checked ){
-                               group_90_15=  score90_15[1].value
-                           }
-                           if( score90_15[2].checked ){
-                               group_90_15=  score90_15[2].value
-    
-                           }
-                            if( score90_15[3].checked ){
-                               group_90_15 =  score90_15[3].value
-    
-                           }
-    
-                       group_90_total =(parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15))*100/60;
-    
-    
-    
-    
-                           $('#total_90').val(group_90_total.toFixed( 2 ));
-                           $('#rate_90').val(group_90_total.toFixed( 2 ));
-    
-    
-    
-                     $('#rate_all').val(( parseInt(group_90_total.toFixed( 2 ))+parseInt(group_total.toFixed( 2 )))/2);
-    
-    
-    
-           });
-           </script>
-
-
-
-
-
-
+    @endif
 
 
 </body>

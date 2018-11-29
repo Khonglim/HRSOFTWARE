@@ -38,7 +38,7 @@
 <div class="container">
     <br>
     <center> <img src="{{ url('img/NGG-10.png') }}" width="100px" height="100px"></center>
-    @if ($operate->degree == 1)
+    @if ($operate->degree_enable == 1)
     <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
     @else
     <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
@@ -58,10 +58,7 @@
     <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119 วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
     <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
     <b>ชื่อ-นามสกุล :</b>{{$operate->first_name}} &emsp;&emsp;&emsp;&emsp;
-    
-
-    
-    <b>รหัสพนักงาน :  </b> {{$operate->new_id_employ}} <br>
+    <b>รหัสพนักงาน :  </b> {{$operate->new_id_employ}}&emsp;&emsp;&emsp;&emsp;  <b>บริษัท:</b>   {{$operate->company}}<br>
     <b>ตำแหน่ง :</b> {{$operate->new_position}}&emsp;&emsp;&emsp;&emsp;
     <b>แผนก/ฝ่าย :</b> {{$operate->new_department}} <br>
     <b>วันที่เริ่มงาน :</b> {{$operate->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
@@ -704,7 +701,7 @@
                                         <div class="sig3">
                                                 <div class="sigWrapper">
                                                 
-                                                  <canvas class="pad" width="198" height="55"></canvas>
+                                                  <canvas class="pad" width="220" height="70"></canvas>
                                                 </div>
                                            
                                               </div>
@@ -752,14 +749,15 @@
                         <div class=" sig4">
                                 <div class="sigWrapper">
                                 
-                                  <canvas class="pad" width="198" height="55"></canvas>
+                                  <canvas class="pad" width="220" height="70"></canvas>
                                 </div>
                            
                               </div>
                         @if($operate->manager_resource_nre != '')
-                       ( คุณ{{$operate->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
+                       ( คุณ{{$operate->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....
                         @endif   
-                    </td></tr>
+                    </td>
+                </tr>
             </tbody>
         </table>
         
