@@ -44,7 +44,7 @@
             </style>
     
     <div class="container-fluid">
-            @if ($operate->degree == 1)
+            @if ($operate->degree_enable == 1)
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
             @else
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>

@@ -38,7 +38,7 @@
 <div class="container">
     <br>
     <center> <img src="{{ url('img/NGG-10.png') }}" width="100px" height="100px"></center>
-    @if ($operate->degree == 1)
+    @if ($operate->degree_enable == 1)
     <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
     @else
     <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
@@ -757,9 +757,10 @@
                            
                               </div>
                         @if($operate->manager_resource_nre != '')
-                       ( คุณ{{$operate->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....</p>
+                       ( คุณ{{$operate->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....
                         @endif   
-                    </td></tr>
+                    </td>
+                </tr>
             </tbody>
         </table>
         
