@@ -31,7 +31,7 @@
      <br><br><br><br>
      <b>วันที่สมัคร : </b>{{$personal->created_at}} <br>
     <b>ตำแหน่งที่ต้องการ/Position Applied for : </b>{{$personal->positionngg}} <br>
-    <b>เงินเดือนที่ต้องการ/Expeccted starting salary : </b>{{$personal->salaryngg}} บาท <br>
+    <b>เงินเดือนที่ต้องการ/Expected starting salary : </b>{{$personal->salaryngg}} บาท <br>
     <b>สาขาที่จะสมัคร: </b>{{$personal->talent}}
     
     <table>
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td colspan="3"><b>ชื่อ: </b> {{$personal->fronname}} {{$personal->name}} {{$personal->lastname}} <br> <b>ชื่อเล่น:</b> {{$personal->nikname}}</td>
-                <td><b>เพศ: </b>{{$personal->gender}} <br>sex</td>
+                <td><b>เพศ: </b>{{$personal->gender}} <br>Sex</td>
                 <td colspan="2"> <b>วันเกิด:</b> {{$personal->birthday}} <br>Date of Birth</td>
                 <td colspan="3"><b>อายุ:</b> {{$personal->age}} <br>Age</td>
             </tr>
@@ -60,7 +60,7 @@
                 <td colspan="2">
                     <b> เป็นคนที่:  </b> @if($personal->number == '') ว่าง @else {{$personal->number}} @endif <br>Number
                 </td>
-                <td colspan="2"><b>โทรศัพท์สำนักงาน: </b> @if($personal->office == '') ::ว่าง:: @else {{$personal->office}} @endif <br>office
+                <td colspan="2"><b>โทรศัพท์สำนักงาน: </b> @if($personal->office == '') ::ว่าง:: @else {{$personal->office}} @endif <br>Office
                 </td>
                 <td colspan="3"><b>โทรศัพท์บ้าน:</b> {{$personal->home}} <br>Home</td>
             </tr>
@@ -84,14 +84,14 @@
             <tr>
                 <td colspan="3"><b>เลขบัตรประชาชน:</b>{{$personal->idcard}} <br>I.D.Card No.</td>
                 <td colspan="3"><b>ออกให้ ณ อำเภอ/เขต: </b>{{$personal->issued}} <br>Issued at</td>
-                <td colspan="3"><b>จังหวัด: </b>{{$personal->province_crad}} <br>Privince</td>
+                <td colspan="3"><b>จังหวัด: </b>{{$personal->province_crad}} <br>Province</td>
             </tr>
             <tr>
                 <td colspan="2"> <b>วันออกบัตร: </b> {{$personal->issueddate}} <br>Issued date</td>
                 <td colspan="2"> <b>บัตรหมดอายุ:</b> {{$personal->expid}} <br>Expired date</td>
                 <td colspan="5">
                     <b>บัตรประจำตัวผู้เสียภาษี: </b> @if($personal->idcard =='') ว่าง @else {{$personal->idcard}} @endif
-                    <br>Tex I.D. card No.
+                    <br>Tax I.D. card No.
                 </td>
             </tr>
             <tr>
@@ -508,7 +508,7 @@
             </tr>
             <tr>
                 <td colspan="2"><b>ท่านพร้อมทำปฏิบัติงานวันที่ :</b> {{$personal->dateworkk}} <br>Date available to start work</td>
-                <td colspan="3"><b>ท่านเป็นเจ้าของรถประเภทใด :</b> {{$personal->cardec}} <br>What type of vehicle do oyu own?</td>
+                <td colspan="3"><b>ท่านเป็นเจ้าของรถประเภทใด :</b> {{$personal->cardec}} <br>What type of vehicle do you own?</td>
                 <td colspan="3"><b>ทะเบียน :</b> {{$personal->license}} <br>License</td>
             </tr>
             <tr>
