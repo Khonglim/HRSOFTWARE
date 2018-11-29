@@ -55,9 +55,9 @@
     &emsp;&emsp;2.2. ระดับหัวหน้างานขึ้นไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br>
     <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
     <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
-    <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
+    <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119 วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
     <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
-    <b>ชื่อ-นามสกุล :</b> &emsp;&emsp;&emsp;&emsp;
+    <b>ชื่อ-นามสกุล :</b>{{$operate->first_name}} &emsp;&emsp;&emsp;&emsp;
     
 
     
@@ -312,15 +312,15 @@
     
     
     <br>
-    <b>ความคิดเห็นเพิ่มเติม การประเมิน {{$operate->NumberDate_60}} วัน (สำหรับผู้ประเมิน)</b><br>
+    <b>ความคิดเห็นเพิ่มเติม การประเมิน 60 วัน (สำหรับผู้ประเมิน)</b><br>
         <table>
             <tbody>
                 <tr>
-                    <td align="center">ความคิดเห็นการประเมิน {{$operate->NumberDate_60}} วัน</td>
+                    <td align="center">ความคิดเห็นการประเมิน 60 วัน</td>
                     <td>{{$operate->comments_60}}</td>
                 </tr>
                 <tr>
-                    <td align="center">ความคิดเห็นการประเมิน {{$operate->NumberDate_90}} วัน</td>
+                    <td align="center">ความคิดเห็นการประเมิน 90 วัน</td>
                     <td>{{$operate->comments_90}}</td>
                 </tr>
             </tbody>
@@ -382,7 +382,10 @@
                         ( คุณ) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
                 </tr>  
             </tbody>
-            </table> <br>
+            </table> 
+            
+            
+            <br>
             <table>
                 <tbody>
                     <tr><td align="center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></td></tr>
@@ -600,7 +603,10 @@
                         <br>( คุณ{{$operate->namerate_suitability}} )<br>วันที่การประเมิน....../....../......</p>
                     </center>
                 @endif  
-            </td></tr></table> <br>
+            </td>
+        </tr>
+    </table> 
+    <br>
                 <table>
                     <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 60 วัน)</th></tr>
                     <tr>
@@ -691,6 +697,7 @@
                                     @if($operate->human_resource_other == 'อื่นๆ')
                                         <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate->human_resource_othercom}}</u>
                                     <br>@endif 
+                            </td>
                              <tr>
                                  <td align="center">
                                      <br> <br>
@@ -703,12 +710,13 @@
                                               </div>
                                  @if($operate->human_resource_nre != '')
                                ( คุณ{{$operate->human_resource_nre}} )
-                               <br>วันที่การประเมิน....../....../......</p>
-                                @endif</td></tr>       
+                               <br>วันที่การประเมิน....../....../......
+                                @endif
                             </td>
-                        </tr>
+                        </tr>       
                     </tbody>
-                </table> <br> <br> 
+                </table> 
+                <br> <br> 
         <table>
             <tbody>
                 <tr>
@@ -762,7 +770,7 @@
         <input type="hidden" value="{{$operate->signa2}}" id="sig2">
         <input type="hidden" value="{{$operate->signa3}}" id="sig3">
         <input type="hidden" value="{{$operate->signa4}}" id="sig4">
-    <input type="button" value="ปริ้นเฉพาะใน divprint" onclick="javascript:this.style.display='none';window.print();">
+   
 </div>
 
 <script>

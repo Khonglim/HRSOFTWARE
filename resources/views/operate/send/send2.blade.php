@@ -44,6 +44,25 @@
             </style>
     
     <div class="container-fluid">
+            @if ($operate->degree == 1)
+            <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
+            @else
+            <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
+            @endif
+           
+            <div class="font" style="text-align:center;"><b>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</b></div>
+            <b>1. ระดับในการประเมินผล</b><br>
+            &emsp;&emsp;4 ดีมาก = ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
+            &emsp;&emsp;3 ดี = ผลการปฎิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br></dd>
+            &emsp;&emsp;2 พอใช้ = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br>
+            &emsp;&emsp;1 ต้องปรับปรุง = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
+            <b>2.การประเมินผลให้แยกประเมินผลตามหัวข้อประเมิน และคิดคะแนนรวมดังนี้</b><br>
+            &emsp;&emsp;2.1. ระดับพนักงานทั่วไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. <u>ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60</u><br>
+            &emsp;&emsp;2.2. ระดับหัวหน้างานขึ้นไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br>
+            <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
+            <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
+            <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
+            <div class="font"><b>บริษัท ในเครือ เอ็น จี จี กรุ๊ป </b></div>
             <div class="card">
                         <div class="card-header">การประเมินผลการทดลองงาน</div>
                         <div class="card-body">
@@ -141,7 +160,74 @@
                                              
                         </div>
                    
-
+                        <div class="form-group">
+                                <div class="col-sm-12">
+                                        <div  class="table-wrapper-scroll-y">        
+                    <table id="customers">
+                            <tr>
+                              <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสายครั้งที่ 1</th>
+                            </tr>
+                            <tr>
+                              <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                              <td style="text-align:center">ลาป่วย(วัน )</td>
+                              <td style="text-align:center">ลากิจ (วัน )</td>
+                              <td style="text-align:center">ขาดงาน (วัน )</td>
+                              <td style="text-align:center">พักร้อน (วัน )</td>
+                              <td style="text-align:center">สาย (ครั้ง)</td>
+                              <td style="text-align:center">สาย (นาที)</td>
+    
+                            </tr>
+                            <tr>
+                              <td style="text-align:center">ตั้งแต่วันที่ {{$operate->startwork_60}} <br><br>
+                                ถึงวันที่    {{$operate->endwork_60}}
+    
+    
+                            </td>
+                              <td style="text-align:center"> {{$operate->sick_leave_60}}</td>
+                              <td style="text-align:center">{{$operate->errand_leave_60}}</td>
+                              <td style="text-align:center">{{$operate->absence_60}}</td>
+                              <td style="text-align:center">{{$operate->vacation_60}}</td>
+                              <td style="text-align:center">{{$operate->line_terms_60}}</td>
+                              <td style="text-align:center">{{$operate->line_min_60}}</td>
+    
+                            </tr>
+                          </table>
+                                        </div>
+    
+                                </div>
+                         </div>  
+                         
+                         
+                         <div class="form-group">
+                                <div class="col-sm-12">
+                                        <div  class="table-wrapper-scroll-y">        
+                                                <table id="customers">
+                                                        <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 90 วัน)</th></tr>
+                                                        <tr>
+                                                            <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                                                            <td style="text-align:center">ลาป่วย(วัน )</td>
+                                                            <td style="text-align:center">ลากิจ (วัน )</td>
+                                                            <td style="text-align:center">ขาดงาน (วัน )</td>
+                                                            <td style="text-align:center">พักร้อน (วัน )</td>
+                                                            <td style="text-align:center">สาย (ครั้ง)</td>
+                                                            <td style="text-align:center">สาย (นาที)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ตั้งแต่วันที่ :{{$operate->startwork_90}} <br>ถึงวันที่ :{{$operate->endtwork_90}}</td>
+                                                            <td style="text-align:center">{{$operate->sick_leave_90}}</td>
+                                                            <td style="text-align:center">{{$operate->errand_leave_90}}</td>
+                                                            <td style="text-align:center">{{$operate->absence_90}}</td>
+                                                            <td style="text-align:center">{{$operate->vacation_90}}</td>
+                                                            <td style="text-align:center">{{$operate->line_terms_90}}</td>
+                                                            <td style="text-align:center">{{$operate->line_min_90}}</td>
+                                                        </tr>
+                                                    </table>
+                            
+                                        </div>
+    
+                                </div>
+                         </div>  
+                  
 
 @if( $operate->degree_enable == 1)
 {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
@@ -369,6 +455,25 @@
         <textarea class="form-control" rows="3" name="assessor" readonly>{{$operate->comments_60}}</textarea>
     </div>
     </div>
+  
+
+</div>
+
+<div class="row">
+      
+    <div class="form-group"> 
+          <div class="col-md">
+                <label>จุดเด่น</label>
+                  <textarea class="form-control" rows="3" name="assessor2" readonly>{{$operate->comments_featured}}</textarea>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+<div class="form-group"> 
+      <div class="col-md">
+            <label>จุดด้อย</label>
+              <textarea class="form-control" rows="3" name="assessor2" readonly>{{$operate->comments_weakness}} </textarea>
+            </div>
+          </div>
 </div>
 <div class="row">
     <div class="form-group">
@@ -411,7 +516,7 @@
 
                <label  class="col-sm-2 control-label"> ชื่อผู้ประเมิน:</label>
                <div class="col-sm-4">
-                       <input type="text" name="namerate_90" id="namerate_90" required class="form-control">
+                       <input type="text" name="namerate_90" id="namerate_90" required class="form-control" required>
                      </div>
                     </div>
                     <div class="form-group">
@@ -424,7 +529,7 @@
                                             </ul>
                                             <div class="sig sigWrapper">
                                               <div class="typed"></div>
-                                              <canvas class="pad" width="198" height="55"></canvas>
+                                              <canvas class="pad" width="220" height="70"></canvas>
                                               <input type="hidden" name="signa1_90" class="output">
 
                                             </div>

@@ -31,8 +31,9 @@
             <div class="alert alert-success d-flex align-items-center"> {!! session('flash_message') !!}</div>
 
             @endif
-            <form action="{{url('/manpower')}}" id="inviter" method="POST" onSubmit="JavaScript:return fncSubmit();"  name="form1">
+            <form action="{{url('/manpower')}}" id="inviter" method="POST" onSubmit="JavaScript:return fncSubmit();"  name="form1" >
                   @csrf
+
                   <div class="row">
                         <div class="col-md-4 ">
                               การสรรหา<b class="text-danger">*</b>
@@ -182,13 +183,13 @@
                                           <label class="form-check-label">
                                             <input type="checkbox" class="form-check-input" name="hire" id="hire" value="กรณีจ้างเพิ่ม/New">กรณีจ้างเพิ่ม/New
                                           </label>
-                                          <textarea name="bec" id="bec" cols="20" rows="1" class="form-control"  placeholder="ระบุ"></textarea>
+                                          <textarea name="bec" id="bec" cols="20" rows="1" class="form-control"  placeholder="หมายเหตุ"  disabled required></textarea>
 
                                     </div>
                                     <div class="form-check">
                                           <label class="form-check-label">
                                                   <input type="checkbox" class="form-check-input" name="substitute" id="substitute" value="กรณีทดแทน/Replace">กรณีทดแทน/Replace
-                                                  <input type="text" name="name_substitute" id="name_substitute" class="form-control" placeholder="ชื่อ-นามสกุล"  >
+                                                  <input type="text" name="name_substitute" id="name_substitute" class="form-control" placeholder="ชื่อ-นามสกุล" disabled required>
                                                 </label>
                                     </div>
                               </div>
@@ -210,7 +211,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">สวัสดิการอื่นๆ<b class="text-danger">*</b></label>
-                                    <textarea class="form-control" rows="1" id="benefits" name="benefits" required></textarea>
+                                    <textarea class="form-control" rows="1" id="benefits" name="benefits" ></textarea>
                               </div>
 
                         </div>
@@ -218,7 +219,7 @@
                         <div class="col-md-4 ">
                               <div class="form-group ">
                                     <label class="control-label">ลักษณะงานที่ทำโดยสังเขป/Description<b class="text-danger">*</b></label>
-                                    <textarea class="form-control" rows="1" id="description" name="description" required></textarea>
+                                    <textarea class="form-control" rows="1" id="description" name="description" ></textarea>
                               </div>
 
                         </div>
@@ -249,7 +250,7 @@
                               <div class="form-group ">
                                     <div class="form-check">
                                           <label class="form-check-label">
-                                                 <input type="checkbox" class="form-check-input" name="primary" id="primary" value="ป.6/Primary School(P.6)">ป.6/Primary School(P.6)
+                                                 <input type="checkbox" class="form-check-input" name="primary" id="primary" value="ป.6/Primary School(P.6)" >ป.6/Primary School(P.6)
                                           </label>
 
                                     </div>
@@ -297,28 +298,28 @@
                               <div class="form-check">
                                     <label class="form-check-label">
                                            <input type="checkbox" class="form-check-input" name="foreign_languages" id="foreign_languages" value="ภาษาต่างประเทศ/Foreign Languages Command">ภาษาต่างประเทศ/Foreign Languages Command 
-                                           <input type="text" name="languages_name" id="languages_name" class="form-control" placeholder="ระบุ" >
+                                           <input type="text" name="languages_name" id="languages_name" class="form-control" placeholder="ระบุ" required disabled>
                                                 </label>
 
                               </div>
                               <div class="form-check">
                                     <label class="form-check-label">
                                                                   <input type="checkbox" class="form-check-input"  name="typing" id="typing" value="พิมพ์ดีดไทย & อังกฤษ/Thai & English Typing">พิมพ์ดีดไทย & อังกฤษ/Thai & English Typing 
-                                                                  <input type="text" name="typing_name" id="typing_name" class="form-control" placeholder="ระบุ" >
+                                                                  <input type="text" name="typing_name" id="typing_name" class="form-control" placeholder="ระบุ" required disabled>
                                                                        </label>
                               </div>
                               <div class="form-check">
 
                                     <label class="form-check-label">
                                                                   <input type="checkbox" class="form-check-input" name="computer_knowledge" id="computer_knowledge" value="ความรู้ทางคอมพิวเตอร์/Computer Knowledge">ความรู้ทางคอมพิวเตอร์/Computer Knowledge 
-                                                                  <input type="text" name="knowledge_name" id="knowledge_name" class="form-control" placeholder="ระบุ" >
+                                                                  <input type="text" name="knowledge_name" id="knowledge_name" class="form-control" placeholder="ระบุ" required disabled>
                                                             </label>
                               </div>
                               <div class="form-check">
 
                                     <label class="form-check-label">
                                                                         <input type="checkbox" class="form-check-input" name="other_skill" id="other_skill" value="อื่นๆ/Other">อื่นๆ/Other 
-                                                                        <input type="text" name="other_skill_name" id="other_skill_name" class="form-control" placeholder="ระบุ" >
+                                                                        <input type="text" name="other_skill_name" id="other_skill_name" class="form-control" placeholder="ระบุ" required  disabled>
                                                                   </label>
                               </div>
 
@@ -332,28 +333,28 @@
                               <div class="form-check">
                                     <label class="form-check-label">
                                                  <input type="checkbox" class="form-check-input" name="inexperience" id="inexperience" value="ไม่มีประสบการณ์/Inexperience">ไม่มีประสบการณ์/Inexperience 
-                                                 <input type="text" name="inexperience_com" id="inexperience_com" class="form-control" placeholder="ระบุ" >
+                                                 <input type="text" name="inexperience_com" id="inexperience_com" class="form-control" placeholder="ระบุ" required disabled>
                                                       </label>
 
                               </div>
                               <div class="form-check">
                                     <label class="form-check-label">
                                                                         <input type="checkbox" class="form-check-input" name="minimum_experience" id="minimum_experience" value="ประสบการณ์ขั้นต่ำ/Minimum Experience">ประสบการณ์ขั้นต่ำ/Minimum Experience 
-                                                                        <input type="text" name="minimum_experience_com" id="minimum_experience_com" class="form-control" placeholder="ระบุ" >
+                                                                        <input type="text" name="minimum_experience_com" id="minimum_experience_com" class="form-control" placeholder="ระบุ" required  disabled>
                                                                              </label>
                               </div>
                               <div class="form-check">
 
                                     <label class="form-check-label">
                                                                         <input type="checkbox" class="form-check-input" name="additional_experience" id="additional_experience" value="หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any)">หมายเหตุเพิ่มเติม(ถ้ามี)/Additional Remark(if any) 
-                                                                        <input type="text" name="additional_com" id="additional_com" class="form-control" placeholder="ระบุ" >
+                                                                        <input type="text" name="additional_com" id="additional_com" class="form-control" placeholder="ระบุ" required  disabled>
                                                                   </label>
                               </div>
                               <div class="form-check">
 
                                     <label class="form-check-label">
                                                                               <input type="checkbox" class="form-check-input" name="other_experience" id="other_experience" value="อื่นๆ/Other">อื่นๆ/Other 
-                                                                        <input type="text" name="other_experience_com" id="other_experience_com" class="form-control" placeholder="ระบุ" >
+                                                                        <input type="text" name="other_experience_com" id="other_experience_com" class="form-control" placeholder="ระบุ" required disabled>
                                                                         </label>
                               </div>
                         </div>
@@ -432,6 +433,9 @@
 
 
       <script>
+ 
+
+  
             $(document).ready(function() {
               $('.sigPad').signaturePad({drawOnly:true});
                      
@@ -449,41 +453,13 @@ $("#inviter").submit(function(){
 
 
     $(document).ready(function() {    
-       $("#labe1").hide();
-       $("#labe2").hide();
-       $("#labe3").hide();
-       $("#labe4").hide();
-       $("#labe5").hide();
-       $("#labe6").hide();
-       $("#labe7").hide();
-       $("#labe8").hide();
-       $("#bec").hide();  
-       $("#name_substitute").hide(); 
-
-       $("#languages_name").hide();
-       $("#typing_name").hide();
-       $("#knowledge_name").hide();
-       $("#other_skill_name").hide();
-       $("#minimum_experience_com").hide();
-       $("#additional_com").hide();
-       $("#other_experience_com").hide();
-       $("#inexperience_com").hide();
-
-
-
-
-
-
-
-
+   
 
       $('#permanent').click(function() {
         if ($(this).is(':checked')) {
-            $("#labe1").show();
-            $("#labe2").show();
+      
         }else {
-            $("#labe1").hide();
-            $("#labe2").hide();
+       
             $("#daily1").removeAttr("checked","checked");
             $("#monthly2").removeAttr("checked","checked");
             
@@ -492,18 +468,11 @@ $("#inviter").submit(function(){
   
   $('#apprentie').click(function() {
         if ($(this).is(':checked')) {
-       $("#labe3").show();
-       $("#labe4").show();
-       $("#labe5").show();
+       
        $("#timestart1").removeAttr('disabled', 'disabled');
        $("#timeend1").removeAttr('disabled', 'disabled');
         }else {
-      $("#labe3").hide();
-       $("#labe4").hide();
-       $("#labe5").hide();
-       $("#daily3").removeAttr("checked","checked");
-       $("#monthly4").removeAttr("checked","checked");
-       $("#checkstart1").removeAttr("checked","checked");
+      
        $("#timestart1").attr('disabled', 'disabled');
        $("#timeend1").attr('disabled', 'disabled');
         }
@@ -515,19 +484,13 @@ $("#inviter").submit(function(){
   $('#subcontract').click(function() {
   
         if ($(this).is(':checked')) {
-       $("#labe6").show();
-       $("#labe7").show();
-       $("#labe8").show();
+      
        $("#timestart2").removeAttr('disabled', 'disabled');
        $("#timeend2").removeAttr('disabled', 'disabled');
           
         }else {
-      $("#labe6").hide();
-       $("#labe7").hide();
-       $("#labe8").hide();
-       $("#daily5").removeAttr("checked","checked");
-       $("#monthly6").removeAttr("checked","checked");
-       $("#checkstart2").removeAttr("checked","checked");
+     
+       
        $("#timestart2").attr('disabled', 'disabled');
        $("#timeend2").attr('disabled', 'disabled');
         }
@@ -536,51 +499,54 @@ $("#inviter").submit(function(){
  $('#hire').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#bec").show();  
+   
       $("#bec").removeAttr('disabled', 'disabled');
 
   }else {
-      $("#bec").hide();  
+   
       $("#bec").attr('disabled', 'disabled');
+      document.getElementById('bec').value = "";
   }
 });
 
  $('#substitute').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#name_substitute").show();
+   
       $("#name_substitute").removeAttr('disabled', 'disabled');
     
   }else {
-      $("#name_substitute").hide(); 
+
       $("#name_substitute").attr('disabled', 'disabled');
+      document.getElementById('name_substitute').value = "";
   }
 });
 
  $('#other_experience').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#other_experience_com").show();
+     
       $("#other_experience_com").removeAttr('disabled', 'disabled');
      
     
   }else {
-      $("#other_experience_com").hide();
+    
       $("#other_experience_com").attr('disabled', 'disabled'); 
+      document.getElementById('other_experience_com').value = ""; 
   }
 });
 
  $('#additional_experience').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#additional_com").show();
+   
       $("#additional_com").removeAttr('disabled', 'disabled');
 
      
   }else {
-      $("#additional_com").hide(); 
-      $("#additional_com").attr('disabled', 'disabled'); 
 
+      $("#additional_com").attr('disabled', 'disabled'); 
+      document.getElementById('additional_com').value = ""; 
   }
 });
 
@@ -588,78 +554,84 @@ $("#inviter").submit(function(){
   
   if ($(this).is(':checked')) {
      
-       $("#minimum_experience_com").show();
+
        $("#minimum_experience_com").removeAttr('disabled', 'disabled');
 
    
   }else {
-      $("#minimum_experience_com").hide(); 
-      $("#minimum_experience_com").attr('disabled', 'disabled'); 
 
+      $("#minimum_experience_com").attr('disabled', 'disabled'); 
+      document.getElementById('minimum_experience_com').value = ""; 
   }
 });
 
  $('#inexperience').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#inexperience_com").show();
+
       $("#inexperience_com").removeAttr('disabled', 'disabled');
            
   }else {
-      $("#inexperience_com").hide();
-      $("#inexperience_com").attr('disabled', 'disabled'); 
+
+      $("#inexperience_com").attr('disabled', 'disabled');
+      document.getElementById('inexperience_com').value = ""; 
  
   }
 });
 $('#other_skill').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#other_skill_name").show();
+
       $("#other_skill_name").removeAttr('disabled', 'disabled');
 
       
   }else {
-      $("#other_skill_name").hide(); 
-      $("#other_skill_name").attr('disabled', 'disabled'); 
+   
+      $("#other_skill_name").attr('disabled', 'disabled');
+      document.getElementById('other_skill_name').value = "";
 
   }
 });
 $('#computer_knowledge').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#knowledge_name").show();
+
       $("#knowledge_name").removeAttr('disabled', 'disabled');
 
        
     
   }else {
-      $("#knowledge_name").hide(); 
+
       $("#knowledge_name").attr('disabled', 'disabled'); 
+      document.getElementById('knowledge_name').value = "";
 
   }
 });
 $('#typing').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#typing_name").show();
+   
       $("#typing_name").removeAttr('disabled', 'disabled');
 
   }else {
-      $("#typing_name").hide(); 
+ 
       $("#typing_name").attr('disabled', 'disabled'); 
+      document.getElementById('typing_name').value = "";
 
   }
 });
 $('#foreign_languages').click(function() {
   
   if ($(this).is(':checked')) {
-      $("#languages_name").show();
+
       $("#languages_name").removeAttr('disabled', 'disabled');
     
   }else {
-      $("#languages_name").hide(); 
+     
       $("#languages_name").attr('disabled', 'disabled'); 
-
+      document.getElementById('languages_name').value = "";
+      
+      
   }
 });
 
@@ -668,18 +640,27 @@ $('#foreign_languages').click(function() {
       </script>
 
 <script language="javascript">
+  
             function fncSubmit()
             {
                   if(document.form1.internal_Recruit.checked == false && document.form1.external_Recruit.checked == false)
                   {
+                        
                         alert('โปรดเลือกการสรรหาอย่างน้อย 1 ตัวเลือก');
+                        document.form1.internal_Recruit.focus();
+                        document.form1.external_Recruit.focus();
                         return false;
                   }else if( document.form1.permanent.checked == false && document.form1.apprentie.checked == false && document.form1.subcontract.checked == false){
                         alert('โปรดเลือกประเภทของการจ้างงาน/Type of Employentอย่างน้อย 1 ตัวเลือกค่ะ');
+                        document.form1.permanent.focus();
+                        document.form1.apprentie.focus();
+                        document.form1.subcontract.focus();
                         return false;
                   }
                   else if( document.form1.hire.checked == false && document.form1.substitute.checked == false){
                         alert('โปรดเลือกประเภทของความต้องการ/Type of Rquirementอย่างน้อย 1 ตัวเลือกค่ะ');
+                        document.form1.hire.focus();
+                        document.form1.substitute.focus();
                         return false;
                   }
                   else if( document.form1.primary.checked == false && 
@@ -692,24 +673,43 @@ $('#foreign_languages').click(function() {
                           
                           ){
                         alert('โปรดเลือก การศึกษา/Education อย่างน้อย 1 ตัวเลือกค่ะ');
+                        document.form1.primary.focus();
+                        document.form1.high_school.focus();
+                        document.form1.high_vocational.focus();
+                        document.form1.othereducation.focus();
+                        document.form1.secondary.focus();
+                        document.form1.vocational.focus();
+                        document.form1.undergraduate.focus();
+                      
                         return false;
-                  } else if( document.form1.foreign_languages.checked == false && 
+                  }
+                   else if( document.form1.foreign_languages.checked == false && 
                           document.form1.typing.checked == false &&
                           document.form1.computer_knowledge.checked == false &&
                           document.form1.other_skill.checked == false
                          
                           ){
                         alert('โปรดเลือก  ความสามารถพิเศษ/Special Skill อย่างน้อย 1 ตัวเลือกค่ะ');
+                        document.form1.foreign_languages.focus();
+                        document.form1.typing.focus();
+                        document.form1.computer_knowledge.focus();
+                        document.form1.other_skill.focus();
                         return false;
-                  }else if( document.form1.inexperience.checked == false &&
+                  }  
+                  else if( document.form1.inexperience.checked == false &&
                           document.form1.minimum_experience.checked == false &&
                           document.form1.additional_experience.checked == false &&
                           document.form1.other_experience.checked == false){
-                              alert('โปรดเลือก   ประสบการณ์/Experience อย่างน้อย 1 ตัวเลือกค่ะ');
+                        alert('โปรดเลือก   ประสบการณ์/Experience อย่างน้อย 1 ตัวเลือกค่ะ');
+                          document.form1.inexperience.focus();
+                          document.form1.minimum_experience.focus();
+                          document.form1.additional_experience.focus();
+                          document.form1.other_experience.focus();
                         return false;
 
 
                           }
+                    
                   
                   
                   else{

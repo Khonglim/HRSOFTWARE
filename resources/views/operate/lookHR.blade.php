@@ -194,17 +194,17 @@
 
                                             </tr>
                                             <tr>
-                                              <td style="text-align:center">ตั้งแต่วันที่  <input type="text" id="startrate_90" name="startrate_90"  required > <br><br>
-                                                ถึงวันที่    <input type="text" id="endrate_90"  name="endrate_90"  required >
+                                              <td style="text-align:center">ตั้งแต่วันที่  <input type="text" id="startrate_90" name="startrate_90"  > <br><br>
+                                                ถึงวันที่    <input type="text" id="endrate_90"  name="endrate_90"   >
 
 
                                             </td>
-                                              <td style="text-align:center"> <input type="text" name="sick_90"   id="sick_90"     style="width:50px" required> </td>
-                                              <td style="text-align:center"><input type="text" name="errand_90"    id="errand_90"   style="width:50px" required ></td>
-                                              <td style="text-align:center"><input type="text" name="absence_90"     id="absence_90"    style="width:50px" required></td>
-                                              <td style="text-align:center"><input type="text"   name="vacation_90"   id="vacation_90"   style="width:50px"  required></td>
-                                              <td style="text-align:center"><input type="text"  name="line_90"    id="line_90"   style="width:50px"  required></td>
-                                              <td style="text-align:center"><input type="text"  name="min_90"    id="min_90"  style="width:50px"  required></td>
+                                              <td style="text-align:center"> <input type="text" name="sick_90"   id="sick_90"     style="width:50px" > </td>
+                                              <td style="text-align:center"><input type="text" name="errand_90"    id="errand_90"   style="width:50px" ></td>
+                                              <td style="text-align:center"><input type="text" name="absence_90"     id="absence_90"    style="width:50px" ></td>
+                                              <td style="text-align:center"><input type="text"   name="vacation_90"   id="vacation_90"   style="width:50px"  ></td>
+                                              <td style="text-align:center"><input type="text"  name="line_90"    id="line_90"   style="width:50px"  ></td>
+                                              <td style="text-align:center"><input type="text"  name="min_90"    id="min_90"  style="width:50px"  ></td>
 
                                             </tr>
 
@@ -537,28 +537,15 @@
                      <input type="text" name="total_60" id="total_60" style="text-align:center" readonly>
 
                          </td>
-
-
-
-
-
-
-
                      </tr>
 
                      <tr>
-
-
                             <td  COLSPAN="3" >
 
                                     รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center"  > คะแนน  <br><br>
                                                   ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center"> คะแนน<br><br>
                                                   (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center"> คะแนน
                                   </td>
-
-
-
-
 
                      </tr>
 
