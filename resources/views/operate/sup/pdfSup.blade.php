@@ -389,8 +389,8 @@
                                       </div>
                                 <br> ( คุณ{{$operate->name_rate_60}} ) 
                                 <br>ผู้บังคับบัญชาต้นสังกัด
-                                <br>วันที่การประเมิน {{$operate->created_at}} น.
-                                <br>การประเมิน {{$operate->NumberDate_60}} วัน	
+                                <br>วันที่การประเมิน {{$operate->date60T}} น.
+                                <br>การประเมิน 60 วัน	
                                     
                             </td>
                     <td align="center">
@@ -404,8 +404,8 @@
                               </div>
                         <br> ( คุณ{{$operate->name_rate_90}} ) 
                         <br>ผู้บังคับบัญชาต้นสังกัด
-                        <br>วันที่การประเมิน {{$operate->updated_at}} น.
-                        <br>การประเมิน {{$operate->NumberDate_90}} วัน	
+                        <br>วันที่การประเมิน {{$operate->date90T}} น.
+                        <br>การประเมิน 90 วัน	
                         	
                     </td>
                     <td align="center">
@@ -632,7 +632,9 @@
                              
                                 </div>
                    
-                        <br>( คุณ{{$operate->namerate_suitability}} )<br>วันที่การประเมิน....../....../......</p>
+                        <br>( คุณ{{$operate->namerate_suitability}} )<br>
+                        
+                        วันที่การประเมิน {{$operate->dateL}}</p>
                     </center>
                 @endif  
             </td>
@@ -742,7 +744,7 @@
                                               </div>
                                  @if($operate->human_resource_nre != '')
                                ( คุณ{{$operate->human_resource_nre}} )
-                               <br>วันที่การประเมิน....../....../......
+                               <br>วันที่การประเมิน {{$operate->dateS}} น.
                                 @endif
                             </td>
                         </tr>       
@@ -789,7 +791,9 @@
                            
                               </div>
                         @if($operate->manager_resource_nre != '')
-                       ( คุณ{{$operate->manager_resource_nre}} )<br>วันที่การประเมิน..../..../....
+                       ( คุณ{{$operate->manager_resource_nre}} )
+                       
+                       <br>วันที่การประเมิน {{$operate->dateM}} น.
                         @endif   
                     </td>
                 </tr>

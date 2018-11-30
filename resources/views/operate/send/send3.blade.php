@@ -41,6 +41,12 @@
                 background-color: #E96060;
                 color: white;
             }
+            .table-wrapper-scroll-y {
+  display: block;
+  max-height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
             </style>
     
     <div class="container-fluid">

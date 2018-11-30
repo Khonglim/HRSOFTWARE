@@ -41,6 +41,12 @@
                 background-color: #E96060;
                 color: white;
             }
+            .table-wrapper-scroll-y {
+  display: block;
+  max-height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
             </style>
     
     <div class="container-fluid">
@@ -534,6 +540,7 @@
    </div>
    <div class="form-group">
    <div class="col-sm-12">
+        <div  class="table-wrapper-scroll-y"> 
    <table id="customers">
    <tbody >
    <tr>
@@ -548,10 +555,12 @@
    </table> 
    </div>
    </div>
+   </div>
    
    <div class="form-group">
    <div class="col-sm-12">
-       <table>
+        <div  class="table-wrapper-scroll-y"> 
+       <table id="customers">
                <tbody>
                    <tr>
                        <td colspan="3">
@@ -577,7 +586,7 @@
                                    <div class="sig0">
                                            <div class="sigWrapper">
                                            
-                                             <canvas class="pad" width="198" height="55"></canvas>
+                                             <canvas class="pad" width="220" height="79"></canvas>
                                            </div>
                                       
                                          </div>
@@ -592,7 +601,7 @@
                            <div class="sig1">
                                    <div class="sigWrapper">
                                    
-                                     <canvas class="pad" width="198" height="55"></canvas>
+                                     <canvas class="pad" width="220" height="79"></canvas>
                                    </div>
                               
                                  </div>
@@ -609,6 +618,7 @@
                    </tr>  
                </tbody>
                </table> 
+   </div>
    </div>
    </div>
    

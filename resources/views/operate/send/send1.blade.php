@@ -12,6 +12,12 @@
         font-family: 'Prompt', sans-serif;
        
       }
+      .table-wrapper-scroll-y {
+  display: block;
+  max-height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
       </style>
   <link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
   
@@ -158,13 +164,13 @@
                           <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสายครั้งที่ 1</th>
                         </tr>
                         <tr>
-                          <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
-                          <td style="text-align:center">ลาป่วย(วัน )</td>
-                          <td style="text-align:center">ลากิจ (วัน )</td>
-                          <td style="text-align:center">ขาดงาน (วัน )</td>
-                          <td style="text-align:center">พักร้อน (วัน )</td>
-                          <td style="text-align:center">สาย (ครั้ง)</td>
-                          <td style="text-align:center">สาย (นาที)</td>
+                          <td style="text-align:center" style="width:43px" >สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                          <td style="text-align:center" style="width:43px" >ลาป่วย(วัน )</td>
+                          <td style="text-align:center" style="width:43px" >ลากิจ (วัน )</td>
+                          <td style="text-align:center" style="width:43px" >ขาดงาน (วัน )</td>
+                          <td style="text-align:center" style="width:43px" >พักร้อน (วัน )</td>
+                          <td style="text-align:center" style="width:43px" >สาย (ครั้ง)</td>
+                          <td style="text-align:center" style="width:43px" >สาย (นาที)</td>
 
                         </tr>
                         <tr>
@@ -223,7 +229,7 @@
 
 
      <td  style="width:43%"  > {{  $operate_qSups->operate_qsup  }} </td>
-     <td style="text-align:center">
+     <td style="text-align:center" style="width:43%" >
                  @foreach ($operate_Chioce as $item)
 
 
@@ -370,9 +376,7 @@
               <td  style="width:43%"  > {{  $operate_qSef->operate_qstaff  }} </td>
               <td style="text-align:center">
                           @foreach ($operate_Chioce as $item)
-            
-            
-                          <input type="radio" id="score60_{{$operate_qSef->id}}" name="score60_{{$operate_qSef->id}}" value={{$item->score_operate}}> {{$item->score_operate}}    {{$item->meaning_operate}} &ensp;
+<input type="radio" id="score60_{{$operate_qSef->id}}" name="score60_{{$operate_qSef->id}}" value="{{$item->score_operate}}"  required > {{$item->score_operate}}    {{$item->meaning_operate}} &ensp;
             
             
                           @endforeach
