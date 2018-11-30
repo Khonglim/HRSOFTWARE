@@ -929,7 +929,7 @@
                                     </tbody>
                                 </table>
 
-                        {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+                        {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
                         @csrf
                      
                     
@@ -943,17 +943,20 @@
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <div class="col-md ">
-                                            <label><input type="checkbox" name="manager_resource_ok" value="อนุมัติตามผู้บังคับบัญชาเสนอ"> ให้บรรจุเป็นพนักงานประจำ</label>
+                                            <label><input type="checkbox" name="manager_resource_ok" id="manager_resource_ok" value="อนุมัติตามผู้บังคับบัญชาเสนอ" required> ให้บรรจุเป็นพนักงานประจำ</label>
                                         </div>
                                         <div class="col-md">
-                                            <label><input type="checkbox" name="manager_resource_modi" value="ปรับอัตราเงินเดือน"> ปรับอัตราเงินเดือน: </label> <input type="text" name="manager_resource_comdi" class="form-control"/>
+                                            <label><input type="checkbox" name="manager_resource_modi" id="manager_resource_modi" value="ปรับอัตราเงินเดือน"> ปรับอัตราเงินเดือน: </label> 
+                                            
+                                            <input type="text" name="manager_resource_comdi"  id="manager_resource_comdi"   class="form-control" required  disabled/>
                                         </div>
                                     </div>
                                 </div>
                             <div class="form-group">
                                     <div class="checkbox">
                                     <div class="col-md">
-                                    <label><input type="checkbox" name="manager_resource_nodi" value="ยังไม่ปรับเงินเดือน"> ยังไม่ปรับเงินเดือน: </label> <input type="text" name="manager_resource_comno" class="form-control">
+                                    <label><input type="checkbox" name="manager_resource_nodi" id="manager_resource_nodi"  value="ยังไม่ปรับเงินเดือน"> ยังไม่ปรับเงินเดือน: </label> 
+                                    <input type="text" name="manager_resource_comno" id="manager_resource_comno" class="form-control" required disabled>
                                 </div>
                                 </div>
                                 </div>
@@ -964,14 +967,17 @@
                                     
                                     <div class="checkbox">
                                         <div class="col-md">
-                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น "  name="manager_resource_adjust"> ให้ปรับตำแหน่งเป็น:</label> <input type="text"  name="manager_resource_posi" class="form-control">
+                                                <label><input type="checkbox" value="ให้ปรับตำแหน่งเป็น " id="manager_resource_adjust" name="manager_resource_adjust"> ให้ปรับตำแหน่งเป็น:</label> 
+                                                <input type="text"  name="manager_resource_posi" class="form-control" id="manager_resource_posi" required disabled>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <div class="col-md">
-                                                <label><input type="checkbox"  name="manager_resource_fail"  value="ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่ "  name="nomodi_11"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่: </label><input type="text"  name="manager_resource_date" class="form-control">
+                                                <label><input type="checkbox"  name="manager_resource_fail" id="manager_resource_fail"  value="ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่ "  name="nomodi_11"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่: </label>
+                                                
+                                                <input type="date"  name="manager_resource_date" id="manager_resource_date" class="form-control" required disabled >
                                     </div>
                                 </div>
                                 </div>
@@ -982,7 +988,9 @@
                                   <label  class="col-sm-2 control-label"></label>
                                   <div class="col-sm-4 ">
   
-                                        <label><input type="checkbox" value="อื่นๆ" name="manager_resource_other"> อื่นๆ : </label><textarea class="form-control" rows="3" name="manager_resource_othercom"></textarea>
+                                        <label><input type="checkbox" value="อื่นๆ" name="manager_resource_other" id="manager_resource_other"> อื่นๆ : </label>
+                                        
+                                        <textarea class="form-control" rows="3" name="manager_resource_othercom"  id="manager_resource_othercom" required disabled></textarea>
   
                                       </div>
                                     </div>
@@ -1072,6 +1080,146 @@
     
         });
       </script>
+
+
+
+<script>
+    $(document).ready(function() {
+   
+         $('#manager_resource_modi').click(function() {
+     
+     if ($(this).is(':checked')) {
+   
+         $("#manager_resource_comdi").removeAttr('disabled', 'disabled');
+       
+     }else {
+        
+         $("#manager_resource_comdi").attr('disabled', 'disabled'); 
+         document.getElementById('manager_resource_comdi').value = "";
+         
+         
+     }
+   });
+   
+   
+     $('#manager_resource_nodi').click(function() {
+     
+     if ($(this).is(':checked')) {
+   
+         $("#manager_resource_comno").removeAttr('disabled', 'disabled');
+         
+       
+     }else {
+        
+         $("#manager_resource_comno").attr('disabled', 'disabled'); 
+         document.getElementById('manager_resource_comno').value = "";
+       
+         
+     }
+   });
+   
+   
+    $('#human_resource_adjust').click(function() {
+     
+     if ($(this).is(':checked')) {
+   
+         $("#human_resource_posi").removeAttr('disabled', 'disabled');
+        
+     }else {
+       $("#human_resource_posi").attr('disabled', 'disabled'); 
+         document.getElementById('human_resource_posi').value = "";
+         
+     }
+   });
+   
+   
+   
+   $('#manager_resource_adjust').click(function() {
+     
+     if ($(this).is(':checked')) {
+   
+         $("#manager_resource_posi").removeAttr('disabled', 'disabled');
+        
+     }else {
+      
+         $("#manager_resource_posi").attr('disabled', 'disabled'); 
+         document.getElementById('manager_resource_posi').value = "";
+        
+         
+     }
+    });
+$('#manager_resource_fail').click(function() {
+     
+     if ($(this).is(':checked')) {
+   
+         $("#manager_resource_date").removeAttr('disabled', 'disabled');
+        
+     }else {
+      
+         $("#manager_resource_date").attr('disabled', 'disabled'); 
+         document.getElementById('manager_resource_date').value = "";
+        
+         
+     }
+
+
+
+
+
+   });
+   
+   $('#manager_resource_other').click(function() {
+     
+     if ($(this).is(':checked')) {
+   
+         $("#manager_resource_othercom").removeAttr('disabled', 'disabled');
+        
+     }else {
+      
+         $("#manager_resource_othercom").attr('disabled', 'disabled'); 
+         document.getElementById('manager_resource_othercom').value = "";
+        
+         
+     }
+
+
+
+
+
+   });
+});
+     
+   
+   
+   </script>
+   
+   
+   
+   <script language="javascript">
+     
+           function fncSubmit()
+           {
+                 if(document.form1.manager_resource_modi.checked == false && document.form1.manager_resource_nodi.checked == false
+                 
+                 &&  document.form1.manager_resource_fail.checked == false &&  document.form1.manager_resource_adjust.checked == false
+
+
+                 &&  document.form1.manager_resource_other.checked == false 
+                 )
+                 {
+                       
+                       alert('โปรดลงความคิดเห็นอย่างน้อย 1 ตัวเลือก ');
+                      
+                       return false;
+                 }
+                 else{
+                         $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
+                         
+                 }	
+                 
+                 document.form1.submit();
+           }
+           </script>
 
 
 
