@@ -866,7 +866,7 @@
         </div>
     </div>
 
-                        {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+                        {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
                         @csrf
                         <input type="hidden"  name="dateS"  id="dateS" value="<?php echo date("d/m/Y H:i:s");?>"/>
                     <div class="row">
@@ -874,18 +874,21 @@
                                 <div class="checkbox">
                             <label  class="col-sm-2 control-label"></label>
                             <div class="col-md">
-                                <label><input type="checkbox" name="human_resource_ok" value="บรรจุเป็นพนักงานประจำ">บรรจุเป็นพนักงานประจำ</label>
+                                <label><input type="checkbox" name="human_resource_ok" id="human_resource_ok"  value="บรรจุเป็นพนักงานประจำ" required>บรรจุเป็นพนักงานประจำ</label>
                             </div>
                             <div class="col-md">
-                                    <label><input type="checkbox" name="human_resource_modi" value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:</label>  <input type="text" name="human_resource_commo" class="form-control"/>
+                                    <label><input type="checkbox" name="human_resource_modi" id="human_resource_modi"  value="ปรับอัตราเงินเดือน">ปรับอัตราเงินเดือน:</label>  
+                                    <input type="text" name="human_resource_commo" id="human_resource_commo"   class="form-control"   required  disabled>
                             </div>
                             <label  class="col-sm-6 control-label"></label>
                             <div class="col-md">
-                                    <label><input type="checkbox" name="human_resource_nodi" value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:</label>  <input type="text" name="human_resource_comno" class="form-control">
+                                    <label><input type="checkbox" name="human_resource_nodi" id="human_resource_nodi"   value="ยังไม่ปรับเงินเดือน">ยังไม่ปรับเงินเดือน:</label>  
+                                    <input type="text" name="human_resource_comno" id="human_resource_comno" class="form-control"  required  disabled >
                             </div>
                                 <label  class="col-sm-2 control-label"></label>
                             <div class="col-md ">
-                                    <label><input type="checkbox"  name="human_resource_adjust"   value="ให้ปรับตำแหน่งเป็น "> ให้ปรับตำแหน่งเป็น:</label> <input type="text"  name="human_resource_posi" class="form-control">
+                                    <label><input type="checkbox"  name="human_resource_adjust" id="human_resource_adjust"  value="ให้ปรับตำแหน่งเป็น "> ให้ปรับตำแหน่งเป็น:</label> 
+                                    <input type="text"  name="human_resource_posi"  id="human_resource_posi" class="form-control"  required disabled  >
                             </div>
                                 </div>
                         </div> 
@@ -894,11 +897,14 @@
                         <div class="checkbox">
                             <label  class="col-sm-2 control-label"></label>
                             <div class="col-md ">
-                                    <label><input type="checkbox" name="human_resource_fail" value="ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่:</label> <input type="text"  name="human_resource_date" class="form-control">
+                                    <label><input type="checkbox" name="human_resource_fail"  id="human_resource_fail" value="ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่:</label> 
+                                    
+                                    <input type="text"  name="human_resource_date" id="human_resource_date" class="form-control" required  disabled>
                             </div>
                                 <label  class="col-sm-2 control-label"></label>
                             <div class="col-md ">
-                                    <label><input type="checkbox" name="human_resource_other"  value="อื่นๆ">  อื่นๆ :</label> <textarea class="form-control" rows="3" name="human_resource_othercom"></textarea>
+                                    <label><input type="checkbox" name="human_resource_other"  id="human_resource_other" value="อื่นๆ">  อื่นๆ :</label> 
+                                    <textarea class="form-control" rows="3" name="human_resource_othercom" id="human_resource_othercom" required  disabled></textarea>
                             </div>
                         </div>
                         </div>
@@ -971,7 +977,125 @@
         });
       </script>
        
+       <script>
+        $(document).ready(function() {
+       
+             $('#human_resource_modi').click(function() {
+         
+         if ($(this).is(':checked')) {
+       
+             $("#human_resource_commo").removeAttr('disabled', 'disabled');
+           
+         }else {
+            
+             $("#human_resource_commo").attr('disabled', 'disabled'); 
+             document.getElementById('human_resource_commo').value = "";
+             
+             
+         }
+       });
+       
+       
+         $('#human_resource_nodi').click(function() {
+         
+         if ($(this).is(':checked')) {
+       
+             $("#human_resource_comno").removeAttr('disabled', 'disabled');
+             
+           
+         }else {
+            
+             $("#human_resource_comno").attr('disabled', 'disabled'); 
+             document.getElementById('human_resource_comno').value = "";
+           
+             
+         }
+       });
+       
+       
+        $('#human_resource_adjust').click(function() {
+         
+         if ($(this).is(':checked')) {
+       
+             $("#human_resource_posi").removeAttr('disabled', 'disabled');
+            
+         }else {
+           $("#human_resource_posi").attr('disabled', 'disabled'); 
+             document.getElementById('human_resource_posi').value = "";
+             
+         }
+       });
+       
+       
+       
+       $('#human_resource_fail').click(function() {
+         
+         if ($(this).is(':checked')) {
+       
+             $("#human_resource_date").removeAttr('disabled', 'disabled');
+            
+         }else {
+          
+             $("#human_resource_date").attr('disabled', 'disabled'); 
+             document.getElementById('human_resource_date').value = "";
+            
+             
+         }
+        });
+ $('#human_resource_other').click(function() {
+         
+         if ($(this).is(':checked')) {
+       
+             $("#human_resource_othercom").removeAttr('disabled', 'disabled');
+            
+         }else {
+          
+             $("#human_resource_othercom").attr('disabled', 'disabled'); 
+             document.getElementById('human_resource_date').value = "";
+            
+             
+         }
 
+
+
+
+
+       });
+       
+       
+    });
+         
+       
+       
+       </script>
+       
+       
+       
+       <script language="javascript">
+         
+               function fncSubmit()
+               {
+                     if(document.form1.human_resource_modi.checked == false && document.form1.human_resource_nodi.checked == false
+                     
+                     &&  document.form1.human_resource_adjust.checked == false &&  document.form1.human_resource_fail.checked == false
+
+
+                     &&  document.form1.human_resource_other.checked == false 
+                     )
+                     {
+                           
+                           alert('โปรดลงความคิดเห็นอย่างน้อย 1 ตัวเลือก');
+                          
+                           return false;
+                     }
+                     else{
+                             $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
+                             
+                     }	
+                     
+                     document.form1.submit();
+               }
+               </script>
 
 
 
