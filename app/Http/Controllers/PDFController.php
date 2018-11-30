@@ -33,7 +33,7 @@ class PDFController extends Controller
             $personal->recheck_Oper=1;
 
         }
-       
+        $personal->degree=1;
         $personal->save();
 
         $pdf = PDF::loadView('employ.pdf',['personal' => $personal ]);

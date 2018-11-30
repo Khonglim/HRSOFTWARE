@@ -444,7 +444,88 @@
                                     </div>
                 </div>
                 </div>
- 
+                <br>
+                <div class="form-group">
+                        <div class="col-sm-12">
+                <table id="customers">
+                        <tbody >
+                            <tr>
+                                <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 60 วัน</td>
+                                <td  style="width: 100px; ">{{$operate->comments_60}}</td>
+                            </tr>
+                            <tr>
+                                <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 90 วัน</td>
+                                <td  style="width: 100px; ">{{$operate->comments_90}}</td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+                </div>
+        
+                <br>
+                <div class="form-group">
+                        <div class="col-sm-12">
+                                <table id="customers">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
+                                                    <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
+                                                        @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
+                                                    <input type="checkbox" checked="checked" disabled>{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
+                                                    @endif 
+                                                        @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                                                    <input type="checkbox" checked="checked" disabled>{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
+                                                    @endif 
+                                                        @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                                                    <input type="checkbox" checked="checked" disabled>{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
+                                                     @endif 
+                                                        @if($operate->other_90 == 'อื่นๆ')
+                                                    <input type="checkbox" checked="checked" disabled>{{$operate->other_90}} : {{$operate->other_com_90}}
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                    <td align="center">
+                                                            <br>
+                                                            <div class="sig0">
+                                                                    <div class="sigWrapper">
+                                                                    
+                                                                      <canvas class="pad" width="220" height="70"></canvas>
+                                                                    </div>
+                                                               
+                                                                  </div>
+                                                            <br> ( คุณ{{$operate->name_rate_60}} ) 
+                                                            <br>ผู้บังคับบัญชาต้นสังกัด
+                                                            <br>วันที่การประเมิน {{$operate->created_at}} น.
+                                                            <br>การประเมิน 60 วัน	
+                                                                
+                                                        </td>
+                                                <td align="center">
+                                                    <br>
+                                                    <div class="sig1">
+                                                            <div class="sigWrapper">
+                                                            
+                                                              <canvas class="pad" width="220" height="70"></canvas>
+                                                            </div>
+                                                       
+                                                          </div>
+                                                    <br> ( คุณ{{$operate->name_rate_90}} ) 
+                                                    <br>ผู้บังคับบัญชาต้นสังกัด
+                                                    <br>วันที่การประเมิน {{$operate->updated_at}} น.
+                                                    <br>การประเมิน 90 วัน	
+                                                        
+                                                </td>
+                                                <td align="center">
+                                                    <br>
+                                                    <br> ผู้ถูกประเมิน : ........................................... <br> 
+                                                    ( คุณ {{$operate->first_name}} 	) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
+                                            </tr>  
+                                        </tbody>
+                                        </table> 
+                </div>
+                </div>
+                <br>
                 <table id="customers">
                         <tbody>
                             <th style="text-align:center" colspan="4"><b>เฉพาะผู้จัดการฝ่าย เป็นผู้ประเมิน (100 คะแนน)</b></th>
@@ -666,69 +747,8 @@
                     </td>
                 </tr>
             </table> 
-            <br>
-            <div class="form-group">
-                    <div class="col-sm-12">
-                            <table id="customers">
-                                    <tbody>
-                                        <tr>
-                                            <td colspan="3">
-                                                <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
-                                                <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
-                                                    @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
-                                                <input type="checkbox" checked="checked" disabled>{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
-                                                @endif 
-                                                    @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                                                <input type="checkbox" checked="checked" disabled>{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
-                                                @endif 
-                                                    @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                                                <input type="checkbox" checked="checked" disabled>{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
-                                                 @endif 
-                                                    @if($operate->other_90 == 'อื่นๆ')
-                                                <input type="checkbox" checked="checked" disabled>{{$operate->other_90}} : {{$operate->other_com_90}}
-                                                @endif
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                                <td align="center">
-                                                        <br>
-                                                        <div class="sig0">
-                                                                <div class="sigWrapper">
-                                                                
-                                                                  <canvas class="pad" width="220" height="70"></canvas>
-                                                                </div>
-                                                           
-                                                              </div>
-                                                        <br> ( คุณ{{$operate->name_rate_60}} ) 
-                                                        <br>ผู้บังคับบัญชาต้นสังกัด
-                                                        <br>วันที่การประเมิน {{$operate->created_at}} น.
-                                                        <br>การประเมิน 60 วัน	
-                                                            
-                                                    </td>
-                                            <td align="center">
-                                                <br>
-                                                <div class="sig1">
-                                                        <div class="sigWrapper">
-                                                        
-                                                          <canvas class="pad" width="220" height="70"></canvas>
-                                                        </div>
-                                                   
-                                                      </div>
-                                                <br> ( คุณ{{$operate->name_rate_90}} ) 
-                                                <br>ผู้บังคับบัญชาต้นสังกัด
-                                                <br>วันที่การประเมิน {{$operate->updated_at}} น.
-                                                <br>การประเมิน 90 วัน	
-                                                    
-                                            </td>
-                                            <td align="center">
-                                                <br>
-                                                <br> ผู้ถูกประเมิน : ........................................... <br> 
-                                                ( คุณ {{$operate->first_name}} 	) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
-                                        </tr>  
-                                    </tbody>
-                                    </table> 
-            </div>
-            </div>
+           
+           
             <br>
             <table  id="customers">
                     <tbody>
