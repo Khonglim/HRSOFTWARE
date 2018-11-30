@@ -4,7 +4,7 @@
 <div class="content-wrapper">
   <div class="content container-fluid">
 
-
+    
 
    @if(Session::has('flash_message') )
    <div class="alert alert-success d-flex align-items-center"> {!! session('flash_message') !!}</div>
@@ -18,7 +18,7 @@
              <h3> หมายเหตุ: link ที่คัดลอกไม่เหมือนกัน โปรดระมัดระวัง <br>
             
             กรุณากรอก Time Attendance ก่อนการคัดลอก link !!!
-            </h3>
+            </h3>  
                         <table id="operate" class="table table-bordered table-striped">
                                     <thead>
                                       <tr>
@@ -30,7 +30,7 @@
                                         <th>ผู้จัดการฝ่ายบุคคล</th>
                                         <th>กรรมการผู้จัดการ/ผู้จัดการทั่วไป</th>
                                         <th>เพิ่มเติม</th>
-                                        <th>สถานะ</th>
+                                        <th>ระดับ</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -336,7 +336,7 @@
                                                             @endif
                                                 
                                                 </td>   
-                                                <td style="width: 250px; ">
+                                                <td style="width: 100px; ">
                                                             <a href="{{'Operate/'.$item['id'].'/edit'}}" class="btn btn-success btn-xs "><i class="fa   fa-pencil-square-o"></i></a>
                                                             <a href="{{url('pdfcon_sup/'.$item['id'])}}" class="btn btn-success btn-xs " ><i class="fa fa-download"></i></a>
                                                             <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#de{{$item['id']}}"><i class=" fa fa-trash"></i></button>
@@ -363,7 +363,13 @@
                                                             </div>
                                                 </td>
                                                 <td>
+                                                        @if($item['degree_enable']==1)
+                                                        บังคับบัญชา
+                                                        @else
+                                                        ปฏิบัติการ
+                                                        @endif
 
+                                                    
                                                  
                                                 </td>
                                      </tr>
@@ -379,7 +385,7 @@
                                                       <th>ผู้จัดการฝ่ายบุคคล</th>
                                                       <th>กรรมการผู้จัดการ/ผู้จัดการทั่วไป</th>
                                                       <th>เพิ่มเติม</th>
-                                                      <th>สถานะ</th>
+                                                      <th>ระดับ</th>
                                             </tr>
                                           </tfoot>
                                         </table>

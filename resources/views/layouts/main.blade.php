@@ -27,7 +27,6 @@
   <script type="text/javascript" src="{{ asset('all/jquery-ui-timepicker-addon.js') }}"></script>
   <script type="text/javascript" src="{{ asset('all/jquery-ui-sliderAccess.js') }}"></script>
 
-  
 
 
 
@@ -501,7 +500,7 @@ body {
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2018 <a href="#">HR NGG</a>.</strong> All rights
     reserved.
   </div>
   <!-- /.container -->

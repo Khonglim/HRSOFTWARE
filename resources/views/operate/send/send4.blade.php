@@ -946,7 +946,7 @@
                             <div class="col-md ">
                                     <label><input type="checkbox" name="human_resource_fail"  id="human_resource_fail" value="ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:"> ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่:</label> 
                                     
-                                    <input type="text"  name="human_resource_date" id="human_resource_date" class="form-control" required  disabled>
+                                    <input type="date"  name="human_resource_date" id="human_resource_date" class="form-control" required  disabled>
                             </div>
                                 <label  class="col-sm-2 control-label"></label>
                             <div class="col-md ">

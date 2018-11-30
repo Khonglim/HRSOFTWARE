@@ -560,7 +560,7 @@
                             <div class="checkbox">
                                     <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="full_time_worker"  id="full_time_worker">อนุมัติให้บรรจุเป็นพนักงานประจำ</label><br> ตั้งแต่วันที่:
                                     
-                                    <input type="text"  name="dateinto"  id="dateinto" class="form-control"  required   disabled>
+                                    <input type="date"  name="dateinto"  id="dateinto" class="form-control"  required   disabled>
                                      ตำแหน่ง:
                                     <input type="text"  id="t2"  class="form-control" name="full_time_worker_position"  required  disabled>
                                   </div>
@@ -574,7 +574,7 @@
                                 <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="modify"  id="modify">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง:</label>
                                 <input type="text" name="modify_position1" id="t1"   class="form-control"  disabled required/>
 
-                                ตั้งแต่วันที่:<input type="text"  name="modify_date"  id="modify_date"  class="form-control" disabled required> เป็นตำแหน่ง:
+                                ตั้งแต่วันที่:<input type="date"  name="modify_date"  id="modify_date"  class="form-control" disabled required> เป็นตำแหน่ง:
                                 <input type="text" name="modify_position2" id="modify_position2"   class="form-control" disabled required  />
                               </div>
                     </div>
