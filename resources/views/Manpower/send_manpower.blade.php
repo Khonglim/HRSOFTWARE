@@ -75,21 +75,21 @@
                         
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>บริษัทต้นสังกัด/company</b> <b class="text-danger">:</b></label> {{ $manpower->company }}
+                                                            <label class="control-label"><b>บริษัทต้นสังกัด/company</b> <b class="text-danger">:</b></label><br> {{ $manpower->company }}
                                                       </div>
                         
                                                 </div>
                         
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>ตำแหน่งที่ต้องการ/Position Required</b> <b class="text-danger">:</b></label> {{ $manpower->position_required }}                                  
+                                                            <label class="control-label"><b>ตำแหน่งที่ต้องการ/Position Required</b> <b class="text-danger">:</b></label><br> {{ $manpower->position_required }}                                  
                                                       </div>
                         
                                                 </div>
                         
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>แผนก/ส่วน/Section/Dividion</b> <b class="text-danger">:</b></label> {{ $manpower->section }}
+                                                            <label class="control-label"><b>แผนก/ส่วน/Section/Dividion</b> <b class="text-danger">:</b></label><br> {{ $manpower->section }}
                                                       </div>
                         
                                                 </div>
@@ -99,21 +99,21 @@
                         
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>วันที่ต้องการ/Date Required</b> <b class="text-danger">:</b></label> {{ $manpower->date_required }}                                    
+                                                            <label class="control-label"><b>วันที่ต้องการ/Date Required</b> <b class="text-danger">:</b></label><br> {{ $manpower->date_required }}                                    
                                                       </div>
                         
                                                 </div>
                         
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>จำนวนพนักงานที่ต้องการ/Number</b> <b class="text-danger">:</b> </label> {{ $manpower->number }}                                  
+                                                            <label class="control-label"><b>จำนวนพนักงานที่ต้องการ/Number</b> <b class="text-danger">:</b> </label><br> {{ $manpower->number }}                                  
                                                       </div>
                         
                                                 </div>
                         
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>อายุ/Age</b> <b class="text-danger">:</b></label> {{ $manpower->age }}
+                                                            <label class="control-label"><b>อายุ/Age</b> <b class="text-danger">:</b></label><br> {{ $manpower->age }}
                                                       </div>
                         
                                                 </div>
@@ -123,52 +123,65 @@
                                                 <div class="col-md-5 ">
                                                         <b>ประเภทของการจ้างงาน/Type of Employent</b> <b class="text-danger">:</b>
                                                       <div class="form-group ">
+
+                                                            @if ($manpower->permanent!='')
                                                             <div class="form-check">
                                                                   <label class="form-check-label">
-                                                                        @if ($manpower->permanent!='')
+                                                                        
                                                                         <i class="material-icons">check_box</i>ประจำ/Permanent
                                                                         @endif    
                                                                         </label>
+                                                                        @if ($manpower->daily1!='')
                                                                   <div class="form-check">
                                                                         <label class="form-check-label" id="labe1">
-                                                                        @if ($manpower->daily1!='')
+                                                                        
                                                                             <i class="material-icons">check_box</i>รายวัน/Daily 
-                                                                        @endif      
+                                                                              
                                                                         </label>
                                                                   </div>
+                                                                  @endif
+                                                                  @if ($manpower->monthly2!='')
                                                                   <div class="form-check">
                                                                         <label class="form-check-label" id="labe2">
-                                                                        @if ($manpower->monthly2!='')
+                                                                        
                                                                             <i class="material-icons">check_box</i>รายเดือน/Monthly 
-                                                                        @endif    
+                                                                           
                                                                         </label>
                                                                   </div>
-                                                            </div>        
+                                                                  @endif 
+                                                            </div> 
+
+                                                             @if ($manpower->apprentie!='')      
                                                             <div class="form-check">
                                                                   <label class="form-check-label" >
-                                                                        @if ($manpower->apprentie!='')
+                                                                        
                                                                             <i class="material-icons">check_box</i>ฝึกงาน/Apprentie
                                                                         @endif
                                                                     </label>
+                                                                    @if ($manpower->daily3!='')
                                                                     <div class="form-check">
                                                                         <label class="form-check-label"  id="labe3">
-                                                                            @if ($manpower->daily3!='')
+                                                                            
                                                                                 <i class="material-icons">check_box</i>รายวัน/Daily 
-                                                                            @endif
+                                                                            
                                                                         </label>
                                                                     </div>
+                                                                    @endif
+                                                                    @if ($manpower->monthly4!='')
                                                                     <div class="form-check">
                                                                         <label class="form-check-label" id="labe4">
-                                                                            @if ($manpower->monthly4!='')
+                                                                            
                                                                                 <i class="material-icons">check_box</i>รายเดือน/Monthly 
-                                                                            @endif
+                                                                           
                                                                         </label>
-                                                                    </div>
+                                                                    </div> 
+                                                                    @endif 
+                                                                    @if ($manpower->checkstart1!='')
                                                                     <div class="form-check">
                                                                         <label class="form-check-label" id="labe5">
-                                                                        @if ($manpower->checkstart1!='')
+                                                                       
                                                                             <i class="material-icons">check_box</i>เริ่มต้น
-                                                                        @endif
+                                                                       
                                                                         @if ($manpower->timestart1!='')
                                                                             {{ $manpower->timestart1 }}
                                                                         @endif
@@ -176,10 +189,12 @@
                                                                         สิ้นสุด  {{ $manpower->timeend1 }}
                                                                         @endif
                                                                         </label>
-                                                                    </div>
+                                                                    </div> 
+                                                                    @endif
                                                             </div>
+
                                                             @if ($manpower->subcontract!='')            
-                                                                    <div class="form-check">
+                                                            <div class="form-check">
                                                                         <label class="form-check-label">
                                                                             
                                                                                 <i class="material-icons">check_box</i>สัญญาจ้างชั่วคราว/Subcontract
@@ -198,12 +213,14 @@
                                                                         <label class="form-check-label" id="labe7">
                                                                                 <i class="material-icons">check_box</i>รายเดือน/Monthly 
                                                                         </label>
-                                                                    </div>@endif
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($manpower->checkstart2!='')
                                                                     <div class="form-check">
                                                                     <label class="form-check-label" id="labe8">
-                                                                        @if ($manpower->checkstart2!='')
+                                                                        
                                                                             <i class="material-icons">check_box</i>เริ่มต้น
-                                                                        @endif
+                                                                        
                                                                         @if ($manpower->timestart2!='')
                                                                             {{ $manpower->timestart2 }}
                                                                         @endif
@@ -212,47 +229,54 @@
                                                                         @endif 
                                                                     </label>
                                                                     </div>
+                                                                    @endif
                                                                 </div>
+                                                                
                                                       </div>
                                                 </div>
+                                                <div class="form-group"></div>
                                                 <div class="col-md-5 ">
-                                                      ประเภทของความต้องการ/Type of Rquirement<b class="text-danger">*</b>
+                                                      <b>ประเภทของความต้องการ/Type of Rquirement</b> <b class="text-danger">:</b>
                                                       <div class="form-group ">
+                                                            @if ($manpower->hire!='')
                                                             <div class="form-check">
                                                                   <label class="form-check-label">
-                                                                    @if ($manpower->hire!='')
+                                                                   
                                                                         <i class="material-icons">check_box</i>กรณีจ้างเพิ่ม/New 
-                                                                    @endif
+                                                                    
                                                                     @if ($manpower->bec!='')
                                                                     <br>    {{ $manpower->bec }}
                                                                     @endif
                                                                   </label>
                                                             </div>
+                                                            @endif
+                                                            @if ($manpower->substitute!='')
                                                             <div class="form-check">
                                                                 <label class="form-check-label">
-                                                                    @if ($manpower->substitute!='')
+                                                                    
                                                                         <i class="material-icons">check_box</i>กรณีทดแทน/Replace 
                                                                     <br> <b>ชื่อ-นามสกุล :</b> {{ $manpower->name_substitute }}
-                                                                    @endif    
+                                                                        
                                                                 </label>
                                                             </div>
+                                                            @endif
                                                       </div>
                                                 </div>
                                           </div>
                                           <div class="row">
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>อัตราจ้าง/Salary</b> <b class="text-danger">:</b></label> {{ $manpower->ratesalary }} 
+                                                            <label class="control-label"><b>อัตราจ้าง/Salary</b> <b class="text-danger">:</b></label><br> {{ $manpower->ratesalary }} 
                                                       </div>
                                                 </div>
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>สวัสดิการอื่นๆ</b> <b class="text-danger">:</b></label> {{ $manpower->benefits }}
+                                                            <label class="control-label"><b>สวัสดิการอื่นๆ</b> <b class="text-danger">:</b></label><br> {{ $manpower->benefits }}
                                                       </div>
                                                 </div>
                                                 <div class="col-md-4 ">
                                                       <div class="form-group ">
-                                                            <label class="control-label"><b>ลักษณะงานที่ทำโดยสังเขป/Description</b> <b class="text-danger">:</b></label> {{ $manpower->description }}
+                                                            <label class="control-label"><b>ลักษณะงานที่ทำโดยสังเขป/Description</b> <b class="text-danger">:</b></label><br> {{ $manpower->description }}
                                                       </div>
                                                 </div>
                                           </div>
@@ -333,9 +357,9 @@
                                                 </div>
                                           </div>
                                           <div class="row">
-                                                <b>ความสามารถพิเศษ/Special Skill</b> <b class="text-danger">:</b></label>
-                                                @if ($manpower->foreign_languages!='')     
-                                                <div class="col-md-6 ">
+                                                      &nbsp;&nbsp;&nbsp;<b>ความสามารถพิเศษ/Special Skill</b> <b class="text-danger">:</b>
+                                                <div class="col-md ">
+                                                      @if ($manpower->foreign_languages!='')
                                                       <div class="form-check">
                                                             <label class="form-check-label">
                                                                         <i class="material-icons">check_box</i>ภาษาต่างประเทศ/Foreign Languages Command 
@@ -368,11 +392,11 @@
                                                       </div>
                                                       @endif
                                                 </div>
-                                          </div>
-                                          <br>
-                                          <div class="row">
-                                                ประสบการณ์/Experience<b class="text-danger">*</b></label>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <div class="col-md-6 ">
+                                              </div>
+                                              <br>
+                                              <div class="row">
+                                                      &nbsp;&nbsp;&nbsp;<b>ประสบการณ์/Experience</b> <b class="text-danger">:</b>
+                                                <div class="col-md">
                                                       @if ($manpower->inexperience!='')
                                                       <div class="form-check">
                                                             <label class="form-check-label">
@@ -406,7 +430,7 @@
                                                       </div>
                                                       @endif
                                                 </div>
-                                          </div>
+                                              </div>
                         
                                           <br><br>
                                         <div class="row">
