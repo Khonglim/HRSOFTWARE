@@ -265,203 +265,358 @@
                     
                                     </div>
                             </div>
+                            @if ($operate->degree_enable == 1)
                             <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <div  class="table-wrapper-scroll-y">              
-                        <table id="customers">
-                          <tr>
-                            <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
-                                ( 100 คะแนน )
-                                </th>
-                            <th COLSPAN="2" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
-                          </tr>
-                          <tr>
-                            <td align="center" colspan="2">ประเมินรอบ</td>
-                           </tr>
-                           <tr>
-                                <td style="text-align:center" colspan="2">ระดับคะแนน</td>
-                              </tr>
-                              <tr>
-                                <td COLSPAN="4" style="text-align:center">ระดับปฏิบัติการ ( Operational Level )</td>
-                              </tr>
-                              <tr>
-                                  <td></td>
-                                  <td style="text-align:center">การประเมินรอบที่ 1 60 วัน</td>
-                                  <td style="text-align:center">การประเมินรอบที่ 2 90 วัน</td>
-                              </tr>
-                          <tr>
-                                <td>1. คุณภาพของงานที่ปฏิบัติ</td>
-                                <td align="center">{{$operate->chioce1_60}}</td>
-                                <td align="center">{{$operate->chioce1_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>2. ปริมาณของงาน และเวลาที่ใช้ปฏิบัติงาน</td>
-                                <td align="center">{{$operate->chioce2_60}}</td>
-                                <td align="center">{{$operate->chioce2_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>3. ความรับผิดชอบและไว้วางใจในการทำงาน</td>
-                                <td align="center">{{$operate->chioce3_60}}</td>
-                                <td align="center">{{$operate->chioce3_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>4. การปฏิบัติตามคำสั่ง และ คำแนะนำ</td>
-                                <td align="center">{{$operate->chioce4_60}}</td>
-                                <td align="center">{{$operate->chioce4_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>5. การประพฤติตามระเบียบข้อบังคับของบริษัท</td>
-                                <td align="center">{{$operate->chioce5_60}}</td>
-                                <td align="center">{{$operate->chioce5_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>6. ความซื่อสัตย์ และ น่าเชื่อถือไว้ใจ</td>
-                                <td align="center">{{$operate->chioce6_60}}</td>
-                                <td align="center">{{$operate->chioce6_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>7. ความตั้งใจและความกระตือรือร้นในการทำงานให้สำเร็จ</td>
-                                <td align="center">{{$operate->chioce7_60}}</td>
-                                <td align="center">{{$operate->chioce7_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>8. ความสามารถในการเรียนรู้งาน</td>
-                                <td align="center">{{$operate->chioce8_60}}</td>
-                                <td align="center">{{$operate->chioce8_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>9. ความสามารถด้านการคิดริเริ่มสร้างสรรค์</td>
-                                <td align="center">{{$operate->chioce9_60}}</td>
-                                <td align="center">{{$operate->chioce9_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>10. ความสามารถในการแก้ไขข้อบกพร่องของตนเอง</td>
-                                <td align="center">{{$operate->chioce10_60}}</td>
-                                <td align="center">{{$operate->chioce10_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>11. การให้ความร่วมมือประสานงานและการทำงานเป็นทีมกับผู้อื่น</td>
-                                <td align="center">{{$operate->chioce11_60}}</td>
-                                <td align="center">{{$operate->chioce11_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>12. ความสามารถในการแก้ไขปัญหาเฉพาะหน้าและตัดสินใจด้วยตนเอง</td>
-                                <td align="center">{{$operate->chioce12_60}}</td>
-                                <td align="center">{{$operate->chioce12_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>13. ทัศนคติที่มีต่อบริษัท</td>
-                                <td align="center">{{$operate->chioce13_60}}</td>
-                                <td align="center">{{$operate->chioce13_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>14. การใช้ทรัพย์สินและค่าใช้จ่ายของบริษัทอย่างประหยัดและปลอดภัย</td>
-                                <td align="center">{{$operate->chioce14_60}}</td>
-                                <td align="center">{{$operate->chioce14_90}}</td>
-                            </tr>
-                            <tr>
-                                <td>15. มีสุขภาพร่างกายพร้อมที่จะปฏิบัติงาน</td>
-                                <td align="center">{{$operate->chioce15_60}}</td>
-                                <td align="center">{{$operate->chioce15_90}}</td>
-                            </tr>
-        
-                  
-        
-                             <tr>
-                                    <td  COLSPAN="3" >
-        
-                                            รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center" value="{{$operate->subtotal_60}}" > คะแนน  <br><br>
-                                                          ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center" value="{{$operate->subtotal_90}}"> คะแนน<br><br>
-                                                          (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center" value="{{$operate->subtotal_final}}"> คะแนน
-                                          </td>
-        
-                             </tr>
-        
-                        </table>
-        
-        
-                    </div>
-                    </div>
-                </div>     
-                <div class="form-group">
-                        <div class="col-sm-12">
-                <table id="customers">
-                        <tbody >
-                            <tr>
-                                <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 60 วัน</td>
-                                <td  style="width: 100px; ">{{$operate->comments_60}}</td>
-                            </tr>
-                            <tr>
-                                <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 90 วัน</td>
-                                <td  style="width: 100px; ">{{$operate->comments_90}}</td>
-                            </tr>
-                        </tbody>
-                    </table> 
-                </div>
-                </div>
-    
-                <div class="form-group">
-                        <div class="col-sm-12">
-                                <table>
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="3">
-                                                    <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
-                                                    <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
-                                                        @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
-                                                    <input type="checkbox" checked="checked" disabled>{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
-                                                    @endif 
-                                                        @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                                                    <input type="checkbox" checked="checked" disabled>{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
-                                                    @endif 
-                                                        @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                                                    <input type="checkbox" checked="checked" disabled>{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
-                                                     @endif 
-                                                        @if($operate->other_90 == 'อื่นๆ')
-                                                    <input type="checkbox" checked="checked" disabled>{{$operate->other_90}} : {{$operate->other_com_90}}
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                    <td align="center">
-                                                            <br>
-                                                            <div class="sig0">
-                                                                    <div class="sigWrapper">
-                                                                    
-                                                                      <canvas class="pad" width="198" height="55"></canvas>
-                                                                    </div>
-                                                               
-                                                                  </div>
-                                                            <br> ( คุณ{{$operate->name_rate_60}} ) 
-                                                            <br>ผู้บังคับบัญชาต้นสังกัด
-                                                            <br>วันที่การประเมิน {{$operate->created_at}} น.
-                                                            <br>การประเมิน 60 วัน	
-                                                                
-                                                        </td>
-                                                <td align="center">
-                                                    <br>
-                                                    <div class="sig1">
-                                                            <div class="sigWrapper">
-                                                            
-                                                              <canvas class="pad" width="198" height="55"></canvas>
-                                                            </div>
-                                                       
-                                                          </div>
-                                                    <br> ( คุณ{{$operate->name_rate_90}} ) 
-                                                    <br>ผู้บังคับบัญชาต้นสังกัด
-                                                    <br>วันที่การประเมิน {{$operate->updated_at}} น.
-                                                    <br>การประเมิน 90 วัน	
-                                                        
-                                                </td>
-                                                <td align="center">
-                                                    <br>
-                                                    <br> ผู้ถูกประเมิน : ........................................... <br> 
-                                                    ( คุณ {{$operate->first_name}} 	) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
-                                            </tr>  
-                                        </tbody>
-                                        </table> 
-                </div>
-                </div> 
+                                   <div class="col-sm-12">
+                                       <div  class="table-wrapper-scroll-y">     
+                            <table id="customers">
+                                   <tbody>
+                                       <tr>
+                                           <td align="center" rowspan="2">หัวข้อการประเมิน (100 คะแนน)<br>เงื่อนไขการให้คะแนนจะจัดแบ่งดังนี้<br>4 ดีมาก 3 ดี 2 พอใช้ 1 ต้องปรับปรุง</td>
+                                           <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
+                                       </tr>
+                                       <tr>
+                                           <td align="center">ประเมินรอบ {{$operate->NumberDate_60}} วัน</td>
+                                           <td align="center">ประเมินรอบ {{$operate->NumberDate_90}} วัน</td>
+                                       </tr>
+                                       <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
+                                       <tr>
+                                           <td>1. คุณภาพของงานที่ปฏิบัติ</td>
+                                           <td align="center">{{$operate->chioce1_60}}</td>
+                                           <td align="center">{{$operate->chioce1_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>2. ปริมาณของงาน และเวลาที่ใช้ปฏิบัติงาน</td>
+                                           <td align="center">{{$operate->chioce2_60}}</td>
+                                           <td align="center">{{$operate->chioce2_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>3. ความรับผิดชอบและไว้วางใจในการทำงาน</td>
+                                           <td align="center">{{$operate->chioce3_60}}</td>
+                                           <td align="center">{{$operate->chioce3_90}}</td>
+                                       </tr>    
+                                       <tr>
+                                           <td>4. การปฏิบัติตามคำสั่ง และ คำแนะนำ</td>
+                                           <td align="center">{{$operate->chioce4_60}}</td>
+                                           <td align="center">{{$operate->chioce4_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>5. การประพฤติตามระเบียบข้อบังคับของบริษัท</td>
+                                           <td align="center">{{$operate->chioce5_60}}</td>
+                                           <td align="center">{{$operate->chioce5_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>6. ความซื่อสัตย์ และ น่าเชื่อถือไว้ใจ</td>
+                                           <td align="center">{{$operate->chioce6_60}}</td>
+                                           <td align="center">{{$operate->chioce6_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>7. ความตั้งใจและความกระตือรือร้นในการทำงานให้สำเร็จ</td>
+                                           <td align="center">{{$operate->chioce7_60}}</td>
+                                           <td align="center">{{$operate->chioce7_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>8. ความสามารถในการเรียนรู้งาน</td>
+                                           <td align="center">{{$operate->chioce8_60}}</td>
+                                           <td align="center">{{$operate->chioce8_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>9. ความสามารถด้านการคิดริเริ่มสร้างสรรค์</td>
+                                           <td align="center">{{$operate->chioce9_60}}</td>
+                                           <td align="center">{{$operate->chioce9_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>10. ความสามารถในการแก้ไขข้อบกพร่องของตนเอง</td>
+                                           <td align="center">{{$operate->chioce10_60}}</td>
+                                           <td align="center">{{$operate->chioce10_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>11. การให้ความร่วมมือประสานงานและการทำงานเป็นทีมกับผู้อื่น</td>
+                                           <td align="center">{{$operate->chioce11_60}}</td>
+                                           <td align="center">{{$operate->chioce11_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>12. ความสามารถในการแก้ไขปัญหาเฉพาะหน้าและตัดสินใจด้วยตนเอง</td>
+                                           <td align="center">{{$operate->chioce12_60}}</td>
+                                           <td align="center">{{$operate->chioce12_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>13. ทัศนคติที่มีต่อบริษัท</td>
+                                           <td align="center">{{$operate->chioce13_60}}</td>
+                                           <td align="center">{{$operate->chioce13_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>14. การใช้ทรัพย์สินและค่าใช้จ่ายของบริษัทอย่างประหยัดและปลอดภัย</td>
+                                           <td align="center">{{$operate->chioce14_60}}</td>
+                                           <td align="center">{{$operate->chioce14_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>15. มีสุขภาพร่างกายพร้อมที่จะปฏิบัติงาน</td>
+                                           <td align="center">{{$operate->chioce15_60}}</td>
+                                           <td align="center">{{$operate->chioce15_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>16. ความสามารถในการทำงานบังคับบัญชา การควบคุมระเบียบวินัย</td>
+                                           <td align="center">{{$operate->chioce16_60}}</td>
+                                           <td align="center">{{$operate->chioce16_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>17. การมอบหมายงาน/ควบคุมงาน/ติดตามงาน</td>
+                                           <td align="center">{{$operate->chioce17_60}}</td>
+                                           <td align="center">{{$operate->chioce17_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>18. การสอนงาน และการพัฒนาผู้ใต้บังคับบัญชา</td>
+                                           <td align="center">{{$operate->chioce18_60}}</td>
+                                           <td align="center">{{$operate->chioce18_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>19. การกระตุ้นและการสร้างสรรค์การทำงานเป็นทีม</td>
+                                           <td align="center">{{$operate->chioce19_60}}</td>
+                                           <td align="center">{{$operate->chioce19_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>20. ความสามารถด้านวางแผน/จัดระบบงาน/ขั้นตอนการทำงาน การบริหารเวลา</td>
+                                           <td align="center">{{$operate->chioce20_60}}</td>
+                                           <td align="center">{{$operate->chioce20_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>21. ความสามารถในการแก้ไขปัญหาและการตัดสินใจในการบริหารงาน</td>
+                                           <td align="center">{{$operate->chioce21_60}}</td>
+                                           <td align="center">{{$operate->chioce21_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>22. การมีมุมมอง/การปฏิบัติตามนโยบาย/เป้าหมาย โดยภาพรวมบริษัท</td>
+                                           <td align="center">{{$operate->chioce22_60}}</td>
+                                           <td align="center">{{$operate->chioce22_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>23. ความสามารถในการรับแรงกดดัน สภาพบีบบังคับ</td>
+                                           <td align="center">{{$operate->chioce23_60}}</td>
+                                           <td align="center">{{$operate->chioce23_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>24. ความสามารถในการเจรจาต่อรองและการโน้มน้าวจูงใจผู้ใต้บังคับบัญชา</td>
+                                           <td align="center">{{$operate->chioce24_60}}</td>
+                                           <td align="center">{{$operate->chioce24_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td>25. ความสามารถในการสรุปงานและการนำเสนองาน</td>
+                                           <td align="center">{{$operate->chioce25_60}}</td>
+                                           <td align="center">{{$operate->chioce25_90}}</td>
+                                       </tr>
+                                       <tr>
+                                           <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : {{$operate->NumberDate_60}} วัน <u><font color="red">{{$operate->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate->subtotal_final}}</font></u> </b></td>
+                                       </tr>
+                                   </tbody>
+                               </table> 
+                           </div>
+               </div>
+               </div>
+   @else
+   <div class="form-group">
+           <div class="col-sm-12">
+               <div  class="table-wrapper-scroll-y">              
+   <table id="customers">
+   <tr>
+   <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
+       ( 100 คะแนน )
+       </th>
+   <th COLSPAN="2" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
+   </tr>
+   <tr>
+   <td align="center" colspan="2">ประเมินรอบ</td>
+   </tr>
+   <tr>
+       <td style="text-align:center" colspan="2">ระดับคะแนน</td>
+     </tr>
+     <tr>
+       <td COLSPAN="4" style="text-align:center">ระดับปฏิบัติการ ( Operational Level )</td>
+     </tr>
+     <tr>
+         <td></td>
+         <td style="text-align:center">การประเมินรอบที่ 1 60 วัน</td>
+         <td style="text-align:center">การประเมินรอบที่ 2 90 วัน</td>
+     </tr>
+   <tr>
+       <td>1. คุณภาพของงานที่ปฏิบัติ</td>
+       <td align="center">{{$operate->chioce1_60}}</td>
+       <td align="center">{{$operate->chioce1_90}}</td>
+   </tr>
+   <tr>
+       <td>2. ปริมาณของงาน และเวลาที่ใช้ปฏิบัติงาน</td>
+       <td align="center">{{$operate->chioce2_60}}</td>
+       <td align="center">{{$operate->chioce2_90}}</td>
+   </tr>
+   <tr>
+       <td>3. ความรับผิดชอบและไว้วางใจในการทำงาน</td>
+       <td align="center">{{$operate->chioce3_60}}</td>
+       <td align="center">{{$operate->chioce3_90}}</td>
+   </tr>
+   <tr>
+       <td>4. การปฏิบัติตามคำสั่ง และ คำแนะนำ</td>
+       <td align="center">{{$operate->chioce4_60}}</td>
+       <td align="center">{{$operate->chioce4_90}}</td>
+   </tr>
+   <tr>
+       <td>5. การประพฤติตามระเบียบข้อบังคับของบริษัท</td>
+       <td align="center">{{$operate->chioce5_60}}</td>
+       <td align="center">{{$operate->chioce5_90}}</td>
+   </tr>
+   <tr>
+       <td>6. ความซื่อสัตย์ และ น่าเชื่อถือไว้ใจ</td>
+       <td align="center">{{$operate->chioce6_60}}</td>
+       <td align="center">{{$operate->chioce6_90}}</td>
+   </tr>
+   <tr>
+       <td>7. ความตั้งใจและความกระตือรือร้นในการทำงานให้สำเร็จ</td>
+       <td align="center">{{$operate->chioce7_60}}</td>
+       <td align="center">{{$operate->chioce7_90}}</td>
+   </tr>
+   <tr>
+       <td>8. ความสามารถในการเรียนรู้งาน</td>
+       <td align="center">{{$operate->chioce8_60}}</td>
+       <td align="center">{{$operate->chioce8_90}}</td>
+   </tr>
+   <tr>
+       <td>9. ความสามารถด้านการคิดริเริ่มสร้างสรรค์</td>
+       <td align="center">{{$operate->chioce9_60}}</td>
+       <td align="center">{{$operate->chioce9_90}}</td>
+   </tr>
+   <tr>
+       <td>10. ความสามารถในการแก้ไขข้อบกพร่องของตนเอง</td>
+       <td align="center">{{$operate->chioce10_60}}</td>
+       <td align="center">{{$operate->chioce10_90}}</td>
+   </tr>
+   <tr>
+       <td>11. การให้ความร่วมมือประสานงานและการทำงานเป็นทีมกับผู้อื่น</td>
+       <td align="center">{{$operate->chioce11_60}}</td>
+       <td align="center">{{$operate->chioce11_90}}</td>
+   </tr>
+   <tr>
+       <td>12. ความสามารถในการแก้ไขปัญหาเฉพาะหน้าและตัดสินใจด้วยตนเอง</td>
+       <td align="center">{{$operate->chioce12_60}}</td>
+       <td align="center">{{$operate->chioce12_90}}</td>
+   </tr>
+   <tr>
+       <td>13. ทัศนคติที่มีต่อบริษัท</td>
+       <td align="center">{{$operate->chioce13_60}}</td>
+       <td align="center">{{$operate->chioce13_90}}</td>
+   </tr>
+   <tr>
+       <td>14. การใช้ทรัพย์สินและค่าใช้จ่ายของบริษัทอย่างประหยัดและปลอดภัย</td>
+       <td align="center">{{$operate->chioce14_60}}</td>
+       <td align="center">{{$operate->chioce14_90}}</td>
+   </tr>
+   <tr>
+       <td>15. มีสุขภาพร่างกายพร้อมที่จะปฏิบัติงาน</td>
+       <td align="center">{{$operate->chioce15_60}}</td>
+       <td align="center">{{$operate->chioce15_90}}</td>
+   </tr>
+   
+   
+   
+    <tr>
+           <td  COLSPAN="3" >
+   
+                   รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center" value="{{$operate->subtotal_60}}" > คะแนน  <br><br>
+                                 ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center" value="{{$operate->subtotal_90}}"> คะแนน<br><br>
+                                 (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center" value="{{$operate->subtotal_final}}"> คะแนน
+                 </td>
+   
+    </tr>
+   
+   </table>
+   
+   
+   </div>
+   </div>
+   </div>
+   <div class="form-group">
+   <div class="col-sm-12">
+   <table id="customers">
+   <tbody >
+   <tr>
+       <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 60 วัน</td>
+       <td  style="width: 100px; ">{{$operate->comments_60}}</td>
+   </tr>
+   <tr>
+       <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 90 วัน</td>
+       <td  style="width: 100px; ">{{$operate->comments_90}}</td>
+   </tr>
+   </tbody>
+   </table> 
+   </div>
+   </div>
+   
+   <div class="form-group">
+   <div class="col-sm-12">
+       <table>
+               <tbody>
+                   <tr>
+                       <td colspan="3">
+                           <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
+                           <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
+                               @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
+                           <input type="checkbox" checked="checked" disabled>{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
+                           @endif 
+                               @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                           <input type="checkbox" checked="checked" disabled>{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
+                           @endif 
+                               @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                           <input type="checkbox" checked="checked" disabled>{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
+                            @endif 
+                               @if($operate->other_90 == 'อื่นๆ')
+                           <input type="checkbox" checked="checked" disabled>{{$operate->other_90}} : {{$operate->other_com_90}}
+                           @endif
+                       </td>
+                   </tr>
+                   <tr>
+                           <td align="center">
+                                   <br>
+                                   <div class="sig0">
+                                           <div class="sigWrapper">
+                                           
+                                             <canvas class="pad" width="198" height="55"></canvas>
+                                           </div>
+                                      
+                                         </div>
+                                   <br> ( คุณ{{$operate->name_rate_60}} ) 
+                                   <br>ผู้บังคับบัญชาต้นสังกัด
+                                   <br>วันที่การประเมิน {{$operate->created_at}} น.
+                                   <br>การประเมิน 60 วัน	
+                                       
+                               </td>
+                       <td align="center">
+                           <br>
+                           <div class="sig1">
+                                   <div class="sigWrapper">
+                                   
+                                     <canvas class="pad" width="198" height="55"></canvas>
+                                   </div>
+                              
+                                 </div>
+                           <br> ( คุณ{{$operate->name_rate_90}} ) 
+                           <br>ผู้บังคับบัญชาต้นสังกัด
+                           <br>วันที่การประเมิน {{$operate->updated_at}} น.
+                           <br>การประเมิน 90 วัน	
+                               
+                       </td>
+                       <td align="center">
+                           <br>
+                           <br> ผู้ถูกประเมิน : ........................................... <br> 
+                           ( คุณ {{$operate->first_name}} 	) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
+                   </tr>  
+               </tbody>
+               </table> 
+   </div>
+   </div>
+   
+   
+   
+   @endif
+   
+   
                 <div class="form-group">
                         <div class="col-sm-12"> 
                 <table  id="customers">
