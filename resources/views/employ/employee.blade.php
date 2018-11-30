@@ -22,9 +22,9 @@
                   <th>ชื่อ</th>
                   <th>นามสกุล</th>
                   <th>ตำแหน่ง</th>
-
                   <th>เพิ่มเติ่ม</th>
                   <th>การดูข้อมูลครั้งล่าสุด</th>
+                  <th>สถานะ</th>
                 </tr>
               </thead>
               <tbody>
@@ -62,6 +62,12 @@
                     </div>
                   </td>
                   <td  style="width: 30px; "> {{$l['updated_at']}} นาที </td>
+                  <td  style="width: 30px; ">@if($l['degree']=1) 
+                  
+                  
+                  
+                  
+                  </td>
                 </tr>
                 @endif @empty
                 <tr>
@@ -77,6 +83,7 @@
                   <th>ตำแหน่ง</th>
                   <th>เพิ่มเติ่ม</th>
                   <th>การดูข้อมูลครั้งล่าสุด</th>
+                  <th>สถานะ</th>
                 </tr>
               </tfoot>
             </table>
