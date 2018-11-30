@@ -195,7 +195,7 @@
 
 
 @if( $operate->degree_enable == 1)
-{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
 @csrf
 <input type="hidden"  name="date60T"  id="date60T" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
@@ -338,12 +338,12 @@
             </div>
            </div>
               
-            <center>  ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
-        <button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
+           <span id="sendData">      <center>  ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
+                 <button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
             {{Form::close()}}
 
 @else
-{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
 @csrf
 <input type="hidden"  name="date60T"  id="date60T" value="<?php echo date("d/m/Y H:i:s");?>"/>
             <div class="form-group">
@@ -490,7 +490,7 @@
 
                     </div>
                     ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
-                  <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
+                    <span id="sendData">     <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
                     {{Form::close()}}
             
 @endif
@@ -1317,7 +1317,18 @@
 
 
 
-
+           <script language="javascript">
+  
+                function fncSubmit()
+                {
+                   
+                              $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
+                              
+                     
+                      
+                      document.form1.submit();
+                }
+                </script>
 
 
           

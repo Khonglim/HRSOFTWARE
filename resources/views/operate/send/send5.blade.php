@@ -825,7 +825,10 @@
                             <tr><td colspan="4"><b>รวมคะแนน :</b><font color="red"> {{$operate->sum_chioce_suitability10}}</font> คะแนน</td></tr>
                         </tbody>    
                     </table> <br>
-                    <table><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate->comment_suitability10}} <br>
+                    <table id="customers">
+                        <tr>
+                            <td>
+                                <b>ความคิดเห็นเพิ่มเติม : </b>{{$operate->comment_suitability10}} <br>
                         @if($operate->ok_suitability == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
                             <input type="checkbox" checked="checked" disabled> {{$operate->ok_suitability}} <br>
                         @endif 
@@ -943,7 +946,7 @@
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <div class="col-md ">
-                                            <label><input type="checkbox" name="manager_resource_ok" id="manager_resource_ok" value="อนุมัติตามผู้บังคับบัญชาเสนอ" required> ให้บรรจุเป็นพนักงานประจำ</label>
+                                            <label><input type="checkbox" name="manager_resource_ok" id="manager_resource_ok" value="อนุมัติตามผู้บังคับบัญชาเสนอ" > ให้บรรจุเป็นพนักงานประจำ</label>
                                         </div>
                                         <div class="col-md">
                                             <label><input type="checkbox" name="manager_resource_modi" id="manager_resource_modi" value="ปรับอัตราเงินเดือน"> ปรับอัตราเงินเดือน: </label> 
@@ -1034,7 +1037,7 @@
   
                     
                     
-                             <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
+          <span id="sendData">    <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
                                         {{Form::close()}}
                              </div>
                         </div>      
@@ -1204,11 +1207,11 @@ $('#manager_resource_fail').click(function() {
                  &&  document.form1.manager_resource_fail.checked == false &&  document.form1.manager_resource_adjust.checked == false
 
 
-                 &&  document.form1.manager_resource_other.checked == false 
+                 &&  document.form1.manager_resource_other.checked == false &&  document.form1.manager_resource_ok.checked == false 
                  )
                  {
                        
-                       alert('โปรดลงความคิดเห็นอย่างน้อย 1 ตัวเลือก ');
+                    alert('กรุณา ติก อย่างน้อย 1 ตัวเลือก ');
                       
                        return false;
                  }

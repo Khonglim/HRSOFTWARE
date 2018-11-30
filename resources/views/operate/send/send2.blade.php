@@ -430,7 +430,7 @@
                         </div>
             </div>
 
-            <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
+            <span id="sendData">     <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
             {{Form::close()}}
     
 @else
@@ -619,7 +619,7 @@
 
 
          </div>
-                  <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  
+         <span id="sendData">         <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
                     {{Form::close()}}
             
 @endif
@@ -1548,7 +1548,7 @@ $('#other_90').click(function() {
               )
               {
                     
-                    alert('โปรดลงความคิดเห็นอย่างน้อย 1 ตัวเลือก');
+                    alert('กรุณา ติก อย่างน้อย 1 ตัวเลือก ด้านล่างแสดงความคิดเห็น ');
                    
                     return false;
               }
