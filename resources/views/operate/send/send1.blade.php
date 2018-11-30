@@ -44,6 +44,7 @@
             </style>
     
     <div class="container-fluid">
+         
             @if ($operate->degree_enable == 1)
             <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
             @else
@@ -190,6 +191,7 @@
 @if( $operate->degree_enable == 1)
 {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
 @csrf
+<input type="hidden"  name="date60T"  id="date60T" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
       <div class="col-sm-12">
               <div  class="table-wrapper-scroll-y">        
@@ -337,6 +339,7 @@
 @else
 {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
 @csrf
+<input type="hidden"  name="date60T"  id="date60T" value="<?php echo date("d/m/Y H:i:s");?>"/>
             <div class="form-group">
                   <div class="col-sm-12">
                       <div  class="table-wrapper-scroll-y">              

@@ -912,6 +912,7 @@
                                                  @if($operate->human_resource_nre != '')
                                                ( คุณ{{$operate->human_resource_nre}} )
                                                <br>ฝ่ายทรัพยากรบุคคล
+                                               <br>วันที่การประเมิน {{$operate->dateS}} น.
                                                 @endif
                                             </td>
                                         </tr>       
@@ -922,7 +923,7 @@
                         @csrf
                      
                     
-                                           
+                        <input type="hidden"  name="dateM"  id="dateM" value="<?php echo date("d/m/Y H:i:s");?>"/>                        
         <div class="panel panel-info" style="width:100%">
                   <div class="panel-heading">เฉพาะกรรมการผู้จัดการ/ผู้จัดการทั่วไป</div>
                   <div class="panel-body">

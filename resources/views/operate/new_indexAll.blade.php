@@ -83,7 +83,7 @@
                                     <label class="col-sm-2 control-label">ระดับ</label>
                                     <div class="col-sm-4">
                                           <select name="degree_en" id="degree" class="form-control" required>
-                                                      <option>เลือก</option>
+                                                      <option value="">เลือก</option>
                                                       <option value="0">ปฏิบัติการ</option>
                                                       <option value="1">ผู้บังคับัญชา</option>
 
@@ -92,6 +92,7 @@
                                   
                               </div>
                               <center> <span id="sendDataSave"><button type="submit" class="btn btn-info ">บันทึก</button>   </span>     </center>
+                              <input type="hidden"  name="dateC"  id="dateC" value="<?php echo date("d/m/Y");?>"/>
                               {{Form::close()}}
                         </div>
                   </div>

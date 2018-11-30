@@ -199,18 +199,7 @@ class CreateAnsOperateAllTable extends Migration
             $table->text('manager_resource_other')->nullable();
             $table->text('manager_resource_othercom')->nullable();
             $table->text('manager_resource_nre')->nullable();
-
-
-
-
-
-
-
-
-
-
-
-
+            
             $table->text('startwork_60')->nullable();
             $table->text('endwork_60')->nullable();
             $table->text('sick_leave_60')->nullable();
@@ -225,6 +214,13 @@ class CreateAnsOperateAllTable extends Migration
             $table->text('sick_leave_90')->nullable();
             $table->text('errand_leave_90')->nullable();
 
+            $table->text('dateC')->nullable();
+            $table->text('date60T')->nullable();
+            $table->text('date90T')->nullable();
+            $table->text('dateL')->nullable();
+            $table->text('dateS')->nullable();
+            $table->text('dateM')->nullable();
+           
             $table->longText('signa1_60')->nullable();
             $table->longText('signa1_90')->nullable();
             $table->longText('signa2')->nullable();

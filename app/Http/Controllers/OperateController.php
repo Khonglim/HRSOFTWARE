@@ -60,7 +60,7 @@ class OperateController extends Controller
         $operater->new_id_employ = $request->textNem_code;
         $operater->new_position = $request->textPosition;
         $operater->new_department = $request->textDepartment;
-        $operater->email = $request->email;
+     
         $operater->id_employ = $request->id_employ;
         $operater->degree = $request->textDegree;
         $operater->starttime = $request->dateStart2;
@@ -69,8 +69,9 @@ class OperateController extends Controller
         $operater->numberMN = $request->numberMN;
         $operater->date_60 = $request->totolDay_60;
         $operater->date_90 = $request->totolDay_90;
-        $operater->email = $request->email;
+    
         $operater->degree_enable = $request->degree_en;
+        $operater->dateC = $request->dateC;
         $operater->save();
 
         Session::flash('flash_message', 'บันทึกเรียบร้อย!! ');
@@ -613,6 +614,26 @@ class OperateController extends Controller
         if (Input::get('NumberDate_90') != '') {
             $operater->NumberDate_90 = Input::get('NumberDate_90');
         }
+
+        if (Input::get('date60T') != '') {
+            $operater->date60T = Input::get('date60T');
+        }
+        if (Input::get('date90T') != '') {
+            $operater->date90T = Input::get('date90T');
+        }
+        if (Input::get('dateS') != '') {
+            $operater->dateS = Input::get('dateS');
+        }
+        if (Input::get('dateM') != '') {
+            $operater->dateM = Input::get('dateM');
+        }
+        if (Input::get('dateL') != '') {
+            $operater->dateL = Input::get('dateL');
+        }
+
+
+
+
 
         $operater->save();
         Session::flash('flash_message', 'บันทึกเรียบร้อย!!');
