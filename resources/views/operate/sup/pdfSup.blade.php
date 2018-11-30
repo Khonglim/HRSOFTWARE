@@ -8,6 +8,7 @@
 <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
 <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title> print report  </title>
 <style type="text/css">
  body {
@@ -54,19 +55,53 @@
     &emsp;&emsp;2.1. ระดับพนักงานทั่วไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. <u>ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60</u><br>
     &emsp;&emsp;2.2. ระดับหัวหน้างานขึ้นไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br>
     <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
-    <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
+    <b>4. เขียนเครื่องหมาย <i class="material-icons">check_box</i> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
     <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119 วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
-    <div class="font"><b>บริษัท เอ็น จี จี ไทม์พีซ จำกัด</b></div>
-    <b>ชื่อ-นามสกุล :</b>{{$operate->first_name}} &emsp;&emsp;&emsp;&emsp;
-    <b>รหัสพนักงาน :  </b> {{$operate->new_id_employ}}&emsp;&emsp;&emsp;&emsp;  <b>บริษัท:</b>   {{$operate->company}}<br>
-    <b>ตำแหน่ง :</b> {{$operate->new_position}}&emsp;&emsp;&emsp;&emsp;
-    <b>แผนก/ฝ่าย :</b> {{$operate->new_department}} <br>
-    <b>วันที่เริ่มงาน :</b> {{$operate->starttime}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-    <b>ครบทดลองงาน 119 วัน วันที่ :</b> {{$operate->endtime}} <b>ระดับ :</b> {{$operate->degree}} <br>
-    <b>ประเมินครั้งที่1 :</b> {{$operate->date_60}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-    <b>ประเมินครั้งที่2 : วันที่ :</b> {{$operate->date_90}}
-    <br><br><br>
-    @if ($operate->degree == 1)
+    <div class="font"><b>บริษัท ในเครือ เอ็น จี จี กรุ๊ป จำกัด</b></div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <font size="3"><b>ชื่อ-นามสกุล : </b>{{$operate->first_name}} </font>   
+        </div>
+        <div class="col-md-6">
+            <font size="3"><b>รหัสพนักงาน : </b> {{$operate->new_id_employ}}</font>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+                <font size="3"><b>บริษัท:</b>   {{$operate->company}}</font>
+        </div>
+        <div class="col-md-6">
+                <font size="3"><b>ตำแหน่ง : </b> {{$operate->new_position}}</font>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+                <font size="3"><b>แผนก/ฝ่าย : </b> {{$operate->new_department}}</font>
+        </div>
+        <div class="col-md-6">
+                <font size="3"><b>ระดับ :</b> {{$operate->degree}}</font>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+                <font size="3"><b>วันที่เริ่มงาน : </b> {{$operate->starttime}}</font>
+        </div>
+        <div class="col-md-6">
+                <font size="3"><b>ครบทดลองงาน 119 วัน วันที่ : </b> {{$operate->endtime}}</font>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+                <font size="3"><b>ประเมินครั้งที่1 : </b> {{$operate->date_60}}   </font>     
+                </div>
+        <div class="col-md-6">
+                <font size="3"><b>ประเมินครั้งที่2 : วันที่ : </b> {{$operate->date_90}}</font>
+            </div>
+    </div>
+    <br><br>
+
+    @if ($operate->degree_enable == 1)
     <table>
         <tbody>
             <tr>
@@ -74,8 +109,8 @@
                 <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
             </tr>
             <tr>
-                <td align="center">ประเมินรอบ {{$operate->NumberDate_60}} วัน</td>
-                <td align="center">ประเมินรอบ {{$operate->NumberDate_90}} วัน</td>
+                <td align="center">ประเมินรอบ 60 วัน</td>
+                <td align="center">ประเมินรอบ 90 วัน</td>
             </tr>
             <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
             <tr>
@@ -216,8 +251,8 @@
                 <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
             </tr>
             <tr>
-                <td align="center">ประเมินรอบ {{$operate->NumberDate_60}} วัน</td>
-                <td align="center">ประเมินรอบ {{$operate->NumberDate_90}} วัน</td>
+                <td align="center">ประเมินรอบ 60 วัน</td>
+                <td align="center">ประเมินรอบ 90 วัน</td>
             </tr>
             <tr>
                 <td colspan="3"><b>ระดับปฏิบัติการ (Operational Level)</b></td>
@@ -329,16 +364,16 @@
                         <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
                         <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
                             @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
-                        <input type="checkbox" checked="checked">{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
+                            <i class="material-icons">check_box</i>{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
                         @endif 
                             @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                        <input type="checkbox" checked="checked">{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
+                            <i class="material-icons">check_box</i>{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
                         @endif 
                             @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
-                        <input type="checkbox" checked="checked">{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
+                            <i class="material-icons">check_box</i>{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
                          @endif 
                             @if($operate->other_90 == 'อื่นๆ')
-                        <input type="checkbox" checked="checked">{{$operate->other_90}} : {{$operate->other_com_90}}
+                            <i class="material-icons">check_box</i>{{$operate->other_90}} : {{$operate->other_com_90}}
                         @endif
                     </td>
                 </tr>
@@ -348,7 +383,7 @@
                                 <div class="sig0">
                                         <div class="sigWrapper">
                                         
-                                          <canvas class="pad" width="198" height="55"></canvas>
+                                          <canvas class="pad" width="220" height="70"></canvas>
                                         </div>
                                    
                                       </div>
@@ -363,7 +398,7 @@
                         <div class="sig1">
                                 <div class="sigWrapper">
                                 
-                                  <canvas class="pad" width="198" height="55"></canvas>
+                                  <canvas class="pad" width="220" height="70"></canvas>
                                 </div>
                            
                               </div>
@@ -581,10 +616,10 @@
             </table> <br>
             <table><tr><td><b>ความคิดเห็นเพิ่มเติม : </b>{{$operate->comment_suitability10}} <br>
                 @if($operate->ok_suitability == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
-                    <input type="checkbox" checked="checked"> {{$operate->ok_suitability}} <br>
+                <i class="material-icons">check_box</i> {{$operate->ok_suitability}} <br>
                 @endif 
                 @if($operate->other_suitability == 'อื่นๆ')
-                    <input type="checkbox"  checked="checked">{{$operate->other_suitability}} : {{$operate->other_com_suitability}} <br>
+                <i class="material-icons">check_box</i> {{$operate->other_suitability}} : {{$operate->other_com_suitability}} <br>
                 @endif
                 @if($operate->namerate_suitability != '')
                     <center><br>
@@ -592,7 +627,7 @@
                         <div class="sig2">
                                 <div class="sigWrapper">
                            
-                                    <canvas class="pad" width="198" height="55"></canvas>
+                                    <canvas class="pad" width="220" height="70"></canvas>
                                   </div>
                              
                                 </div>
@@ -677,22 +712,22 @@
                         <tr>
                             <td>
                                     @if($operate->human_resource_ok == 'บรรจุเป็นพนักงานประจำ')
-                                        <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
+                                    <i class="material-icons">check_box</i> ให้บรรจุเป็นพนักงานประจำ
                                     @endif
                                     @if($operate->human_resource_modi == 'ปรับอัตราเงินเดือน')
-                                        <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน <u>{{$operate->human_resource_commo}}</u>
+                                    <i class="material-icons">check_box</i> ปรับอัตราเงินเดือน <u>{{$operate->human_resource_commo}}</u>
                                     <br>@endif
                                     @if($operate->human_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                                        <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน <u>{{$operate->human_resource_comno}}</u>
+                                    <i class="material-icons">check_box</i> ยังไม่ปรับอัตราเงินเดือน <u>{{$operate->human_resource_comno}}</u>
                                     <br>@endif
                                     @if($operate->human_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                                    <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น <u>{{$operate->human_resource_posi}}</u> และปรับเงินเดือน
+                                    <i class="material-icons">check_box</i> ให้ปรับตำแหน่งเป็น <u>{{$operate->human_resource_posi}}</u> และปรับเงินเดือน
                                     <br>@endif
                                     @if($operate->human_resource_fail == 'ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่:')
-                                        <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate->human_resource_date}}</u>
+                                    <i class="material-icons">check_box</i> ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: <u> {{$operate->human_resource_date}}</u>
                                     <br>@endif 
                                     @if($operate->human_resource_other == 'อื่นๆ')
-                                        <input type="checkbox" checked="checked">อื่นๆ <u>{{$operate->human_resource_othercom}}</u>
+                                    <i class="material-icons">check_box</i> อื่นๆ <u>{{$operate->human_resource_othercom}}</u>
                                     <br>@endif 
                             </td>
                              <tr>
@@ -724,22 +759,22 @@
                 <tr>
                     <td>
                         @if($operate->manager_resource_ok == 'อนุมัติตามผู้บังคับบัญชาเสนอ')
-                            <input type="checkbox" checked="checked">ให้บรรจุเป็นพนักงานประจำ
+                        <i class="material-icons">check_box</i> ให้บรรจุเป็นพนักงานประจำ
                         @endif
                         @if($operate->manager_resource_modi == 'ปรับอัตราเงินเดือน')
-                            <input type="checkbox" checked="checked">ปรับอัตราเงินเดือน {{$operate->manager_resource_comdi}}
+                        <i class="material-icons">check_box</i> ปรับอัตราเงินเดือน {{$operate->manager_resource_comdi}}
                         <br>@endif
                         @if($operate->manager_resource_nodi == 'ยังไม่ปรับเงินเดือน')
-                            <input type="checkbox" checked="checked">ยังไม่ปรับอัตราเงินเดือน {{$operate->manager_resource_comno}}
+                        <i class="material-icons">check_box</i> ยังไม่ปรับอัตราเงินเดือน {{$operate->manager_resource_comno}}
                         <br>@endif
                          @if($operate->manager_resource_adjust == 'ให้ปรับตำแหน่งเป็น')
-                            <input type="checkbox" checked="checked">ให้ปรับตำแหน่งเป็น {{$operate->manager_resource_posi}} และปรับเงินเดือน
+                         <i class="material-icons">check_box</i> ให้ปรับตำแหน่งเป็น {{$operate->manager_resource_posi}} และปรับเงินเดือน
                         <br>@endif 
                         @if($operate->manager_resource_fail == 'ไม่ผ่านทดลองงาน  ให้มีผลบังคับตั้งแต่วันที่')
-                            <input type="checkbox" checked="checked">ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate->manager_resource_date}}
+                        <i class="material-icons">check_box</i> ไม่ผ่านทดลองงาน ให้มีผลบังคับตั้งแต่วันที่: {{$operate->manager_resource_date}}
                         <br>@endif 
                         @if($operate->manager_resource_other == 'อื่นๆ')
-                            <input type="checkbox" checked="checked">อื่นๆ {{$operate->manager_resource_othercom}}
+                        <i class="material-icons">check_box</i> อื่นๆ {{$operate->manager_resource_othercom}}
                         <br>@endif 
                         </td>
                     </tr>
