@@ -236,7 +236,7 @@
                   
 
 @if( $operate->degree_enable == 1)
-{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true ,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
 @csrf
 <input type="hidden"  name="date90T"  id="date90T" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
@@ -366,13 +366,18 @@
         
                         <div class="col-md">
                         <div class="checkbox">
-                                <label><input type="checkbox" value="ไม่ผ่านทดลองงาน" name="experimental">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   <input type="text"  name="clsdate"  id="clsdate" class="form-control">
+                                <label><input type="checkbox" value="ไม่ผ่านทดลองงาน" name="experimental" id="experimental">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   
+                                
+                                <input type="text"  name="clsdate"  id="clsdate" class="form-control" disabled required>
                               </div>
                             </div>
                             <label  class="col-sm-2 control-label"></label>
                             <div class="col-md">
                                     <div class="checkbox">
-                                            <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="full_time_worker">อนุมัติให้บรรจุเป็นพนักงานประจำ</label><br> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto" class="form-control" > ตำแหน่ง:<input type="text"  id="t2"  class="form-control" name="full_time_worker_position"/>
+                                            <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="full_time_worker" id="full_time_worker">อนุมัติให้บรรจุเป็นพนักงานประจำ</label><br> ตั้งแต่วันที่:
+                                            
+                        <input type="date"  name="dateinto"  id="dateinto" class="form-control" required  disabled > 
+                        ตำแหน่ง:<input type="text"  id="t2"  class="form-control" name="full_time_worker_position"  required  disabled/>
                                           </div>
                                 </div>
                 </div>
@@ -382,9 +387,10 @@
                         <div class="col-md">
                                 <div class="checkbox">
                                         <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="modify">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง:</label>
-                                        <input type="text" name="modify_position1" id="t1"   class="form-control"/>
+                                        <input type="text" name="modify_position1" id="modify_position1"   class="form-control"/>
         
-                                        ตั้งแต่วันที่:<input type="text"  name="modify_date"  id="modify_date"  class="form-control"> เป็นตำแหน่ง:<input type="text" name="modify_position2" id="t2"   class="form-control"/>
+                                        ตั้งแต่วันที่:<input type="date"  name="modify_date"  id="modify_date"  class="form-control" required disabled> เป็นตำแหน่ง:
+                                        <input type="text" name="modify_position2" id="modify_position2"   class="form-control" required disabled/>
                                       </div>
                             </div>
                 </div>
@@ -393,7 +399,9 @@
                         
                 <div class="col-md-3">
                  <div class="checkbox">
-                        <label><input type="checkbox" value="อื่นๆ"  name="other_90">อื่นๆ</label>  <textarea class="form-control" rows="3" name="other_com_90"></textarea>
+                        <label><input type="checkbox" value="อื่นๆ"  name="other_90" id="other_90">อื่นๆ</label>  
+                        
+                        <textarea class="form-control" rows="3" name="other_com_90" disabled  required></textarea>
                     </div>
                     </div>
                  </div>
@@ -426,7 +434,7 @@
             {{Form::close()}}
     
 @else
-{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
 @csrf
 <input type="hidden"  name="date90T"  id="date90T" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
@@ -543,13 +551,18 @@
 
                 <div class="col-md">
                 <div class="checkbox">
-                        <label><input type="checkbox" value="ไม่ผ่านทดลองงาน" name="experimental">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   <input type="text"  name="clsdate"  id="clsdate" class="form-control">
+                        <label><input type="checkbox" value="ไม่ผ่านทดลองงาน" name="experimental"  id="experimental">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   
+                        <input type="text"  name="clsdate"  id="clsdate" class="form-control" disabled  required>
                       </div>
                     </div>
                     <label  class="col-sm-2 control-label"></label>
                     <div class="col-md">
                             <div class="checkbox">
-                                    <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="full_time_worker">อนุมัติให้บรรจุเป็นพนักงานประจำ</label><br> ตั้งแต่วันที่:<input type="text"  name="dateinto"  id="dateinto" class="form-control" > ตำแหน่ง:<input type="text"  id="t2"  class="form-control" name="full_time_worker_position"/>
+                                    <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="full_time_worker"  id="full_time_worker">อนุมัติให้บรรจุเป็นพนักงานประจำ</label><br> ตั้งแต่วันที่:
+                                    
+                                    <input type="text"  name="dateinto"  id="dateinto" class="form-control"  required   disabled>
+                                     ตำแหน่ง:
+                                    <input type="text"  id="t2"  class="form-control" name="full_time_worker_position"  required  disabled>
                                   </div>
                         </div>
         </div>
@@ -558,10 +571,11 @@
                 <label  class="col-sm-2 control-label"></label>
                 <div class="col-md">
                         <div class="checkbox">
-                                <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="modify">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง:</label>
-                                <input type="text" name="modify_position1" id="t1"   class="form-control"/>
+                                <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="modify"  id="modify">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง:</label>
+                                <input type="text" name="modify_position1" id="t1"   class="form-control"  disabled required/>
 
-                                ตั้งแต่วันที่:<input type="text"  name="modify_date"  id="modify_date"  class="form-control"> เป็นตำแหน่ง:<input type="text" name="modify_position2" id="t2"   class="form-control"/>
+                                ตั้งแต่วันที่:<input type="text"  name="modify_date"  id="modify_date"  class="form-control" disabled required> เป็นตำแหน่ง:
+                                <input type="text" name="modify_position2" id="modify_position2"   class="form-control" disabled required  />
                               </div>
                     </div>
         </div>
@@ -570,7 +584,9 @@
                 
         <div class="col-md-3">
          <div class="checkbox">
-                <label><input type="checkbox" value="อื่นๆ"  name="other_90">อื่นๆ</label>  <textarea class="form-control" rows="3" name="other_com_90"></textarea>
+                <label><input type="checkbox" value="อื่นๆ"  name="other_90" id="other_90">อื่นๆ</label>  
+                
+                <textarea class="form-control" rows="3" name="other_com_90" disabled required id="other_com_90"></textarea>
             </div>
             </div>
          </div>
@@ -1439,11 +1455,111 @@
            @endif
 
 
+<script>
+ $(document).ready(function() {
+
+      $('#experimental').click(function() {
+  
+  if ($(this).is(':checked')) {
+
+      $("#clsdate").removeAttr('disabled', 'disabled');
+    
+  }else {
+     
+      $("#clsdate").attr('disabled', 'disabled'); 
+      document.getElementById('clsdate').value = "";
+      
+      
+  }
+});
+
+
+  $('#full_time_worker').click(function() {
+  
+  if ($(this).is(':checked')) {
+
+      $("#dateinto").removeAttr('disabled', 'disabled');
+      $("#t2").removeAttr('disabled', 'disabled');
+    
+  }else {
+     
+      $("#dateinto").attr('disabled', 'disabled'); 
+      document.getElementById('clsdate').value = "";
+      $("#t2").attr('disabled', 'disabled'); 
+      document.getElementById('t2').value = "";
+      
+  }
+});
+
+
+ $('#modify').click(function() {
+  
+  if ($(this).is(':checked')) {
+
+      $("#t1").removeAttr('disabled', 'disabled');
+      $("#modify_date").removeAttr('disabled', 'disabled');
+      $("#modify_position2").removeAttr('disabled', 'disabled');
+  }else {
+    $("#t1").attr('disabled', 'disabled'); 
+      document.getElementById('t1').value = "";
+
+      $("#modify_position2").attr('disabled', 'disabled'); 
+      document.getElementById('modify_position2').value = "";
+
+      $("#modify_date").attr('disabled', 'disabled'); 
+      document.getElementById('modify_date').value = "";
+      
+  }
+});
 
 
 
+$('#other_90').click(function() {
+  
+  if ($(this).is(':checked')) {
+
+      $("#other_com_90").removeAttr('disabled', 'disabled');
+     
+  }else {
+   
+      $("#other_com_90").attr('disabled', 'disabled'); 
+      document.getElementById('other_com_90').value = "";
+     
+      
+  }
+});
 
 
+
+    });
+
+
+</script>
+
+
+
+<script language="javascript">
+  
+        function fncSubmit()
+        {
+              if(document.form1.experimental.checked == false && document.form1.full_time_worker.checked == false
+              
+              &&  document.form1.modify.checked == false &&  document.form1.other_90.checked == false
+              )
+              {
+                    
+                    alert('โปรดลงความคิดเห็นอย่างน้อย 1 ตัวเลือก');
+                   
+                    return false;
+              }
+              else{
+                      $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
+                      
+              }	
+              
+              document.form1.submit();
+        }
+        </script>
           
 </body>
 </html>

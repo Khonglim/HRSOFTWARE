@@ -443,11 +443,7 @@
           
 
 
-$("#inviter").submit(function(){    
-    
-    
-      
-       return true; });
+
 
 
 

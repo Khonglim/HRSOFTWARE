@@ -549,7 +549,7 @@
                                 <div class="sig0">
                                         <div class="sigWrapper">
                                         
-                                          <canvas class="pad" width="198" height="55"></canvas>
+                                          <canvas class="pad" width="220" height="77"></canvas>
                                         </div>
                                    
                                       </div>
@@ -564,7 +564,7 @@
                         <div class="sig1">
                                 <div class="sigWrapper">
                                 
-                                  <canvas class="pad" width="198" height="55"></canvas>
+                                  <canvas class="pad" width="220" height="77"></canvas>
                                 </div>
                            
                               </div>
@@ -594,7 +594,7 @@
 
                          
 
-                        {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
+                        {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
                         @csrf
                         <input type="hidden"  name="dateL"  id="dateL" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
@@ -629,7 +629,7 @@
               <tr>
                       <td  style="width:43%"  > {{  $managers->manager  }} </td>
                       <td style="text-align:center">
-
+                       
                       <select name="staaff_one{{$a++}}"      style="text-align:center">
 
                               <option value="0" >เลือก</option>
@@ -642,7 +642,7 @@
 
                       </td>
                       <td style="text-align:center" >
-
+                       
                       <select name="staaff_one{{$b++}}"   style="text-align:center">
 
                               <option value="0" >เลือก</option>
@@ -652,7 +652,7 @@
                                     </select>
                           </td>
                           <td style="text-align:center">
-
+                         
                           <select    name="staaff_one{{$c++}}"     style="text-align:center" >
 
                                           <option value="0">เลือก</option>
@@ -697,17 +697,17 @@
           </div> <br>
           <div class="col-md">
               <div class="checkbox">
-                <label><input type="checkbox"  name="ok_suitability"   value="อนุมัติตามผู้บังคับบัญชาเสนอ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
+                <label><input type="checkbox"  name="ok_suitability" id="ok_suitability"  value="อนุมัติตามผู้บังคับบัญชาเสนอ">อนุมัติตามผู้บังคับบัญชาเสนอ </label>
               </div>
-            </div>  
+            </div>
+            <div class="col-md">
+                    <div class="checkbox">
+                            <label><input type="checkbox" name="other_suitability" id="other_suitability" value="อื่นๆ">อื่นๆ</label>
+                            <textarea class="form-control" rows="3" name="other_com_suitability" id="other_com_suitability"  disabled required></textarea>
+                          </div>
+                        </div>  
     </div>
-    <div class="col-md-1"></div>
-    <div class="form-group">
-        <div class="col-md"></div>
-            <div class="checkbox">
-                    <label><input type="checkbox" name="other_suitability" value="อื่นๆ">อื่นๆ</label><textarea class="form-control" rows="3" name="other_com_suitability"></textarea>
-                  </div>
-    </div>
+ 
 </div>
   <div class="form-group">
           <label  class="col-sm-2 control-label">ชื่อผู้จัดการฝ่าย:</label>
@@ -906,9 +906,110 @@
 
 
 
+           <script language="javascript">
+  
+                function fncSubmit()
+                {
+     if(document.form1.ok_suitability.checked == false && document.form1.other_suitability.checked == false)
+                      {
+                            
+                            alert('โปรดลงความคิดเห็นอย่างน้อย 1 ตัวเลือก');
+                           
+                            return false;
+                      }
+                    else if(document.form1.staaff_one1.value == "0"  && document.form1.staaff_one50.value == "0"   && document.form1.staaff_one100.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 1');
+                    document.form1.staaff_one1.focus();   document.form1.staaff_one50.focus();    document.form1.staaff_one100.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one2.value == "0"  && document.form1.staaff_one51.value == "0"   && document.form1.staaff_one101.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 2');
+                    document.form1.staaff_one2.focus();   document.form1.staaff_one51.focus();    document.form1.staaff_one101.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one3.value == "0"  && document.form1.staaff_one52.value == "0"   && document.form1.staaff_one102.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 3');
+                    document.form1.staaff_one3.focus();   document.form1.staaff_one52.focus();    document.form1.staaff_one102.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one4.value == "0"  && document.form1.staaff_one53.value == "0"   && document.form1.staaff_one103.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 4');
+                    document.form1.staaff_one4.focus();   document.form1.staaff_one53.focus();    document.form1.staaff_one103.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one5.value == "0"  && document.form1.staaff_one54.value == "0"   && document.form1.staaff_one104.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 5');
+                    document.form1.staaff_one5.focus();   document.form1.staaff_one54.focus();    document.form1.staaff_one104.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one6.value == "0"  && document.form1.staaff_one55.value == "0"   && document.form1.staaff_one105.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 6');
+                    document.form1.staaff_one6.focus();   document.form1.staaff_one55.focus();    document.form1.staaff_one105.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one7.value == "0"  && document.form1.staaff_one56.value == "0"   && document.form1.staaff_one106.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 7');
+                    document.form1.staaff_one7.focus();   document.form1.staaff_one56.focus();    document.form1.staaff_one106.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one8.value == "0"  && document.form1.staaff_one57.value == "0"   && document.form1.staaff_one107.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 8');
+                    document.form1.staaff_one8.focus();   document.form1.staaff_one57.focus();    document.form1.staaff_one107.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one9.value == "0"  && document.form1.staaff_one58.value == "0"   && document.form1.staaff_one108.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 9');
+                    document.form1.staaff_one9.focus();   document.form1.staaff_one58.focus();    document.form1.staaff_one108.focus();
+                    return false;
+                    }
+                    else if(document.form1.staaff_one10.value == "0"  && document.form1.staaff_one59.value == "0"   && document.form1.staaff_one109.value == "0" ){ 
+                    alert('ท่านไม่ได้ประเมินข้อ 10');
+                    document.form1.staaff_one10.focus();   document.form1.staaff_one59.focus();    document.form1.staaff_one109.focus();
+                    return false;
+                    }
+                  
 
 
 
+
+
+
+                    else
+                      {
+                              $("#sendData").html("ระบบกำลังทำการบันทึกโปรดรอสักครู่.....");    
+                              
+                      }	
+                      
+                      document.form1.submit();
+                }
+                </script>
+
+<script>
+    $(document).ready(function() {
+   
+         $('#other_suitability').click(function() {
+     
+     if ($(this).is(':checked')) {
+   
+         $("#other_com_suitability").removeAttr('disabled', 'disabled');
+       
+     }else {
+        
+         $("#other_com_suitability").attr('disabled', 'disabled'); 
+         document.getElementById('other_com_suitability').value = "";
+         
+         
+     }
+   });
+   
+   
+     
+   
+       });
+   
+   
+   </script>
+   
 
           
 </body>
