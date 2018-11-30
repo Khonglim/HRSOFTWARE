@@ -703,7 +703,7 @@
                         <tr>
                             <td align="center">รวมคะแนนทั้งสิ้น</td>
                             <td align="center">200</td>
-                            <td align="center"></td>
+                            <td align="center">{{$operate->sum_chioce_suitability10  + $operate->subtotal_final }}</td>
                         </tr>
                     </tbody>
                 </table> <br>
