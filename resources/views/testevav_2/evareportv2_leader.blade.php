@@ -122,7 +122,7 @@ function myFunction() {
                             <?php   $istest=$ngg_emp->nem_thai_firstname; ?>
                             @endif
                           @endforeach
-                              <div >
+                              <div style="display: none;">
                                 {{Form::text('name_is_employee',$istest)}}
                                 {{Form::text('form','leader')}}
                               </div>
@@ -152,7 +152,7 @@ function myFunction() {
 
                             @if($i==24)
                              <?php $change2++; $j=0; $i=0; $change= $pointt->nem_thai_firstname; ?>
-                             <div ><input name="name_by_employee_{{$change2}}" type="text" value={{$change}}></div>
+                             <div style="display: none;"><input name="name_by_employee_{{$change2}}" type="text" value={{$change}}></div>
                               
 
                       @foreach($ngg_evaresult_comment as $ngg_comment )
@@ -197,8 +197,10 @@ function myFunction() {
                             <td  style="width: 10%;height: 40px;">{{$p5}}<?php  $p5final+=$p5;?></td>
 
                             </tr>
-                            <?php $sum = $p1+$p2+$p3+$p4+$p5; ?>
-                            <div ><input name='point_{{$change2}}' type="text" value={{$sum}}></div>
+
+                            <?php $sum1 = $p1+$p2+$p3+$p4+$p5; $sum =number_format($sum1, 2);?>
+                            
+                            <div style="display: none;"><input name='point_{{$change2}}' type="number" value={{$sum}}></div>
                             
 
                                              
