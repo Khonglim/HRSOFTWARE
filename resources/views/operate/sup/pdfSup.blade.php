@@ -38,7 +38,7 @@
 <body>
 <div class="container">
     <br>
-    <center> <img src="{{ url('img/NGG-10.png') }}" width="100px" height="100px"></center>
+    <center> <img src="{{ url('img/NGG-10.jpg') }}" width="100px" height="100px"></center>
     @if ($operate->degree_enable == 1)
     <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
     @else
@@ -57,7 +57,7 @@
     <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
     <b>4. เขียนเครื่องหมาย <i class="material-icons">check_box</i> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
     <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119 วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
-    <div class="font"><b>บริษัท ในเครือ เอ็น จี จี กรุ๊ป จำกัด</b></div>
+    <div class="font"><b>บริษัท ในเครือ เอ็น จี จี กรุ๊ป</b></div>
 
     <div class="row">
         <div class="col-md-6">
@@ -98,9 +98,50 @@
         <div class="col-md-6">
                 <font size="3"><b>ประเมินครั้งที่2 : วันที่ : </b> {{$operate->date_90}}</font>
             </div>
-    </div>
-    <br><br>
-
+    </div> 
+    <br>
+    <table>
+            <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 60 วัน)</th></tr>
+            <tr>
+                <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                <td style="text-align:center">ลาป่วย(วัน)</td>
+                <td style="text-align:center">ลากิจ (วัน)</td>
+                <td style="text-align:center">ขาดงาน (วัน)</td>
+                <td style="text-align:center">พักร้อน (วัน)</td>
+                <td style="text-align:center">สาย (ครั้ง)</td>
+                <td style="text-align:center">สาย (นาที)</td>
+            </tr>
+            <tr>
+                <td>ตั้งแต่วันที่ :{{$operate->startwork_60}} <br>ถึงวันที่ :{{$operate->endwork_60}}</td>
+                <td style="text-align:center">{{$operate->sick_leave_60}}</td>
+                <td style="text-align:center">{{$operate->errand_leave_60}}</td>
+                <td style="text-align:center">{{$operate->absence_60}}</td>
+                <td style="text-align:center">{{$operate->vacation_60}}</td>
+                <td style="text-align:center">{{$operate->line_terms_60}}</td>
+                <td style="text-align:center">{{$operate->line_min_60}}</td>
+            </tr>
+        </table>
+        <table>
+            <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 90 วัน)</th></tr>
+            <tr>
+                <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                <td style="text-align:center">ลาป่วย(วัน )</td>
+                <td style="text-align:center">ลากิจ (วัน )</td>
+                <td style="text-align:center">ขาดงาน (วัน )</td>
+                <td style="text-align:center">พักร้อน (วัน )</td>
+                <td style="text-align:center">สาย (ครั้ง)</td>
+                <td style="text-align:center">สาย (นาที)</td>
+            </tr>
+            <tr>
+                <td>ตั้งแต่วันที่ :{{$operate->startwork_60}} <br>ถึงวันที่ :{{$operate->endwork_60}}</td>
+                <td style="text-align:center">{{$operate->sick_leave_90}}</td>
+                <td style="text-align:center">{{$operate->errand_leave_90}}</td>
+                <td style="text-align:center">{{$operate->absence_90}}</td>
+                <td style="text-align:center">{{$operate->vacation_90}}</td>
+                <td style="text-align:center">{{$operate->line_terms_90}}</td>
+                <td style="text-align:center">{{$operate->line_min_90}}</td>
+            </tr>
+        </table> <br>
     @if ($operate->degree_enable == 1)
     <table>
         <tbody>
@@ -638,49 +679,7 @@
             </td>
         </tr>
     </table> 
-    <br>
-                <table>
-                    <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 60 วัน)</th></tr>
-                    <tr>
-                        <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
-                        <td style="text-align:center">ลาป่วย(วัน )</td>
-                        <td style="text-align:center">ลากิจ (วัน )</td>
-                        <td style="text-align:center">ขาดงาน (วัน )</td>
-                        <td style="text-align:center">พักร้อน (วัน )</td>
-                        <td style="text-align:center">สาย (ครั้ง)</td>
-                        <td style="text-align:center">สาย (นาที)</td>
-                    </tr>
-                    <tr>
-                        <td>ตั้งแต่วันที่ :{{$operate->startwork_60}} <br>ถึงวันที่ :{{$operate->endwork_60}}</td>
-                        <td style="text-align:center">{{$operate->sick_leave_60}}</td>
-                        <td style="text-align:center">{{$operate->errand_leave_60}}</td>
-                        <td style="text-align:center">{{$operate->absence_60}}</td>
-                        <td style="text-align:center">{{$operate->vacation_60}}</td>
-                        <td style="text-align:center">{{$operate->line_terms_60}}</td>
-                        <td style="text-align:center">{{$operate->line_min_60}}</td>
-                    </tr>
-                </table> <br>
-                <table>
-                    <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 90 วัน)</th></tr>
-                    <tr>
-                        <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
-                        <td style="text-align:center">ลาป่วย(วัน )</td>
-                        <td style="text-align:center">ลากิจ (วัน )</td>
-                        <td style="text-align:center">ขาดงาน (วัน )</td>
-                        <td style="text-align:center">พักร้อน (วัน )</td>
-                        <td style="text-align:center">สาย (ครั้ง)</td>
-                        <td style="text-align:center">สาย (นาที)</td>
-                    </tr>
-                    <tr>
-                        <td>ตั้งแต่วันที่ :{{$operate->startwork_60}} <br>ถึงวันที่ :{{$operate->endwork_60}}</td>
-                        <td style="text-align:center">{{$operate->sick_leave_90}}</td>
-                        <td style="text-align:center">{{$operate->errand_leave_90}}</td>
-                        <td style="text-align:center">{{$operate->absence_90}}</td>
-                        <td style="text-align:center">{{$operate->vacation_90}}</td>
-                        <td style="text-align:center">{{$operate->line_terms_90}}</td>
-                        <td style="text-align:center">{{$operate->line_min_90}}</td>
-                    </tr>
-                </table> <br> 
+    <br> 
                 <table>
                     <tbody>
                         <tr><td colspan="3" align="center"><b>สรุปผลการประเมิน</b></td></tr>
@@ -748,7 +747,7 @@
                         </tr>       
                     </tbody>
                 </table> 
-                <br> <br> 
+                <br> 
         <table>
             <tbody>
                 <tr>

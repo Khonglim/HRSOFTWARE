@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 <link href="{{ asset('signaturepad/assets/jquery.signaturepad.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
 <script type="text/javascript" src="{{ asset('signaturepad/jquery.signaturepad.js') }}"></script>
 <script type="text/javascript" src="{{ asset('signaturepad/assets/json2.min.js') }}"></script>
@@ -39,8 +40,8 @@
 <body>
         <div class="container">
     <br>
-<center><img src="{{ url('img/NGG-10.jpg') }}" width="100px" height="100px"></center>
-<h2>บริษัทในเครือของ เอ็น จี จี กรุ๊ป</h2><hr>
+<center><img src="{{ url('img/NGG-10.jpg') }}" width="130px" height="130px"></center> <br>
+<div align="center"><font size="5">บริษัทในเครือ เอ็น จี จี กรุ๊ป</font></div><hr><div align="center"><h2>ใบขอกำลังคน</h2></div>
                                           <div class="row">
                                                 <div class="col-md-4 ">
                                                       <b>การสรรหา</b> <b class="text-danger">:</b>

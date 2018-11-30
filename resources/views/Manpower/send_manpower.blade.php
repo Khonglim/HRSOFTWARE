@@ -39,15 +39,17 @@
 
 <body>
       <div class="container">
+            <br>
+            <div align="center"><img src="{{ url('img/NGG-10.jpg') }}" width="130px" height="130px"></div>
+             <div align="center"><font size="5">บริษัทในเครือ เอ็น จี จี กรุ๊ป</font></div>     
             <div class="row justify-content-center">
 
-                  <div class="col-md-12 bg-light p-4 rounded mt-5">
+                  <div class="col-md-12 bg-light p-3 rounded mt-1">
                         <div class="card">
-                              <div class="card-header card bg-danger text-white">เรียนคณะผู้บริหาร</div>
                               <div class="card-body">
                                     {{Form::open(['route'=>['manpower.update',$manpower->id],'method'=>'PUT'])}}
                                     @csrf
-                                          <h2>บริษัทในเครือของ เอ็น จี จี กรุ๊ป</h2><hr>
+                                    <div align="center"><h2>ใบขอกำลังคน</h2></div><hr>
                                           <div class="row">
                                                 <div class="col-md-4 ">
                                                       <b>การสรรหา</b> <b class="text-danger">:</b>
