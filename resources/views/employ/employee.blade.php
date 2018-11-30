@@ -62,11 +62,15 @@
                     </div>
                   </td>
                   <td  style="width: 30px; "> {{$l['updated_at']}} นาที </td>
-                  <td  style="width: 30px; ">@if($l['degree']=1) 
+                  <td  style="width: 30px; ">@if($l['degree']==1) 
+                   
+                      <b class="text-success">เปิดแล้ว</b>
+                    @else
+
+                    <b class="text-danger">ยังไม่ได้เปิด</b>
                   
                   
-                  
-                  
+                  @endif
                   </td>
                 </tr>
                 @endif @empty
