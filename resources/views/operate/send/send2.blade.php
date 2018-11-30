@@ -41,6 +41,12 @@
                 background-color: #E96060;
                 color: white;
             }
+            .table-wrapper-scroll-y {
+  display: block;
+  max-height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
             </style>
     
     <div class="container-fluid">
@@ -232,6 +238,7 @@
 @if( $operate->degree_enable == 1)
 {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
 @csrf
+<input type="hidden"  name="date90T"  id="date90T" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
       <div class="col-sm-12">
               <div  class="table-wrapper-scroll-y">        
@@ -421,6 +428,7 @@
 @else
 {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
 @csrf
+<input type="hidden"  name="date90T"  id="date90T" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
       <div class="col-sm-12">
              <div  class="table-wrapper-scroll-y">        

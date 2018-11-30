@@ -15,11 +15,14 @@
                   <h3 class="box-title">ตารางข้อมูลการแสดงประเมินผลทดลองงาน</h3>
             </div>
             <div class="box-body">
-             <h3> หมายเหตุ: link ที่คัดลอกไม่เหมือนกัน โปรดระมัดระวัง </h3>
+             <h3> หมายเหตุ: link ที่คัดลอกไม่เหมือนกัน โปรดระมัดระวัง <br>
+            
+            กรุณากรอก Time Attendance ก่อนการคัดลอก link !!!
+            </h3>
                         <table id="operate" class="table table-bordered table-striped">
                                     <thead>
                                       <tr>
-                                      
+                                        <th>วันที่บันทึกข้อมูล</th>
                                         <th>ชื่อ-สกุล</th>
                                         <th>ต้นสังกัดรอบที่1</th>
                                         <th>ต้นสังกัดรอบที่2</th>
@@ -34,7 +37,7 @@
                                      @foreach ($operater as $item)
                                      <tr>
 
-                                                
+                                        <td style="width:30px; ">{{$item->dateC}}</td>
                                                 <td style="width: 150px; ">{{$item->first_name}}</td> 
                                                 <td style="width: 250px; ">
                                                             

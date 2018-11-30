@@ -41,6 +41,12 @@
                 background-color: #E96060;
                 color: white;
             }
+            .table-wrapper-scroll-y {
+  display: block;
+  max-height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
             </style>
     
     <div class="container-fluid">
@@ -549,7 +555,7 @@
                                       </div>
                                 <br> ( คุณ{{$operate->name_rate_60}} ) 
                                 <br>ผู้บังคับบัญชาต้นสังกัด
-                                <br>วันที่การประเมิน {{$operate->created_at}} น.
+                                <br>วันที่การประเมิน {{$operate->date60T}} น.
                                 <br>การประเมิน 60 วัน	
                                     
                             </td>
@@ -564,7 +570,7 @@
                               </div>
                         <br> ( คุณ{{$operate->name_rate_90}} ) 
                         <br>ผู้บังคับบัญชาต้นสังกัด
-                        <br>วันที่การประเมิน {{$operate->updated_at}} น.
+                        <br>วันที่การประเมิน {{$operate->date90T}} น.
                         <br>การประเมิน 90 วัน	
                             
                     </td>
@@ -590,6 +596,7 @@
 
                         {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
                         @csrf
+                        <input type="hidden"  name="dateL"  id="dateL" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
       <div class="col-sm-12">
                   <div class="alert alert-danger">
