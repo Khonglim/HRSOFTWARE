@@ -30,7 +30,7 @@
                 <div class="content container">
           {{Form::open(['url'=>'rate_sup'])}}
           @csrf
-          <div class="box-body table-responsive no-padding">
+          <div class="table-wrapper-scroll-y">
             <table  id="customers">
                    
                       <tr>
@@ -76,7 +76,7 @@
                      <?php $s++ ?>
                      <tr>
                             <input type= "hidden" name="chioce{{$s}}"  value="{{$s}}"   />
-                            <td  style="width:40% " >{{ $i->choice}}
+                            <td  style="width:30% " >{{ $i->choice}}
                             <td  colspan="1" style="text-align:center " >
                                     @foreach ($scoreinterviewp as $item)
                                       <input type="radio" id="score_{{$i->id}}" name="score_{{$i->id}}" value="{{$item->score_interview}}" required/> {{$item->score_interview}}&ensp;

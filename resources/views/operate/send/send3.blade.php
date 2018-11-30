@@ -44,6 +44,28 @@
             </style>
     
     <div class="container-fluid">
+            @if ($operate->degree_enable == 1)
+            <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับบังคับบัญชา</h2>
+            @else
+            <h2 style="text-align:center;">แบบประเมินผลการปฏิบัติงานระดับปฏิบัติการ</h2>
+            @endif
+           
+            <div class="font" style="text-align:center;"><b>คำแนะนำวิธีการกรอกแบบประเมินผลการทดลองงาน</b></div>
+            <b>1. ระดับในการประเมินผล</b><br>
+            <input type="hidden" value="{{$operate->signa1_60}}" id="sig0">
+            <input type="hidden" value="{{$operate->signa1_90}}" id="sig1">
+            
+            &emsp;&emsp;4 ดีมาก = ผลการปฎิบัติงานดีเยี่ยม สูงกว่าเกณฑ์มาตรฐานมาก<br>
+            &emsp;&emsp;3 ดี = ผลการปฎิบัติงานดี ได้ตามมาตรฐานที่กำหนดไว้<br></dd>
+            &emsp;&emsp;2 พอใช้ = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้ แต่ยังสามารถจะพัฒนาศักยภาพได้<br>
+            &emsp;&emsp;1 ต้องปรับปรุง = ผลการปฎิบัติงานต่ำกว่าเกณฑ์มาตรฐานที่กำหนดไว้มาก ยังต้องมีการปรับปรุงอีกมาก<br>
+            <b>2.การประเมินผลให้แยกประเมินผลตามหัวข้อประเมิน และคิดคะแนนรวมดังนี้</b><br>
+            &emsp;&emsp;2.1. ระดับพนักงานทั่วไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-15. <u>ได้ผลรวมคะแนนเท่าไหร่ ให้คูณด้วย 100หาร60</u><br>
+            &emsp;&emsp;2.2. ระดับหัวหน้างานขึ้นไป ให้ประเมินผลและคิดคะแนนรวมในข้อ 1-25 <br>
+            <b>3. ผู้ถูกประเมินจะต้องได้ 60คะแนน ขึ้นไป จึงจะผ่านเกณฑ์การประเมินผลการทดลองงาน</b><br>
+            <b>4. เขียนเครื่องหมาย <input type="checkbox" checked="checked"> ลงในช่องประเมินผล ตามผลการปฏิบัติงานที่ประเมินได้</b><br>
+            <b>5. ผู้ประเมินแจ้งให้ผู้ถูกประเมินทราบล่วงหน้าก่อนวันครบรอบกำหนดทดลองงาน 119วัน <u>โดยให้แจ้งผู้ถูกประเมินไม่น้อยกว่า30วัน ก่อนการจ่ายค่าจ้างในรอบถัดไป</u></b><br><br><br>
+            <div class="font"><b>บริษัท ในเครือ เอ็น จี จี กรุ๊ป </b></div>
             <div class="card">
                         <div class="card-header">การประเมินผลการทดลองงาน</div>
                         <div class="card-body">
@@ -141,7 +163,281 @@
                                              
                         </div>
                    
+                        <div class="form-group">
+                                <div class="col-sm-12">
+                                        <div  class="table-wrapper-scroll-y">        
+                    <table id="customers">
+                            <tr>
+                              <th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสายครั้งที่ 1</th>
+                            </tr>
+                            <tr>
+                              <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                              <td style="text-align:center">ลาป่วย(วัน )</td>
+                              <td style="text-align:center">ลากิจ (วัน )</td>
+                              <td style="text-align:center">ขาดงาน (วัน )</td>
+                              <td style="text-align:center">พักร้อน (วัน )</td>
+                              <td style="text-align:center">สาย (ครั้ง)</td>
+                              <td style="text-align:center">สาย (นาที)</td>
+    
+                            </tr>
+                            <tr>
+                              <td style="text-align:center">ตั้งแต่วันที่ {{$operate->startwork_60}} <br><br>
+                                ถึงวันที่    {{$operate->endwork_60}}
+    
+    
+                            </td>
+                              <td style="text-align:center"> {{$operate->sick_leave_60}}</td>
+                              <td style="text-align:center">{{$operate->errand_leave_60}}</td>
+                              <td style="text-align:center">{{$operate->absence_60}}</td>
+                              <td style="text-align:center">{{$operate->vacation_60}}</td>
+                              <td style="text-align:center">{{$operate->line_terms_60}}</td>
+                              <td style="text-align:center">{{$operate->line_min_60}}</td>
+    
+                            </tr>
+                          </table>
+                                        </div>
+    
+                                </div>
+                         </div>  
+                         
+                         
+                         <div class="form-group">
+                                <div class="col-sm-12">
+                                        <div  class="table-wrapper-scroll-y">        
+                                                <table id="customers">
+                                                        <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 90 วัน)</th></tr>
+                                                        <tr>
+                                                            <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
+                                                            <td style="text-align:center">ลาป่วย(วัน )</td>
+                                                            <td style="text-align:center">ลากิจ (วัน )</td>
+                                                            <td style="text-align:center">ขาดงาน (วัน )</td>
+                                                            <td style="text-align:center">พักร้อน (วัน )</td>
+                                                            <td style="text-align:center">สาย (ครั้ง)</td>
+                                                            <td style="text-align:center">สาย (นาที)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ตั้งแต่วันที่ :{{$operate->startwork_90}} <br>ถึงวันที่ :{{$operate->endtwork_90}}</td>
+                                                            <td style="text-align:center">{{$operate->sick_leave_90}}</td>
+                                                            <td style="text-align:center">{{$operate->errand_leave_90}}</td>
+                                                            <td style="text-align:center">{{$operate->absence_90}}</td>
+                                                            <td style="text-align:center">{{$operate->vacation_90}}</td>
+                                                            <td style="text-align:center">{{$operate->line_terms_90}}</td>
+                                                            <td style="text-align:center">{{$operate->line_min_90}}</td>
+                                                        </tr>
+                                                    </table>
+                            
+                                        </div>
+    
+                                </div>
+                         </div>  
+                  
 
+
+                         <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div  class="table-wrapper-scroll-y">              
+                    <table id="customers">
+                      <tr>
+                        <th ROWSPAN="3" style="text-align:center">หัวข้อการประเมิน<br>
+                            ( 100 คะแนน )
+                            </th>
+                        <th COLSPAN="2" style="text-align:center" >ระดับคะแนนการประเมินผล</th>
+                      </tr>
+                      <tr>
+                        <td align="center" colspan="2">ประเมินรอบ</td>
+                       </tr>
+                       <tr>
+                            <td style="text-align:center" colspan="2">ระดับคะแนน</td>
+                          </tr>
+                          <tr>
+                            <td COLSPAN="4" style="text-align:center">ระดับปฏิบัติการ ( Operational Level )</td>
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td style="text-align:center">การประเมินรอบที่ 1 60 วัน</td>
+                              <td style="text-align:center">การประเมินรอบที่ 2 90 วัน</td>
+                          </tr>
+                      <tr>
+                            <td>1. คุณภาพของงานที่ปฏิบัติ</td>
+                            <td align="center">{{$operate->chioce1_60}}</td>
+                            <td align="center">{{$operate->chioce1_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>2. ปริมาณของงาน และเวลาที่ใช้ปฏิบัติงาน</td>
+                            <td align="center">{{$operate->chioce2_60}}</td>
+                            <td align="center">{{$operate->chioce2_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>3. ความรับผิดชอบและไว้วางใจในการทำงาน</td>
+                            <td align="center">{{$operate->chioce3_60}}</td>
+                            <td align="center">{{$operate->chioce3_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>4. การปฏิบัติตามคำสั่ง และ คำแนะนำ</td>
+                            <td align="center">{{$operate->chioce4_60}}</td>
+                            <td align="center">{{$operate->chioce4_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>5. การประพฤติตามระเบียบข้อบังคับของบริษัท</td>
+                            <td align="center">{{$operate->chioce5_60}}</td>
+                            <td align="center">{{$operate->chioce5_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>6. ความซื่อสัตย์ และ น่าเชื่อถือไว้ใจ</td>
+                            <td align="center">{{$operate->chioce6_60}}</td>
+                            <td align="center">{{$operate->chioce6_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>7. ความตั้งใจและความกระตือรือร้นในการทำงานให้สำเร็จ</td>
+                            <td align="center">{{$operate->chioce7_60}}</td>
+                            <td align="center">{{$operate->chioce7_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>8. ความสามารถในการเรียนรู้งาน</td>
+                            <td align="center">{{$operate->chioce8_60}}</td>
+                            <td align="center">{{$operate->chioce8_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>9. ความสามารถด้านการคิดริเริ่มสร้างสรรค์</td>
+                            <td align="center">{{$operate->chioce9_60}}</td>
+                            <td align="center">{{$operate->chioce9_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>10. ความสามารถในการแก้ไขข้อบกพร่องของตนเอง</td>
+                            <td align="center">{{$operate->chioce10_60}}</td>
+                            <td align="center">{{$operate->chioce10_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>11. การให้ความร่วมมือประสานงานและการทำงานเป็นทีมกับผู้อื่น</td>
+                            <td align="center">{{$operate->chioce11_60}}</td>
+                            <td align="center">{{$operate->chioce11_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>12. ความสามารถในการแก้ไขปัญหาเฉพาะหน้าและตัดสินใจด้วยตนเอง</td>
+                            <td align="center">{{$operate->chioce12_60}}</td>
+                            <td align="center">{{$operate->chioce12_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>13. ทัศนคติที่มีต่อบริษัท</td>
+                            <td align="center">{{$operate->chioce13_60}}</td>
+                            <td align="center">{{$operate->chioce13_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>14. การใช้ทรัพย์สินและค่าใช้จ่ายของบริษัทอย่างประหยัดและปลอดภัย</td>
+                            <td align="center">{{$operate->chioce14_60}}</td>
+                            <td align="center">{{$operate->chioce14_90}}</td>
+                        </tr>
+                        <tr>
+                            <td>15. มีสุขภาพร่างกายพร้อมที่จะปฏิบัติงาน</td>
+                            <td align="center">{{$operate->chioce15_60}}</td>
+                            <td align="center">{{$operate->chioce15_90}}</td>
+                        </tr>
+    
+              
+    
+                         <tr>
+                                <td  COLSPAN="3" >
+    
+                                        รวมคะแนนทั้งสิ้น <br><br> ประเมินครั้งที่ 1 : 60 วัน   <input type="text" name="rate_60" id="rate_60" readonly style="text-align:center" value="{{$operate->subtotal_60}}" > คะแนน  <br><br>
+                                                      ประเมินครั้งที่ 2 : 90 วัน   <input type="text" name="rate_90" id="rate_90" readonly style="text-align:center" value="{{$operate->subtotal_90}}"> คะแนน<br><br>
+                                                      (รวมกันหาร 2) =  <input type="text" name="rate_all" id="rate_all" readonly style="text-align:center" value="{{$operate->subtotal_final}}"> คะแนน
+                                      </td>
+    
+                         </tr>
+    
+                    </table>
+    
+    
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <div class="col-sm-12">
+            <table id="customers">
+                    <tbody >
+                        <tr>
+                            <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 60 วัน</td>
+                            <td  style="width: 100px; ">{{$operate->comments_60}}</td>
+                        </tr>
+                        <tr>
+                            <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 90 วัน</td>
+                            <td  style="width: 100px; ">{{$operate->comments_90}}</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            </div>
+
+            <div class="form-group">
+                    <div class="col-sm-12">
+                            <table>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3">
+                                                <b>จุดเด่นของพนักงาน :</b> {{$operate->comments_featured}}<br>
+                                                <b>จุดด้อยของพนักงาน :</b> {{$operate->comments_weakness}} <br>
+                                                    @if($operate->experimental == 'ไม่ผ่านทดลองงาน')
+                                                <input type="checkbox" checked="checked" disabled>{{$operate->experimental}} ให้มีผลบังคับตั้งแต่วันที่ : {{$operate->experimental_date}} <br>
+                                                @endif 
+                                                    @if($operate->full_time_worker == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                                                <input type="checkbox" checked="checked" disabled>{{$operate->full_time_worker}} ตั้งแต่วันที่ : {{$operate->full_time_worker_date}} ตำแหน่ง : {{$operate->full_time_worker_position}} <br>
+                                                @endif 
+                                                    @if($operate->modify == 'อนุมัติให้บรรจุเป็นพนักงานประจำ')
+                                                <input type="checkbox" checked="checked" disabled>{{$operate->modify}} และปรับตำแหน่ง จากตำแหน่ง : {{$operate->modify_position1}} เป็นตำแหน่ง : {{$operate->modify_position2}} ตั้งแต่วันที่ : {{$operate->modify_date}} <br>
+                                                 @endif 
+                                                    @if($operate->other_90 == 'อื่นๆ')
+                                                <input type="checkbox" checked="checked" disabled>{{$operate->other_90}} : {{$operate->other_com_90}}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td align="center">
+                                                        <br>
+                                                        <div class="sig0">
+                                                                <div class="sigWrapper">
+                                                                
+                                                                  <canvas class="pad" width="198" height="55"></canvas>
+                                                                </div>
+                                                           
+                                                              </div>
+                                                        <br> ( คุณ{{$operate->name_rate_60}} ) 
+                                                        <br>ผู้บังคับบัญชาต้นสังกัด
+                                                        <br>วันที่การประเมิน {{$operate->created_at}} น.
+                                                        <br>การประเมิน 60 วัน	
+                                                            
+                                                    </td>
+                                            <td align="center">
+                                                <br>
+                                                <div class="sig1">
+                                                        <div class="sigWrapper">
+                                                        
+                                                          <canvas class="pad" width="198" height="55"></canvas>
+                                                        </div>
+                                                   
+                                                      </div>
+                                                <br> ( คุณ{{$operate->name_rate_90}} ) 
+                                                <br>ผู้บังคับบัญชาต้นสังกัด
+                                                <br>วันที่การประเมิน {{$operate->updated_at}} น.
+                                                <br>การประเมิน 90 วัน	
+                                                    
+                                            </td>
+                                            <td align="center">
+                                                <br>
+                                                <br> ผู้ถูกประเมิน : ........................................... <br> 
+                                                ( คุณ {{$operate->first_name}} 	) <br>พนักงานผู้ถูกประเมิน<br>วันที่การประเมิน....../....../......</td>
+                                        </tr>  
+                                    </tbody>
+                                    </table> 
+            </div>
+            </div>
+
+
+
+
+
+
+
+                         
 
                         {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true])}}
                         @csrf
@@ -261,7 +557,7 @@
           <label  class="col-sm-2 control-label">ชื่อผู้จัดการฝ่าย:</label>
 
           <div class="col-sm-4">
-              <input type="text"  name="namerate_suitability" id="namerate_suitability"  class="form-control">
+              <input type="text"  name="namerate_suitability" id="namerate_suitability"  class="form-control" required>
           </div>
   </div>
   <div class="form-group">
@@ -333,8 +629,7 @@
     
     
     
-    
-    
+
     
     
     
@@ -360,6 +655,28 @@
                  
         });
       </script>
+
+<script>
+        $(document).ready(function() {
+    
+            var  sing0  = document.getElementById("sig0").value;
+            var  sing1  = document.getElementById("sig1").value;
+           
+       
+        $('.sig0').signaturePad({displayOnly:true}).regenerate(sing0);
+    
+        $('.sig1').signaturePad({displayOnly:true}).regenerate(sing1);
+    
+        
+    
+        });
+      </script>
+
+
+
+
+
+
     
     <script type='text/javascript'>
           var add_value = [];
@@ -392,6 +709,21 @@
              
     });
   </script>
+<script>
+        $(document).ready(function() {
+    
+            var  sing0  = document.getElementById("sig0").value;
+            var  sing1  = document.getElementById("sig1").value;
+           
+       
+        $('.sig0').signaturePad({displayOnly:true}).regenerate(sing0);
+    
+        $('.sig1').signaturePad({displayOnly:true}).regenerate(sing1);
+    
+        
+    
+        });
+      </script>
 
 <script type='text/javascript'>
       var add_value = [];

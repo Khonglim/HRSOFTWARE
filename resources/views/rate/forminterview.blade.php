@@ -25,12 +25,14 @@
         background-color: #FF3333;
         color:  black;
     }
+    
     </style>
+ 
             <div class="content-wrapper">
                 <div class="content container">
           {{Form::open(['url'=>'rate'])}}
           @csrf
-          <div class="box-body table-responsive no-padding">
+          <div class="table-wrapper-scroll-y">
             <table  id="customers" class="table table-stripe"  >
                   
                       <tr>
@@ -77,7 +79,7 @@
                      <?php $s++ ?>
                      <tr>
                             <input type="hidden" name="chioce{{$s}}"  value="{{$s}}"  >
-                            <td  style="width:40% " >{{ $i->choice}}
+                            <td  style="width:30% " >{{ $i->choice}}
                                 
                             <td  colspan="1" style="text-align:center " >
                                     @foreach ($scoreinterviewp as $item)
@@ -87,7 +89,7 @@
 
 
                             </td>
-                            <td> <textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
+                            <td style="width:30% "> <textarea class="form-control" rows="3" name="comment{{$i->id}}"></textarea></td>
 
                    
                       </tr>
