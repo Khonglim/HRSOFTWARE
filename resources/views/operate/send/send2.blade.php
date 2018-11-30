@@ -386,8 +386,8 @@
                         <label  class="col-sm-2 control-label"></label>
                         <div class="col-md">
                                 <div class="checkbox">
-                                        <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" name="modify">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง:</label>
-                                        <input type="text" name="modify_position1" id="modify_position1"   class="form-control"/>
+                                        <label><input type="checkbox" value="อนุมัติให้บรรจุเป็นพนักงานประจำ" id="modify" name="modify">อนุมัติให้บรรจุเป็นพนักงานประจำ และปรับตำแหน่ง จากตำแหน่ง:</label>
+                                        <input type="text" name="modify_position1" id="t1"   class="form-control"  required disabled/>
         
                                         ตั้งแต่วันที่:<input type="date"  name="modify_date"  id="modify_date"  class="form-control" required disabled> เป็นตำแหน่ง:
                                         <input type="text" name="modify_position2" id="modify_position2"   class="form-control" required disabled/>
