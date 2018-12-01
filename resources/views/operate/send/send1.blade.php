@@ -286,7 +286,7 @@
         <div class="form-group">
             <div class="col-md-12">
             <label >ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน)</label>
-                    <textarea class="form-control" rows="3" name="assessor" required></textarea>
+                    <textarea class="form-control" rows="3" name="comments_60" required></textarea>
                   </div>
                 </div>
              
@@ -294,7 +294,7 @@
                     <div class="col-md-12">
                     <label >จุดเด่นพนักงาน:</label>
                    
-                            <textarea class="form-control" rows="3" name="featured" required></textarea>
+                            <textarea class="form-control" rows="3" name="comments_featured" required></textarea>
                           </div>
                        
     
@@ -305,7 +305,7 @@
               <div class="col-md-12">
                 <label >จุดด้อยพนักงาน:</label>
        
-                  <textarea class="form-control" rows="3" name="weakness" required></textarea>
+                  <textarea class="form-control" rows="3" name="comments_weakness" required></textarea>
                 </div>
               </div>
     
@@ -338,8 +338,8 @@
             </div>
            </div>
               
-           <span id="sendData">      <center>  ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
-                 <button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
+           <center>    <span id="sendData">      ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
+                 <button type="submit" class="btn btn-info pull-right">ตกลง</button> </span></center> 
             {{Form::close()}}
 
 @else
@@ -434,7 +434,7 @@
     <div class="form-group">
         <div class="col-md-12">
         <label >ความคิดเห็นเพิ่มเติม: (สำหรับผู้ประเมิน)</label>
-                <textarea class="form-control" rows="3" name="assessor" required></textarea>
+                <textarea class="form-control" rows="3" name="comments_60" required></textarea>
               </div>
             </div>
          
@@ -442,7 +442,7 @@
                 <div class="col-md-12">
                 <label >จุดเด่นพนักงาน:</label>
                
-                        <textarea class="form-control" rows="3" name="featured" required></textarea>
+                        <textarea class="form-control" rows="3" name="comments_featured" required></textarea>
                       </div>
                    
 
@@ -453,7 +453,7 @@
           <div class="col-md-12">
             <label >จุดด้อยพนักงาน:</label>
    
-              <textarea class="form-control" rows="3" name="weakness" required></textarea>
+              <textarea class="form-control" rows="3" name="comments_weakness" required></textarea>
             </div>
           </div>
 
@@ -490,7 +490,7 @@
 
                     </div>
                     ผู้ถูกประเมินจะต้องได้ 60 คะแนน ขึ้นไป จึงจะถือว่าผ่านเกณฑ์การประเมินผลการทดลองงาน <br>
-                    <span id="sendData">     <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
+                    <center>   <span id="sendData">    <button type="submit" class="btn btn-info pull-right">ตกลง</button> </span></center> 
                     {{Form::close()}}
             
 @endif

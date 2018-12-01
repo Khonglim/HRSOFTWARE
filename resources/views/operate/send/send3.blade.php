@@ -387,6 +387,22 @@
             </div>
             <div class="form-group">
                     <div class="col-sm-12">
+                    <table id="customers">
+                    <tbody >
+                    <tr>
+                        <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 60 วัน</td>
+                        <td  style="width: 100px; ">{{$operate->comments_60}}</td>
+                    </tr>
+                    <tr>
+                        <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 90 วัน</td>
+                        <td  style="width: 100px; ">{{$operate->comments_90}}</td>
+                    </tr>
+                    </tbody>
+                    </table> 
+                    </div>
+                    </div>
+            <div class="form-group">
+                    <div class="col-sm-12">
                             <div  class="table-wrapper-scroll-y">         
                         <table id="customers">
                                 <tbody>
@@ -647,13 +663,7 @@
 
 @endif
 
-
-
-
-
-                         
-
-                        {{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
+{{Form::open(['route'=>['Operate.update',$operate->id],'method'=>'PUT','files' => true,'onSubmit'=>"JavaScript:return fncSubmit();", 'name'=>'form1'])}}
                         @csrf
                         <input type="hidden"  name="dateL"  id="dateL" value="<?php echo date("d/m/Y H:i:s");?>"/>
 <div class="form-group">
@@ -787,75 +797,18 @@
                             <div class="typed"></div>
                             <canvas class="pad" width="220" height="70"></canvas>
                             <input type="hidden" name="signa2" class="output">
-
-                          </div>
-                        </div>
+                    </div>
+            </div>
       </div>
   </div>
-  <span id="sendData">   <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
+  <center><span id="sendData">  <button type="submit" class="btn btn-info pull-right">ตกลง</button>  </span></center>
   {{Form::close()}}
                             
-
-                                      
-
-
-
-
-
-
-
-
-
-
-
-
                         </div>
                         </div>
-                              
-
-                        
                       </div>
-    </div>
-
-
-                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-     
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    </div>
-
-
-
-
-
-
+                 </div>
+             </div>
       </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

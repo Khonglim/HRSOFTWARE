@@ -214,14 +214,14 @@ class OperateController extends Controller
         if (Input::get('rate_60') != '') {
             $operater->rate_60 = Input::get('rate_60');
         }
-        if (Input::get('assessor') != '') {
-            $operater->comments_60 = Input::get('assessor');
+        if (Input::get('comments_60') != '') {
+            $operater->comments_60 = Input::get('comments_60');
         }
-        if (Input::get('featured') != '') {
-            $operater->comments_featured = Input::get('featured');
+        if (Input::get('comments_featured') != '') {
+            $operater->comments_featured = Input::get('comments_featured');
         }
-        if (Input::get('score60_1') != '') {
-            $operater->comments_weakness = Input::get('weakness');
+        if (Input::get('comments_weakness') != '') {
+            $operater->comments_weakness = Input::get('comments_weakness');
         }
         if (Input::get('namerate_60') != '') {
             $operater->name_rate_60 = Input::get('namerate_60');
@@ -357,8 +357,8 @@ class OperateController extends Controller
         if (Input::get('rate_all') != '') {
             $operater->subtotal_final = Input::get('rate_all');
         }
-        if (Input::get('assessor2') != '') {
-            $operater->comments_90 = Input::get('assessor2');
+        if (Input::get('comments_90') != '') {
+            $operater->comments_90 = Input::get('comments_90');
         }
         if (Input::get('experimental') != '') {
             $operater->experimental = Input::get('experimental');
@@ -405,10 +405,10 @@ class OperateController extends Controller
         if (Input::get('staaff_one2') != '') {
             $operater->chioce_suitability2 = Input::get('staaff_one2');
         }
-        if (Input::get('staaff_one4') != '') {
+        if (Input::get('staaff_one3') != '') {
             $operater->chioce_suitability3 = Input::get('staaff_one3');
         }
-        if (Input::get('other_com_90') != '') {
+        if (Input::get('staaff_one4') != '') {
             $operater->chioce_suitability4 = Input::get('staaff_one4');
         }
         if (Input::get('staaff_one5') != '') {

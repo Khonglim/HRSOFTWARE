@@ -248,6 +248,7 @@
                                                       <td style="text-align:center">ประเภทการประเมิน</td>
                                                       <td style="text-align:center">คะแนนเต็ม</td>
                                                       <td style="text-align:center">คะแนนที่ได้</td>
+                                                     
                                                     </tr>
                                                     <tr>
                                                       <td style="width:35%" >1. การประเมินผลการปฏิบัติงาน
@@ -263,7 +264,11 @@
                                                       <td style="text-align:center">100</td>
                                                       <td style="text-align:center">{{$operate->sum_chioce_suitability10}}</td>
                                                     </tr>
-                    
+                                                    <tr>
+                                                        <td style="text-align:center">   รวมคะแนน    </td>
+                                                        <td style="text-align:center">100</td>
+                                                        <td style="text-align:center">{{$operate->sum_chioce_suitability10 +  $operate->subtotal_final}}</td>
+                                                      </tr>
                                                   </table>
                     
                     
@@ -418,6 +423,22 @@
                            </div>
                </div>
                </div>
+               <div class="form-group">
+                    <div class="col-sm-12">
+                    <table id="customers">
+                    <tbody >
+                    <tr>
+                        <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 60 วัน</td>
+                        <td  style="width: 100px; ">{{$operate->comments_60}}</td>
+                    </tr>
+                    <tr>
+                        <td align="center"  style="width: 30px; ">ความคิดเห็นการประเมิน 90 วัน</td>
+                        <td  style="width: 100px; ">{{$operate->comments_90}}</td>
+                    </tr>
+                    </tbody>
+                    </table> 
+                    </div>
+                    </div>
                <div class="form-group">
                     <div  class="table-wrapper-scroll-y">   
                <div class="col-sm-12">
@@ -897,7 +918,7 @@
                                 <div class="sig2">
                                         <div class="sigWrapper">
                                    
-                                            <canvas class="pad" width="198" height="55"></canvas>
+                                            <canvas class="pad" width="220" height="78"></canvas>
                                           </div>
                                      
                                         </div>
@@ -981,8 +1002,7 @@
                                                         <input type="text"  name="human_resource_nre"    class="form-control" required>
                                                     </div>
                     
-                    
-         <span id="sendData">        <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
+                    <center> <span id="sendData">        <button type="submit" class="btn btn-info pull-right">ตกลง</button>  </span></center>
                                         {{Form::close()}}
                              </div>
                         </div>      

@@ -329,33 +329,36 @@
 
 
 <div class="row">
+
+        <div class="form-group"> 
+                <div class="col-md">
+                      <label>ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
+                        <textarea class="form-control" rows="3" name="comments_90"></textarea>
+                      </div>
+                    </div>
+
+
+<div class="col-md-1"></div>
 <div class="form-group">
-    <div class="col-md">
-        <label>ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมินครั้งแรก)</label>
-        <textarea class="form-control" rows="3" name="assessor" readonly>{{$operate->comments_60}}</textarea>
-              </div>
-</div>
-<div class="col-md-2"></div>
-<div class="form-group"> 
-      <div class="col-md">
-            <label>ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
-              <textarea class="form-control" rows="3" name="assessor2"></textarea>
-            </div>
-          </div>
+        <div class="col-md">
+            <label>ความคิดเห็นเพิ่มเติม: <br>(จากผู้ประเมินครั้งแรก)</label>
+            <textarea class="form-control" rows="3" name="comments_60" readonly>{{$operate->comments_60}}</textarea>
+                  </div>
+    </div>
 </div>
 <div class="row">
       
         <div class="form-group"> 
               <div class="col-md">
                     <label>จุดเด่น</label>
-                      <textarea class="form-control" rows="3" name="assessor2" readonly>{{$operate->comments_featured}}</textarea>
+                      <textarea class="form-control" rows="3" name="comments_featured" readonly>{{$operate->comments_featured}}</textarea>
                     </div>
                   </div>
                   <div class="col-md-1"></div>
     <div class="form-group"> 
           <div class="col-md">
                 <label>จุดด้อย</label>
-                  <textarea class="form-control" rows="3" name="assessor2" readonly>{{$operate->comments_weakness}} </textarea>
+                  <textarea class="form-control" rows="3" name="comments_weakness" readonly>{{$operate->comments_weakness}} </textarea>
                 </div>
               </div>
     </div>
@@ -368,7 +371,7 @@
                         <div class="checkbox">
                                 <label><input type="checkbox" value="ไม่ผ่านทดลองงาน" name="experimental" id="experimental">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   
                                 
-                                <input type="text"  name="clsdate"  id="clsdate" class="form-control" disabled required>
+                                <input type="date"  name="clsdate"  id="clsdate" class="form-control" disabled required>
                               </div>
                             </div>
                             <label  class="col-sm-2 control-label"></label>
@@ -430,7 +433,7 @@
                         </div>
             </div>
 
-            <span id="sendData">     <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
+            <center>   <span id="sendData">    <button type="submit" class="btn btn-info pull-right">ตกลง</button> </span></center> 
             {{Form::close()}}
     
 @else
@@ -515,7 +518,7 @@
     <div class="form-group">
         <div class="col-md">
         <label>ความคิดเห็นเพิ่มเติม: <br>(สำหรับผู้ประเมิน)</label>
-            <textarea class="form-control" rows="3" name="assessor2" required></textarea>
+            <textarea class="form-control" rows="3" name="comments_90" required></textarea>
     </div>
     </div>
     <div class="col-md-1"></div>
@@ -534,14 +537,14 @@
     <div class="form-group"> 
           <div class="col-md">
                 <label>จุดเด่น</label>
-                  <textarea class="form-control" rows="3" name="assessor2" readonly>{{$operate->comments_featured}}</textarea>
+                  <textarea class="form-control" rows="3" name="comments_featured" readonly>{{$operate->comments_featured}}</textarea>
                 </div>
               </div>
               <div class="col-md-1"></div>
 <div class="form-group"> 
       <div class="col-md">
             <label>จุดด้อย</label>
-              <textarea class="form-control" rows="3" name="assessor2" readonly>{{$operate->comments_weakness}} </textarea>
+              <textarea class="form-control" rows="3" name="comments_weakness" readonly>{{$operate->comments_weakness}} </textarea>
             </div>
           </div>
 </div>
@@ -552,7 +555,7 @@
                 <div class="col-md">
                 <div class="checkbox">
                         <label><input type="checkbox" value="ไม่ผ่านทดลองงาน" name="experimental"  id="experimental">ไม่ผ่านทดลองงาน  ให้มีผลบังคับ     ตั้งแต่วันที่: </label>   
-                        <input type="text"  name="clsdate"  id="clsdate" class="form-control" disabled  required>
+                        <input type="date"  name="clsdate"  id="clsdate" class="form-control" disabled  required>
                       </div>
                     </div>
                     <label  class="col-sm-2 control-label"></label>
@@ -619,7 +622,7 @@
 
 
          </div>
-         <span id="sendData">         <center><button type="submit" class="btn btn-info pull-right">ตกลง</button></center>  </span>
+         <center>   <span id="sendData">        <button type="submit" class="btn btn-info pull-right">ตกลง</button>  </span></center>
                     {{Form::close()}}
             
 @endif
@@ -1429,7 +1432,7 @@
 
                            }
 
-                       group_90_total =(parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15));
+                       group_90_total =((parseInt(group_90_1)+parseInt(group_90_2)+parseInt(group_90_3)+parseInt(group_90_4)+parseInt(group_90_5)+parseInt(group_90_6)+parseInt(group_90_7)+parseInt(group_90_8)+parseInt(group_90_9)+parseInt(group_90_10)+parseInt(group_90_11)+parseInt(group_90_12)+parseInt(group_90_13)+parseInt(group_90_14)+parseInt(group_90_15))*100/60);
 
 
 
