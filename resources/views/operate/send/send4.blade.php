@@ -211,7 +211,7 @@
                                 <div class="col-sm-12">
                                         <div  class="table-wrapper-scroll-y">        
                                                 <table id="customers">
-                                                        <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 90 วัน)</th></tr>
+                                                        <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย ครั้งที่ 2</th></tr>
                                                         <tr>
                                                             <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
                                                             <td style="text-align:center">ลาป่วย(วัน )</td>
@@ -266,7 +266,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align:center">   รวมคะแนน    </td>
-                                                        <td style="text-align:center">100</td>
+                                                        <td style="text-align:center">200</td>
                                                         <td style="text-align:center">{{$operate->sum_chioce_suitability10 +  $operate->subtotal_final}}</td>
                                                       </tr>
                                                   </table>
@@ -286,8 +286,8 @@
                                            <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
                                        </tr>
                                        <tr>
-                                           <td align="center">ประเมินรอบ {{$operate->NumberDate_60}} วัน</td>
-                                           <td align="center">ประเมินรอบ {{$operate->NumberDate_90}} วัน</td>
+                                           <td align="center">ประเมินรอบ 60 วัน</td>
+                                           <td align="center">ประเมินรอบ 90 วัน</td>
                                        </tr>
                                        <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
                                        <tr>
@@ -416,7 +416,7 @@
                                            <td align="center">{{$operate->chioce25_90}}</td>
                                        </tr>
                                        <tr>
-                                           <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : {{$operate->NumberDate_60}} วัน <u><font color="red">{{$operate->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate->subtotal_final}}</font></u> </b></td>
+                                           <td colspan="3"><b>รวมคะแนนทั้งสิ้น</b> ประเมินครั้งที่ 1 : 60 วัน <u><font color="red">{{$operate->subtotal_60}}</font></u> คะแนน ประเมินครั้งที่ 2 : 90 วัน <u><font color="red">{{$operate->subtotal_90}}</font></u> คะแนน <b>(รวมกันหาร2) = <u><font color="red">{{$operate->subtotal_final}}</font></u> </b></td>
                                        </tr>
                                    </tbody>
                                </table> 

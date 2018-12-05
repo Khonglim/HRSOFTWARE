@@ -267,7 +267,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align:center">   รวมคะแนน    </td>
-                                                        <td style="text-align:center">100</td>
+                                                        <td style="text-align:center">200</td>
                                                         <td style="text-align:center">{{$operate->sum_chioce_suitability10 +  $operate->subtotal_final}}</td>
                                                       </tr>
                                                   </table>
@@ -286,8 +286,8 @@
                                            <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
                                        </tr>
                                        <tr>
-                                           <td align="center">ประเมินรอบ {{$operate->NumberDate_60}} วัน</td>
-                                           <td align="center">ประเมินรอบ {{$operate->NumberDate_90}} วัน</td>
+                                           <td align="center">ประเมินรอบ 60 วัน</td>
+                                           <td align="center">ประเมินรอบ 90 วัน</td>
                                        </tr>
                                        <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
                                        <tr>

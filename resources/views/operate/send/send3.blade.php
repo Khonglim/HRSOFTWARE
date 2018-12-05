@@ -211,7 +211,7 @@
                                 <div class="col-sm-12">
                                         <div  class="table-wrapper-scroll-y">        
                                                 <table id="customers">
-                                                        <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 90 วัน)</th></tr>
+                                                        <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย ครั้งที่ 2</th></tr>
                                                         <tr>
                                                             <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
                                                             <td style="text-align:center">ลาป่วย(วัน )</td>
@@ -248,8 +248,8 @@
                                         <td align="center" colspan="2">ระดับคะแนนการประเมินผล</td>
                                     </tr>
                                     <tr>
-                                        <td align="center">ประเมินรอบ {{$operate->NumberDate_60}} วัน</td>
-                                        <td align="center">ประเมินรอบ {{$operate->NumberDate_90}} วัน</td>
+                                        <td align="center">ประเมินรอบ 60 วัน</td>
+                                        <td align="center">ประเมินรอบ 90 วัน</td>
                                     </tr>
                                     <tr><td colspan="3"><b>ระดับผู้บังคับบัญชา (Supervisory Level)</b></td></tr>
                                     <tr>
