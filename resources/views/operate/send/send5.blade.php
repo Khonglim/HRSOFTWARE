@@ -213,7 +213,7 @@
                                 <div class="col-sm-12">
                                         <div  class="table-wrapper-scroll-y">        
                                                 <table id="customers">
-                                                        <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย (การประเมิน 90 วัน)</th></tr>
+                                                        <tr><th COLSPAN="7" style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย การมาสายครั้งที่ 2</th></tr>
                                                         <tr>
                                                             <td style="text-align:center">สรุปผลสภาพการมาทำงาน และ การมาสาย</td>
                                                             <td style="text-align:center">ลาป่วย(วัน )</td>
